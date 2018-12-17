@@ -10,7 +10,7 @@ these queries. At some point, we will package these tools for a proper
 distribution, but for the moment, they are under development on a
 sibling repository at
 
-https://github.com/NASA-NAVO/aas_workshop_2018_summer
+https://github.com/NASA-NAVO/workshop-dev
 
 Check out both repositories in different (e.g., adjacent) directories,
 and then in your local copy of this notebooks repo, create a link to the other's
