@@ -7,7 +7,7 @@ discover what is available and access it in standard ways.
 
 They depend on the Astropy-affiliated Python package PyVO. 
 
-Please be sure your laptop is properly configured before the workshop by following the [installation and setup instructions](https://github.com/NASA-NAVO/aas_workshop_2020_winter/blob/master/00_SETUP.md)
+Please be sure your laptop is properly configured before the workshop by following the [installation and setup instructions](https://github.com/NASA-NAVO/notebooks/blob/master/00_SETUP.md)
 
 This could take as long as one hour depending on your current
 configuration and internet speeds.
