@@ -5,13 +5,19 @@ python. Under the hood, they use Virtual Observatory protocols so that
 the user does not need to know where the data are hosted but can
 discover what is available and access it in standard ways.
 
-They depend on the python utilities developed by the NAVO to simplify
-these queries. At some point, we will package these tools for a proper
-distribution, but for the moment, they are under development on a
-sibling repository at
+They depend on the Astropy-affiliated Python package PyVO. 
 
-https://github.com/NASA-NAVO/workshop-dev
+Please be sure your laptop is properly configured before the workshop by following the [installation and setup instructions](https://github.com/NASA-NAVO/aas_workshop_2020_winter/blob/master/00_SETUP.md)
 
-Check out both repositories in different (e.g., adjacent) directories,
-and then in your local copy of this notebooks repo, create a link to the other's
-navo_utils subdirectory. 
+This could take as long as one hour depending on your current
+configuration and internet speeds.
+
+## Demo in Binder
+
+This badge opens Jupyterlab session on Binder which can be used to run the workshop notebooks.
+
+**Note** that method of running the notebooks is transient, and the session will disappear after
+being left unattended for several minutes.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NASA-NAVO/notebooks/master?urlpath=lab)
+
