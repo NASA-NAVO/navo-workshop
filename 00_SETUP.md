@@ -51,20 +51,20 @@ If the output shows a git version, proceed to the next step.  Otherwise install 
 Download the workshop folder using
 [git](https://help.github.com/articles/set-up-git/):
 
-    % git clone https://github.com/NASA-NAVO/aas_workshop_2020_winter.git
+    % git clone https://github.com/NASA-NAVO/notebooks
 
 ## 5. Create a conda environment for the workshop
 
 *For this workshop, the python version and all needed packages are listed in the
-[environment.yml](https://github.com/NASA-NAVO/aas_workshop_2020_winter/blob/master/environment.yml) file.*
+[environment.yml](https://github.com/NASA-NAVO/notebooks/blob/master/environment.yml) file.*
 
 Navigate to the workshop directory in the terminal. For example, if you installed
 the navo-workshop directory in your home directory, you could type the
 following:
 
-    % cd aas_workshop_2020_winter
+    % cd notebooks
 
-And finally, on any platform, to install and activate the aas_workshop_2020_winter
+And finally, on any platform, to install and activate the navo-workshop
 environment, type:
 
     % conda env create -n navo-workshop --file environment.yml
