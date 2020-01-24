@@ -13230,7 +13230,7 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;SELECT ra, dec, exposure, flux, flux_lower, flux_upper FROM public.chansngcat as cat </span>
 <span class="s2">    where contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,0.1))=1 </span>
 <span class="s2">    and cat.exposure &gt; 0 order by cat.exposure&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">pos</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
-<span class="c1">#  Submit the query.  (See the CS_Catalog_queries.ipynb for</span>
+<span class="c1">#  Submit the query.  (See the CS_Catalog_Queries.ipynb for</span>
 <span class="c1">#    information about these two search options.)</span>
 <span class="n">results</span><span class="o">=</span><span class="n">tap_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 <span class="c1">#results=tap_services[0].search(query)</span>
