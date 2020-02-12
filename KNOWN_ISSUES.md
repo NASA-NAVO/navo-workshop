@@ -52,43 +52,27 @@ services=vo.regsearch(servicetype='image')
 returns a RegistryResults object.  This works like a list in that
 
 ```
-services[0]
+services[0].search(...)
 ```
-
-gives you the first service.  But to do actual table operations like searching for matches in the columns, you have to use its table attribute:
-
-```
-services[0].table['short_name']
-```
-
-This is fine for browsing.  But to select a service whose short_name matches, e.g., 'GALEX', is annoying.
+sends a query to the first service.  For easier browsing of the results, you can use an Astropy table:
 
 ```
-np.isin(uv_services.table['short_name'],b'GALEX')
+services.to_table()[0]['ivoid','access_url']
 ```
-
-returns the masked column that works in a table.  So you can then print just the rows that correspond to that match with
-
-```
-services.table[ np.isin(uv_services.table['short_name'],b'GALEX') ]['ivoid','access_url']
-```
-
-for example to look at only those rows and only the two specified columns.  But this result is not *callable* the way a PyVO Results object is callable with a search() method.  To get something callable, currently you *cannot* do 
+This is fine for browsing.  But to do actual table operations like searching for matches in the columns, you have to use it as an Astropy table, e.g., 
 
 ```
-services[ np.where(np.isin(services.table['short_name'],b'GALEX'))[0] ].search(pos=pos,size=size)
+services.to_table()[ np.isin(services.to_table()['short_name'],b'GALEX') ]['ivoid','access_url']
 ```
+but this doesn't give you something callable.  It gives you an Astropy table, not a PyVO object with a search() method.  
 
-**Workaround**:  Instead, you have to do something like
+
+**Workaround**:  To select a service whose short_name matches, e.g., 'GALEX', the easiest way is
 
 ```
-galex_stsci=services[int(np.where(np.isin(uv_services.table['short_name'],b'GALEX'))[0][0])]
-galex_stsci.search(pos=pos,size=size)
+service=[s for s in services if 'GALEX' in s.short_name][0]
 ```
-
-which is ugly and only works for exact matches between the *short_name* field and the specified (byte)string.  We are hoping to improve this situation, and if you come up with a more elegant solution, please tell us.  For something more flexible but also that requires manual intervention:
-
-
+which assumes that the first match is the right one.  This also works for a few other attributes set for each service such as ivoid, res_description, res_title.   For columns that are not exposed as attributes at the service object level, however, the above numpy.isin() method is ugly but works.  
 
 
 ###  Table descriptions
