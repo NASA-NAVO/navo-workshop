@@ -51,18 +51,18 @@ If the output shows a git version, proceed to the next step.  Otherwise install 
 Download the workshop folder using
 [git](https://help.github.com/articles/set-up-git/):
 
-    % git clone https://github.com/NASA-NAVO/notebooks
+    % git clone https://github.com/NASA-NAVO/navo-workshop
 
 ## 5. Create a conda environment for the workshop
 
 *For this workshop, the python version and all needed packages are listed in the
-[environment.yml](https://github.com/NASA-NAVO/notebooks/blob/master/environment.yml) file.*
+[environment.yml](https://github.com/NASA-NAVO/navo-workshop/blob/master/environment.yml) file.*
 
 Navigate to the workshop directory in the terminal. For example, if you installed
 the navo-workshop directory in your home directory, you could type the
 following:
 
-    % cd notebooks
+    % cd navo-workshop
 
 And finally, on any platform, to install and activate the navo-workshop
 environment, type:
