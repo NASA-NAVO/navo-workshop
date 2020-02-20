@@ -13,5 +13,5 @@ dependencies:
   - pip
   - pip:
     - git+git://github.com/astropy/astroquery.git
-    - git+git://github.com/astropy/pyvo.git
+    - git+git://github.com/tomdonaldson/pyvo.git@increase_tap_timeout
     - git+git://github.com/NASA-NAVO/navo.git
