@@ -28,15 +28,7 @@ vo.regsearch(servicetype='image',keywords=['galex'])
 
 Note also that each string in the list given to PyVO's regsearch() keywords argument is searched in the subject, description, and title of the resource. 
 
-**Workaround**:   If you want to search for the ivoid/identity, you have to do this after the fact, with e.g.,
-
-```
-vo.regsearch(servicetype='image',keywords=['sdss'])
-for i,service in enumerate(tap_services):
-    if b'gavo' in tap_services.table['ivoid'][i]:
-        sdss_gavo_service=service
-        break
-sdss_gavo_service.search(query)
+**Workaround**:   If you want to search for the ivoid/identity, you have to do this after the fact as described below.  
 ```
 
 
