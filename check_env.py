@@ -22,9 +22,9 @@ PKGS = {'jupyter': None,
         'requests': None,
         'jupyterlab': None,
         'astropy': '3.2.3',
-        'pyvo': '1.1dev664',
-        'astroquery': '0.4.1.dev5810',
-        'navo': '0.0dev13'}
+        'pyvo': '1.1',
+        'astroquery': '0.4.1'
+        }
 
 
 def check_package(package_name, minimum_version=None, verbose=True):
