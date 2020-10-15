@@ -1,7 +1,7 @@
 #  Known issues and workarounds
 
-PyVO is an open development, Astropy-affiliated package that is still being whipped into shape
-for end users.  The VO services themselves are each dependent on their own institutional
+PyVO is an open development, Astropy-affiliated package that is still under development.
+The VO services themselves are each dependent on their own institutional
 implementations, which can and do vary.  There are therefore sometimes minor incompatibilities,
 and occasionally major ones.  Those we have run into, we document here along with any workarounds
 we find.  But one benefit of the VO is that there may be other services offering the same data with
@@ -15,7 +15,7 @@ the registry to see if there might be another.
 If you search
 
 ```
-vo.regsearch(servicetype='image',keywords='galex')
+vo.regsearch(servicetype='image', keywords='galex')
 ```
 
 then you will get *all* results matching 'g', 'a', 'l', 'e', *or* 'x'.  
@@ -23,12 +23,20 @@ then you will get *all* results matching 'g', 'a', 'l', 'e', *or* 'x'.
 **Workaround**:  To match a string, make it a list of one string.
 
 ```
-vo.regsearch(servicetype='image',keywords=['galex'])
+vo.regsearch(servicetype='image', keywords=['galex'])
 ```
 
 Note also that each string in the list given to PyVO's regsearch() keywords argument is searched in the subject, description, and title of the resource. 
 
 **Workaround**:   If you want to search for the ivoid/identity, you have to do this after the fact as described below.  
+
+```
+image_services = vo.regsearch(servicetype='image', keywords=['sloan'])
+
+sdss_gavo_service = [s for s in image_services if 'gavo' in s.ivoid][0]
+
+sdss_gavo_service.search(query)
+```
 
 
 Furthermore, in the case of the resource subject metadata (not easily accessible through Python), the match is a partial string match.   In the case of the description and title, the special function *ivo_hasword* is used, which is a softer matching not currently well documented.   Some experimentation may be required to isolate what you want.  
@@ -48,9 +56,15 @@ services[0].search(...)
 sends a query to the first service, and for easier browsing of the results, you can use an Astropy table:
 
 ```
-services.to_table()[0]['ivoid','access_url']
+services.to_table()[0]['short_name', ivoid', 'access_url']
 ```
-But using an Astropy table isn't the best way to select the service that you want programmatically.  The result gives you an Astropy table, not a PyVO object with a search() method.  
+
+This is fine for browsing.  But to do actual table operations like searching for matches in the columns, you have to use it as an Astropy table, e.g., 
+
+```
+services.to_table()[ np.isin(services.to_table()['short_name'], 'GALEX') ]['ivoid','access_url']
+```
+but this doesn't give you something callable.  It gives you an Astropy table, not a PyVO object with a search() method.  
 
 
 **Workaround**:  To select a service whose short_name matches, e.g., 'GALEX', the easiest way is
@@ -67,15 +81,8 @@ service.search(...)
 ###  Table descriptions
 
 Getting the descriptions of the tables available for a TAP service may not return useful information
-in many cases.
-
-```
-tap_services=vo.regsearch(servicetype='table',keywords=['irsa'])
-irsa_tables=tap_services[0].service.tables
-irsa_tables['gaia_allwise_best_neighbour'].describe() 
-```
-
-This returns `No description` and is something to be fixed in the service.  For other services, the tables meta data is not being parsed correctly, another issue we are working on.  
+in some cases. For other services, the tables metadata is not being parsed correctly,
+another issue we are working on.  
 
 **Workaround**:
 
@@ -86,12 +93,13 @@ This part of data discovery is often still a hands-on task based, for example, o
 
 ###  Binary/byte strings
 
-We are aware that PyVO and Astropy Tables have a habit of converting strings to binary, or byte, strings.  We hope to make this easier in future.  
+When converting many pvyo results to Astropy tables, using versions of astropy before v4.1,
+string columns are represented as byte strings. This issue has been fixed in astropy 4.1.
 
-**Workaround**:  Use byte strings, for example, as in 
+**Workaround**:  If using astropy versions before 4.1, use byte strings. For example, use 
 
 ```
-np.isin(services.to_table()['short_name'],b'GALEX')
+np.isin(services.to_table()['short_name'], b'GALEX')
 ```
 
 to match strings in the returned tables.  
@@ -101,13 +109,14 @@ to match strings in the returned tables.
 ### Galex service from STScI doesn't take format specification:
 
 ```
-galex_image_services = vo.regsearch(keywords=['galex'], servicetype='image')[0].search(pos=[0,0],size=0.1)
+galex_image_services = vo.regsearch(keywords=['galex'], servicetype='image')[0].search(pos=[0,0], size=0.1)
 ```
 
-produces lots.  But
+produces lots. But
 
 ```
-galex_image_services = vo.regsearch(keywords=['galex'], servicetype='image')[0].search(pos=[0,0],size=0.1,format='image/fits')
+galex_image_services = vo.regsearch(keywords=['galex'], servicetype='image')[0].search(pos=[0,0],
+    size=0.1, format='image/fits')
 ```
 
 or 'image/jpeg' produces nothing.
@@ -118,12 +127,14 @@ or 'image/jpeg' produces nothing.
 
 ###  Some services do not like PyVO's specification of some parameters
 
-E.g.,
+For example,
 
 ```
-services=vo.regsearch(servicetype='image',keywords=['sloan'],waveband='optical')
-jhu_dr7_service=services[int(np.where(np.isin(services.table['short_name'],b'SDSSDR7'))[0][1])]
-sdss_table=jhu_dr7_service.search(pos=coords,size=0.1,format='image/jpeg')
+services = vo.regsearch(servicetype='image', keywords=['sloan'], waveband='optical')
+
+jhu_dr7_service = [s for s in services if ('SDSSDR7' in s.short_name) and ('jhu' in s.ivoid)][0]
+
+sdss_table = jhu_dr7_service.search(pos=coords, size=0.1, format='image/jpeg')
 ```
 
 will throw an error because the service URL has a format hard-wired.  If you ask for another format, it will error.  Or if you specify no format whatsoever, then PyVO will add (silently) *format='all'*, which will then error.
@@ -131,7 +142,7 @@ will throw an error because the service URL has a format hard-wired.  If you ask
 **Workaround**:
 
 ```
-sdss_table=jhu_dr7_service.search(pos=coords,size=0.1,format='')
+sdss_table = jhu_dr7_service.search(pos=coords, size=0.1, format='')
 ```
 
 Specifying *format=''* (two single quotes) seems to solve problem.  It is combined with the hard-wired service URL without error, and it stops PyVO from adding format='all' and causing an error.
@@ -177,6 +188,8 @@ tap_services[0].service.run_sync(query)
 exposed at the top level with the search() method.)  
 
 But keep in mind that you may not be getting all results.  Contact the service administrators to let them know of the problem.
+
+If your query contains syntax errors, these are exposed more readily when you use a synchronous search.
 
 
 ### Using UCDs (unified content descriptors)
