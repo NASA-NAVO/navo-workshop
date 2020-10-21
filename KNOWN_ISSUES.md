@@ -29,7 +29,6 @@ vo.regsearch(servicetype='image',keywords=['galex'])
 Note also that each string in the list given to PyVO's regsearch() keywords argument is searched in the subject, description, and title of the resource. 
 
 **Workaround**:   If you want to search for the ivoid/identity, you have to do this after the fact as described below.  
-```
 
 
 Furthermore, in the case of the resource subject metadata (not easily accessible through Python), the match is a partial string match.   In the case of the description and title, the special function *ivo_hasword* is used, which is a softer matching not currently well documented.   Some experimentation may be required to isolate what you want.  
@@ -46,17 +45,12 @@ returns a RegistryResults object.  This works like a list in that
 ```
 services[0].search(...)
 ```
-sends a query to the first service.  For easier browsing of the results, you can use an Astropy table:
+sends a query to the first service, and for easier browsing of the results, you can use an Astropy table:
 
 ```
 services.to_table()[0]['ivoid','access_url']
 ```
-This is fine for browsing.  But to do actual table operations like searching for matches in the columns, you have to use it as an Astropy table, e.g., 
-
-```
-services.to_table()[ np.isin(services.to_table()['short_name'],b'GALEX') ]['ivoid','access_url']
-```
-but this doesn't give you something callable.  It gives you an Astropy table, not a PyVO object with a search() method.  
+But using an Astropy table isn't the best way to select the service that you want programmatically.  The result gives you an Astropy table, not a PyVO object with a search() method.  
 
 
 **Workaround**:  To select a service whose short_name matches, e.g., 'GALEX', the easiest way is
@@ -64,7 +58,10 @@ but this doesn't give you something callable.  It gives you an Astropy table, no
 ```
 service=[s for s in services if 'GALEX' in s.short_name][0]
 ```
-which assumes that the first match is the right one.  This also works for a few other attributes set for each service such as ivoid, res_description, res_title.   For columns that are not exposed as attributes at the service object level, however, the above numpy.isin() method is ugly but works.  
+which assumes that the first match is the right one.  This also works for a few other attributes set for each service such as ivoid, res_description, res_title.   The result is then callable as
+```
+service.search(...)
+```
 
 
 ###  Table descriptions
@@ -94,7 +91,7 @@ We are aware that PyVO and Astropy Tables have a habit of converting strings to 
 **Workaround**:  Use byte strings, for example, as in 
 
 ```
-np.isin(services.table['short_name'],b'GALEX')
+np.isin(services.to_table()['short_name'],b'GALEX')
 ```
 
 to match strings in the returned tables.  
@@ -182,3 +179,10 @@ exposed at the top level with the search() method.)
 But keep in mind that you may not be getting all results.  Contact the service administrators to let them know of the problem.
 
 
+### Using UCDs (unified content descriptors)
+
+UCDs are a very useful way to programmatically access the columns you need in tables where they may be named differently.  They can have multiple components separated by a ';' (compound UCDs), and there can be multiple columns tagged with a UCD like "pos.eq.ra" in addition to other UCDs.  The user will still need to understand the different columns to select the one that they want, which may, for example, be "pos.eq.ra;meta.main".  
+
+But note that this complexity is currently not supported by the PyVO getbyucd() or fieldname_with_ucd() methods.  Note that currently they check only the first UCD and will miss any subsequent matches.  
+
+Furthermore, the defintion of UCDs (http://www.ivoa.net/documents/latest/UCD.html) defines the syntax as 'words' separated by semicolons, where the words consist of 'atoms' separated by periods.  The UCD for a Right Ascension column is therefore usually 'pos.eq.ra'.  But the definition of a Simple Cone Search (http://www.ivoa.net/documents/latest/ConeSearch.html) requires that the field used for the position be "POS_EQ_RA_MAIN".
