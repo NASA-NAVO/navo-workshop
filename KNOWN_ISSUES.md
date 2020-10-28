@@ -56,16 +56,10 @@ services[0].search(...)
 sends a query to the first service, and for easier browsing of the results, you can use an Astropy table:
 
 ```
-services.to_table()[0]['short_name', ivoid', 'access_url']
+services.to_table()[0]['short_name', 'ivoid', 'access_url']
 ```
 
-This is fine for browsing.  But to do actual table operations like searching for matches in the columns, you have to use it as an Astropy table, e.g., 
-
-```
-services.to_table()[ np.isin(services.to_table()['short_name'], 'GALEX') ]['ivoid','access_url']
-```
 but this doesn't give you something callable.  It gives you an Astropy table, not a PyVO object with a search() method.  
-
 
 **Workaround**:  To select a service whose short_name matches, e.g., 'GALEX', the easiest way is
 
