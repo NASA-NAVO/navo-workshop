@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+None<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CS_VO_Tables</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>exec_CS_VO_Tables</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14254,7 +14254,10 @@ a.anchor-link {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --></head>
+    <!-- End of mathjax configuration -->
+
+<!-- base css for whole site -->
+<link rel="stylesheet" href="../../pages.css"></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14277,7 +14280,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">io</span><span class="o">,</span> <span class="nn">numpy</span>
@@ -14296,10 +14299,10 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Create-a-table-with-only-two-columns-starting-from-an-astropy-Table">Create a table with only two columns starting from an astropy Table<a class="anchor-link" href="#Create-a-table-with-only-two-columns-starting-from-an-astropy-Table">&#182;</a></h4>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myaptable</span><span class="o">=</span><span class="n">aptable</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span>
@@ -14337,15 +14340,60 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;astropy.table.table.Table&#39;&gt;
+   RA     DEC  
+------- -------
+19.0186 46.7304
+20.2887 40.4703
+125.886 21.3377
+136.002 21.9679
+141.057 40.6372
+  146.7 22.0116
+148.785 14.2922
+149.751 17.8168
+175.039  15.327
+191.542 30.7317
+194.913 28.8959
+199.026 41.5011
+206.577 43.8511
+209.963 38.1821
+213.556 15.6214
+219.967 42.7421
+226.693 12.8502
+237.489 20.8057
+241.519 20.8014
+317.088 18.2002
+329.235 6.64845
+ 333.83 37.3012
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Then-convert-this-to-a-VOTableFile-object-which-contains-a-nested-set-of-resources-and-tables-(in-this-case,-only-one-of-each)">Then convert this to a VOTableFile object which contains a nested set of <em>resources</em> and <em>tables</em> (in this case, only one of each)<a class="anchor-link" href="#Then-convert-this-to-a-VOTableFile-object-which-contains-a-nested-set-of-resources-and-tables-(in-this-case,-only-one-of-each)">&#182;</a></h4>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myvotablefile</span> <span class="o">=</span> <span class="n">apvot</span><span class="o">.</span><span class="n">from_table</span><span class="p">(</span><span class="n">myaptable</span><span class="p">)</span>
@@ -14360,6 +14408,51 @@ a.anchor-link {
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;astropy.io.votable.tree.VOTableFile&#39;&gt;
+   RA     DEC  
+------- -------
+19.0186 46.7304
+20.2887 40.4703
+125.886 21.3377
+136.002 21.9679
+141.057 40.6372
+  146.7 22.0116
+148.785 14.2922
+149.751 17.8168
+175.039  15.327
+191.542 30.7317
+194.913 28.8959
+199.026 41.5011
+206.577 43.8511
+209.963 38.1821
+213.556 15.6214
+219.967 42.7421
+226.693 12.8502
+237.489 20.8057
+241.519 20.8014
+317.088 18.2002
+329.235 6.64845
+ 333.83 37.3012
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
