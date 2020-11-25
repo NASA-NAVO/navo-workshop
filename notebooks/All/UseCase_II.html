@@ -14326,7 +14326,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">tablename</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="k">if</span> <span class="s2">&quot;chan&quot;</span> <span class="ow">in</span> <span class="n">tablename</span><span class="p">:</span>  
+    <span class="k">if</span> <span class="s2">&quot;chanmas&quot;</span> <span class="ow">in</span> <span class="n">tablename</span><span class="p">:</span>  
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Table </span><span class="si">{}</span><span class="s2"> has columns=</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">tablename</span><span class="p">,</span>
             <span class="nb">sorted</span><span class="p">([</span><span class="n">k</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="p">[</span><span class="n">tablename</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="p">])))</span>
@@ -14349,41 +14349,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Table bmwchancat has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;&#34;time&#34;&#39;, &#39;ascds_version&#39;, &#39;bck_counts&#39;, &#39;bck_hb_counts&#39;, &#39;bck_sb_counts&#39;, &#39;bii&#39;, &#39;chi_squared&#39;, &#39;count_rate&#39;, &#39;count_rate_error&#39;, &#39;counted_band1_counts&#39;, &#39;counted_band2_counts&#39;, &#39;counted_band3_counts&#39;, &#39;counted_band4_counts&#39;, &#39;counted_bck_counts&#39;, &#39;counted_counts&#39;, &#39;counts&#39;, &#39;counts_error&#39;, &#39;cross_match_flag_1&#39;, &#39;cross_match_flag_2&#39;, &#39;data_mode&#39;, &#39;dec&#39;, &#39;dec_error&#39;, &#39;end_time&#39;, &#39;error_radius&#39;, &#39;exposure&#39;, &#39;extent_flag&#39;, &#39;field_target&#39;, &#39;field_target_dec_j2000&#39;, &#39;field_target_nh&#39;, &#39;field_target_ra_j2000&#39;, &#39;flux&#39;, &#39;flux_cr_corfac&#39;, &#39;frame_time&#39;, &#39;full_band_flux&#39;, &#39;full_band_obs_flux&#39;, &#39;hb_count_rate&#39;, &#39;hb_count_rate_error&#39;, &#39;hb_counted_bck_counts&#39;, &#39;hb_counted_counts&#39;, &#39;hb_counts&#39;, &#39;hb_counts_error&#39;, &#39;hb_flux&#39;, &#39;hb_psf_corr_factor&#39;, &#39;hb_snr&#39;, &#39;hb_vignetting_factor&#39;, &#39;hb_wavelet_snr&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;nominal_exposure&#39;, &#39;obsid&#39;, &#39;off_axis&#39;, &#39;psf_corr_factor&#39;, &#39;quality_flag_1&#39;, &#39;quality_flag_2&#39;, &#39;ra&#39;, &#39;ra_error&#39;, &#39;rebin_number&#39;, &#39;sb_count_rate&#39;, &#39;sb_count_rate_error&#39;, &#39;sb_counted_bck_counts&#39;, &#39;sb_counted_counts&#39;, &#39;sb_counts&#39;, &#39;sb_counts_error&#39;, &#39;sb_flux&#39;, &#39;sb_psf_corr_factor&#39;, &#39;sb_snr&#39;, &#39;sb_vignetting_factor&#39;, &#39;sb_wavelet_snr&#39;, &#39;sequence_number&#39;, &#39;snr&#39;, &#39;source_number&#39;, &#39;src_wt_scale&#39;, &#39;vignetting_factor&#39;, &#39;wavelet_snr&#39;, &#39;wt_probability&#39;, &#39;wt_width&#39;, &#39;wt_width_error&#39;, &#39;wt_width_flag&#39;, &#39;x_pixel&#39;, &#39;y_pixel&#39;]
-
-Table chandfn1ms has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;band_ratio&#39;, &#39;band_ratio_negerr&#39;, &#39;band_ratio_poserr&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;error_radius&#39;, &#39;exposure&#39;, &#39;fb_counts&#39;, &#39;fb_counts_error&#39;, &#39;fb_counts_flag&#39;, &#39;fb_flux&#39;, &#39;hb_counts&#39;, &#39;hb_counts_error&#39;, &#39;hb_counts_flag&#39;, &#39;hb_flux&#39;, &#39;lii&#39;, &#39;limit_band_ratio&#39;, &#39;limit_fb_counts&#39;, &#39;limit_fb_flux&#39;, &#39;limit_hb_counts&#39;, &#39;limit_hb_flux&#39;, &#39;limit_photon_index&#39;, &#39;limit_sb_counts&#39;, &#39;limit_sb_flux&#39;, &#39;limit_uhb_counts&#39;, &#39;limit_uhb_flux&#39;, &#39;name&#39;, &#39;photon_index&#39;, &#39;photon_index_flag&#39;, &#39;ra&#39;, &#39;sb_counts&#39;, &#39;sb_counts_error&#39;, &#39;sb_counts_flag&#39;, &#39;sb_flux&#39;, &#39;source_notes&#39;, &#39;uhb_counts&#39;, &#39;uhb_counts_error&#39;, &#39;uhb_counts_flag&#39;, &#39;uhb_flux&#39;]
-
-Table chandfn2ms has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;error_radius&#39;, &#39;exposure&#39;, &#39;fb_counts&#39;, &#39;fb_counts_neg_err&#39;, &#39;fb_counts_pos_err&#39;, &#39;fb_flux&#39;, &#39;flag_fb_counts&#39;, &#39;flag_hb1_counts&#39;, &#39;flag_hb2_counts&#39;, &#39;flag_hb_counts&#39;, &#39;flag_photon_index&#39;, &#39;flag_sb1_counts&#39;, &#39;flag_sb2_counts&#39;, &#39;flag_sb_counts&#39;, &#39;hb1_counts&#39;, &#39;hb1_counts_neg_err&#39;, &#39;hb1_counts_pos_err&#39;, &#39;hb1_flux&#39;, &#39;hb2_counts&#39;, &#39;hb2_counts_neg_err&#39;, &#39;hb2_counts_pos_err&#39;, &#39;hb2_flux&#39;, &#39;hb_counts&#39;, &#39;hb_counts_neg_err&#39;, &#39;hb_counts_pos_err&#39;, &#39;hb_flux&#39;, &#39;lii&#39;, &#39;limit_fb_counts&#39;, &#39;limit_fb_flux&#39;, &#39;limit_hb1_counts&#39;, &#39;limit_hb1_flux&#39;, &#39;limit_hb2_counts&#39;, &#39;limit_hb2_flux&#39;, &#39;limit_hb_counts&#39;, &#39;limit_hb_flux&#39;, &#39;limit_photon_index&#39;, &#39;limit_ratio_1&#39;, &#39;limit_ratio_2&#39;, &#39;limit_ratio_3&#39;, &#39;limit_ratio_4&#39;, &#39;limit_sb1_counts&#39;, &#39;limit_sb1_flux&#39;, &#39;limit_sb2_counts&#39;, &#39;limit_sb2_flux&#39;, &#39;limit_sb_counts&#39;, &#39;limit_sb_flux&#39;, &#39;name&#39;, &#39;off_axis_angle&#39;, &#39;photon_index&#39;, &#39;photon_index_neg_err&#39;, &#39;photon_index_pos_err&#39;, &#39;ra&#39;, &#39;ratio_1&#39;, &#39;ratio_1_neg_err&#39;, &#39;ratio_1_pos_err&#39;, &#39;ratio_2&#39;, &#39;ratio_2_neg_err&#39;, &#39;ratio_2_pos_err&#39;, &#39;ratio_3&#39;, &#39;ratio_3_neg_err&#39;, &#39;ratio_3_pos_err&#39;, &#39;ratio_4&#39;, &#39;ratio_4_neg_err&#39;, &#39;ratio_4_pos_err&#39;, &#39;sb1_counts&#39;, &#39;sb1_counts_neg_err&#39;, &#39;sb1_counts_pos_err&#39;, &#39;sb1_flux&#39;, &#39;sb2_counts&#39;, &#39;sb2_counts_neg_err&#39;, &#39;sb2_counts_pos_err&#39;, &#39;sb2_flux&#39;, &#39;sb_counts&#39;, &#39;sb_counts_neg_err&#39;, &#39;sb_counts_pos_err&#39;, &#39;sb_flux&#39;, &#39;sequence_number&#39;, &#39;source_notes&#39;]
-
-Table chandfs1ms has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;detect_method&#39;, &#39;error_radius&#39;, &#39;filter_rmag_1&#39;, &#39;filter_rmag_2&#39;, &#39;filter_rmag_3&#39;, &#39;hardness_ratio&#39;, &#39;hardness_ratio_error&#39;, &#39;hb_counts&#39;, &#39;hb_counts_error&#39;, &#39;hb_exposure&#39;, &#39;hb_flux&#39;, &#39;hb_flux_error&#39;, &#39;lii&#39;, &#39;limit_hb_flux&#39;, &#39;limit_rmag_1&#39;, &#39;limit_rmag_2&#39;, &#39;limit_rmag_3&#39;, &#39;limit_sb_flux&#39;, &#39;name&#39;, &#39;offset_1&#39;, &#39;offset_2&#39;, &#39;offset_3&#39;, &#39;optical_id&#39;, &#39;ra&#39;, &#39;rmag_1&#39;, &#39;rmag_1_error&#39;, &#39;rmag_2&#39;, &#39;rmag_2_error&#39;, &#39;rmag_3&#39;, &#39;rmag_3_error&#39;, &#39;sb_counts&#39;, &#39;sb_counts_error&#39;, &#39;sb_exposure&#39;, &#39;sb_flux&#39;, &#39;sb_flux_error&#39;, &#39;xray_id&#39;]
-
-Table chandfs2ms has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;a03_dec&#39;, &#39;a03_ra&#39;, &#39;a03_source_number&#39;, &#39;alt_name&#39;, &#39;band_ratio&#39;, &#39;band_ratio_neg_err&#39;, &#39;band_ratio_pos_err&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;error_radius&#39;, &#39;fb_counts&#39;, &#39;fb_counts_neg_err&#39;, &#39;fb_counts_pos_err&#39;, &#39;fb_exposure&#39;, &#39;fb_flux&#39;, &#39;flux_5p8_um&#39;, &#39;g02_dec&#39;, &#39;g02_ra&#39;, &#39;g02_source_number&#39;, &#39;gems_name&#39;, &#39;goodss_source_number&#39;, &#39;hb_counts&#39;, &#39;hb_counts_neg_err&#39;, &#39;hb_counts_pos_err&#39;, &#39;hb_exposure&#39;, &#39;hb_flux&#39;, &#39;imag&#39;, &#39;irac_source_number&#39;, &#39;ks_mag&#39;, &#39;l05_dec&#39;, &#39;l05_ra&#39;, &#39;l05_source_number&#39;, &#39;lii&#39;, &#39;log_min_fp_prob&#39;, &#39;name&#39;, &#39;note_flags&#39;, &#39;off_axis&#39;, &#39;off_set&#39;, &#39;optical_dec&#39;, &#39;optical_ra&#39;, &#39;ra&#39;, &#39;redshift&#39;, &#39;ref_redshift&#39;, &#39;rmag&#39;, &#39;sb_counts&#39;, &#39;sb_counts_neg_err&#39;, &#39;sb_counts_pos_err&#39;, &#39;sb_exposure&#39;, &#39;sb_flux&#39;, &#39;sofi_source_number&#39;, &#39;source_identifier&#39;, &#39;source_sample&#39;, &#39;spectral_index&#39;, &#39;spectral_index_neg_err&#39;, &#39;spectral_index_pos_err&#39;, &#39;xid_source_number&#39;, &#39;zmag&#39;]
-
-Table chandfs4ms has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;alt_name&#39;, &#39;band_ratio&#39;, &#39;band_ratio_neg_err&#39;, &#39;band_ratio_pos_err&#39;, &#39;bii&#39;, &#39;broad_type&#39;, &#39;class&#39;, &#39;crtpart_ab_mag&#39;, &#39;ctrpart_catalog&#39;, &#39;dec&#39;, &#39;error_radius&#39;, &#39;extent_flag&#39;, &#39;fb_counts&#39;, &#39;fb_counts_neg_err&#39;, &#39;fb_counts_pos_err&#39;, &#39;fb_exposure&#39;, &#39;fb_flux&#39;, &#39;gems_dec&#39;, &#39;gems_ra&#39;, &#39;gems_zmag&#39;, &#39;goodss_dec&#39;, &#39;goodss_ra&#39;, &#39;goodss_zmag&#39;, &#39;hb_counts&#39;, &#39;hb_counts_neg_err&#39;, &#39;hb_counts_pos_err&#39;, &#39;hb_exposure&#39;, &#39;hb_flux&#39;, &#39;l05_dec&#39;, &#39;l05_ra&#39;, &#39;l05_source_number&#39;, &#39;l08_dec&#39;, &#39;l08_ra&#39;, &#39;l08_source_number&#39;, &#39;lii&#39;, &#39;log_min_fp_prob&#39;, &#39;log_min_ns_prob&#39;, &#39;music_dec&#39;, &#39;music_kmag&#39;, &#39;music_ra&#39;, &#39;musyc_dec&#39;, &#39;musyc_kmag&#39;, &#39;musyc_ra&#39;, &#39;name&#39;, &#39;notes&#39;, &#39;off_axis&#39;, &#39;off_set&#39;, &#39;onir_dec&#39;, &#39;onir_ra&#39;, &#39;phot_redshift_1&#39;, &#39;phot_redshift_1_max&#39;, &#39;phot_redshift_1_min&#39;, &#39;phot_redshift_2&#39;, &#39;phot_redshift_3&#39;, &#39;phot_redshift_3_flag&#39;, &#39;phot_redshift_3_max&#39;, &#39;phot_redshift_3_min&#39;, &#39;phot_redshift_4&#39;, &#39;phot_redshift_4_max&#39;, &#39;phot_redshift_4_min&#39;, &#39;photon_index&#39;, &#39;photon_index_max&#39;, &#39;photon_index_min&#39;, &#39;ra&#39;, &#39;redshift&#39;, &#39;ref_spect_redshift&#39;, &#39;rf_lx&#39;, &#39;rmag&#39;, &#39;sb_counts&#39;, &#39;sb_counts_neg_err&#39;, &#39;sb_counts_pos_err&#39;, &#39;sb_exposure&#39;, &#39;sb_flux&#39;, &#39;simple_3p6_um_mag&#39;, &#39;simple_dec&#39;, &#39;simple_ra&#39;, &#39;spect_redshift&#39;, &#39;spect_redshift_flag&#39;, &#39;vla_20_cm_mag&#39;, &#39;vla_dec&#39;, &#39;vla_ra&#39;, &#39;wfi_dec&#39;, &#39;wfi_ra&#39;, &#39;xid_source_number&#39;]
-
-Table chandfs7ms has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;abs_corr_lx&#39;, &#39;alt_name&#39;, &#39;band_ratio&#39;, &#39;band_ratio_neg_err&#39;, &#39;band_ratio_pos_err&#39;, &#39;bii&#39;, &#39;broad_type&#39;, &#39;candels_dec&#39;, &#39;candels_f125w_mag&#39;, &#39;candels_ra&#39;, &#39;class&#39;, &#39;ctrpart_catalog&#39;, &#39;ctrpart_note&#39;, &#39;dec&#39;, &#39;error_radius&#39;, &#39;fb_counts&#39;, &#39;fb_counts_neg_err&#39;, &#39;fb_counts_pos_err&#39;, &#39;fb_exposure&#39;, &#39;fb_flux&#39;, &#39;gems_dec&#39;, &#39;gems_ra&#39;, &#39;gems_zmag&#39;, &#39;goodss_dec&#39;, &#39;goodss_ra&#39;, &#39;goodss_zmag&#39;, &#39;hb_counts&#39;, &#39;hb_counts_neg_err&#39;, &#39;hb_counts_pos_err&#39;, &#39;hb_exposure&#39;, &#39;hb_flux&#39;, &#39;lii&#39;, &#39;log_min_fp_prob&#39;, &#39;log_min_ns_prob&#39;, &#39;name&#39;, &#39;nh&#39;, &#39;off_axis&#39;, &#39;off_set&#39;, &#39;phot_redshift_h14&#39;, &#39;phot_redshift_l10&#39;, &#39;phot_redshift_r11&#39;, &#39;phot_redshift_s14&#39;, &#39;phot_redshift_s15&#39;, &#39;phot_redshift_s16&#39;, &#39;photon_index&#39;, &#39;photon_index_neg_err&#39;, &#39;photon_index_pos_err&#39;, &#39;r13_source_number&#39;, &#39;ra&#39;, &#39;redshift&#39;, &#39;redshift_neg_err&#39;, &#39;redshift_pos_err&#39;, &#39;ref_redshift&#39;, &#39;ref_spect_redshift&#39;, &#39;rf_lx&#39;, &#39;sb_counts&#39;, &#39;sb_counts_neg_err&#39;, &#39;sb_counts_pos_err&#39;, &#39;sb_exposure&#39;, &#39;sb_flux&#39;, &#39;seds_3p6_um_mag&#39;, &#39;seds_dec&#39;, &#39;seds_ra&#39;, &#39;source_flag&#39;, &#39;source_sample&#39;, &#39;spect_redshift&#39;, &#39;spect_redshift_flag&#39;, &#39;tenis_dec&#39;, &#39;tenis_ks_mag&#39;, &#39;tenis_ra&#39;, &#39;vla_20_cm_mag&#39;, &#39;vla_dec&#39;, &#39;vla_ra&#39;, &#39;wfi_dec&#39;, &#39;wfi_ra&#39;, &#39;wfi_rmag&#39;, &#39;x11_source_number&#39;, &#39;x16_source_number&#39;, &#39;xid_source_number&#39;]
-
-Table chanextdfs has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;a03_dec_j2000&#39;, &#39;a03_ra_j2000&#39;, &#39;a03_source_number&#39;, &#39;band_ratio&#39;, &#39;band_ratio_limit&#39;, &#39;band_ratio_neg_err&#39;, &#39;band_ratio_pos_err&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;dec_optical_j2000&#39;, &#39;ecdfs_field&#39;, &#39;error_radius&#39;, &#39;exposure&#39;, &#39;fb_counts&#39;, &#39;fb_counts_limit&#39;, &#39;fb_counts_neg_err&#39;, &#39;fb_counts_pos_err&#39;, &#39;fb_flux&#39;, &#39;fb_flux_limit&#39;, &#39;g02_dec_j2000&#39;, &#39;g02_ra_j2000&#39;, &#39;g02_source_number&#39;, &#39;hb_counts&#39;, &#39;hb_counts_limit&#39;, &#39;hb_counts_neg_err&#39;, &#39;hb_counts_pos_err&#39;, &#39;hb_exposure&#39;, &#39;hb_flux&#39;, &#39;hb_flux_limit&#39;, &#39;lii&#39;, &#39;log_min_fp_prob&#39;, &#39;name&#39;, &#39;notes&#39;, &#39;off_axis_angle&#39;, &#39;off_set&#39;, &#39;photon_index&#39;, &#39;photon_index_limit&#39;, &#39;photon_index_neg_err&#39;, &#39;photon_index_pos_err&#39;, &#39;ra&#39;, &#39;ra_optical_j2000&#39;, &#39;rmag&#39;, &#39;sb_counts&#39;, &#39;sb_counts_limit&#39;, &#39;sb_counts_neg_err&#39;, &#39;sb_counts_pos_err&#39;, &#39;sb_exposure&#39;, &#39;sb_flux&#39;, &#39;sb_flux_limit&#39;, &#39;source_number&#39;, &#39;source_type&#39;]
-
-Table changbscat has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;bii&#39;, &#39;counts&#39;, &#39;dec&#39;, &#39;dec_error&#39;, &#39;error_radius&#39;, &#39;hardness_ratio&#39;, &#39;hardness_ratio_error&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;num_detections&#39;, &#39;obsid&#39;, &#39;off_axis&#39;, &#39;ra&#39;, &#39;ra_error&#39;, &#39;source_flag&#39;, &#39;source_number&#39;]
-
-Table chanmaster has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;&#34;pi&#34;&#39;, &#39;&#34;time&#34;&#39;, &#39;bii&#39;, &#39;category&#39;, &#39;class&#39;, &#39;cycle&#39;, &#39;data_mode&#39;, &#39;dec&#39;, &#39;detector&#39;, &#39;exposure&#39;, &#39;grating&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;obsid&#39;, &#39;proposal&#39;, &#39;public_date&#39;, &#39;ra&#39;, &#39;sequence_number&#39;, &#39;status&#39;, &#39;type&#39;]
-
-Table channsgpsc has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;fb_counts_1&#39;, &#39;fb_counts_1_error&#39;, &#39;fb_counts_1_flag&#39;, &#39;fb_counts_2&#39;, &#39;fb_counts_2_error&#39;, &#39;fb_counts_2_flag&#39;, &#39;flux_1&#39;, &#39;flux_1_error&#39;, &#39;flux_1_flag&#39;, &#39;flux_2&#39;, &#39;flux_2_error&#39;, &#39;flux_2_flag&#39;, &#39;galaxy_name&#39;, &#39;hard_color_1&#39;, &#39;hard_color_1_neg_err&#39;, &#39;hard_color_1_pos_err&#39;, &#39;hard_color_2&#39;, &#39;hard_color_2_neg_err&#39;, &#39;hard_color_2_pos_err&#39;, &#39;hb_counts_1&#39;, &#39;hb_counts_1_error&#39;, &#39;hb_counts_1_flag&#39;, &#39;hb_counts_2&#39;, &#39;hb_counts_2_error&#39;, &#39;hb_counts_2_flag&#39;, &#39;lii&#39;, &#39;lx_1&#39;, &#39;lx_1_error&#39;, &#39;lx_1_flag&#39;, &#39;lx_2&#39;, &#39;lx_2_error&#39;, &#39;lx_2_flag&#39;, &#39;mb_counts_1&#39;, &#39;mb_counts_1_error&#39;, &#39;mb_counts_1_flag&#39;, &#39;mb_counts_2&#39;, &#39;mb_counts_2_error&#39;, &#39;mb_counts_2_flag&#39;, &#39;name&#39;, &#39;notes&#39;, &#39;ra&#39;, &#39;sb_counts_1&#39;, &#39;sb_counts_1_error&#39;, &#39;sb_counts_1_flag&#39;, &#39;sb_counts_2&#39;, &#39;sb_counts_2_error&#39;, &#39;sb_counts_2_flag&#39;, &#39;soft_color_1&#39;, &#39;soft_color_1_neg_err&#39;, &#39;soft_color_1_pos_err&#39;, &#39;soft_color_2&#39;, &#39;soft_color_2_neg_err&#39;, &#39;soft_color_2_pos_err&#39;, &#39;variability_flag&#39;]
-
-Table chansexagn has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;bii&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;hardness_ratio&#39;, &#39;hb_flux&#39;, &#39;irac_3p6_um_flux&#39;, &#39;irac_3p6_um_flux_error&#39;, &#39;irac_3p6_um_flux_flag&#39;, &#39;irac_4p5_um_flux&#39;, &#39;irac_4p5_um_flux_error&#39;, &#39;irac_4p5_um_flux_flag&#39;, &#39;irac_5p8_um_flux&#39;, &#39;irac_5p8_um_flux_error&#39;, &#39;irac_5p8_um_flux_flag&#39;, &#39;irac_8p0_um_flux&#39;, &#39;irac_8p0_um_flux_error&#39;, &#39;irac_8p0_um_flux_flag&#39;, &#39;lii&#39;, &#39;log_hb_lx&#39;, &#39;log_hb_over_opt_flux&#39;, &#39;log_nh&#39;, &#39;mips_24_um_flux&#39;, &#39;mips_24_um_flux_error&#39;, &#39;mips_24_um_flux_flag&#39;, &#39;name&#39;, &#39;object_type&#39;, &#39;offset_dec&#39;, &#39;offset_ra&#39;, &#39;ra&#39;, &#39;redshift&#39;, &#39;rmag&#39;, &#39;rmag_flag&#39;, &#39;rmag_limit&#39;]
-
-Table chansexoid has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;bii&#39;, &#39;cluster_flag&#39;, &#39;dec&#39;, &#39;hardness_ratio&#39;, &#39;hardness_ratio_flag&#39;, &#39;hb_flux&#39;, &#39;hb_snr&#39;, &#39;image_limit_rc_mag&#39;, &#39;lii&#39;, &#39;log_fx_fopt&#39;, &#39;log_lx&#39;, &#39;log_nh&#39;, &#39;log_nh_flag&#39;, &#39;log_nh_lower&#39;, &#39;log_nh_lower_flag&#39;, &#39;log_nh_upper&#39;, &#39;log_nh_upper_flag&#39;, &#39;lower_rf_wavelength&#39;, &#39;name&#39;, &#39;object_type&#39;, &#39;off_axis_angle&#39;, &#39;offset_dec&#39;, &#39;offset_ra&#39;, &#39;offset_total&#39;, &#39;optical_id_flag&#39;, &#39;ra&#39;, &#39;rc_mag&#39;, &#39;rc_mag_error&#39;, &#39;rc_mag_flag&#39;, &#39;redshift&#39;, &#39;spectral_notes&#39;, &#39;stellarity&#39;, &#39;upper_rf_wavelength&#39;]
-
-Table chansexsi has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;bii&#39;, &#39;cluster_flag&#39;, &#39;dec&#39;, &#39;hardness_ratio&#39;, &#39;hb_bck_counts&#39;, &#39;hb_counts&#39;, &#39;hb_counts_snr&#39;, &#39;hb_flux&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;off_axis_angle&#39;, &#39;ra&#39;, &#39;sb_bck_counts&#39;, &#39;sb_counts&#39;, &#39;sb_counts_snr&#39;, &#39;sb_flux&#39;]
-
-Table chansngcat has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;&#34;distance&#34;&#39;, &#39;agn_flag&#39;, &#39;bii&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;exposure&#39;, &#39;fit_chi_squared&#39;, &#39;fit_dof&#39;, &#39;flux&#39;, &#39;flux_lower&#39;, &#39;flux_upper&#39;, &#39;hardness_ratio_0&#39;, &#39;hardness_ratio_0_error&#39;, &#39;hardness_ratio_1&#39;, &#39;hardness_ratio_1_error&#39;, &#39;hardness_ratio_2&#39;, &#39;hardness_ratio_2_error&#39;, &#39;hubble_type&#39;, &#39;instrument&#39;, &#39;lii&#39;, &#39;log_blackhole_mass&#39;, &#39;log_blackhole_mass_lower&#39;, &#39;log_blackhole_mass_upper&#39;, &#39;log_l_cpt1&#39;, &#39;log_l_cpt2&#39;, &#39;log_l_halpha&#39;, &#39;log_l_halpha_flag&#39;, &#39;log_lx&#39;, &#39;log_lx_lower&#39;, &#39;log_lx_note&#39;, &#39;log_lx_upper&#39;, &#39;name&#39;, &#39;nh&#39;, &#39;nh_from_hr&#39;, &#39;nh_from_hr_lower&#39;, &#39;nh_from_hr_upper&#39;, &#39;nh_gal&#39;, &#39;nh_lower&#39;, &#39;nh_upper&#39;, &#39;nuclear_class&#39;, &#39;obsid&#39;, &#39;off_set&#39;, &#39;ra&#39;, &#39;ref_spectrum&#39;, &#39;sigma&#39;, &#39;sigma_error&#39;, &#39;source_number&#39;, &#39;spectral_index&#39;, &#39;spectral_index_lower&#39;, &#39;spectral_index_upper&#39;, &#39;spectral_model&#39;, &#39;spectral_norm_cpt1&#39;, &#39;spectral_norm_cpt2&#39;, &#39;temperature&#39;, &#39;temperature_lower&#39;, &#39;temperature_upper&#39;]
-
-Table chantypgpr has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;ao&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;error_radius&#39;, &#39;fb_count_rate&#39;, &#39;fb_count_rate_snr&#39;, &#39;hardness_ratio&#39;, &#39;hardness_ratio_error&#39;, &#39;hb_count_rate&#39;, &#39;hb_count_rate_snr&#39;, &#39;hb_flux&#39;, &#39;hmag&#39;, &#39;jmag&#39;, &#39;ks_mag&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;near_ir_name&#39;, &#39;off_set&#39;, &#39;ra&#39;, &#39;sb_count_rate&#39;, &#39;sb_count_rate_snr&#39;, &#39;sb_flux&#39;, &#39;source_flag&#39;, &#39;source_number&#39;]
-
-Table chanulxcat has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;bii&#39;, &#39;chi_squared&#39;, &#39;dec&#39;, &#39;dof&#39;, &#39;galaxy_name&#39;, &#39;hardness_ratio_1&#39;, &#39;hardness_ratio_2&#39;, &#39;lii&#39;, &#39;lx&#39;, &#39;lx_error&#39;, &#39;lx_flag&#39;, &#39;lx_obs&#39;, &#39;lx_obs_error&#39;, &#39;name&#39;, &#39;nh&#39;, &#39;nh_neg_err&#39;, &#39;nh_pos_err&#39;, &#39;prob_constant&#39;, &#39;ra&#39;, &#39;spect_shape&#39;, &#39;spect_shape_flag&#39;, &#39;spect_shape_neg_err&#39;, &#39;spect_shape_pos_err&#39;]
-
-Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;agascid&#39;, &#39;bii&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;exposure&#39;, &#39;ir_flag&#39;, &#39;known_var_flag&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;num_chandra_obs&#39;, &#39;ra&#39;, &#39;simbad_class&#39;, &#39;simbad_short_type&#39;, &#39;spect_type&#39;, &#39;uv_flag&#39;, &#39;var_category&#39;, &#39;var_epoch&#39;, &#39;var_period&#39;, &#39;var_status&#39;, &#39;var_type&#39;, &#39;xray_flag&#39;]
+<pre>Table chanmaster has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#34;&#39;, &#39;&#34;__y_ra_dec&#34;&#39;, &#39;&#34;__z_ra_dec&#34;&#39;, &#39;&#34;pi&#34;&#39;, &#39;&#34;time&#34;&#39;, &#39;bii&#39;, &#39;category&#39;, &#39;class&#39;, &#39;cycle&#39;, &#39;data_mode&#39;, &#39;dec&#39;, &#39;detector&#39;, &#39;exposure&#39;, &#39;grating&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;obsid&#39;, &#39;proposal&#39;, &#39;public_date&#39;, &#39;ra&#39;, &#39;sequence_number&#39;, &#39;status&#39;, &#39;type&#39;]
 
 </pre>
 </div>
@@ -14399,7 +14365,7 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <p>Hint: The Chansngcat ( <a href="https://heasarc.gsfc.nasa.gov/W3Browse/chandra/chansngcat.html">https://heasarc.gsfc.nasa.gov/W3Browse/chandra/chansngcat.html</a> ) table is likely the best table.  Create a table with ra, dec, exposure time, and flux (and flux errors) from the public.chansngcat catalog for Chandra observations matched within 0.1 degree.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
@@ -14408,7 +14374,20 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get the coordinate for NGC 1365</span>
 <span class="kn">import</span> <span class="nn">astropy.coordinates</span> <span class="k">as</span> <span class="nn">coord</span>
 <span class="n">pos</span><span class="o">=</span><span class="n">coord</span><span class="o">.</span><span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;ngc1365&quot;</span><span class="p">)</span>
-<span class="c1"># Construct a query that will get the ra, dec, exposure time, flux, and flux errors </span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Construct a query that will get the ra, dec, exposure time, flux, and flux errors </span>
 <span class="c1">#  from this catalog in the region around this source:</span>
 <span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;SELECT ra, dec, exposure, flux, flux_lower, flux_upper FROM public.chansngcat as cat </span>
 <span class="s2">    where contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,0.1))=1 </span>
@@ -14434,13 +14413,13 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=1</i>
-<table id="table140698485783312" class="table-striped table-bordered table-condensed">
+<table id="table140280585715920" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>exposure</th><th>flux</th><th>flux_lower</th><th>flux_upper</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
 <tr><td>53.4019</td><td>-36.1407</td><td>15500.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
@@ -14462,10 +14441,10 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Note that to browse the columns, use the .table attribute</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Note that to browse the columns, use the .to_table() method</span>
 <span class="n">uv_services</span><span class="o">=</span><span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">keywords</span><span class="o">=</span><span class="s1">&#39;galex&#39;</span><span class="p">,</span> <span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;uv&#39;</span><span class="p">)</span>
 <span class="n">uv_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span><span class="s1">&#39;short_name&#39;</span><span class="p">]</span>
 </pre></div>
@@ -14483,13 +14462,13 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=5</i>
-<table id="table140698400320720" class="table-striped table-bordered table-condensed">
+<table id="table140280589383376" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td></tr>
@@ -14515,12 +14494,12 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">uv_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">uv_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;short_name&#39;</span><span class="p">],</span><span class="sa">b</span><span class="s1">&#39;GALEX&#39;</span><span class="p">)</span>
-    <span class="p">][</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span><span class="s1">&#39;short_name&#39;</span><span class="p">,</span><span class="s1">&#39;access_url&#39;</span><span class="p">]</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;GALEX&#39;</span> <span class="ow">in</span> <span class="n">u</span><span class="o">.</span><span class="n">short_name</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">uv_services</span><span class="p">])</span>
+    <span class="p">][</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;access_url&#39;</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -14536,15 +14515,18 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<i>Table length=0</i>
-<table id="table140698485188688" class="table-striped table-bordered table-condensed">
+<i>Table length=3</i>
+<table id="table140280664366288" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>access_url</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>https://mast.stsci.edu/portal/Mashup/VoQuery.asmx/SiaV1?MISSION=GALEX&amp;</td></tr>
+<tr><td>ivo://mast.stsci/siap/galex_atlas</td><td>GALEX_Atlas</td><td>http://archive.stsci.edu/siap/search.php?id=galex_atlas&amp;</td></tr>
+<tr><td>ivo://nasa.heasarc/skyview/galex</td><td>GALEX</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/vo/sia.pl?survey=galex&amp;</td></tr>
 </table>
 </div>
 
@@ -14563,7 +14545,7 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">galex_stsci</span><span class="o">=</span><span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">uv_services</span> <span class="k">if</span> <span class="s1">&#39;GALEX&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">short_name</span> <span class="ow">and</span> <span class="s1">&#39;stsci&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">ivoid</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -14584,7 +14566,7 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Do an image search for NGC 1365 in the UV service found above</span>
@@ -14605,13 +14587,13 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=174</i>
-<table id="table140698485075344" class="table-striped table-bordered table-condensed">
+<table id="table140280664111184" class="table-striped table-bordered table-condensed">
 <thead><tr><th>collection</th><th>insName</th><th>name</th><th>posLocationRA</th><th>posLocationDec</th><th>contentLength</th><th>naxes</th><th>naxis</th><th>scale</th><th>contentType</th><th>coordFrame</th><th>projection</th><th>crpix</th><th>crval</th><th>cdmatrix</th><th>enrEMBand</th><th>enrUnits</th><th>enrValue</th><th>enrMax</th><th>enrMin</th><th>accessURL</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th></tr></thead>
 <tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06-xd-int_2color_medium_annot.jpg</td><td>53.0653359237686</td><td>-36.3609134371405</td><td>543324</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[158.369 3.98986]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/01-main/0001-img/07-try/qa/FORNAX_MOS06-xd-int_2color_medium_annot.jpg</td></tr>
@@ -14647,7 +14629,7 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  Let&#39;s see what HEASARC offers, and this time limit it to FITS </span>
@@ -14669,17 +14651,17 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=2</i>
-<table id="table140698487815376" class="table-striped table-bordered table-condensed">
+<table id="table140280664910288" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
 <thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>galexnear</td><td>53.40190833</td><td>-36.14065833</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.40190833%2C-36.14065833&amp;survey=galexnear&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1606334295924&amp;return=FITS</td><td>1</td></tr>
-<tr><td>galexfar</td><td>53.40190833</td><td>-36.14065833</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.40190833%2C-36.14065833&amp;survey=galexfar&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1606334296409&amp;return=FITS</td><td>2</td></tr>
+<tr><td>galexnear</td><td>53.40190833</td><td>-36.14065833</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.40190833%2C-36.14065833&amp;survey=galexnear&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1606339993395&amp;return=FITS</td><td>1</td></tr>
+<tr><td>galexfar</td><td>53.40190833</td><td>-36.14065833</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.40190833%2C-36.14065833&amp;survey=galexfar&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1606339993669&amp;return=FITS</td><td>2</td></tr>
 </table>
 </div>
 
@@ -14692,7 +14674,7 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## If you only run this once, you can do it in memory in one line:</span>
@@ -14734,7 +14716,7 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get the FITS file (which is index 0 for the NUV image or index=2 for the FUV image)</span>
@@ -14756,13 +14738,13 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.image.AxesImage at 0x7ff6eb881ad0&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x7f959eb2f6d0&gt;</pre>
 </div>
 
 </div>
@@ -14796,7 +14778,7 @@ Table chanvguide has columns=[&#39;&#34;__row&#34;&#39;, &#39;&#34;__x_ra_dec&#3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_services</span><span class="o">=</span><span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chandra&#39;</span><span class="p">],</span> <span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;x-ray&#39;</span><span class="p">)</span>
@@ -14839,14 +14821,14 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Do an image search for NGC 1365 in the X-ray CDA service found above</span>
 <span class="n">xim_table</span><span class="o">=</span><span class="n">x_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <span class="c1">## Some of these are FITS and some JPEG.  Look at the columns:</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">xim_table</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
-<span class="n">first_fits_image_row</span><span class="o">=</span><span class="n">xim_table</span><span class="p">[</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">xim_table</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;imgfmt&#39;</span><span class="p">],</span><span class="sa">b</span><span class="s1">&#39;image/fits&#39;</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="p">]</span> 
+<span class="n">first_fits_image_row</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xim_table</span> <span class="k">if</span> <span class="s1">&#39;image/fits&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">format</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
 </pre></div>
 
      </div>
@@ -14871,33 +14853,14 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div>
 </div>
 
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">IndexError</span>                                Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-1-136f8e48345d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      3</span> <span class="ansi-red-intense-fg ansi-bold">## Some of these are FITS and some JPEG.  Look at the columns:</span>
-<span class="ansi-green-fg">      4</span> print<span class="ansi-yellow-intense-fg ansi-bold">(</span> xim_table<span class="ansi-yellow-intense-fg ansi-bold">.</span>to_table<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>columns <span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 5</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>first_fits_image_row<span class="ansi-yellow-intense-fg ansi-bold">=</span>xim_table<span class="ansi-yellow-intense-fg ansi-bold">[</span> int<span class="ansi-yellow-intense-fg ansi-bold">(</span>np<span class="ansi-yellow-intense-fg ansi-bold">.</span>where<span class="ansi-yellow-intense-fg ansi-bold">(</span>np<span class="ansi-yellow-intense-fg ansi-bold">.</span>isin<span class="ansi-yellow-intense-fg ansi-bold">(</span>xim_table<span class="ansi-yellow-intense-fg ansi-bold">.</span>to_table<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;imgfmt&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">b&#39;image/fits&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">0</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">0</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-yellow-intense-fg ansi-bold">]</span>
-
-<span class="ansi-red-intense-fg ansi-bold">IndexError</span>: index 0 is out of bounds for axis 0 with size 0</pre>
-</div>
 </div>
 
 </div>
 
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Create an image from the first FITS file (index=1) by downloading:</span>
@@ -14917,16 +14880,55 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(460.0, 560.0)</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Step-3:-Make-a-spectrum:">Step 3: Make a spectrum:<a class="anchor-link" href="#Step-3:-Make-a-spectrum:">&#182;</a></h3><h4 id="Find-what-Chandra-spectral-observations-exist-already-for-this-source.">Find what Chandra spectral observations exist already for this source.<a class="anchor-link" href="#Find-what-Chandra-spectral-observations-exist-already-for-this-source.">&#182;</a></h4><p>Hint: try searching for X-ray spectral data tables using the registry query</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use the TAP protocol to list services that contain X-ray spectral data</span>
@@ -14939,16 +14941,46 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<i>Table length=4</i>
+<table id="table140280676602192" class="table-striped table-bordered table-condensed">
+<thead><tr><th>short_name</th><th>ivoid</th><th>waveband</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>Chandra</td><td>ivo://nasa.heasarc/chanmaster</td><td>x-ray</td></tr>
+<tr><td>INTEGRAL/BSC</td><td>ivo://nasa.heasarc/intbsc</td><td>gamma-ray#x-ray</td></tr>
+<tr><td>NED/SED</td><td>ivo://ned.ipac/sed_data_near_position</td><td>radio#millimeter#infrared#optical#uv#euv#x-ray#gamma-ray</td></tr>
+<tr><td>HEAVENS @ ISDC</td><td>ivo://wfau.roe.ac.uk/heavens_at_isdc/light-curves</td><td>x-ray#gamma-ray</td></tr>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Hint 2: Take a look at what data exist for our candidate, NGC 1365.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">spec_tables</span><span class="o">=</span><span class="n">xsp_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span><span class="n">radius</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14960,16 +14992,45 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<i>Table length=2</i>
+<table id="table140280688238416" class="table-striped table-bordered table-condensed">
+<thead><tr><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_fov</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th>deg</th><th>deg</th><th>mjd</th><th></th><th></th><th>s</th><th></th><th></th><th>mjd</th><th>mjd</th><th>mjd</th><th>mjd</th><th>s</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>meter</th><th>meter</th><th>meter</th><th>meter</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>object</th><th>int32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>13921</td><td>archived</td><td>NGC 1365</td><td>53.40167</td><td>-36.14028</td><td>56029.0272</td><td>ACIS-S</td><td>HETG</td><td>110050</td><td>GO</td><td>Reeves</td><td>56398</td><td>56029.0271643518</td><td>56029.68170909219</td><td>56030.335490666206</td><td>110050.0</td><td>--</td><td>53.40167</td><td>-36.14028</td><td>acisf13921N001_pha2</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/science/ao13/cat7/13921/primary/acisf13921N001_pha2.fits.gz</td><td>12.0</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>13920</td><td>archived</td><td>NGC 1365</td><td>53.40167</td><td>-36.14028</td><td>56026.4065</td><td>ACIS-S</td><td>HETG</td><td>90040</td><td>GO</td><td>Reeves</td><td>56398</td><td>56026.4065162037</td><td>56026.94252101314</td><td>56027.47776322905</td><td>90040.0</td><td>--</td><td>53.40167</td><td>-36.14028</td><td>acisf13920N001_pha2</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/science/ao13/cat7/13920/primary/acisf13920N001_pha2.fits.gz</td><td>12.0</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Hint 3: Download the data to make a spectrum. Note: you might end here and use Xspec to plot and model the spectrum. Or ... you can also try to take a quick look at the spectrum.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  Get it and look at it:</span>
@@ -14987,10 +15048,46 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>ColDefs(
+    name = &#39;SPEC_NUM&#39;; format = &#39;1I&#39;; null = 0
+    name = &#39;TG_M&#39;; format = &#39;1I&#39;; null = 99
+    name = &#39;TG_PART&#39;; format = &#39;1I&#39;
+    name = &#39;TG_SRCID&#39;; format = &#39;1I&#39;; null = 0
+    name = &#39;X&#39;; format = &#39;1E&#39;; unit = &#39;pixel&#39;
+    name = &#39;Y&#39;; format = &#39;1E&#39;; unit = &#39;pixel&#39;
+    name = &#39;CHANNEL&#39;; format = &#39;8192I&#39;; null = 0
+    name = &#39;COUNTS&#39;; format = &#39;8192I&#39;; unit = &#39;count&#39;; null = -1
+    name = &#39;STAT_ERR&#39;; format = &#39;8192E&#39;; unit = &#39;count&#39;
+    name = &#39;BACKGROUND_UP&#39;; format = &#39;8192I&#39;; unit = &#39;count&#39;; null = -1
+    name = &#39;BACKGROUND_DOWN&#39;; format = &#39;8192I&#39;; unit = &#39;count&#39;; null = -1
+    name = &#39;BIN_LO&#39;; format = &#39;8192D&#39;; unit = &#39;angstrom&#39;
+    name = &#39;BIN_HI&#39;; format = &#39;8192D&#39;; unit = &#39;angstrom&#39;
+)
+12
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Or write it to disk</span>
@@ -15015,10 +15112,10 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 <p>Extension: Making a "quick look" spectrum. For our purposes, the 1st order of the HEG grating data would be sufficient.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">j</span><span class="o">=</span><span class="mi">1</span>
@@ -15038,6 +15135,31 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>

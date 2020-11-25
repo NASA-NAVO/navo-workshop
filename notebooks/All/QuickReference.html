@@ -14569,7 +14569,7 @@ Column Names:
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=3</i>
-<table id="table140228570984336" class="table-striped table-bordered table-condensed">
+<table id="table140539405876624" class="table-striped table-bordered table-condensed">
 <thead><tr><th>short_name</th><th>res_title</th><th>res_description</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>MAST CS</td><td>MAST ConeSearch</td><td>All MAST catalog holdings are available via a ConeSearch endpoint. 
@@ -14603,10 +14603,10 @@ all observations made by Swift-XRT within the Stripe82.</td></tr>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m51_pos</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m51&quot;</span><span class="p">)</span>
-
 <span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;conesearch&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="s1">&#39;usno-b&#39;</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">m51_pos</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>  <span class="c1"># Astropy Table is often useful for handling and displaying cone search results.</span>
+<span class="c1"># Astropy Table is useful for displaying cone search results.</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>  
 </pre></div>
 
      </div>
@@ -14628,7 +14628,7 @@ all observations made by Swift-XRT within the Stripe82.</td></tr>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=316</i>
-<table id="table140228570993360" class="table-striped table-bordered table-condensed">
+<table id="table140539407194896" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ObjID</th><th>Zone</th><th>SeqNo</th><th>RA</th><th>DEC</th><th>pmRA</th><th>pmDEC</th><th>e_pmRA</th><th>e_pmDEC</th><th>e_RA</th><th>e_DEC</th><th>Epoch</th><th>B1Mag</th><th>R1s_g</th><th>B2Mag</th><th>B2s_g</th><th>R2Mag</th><th>R2s_g</th><th>NMag</th><th>mag</th><th>B1s_g</th><th>R1Mag</th><th>distance</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>deg</th><th>deg</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>arcsec</th><th>arcsec</th><th>yr</th><th>mag</th><th></th><th>mag</th><th></th><th>mag</th><th></th><th>mag</th><th>mag</th><th></th><th>mag</th><th>arcsec</th></tr></thead>
 <thead><tr><th>int64</th><th>int32</th><th>int32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>int32</th><th>float32</th><th>int32</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>float32</th></tr></thead>
@@ -14696,7 +14696,7 @@ all observations made by Swift-XRT within the Stripe82.</td></tr>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=5</i>
-<table id="table140228584095696" class="table-striped table-bordered table-condensed">
+<table id="table140539407359568" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer</td></tr>
@@ -14753,7 +14753,7 @@ all observations made by Swift-XRT within the Stripe82.</td></tr>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=480</i>
-<table id="table140228565332816" class="table-striped table-bordered table-condensed">
+<table id="table140539395628752" class="table-striped table-bordered table-condensed">
 <thead><tr><th>collection</th><th>insName</th><th>name</th><th>posLocationRA</th><th>posLocationDec</th><th>contentLength</th><th>naxes</th><th>naxis</th><th>scale</th><th>contentType</th><th>coordFrame</th><th>projection</th><th>crpix</th><th>crval</th><th>cdmatrix</th><th>enrEMBand</th><th>enrUnits</th><th>enrValue</th><th>enrMax</th><th>enrMin</th><th>accessURL</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th></tr></thead>
 <tr><td>GALEX</td><td>GALEX</td><td>nga_m83_582_f5_19_158-nd-int.fits.gz</td><td>203.769181415483</td><td>-30.085639855328</td><td>16778475</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/fits</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[16.4257 -33.5407]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR7/pipe/01-vsn/02439-NGA_M83_582_F5_19_158/d/01-main/0007-img/07-try/NGA_M83_582_F5_19_158-nd-int.fits.gz</td></tr>
@@ -14835,7 +14835,7 @@ all observations made by Swift-XRT within the Stripe82.</td></tr>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;/var/folders/t6/zv_75s3156780r5wyknqyb8w0000gn/T/astropy-download-30709-v9mjn6bl&#39;</pre>
+<pre>&#39;/var/folders/t6/zv_75s3156780r5wyknqyb8w0000gn/T/astropy-download-34186-8foxmkiv&#39;</pre>
 </div>
 
 </div>
@@ -14906,7 +14906,7 @@ all observations made by Swift-XRT within the Stripe82.</td></tr>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;/var/folders/t6/zv_75s3156780r5wyknqyb8w0000gn/T/astropy-download-30709-dexkx476&#39;</pre>
+<pre>&#39;/var/folders/t6/zv_75s3156780r5wyknqyb8w0000gn/T/astropy-download-34186-z9qrn2tt&#39;</pre>
 </div>
 
 </div>
@@ -14929,11 +14929,8 @@ all observations made by Swift-XRT within the Stripe82.</td></tr>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;heasarc&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">services</span><span class="p">)</span><span class="si">}</span><span class="s1"> service(s) found.&#39;</span><span class="p">)</span>
-
 <span class="c1"># We found only one service.  Print some info about the service and its tables.</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Title: </span><span class="si">{</span><span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">res_title</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">res_description</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-      
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">tables</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">tables</span>  <span class="c1"># Queries for details of the service&#39;s tables</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span><span class="si">}</span><span class="s1"> tables:&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
@@ -14958,13 +14955,21 @@ all observations made by Swift-XRT within the Stripe82.</td></tr>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>1 service(s) found.
-Title: HEASARC Xamin Catalog Interface
+Table Access Protocol Service
+HEASARC Xamin Catalog Interface
+Short Name: HEASARC
+IVOA Identifier: ivo://nasa.heasarc/services/xamin
+Base URL: https://heasarc.gsfc.nasa.gov/xamin/vo/tap
+
 The HEASARC is NASA domain archive for high-energy and microwave astronomy.
-     The Xamin interface provides access to over 600 observation and object
-     tables.  This includes observation tables for more than 30 missions
-     and observatories and hundreds of derived object tables.
-     Non-high energy tables are included to make it easier
-     for users to compare information.
+The Xamin interface provides access to over 600 observation and object tables.
+This includes observation tables for more than 30 missions and observatories
+and hundreds of derived object tables. Non-high energy tables are included to
+make it easier for users to compare information.
+
+Subjects: HEASARC
+Waveband Coverage:
+None
 999 tables:
 TAP_SCHEMA.columns             - Available columns
 TAP_SCHEMA.key_columns         - Key/Foreign key pairs -- usused
@@ -16084,7 +16089,7 @@ diameter_2                     - Diameter 2 (arcmin)
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=13</i>
-<table id="table140228577915984" class="table-striped table-bordered table-condensed">
+<table id="table140539395076368" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
 <tr><td>204.793</td><td>-30.7432</td><td>4795</td><td>--</td><td>16.7</td><td>--</td></tr>
@@ -16158,7 +16163,7 @@ diameter_2                     - Diameter 2 (arcmin)
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <i>Table length=15</i>
-<table id="table140228670133520" class="table-striped table-bordered table-condensed">
+<table id="table140539407666000" class="table-striped table-bordered table-condensed">
 <thead><tr><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>int32</th><th>str30</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>float64</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th></tr></thead>
