@@ -1,4 +1,4 @@
-name: navo-workshop
+name: navo-env
 channels:
   - conda-forge
 dependencies:
