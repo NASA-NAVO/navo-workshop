@@ -1,4 +1,4 @@
-name: navo-wkshp
+name: navo-env
 channels:
   - conda-forge
 dependencies:

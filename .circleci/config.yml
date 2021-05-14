@@ -49,23 +49,23 @@ setup_conda_win: &setup_conda_win
 make_env: &make_env
   name: Make workshop environment
   command: |
-    conda env create -n navo-wkshp --file environment.yml
-    source activate navo-wkshp
+    conda env create -n navo-env --file environment.yml
+    source activate navo-env
     pip install -r .circleci/dev-requirements.txt
     pip install git+https://github.com/astropy/nbcollection
-    python -m ipykernel install --user --name navo-wkshp
+    python -m ipykernel install --user --name navo-env
 
 execute_nb: &execute_nb
   name: Execute the notebooks
   command: |
-    source activate navo-wkshp
+    source activate navo-env
     which python
     python -m nbcollection execute .
 
 convert_nb: &convert_nb
   name: Convert the notebooks to HTML
   command: |
-    source activate navo-wkshp
+    source activate navo-env
     which python
     python -m nbcollection convert .
 
