@@ -12,6 +12,6 @@ dependencies:
   - aplpy
   - pip
   - pip:
-    - git+https://github.com/astropy/astroquery.git@77986a0657458898cf21ee590cd7dbc81f9f777a
+    - astroquery
     - jupyter-offlinenotebook
     - git+https://github.com/astropy/pyvo.git@c7a2ebad95629932775fb0966a6a79aec23b6dda
