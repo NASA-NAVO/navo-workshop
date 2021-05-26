@@ -68,24 +68,24 @@ And finally, on any platform, to install and activate the navo-workshop
 environment, type:
 
     % conda env create --file environment.yml
-    % conda activate navo-workshop
+    % conda activate navo-env
 
 ## 6. Check Installation
 
 The name of the new conda environment created above should be displayed next
 to the terminal prompt:
 
-    (navo-workshop) %
+    (navo-env) %
 
 Run the `check_env.py` script to check the Python environment and some of the
 required dependencies:
 
-    (navo-workshop) % python check_env.py
+    (navo-env) % python check_env.py
 
 ## 7. Starting Jupyterlab
 From the directory containing the notebooks:
 
-    (navo-workshop) % jupyter lab
+    (navo-env) % jupyter lab
 
 ## Additional Resources
 
