@@ -64,8 +64,7 @@ following:
 
     % cd navo-workshop
 
-And finally, on any platform, to install and activate the navo-workshop
-environment, type:
+And finally, on any platform, to install and activate the conda environment for the workshop, type:
 
     % conda env create --file environment.yml
     % conda activate navo-env
