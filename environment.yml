@@ -1,17 +1,15 @@
 name: navo-env
 channels:
-  - conda-forge
+  - astropy
 dependencies:
-  - python=3.7
+  - python=3.9
   - numpy
   - astropy>=4.1
   - matplotlib
-  - requests
-  - jupyterlab>=2.0
-  - scipy
-  - aplpy
+  - jupyterlab>=3.0
   - pip
   - pip:
     - astroquery
     - jupyter-offlinenotebook
-    - git+https://github.com/astropy/pyvo.git@c7a2ebad95629932775fb0966a6a79aec23b6dda
+    - git+https://github.com/astropy/pyvo.git@c2bf90c16bcfd9c4
+    - aplpy
