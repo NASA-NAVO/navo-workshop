@@ -13,16 +13,11 @@ from distutils.version import LooseVersion
 PKGS = {'jupyter': None,
         'notebook': '6.0',
         'numpy': '1.16',
-        'scipy': '1.4',
         'matplotlib': '3.2',
-        'bs4': None,  # beautifulsoup4
-        'keyring': None,
-        'html5lib': None,
-        'requests': None,
-        'jupyterlab': 2.0,
+        'jupyterlab': 3.0,
         'astropy': '4.1',
-        'pyvo': '1.1',
-        'astroquery': '0.4.2'
+        'pyvo': '1.2dev713',
+        'astroquery': '0.4.3'
         }
 
 
