@@ -12,19 +12,6 @@ the registry to see if there might be another.
 
 ###  PyVO regsearch() keywords argument usage
 
-If you search
-
-```
-vo.regsearch(servicetype='image', keywords='galex')
-```
-
-then you will get *all* results matching 'g', 'a', 'l', 'e', *or* 'x'.  
-
-**Workaround**:  To match a string, make it a list of one string.
-
-```
-vo.regsearch(servicetype='image', keywords=['galex'])
-```
 
 Note also that each string in the list given to PyVO's regsearch() keywords argument is searched in the subject, description, and title of the resource. 
 
