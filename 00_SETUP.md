@@ -1,5 +1,5 @@
 # Configuring the Workshop Environment
-These directions walk through installing miniconda, a lightweight distribution of the python package installer conda, downloading the NAVO workshop material, then creating and testing the custom environment for the  workshop. 
+These directions walk through installing miniconda, a lightweight distribution of the python package installer conda, downloading the NAVO workshop material, then creating and testing the custom environment for the  workshop.
 
 ## 1. Install Miniconda (if needed)
 
@@ -56,7 +56,7 @@ Download the workshop folder using
 ## 5. Create a conda environment for the workshop
 
 *For this workshop, the python version and all needed packages are listed in the
-[environment.yml](https://github.com/NASA-NAVO/navo-workshop/blob/master/environment.yml) file.*
+[environment.yml](https://github.com/NASA-NAVO/navo-workshop/blob/main/environment.yml) file.*
 
 Navigate to the workshop directory in the terminal. For example, if you installed
 the navo-workshop directory in your home directory, you could type the
