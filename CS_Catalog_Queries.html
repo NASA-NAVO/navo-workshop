@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Accessing astronomical catalogs &#8212; NASA-NAVO Workshops Notebooks</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Searching for and retrieving images" href="CS_Image_Access.html" />
+    <link rel="prev" title="NASA-NAVO notebooks" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">NASA-NAVO Workshops Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    NASA-NAVO notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Accessing  astronomical catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_Image_Access.html">
+   Searching for and retrieving images
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_Spectral_Access.html">
+   Retrieve spectra using Simple Spectral Access protocol
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_UCDs.html">
+   UCDs:  working with heterogeneous tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_VO_Tables.html">
+   Creating a VO Table from a CSV file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_I.html">
+   Science User Case - Inspecting a Candidate List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_II.html">
+   Preparing a proposal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_III.html">
+   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="QuickReference.html">
+   0. Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_I.html">
+   Science User Case - Inspecting a Candidate List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_II.html">
+   Preparing a proposal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_III.html">
+   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Catalog_Queries.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Catalog_Queries.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2FCS_Catalog_Queries.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Catalog_Queries.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/CS_Catalog_Queries.ipynb.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Accessing  astronomical catalogs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-cone-search">
+   1. Simple cone search
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-access-protocol-queries">
+   2.  Table Access Protocol queries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tap-services">
+     2.1  TAP services
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expressing-queries-in-adql">
+     2.2 Expressing queries in ADQL
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-use-case">
+     2.3   A use case
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tap-examples-for-a-given-service">
+     2.4  TAP examples for a given service
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-tap-to-cross-correlate-and-combine">
+   3.  Using the TAP to cross-correlate and combine
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-correlating-to-combine-catalogs">
+     3.1  Cross-correlating to combine catalogs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-correlating-with-user-defined-columns">
+     3.2  Cross-correlating with user-defined columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synchronous-versus-asynchronous-queries">
+   4  Synchronous versus asynchronous queries
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Accessing  astronomical catalogs</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Accessing  astronomical catalogs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-cone-search">
+   1. Simple cone search
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-access-protocol-queries">
+   2.  Table Access Protocol queries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tap-services">
+     2.1  TAP services
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expressing-queries-in-adql">
+     2.2 Expressing queries in ADQL
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-use-case">
+     2.3   A use case
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tap-examples-for-a-given-service">
+     2.4  TAP examples for a given service
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-tap-to-cross-correlate-and-combine">
+   3.  Using the TAP to cross-correlate and combine
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-correlating-to-combine-catalogs">
+     3.1  Cross-correlating to combine catalogs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-correlating-with-user-defined-columns">
+     3.2  Cross-correlating with user-defined columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synchronous-versus-asynchronous-queries">
+   4  Synchronous versus asynchronous queries
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="accessing-astronomical-catalogs">
+<h1>Accessing  astronomical catalogs<a class="headerlink" href="#accessing-astronomical-catalogs" title="Permalink to this headline">#</a></h1>
+<p>There are two ways to access astronomical data catalogs that are provided as table data with a VO API.</p>
+<p>First, there is a <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ConeSearch.html">Simple Cone Search (SCS) protocol</a></strong>  used to search a given table with a given position and radius, getting back a table of results.  The interface requires only a position and search radius.</p>
+<p>For more complicated searches, the <strong><a class="reference external" href="http://www.ivoa.net/documents/TAP/">Table Access Protocol</a></strong> (TAP) protocol is  a powerful tool to search any VO table.  Here, we expand on its usage and that of the <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ADQL.html">Astronomical Data Query Language</a></strong> (ADQL) that it uses.</p>
+<ul class="simple">
+<li><p><span class="xref myst">1. Simple cone search</span> queries</p></li>
+<li><p><span class="xref myst">2. Basic Table Access Protocol</span> queries</p></li>
+<li><p><span class="xref myst">  2.1 TAP services</span></p></li>
+<li><p><span class="xref myst">  2.2 Expressing queries in ADQL</span></p></li>
+<li><p><span class="xref myst">  2.3 Use case</span></p></li>
+<li><p><span class="xref myst">  2.4 Examples from a service</span></p></li>
+<li><p><span class="xref myst">  2.5 Synchronous versus Asynchronous Queries</span></p></li>
+<li><p><span class="xref myst">4. Cross-correlating</span> our own catalog with a HEASARC catalog</p></li>
+<li><p><span class="xref myst">5. Combining</span> data from multiple catalogs and cross-correlating</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># suppress some specific warnings that are not important</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;pyvo.utils.xml.*&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Astropy imports</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="kn">import</span> <span class="nn">astropy.constants</span> <span class="k">as</span> <span class="nn">const</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">Planck15</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">votable</span> <span class="k">as</span> <span class="n">apvot</span>
+<span class="kn">import</span> <span class="nn">scipy.integrate</span>
+
+<span class="c1">## Generic VO access routines</span>
+<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="scs1"></a></p>
+</section>
+<section id="simple-cone-search">
+<h1>1. Simple cone search<a class="headerlink" href="#simple-cone-search" title="Permalink to this headline">#</a></h1>
+<p>Starting with a single simple source first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m51&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below, we go through the exercise of how we can figure out the most relevant table. But for now, let’s assume that we know that we want the CFA redshift catalog refered to as ‘zcat’. VO services are listed in a central Registry that can be searched through a <a class="reference external" href="http://vao.stsci.edu/keyword-search/">web interface</a> or using PyVO’s <code class="docutils literal notranslate"><span class="pre">regsearch</span></code>.  We use the registry to find the corresponding cone service and then submit our cone search.</p>
+<p>Registry services are of the following type:</p>
+<ul class="simple">
+<li><p>simple cone search:  “scs”</p></li>
+<li><p>table access protocol:  “tap” or “table”</p></li>
+<li><p>simple image search:  “sia” or “image”</p></li>
+<li><p>simple spectral access: “ssa”</p></li>
+</ul>
+<p>There are a number of things in the registry related to ‘zcat’ so we find the specific one that we want, which is the CFA version:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;scs&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;zcat&#39;</span><span class="p">])</span>
+<span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Supposing that we want the table with the short_name CFAZ, and we want to retrieve the data for all sources within an arcminute of our specified location:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use the one that&#39;s CFAZ. </span>
+<span class="c1">##  Use list comprehension to check each service&#39;s short_name attribute and use the first.</span>
+<span class="n">cfaz_cone_service</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;CFAZ&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">short_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
+
+<span class="c1">## We are searching for sources within 10 arcminutes of M51. </span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cfaz_cone_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">coord</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The SCS is quite straightforward and returns all of the columns of the given table (which can be anything) for the sources in the region queried.</p>
+<p><a id="basic"></a></p>
+</section>
+<section id="table-access-protocol-queries">
+<h1>2.  Table Access Protocol queries<a class="headerlink" href="#table-access-protocol-queries" title="Permalink to this headline">#</a></h1>
+<p>A TAP query is the most powerful way to search a catalog. A Simple Cone Search only allows you to ask for a position and radius, but TAP allows you to do much more, since the available tables contain much more information.</p>
+<section id="tap-services">
+<h2>2.1  TAP services<a class="headerlink" href="#tap-services" title="Permalink to this headline">#</a></h2>
+<p>Many services list a single TAP service in the Registry that can access many catalogs, boosting your efficiency, and letting you add constraints based on any column. This is the power of the TAP!</p>
+<p>Suppose for our example, we want to select bright galaxy candidates but don’t know the coordinates. Therefore, we start from figuring out the best table to query.</p>
+<p>As before, we use the <code class="docutils literal notranslate"><span class="pre">vo.regsearch()</span></code> for a servicetype ‘tap’.  There are a lot of TAP services in the registry, but they are listed slightly differently than cone services.  The metadata on each catalog is usually published in the registry with its cone service, and then the full TAP service is listed as an “auxiliary” service.  So to find a TAP service for a given catalog, we need to add the option <em>includeaux=True</em>. Alternatively, you can start with a single TAP service and then ask it specifically which tables it serves, but for this use case, that is less efficient.</p>
+<p>We’ll first do a registry search for all auxiliary TAP services related to the “CfA” and “redshift”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cfa redshift&#39;</span><span class="p">],</span> <span class="n">includeaux</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tap_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many tables that mention these keywords. Pick some likely looking ones and look at the descriptions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tap_services</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">&quot;cfa&quot;</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">res_title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">and</span> <span class="s2">&quot;magnitude&quot;</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">res_description</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">ivoid</span><span class="si">}</span><span class="s2">:  </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">res_description</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the above information, you can choose the table you want and then use the specified TAP service to query it as described below.</p>
+<p>But first we’ll look at the other way of finding tables to query with TAP:  by starting with the TAP services listed individually in the Registry.  We see above that the HEASARC has the ZCAT, so what else does it have?</p>
+<p>You can find out which tables a TAP serves and then look at the tables descriptions. The last line here sends a query directly to the service to ask it for a list of tables.  (This can take a minute, since there may be a lot of tables.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Here, we&#39;re looking for a specific service, and we don&#39;t need the includeaux option:</span>
+<span class="n">tap_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;heasarc&#39;</span><span class="p">])</span>
+<span class="n">heasarc</span> <span class="o">=</span> <span class="n">tap_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">heasarc_tables</span><span class="o">=</span><span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">tables</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then let’s look for tables matching the terms we’re interested in as above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tablename</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">&quot;redshift&quot;</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="p">[</span><span class="n">tablename</span><span class="p">]</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>  
+        <span class="n">heasarc_tables</span><span class="p">[</span><span class="n">tablename</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Columns=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">k</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="p">[</span><span class="n">tablename</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="p">])))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a number of tables that appear to be useful table for our goal, including the ZCAT,  which contains columns with the information that we need to select a sample of the brightest nearby spiral galaxy candidates.</p>
+<p>Now that we know all the possible column information in the zcat catalog, we can do more than query on position (as in a cone search) but also on any other column (e.g., redshift, bmag, morph_type).  The query has to be expressed in a language called <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ADQL.html">ADQL</a></strong>.</p>
+<p><a id="adql"></a></p>
+</section>
+<section id="expressing-queries-in-adql">
+<h2>2.2 Expressing queries in ADQL<a class="headerlink" href="#expressing-queries-in-adql" title="Permalink to this headline">#</a></h2>
+<p>The basics of ADQL:</p>
+<ul class="simple">
+<li><p><em>SELECT * FROM my.interesting.catalog as cat…</em></p></li>
+</ul>
+<p>says you want all (“*”) columns from the catalog called “my.interesting.catalog”, which you will refer to in the rest of the query by the more compact name of “cat”.</p>
+<p>Instead of returning all columns, you can</p>
+<ul class="simple">
+<li><p><em>SELECT cat.RA, cat.DEC, cat.bmag from catalog as cat…</em></p></li>
+</ul>
+<p>to only return the columns you’re interested in. To use multiple catalogs, your query could start, e.g.,</p>
+<ul class="simple">
+<li><p><em>SELECT c1.RA,c1.DEC,c2.BMAG FROM catalog1 as c1 natural join catalog2 as c2…</em></p></li>
+</ul>
+<p>says that you want to query two catalogs zipped together the “natural” way, i.e., by looking for a common column.</p>
+<p>To select only some rows of the catalog based on the value in a column, you can add:</p>
+<ul class="simple">
+<li><p><em>WHERE cat.bmag &lt; 14</em></p></li>
+</ul>
+<p>says that you want to retrieve only those entries in the catalog whose bmag column has a value less than 14.</p>
+<p>You can also append</p>
+<ul class="simple">
+<li><p><em>ORDER by cat.bmag</em></p></li>
+</ul>
+<p>to return the result sorted ascending by one of the columns, adding <em>DESC</em> to the end for descending.</p>
+<p>A few special functions in the ADQL allow you to query regions:</p>
+<ul class="simple">
+<li><p><em>WHERE contains( point(‘ICRS’, cat.ra, cat.dec), circle(‘ICRS’, 210.5, -6.5, 0.5))=1</em></p></li>
+</ul>
+<p>is how you would ask for any catalog entries whose RA,DEC lie within a circular region defined by RA,DEC 210.5,-6.5 and a radius of 0.5 (all in degrees).  The ‘ICRS’ specifies the coordinate system.</p>
+<p>See the ADQL documentation for more.</p>
+<p><a id="usecase"></a></p>
+</section>
+<section id="a-use-case">
+<h2>2.3   A use case<a class="headerlink" href="#a-use-case" title="Permalink to this headline">#</a></h2>
+<p>Here is a simple ADQL query where we print out the relevant columns for the bright (Bmag &lt;14) sources found within 1 degree of M51 (we will discuss how to define the table and column names below):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##  Inside the format call, the {} are replaced by the given variables in order.</span>
+<span class="c1">##  So this asks for </span>
+<span class="c1">##  rows of public.zcat where that row&#39;s ra and dec (cat.ra and cat.dec from the catalog) </span>
+<span class="c1">##  are within radius 1deg of the given RA and DEC we got above for M51 </span>
+<span class="c1">##  (coord.ra.deg and coord.dec.deg from our variables defined above), and where </span>
+<span class="c1">##  the bmag column is less than 14.  </span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where </span>
+<span class="s2">    contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,1.0))=1 and</span>
+<span class="s2">    cat.bmag &lt; 14</span>
+<span class="s2">    order by cat.radial_velocity_error </span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">coord</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">=</span><span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> 
+<span class="c1">#results = heasarc.search(query)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>See the <strong><a class="reference external" href="https://heasarc.gsfc.nasa.gov/W3Browse/galaxy-catalog/zcat.html">information on the zcat</a></strong> for column information. (We will use the ‘radial_velocity’ column rather than the ‘redshift’ column.) We note that spiral galaxies have morph_type between 1 - 9.</p>
+<p>Therefore, we can generalize the query above to complete our exercise and select the brightest (bmag &lt; 14), nearby (radial velocity &lt; 3000), spiral ( morph_type = 1 - 9) galaxies as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where </span>
+<span class="s2">    cat.bmag &lt; 14 and cat.morph_type between 1 and 9 and cat.Radial_Velocity &lt; 3000 </span>
+<span class="s2">    order by cat.Radial_velocity </span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">coord</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="c1">#results = heasarc.search(query)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="examples"></a></p>
+</section>
+<section id="tap-examples-for-a-given-service">
+<h2>2.4  TAP examples for a given service<a class="headerlink" href="#tap-examples-for-a-given-service" title="Permalink to this headline">#</a></h2>
+<p>Each service may also provide some example queries.  If they do, then you can see them with, e.g.:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">examples</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above, these examples look like a list of dictionaries.  But they are actually a list of objects that can be executed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">examples</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s1">&#39;QUERY&#39;</span><span class="p">])</span>
+    <span class="n">result</span><span class="o">=</span><span class="n">example</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+    <span class="c1">#  Stop at one</span>
+    <span class="k">break</span>
+<span class="n">result</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="cc"></a></p>
+</section>
+</section>
+<section id="using-the-tap-to-cross-correlate-and-combine">
+<h1>3.  Using the TAP to cross-correlate and combine<a class="headerlink" href="#using-the-tap-to-cross-correlate-and-combine" title="Permalink to this headline">#</a></h1>
+<section id="cross-correlating-to-combine-catalogs">
+<h2>3.1  Cross-correlating to combine catalogs<a class="headerlink" href="#cross-correlating-to-combine-catalogs" title="Permalink to this headline">#</a></h2>
+<p>TAP can also be a powerful way to collect a lot of useful information from existing catalogs in one quick step. For this exercise, we will start with a list of sources, uploaded from our own table, and do a ‘cross-correlation’ with the <em>zcat</em> table.</p>
+<p>For more on creating and working with VO tables, see that <a class="reference internal" href="CS_VO_Tables.html"><span class="doc std std-doc">notebook</span></a>.  Here, we just read one in that’s already prepared:</p>
+<p>First, check that this service can handle uploaded tables.   Not all do.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">upload_methods</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The inline method is what PyVO will use.  These take a while, i.e. half a minute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    SELECT cat.ra, cat.dec, Radial_Velocity, bmag, morph_type</span>
+<span class="s2">    FROM zcat cat, tap_upload.mysources mt </span>
+<span class="s2">    WHERE</span>
+<span class="s2">    contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,mt.ra,mt.dec,0.01))=1</span>
+<span class="s2">    and Radial_Velocity &gt; 0</span>
+<span class="s2">    ORDER by cat.ra&quot;&quot;&quot;</span>
+<span class="n">zcattable</span> <span class="o">=</span> <span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">uploads</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;mysources&#39;</span><span class="p">:</span> <span class="s1">&#39;data/my_sources.xml&#39;</span><span class="p">})</span>
+<span class="c1">#zcattable = heasarc.search(query, uploads={&#39;mysources&#39;: &#39;data/my_sources.xml&#39;})</span>
+<span class="n">mytable</span> <span class="o">=</span> <span class="n">zcattable</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">mytable</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Therefore we now have the Bmag, morphological type and radial velocities for all the sources in our list with a single TAP query.</p>
+<p><a id="combo"></a></p>
+</section>
+<section id="cross-correlating-with-user-defined-columns">
+<h2>3.2  Cross-correlating with user-defined columns<a class="headerlink" href="#cross-correlating-with-user-defined-columns" title="Permalink to this headline">#</a></h2>
+<p>Our input list of sources contains galaxy pair candidates that may be interacting with each other. Therefore it would be interesting to know what the morphological type and the Bmagnitude are for the potential companions.</p>
+<p>In this advanced example, we want our search to be physically motivated since the criterion for galaxy interaction depends on the physical separation of the galaxies. Unlike the previous case, the search radius is not a constant, but varies for each candidate by the distance to the source. Specifically, we want to search for companions that are within 50 kpc of the candidate and therefore first need to find the angular diameter distance that corresponds to galaxy’s distance (in our case the radial velocity).</p>
+<p>Therefore, we begin by taking our table of objects and adding an angDdeg column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## The column &#39;radial_velocity&#39; is c*z but doesn&#39;t include the unit; it is km/s</span>
+<span class="c1">## Get the speed of light from astropy.constants and express in km/s</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> 
+<span class="n">redshifts</span> <span class="o">=</span> <span class="n">mytable</span><span class="p">[</span><span class="s1">&#39;radial_velocity&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">c</span> 
+<span class="n">mytable</span><span class="p">[</span><span class="s1">&#39;redshift&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">redshifts</span>
+<span class="n">physdist</span> <span class="o">=</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Mpc</span> <span class="c1"># 50 kpc physical distance</span>
+
+<span class="n">angDdist</span> <span class="o">=</span> <span class="n">Planck15</span><span class="o">.</span><span class="n">angular_diameter_distance</span><span class="p">(</span><span class="n">mytable</span><span class="p">[</span><span class="s1">&#39;redshift&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">angDrad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">physdist</span><span class="o">/</span><span class="n">angDdist</span><span class="p">)</span>
+<span class="n">mytable</span><span class="p">[</span><span class="s1">&#39;angDdeg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">angDrad</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+<span class="n">mytable</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we construct and run a query that uses the new angDdeg column in every row search. Note, we also don’t want to list the original candidates since we know these are in the catalog and we want rather to find any companions. Therefore, we exclude the match if the radial velocities match exactly.</p>
+<p>This time, rather than write the table to disk, we’ll keep it in memory and give Tap.query() a “file-like” object using io.BytesIO().  This can take half a minute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## In memory only, use an IO stream. </span>
+<span class="n">vot_obj</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
+<span class="n">apvot</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">apvot</span><span class="o">.</span><span class="n">from_table</span><span class="p">(</span><span class="n">mytable</span><span class="p">),</span><span class="n">vot_obj</span><span class="p">)</span>
+<span class="c1">## (Reset the &quot;file-like&quot; object to the beginning.)</span>
+<span class="n">vot_obj</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;SELECT mt.ra, mt.dec, cat.ra, cat.dec, cat.Radial_Velocity, cat.morph_type, cat.bmag </span>
+<span class="s2">    FROM zcat cat, tap_upload.mytable mt </span>
+<span class="s2">    WHERE</span>
+<span class="s2">    contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,mt.ra,mt.dec,mt.angDdeg))=1</span>
+<span class="s2">    and cat.Radial_Velocity &gt; 0 and cat.radial_velocity != mt.radial_velocity</span>
+<span class="s2">    ORDER by cat.ra&quot;&quot;&quot;</span>
+<span class="c1">#  Currently broken due to a bug.</span>
+<span class="c1">#mytable2 = heasarc.service.run_async(query, uploads={&#39;mytable&#39;:vot_obj})</span>
+<span class="n">mytable2</span> <span class="o">=</span> <span class="n">heasarc</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">uploads</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;mytable&#39;</span><span class="p">:</span><span class="n">vot_obj</span><span class="p">})</span>
+<span class="n">vot_obj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">mytable2</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Therefore, by adding new information to our original data table, we could cross-correlate with the TAP.  We find that, in our candidate list, there is one true pair of galaxies.</p>
+<p><a id="async"></a></p>
+</section>
+</section>
+<section id="synchronous-versus-asynchronous-queries">
+<h1>4  Synchronous versus asynchronous queries<a class="headerlink" href="#synchronous-versus-asynchronous-queries" title="Permalink to this headline">#</a></h1>
+<p>There is one technical detail about TAP queries that you will need to know.  In the code cells above, there are two commands for sending the query, one of which is commented out.  This is because, with the TAP, there are two ways to send such queries.  The default when you use the <code class="docutils literal notranslate"><span class="pre">search()</span></code> method is to us a synchronous query, which means that the query is sent and the client waits for the response.  For large and complicated queries, this may time out, or you may want to run several in parallel.  So there are other options.</p>
+<p>The method <code class="docutils literal notranslate"><span class="pre">service.run_async()</span></code> uses an asynchronous query, which means that the query is sent, and then (under the hood without you needing to do anything), the method checks for a response.  From your point of view, these methods look the same;  PyVO is doing different things under the hood, but the method will not return until it has your result.</p>
+<p>You need to know about these two methods for a couple of reasons.  First, some services will limit synchronous queries, i.e. they will not necessarily return <em>all</em> the results if there are too many of them.  An asynchronous query should have no such restrictions.  In the case of the HEASARC service that we use above, it does not matter, but you should be aware of this and be in the habit of using the asynchronous queries for complete results after an initial interactive exploration.</p>
+<p>The second reason to be aware of this is that asynchronous queries may be queued by the service, and they can take a lot longer if the service is very busy or the job is very large.  (The synchronous option in this case may either time out, or it may return quickly but with incomplete results.)</p>
+<p>For very large queries, or for submitting queries in parallel, you may wish to use the <code class="docutils literal notranslate"><span class="pre">submit_job()</span></code>, <code class="docutils literal notranslate"><span class="pre">wait()</span></code>, and <code class="docutils literal notranslate"><span class="pre">fetch_results()</span></code> methods to avoid locking up your Python session.  This is described in the <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/dal/index.html#jobs">pyvo documentation</a>.</p>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">NASA-NAVO notebooks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CS_Image_Access.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Searching for and retrieving images</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By NASA-NAVO developers<br/>
+  
+      &copy; Copyright 2018-2022, NASA-NAVO developers.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

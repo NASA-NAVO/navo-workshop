@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>UCDs: working with heterogeneous tables &#8212; NASA-NAVO Workshops Notebooks</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Creating a VO Table from a CSV file" href="CS_VO_Tables.html" />
+    <link rel="prev" title="Retrieve spectra using Simple Spectral Access protocol" href="CS_Spectral_Access.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">NASA-NAVO Workshops Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    NASA-NAVO notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_Catalog_Queries.html">
+   Accessing  astronomical catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_Image_Access.html">
+   Searching for and retrieving images
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_Spectral_Access.html">
+   Retrieve spectra using Simple Spectral Access protocol
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   UCDs:  working with heterogeneous tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_VO_Tables.html">
+   Creating a VO Table from a CSV file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_I.html">
+   Science User Case - Inspecting a Candidate List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_II.html">
+   Preparing a proposal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_III.html">
+   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="QuickReference.html">
+   0. Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_I.html">
+   Science User Case - Inspecting a Candidate List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_II.html">
+   Preparing a proposal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_III.html">
+   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_UCDs.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_UCDs.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2FCS_UCDs.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_UCDs.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/CS_UCDs.ipynb.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>UCDs:  working with heterogeneous tables</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="ucds-working-with-heterogeneous-tables">
+<h1>UCDs:  working with heterogeneous tables<a class="headerlink" href="#ucds-working-with-heterogeneous-tables" title="Permalink to this headline">#</a></h1>
+<p>Suppose you want to do something using a column that you expect to find in a bunch of different tables, like coordinates and time.  It’s a good bet that many if not most of the tables have coordinate columns, but there’s no rule about what they have to be named.</p>
+<p>When doing detailed catalog queries with the TAP, you can obviously examine the columns of every table you’re interested in to find the columns you want.  Then you can hard-code the correct ones into each query for each table and service.</p>
+<p>Or, you can also search for keywords like “ra” or “ascension” in the columns and their descriptions to get the columns you want automatically that way.</p>
+<p>But is there are more generic way?  <a class="reference external" href="http://www.ivoa.net/documents/latest/UCD.html">Unified Content Descriptors (UCDs)</a> are a VO standard that allows table publishers to name their columns whatever they (or their contributors) want but to identify those that contain standard sorts of data.  For example, the RA column could be called “RA”, “ra”, “Right_Ascension”, etc.  But in all cases, a VO service can label the column with its UCD, which is “pos.eq.ra”.  This information is not part of the table but part of the meta-data that the service may provide with that data. Though not required of all VO services, UCDs are commonly provided precisely to make such tasks as identifying the columns of interest easier to automate.</p>
+<p>This is easiest to show by example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generic VO access routines</span>
+<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+
+<span class="c1"># Ignore unimportant warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="s1">&#39;.*Unknown element .*&#39;</span><span class="p">,</span> <span class="n">vo</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">UnknownElementWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at some tables in a little more detail.  Let’s find the Hubble Source Catalog version 3 (HSCv3), assuming there’s only one at MAST.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mast&#39;</span><span class="p">])</span>
+<span class="n">hsc</span><span class="o">=</span><span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;HSCv3&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">res_title</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Title: </span><span class="si">{</span><span class="n">hsc</span><span class="o">.</span><span class="n">res_title</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">hsc</span><span class="o">.</span><span class="n">res_description</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s see what tables are provided by this service for HSCv3.  Note that this is another query to the service:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span> <span class="o">=</span> <span class="n">hsc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">tables</span>  <span class="c1"># Queries for details of the service&#39;s tables</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span><span class="si">}</span><span class="s1"> tables:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s1">30s</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="se">\n</span><span class="s1">----&#39;</span><span class="p">)</span>  <span class="c1"># A more succinct option than t.describe()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at the first 10 columns of the DetailedCatalog table.  Again, note that calling the columns attribute sends another query to the service to ask for the columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span><span class="o">=</span><span class="n">tables</span><span class="p">[</span><span class="s1">&#39;dbo.DetailedCatalog&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="si">}</span><span class="s2">]&quot;</span><span class="si">:</span><span class="s1">30s</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The PyVO method to get the columns will automatically fetch all the meta-data about those columns.  It’s up to the service provider to set them correctly, of course, but in this case, we see that the column named “MatchRA” is identified with the UCD “pos.eq.ra”.</p>
+<p>So if we did not know the exact name used in HSCv3 for the RA, we could do something like this looking for the string “RA”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ra_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;RA&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;ascension&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ra_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But a more general approach is to check for the correct UCD.  It also has the further advantage that it can be used to label columns that should be used for certain purposes when there are multiple possibilities.  For instance, this table has MatchRA and SourceRA.  Let’s check the UCD:</p>
+<p>(Note that the UCD is not required.  If it isn’t there, you get a None type, so code the check carefully)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ra_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span> <span class="ow">and</span> <span class="s1">&#39;pos.eq.ra&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">dec_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span> <span class="ow">and</span> <span class="s1">&#39;pos.eq.dec&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ra_name</span><span class="p">,</span><span class="n">dec_name</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What that shows you is that though there are two columns in this table that give RA information, only one has the ‘pos.eq.ra’ UCD. The documentation for this ought to explain the usage of these columns, and the UCD should not be used as a substitute for understanding the table. But it can be a useful tool.</p>
+<p>In particular, you can use the UCDs to look for catalogs that might have the information you’re interested in. Then you can code the same query to work for different tables (with different column names) in a loop.  This sends a bunch of queries but doesn’t take too long, a minute maybe. (One is particularly slow.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Look for all TAP services with x-ray and optical data</span>
+<span class="n">collection</span><span class="o">=</span><span class="p">{}</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x-ray&#39;</span><span class="p">,</span><span class="s1">&#39;optical&#39;</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="s2">&quot;wfau&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">ivoid</span><span class="p">:</span>  <span class="k">continue</span> <span class="c1">#  These sometimes have issues</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Looking at service from </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">ivoid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">tables</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">tables</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Problem with this service&#39;s tables endpoint.  Continuing to next.&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="c1">#  Find all the tables that have an RA,DEC and a start and end time</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+        <span class="n">names</span><span class="o">=</span><span class="p">{}</span>
+        <span class="k">for</span> <span class="n">ucd</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;pos.eq.ra&#39;</span><span class="p">,</span><span class="s1">&#39;pos.eq.dec&#39;</span><span class="p">,</span><span class="s1">&#39;time.start&#39;</span><span class="p">,</span><span class="s1">&#39;time.end&#39;</span><span class="p">]:</span>
+            <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span> <span class="ow">and</span> <span class="n">ucd</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  
+                <span class="n">names</span><span class="p">[</span><span class="n">ucd</span><span class="p">]</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># use the first that matches</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Table </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has the right columns.  Counting rows matching my time.&quot;</span><span class="p">)</span>
+            <span class="c1">#  For a first look, a very simple query counting rows in a </span>
+            <span class="c1">#  time range of interest:</span>
+            <span class="n">query</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;select count(</span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="s1">&#39;time.start&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) from </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span> \
+                  <span class="sa">f</span><span class="s2">&quot; where </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="s1">&#39;time.start&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &gt; 52000 &quot;</span> 
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">results</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Problem executing query.  Continuing to next.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="c1">#  For this simple query, the result is a single number, the count.  </span>
+            <span class="c1">#   But different services might name the result differently, so </span>
+            <span class="c1">#   don&#39;t assume you know the column  name.  </span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    Found </span><span class="si">{}</span><span class="s2"> results from </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+            <span class="c1">#  If the query above asked for the matching data rather than the</span>
+            <span class="c1">#  count, you might want to collect the results.  </span>
+            <span class="c1">#  Careful:  here we&#39;re assuming the table names are unique</span>
+            <span class="n">collection</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">=</span><span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also use UCDs to look at the results.  Above, we collected just the first 10 rows of the four columns we’re interested in from every catalog that had them.  But these tables still have their original column names.  So the UCDs will still be useful, and PyVO provides a simple routine to convert from UCD to column (field) name.</p>
+<p>Note, however,  that returning the UCDs as part of the result is not mandatory, and some services do not do it.  So you’ll have to check.</p>
+<p>Now we have a collection of rows from different tables with different columns.  In the results object, we have access to a fieldname_with_ucd() function to get the column you want.  Supposing we hadn’t already looked for this in the above loop, let’s now find out which of these tables has a magnitude column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ucd=&#39;pos.eq.ra&#39;</span>
+<span class="n">ucd</span><span class="o">=</span><span class="s1">&#39;phot.mag&#39;</span>
+<span class="k">for</span> <span class="n">tname</span><span class="p">,</span><span class="n">results</span> <span class="ow">in</span> <span class="n">collection</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1">#print(f&quot;On table {tname}&quot;)</span>
+    <span class="c1">#  Sometimes this doesn&#39;t work well, so use a try:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">results</span><span class="o">.</span><span class="n">fieldname_with_ucd</span><span class="p">(</span><span class="n">ucd</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Table </span><span class="si">{</span><span class="n">tname</span><span class="si">}</span><span class="s2"> has the </span><span class="si">{</span><span class="n">ucd</span><span class="si">}</span><span class="s2"> column named </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  (Table </span><span class="si">{</span><span class="n">tname</span><span class="si">}</span><span class="s2"> didn&#39;t find the UCD.)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lastly, if you have a table of results from a TAP query (and if that service includes the UCDs), then you can get data based on UCDs with the getbyucd() method, which simply gets the corresponding element using fieldname_with_ucd():</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">=</span><span class="n">hsc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;select top 10 * from dbo.DetailedCatalog&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">getbyucd</span><span class="p">(</span><span class="s1">&#39;phot.mag&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we can see earlier in this notebook, when we looked at this table’s contents, that there are two phot.mag fields in this table, MagAper2 and MagAuto.  The getbyucd() and fieldname_with_ucd() routines do not currently allow you to handle multiple columns with the same UCD.  The code can help you find what you want, but it depends on the meta data the service defines, and you still must look at the detailed information for each catalog you use to understand what it contains.</p>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="CS_Spectral_Access.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Retrieve spectra using Simple Spectral Access protocol</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CS_VO_Tables.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Creating a VO Table from a CSV file</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By NASA-NAVO developers<br/>
+  
+      &copy; Copyright 2018-2022, NASA-NAVO developers.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

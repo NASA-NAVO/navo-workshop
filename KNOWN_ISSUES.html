@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Known issues and workarounds &#8212; NASA-NAVO Workshops Notebooks</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">NASA-NAVO Workshops Notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    NASA-NAVO notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_Catalog_Queries.html">
+   Accessing  astronomical catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_Image_Access.html">
+   Searching for and retrieving images
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_Spectral_Access.html">
+   Retrieve spectra using Simple Spectral Access protocol
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_UCDs.html">
+   UCDs:  working with heterogeneous tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CS_VO_Tables.html">
+   Creating a VO Table from a CSV file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_I.html">
+   Science User Case - Inspecting a Candidate List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_II.html">
+   Preparing a proposal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise_III.html">
+   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="QuickReference.html">
+   0. Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_I.html">
+   Science User Case - Inspecting a Candidate List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_II.html">
+   Preparing a proposal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UseCase_III.html">
+   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2FKNOWN_ISSUES.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/KNOWN_ISSUES.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/KNOWN_ISSUES.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyvo-regsearch-keywords-argument-usage">
+   PyVO regsearch() keywords argument usage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-and-slicing-registry-results">
+   Indexing and slicing registry results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-descriptions">
+   Table descriptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-byte-strings">
+   Binary/byte strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#galex-service-from-stsci-doesn-t-take-format-specification">
+   Galex service from STScI doesn’t take format specification:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-services-do-not-like-pyvo-s-specification-of-some-parameters">
+   Some services do not like PyVO’s specification of some parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyvo-dal-ssa-ssarecord-make-dataset-filename-writes-suffix-none">
+   pyvo.dal.ssa.SSARecord.make_dataset_filename() writes suffix  ‘None’
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometric-functions-in-tap-services">
+   Geometric functions in TAP services
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#asynchronous-tap-queries">
+   Asynchronous TAP queries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-ucds-unified-content-descriptors">
+   Using UCDs (unified content descriptors)
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Known issues and workarounds</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyvo-regsearch-keywords-argument-usage">
+   PyVO regsearch() keywords argument usage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-and-slicing-registry-results">
+   Indexing and slicing registry results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-descriptions">
+   Table descriptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-byte-strings">
+   Binary/byte strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#galex-service-from-stsci-doesn-t-take-format-specification">
+   Galex service from STScI doesn’t take format specification:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-services-do-not-like-pyvo-s-specification-of-some-parameters">
+   Some services do not like PyVO’s specification of some parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyvo-dal-ssa-ssarecord-make-dataset-filename-writes-suffix-none">
+   pyvo.dal.ssa.SSARecord.make_dataset_filename() writes suffix  ‘None’
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometric-functions-in-tap-services">
+   Geometric functions in TAP services
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#asynchronous-tap-queries">
+   Asynchronous TAP queries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-ucds-unified-content-descriptors">
+   Using UCDs (unified content descriptors)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="known-issues-and-workarounds">
+<h1>Known issues and workarounds<a class="headerlink" href="#known-issues-and-workarounds" title="Permalink to this headline">#</a></h1>
+<p>PyVO is an open development, Astropy-affiliated package that is still under development.
+The VO services themselves are each dependent on their own institutional
+implementations, which can and do vary.  There are therefore sometimes minor incompatibilities,
+and occasionally major ones.  Those we have run into, we document here along with any workarounds
+we find.  But one benefit of the VO is that there may be other services offering the same data with
+a different implementation.  So if a given service is not working for you, try going back to
+the registry to see if there might be another.</p>
+<section id="pyvo-regsearch-keywords-argument-usage">
+<h2>PyVO regsearch() keywords argument usage<a class="headerlink" href="#pyvo-regsearch-keywords-argument-usage" title="Permalink to this headline">#</a></h2>
+<p>Note also that each string in the list given to PyVO’s regsearch() keywords argument is searched in the subject, description, and title of the resource.</p>
+<p><strong>Workaround</strong>:   If you want to search for the ivoid/identity, you have to do this after the fact as described below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sloan&#39;</span><span class="p">])</span>
+
+<span class="n">sdss_gavo_service</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">image_services</span> <span class="k">if</span> <span class="s1">&#39;gavo&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">ivoid</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">sdss_gavo_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Furthermore, in the case of the resource subject metadata (not easily accessible through Python), the match is a partial string match.   In the case of the description and title, the special function <em>ivo_hasword</em> is used, which is a softer matching not currently well documented.   Some experimentation may be required to isolate what you want.</p>
+</section>
+<section id="indexing-and-slicing-registry-results">
+<h2>Indexing and slicing registry results<a class="headerlink" href="#indexing-and-slicing-registry-results" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="o">=</span><span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>returns a RegistryResults object.  This works like a list in that</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>sends a query to the first service, and for easier browsing of the results, you can use an Astropy table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;access_url&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>but this doesn’t give you something callable.  It gives you an Astropy table, not a PyVO object with a search() method.</p>
+<p><strong>Workaround</strong>:  To select a service whose short_name matches, e.g., ‘GALEX’, the easiest way is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span><span class="o">=</span><span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;GALEX&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">short_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which assumes that the first match is the right one.  This also works for a few other attributes set for each service such as ivoid, res_description, res_title.   The result is then callable as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="table-descriptions">
+<h2>Table descriptions<a class="headerlink" href="#table-descriptions" title="Permalink to this headline">#</a></h2>
+<p>Getting the descriptions of the tables available for a TAP service may not return useful information
+in some cases. For other services, the tables metadata is not being parsed correctly,
+another issue we are working on.</p>
+<p><strong>Workaround</strong>:</p>
+<p>This part of data discovery is often still a hands-on task based, for example, on the registry:</p>
+<p><a class="reference external" href="https://vao.stsci.edu/keyword-search/?utf8=%E2%9C%93&amp;search_field=all_fields&amp;q=abellzcat%5D">https://vao.stsci.edu/keyword-search/?utf8=✓&amp;search_field=all_fields&amp;q=abellzcat</a></p>
+</section>
+<section id="binary-byte-strings">
+<h2>Binary/byte strings<a class="headerlink" href="#binary-byte-strings" title="Permalink to this headline">#</a></h2>
+<p>When converting many pvyo results to Astropy tables, using versions of astropy before v4.1,
+string columns are represented as byte strings. This issue has been fixed in astropy 4.1.</p>
+<p><strong>Workaround</strong>:  If using astropy versions before 4.1, use byte strings. For example, use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;short_name&#39;</span><span class="p">],</span> <span class="sa">b</span><span class="s1">&#39;GALEX&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to match strings in the returned tables.</p>
+</section>
+<section id="galex-service-from-stsci-doesn-t-take-format-specification">
+<h2>Galex service from STScI doesn’t take format specification:<a class="headerlink" href="#galex-service-from-stsci-doesn-t-take-format-specification" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">galex_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;galex&#39;</span><span class="p">],</span> <span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>produces lots. But</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">galex_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;galex&#39;</span><span class="p">],</span> <span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;image/fits&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or ‘image/jpeg’ produces nothing.</p>
+<p><strong>Workaround</strong>:  Don’t limit the format and select after the fact.</p>
+</section>
+<section id="some-services-do-not-like-pyvo-s-specification-of-some-parameters">
+<h2>Some services do not like PyVO’s specification of some parameters<a class="headerlink" href="#some-services-do-not-like-pyvo-s-specification-of-some-parameters" title="Permalink to this headline">#</a></h2>
+<p>For example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sloan&#39;</span><span class="p">],</span> <span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;optical&#39;</span><span class="p">)</span>
+
+<span class="n">jhu_dr7_service</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;SDSSDR7&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">short_name</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;jhu&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">ivoid</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">sdss_table</span> <span class="o">=</span> <span class="n">jhu_dr7_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;image/jpeg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will throw an error because the service URL has a format hard-wired.  If you ask for another format, it will error.  Or if you specify no format whatsoever, then PyVO will add (silently) <em>format=’all’</em>, which will then error.</p>
+<p><strong>Workaround</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_table</span> <span class="o">=</span> <span class="n">jhu_dr7_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Specifying <em>format=’’</em> (two single quotes) seems to solve problem.  It is combined with the hard-wired service URL without error, and it stops PyVO from adding format=’all’ and causing an error.</p>
+</section>
+<section id="pyvo-dal-ssa-ssarecord-make-dataset-filename-writes-suffix-none">
+<h2>pyvo.dal.ssa.SSARecord.make_dataset_filename() writes suffix  ‘None’<a class="headerlink" href="#pyvo-dal-ssa-ssarecord-make-dataset-filename-writes-suffix-none" title="Permalink to this headline">#</a></h2>
+<p>If you use this function to make a file name, the result for a FITS file has suffix “.None” instead of of “.fits”.</p>
+<p><strong>Workaround</strong>:  Name it yourself.</p>
+</section>
+<section id="geometric-functions-in-tap-services">
+<h2>Geometric functions in TAP services<a class="headerlink" href="#geometric-functions-in-tap-services" title="Permalink to this headline">#</a></h2>
+<p>Different TAP services have different implementations of the geometric functions in ADQL (See <a class="reference external" href="http://www.ivoa.net/documents/latest/ADQL.html">the ADQL standard</a>.)  These don’t always work.  Circles usually do, intersects and polygons sometimes do not.  Not all services support regions.</p>
+<p><strong>Workaround</strong>:  Various.  Find a different service that provides the same table and try the query there.  Use simpler queries where possible.</p>
+</section>
+<section id="asynchronous-tap-queries">
+<h2>Asynchronous TAP queries<a class="headerlink" href="#asynchronous-tap-queries" title="Permalink to this headline">#</a></h2>
+<p>Each service implements TAP queries differently, whether synchronous or asynchronous.  The latter option is more powerful and therefore more complicated.</p>
+<p><strong>Workaround</strong>: If you run into issues with an asynchronous query, e.g., by using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>then switch to a synchronous query using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(which behind the scenes is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>exposed at the top level with the search() method.)</p>
+<p>But keep in mind that you may not be getting all results.  Contact the service administrators to let them know of the problem.</p>
+<p>If your query contains syntax errors, these are exposed more readily when you use a synchronous search.</p>
+</section>
+<section id="using-ucds-unified-content-descriptors">
+<h2>Using UCDs (unified content descriptors)<a class="headerlink" href="#using-ucds-unified-content-descriptors" title="Permalink to this headline">#</a></h2>
+<p>UCDs are a very useful way to programmatically access the columns you need in tables where they may be named differently.  They can have multiple components separated by a ‘;’ (compound UCDs), and there can be multiple columns tagged with a UCD like “pos.eq.ra” in addition to other UCDs.  The user will still need to understand the different columns to select the one that they want, which may, for example, be “pos.eq.ra;meta.main”.</p>
+<p>But note that this complexity is currently not supported by the PyVO getbyucd() or fieldname_with_ucd() methods.  Note that currently they check only the first UCD and will miss any subsequent matches.</p>
+<p>Furthermore, the defintion of UCDs (http://www.ivoa.net/documents/latest/UCD.html) defines the syntax as ‘words’ separated by semicolons, where the words consist of ‘atoms’ separated by periods.  The UCD for a Right Ascension column is therefore usually ‘pos.eq.ra’.  But the definition of a Simple Cone Search (http://www.ivoa.net/documents/latest/ConeSearch.html) requires that the field used for the position be “POS_EQ_RA_MAIN”.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By NASA-NAVO developers<br/>
+  
+      &copy; Copyright 2018-2022, NASA-NAVO developers.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
