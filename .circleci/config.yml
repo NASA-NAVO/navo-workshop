@@ -62,12 +62,6 @@ execute_nb: &execute_nb
     which python
     python -m nbcollection execute .
 
-convert_nb: &convert_nb
-  name: Convert the notebooks to HTML
-  command: |
-    source activate navo-env
-    which python
-    python -m nbcollection convert .
 
 jobs:
   test_linux:
@@ -80,8 +74,6 @@ jobs:
       - run: *make_env
       - *save_cache
       - run: *execute_nb
-      # TODO: now convert and deploy converted notebooks to gh-pages
-      # - run: *convert_nb  # only do this on linux
 
 
   # test_macos:
