@@ -37,8 +37,7 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'notes']
 
 # MyST-NB configuration
-execution_timeout = 900
-
+nb_execution_timeout = 900
 
 # -- Options for HTML output -------------------------------------------------
 
