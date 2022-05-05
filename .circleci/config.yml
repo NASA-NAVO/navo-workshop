@@ -104,10 +104,35 @@ jobs:
   #    - *save_cache
   #    - run: *execute_nb
 
+
+  build-docs:
+    docker:
+      - image: cimg/python:3.8
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install dependencies
+          command: |
+            pip install -r .binder/requirements.txt -r doc-requirements.txt
+
+      - run:
+          name: Build html
+          no_output_timeout: 30m
+          command: |
+            sphinx-build -b html -D jupyter_execute_notebooks=off . _build/html
+
+      - store_artifacts:
+          path: _build/html
+
+
+
 workflows:
   version: 2
   default:
     jobs:
+      - build-docs
       - test_linux
       # - test_macos
       # - test_windows
