@@ -142,7 +142,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="QuickReference.html">
-   0. Setup
+   Quick Reference
   </a>
  </li>
  <li class="toctree-l1">
@@ -539,6 +539,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Table chansngcat has columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;&quot;distance&quot;&#39;, &#39;agn_flag&#39;, &#39;bii&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;exposure&#39;, &#39;fit_chi_squared&#39;, &#39;fit_dof&#39;, &#39;flux&#39;, &#39;flux_lower&#39;, &#39;flux_upper&#39;, &#39;hardness_ratio_0&#39;, &#39;hardness_ratio_0_error&#39;, &#39;hardness_ratio_1&#39;, &#39;hardness_ratio_1_error&#39;, &#39;hardness_ratio_2&#39;, &#39;hardness_ratio_2_error&#39;, &#39;hubble_type&#39;, &#39;instrument&#39;, &#39;lii&#39;, &#39;log_blackhole_mass&#39;, &#39;log_blackhole_mass_lower&#39;, &#39;log_blackhole_mass_upper&#39;, &#39;log_l_cpt1&#39;, &#39;log_l_cpt2&#39;, &#39;log_l_halpha&#39;, &#39;log_l_halpha_flag&#39;, &#39;log_lx&#39;, &#39;log_lx_lower&#39;, &#39;log_lx_note&#39;, &#39;log_lx_upper&#39;, &#39;name&#39;, &#39;nh&#39;, &#39;nh_from_hr&#39;, &#39;nh_from_hr_lower&#39;, &#39;nh_from_hr_upper&#39;, &#39;nh_gal&#39;, &#39;nh_lower&#39;, &#39;nh_upper&#39;, &#39;nuclear_class&#39;, &#39;obsid&#39;, &#39;off_set&#39;, &#39;ra&#39;, &#39;ref_spectrum&#39;, &#39;sigma&#39;, &#39;sigma_error&#39;, &#39;source_number&#39;, &#39;spectral_index&#39;, &#39;spectral_index_lower&#39;, &#39;spectral_index_upper&#39;, &#39;spectral_model&#39;, &#39;spectral_norm_cpt1&#39;, &#39;spectral_norm_cpt2&#39;, &#39;temperature&#39;, &#39;temperature_lower&#39;, &#39;temperature_upper&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -565,6 +570,13 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1</i>
+<table id="table139950314887584" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ra</th><th>dec</th><th>exposure</th><th>flux</th><th>flux_lower</th><th>flux_upper</th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>53.4019</td><td>-36.1407</td><td>15500.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+</table></div></div></div>
 </div>
 </section>
 <section id="step-2-make-images">
@@ -580,6 +592,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=5</i>
+<table id="table139951188330672" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
+<thead><tr><th>object</th><th>object</th></tr></thead>
+<tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td></tr>
+<tr><td>ivo://irsa.ipac/spitzer/images/lvl</td><td>LVL</td></tr>
+<tr><td>ivo://irsa.ipac/wise/images/z0mgs</td><td>z0MGS</td></tr>
+<tr><td>ivo://mast.stsci/siap/galex_atlas</td><td>GALEX_Atlas</td></tr>
+<tr><td>ivo://nasa.heasarc/skyview/galex</td><td>GALEX</td></tr>
+</table></div></div></div>
 </div>
 <p>The keyword search for ‘galex’ returned a bunch of things that may have mentioned it, but let’s just use the ones that have GALEX as their short name:</p>
 <div class="cell docutils container">
@@ -590,6 +613,15 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=3</i>
+<table id="table139951188350288" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ivoid</th><th>short_name</th><th>access_url</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>https://mast.stsci.edu/portal/Mashup/VoQuery.asmx/SiaV1?MISSION=GALEX&amp;</td></tr>
+<tr><td>ivo://mast.stsci/siap/galex_atlas</td><td>GALEX_Atlas</td><td>http://archive.stsci.edu/siap/search.php?id=galex_atlas&amp;</td></tr>
+<tr><td>ivo://nasa.heasarc/skyview/galex</td><td>GALEX</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/vo/sia.pl?survey=galex&amp;</td></tr>
+</table></div></div></div>
 </div>
 <p>Though using the result as an Astropy Table makes it easier to look at the contents, to call the service itself, we cannot use the row of that table.  You have to use the entry in the service result list itself.  So use the table to browse, but select the list of services itself using the properties that have been defined as attributes such as short_name and ivoid:</p>
 <div class="cell docutils container">
@@ -609,6 +641,33 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=174</i>
+<table id="table139950314649296" class="table-striped table-bordered table-condensed">
+<thead><tr><th>collection</th><th>insname</th><th>name</th><th>trgPosRA</th><th>trgPosDec</th><th>contentlength</th><th>midpoint</th><th>naxes</th><th>naxis</th><th>scale</th><th>contenttype</th><th>coordFrame</th><th>projection</th><th>crpix</th><th>crval</th><th>cdmatrix</th><th>enremband</th><th>enrUnits</th><th>enrValue</th><th>enrMax</th><th>enrMin</th><th>accessURL</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th></tr></thead>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06_0001-xd-int_2color.jpg</td><td>53.0591881871491</td><td>-36.3701328769204</td><td>2230920</td><td>54106.3924016204</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0592 -36.3701]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/00-visits/0001-img/07-try/qa/FORNAX_MOS06_0001-xd-int_2color.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06_0001-xd-int_2color_large.jpg</td><td>53.0591881871491</td><td>-36.3701328769204</td><td>403779</td><td>54106.3924016204</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0592 -36.3701]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/00-visits/0001-img/07-try/qa/FORNAX_MOS06_0001-xd-int_2color_large.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06-xd-int_2color_medium_annot.jpg</td><td>53.0653359237686</td><td>-36.3609134371405</td><td>543324</td><td>54111.8329861111</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0653 -36.3609]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/01-main/0001-img/07-try/qa/FORNAX_MOS06-xd-int_2color_medium_annot.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06-nd-int.fits.gz</td><td>53.0653359237686</td><td>-36.3609134371405</td><td>17443052</td><td>54111.8329861111</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/fits</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0653 -36.3609]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/01-main/0001-img/07-try/FORNAX_MOS06-nd-int.fits.gz</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06_0001-xd-int_2color_medium.jpg</td><td>53.0591881871491</td><td>-36.3701328769204</td><td>481076</td><td>54106.3924016204</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0592 -36.3701]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/00-visits/0001-img/07-try/qa/FORNAX_MOS06_0001-xd-int_2color_medium.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06_0001-xd-int_2color_small.jpg</td><td>53.0591881871491</td><td>-36.3701328769204</td><td>124284</td><td>54106.3924016204</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0592 -36.3701]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/00-visits/0001-img/07-try/qa/FORNAX_MOS06_0001-xd-int_2color_small.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06-xd-int_2color.jpg</td><td>53.0653359237686</td><td>-36.3609134371405</td><td>1799018</td><td>54111.8329861111</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0653 -36.3609]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/01-main/0001-img/07-try/qa/FORNAX_MOS06-xd-int_2color.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06-xd-int_2color_large.jpg</td><td>53.0653359237686</td><td>-36.3609134371405</td><td>347009</td><td>54111.8329861111</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0653 -36.3609]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/01-main/0001-img/07-try/qa/FORNAX_MOS06-xd-int_2color_large.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06-xd-int_2color_medium.jpg</td><td>53.0653359237686</td><td>-36.3609134371405</td><td>460391</td><td>54111.8329861111</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0653 -36.3609]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/01-main/0001-img/07-try/qa/FORNAX_MOS06-xd-int_2color_medium.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>fornax_mos06-xd-int_2color_small.jpg</td><td>53.0653359237686</td><td>-36.3609134371405</td><td>122927</td><td>54111.8329861111</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.0653 -36.3609]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/07090-FORNAX_MOS06/d/01-main/0001-img/07-try/qa/FORNAX_MOS06-xd-int_2color_small.jpg</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>3487526</td><td>54460.4016261574</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_large.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>663752</td><td>54460.4016261574</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_large.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_medium.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>575892</td><td>54460.4016261574</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_medium.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_small.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>134331</td><td>54460.4016261574</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_small.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>3487526</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_large.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>663752</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_large.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_medium.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>575892</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_medium.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_small.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>134331</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_small.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-fd-int.fits.gz</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>1176575</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/fits</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-fd-int.fits.gz</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_medium_annot.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>618132</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_medium_annot.jpg</td></tr>
+</table></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -619,6 +678,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=2</i>
+<table id="table139950314887872" class="table-striped table-bordered table-condensed">
+<thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>galexnear</td><td>53.4019083</td><td>-36.1406583</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.4019083%2C-36.1406583&amp;survey=galexnear&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1652282321661&amp;return=FITS</td><td>1</td></tr>
+<tr><td>galexfar</td><td>53.4019083</td><td>-36.1406583</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.4019083%2C-36.1406583&amp;survey=galexfar&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1652282321904&amp;return=FITS</td><td>2</td></tr>
+</table></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,6 +700,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;astropy.io.fits.hdu.hdulist.HDUList&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,12 +715,30 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f48b8a02400&gt;
+</pre></div>
+</div>
+<img alt="_images/607e18253ffff348148af0e87430bb56c41875c6497eededd70da5221f992a63.png" src="_images/607e18253ffff348148af0e87430bb56c41875c6497eededd70da5221f992a63.png" />
+</div>
 </div>
 <p>Hint: Repeat steps for X-ray image. (Note: Ideally, we would find an image in the Chandra ‘cxc’ catalog)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_services</span><span class="o">=</span><span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chandra&#39;</span><span class="p">],</span> <span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;x-ray&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;short_name&#39;</span><span class="p">,</span><span class="s1">&#39;ivoid&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> short_name                 ivoid                 
+----------- --------------------------------------
+        CDA         ivo://cxc.harvard.edu/cda.siap
+        CSC         ivo://cxc.harvard.edu/csc.siap
+      CSCR1       ivo://cxc.harvard.edu/cscr1.siap
+      CSCR2       ivo://cxc.harvard.edu/cscr2.siap
+    Chandra          ivo://nasa.heasarc/chanmaster
+GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </pre></div>
 </div>
 </div>
@@ -660,6 +750,11 @@ title="Print to PDF"
 <span class="c1">## Some of these are FITS and some JPEG.  Look at the columns:</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">xim_table</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
 <span class="n">first_fits_image_row</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xim_table</span> <span class="k">if</span> <span class="s1">&#39;image/fits&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">format</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TableColumns names=(&#39;name&#39;,&#39;instrument&#39;,&#39;date_obs&#39;,&#39;ra&#39;,&#39;dec&#39;,&#39;naxis&#39;,&#39;imgscale&#39;,&#39;imgfmt&#39;,&#39;accref&#39;,&#39;filesize&#39;,&#39;obsid&#39;)&gt;
 </pre></div>
 </div>
 </div>
@@ -679,6 +774,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(460.0, 560.0)
+</pre></div>
+</div>
+<img alt="_images/068dc0212f24a379772cd1978c3b00ab8fa2003cab7b425a893577f389b39be5.png" src="_images/068dc0212f24a379772cd1978c3b00ab8fa2003cab7b425a893577f389b39be5.png" />
+</div>
 </div>
 </section>
 </section>
@@ -695,6 +796,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=5</i>
+<table id="table139950277917472" class="table-striped table-bordered table-condensed">
+<thead><tr><th>short_name</th><th>ivoid</th><th>waveband</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>Chandra</td><td>ivo://nasa.heasarc/chanmaster</td><td>x-ray</td></tr>
+<tr><td>HITOMASTER</td><td>ivo://nasa.heasarc/hitomaster</td><td>x-ray</td></tr>
+<tr><td>INTEGRAL/BSC</td><td>ivo://nasa.heasarc/intbsc</td><td>gamma-ray#x-ray</td></tr>
+<tr><td>NED/SED</td><td>ivo://ned.ipac/sed_data_near_position</td><td>radio#millimeter#infrared#optical#uv#euv#x-ray#gamma-ray</td></tr>
+<tr><td>HEAVENS @ ISDC</td><td>ivo://wfau.roe.ac.uk/heavens_at_isdc/light-curves</td><td>x-ray#gamma-ray</td></tr>
+</table></div></div></div>
 </div>
 <p>Hint 2: Take a look at what data exist for our candidate, NGC 1365.</p>
 <div class="cell docutils container">
@@ -704,6 +816,15 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=2</i>
+<table id="table139950371773456" class="table-striped table-bordered table-condensed">
+<thead><tr><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>datalink</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_fov</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th>deg</th><th>deg</th><th>mjd</th><th></th><th></th><th>s</th><th></th><th></th><th>mjd</th><th></th><th>mjd</th><th>mjd</th><th>mjd</th><th>s</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>meter</th><th>meter</th><th>meter</th><th>meter</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>13920</td><td>archived</td><td>NGC 1365</td><td>53.40167</td><td>-36.14028</td><td>56026.4065</td><td>ACIS-S</td><td>HETG</td><td>90040</td><td>GO</td><td>Reeves</td><td>56398</td><td>4062:chandra.obs.misc</td><td>56026.4065162037</td><td>--</td><td>--</td><td>90040.0</td><td>--</td><td>53.40167</td><td>-36.14028</td><td>acisf13920N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/13920/primary/acisf13920N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>13921</td><td>archived</td><td>NGC 1365</td><td>53.40167</td><td>-36.14028</td><td>56029.0272</td><td>ACIS-S</td><td>HETG</td><td>110050</td><td>GO</td><td>Reeves</td><td>56398</td><td>4065:chandra.obs.misc</td><td>56029.0271643518</td><td>--</td><td>--</td><td>110050.0</td><td>--</td><td>53.40167</td><td>-36.14028</td><td>acisf13921N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/1/13921/primary/acisf13921N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+</table></div></div></div>
 </div>
 <p>Hint 3: Download the data to make a spectrum. Note: you might end here and use Xspec to plot and model the spectrum. Or … you can also try to take a quick look at the spectrum.</p>
 <div class="cell docutils container">
@@ -716,6 +837,26 @@ title="Print to PDF"
 <span class="n">spectra</span><span class="o">=</span><span class="n">hdu_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">spectra</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">spectra</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ColDefs(
+    name = &#39;SPEC_NUM&#39;; format = &#39;1I&#39;; null = 0
+    name = &#39;TG_M&#39;; format = &#39;1I&#39;; null = 99
+    name = &#39;TG_PART&#39;; format = &#39;1I&#39;
+    name = &#39;TG_SRCID&#39;; format = &#39;1I&#39;; null = 0
+    name = &#39;X&#39;; format = &#39;1E&#39;; unit = &#39;pixel&#39;
+    name = &#39;Y&#39;; format = &#39;1E&#39;; unit = &#39;pixel&#39;
+    name = &#39;CHANNEL&#39;; format = &#39;8192I&#39;; null = 0
+    name = &#39;COUNTS&#39;; format = &#39;8192I&#39;; unit = &#39;count&#39;; null = -1
+    name = &#39;STAT_ERR&#39;; format = &#39;8192E&#39;; unit = &#39;count&#39;
+    name = &#39;BACKGROUND_UP&#39;; format = &#39;8192I&#39;; unit = &#39;count&#39;; null = -1
+    name = &#39;BACKGROUND_DOWN&#39;; format = &#39;8192I&#39;; unit = &#39;count&#39;; null = -1
+    name = &#39;BIN_LO&#39;; format = &#39;8192D&#39;; unit = &#39;angstrom&#39;
+    name = &#39;BIN_HI&#39;; format = &#39;8192D&#39;; unit = &#39;angstrom&#39;
+)
+12
 </pre></div>
 </div>
 </div>
@@ -752,6 +893,9 @@ title="Print to PDF"
         <span class="n">j</span><span class="o">=</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2087b8d49f4c2276955db18850806495db3828b772c40fb0e56806a085bd8e42.png" src="_images/2087b8d49f4c2276955db18850806495db3828b772c40fb0e56806a085bd8e42.png" />
 </div>
 </div>
 <p>This can then be analyzed in your favorite spectral analysis tool, e.g., <a class="reference external" href="https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html">pyXspec</a>.  (For the winter 2018 AAS workshop, we demonstrated this in a <a class="reference external" href="https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.ipynb">notebook</a> that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.)</p>

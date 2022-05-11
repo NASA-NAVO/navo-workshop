@@ -10,7 +10,7 @@ the registry to see if there might be another.
 
 
 
-###  PyVO regsearch() keywords argument usage
+##  PyVO regsearch() keywords argument usage
 
 
 Note also that each string in the list given to PyVO's regsearch() keywords argument is searched in the subject, description, and title of the resource. 
@@ -29,7 +29,7 @@ sdss_gavo_service.search(query)
 Furthermore, in the case of the resource subject metadata (not easily accessible through Python), the match is a partial string match.   In the case of the description and title, the special function *ivo_hasword* is used, which is a softer matching not currently well documented.   Some experimentation may be required to isolate what you want.  
 
 
-### Indexing and slicing registry results
+## Indexing and slicing registry results
 
 ```
 services=vo.regsearch(servicetype='image')
@@ -59,7 +59,7 @@ service.search(...)
 ```
 
 
-###  Table descriptions
+##  Table descriptions
 
 Getting the descriptions of the tables available for a TAP service may not return useful information
 in some cases. For other services, the tables metadata is not being parsed correctly,
@@ -72,7 +72,7 @@ This part of data discovery is often still a hands-on task based, for example, o
 [https://vao.stsci.edu/keyword-search/?utf8=✓&search_field=all_fields&q=abellzcat](https://vao.stsci.edu/keyword-search/?utf8=✓&search_field=all_fields&q=abellzcat])
 
 
-###  Binary/byte strings
+##  Binary/byte strings
 
 When converting many pvyo results to Astropy tables, using versions of astropy before v4.1,
 string columns are represented as byte strings. This issue has been fixed in astropy 4.1.
@@ -87,7 +87,7 @@ to match strings in the returned tables.
 
 
 
-### Galex service from STScI doesn't take format specification:
+## Galex service from STScI doesn't take format specification:
 
 ```
 galex_image_services = vo.regsearch(keywords=['galex'], servicetype='image')[0].search(pos=[0,0], size=0.1)
@@ -106,7 +106,7 @@ or 'image/jpeg' produces nothing.
 
 
 
-###  Some services do not like PyVO's specification of some parameters
+##  Some services do not like PyVO's specification of some parameters
 
 For example,
 
@@ -129,14 +129,14 @@ sdss_table = jhu_dr7_service.search(pos=coords, size=0.1, format='')
 Specifying *format=''* (two single quotes) seems to solve problem.  It is combined with the hard-wired service URL without error, and it stops PyVO from adding format='all' and causing an error.
 
 
-### pyvo.dal.ssa.SSARecord.make_dataset_filename() writes suffix  'None'
+## pyvo.dal.ssa.SSARecord.make_dataset_filename() writes suffix  'None'
 
 If you use this function to make a file name, the result for a FITS file has suffix ".None" instead of of ".fits".
 
 **Workaround**:  Name it yourself.  
 
 
-### Geometric functions in TAP services
+## Geometric functions in TAP services
 
 Different TAP services have different implementations of the geometric functions in ADQL (See [the ADQL standard](http://www.ivoa.net/documents/latest/ADQL.html).)  These don't always work.  Circles usually do, intersects and polygons sometimes do not.  Not all services support regions.  
 
@@ -144,7 +144,7 @@ Different TAP services have different implementations of the geometric functions
 
 
 
-### Asynchronous TAP queries
+## Asynchronous TAP queries
 
 Each service implements TAP queries differently, whether synchronous or asynchronous.  The latter option is more powerful and therefore more complicated.
 
@@ -173,7 +173,7 @@ But keep in mind that you may not be getting all results.  Contact the service a
 If your query contains syntax errors, these are exposed more readily when you use a synchronous search.
 
 
-### Using UCDs (unified content descriptors)
+## Using UCDs (unified content descriptors)
 
 UCDs are a very useful way to programmatically access the columns you need in tables where they may be named differently.  They can have multiple components separated by a ';' (compound UCDs), and there can be multiple columns tagged with a UCD like "pos.eq.ra" in addition to other UCDs.  The user will still need to understand the different columns to select the one that they want, which may, for example, be "pos.eq.ra;meta.main".  
 

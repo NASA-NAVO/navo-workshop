@@ -12,17 +12,8 @@
     "\n",
     "For more complicated searches, the __[Table Access Protocol](http://www.ivoa.net/documents/TAP/)__ (TAP) protocol is  a powerful tool to search any VO table.  Here, we expand on its usage and that of the __[Astronomical Data Query Language](http://www.ivoa.net/documents/latest/ADQL.html)__ (ADQL) that it uses.  \n",
     "\n",
-    "\n",
-    "* [1. Simple cone search](#cone) queries\n",
-    "* [2. Basic Table Access Protocol](#basic) queries\n",
-    "* [  2.1 TAP services](#basic)\n",
-    "* [  2.2 Expressing queries in ADQL](#adql)\n",
-    "* [  2.3 Use case](#usecase)\n",
-    "* [  2.4 Examples from a service](#examples)\n",
-    "* [  2.5 Synchronous versus Asynchronous Queries](#async)\n",
-    "* [4. Cross-correlating](#cc) our own catalog with a HEASARC catalog\n",
-    "* [5. Combining](#combo) data from multiple catalogs and cross-correlating\n",
-    "\n"
+    "<span class=\"tocSkip\"></span>\n",
+    "<div class=\"toc\"><ul class=\"toc-item\"><li><span><a href=\"#Accessing--astronomical-catalogs\" data-toc-modified-id=\"Accessing--astronomical-catalogs-1\">Accessing  astronomical catalogs</a></span><ul class=\"toc-item\"><li><span><a href=\"#1.-Simple-cone-search-example\" data-toc-modified-id=\"1.-Simple-cone-search-example-1.1\">1. Simple cone search example</a></span></li><li><span><a href=\"#2.--Table-Access-Protocol-queries\" data-toc-modified-id=\"2.--Table-Access-Protocol-queries-1.2\">2.  Table Access Protocol queries</a></span><ul class=\"toc-item\"><li><span><a href=\"#2.1--TAP-services\" data-toc-modified-id=\"2.1--TAP-services-1.2.1\">2.1  TAP services</a></span></li><li><span><a href=\"#2.2-Expressing-queries-in-ADQL\" data-toc-modified-id=\"2.2-Expressing-queries-in-ADQL-1.2.2\">2.2 Expressing queries in ADQL</a></span></li><li><span><a href=\"#2.3---A-use-case\" data-toc-modified-id=\"2.3---A-use-case-1.2.3\">2.3   A use case</a></span></li><li><span><a href=\"#2.4--TAP-examples-for-a-given-service\" data-toc-modified-id=\"2.4--TAP-examples-for-a-given-service-1.2.4\">2.4  TAP examples for a given service</a></span></li></ul></li><li><span><a href=\"#3.--Using-the-TAP-to-cross-correlate-and-combine\" data-toc-modified-id=\"3.--Using-the-TAP-to-cross-correlate-and-combine-1.3\">3.  Using the TAP to cross-correlate and combine</a></span><ul class=\"toc-item\"><li><span><a href=\"#3.1--Cross-correlating-to-combine-catalogs\" data-toc-modified-id=\"3.1--Cross-correlating-to-combine-catalogs-1.3.1\">3.1  Cross-correlating to combine catalogs</a></span></li><li><span><a href=\"#3.2--Cross-correlating-with-user-defined-columns\" data-toc-modified-id=\"3.2--Cross-correlating-with-user-defined-columns-1.3.2\">3.2  Cross-correlating with user-defined columns</a></span></li></ul></li><li><span><a href=\"#4--Synchronous-versus-asynchronous-queries\" data-toc-modified-id=\"4--Synchronous-versus-asynchronous-queries-1.4\">4  Synchronous versus asynchronous queries</a></span></li></ul></li></ul></div>"
    ]
   },
   {
@@ -57,7 +48,7 @@
    "source": [
     "<a id=\"scs1\"></a>\n",
     "\n",
-    "# 1. Simple cone search\n"
+    "## 1. Simple cone search\n"
    ]
   },
   {
@@ -137,7 +128,7 @@
    "source": [
     "<a id=\"basic\"></a>\n",
     "\n",
-    "# 2.  Table Access Protocol queries\n",
+    "## 2.  Table Access Protocol queries\n",
     "\n",
     "A TAP query is the most powerful way to search a catalog. A Simple Cone Search only allows you to ask for a position and radius, but TAP allows you to do much more, since the available tables contain much more information. \n",
     "\n"
@@ -147,7 +138,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## 2.1  TAP services\n",
+    "### 2.1  TAP services\n",
     "\n",
     "Many services list a single TAP service in the Registry that can access many catalogs, boosting your efficiency, and letting you add constraints based on any column. This is the power of the TAP!  \n",
     "\n",
@@ -258,7 +249,7 @@
    "source": [
     "<a id=\"adql\"></a>\n",
     "\n",
-    "## 2.2 Expressing queries in ADQL"
+    "### 2.2 Expressing queries in ADQL"
    ]
   },
   {
@@ -310,7 +301,7 @@
     "<a id=\"usecase\"></a>\n",
     "\n",
     "\n",
-    "## 2.3   A use case \n",
+    "### 2.3   A use case \n",
     "\n",
     "Here is a simple ADQL query where we print out the relevant columns for the bright (Bmag <14) sources found within 1 degree of M51 (we will discuss how to define the table and column names below):"
    ]
@@ -344,13 +335,6 @@
     "#results = heasarc.search(query)\n",
     "results.to_table()"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   },
   {
    "cell_type": "markdown",
@@ -399,7 +383,7 @@
     "<a id=\"examples\"></a>\n",
     "\n",
     "\n",
-    "## 2.4  TAP examples for a given service\n",
+    "### 2.4  TAP examples for a given service\n",
     "\n",
     "Each service may also provide some example queries.  If they do, then you can see them with, e.g.:"
    ]
@@ -441,14 +425,14 @@
    "metadata": {},
    "source": [
     "<a id=\"cc\"></a>\n",
-    "# 3.  Using the TAP to cross-correlate and combine"
+    "## 3.  Using the TAP to cross-correlate and combine"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## 3.1  Cross-correlating to combine catalogs\n",
+    "### 3.1  Cross-correlating to combine catalogs\n",
     "\n",
     "TAP can also be a powerful way to collect a lot of useful information from existing catalogs in one quick step. For this exercise, we will start with a list of sources, uploaded from our own table, and do a 'cross-correlation' with the *zcat* table. \n",
     "\n",
@@ -505,7 +489,7 @@
    "source": [
     "<a id=\"combo\"></a>\n",
     "\n",
-    "##  3.2  Cross-correlating with user-defined columns\n",
+    "###  3.2  Cross-correlating with user-defined columns\n",
     "\n",
     "Our input list of sources contains galaxy pair candidates that may be interacting with each other. Therefore it would be interesting to know what the morphological type and the Bmagnitude are for the potential companions. \n",
     "\n",
@@ -580,7 +564,7 @@
     "<a id=\"async\"></a>\n",
     "\n",
     "\n",
-    "# 4  Synchronous versus asynchronous queries\n",
+    "## 4  Synchronous versus asynchronous queries\n",
     "\n",
     "There is one technical detail about TAP queries that you will need to know.  In the code cells above, there are two commands for sending the query, one of which is commented out.  This is because, with the TAP, there are two ways to send such queries.  The default when you use the `search()` method is to us a synchronous query, which means that the query is sent and the client waits for the response.  For large and complicated queries, this may time out, or you may want to run several in parallel.  So there are other options.  \n",
     "\n",
@@ -619,6 +603,24 @@
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
    "version": "3.9.9"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": false,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {
+    "height": "calc(100% - 180px)",
+    "left": "10px",
+    "top": "150px",
+    "width": "345.6px"
+   },
+   "toc_section_display": true,
+   "toc_window_display": true
   },
   "widgets": {
    "state": {},

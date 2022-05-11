@@ -142,7 +142,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="QuickReference.html">
-   0. Setup
+   Quick Reference
   </a>
  </li>
  <li class="toctree-l1">
@@ -433,6 +433,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title: MAST STScI Hubble Source Catalog Version 3 (HSCv3) TAP service
+The MAST Archive at STScI TAP end point for the Hubble Source Catalog, version 3.1. The Hubble Source Catalog (HSC) is designed to optimize science from the Hubble Space Telescope by combining the tens of thousands of visit-based source lists in the Hubble Legacy Archive (HLA) into a single master catalog. The Hubble Source Catalog version 3.1 also provides proper motions for over 400,00 stars in the augmented Sagittarius Window Eclipsing Extrasolar Planet Search (SWEEPS) HST field, and the Hubble Catalog of Variables (HCV).
+
+The Table Access Protocol (TAP) lets you execute queries against our database tables, and inspect various metadata.  Upload is not currently supported.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now let’s see what tables are provided by this service for HSCv3.  Note that this is another query to the service:</p>
 <div class="cell docutils container">
@@ -441,6 +449,75 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span><span class="si">}</span><span class="s1"> tables:&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s1">30s</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="se">\n</span><span class="s1">----&#39;</span><span class="p">)</span>  <span class="c1"># A more succinct option than t.describe()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31 tables:
+dbo.Catalog_ACS_SourceExtractor - This table contains the Source Extractor information for each single filter, detected, ACS source. Source Extractor is described &lt;a href=&quot;http://adsabs.harvard.edu/abs/1996A%26AS..117..393B&quot;&gt;&lt;style=&quot;font-size:medium&quot;&gt;here &lt;/a&gt;.
+----
+dbo.Catalog_Image_MetaData     - This table describes the properties of images and their source lists. The source lists are contained in tables Catalog_WFPC2_SourceExtractor, Catalog_WFC3_SourceExtractor, Catalog_WFPC2_SourceExtractor.
+----
+dbo.Catalog_WFC3_SourceExtractor - This table contains the Source Extractor information for each single filter, detected, WFC3 source. Source Extractor is described &lt;a href=&quot;http://adsabs.harvard.edu/abs/1996A%26AS..117..393B&quot;&gt;&lt;style=&quot;font-size:medium&quot;&gt;here &lt;/a&gt;.
+----
+dbo.Catalog_WFPC2_SourceExtractor - This table contains the Source Extractor information for each single filter, detected, WFPC2 source. Source Extractor is described &lt;a href=&quot;http://adsabs.harvard.edu/abs/1996A%26AS..117..393B&quot;&gt;&lt;style=&quot;font-size:medium&quot;&gt;here &lt;/a&gt;.
+----
+dbo.CloseMatch                 - For each match, this table contains a list of other matches that lie within 1 arcsecond of its position.
+----
+dbo.ClosestMatch               - This table contains the nearest neighbor for each match in table SumPropMagAper2Cat, provided there is a neighbor that lies  with 1 arcsecond of the match.  This table is a subset of table CloseMatch.
+----
+dbo.DetailedCatalog            - This table contains the properties of each source in the Hubble Source Catalog.
+----
+dbo.GroupMembers               - This table lists the white light images that make up each group.
+----
+dbo.Groups                     - This table summarizes properties of the image group, a collection of white light images that each intersect with another image in the group.
+----
+dbo.HLAScience                 - This table describes the Hubble Legacy  Archive images that make up the white light images.
+----
+dbo.ImageMembers               - This table describes  the Hubble Legacy  Archive images that make up the white light images.
+----
+dbo.Images                     - This table summarizes properties of each white light image.
+----
+dbo.ProductMembers             - This table provides the names and IDs of the single exposures that are used in each combined the single filter product image.   The single filter product images are used by the Hubble Source Catalog  to produce white light images for each visit.
+----
+dbo.SourceLinks                - This table links the Hubble Source Catalog tables to the Hubble Legacy Archive Tables (HLAScience, Catalog_Image_Metadata,  ACS_Catalog_SourceExtractor, WFPC2_Catalog_SourceExtractor, and WFC3_Catalog_SourceExtractor). For given  white light source (SourceID)  and single filter image  (ImageName, SciID, or MemberID), there is a unique   single filter source (ObjID). These Hubble Legacy archive tables provide  additional information that is not in the Hubble Source Catalog tables.
+----
+dbo.Sources                    - This table provides properties of each white light source.
+----
+dbo.SourcePositionsView        - This view contains positional information about the individual white light source detections of objects. The information is used to determine the astrometric parameters given in table AstromProperMotions.
+----
+dbo.SumMagAper2cat             - This table provides Source Extractor magaper2 information for each match based on sources with valid Source Extractor aper2 magnitudes. The companion table SumPropMagAper2Cat  contains other summary information for the corresponding match
+----
+dbo.ProperMotionsView          - This table contains proper motion information for the SWEEPS field. The proper motion is determined by a median fit to the source positions given in table AstromSourcePositions as a function of time for right ascension and declination independently and Galactic latitude and longitude independently. The fit is performed using the medfit algorithm in Numerical Recipes (Press et al. 1993). For right ascension (RA) in degrees, the fit for an object has the form
+RA(t) = raMean + 3.6x10^6*pmRA/cos(Dec)*(t-epochMean)/365.25,
+where t is the time expressed as an MJD, epochMean is the mean MJD of the object detections, raMean is the RA at the mean epoch, and pmRA is the RA proper motion in mas/yr. The first step in the medfit algorithm involves a least squares fit. The RA standard errors (1 sigma) of the least squares fit for the position at the mean epoch and the proper motion are designated by raMeanErr and pmRAErr, respectively. They are obtained using equations 34 and 35 of MathWorld. For a given object, medfit minimizes the mean absolute deviation of the RA data values from the fit. These RA directed distance value are given by dRA in table AstromSourcePositions. The mean absolute deviation of the RA data from the fit is designated by pmRADev. Similar fits are made for declination and Galactic longitude and latitude.
+----
+dbo.SumMagAutoCat              - This table provides Source Extractor magauto information for each match based on sources with valid Source Extractor auto magnitudes. The companion table SumPropMagAutoCat  contains other summary information for the corresponding match
+----
+dbo.HCVdetailedView            - This view summarizes detailed properties of each match in the Hubble Catalog of Variables (HCV). This table provides source properties for each match, filter, and epoch of observation.
+----
+dbo.SumPropMagAper2Cat         - This table summarizes properties of each match based on sources with valid Source Extractor aper2 magnitudes. The companion table SumMagAper2Cat  contains the aper2 magnitude information for the match.
+----
+dbo.SumPropMagAutoCat          - This table summarizes properties of each match based on sources with valid Source Extractor auto magnitudes. The companion table SumMagAutoCat  contains the auto magnitude information for the  match.
+----
+dbo.WFPC2PCFrac                - This table lists for each WFPC2 white light source the fraction of exposure time that was covered by the PC chip.
+----
+dbo.XMatchV2                   - For each match, this table contains a list of possible corresponding matches from Version 1 of the HSC.
+----
+dbo.SumMagAper2CatView         - This table provides Source Extractor magaper2 information for each match based on sources with valid Source Extractor aper2 magnitudes. The companion table SumMagAper2CatViewView  contains other summary information for the corresponding match
+----
+dbo.HCVsummaryView             - This table summarizes source properties for a match and filter in the Hubble Catalog of Variables (HCV).
+----
+tap_schema.schemas             - None
+----
+tap_schema.tables              - None
+----
+tap_schema.columns             - None
+----
+tap_schema.keys                - None
+----
+tap_schema.key_columns         - None
+----
 </pre></div>
 </div>
 </div>
@@ -454,6 +531,49 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MatchRA [pos.eq.ra]            - right ascension coordinate of the match position
+MatchDec [pos.eq.dec]          - declination coordinate of the match position
+SourceRA [None]                - right ascension coordinate of the source position
+SourceDec [None]               - declination coordinate of the match position
+D [None]                       - offset distance of source from match position
+DSigma [None]                  - standard deviation of source positions from match position
+AbsCorr [None]                 - Y/N indicator of whether the astrometric correction included alignment with a standard catalog
+XImage [None]                  - x position of source in image coordinates
+YImage [None]                  - y position of source in image coordinates
+ImageName [None]               - Hubble Legacy Archive image name
+Instrument [meta.id;instr]     - instrument name
+Mode [None]                    - observation mode
+Detector [meta.id;instr.det]   - detector
+Aperture [None]                - aperture
+ExposureTime [None]            - exposure time
+StartTime [time.start]         - earliest start time of exposures in image
+StopTime [time.end]            - latest stop time of exposures in image
+StartMJD [time.start]          - modified Julian date (MJD) for earliest start time of exposures in image
+StopMJD [time.end]             - modified Julian date (MJD) for latest start time of exposures in image
+WaveLength [None]              - central wavelength of filter
+Filter [meta.id;instr.filter]  - filter
+TargetName [meta.id;src]       - target name
+FluxAper2 [phot.count]         - aper2 flux
+MagAper2 [phot.mag]            - aper2 magnitude
+MagAuto [phot.mag]             - auto magnitude
+PropID [None]                  - HST proposal ID
+CI [None]                      - normalized concentration index
+KronRadius [None]              - Kron radius
+Flags [None]                   - bit encoded representation of source properties: 0 for point source, 1 for extended source, 4 for saturated source
+HTMID [None]                   - hierarchical triangular index (HTM) identifier
+X [None]                       - x coordinate of source on unit celestial sphere
+Y [None]                       - y coordinate of source on unit celestial sphere
+Z [None]                       - z coordinate of source in unit celestial sphere
+CatID [meta.id]                - unique row identifier
+MatchID [None]                 - match identifier
+MemID [None]                   - source number within match
+SourceID [None]                - white light source identifier
+ImageID [None]                 - white light image identified
+Det [None]                     - Y/N indicator of whether source was detected in the specified filter
+</pre></div>
+</div>
+</div>
 </div>
 <p>The PyVO method to get the columns will automatically fetch all the meta-data about those columns.  It’s up to the service provider to set them correctly, of course, but in this case, we see that the column named “MatchRA” is identified with the UCD “pos.eq.ra”.</p>
 <p>So if we did not know the exact name used in HSCv3 for the RA, we could do something like this looking for the string “RA”:</p>
@@ -461,6 +581,11 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ra_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;RA&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;ascension&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ra_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;MatchRA&#39;, &#39;SourceRA&#39;]
 </pre></div>
 </div>
 </div>
@@ -472,6 +597,11 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ra_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span> <span class="ow">and</span> <span class="s1">&#39;pos.eq.ra&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">dec_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span> <span class="ow">and</span> <span class="s1">&#39;pos.eq.dec&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">ra_name</span><span class="p">,</span><span class="n">dec_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;MatchRA&#39;, &#39;MatchDec&#39;)
 </pre></div>
 </div>
 </div>
@@ -519,6 +649,81 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://cefca/j-plus/j-plus-dr1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 6132 results from ivoa.ObsCore
+
+Looking at service from ivo://cefca/j-plus/j-plus-dr2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 55363 results from ivoa.ObsCore
+
+Looking at service from ivo://cefca/minijpas/minij-pas-pdr201912
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 240 results from ivoa.ObsCore
+
+Looking at service from ivo://cxc.harvard.edu/cda
+    Table ivoa.obsplan has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Problem executing query.  Continuing to next.
+Looking at service from ivo://cxc.harvard.edu/csc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://cxc.harvard.edu/cscr1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table csc1.obi_source has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Problem executing query.  Continuing to next.
+Looking at service from ivo://cxc.harvard.edu/cscr2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://esavo/xmm/tap
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://eso.org/tap_cat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table XQ_100_summary_fits_V1 has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 100 results from XQ_100_summary_fits_V1
+
+Looking at service from ivo://eso.org/tap_obs
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table dbo.raw has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Problem executing query.  Continuing to next.
+    Table dbo.ssa has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 1933809 results from dbo.ssa
+
+    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 3628434 results from ivoa.ObsCore
+
+Looking at service from ivo://jvo/subaru/sxds/v1.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>You can also use UCDs to look at the results.  Above, we collected just the first 10 rows of the four columns we’re interested in from every catalog that had them.  But these tables still have their original column names.  So the UCDs will still be useful, and PyVO provides a simple routine to convert from UCD to column (field) name.</p>
 <p>Note, however,  that returning the UCDs as part of the result is not mandatory, and some services do not do it.  So you’ll have to check.</p>
@@ -541,12 +746,33 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (Table ivoa.ObsCore didn&#39;t find the UCD.)
+  (Table XQ_100_summary_fits_V1 didn&#39;t find the UCD.)
+  (Table dbo.ssa didn&#39;t find the UCD.)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Lastly, if you have a table of results from a TAP query (and if that service includes the UCDs), then you can get data based on UCDs with the getbyucd() method, which simply gets the corresponding element using fieldname_with_ucd():</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">=</span><span class="n">hsc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;select top 10 * from dbo.DetailedCatalog&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">getbyucd</span><span class="p">(</span><span class="s1">&#39;phot.mag&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[21.94580078125,
+ 22.5403995513916,
+ 22.0459003448486,
+ 19.3535995483398,
+ 22.0848999023438,
+ 22.1319999694824,
+ 18.7014007568359,
+ 21.6016998291016,
+ 21.2751007080078,
+ 22.0634002685547]
 </pre></div>
 </div>
 </div>
