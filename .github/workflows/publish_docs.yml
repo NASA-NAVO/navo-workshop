@@ -19,14 +19,14 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Insall dependencies
+      - name: Install dependencies
         run: |
           pip install -r .binder/requirements.txt -r doc-requirements.txt
 
       - name: Build the notebooks
         run: |
-          sphinx-build -b html -D jupyter_execute_notebooks=off . _build/html
-
+          # Run only the notebooks that don't have outputs included
+          sphinx-build -b html -D jupyter_execute_notebooks=auto . _build/html
 
       - name: GitHub Pages action
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
