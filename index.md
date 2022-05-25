@@ -21,3 +21,14 @@ UseCase_II
 UseCase_III
 ```
 
+
+## Additional resources
+
+```{toctree}
+---
+maxdepth: 1
+---
+
+00_SETUP
+KNOWN_ISSUES
+```
