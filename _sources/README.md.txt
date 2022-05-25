@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # NASA-NAVO Notebooks
 
 These notebooks demonstrate how to access NASA data through
@@ -7,7 +11,7 @@ discover what is available and access it in standard ways.
 
 They depend on the Astropy-affiliated Python package PyVO.
 
-Please be sure your laptop is properly configured before the workshop by following the [installation and setup instructions](https://github.com/NASA-NAVO/notebooks/blob/main/00_SETUP.md)
+Please be sure your laptop is properly configured before the workshop by following the [installation and setup instructions]https://nasa-navo.github.io/navo-workshop/00_SETUP.html)
 
 This could take as long as one hour depending on your current
 configuration and internet speeds.
