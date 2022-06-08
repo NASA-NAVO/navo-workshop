@@ -19,6 +19,8 @@ jobs:
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
     strategy:
+      # Don't cancel jobs if one is failing
+      fail-fast: false
       matrix:
         include:
 
