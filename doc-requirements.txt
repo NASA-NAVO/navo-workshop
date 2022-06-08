@@ -1,4 +1,7 @@
+# Doc and testing requirements
 sphinx
 myst-nb>=0.14
 sphinx-book-theme
 sphinx-copybutton
+nbval
+pytest
