@@ -57,10 +57,10 @@ jobs:
     - name: Execute notebooks as testing
       run: tox ${{ matrix.toxargs }} -e ${{ matrix.toxenv }} -- ${{ matrix.toxposargs }}
 
-    - name: GitHub Pages action
-      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-      uses: peaceiris/actions-gh-pages@v3.6.1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html/
-        commit_message: ${{ github.event.head_commit.message }}
+#    - name: GitHub Pages action
+#      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+#      uses: peaceiris/actions-gh-pages@v3.6.1
+#      with:
+#        github_token: ${{ secrets.GITHUB_TOKEN }}
+#        publish_dir: ./_build/html/
+#        commit_message: ${{ github.event.head_commit.message }}
