@@ -44,29 +44,41 @@ jobs:
             python: '3.9'
             toxenv: py39-test
 
-          - name: Building HTML
-            os: ubuntu-latest
-            python: '3.9'
-            toxenv: py39-buildhtml
-
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python }}
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
 
-    - name: Install dependencies
-      run: python -m pip install --upgrade tox
+      - name: Install dependencies
+        run: python -m pip install --upgrade tox
 
-    - name: Execute notebooks as testing
-      run: tox ${{ matrix.toxargs }} -e ${{ matrix.toxenv }} -- ${{ matrix.toxposargs }}
+      - name: Execute notebooks as testing
+        run: tox ${{ matrix.toxargs }} -e ${{ matrix.toxenv }} -- ${{ matrix.toxposargs }}
 
-#    - name: GitHub Pages action
-#      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-#      uses: peaceiris/actions-gh-pages@v3.6.1
-#      with:
-#        github_token: ${{ secrets.GITHUB_TOKEN }}
-#        publish_dir: ./_build/html/
-#        commit_message: ${{ github.event.head_commit.message }}
+  publish:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    name: Publish HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade tox
+
+      - name: Execute notebooks as testing
+        run: tox -e py39-buildhtml
+
+      - name: Publish
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/html/
+          commit_message: ${{ github.event.head_commit.message }}
