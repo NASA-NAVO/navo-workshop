@@ -4,22 +4,20 @@ jobs:
 
   build-docs:
     docker:
-      - image: cimg/python:3.8
+      - image: cimg/python:3.9
 
     steps:
       - checkout
 
       - run:
-          name: Install dependencies
-          command: |
-            pip install -r .binder/requirements.txt -r doc-requirements.txt
+          name: Install CI dependencies
+          command: python -m pip install --upgrade tox
 
       - run:
-          name: Build html
+          name: Build HTML rendering of notebooks
           no_output_timeout: 30m
           command: |
-            # Run only the notebooks that don't have outputs included, more thorough testing should be done in other jobs
-            sphinx-build -b html -D nb_execution_mode=auto . _build/html
+            python -m tox -e py39-buildhtml --
 
       - store_artifacts:
           path: _build/html

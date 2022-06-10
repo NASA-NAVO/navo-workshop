@@ -1,0 +1,79 @@
+name: Testing notebooks and publish HTML
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 5 * * 1'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      # Don't cancel jobs if one is failing
+      fail-fast: false
+      matrix:
+        include:
+
+          - name: Linux
+            os: ubuntu-latest
+            python: '3.9'
+            toxenv: py39-test-oldestdeps
+
+          - name: OSX
+            os: macos-latest
+            python: '3.9'
+            toxenv: py39-test
+
+          - name: Windows
+            os: windows-latest
+            python: '3.9'
+            toxenv: py39-test
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade tox
+
+      - name: Execute notebooks as testing
+        run: tox ${{ matrix.toxargs }} -e ${{ matrix.toxenv }} -- ${{ matrix.toxposargs }}
+
+  publish:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    name: Publish HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade tox
+
+      - name: Execute notebooks as testing
+        run: tox -e py39-buildhtml
+
+      - name: Publish
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/html/
+          commit_message: ${{ github.event.head_commit.message }}
