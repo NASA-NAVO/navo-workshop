@@ -6,22 +6,23 @@ Usage::
   % python check_env.py
 
 """
-from distutils.version import LooseVersion
+from packaging.version import Version
 
 # NOTE: Update minversion values as needed.
+# Set both min and max versions to avoid ambiguity.
 # This should match environment.yml file.
 PKGS = {'jupyter': None,
-        'notebook': '6.0',
-        'numpy': '1.16',
-        'matplotlib': '3.2',
-        'jupyterlab': 3.0,
-        'astropy': '4.1',
-        'pyvo': '1.2dev713',
-        'astroquery': '0.4.3'
+        'notebook': ('6.0', None),
+        'numpy': ('1.16', None),
+        'matplotlib': ('3.2', None),
+        'jupyterlab': ('3.0', None),
+        'astropy': ('4.1', None),
+        'pyvo': ('1.2', '1.3'),
+        'astroquery': ('0.4.3', None)
         }
 
 
-def check_package(package_name, minimum_version=None, verbose=True):
+def check_package(package_name, versions=None, verbose=True):
     errors = False
     try:
         pkg = __import__(package_name)
@@ -35,21 +36,30 @@ def check_package(package_name, minimum_version=None, verbose=True):
             installed_version = pkg.__VERSION__
         else:
             installed_version = pkg.__version__
-        if (minimum_version is not None and
-                LooseVersion(installed_version) <
-                LooseVersion(str(minimum_version))):
-            print(f'Error: {package_name} version {minimum_version} or '
-                  f'later is required, you have version {installed_version}')
-            errors = True
+        if versions is not None:
+            if (versions[0] is not None
+                    and Version(installed_version) < Version(versions[0])):
+
+                print(f'Error: {package_name} version {versions[0]} or '
+                      f'later is required, you have version {installed_version}')
+                errors = True
+            if (versions[1] is not None
+                    and Version(versions[1]) < Version(installed_version)):
+
+                print(f'Error: {package_name} version {versions[1]} or '
+                      f'older is required, you have version {installed_version}')
+                errors = True
         if not errors and verbose:
             print('Found', package_name, installed_version)
+
     return errors
 
 
 def run_checks():
     errors = []
-    for package_name, min_version in PKGS.items():
-        errors.append(check_package(package_name, minimum_version=min_version))
+    for package_name in PKGS:
+        errors.append(check_package(package_name, versions=PKGS[package_name]))
+
     if any(errors):
         print('\nThere are errors that you must resolve before running the '
               'tutorials.')
