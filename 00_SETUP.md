@@ -9,9 +9,11 @@ on, and a small number of other useful packages, including pip, zlib and a few
 others. Note, though, that if you have either Miniconda or the full Anaconda
 already installed, you can skip to the next step.*
 
-Check if Miniconda is already installed.
+Check if Miniconda is already installed:
 
-    % conda info
+```console
+conda info
+```
 
 If Miniconda is not already installed, follow these instructions for your
 operating system: https://docs.conda.io/en/latest/miniconda.html
@@ -29,7 +31,9 @@ Python and/or packages installed in them. For this workshop, we will configure t
 
 On Mac or Linux, the `bash` shell will handle the conda commands.  Open your terminal and verify your shell environment:
 
-    % echo $SHELL
+```console
+echo $SHELL
+```
 
 If the output text does not contain `bash`, switch to the bash shell before
 being able to run anything related to conda.
@@ -40,18 +44,24 @@ On Windows, open the `Anaconda Prompt` terminal app.
 
 At the prompt opened in the previous step, enter this command to see whether git is already installed and accessible to this shell:
 
-    % git --version
+```console
+git --version
+```
 
 If the output shows a git version, proceed to the next step.  Otherwise install git by entering the following command and following the prompts:
 
-    % conda install git
+```console
+conda install git
+```
 
 ## 4. Clone This Repository
 
 Download the workshop folder using
 [git](https://help.github.com/articles/set-up-git/):
 
-    % git clone https://github.com/NASA-NAVO/navo-workshop
+```console
+git clone https://github.com/NASA-NAVO/navo-workshop
+```
 
 ## 5. Create a conda environment for the workshop
 
@@ -62,30 +72,39 @@ Navigate to the workshop directory in the terminal. For example, if you installe
 the navo-workshop directory in your home directory, you could type the
 following:
 
-    % cd navo-workshop
+```console
+cd navo-workshop
+```
 
 And finally, on any platform, to install and activate the conda environment for the workshop, type:
 
-    % conda env create --file environment.yml
-    % conda activate navo-env
+```console
+conda env create --file environment.yml
+conda activate navo-env
+```
 
 ## 6. Check Installation
 
 The name of the new conda environment created above should be displayed next
 to the terminal prompt:
 
-    (navo-env) %
+```console
+(navo-env)
+```
 
 Run the `check_env.py` script to check the Python environment and some of the
 required dependencies:
 
-    (navo-env) % python check_env.py
+```console
+python check_env.py
+```
 
 ## 7. Starting Jupyterlab
 From the directory containing the notebooks:
 
-    (navo-env) % jupyter lab
-
+```console
+jupyter lab
+```
 ## Additional Resources
 
 - [Set up git](https://help.github.com/articles/set-up-git/)
