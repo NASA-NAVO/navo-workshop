@@ -1,4 +1,4 @@
-name: Build & publish documentation to GitHub Pages
+name: Testing notebooks and publish HTML
 
 on:
   push:
@@ -23,11 +23,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-
-          - name: dev dependencies
-            os: ubuntu-latest
-            python: '3.10'
-            toxenv: py310-test-devdeps
 
           - name: Linux
             os: ubuntu-latest
