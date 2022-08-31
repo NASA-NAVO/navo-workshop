@@ -4,7 +4,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9
-  - numpy
+  - numpy>=1.18
   - astropy>=5.0
   - astroquery>=0.4.4
   - matplotlib>=3.1
