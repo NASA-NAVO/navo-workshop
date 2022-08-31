@@ -90,7 +90,7 @@
    "source": [
     "## 3. Filter the NED results.\n",
     "\n",
-    "The results from NED will include galaxies, but also other kinds of objects. Print the 'Type' column to see the full range of classifications. Next, print the 'Type' of just the first source in the table, in order to determine its data type (since Python 3 distinguishes between strings and byte strings). Finally, use the data type information to filter the results so that we only keep the galaxies in the list."
+    "The results from NED will include galaxies, but also other kinds of objects (e.g. galaxy clusters, galaxy groups). Print the 'Type' column to see the full range of classifications and filter the results so that we only keep the galaxies in the list."
    ]
   },
   {
@@ -105,24 +105,14 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Let's see whether we are dealing with strings or byte strings\n",
-    "objects_in_paper[0]['Type']"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
    "metadata": {
     "scrolled": true,
     "tags": []
    },
    "outputs": [],
    "source": [
-    "# Recast the Type column as strings, to avoid any issues with byte strings\n",
-    "galaxies = objects_in_paper[np.array(objects_in_paper['Type'], dtype='str') == 'G']\n",
+    "# Keep only the galaxies from the list\n",
+    "galaxies = objects_in_paper[np.array(objects_in_paper['Type']) == 'G']\n",
     "\n",
     "galaxies.show_in_notebook()"
    ]
@@ -692,7 +682,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.9.9"
+   "version": "3.8.2"
   },
   "toc": {
    "base_numbering": 1,
