@@ -2,5 +2,5 @@ matplotlib
 numpy
 astropy
 astroquery
-pyvo
+pyvo>=1.4
 scipy
