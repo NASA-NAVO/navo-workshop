@@ -22,8 +22,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -35,12 +34,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Creating a VO Table from a CSV file" href="CS_VO_Tables.html" />
@@ -466,6 +460,16 @@ The Table Access Protocol (TAP) lets you execute queries against our database ta
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31 tables:
+tap_schema.schemas             - None
+----
+tap_schema.tables              - None
+----
+tap_schema.columns             - None
+----
+tap_schema.keys                - None
+----
+tap_schema.key_columns         - None
+----
 dbo.Catalog_ACS_SourceExtractor - This table contains the Source Extractor information for each single filter, detected, ACS source. Source Extractor is described &lt;a href=&quot;http://adsabs.harvard.edu/abs/1996A%26AS..117..393B&quot;&gt;&lt;style=&quot;font-size:medium&quot;&gt;here &lt;/a&gt;.
 ----
 dbo.Catalog_Image_MetaData     - This table describes the properties of images and their source lists. The source lists are contained in tables Catalog_WFPC2_SourceExtractor, Catalog_WFC3_SourceExtractor, Catalog_WFPC2_SourceExtractor.
@@ -520,16 +524,6 @@ dbo.SumMagAper2CatView         - This table provides Source Extractor magaper2 i
 ----
 dbo.HCVsummaryView             - This table summarizes source properties for a match and filter in the Hubble Catalog of Variables (HCV).
 ----
-tap_schema.schemas             - None
-----
-tap_schema.tables              - None
-----
-tap_schema.columns             - None
-----
-tap_schema.keys                - None
-----
-tap_schema.key_columns         - None
-----
 </pre></div>
 </div>
 </div>
@@ -544,8 +538,8 @@ tap_schema.key_columns         - None
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MatchRA [pos.eq.ra]            - right ascension coordinate of the match position
-MatchDec [pos.eq.dec]          - declination coordinate of the match position
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MatchRA [pos.eq.ra;meta.main]  - right ascension coordinate of the match position
+MatchDec [pos.eq.dec;meta.main] - declination coordinate of the match position
 SourceRA [None]                - right ascension coordinate of the source position
 SourceDec [None]               - declination coordinate of the match position
 D [None]                       - offset distance of source from match position
@@ -577,7 +571,7 @@ HTMID [None]                   - hierarchical triangular index (HTM) identifier
 X [None]                       - x coordinate of source on unit celestial sphere
 Y [None]                       - y coordinate of source on unit celestial sphere
 Z [None]                       - z coordinate of source in unit celestial sphere
-CatID [meta.id]                - unique row identifier
+CatID [meta.id;meta.main]      - unique row identifier
 MatchID [None]                 - match identifier
 MemID [None]                   - source number within match
 SourceID [None]                - white light source identifier
@@ -682,12 +676,12 @@ Looking at service from ivo://cefca/minijpas/minij-pas-pdr201912
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 240 results from ivoa.ObsCore
+    Found 240 results from ivoa.ObsCore
 
 Looking at service from ivo://cxc.harvard.edu/cda
-    Table ivoa.obsplan has the right columns.  Counting rows matching my time.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.obsplan has the right columns.  Counting rows matching my time.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Problem executing query.  Continuing to next.
@@ -710,10 +704,20 @@ Looking at service from ivo://cxc.harvard.edu/cscr2
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://eso.org/tap_cat
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table XQ_100_summary_fits_V1 has the right columns.  Counting rows matching my time.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: W02: None:10263:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10310:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10489:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10536:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10583:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10630:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10677:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10760:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10807:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
+WARNING: W02: None:10854:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 100 results from XQ_100_summary_fits_V1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table XQ_100_summary_fits_V1 has the right columns.  Counting rows matching my time.
+    Found 100 results from XQ_100_summary_fits_V1
 
 Looking at service from ivo://eso.org/tap_obs
 </pre></div>
@@ -725,14 +729,18 @@ Looking at service from ivo://eso.org/tap_obs
     Table dbo.ssa has the right columns.  Counting rows matching my time.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 1954456 results from dbo.ssa
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 1962563 results from dbo.ssa
 
     Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 3653293 results from ivoa.ObsCore
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 3684153 results from ivoa.ObsCore
 
 Looking at service from ivo://jvo/subaru/sxds/v1.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://xcatdb/3xmmdr5/tap
+Problem with this service&#39;s tables endpoint.  Continuing to next.
 </pre></div>
 </div>
 </div>
