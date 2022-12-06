@@ -586,52 +586,34 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write some code to perform a registry search using </span>
-<span class="c1"># appropriate keywords. Also apply the includeaux=True </span>
-<span class="c1"># option to return the maximum number of service: </span>
+<span class="c1"># appropriate keywords and specify the service type. </span>
+<span class="c1"># Also apply the includeaux=True option to return </span>
+<span class="c1"># the maximum number of services: </span>
 
 
-<span class="c1"># Print the size of the output table: </span>
+<span class="c1"># Print the size of the output table and get a summary of the sources:</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Note: The includeaux=True includes auxiliary services.</p>
-<p>This returns &gt; 300 resources. However, we know that we want to eventually access the search using additional column information (i.e., beyond RA and Dec, which is all that Simple Cone Search returns). Therefore we need the service to be a TAP service, specifically.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Similar to above, this time specify the servicetype</span>
-<span class="c1"># to use the table access protocol: </span>
-
-<span class="c1"># Again, print the length of the output table: </span>
-
-<span class="c1"># Print the table: </span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note that this is now &gt;100 services, but the data within the columns will be accessible for our purposes.</p>
+<p>Because we specified the service type, this returns only the TAP services for each of the avalible resorces matching our search criteria.  So, the ‘interfaces’ column will only show TAP service as an avalible service, even if other services are avalible from the same resource. We know we need the service to be a TAP service since we know that we want to eventually access the search using additional column information (i.e., beyond RA and Dec, which is all that Simple Cone Search returns).</p>
 <section id="next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">
 <h4>Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram.<a class="headerlink" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram" title="Permalink to this headline">#</a></h4>
-<p>For each resource element (i.e. row in the table above), there are useful attributes, which are <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource">described here</a>:</p>
-<p>Based on these, we can create a search based on keywords in the description.</p>
+<p>We can re-run the registry search, but further restrict the results by column UCD.  We want tables that have magnitude columns; the most basic UCD to describe a magnitude column is phot.mag</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function that searches the table descriptions</span>
-<span class="c1"># for specific keywords.</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the function above to output the table indices that </span>
-<span class="c1"># use the keywords &quot;magnitude&quot; and &quot;color&quot;. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform another registry search, this time searching</span>
+<span class="c1"># tables that have at least 1 magnitude column. </span>
+<span class="c1"># Note: &#39;%&#39; serves as a wild card when searching columns</span>
 
-<span class="c1"># How many tables do you get?</span>
+<span class="c1"># How many tables do you get? </span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Note: the ‘%’ serves as a wild card when searching by UCD</p>
+<p>The IOVA standard enables resources to be as sepecific as they would like when defining the UCD of columns.  For example, ‘phot.mag’ and ‘phot.mag;em.opt.V’ can both be used to describe a column containing the V magnitudes of objects.  If a resource uses the latter to describe a column, a search using ‘phot.mag’ will not return that resource.  A wild card would need to be used or the exact column UCD. The UCD search requires an exact match for a resource to be returned, so using the wild card will make it easier to discover a wider variety of resources.</p>
 <p>So using this we can reduce the matched tables to ones that are a bit more catered to our experiment. Note, that there is redundancy in some resources since these are available via multiple services and/or publishers. Therefore a bit more cleaning can be done to provide only the unique matches.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -642,12 +624,13 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat the steps above but this time make sure that you </span>
-<span class="c1"># output only unique tables. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function that searches the result and only</span>
+<span class="c1"># outputs unique tables</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can read more information about the results we found.  For each resource element (i.e. row in the table above), there are useful attributes, which are <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource">described here</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output the descriptions of the resulting matches:</span>
@@ -655,7 +638,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><i> RESULT: Based on these, the first one (by Eichhorn et al) looks like a good start. </i></p>
+<p><i> RESULT: Based on these, the second one (by Eichhorn et al) looks like a good start. </i></p>
 </section>
 </section>
 <section id="at-this-point-you-can-proceed-to-step-2">
@@ -718,7 +701,7 @@ title="Print to PDF"
 <p>Below are a few other ways to see what the tap_service table contains.</p>
 <ol class="arabic simple">
 <li><p>To view the column information: tap_services.to_table().columns() shows the metadata contained in the tap service. We will reference some of this columns below as we try to find the appropriate table.</p></li>
-<li><p>tap_services[index].describe(): The table with the tap_services output has, in our case, 72 tables listed and each includes metadata containing some human readable description. You can get the description for one case or for all the records by iterating through the resource. In the former case, we show the description for the Eichhorn data. The latter case also follows.</p></li>
+<li><p>tap_services[index].describe(): The table with the tap_services output has, in our case, 83 tables listed and each includes metadata containing some human readable description. You can get the description for one case or for all the records by iterating through the resource. In the former case, we show the description for the Eichhorn data. The latter case also follows.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -731,10 +714,18 @@ title="Print to PDF"
 </section>
 <section id="step-2-acquire-the-relevant-data-and-make-a-plot">
 <h2>Step 2: Acquire the relevant data and make a plot!<a class="headerlink" href="#step-2-acquire-the-relevant-data-and-make-a-plot" title="Permalink to this headline">#</a></h2>
+<p>In order to query the table, we need the table name, note this is NOT the same as the short name we found above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the table name for the Eichhorn+1970 data</span>
-<span class="c1"># and output the table information (i.e. data in columns) </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the data to output the table information (i.e. the data in the </span>
+<span class="c1"># columns in the table)</span>
 </pre></div>
 </div>
 </div>
@@ -765,7 +756,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;B-V&#39;)
 </pre></div>
 </div>
-<img alt="_images/fcc515e265d0722e6525b037a03daf18e0972838ab75d52f9823adb8052151f7.png" src="_images/fcc515e265d0722e6525b037a03daf18e0972838ab75d52f9823adb8052151f7.png" />
+<img alt="_images/b4a939787094de4a449ba14c91077b1600a427cdf5ee912774cdd14b3756fac0.png" src="_images/b4a939787094de4a449ba14c91077b1600a427cdf5ee912774cdd14b3756fac0.png" />
 </div>
 </div>
 </section>
@@ -775,19 +766,29 @@ title="Print to PDF"
 <p>There is nice discussion here: http://www.southastrodel.com/Page03009a.htm  about the color-magnitude diagram. Their Fig 4 looks slightly cleaner because part of this investigation was to select the 270 stars that are vetted members and restricted to stellar types more massive than K0.</p>
 <p>The dataset is from Raboud+1998 (1998A&amp;A…329..101R)</p>
 <p>Therefore in this next step, we will use the bibcode to select this data and overplot with the previous data to compare.</p>
-<p>We note that we did not discover this table above because alas! the description does not include the keywords (e.g. color, magnitude) that we used to refine our search. However, this table does have color and magnitude columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibcode</span> <span class="o">=</span> <span class="s1">&#39;1998A&amp;A...329..101R&#39;</span> <span class="c1"># Raboud</span>
 
-<span class="c1"># Repeat steps above with this other dataset</span>
+<span class="c1"># Repeat steps above with this other dataset:</span>
+<span class="c1"># First find the table usign the bib code</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then query the table using the table name and get the</span>
+<span class="c1"># appropriate columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then plot!</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;V [apparent mag]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;B-V&quot;</span><span class="p">)</span>
 
@@ -800,7 +801,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;B-V&#39;)
 </pre></div>
 </div>
-<img alt="_images/fcc515e265d0722e6525b037a03daf18e0972838ab75d52f9823adb8052151f7.png" src="_images/fcc515e265d0722e6525b037a03daf18e0972838ab75d52f9823adb8052151f7.png" />
+<img alt="_images/b4a939787094de4a449ba14c91077b1600a427cdf5ee912774cdd14b3756fac0.png" src="_images/b4a939787094de4a449ba14c91077b1600a427cdf5ee912774cdd14b3756fac0.png" />
 </div>
 </div>
 </section>

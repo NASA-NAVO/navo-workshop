@@ -673,6 +673,15 @@ title="Print to PDF"
 </section>
 <section id="choose-one-of-the-galaxies-in-the-ned-list">
 <h2>7. Choose one of the galaxies in the NED list.<a class="headerlink" href="#choose-one-of-the-galaxies-in-the-ned-list" title="Permalink to this headline">#</a></h2>
+<p>What is the position of this galaxy?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
+<span class="c1">#  m83_pos = SkyCoord(&#39;13h37m00.950s -29d51m55.51s&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="search-for-a-list-of-allwise-images-that-cover-this-galaxy">
 <h2>8. Search for a list of AllWISE images that cover this galaxy.<a class="headerlink" href="#search-for-a-list-of-allwise-images-that-cover-this-galaxy" title="Permalink to this headline">#</a></h2>
@@ -680,7 +689,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
-<span class="c1">#m83_pos = SkyCoord(&#39;13h37m00.950s -29d51m55.51s&#39;)</span>
 <span class="c1">#results = services[1].search(pos=m83_pos, size=.2)</span>
 </pre></div>
 </div>
@@ -700,6 +708,17 @@ title="Print to PDF"
 </section>
 <section id="visualize-this-allwise-image">
 <h2>11. Visualize this AllWISE image.<a class="headerlink" href="#visualize-this-allwise-image" title="Permalink to this headline">#</a></h2>
+<p>Hint: Locate the galaxy in the image by overplotting a ring centered on the galaxy on the image</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
+<span class="c1">#  file_name = download_file(results[0].getdataurl()) </span>
+<span class="c1">#  Hint:  when displaying the fits file play with the vmax value, a </span>
+<span class="c1">#  vmax value around 10 will display a nice image</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="plot-a-cutout-of-the-allwise-image-centered-on-your-position">
 <h2>12. Plot a cutout of the AllWISE image, centered on your position.<a class="headerlink" href="#plot-a-cutout-of-the-allwise-image-centered-on-your-position" title="Permalink to this headline">#</a></h2>
@@ -714,7 +733,47 @@ title="Print to PDF"
 </section>
 <section id="try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">
 <h2>13. Try visualizing a cutout of a GALEX image that covers your position.<a class="headerlink" href="#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position" title="Permalink to this headline">#</a></h2>
-<p>Repeat steps 4, 5, 6, 8 through 12 for GALEX.</p>
+<p>Repeat steps 5, 6, 8 through 12 for GALEX.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Steps 5 &amp; 6: Search the services found in step 4 for GALEX Sources</span>
+<span class="c1"># Hint: Choose the GALEX service on STSCI</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Steps 8 &amp; 9: Find the images that contain your chosen galaxy</span>
+<span class="c1"># and display using .to_table()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 10: Select one of the images and print the title and relevent </span>
+<span class="c1"># info. For example you can select an image with an &#39;enrValue&#39; of 2.35e-07</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 11: Visualize the image and overplot a ring on the image centered </span>
+<span class="c1"># on your galaxy. (A very small vmax value around 0.01 is recomended)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 12: Use Cutout2D to get a 60 arcsecond cutout</span>
+<span class="c1"># centered on the galaxy</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position">
 <h2>14. Try visualizing a cutout of an SDSS image that covers your position.<a class="headerlink" href="#try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position" title="Permalink to this headline">#</a></h2>
@@ -726,9 +785,46 @@ title="Print to PDF"
 <li><p>After obtaining your search results, select r-band images using the <code class="docutils literal notranslate"><span class="pre">.title</span></code> attribute of the records that are returned, since <code class="docutils literal notranslate"><span class="pre">.bandpass_id</span></code> is not populated.</p></li>
 </ul>
 <p>(As a workaround to a bug in the SDSS service, pass <code class="docutils literal notranslate"><span class="pre">format=''</span></code> as an argument to the search() function when using the SDSS service.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Search the registery to find a service</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Search the SDSS SIAP service for images containing your galaxy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find an image taken in the r filter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the image and overplot a ring centered on the galaxy</span>
+<span class="c1"># Hint: a vmax around 0.01 will produce a nice image</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use Cutout2D to get a 60 arcsecond cutout centered on the galaxy</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">
 <h2>15. Try looping over all positions and plotting multiwavelength cutouts.<a class="headerlink" href="#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts" title="Permalink to this headline">#</a></h2>
+<p>Hint: Gather the data in ALLWISE, GALEX, and SDSS for each galaxy and plot as seperate cutouts centered on the galaxy position</p>
 <p>Warning: this takes a long time to run!  You can limit it to the first three galaxies only, for example, for testing.</p>
 </section>
 </section>
