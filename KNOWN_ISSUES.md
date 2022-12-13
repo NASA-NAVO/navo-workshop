@@ -18,7 +18,7 @@ use arguments keywords, servicetype, and waveband, and these still work:
 ```
 image_services = vo.regsearch(servicetype='image', keywords=['sloan vla'])
 ```
-This searches for the strings 'sloan' AND 'vla' in the same entry.  If you instead used `keywords=['sloan','vla']`,
+This searches for the strings 'sloan' AND 'vla' in the same entry.  If you instead used ``keywords=['sloan','vla']``,
 it would return records with either string, not only both.  But you
 can also specify more accurate search criteria using new PyVO Registry
 methods.  You can now also search for particular information in a
