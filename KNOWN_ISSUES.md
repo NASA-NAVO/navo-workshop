@@ -10,23 +10,26 @@ the registry to see if there might be another.
 
 
 
-##  PyVO regsearch() keywords argument usage
+##  PyVO regsearch() update:  
 
-
-Note also that each string in the list given to PyVO's regsearch() keywords argument is searched in the subject, description, and title of the resource. 
-
-**Workaround**:   If you want to search for the ivoid/identity, you have to do this after the fact as described below.  
-
+PyVO's registry search functions have been updated to allow for more
+powerful methods of data discovery.  Previously you could
+use arguments keywords, servicetype, and waveband, and these still work:
 ```
-image_services = vo.regsearch(servicetype='image', keywords=['sloan'])
-
-sdss_gavo_service = [s for s in image_services if 'gavo' in s.ivoid][0]
-
-sdss_gavo_service.search(query)
+image_services = vo.regsearch(servicetype='image', keywords=['sloan vla'])
 ```
+This searches for the strings 'sloan' AND 'vla' in the same entry.  If you instead used `keywords=['sloan','vla']`,
+it would return records with either string, not only both.  But you
+can also specify more accurate search criteria using new PyVO Registry
+methods.  You can now also search for particular information in a
+catalog by its UCD, from a particular source by it's IVOID, and by
+spatial, spectral, or temporal coverage.  Note however that where such
+coverage information is not provided in the Registry (which it often
+is not), results will be returned anyway.  
 
-
-Furthermore, in the case of the resource subject metadata (not easily accessible through Python), the match is a partial string match.   In the case of the description and title, the special function *ivo_hasword* is used, which is a softer matching not currently well documented.   Some experimentation may be required to isolate what you want.  
+Some experimentation may be required to isolate what you want.  For
+the latest documentation of the Registry searching, see
+[its documentation](https://pyvo.readthedocs.io/en/latest/registry/index.html).  
 
 
 ## Indexing and slicing registry results
@@ -48,7 +51,7 @@ services.to_table()[0]['short_name', 'ivoid', 'access_url']
 
 but this doesn't give you something callable.  It gives you an Astropy table, not a PyVO object with a search() method.  
 
-**Workaround**:  To select a service whose short_name matches, e.g., 'GALEX', the easiest way is
+**Workaround**:  To select from a list of results a service whose short_name matches, e.g., 'GALEX', the easiest way is
 
 ```
 service=[s for s in services if 'GALEX' in s.short_name][0]
@@ -70,21 +73,6 @@ another issue we are working on.
 This part of data discovery is often still a hands-on task based, for example, on the registry:
 
 [https://vao.stsci.edu/keyword-search/?utf8=✓&search_field=all_fields&q=abellzcat](https://vao.stsci.edu/keyword-search/?utf8=✓&search_field=all_fields&q=abellzcat])
-
-
-##  Binary/byte strings
-
-When converting many pvyo results to Astropy tables, using versions of astropy before v4.1,
-string columns are represented as byte strings. This issue has been fixed in astropy 4.1.
-
-**Workaround**:  If using astropy versions before 4.1, use byte strings. For example, use 
-
-```
-np.isin(services.to_table()['short_name'], b'GALEX')
-```
-
-to match strings in the returned tables.  
-
 
 
 ## Galex service from STScI doesn't take format specification:
@@ -122,11 +110,8 @@ will throw an error because the service URL has a format hard-wired.  If you ask
 
 **Workaround**:
 
-```
-sdss_table = jhu_dr7_service.search(pos=coords, size=0.1, format='')
-```
-
-Specifying *format=''* (two single quotes) seems to solve problem.  It is combined with the hard-wired service URL without error, and it stops PyVO from adding format='all' and causing an error.
+We do not currently have a workaround for this, since our previous
+workaround (specifying format='') no longer works.  TBD.  
 
 
 ## pyvo.dal.ssa.SSARecord.make_dataset_filename() writes suffix  'None'
@@ -146,7 +131,14 @@ Different TAP services have different implementations of the geometric functions
 
 ## Asynchronous TAP queries
 
-Each service implements TAP queries differently, whether synchronous or asynchronous.  The latter option is more powerful and therefore more complicated.
+Each service implements TAP queries differently, whether synchronous
+or asynchronous.  The latter option is more powerful and therefore
+more complicated.  It is intended for longer queries so that the
+connection does not have to remain open waiting for the response.
+Because of this, some services limit the sizes of sync queries so that
+the do not run too long.  In other words, it will return a truncated
+result.  On the other hand, sometimes async services run into issues,
+simply because there are more possible things to go wrong.  
 
 **Workaround**: If you run into issues with an asynchronous query, e.g., by using
 
@@ -168,9 +160,11 @@ tap_services[0].service.run_sync(query)
 
 exposed at the top level with the search() method.)  
 
-But keep in mind that you may not be getting all results.  Contact the service administrators to let them know of the problem.
+But keep in mind that you may not be getting all results if they
+exceed the default maximum returned by a sync query.  Contact the
+service administrators to let them know of the problem with the async service.
 
-If your query contains syntax errors, these are exposed more readily when you use a synchronous search.
+Note also that if your query contains syntax errors, these are exposed more readily when you use a synchronous search.
 
 
 ## Using UCDs (unified content descriptors)
