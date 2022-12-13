@@ -19,13 +19,16 @@ use arguments keywords, servicetype, and waveband, and these still work:
 image_services = vo.regsearch(servicetype='image', keywords=['sloan vla'])
 ```
 This searches for the strings 'sloan' AND 'vla' in the same entry.  If you instead used ``keywords=['sloan','vla']``,
-it would return records with either string, not only both.  But you
+it would return records with either string, not only both.
+
+But you
 can also specify more accurate search criteria using new PyVO Registry
 methods.  You can now also search for particular information in a
-catalog by its UCD, from a particular source by it's IVOID, and by
-spatial, spectral, or temporal coverage.  Note however that where such
-coverage information is not provided in the Registry (which it often
-is not), results will be returned anyway.  
+catalog by its UCD or from a particular source by it's IVOID.  For
+some services, you can also search for catalogs with a specified 
+spatial, spectral, or temporal coverage.  (Just a warning about this: in some cases,
+catalogs are registered as "all sky"  even if they do not 
+necessarily have data in any arbitrary direction.) 
 
 Some experimentation may be required to isolate what you want.  For
 the latest documentation of the Registry searching, see
