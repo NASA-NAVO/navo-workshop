@@ -1,6 +1,5 @@
 name: navo-env
 channels:
-  - astropy
   - conda-forge
 dependencies:
   - python=3.9
