@@ -61,7 +61,7 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "tags": []
+    "tags": ["output_scroll"]
    },
    "outputs": [],
    "source": [
@@ -152,7 +152,7 @@
    "execution_count": null,
    "metadata": {
     "scrolled": true,
-    "tags": []
+    "tags": ["output_scroll"]
    },
    "outputs": [],
    "source": [
@@ -175,7 +175,7 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "tags": []
+    "tags": ["output_scroll"]
    },
    "source": [
     "### Alternative Method: Use ADS to search for appropriate paper and access data via NED.\n",
@@ -277,7 +277,7 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "tags": []
+    "tags": ["output_scroll"]
    },
    "outputs": [],
    "source": [

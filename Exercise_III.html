@@ -583,7 +583,7 @@ title="Print to PDF"
 <section id="data-discovery-steps">
 <h3>DATA DISCOVERY STEPS:<a class="headerlink" href="#data-discovery-steps" title="Permalink to this headline">#</a></h3>
 <p>Here is useful link for <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/registry/index.html">how the pyvo registry search works</a>.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write some code to perform a registry search using </span>
 <span class="c1"># appropriate keywords and specify the service type. </span>
@@ -631,7 +631,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>We can read more information about the results we found.  For each resource element (i.e. row in the table above), there are useful attributes, which are <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource">described here</a></p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output the descriptions of the resulting matches:</span>
 </pre></div>
@@ -703,7 +703,7 @@ title="Print to PDF"
 <li><p>To view the column information: tap_services.to_table().columns() shows the metadata contained in the tap service. We will reference some of this columns below as we try to find the appropriate table.</p></li>
 <li><p>tap_services[index].describe(): The table with the tap_services output has, in our case, 83 tables listed and each includes metadata containing some human readable description. You can get the description for one case or for all the records by iterating through the resource. In the former case, we show the description for the Eichhorn data. The latter case also follows.</p></li>
 </ol>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the full description for the Eichhorn+1970 example. </span>
 </pre></div>

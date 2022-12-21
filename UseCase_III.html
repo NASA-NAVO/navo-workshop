@@ -583,7 +583,7 @@ title="Print to PDF"
 <section id="data-discovery-steps">
 <h3>DATA DISCOVERY STEPS:<a class="headerlink" href="#data-discovery-steps" title="Permalink to this headline">#</a></h3>
 <p>Here is useful link for <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/registry/index.html">how the pyvo registry search works</a>.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">servicetype</span> <span class="o">=</span> <span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;star pleiades&#39;</span><span class="p">],</span> <span class="n">includeaux</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tap_services</span><span class="p">))</span>
@@ -596,7 +596,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=125</i>
-<table id="table139883640337984" class="table-striped table-bordered table-condensed">
+<table id="table140419800838592" class="table-striped table-bordered table-condensed">
 <thead><tr><th>index</th><th>short_name</th><th>title</th><th>description</th><th>interfaces</th></tr></thead>
 <thead><tr><th>int64</th><th>str16</th><th>str55</th><th>str4800</th><th>str7</th></tr></thead>
 <tr><td>0</td><td>I/163</td><td>US Naval Observatory Pleiades Catalog</td><td>This catalog is a special subset of the Eichhorn et al. (1970) Pleiades catalog (see &lt;I/90&gt;) updated to B1950.0 positions and with proper motions added. It was prepared for the purpose of predicting occultations of Pleiades stars by the Moon, but is useful for general applications because it contains many faint stars not present in the current series of large astrometric catalogs.</td><td>tap#aux</td></tr>
@@ -627,7 +627,7 @@ title="Print to PDF"
 <section id="next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">
 <h4>Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram.<a class="headerlink" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram" title="Permalink to this headline">#</a></h4>
 <p>We can re-run the registry search, but further restrict the results by column UCD.  We want tables that have magnitude columns; the most basic UCD to describe a magnitude column is phot.mag</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;star pleiades&#39;</span><span class="p">],</span>                                
                                <span class="n">ucd</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;phot.mag%&#39;</span><span class="p">],</span> <span class="n">includeaux</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -644,7 +644,7 @@ title="Print to PDF"
 <p>Note: the ‘%’ serves as a wild card when searching by UCD</p>
 <p>The IOVA standard enables resources to be as sepecific as they would like when defining the UCD of columns.  For example, ‘phot.mag’ and ‘phot.mag;em.opt.V’ can both be used to describe a column containing the V magnitudes of objects.  If a resource uses the latter to describe a column, a search using ‘phot.mag’ will not return that resource.  A wild card would need to be used or the exact column UCD. The UCD search requires an exact match for a resource to be returned, so using the wild card will make it easier to discover a wider variety of resources.</p>
 <p>So using this we can reduce the matched tables to ones that are a bit more catered to our experiment. Note, that there can be redundancy in some resources since these are available via multiple services and/or publishers. Therefore a bit more cleaning can be done to provide only the unique matches.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">]</span>
 </pre></div>
@@ -680,7 +680,7 @@ title="Print to PDF"
 <tr><td>ivo://nasa.heasarc/pleiadxray</td></tr>
 </table></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getunique</span><span class="p">(</span> <span class="n">result</span> <span class="p">):</span>
     <span class="n">short_name</span> <span class="o">=</span> <span class="p">[]</span>
@@ -698,7 +698,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uniq_ind</span><span class="o">=</span><span class="n">getunique</span><span class="p">(</span><span class="n">tap_services</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">uniq_ind</span><span class="p">))</span>
@@ -711,7 +711,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="n">uniq_ind</span><span class="p">][</span><span class="s1">&#39;ivoid&#39;</span><span class="p">]</span>
 </pre></div>
@@ -749,7 +749,7 @@ title="Print to PDF"
 </div>
 <p>This shows that in this case, all of our TAP results are unique.</p>
 <p>We can read more information about the results we found.  For each resource element (i.e. row in the table above), there are useful attributes, which are <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource">described here</a></p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To read the descriptions of the resulting matches:</span>
 
@@ -1160,7 +1160,7 @@ This catalog contains the results of a deep X-ray survey of the core region of t
 </div>
 <p>Note that the URL is a generic TAP url for Vizier.  All of its tables can be accessed by that same TAP services.  It’ll be in the ADQL query itself that you specify the table name.  We’ll see this below.</p>
 <p>Next, try using Author name:</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;Eichhorn&#39;</span>
 
@@ -1190,7 +1190,7 @@ This catalog contains the results of a deep X-ray survey of the core region of t
 <li><p>To view the column information: tap_services.to_table().columns() shows the metadata contained in the tap service. We will reference some of this columns below as we try to find the appropriate table.</p></li>
 <li><p>tap_services[index].describe(): The table with the tap_services output has, in our case, 83 tables listed and each includes metadata containing some human readable description. You can get the description for one case or for all the records by iterating through the resource. In the former case, we show the description for the Eichhorn data, whose index is uniq_ind[1]. The latter case also follows.</p></li>
 </ol>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">tap_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
 </pre></div>
@@ -1202,7 +1202,7 @@ This catalog contains the results of a deep X-ray survey of the core region of t
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span><span class="p">[</span><span class="n">uniq_ind</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>   <span class="c1"># For Eichhorm+1970 example. </span>
 </pre></div>
@@ -1234,7 +1234,7 @@ Waveband Coverage: optical
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To iterate over all the tables: </span>
 <span class="k">for</span> <span class="n">tapsvc</span> <span class="ow">in</span> <span class="n">tap_services</span><span class="p">:</span> 
@@ -3686,7 +3686,7 @@ Waveband Coverage: x-ray
 <section id="step-2-acquire-the-relevant-data-and-make-a-plot">
 <h2>Step 2: Acquire the relevant data and make a plot!<a class="headerlink" href="#step-2-acquire-the-relevant-data-and-make-a-plot" title="Permalink to this headline">#</a></h2>
 <p>In order to query the table, we need the table name, note this is NOT the same as the short name we found above:</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span> <span class="o">=</span> <span class="n">tap_services</span><span class="p">[</span><span class="n">uniq_ind</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">tables</span>
 
@@ -3712,7 +3712,7 @@ VIII/90/first12
 </div>
 <p>We can write code to eliminate the other cases (e.g., VI or VIII…) but we wanted to keep this cell to illustrate that the table name (which is required for the query) will likely include the short_name appended to “/catalog” (or “/table”).</p>
 <p>But the other roman numeral catalogs are obviously different catalogs. Therefore try the below for a better match:</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find (more restricted) table name: </span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">tables</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -3728,7 +3728,7 @@ VIII/90/first12
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM &quot;</span><span class="si">%s</span><span class="s1">&quot;&#39;</span> <span class="o">%</span><span class="k">tablename</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
@@ -3742,7 +3742,7 @@ VIII/90/first12
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=502</i>
-<table id="table139882770908544" class="table-striped table-bordered table-condensed">
+<table id="table140419800909376" class="table-striped table-bordered table-condensed">
 <thead><tr><th>recno</th><th>Hertzsprung</th><th>CI</th><th>Ptm</th><th>RAB1900</th><th>e_RAs</th><th>DEB1900</th><th>e_DEs</th><th>rmsRA</th><th>rmsDE</th><th>rpmRA</th><th>rpmDE</th><th>DrpmRA</th><th>DrpmDE</th><th>DRA</th><th>DDE</th></tr></thead>
 <thead><tr><th></th><th></th><th>mag</th><th>mag</th><th>deg</th><th>ms</th><th>deg</th><th>mas</th><th></th><th></th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>arcsec</th><th>arcsec</th></tr></thead>
 <thead><tr><th>int32</th><th>int16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -3791,7 +3791,7 @@ VIII/90/first12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f38f388b580&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb5ce38d700&gt;]
 </pre></div>
 </div>
 <img alt="_images/2e85d6f6459617a4a7b0f3e812ef7fba6854f0a30e214885b79b1b07af850240.png" src="_images/2e85d6f6459617a4a7b0f3e812ef7fba6854f0a30e214885b79b1b07af850240.png" />
@@ -3853,7 +3853,7 @@ Waveband Coverage:
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Doing steps above to view table from Raboud+1998</span>
 
@@ -3884,7 +3884,7 @@ Waveband Coverage:
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=270</i>
-<table id="table139883338151104" class="table-striped table-bordered table-condensed">
+<table id="table140419025136848" class="table-striped table-bordered table-condensed">
 <thead><tr><th>recno</th><th>HII</th><th>Vmag</th><th>B-V</th><th>xpos</th><th>ypos</th><th>Dist</th><th>Mult</th><th>Rem</th><th>Mass</th><th>MassA</th><th>MassB</th><th>MassC</th><th>MassD</th></tr></thead>
 <thead><tr><th></th><th></th><th>mag</th><th>mag</th><th>arcmin</th><th>arcmin</th><th>arcmin</th><th></th><th></th><th>Msun</th><th>Msun</th><th>Msun</th><th>Msun</th><th>Msun</th></tr></thead>
 <thead><tr><th>int32</th><th>int32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int16</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -3924,7 +3924,7 @@ Waveband Coverage:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f38f3b584c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb5ce53a400&gt;]
 </pre></div>
 </div>
 <img alt="_images/655bbdb0c7a4ba2b84110b532efbecba81088b0bac153dbc853ac67d5587c4ff.png" src="_images/655bbdb0c7a4ba2b84110b532efbecba81088b0bac153dbc853ac67d5587c4ff.png" />
@@ -3952,7 +3952,7 @@ Waveband Coverage:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f38f3ff6670&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb5ceaf7520&gt;]
 </pre></div>
 </div>
 <img alt="_images/041ece73eaac051ce77902a57eb3c2660be0db930d1bd165572bf1c7754050f9.png" src="_images/041ece73eaac051ce77902a57eb3c2660be0db930d1bd165572bf1c7754050f9.png" />
