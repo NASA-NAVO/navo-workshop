@@ -360,8 +360,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pyvo-regsearch-keywords-argument-usage">
-   PyVO regsearch() keywords argument usage
+  <a class="reference internal nav-link" href="#pyvo-regsearch-update">
+   PyVO regsearch() update:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -372,11 +372,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-descriptions">
    Table descriptions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-byte-strings">
-   Binary/byte strings
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -429,8 +424,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pyvo-regsearch-keywords-argument-usage">
-   PyVO regsearch() keywords argument usage
+  <a class="reference internal nav-link" href="#pyvo-regsearch-update">
+   PyVO regsearch() update:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -441,11 +436,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-descriptions">
    Table descriptions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-byte-strings">
-   Binary/byte strings
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -497,18 +487,27 @@ and occasionally major ones.  Those we have run into, we document here along wit
 we find.  But one benefit of the VO is that there may be other services offering the same data with
 a different implementation.  So if a given service is not working for you, try going back to
 the registry to see if there might be another.</p>
-<section id="pyvo-regsearch-keywords-argument-usage">
-<h2>PyVO regsearch() keywords argument usage<a class="headerlink" href="#pyvo-regsearch-keywords-argument-usage" title="Permalink to this headline">#</a></h2>
-<p>Note also that each string in the list given to PyVO’s regsearch() keywords argument is searched in the subject, description, and title of the resource.</p>
-<p><strong>Workaround</strong>:   If you want to search for the ivoid/identity, you have to do this after the fact as described below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sloan&#39;</span><span class="p">])</span>
-
-<span class="n">sdss_gavo_service</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">image_services</span> <span class="k">if</span> <span class="s1">&#39;gavo&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">ivoid</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="n">sdss_gavo_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<section id="pyvo-regsearch-update">
+<h2>PyVO regsearch() update:<a class="headerlink" href="#pyvo-regsearch-update" title="Permalink to this headline">#</a></h2>
+<p>PyVO’s registry search functions have been updated to allow for more
+powerful methods of data discovery.  Previously you could
+use arguments keywords, servicetype, and waveband, and these still work:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sloan vla&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Furthermore, in the case of the resource subject metadata (not easily accessible through Python), the match is a partial string match.   In the case of the description and title, the special function <em>ivo_hasword</em> is used, which is a softer matching not currently well documented.   Some experimentation may be required to isolate what you want.</p>
+<p>This searches for the strings ‘sloan’ AND ‘vla’ in the same entry.  If you instead used <code class="docutils literal notranslate"><span class="pre">keywords=['sloan','vla']</span></code>,
+it would return records with either string, not only both.</p>
+<p>But you
+can also specify more accurate search criteria using new PyVO Registry
+methods.  You can now also search for particular information in a
+catalog by its UCD or from a particular source by it’s IVOID.  For
+some services, you can also search for catalogs with a specified
+spatial, spectral, or temporal coverage.  (Just a warning about this: in some cases,
+catalogs are registered as “all sky”  even if they do not
+necessarily have data in any arbitrary direction.)</p>
+<p>Some experimentation may be required to isolate what you want.  For
+the latest documentation of the Registry searching, see
+<a class="reference external" href="https://pyvo.readthedocs.io/en/latest/registry/index.html">its documentation</a>.</p>
 </section>
 <section id="indexing-and-slicing-registry-results">
 <h2>Indexing and slicing registry results<a class="headerlink" href="#indexing-and-slicing-registry-results" title="Permalink to this headline">#</a></h2>
@@ -524,7 +523,7 @@ the registry to see if there might be another.</p>
 </pre></div>
 </div>
 <p>but this doesn’t give you something callable.  It gives you an Astropy table, not a PyVO object with a search() method.</p>
-<p><strong>Workaround</strong>:  To select a service whose short_name matches, e.g., ‘GALEX’, the easiest way is</p>
+<p><strong>Workaround</strong>:  To select from a list of results a service whose short_name matches, e.g., ‘GALEX’, the easiest way is</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span><span class="o">=</span><span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;GALEX&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">short_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -541,16 +540,6 @@ another issue we are working on.</p>
 <p><strong>Workaround</strong>:</p>
 <p>This part of data discovery is often still a hands-on task based, for example, on the registry:</p>
 <p><a class="reference external" href="https://vao.stsci.edu/keyword-search/?utf8=%E2%9C%93&amp;search_field=all_fields&amp;q=abellzcat%5D">https://vao.stsci.edu/keyword-search/?utf8=✓&amp;search_field=all_fields&amp;q=abellzcat</a></p>
-</section>
-<section id="binary-byte-strings">
-<h2>Binary/byte strings<a class="headerlink" href="#binary-byte-strings" title="Permalink to this headline">#</a></h2>
-<p>When converting many pvyo results to Astropy tables, using versions of astropy before v4.1,
-string columns are represented as byte strings. This issue has been fixed in astropy 4.1.</p>
-<p><strong>Workaround</strong>:  If using astropy versions before 4.1, use byte strings. For example, use</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;short_name&#39;</span><span class="p">],</span> <span class="sa">b</span><span class="s1">&#39;GALEX&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>to match strings in the returned tables.</p>
 </section>
 <section id="galex-service-from-stsci-doesn-t-take-format-specification">
 <h2>Galex service from STScI doesn’t take format specification:<a class="headerlink" href="#galex-service-from-stsci-doesn-t-take-format-specification" title="Permalink to this headline">#</a></h2>
@@ -577,10 +566,8 @@ string columns are represented as byte strings. This issue has been fixed in ast
 </div>
 <p>will throw an error because the service URL has a format hard-wired.  If you ask for another format, it will error.  Or if you specify no format whatsoever, then PyVO will add (silently) <em>format=’all’</em>, which will then error.</p>
 <p><strong>Workaround</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_table</span> <span class="o">=</span> <span class="n">jhu_dr7_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Specifying <em>format=’’</em> (two single quotes) seems to solve problem.  It is combined with the hard-wired service URL without error, and it stops PyVO from adding format=’all’ and causing an error.</p>
+<p>We do not currently have a workaround for this, since our previous
+workaround (specifying format=’’) no longer works.  TBD.</p>
 </section>
 <section id="pyvo-dal-ssa-ssarecord-make-dataset-filename-writes-suffix-none">
 <h2>pyvo.dal.ssa.SSARecord.make_dataset_filename() writes suffix  ‘None’<a class="headerlink" href="#pyvo-dal-ssa-ssarecord-make-dataset-filename-writes-suffix-none" title="Permalink to this headline">#</a></h2>
@@ -594,7 +581,14 @@ string columns are represented as byte strings. This issue has been fixed in ast
 </section>
 <section id="asynchronous-tap-queries">
 <h2>Asynchronous TAP queries<a class="headerlink" href="#asynchronous-tap-queries" title="Permalink to this headline">#</a></h2>
-<p>Each service implements TAP queries differently, whether synchronous or asynchronous.  The latter option is more powerful and therefore more complicated.</p>
+<p>Each service implements TAP queries differently, whether synchronous
+or asynchronous.  The latter option is more powerful and therefore
+more complicated.  It is intended for longer queries so that the
+connection does not have to remain open waiting for the response.
+Because of this, some services limit the sizes of sync queries so that
+the do not run too long.  In other words, it will return a truncated
+result.  On the other hand, sometimes async services run into issues,
+simply because there are more possible things to go wrong.</p>
 <p><strong>Workaround</strong>: If you run into issues with an asynchronous query, e.g., by using</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
@@ -608,8 +602,10 @@ string columns are represented as byte strings. This issue has been fixed in ast
 </pre></div>
 </div>
 <p>exposed at the top level with the search() method.)</p>
-<p>But keep in mind that you may not be getting all results.  Contact the service administrators to let them know of the problem.</p>
-<p>If your query contains syntax errors, these are exposed more readily when you use a synchronous search.</p>
+<p>But keep in mind that you may not be getting all results if they
+exceed the default maximum returned by a sync query.  Contact the
+service administrators to let them know of the problem with the async service.</p>
+<p>Note also that if your query contains syntax errors, these are exposed more readily when you use a synchronous search.</p>
 </section>
 <section id="using-ucds-unified-content-descriptors">
 <h2>Using UCDs (unified content descriptors)<a class="headerlink" href="#using-ucds-unified-content-descriptors" title="Permalink to this headline">#</a></h2>
