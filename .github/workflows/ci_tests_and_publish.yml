@@ -56,6 +56,9 @@ jobs:
   conda:
     name: test conda env file
     runs-on:  ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -l {0}
     strategy:
       matrix:
         os: ["windows-latest", "ubuntu-latest", "macos-latest"]
@@ -66,8 +69,11 @@ jobs:
           with:
             environment-file: environment.yml
             activate-environment: navo-env
+            auto-activate-base: false
         - run: pip install -r doc-requirements.txt
-        - run: pytest --nbval
+        - run: |
+            python check_env.py
+            pytest --nbval
 
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
