@@ -4,7 +4,7 @@ jobs:
 
   build-docs:
     docker:
-      - image: cimg/python:3.9
+      - image: cimg/python:3.10
 
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
           name: Build HTML rendering of notebooks
           no_output_timeout: 30m
           command: |
-            python -m tox -e py39-buildhtml --
+            python -m tox -e py310-buildhtml --
 
       - store_artifacts:
           path: _build/html
