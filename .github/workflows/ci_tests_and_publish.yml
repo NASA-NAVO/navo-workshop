@@ -53,6 +53,22 @@ jobs:
       - name: Execute notebooks as testing
         run: tox ${{ matrix.toxargs }} -e ${{ matrix.toxenv }} -- ${{ matrix.toxposargs }}
 
+  conda:
+    name: test conda env file
+    runs-on:  ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ["windows-latest", "ubuntu-latest", "macos-latest"]
+
+    steps:
+        - uses: actions/checkout@v3
+        - uses: conda-incubator/setup-miniconda@v2.2.0
+          with:
+            environment-file: environment.yml
+            activate-environment: navo-env
+        - run: pip install -r doc-requirements.txt
+        - run: pytest --nbval
+
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     name: Publish HTML
