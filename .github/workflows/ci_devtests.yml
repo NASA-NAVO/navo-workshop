@@ -17,9 +17,8 @@ concurrency:
 
 jobs:
   tests:
-    name: (Temporarily allowed to fail) dev deps
+    name: Test with development versions of dependencies
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v3
 
