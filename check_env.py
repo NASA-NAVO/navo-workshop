@@ -17,7 +17,7 @@ PKGS = {'jupyter': None,
         'matplotlib': ('3.2', None),
         'jupyterlab': ('3.1', None),
         'astropy': ('5.2', None),
-        'pyvo': ('1.4', '1.4'),
+        'pyvo': ('1.4', None),
         'astroquery': ('0.4.4', None)
         }
 
