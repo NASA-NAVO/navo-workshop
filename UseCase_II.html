@@ -1,32 +1,42 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Preparing a proposal &#8212; NASA-NAVO Workshops Notebooks</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -34,57 +44,103 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UseCase_II';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram" href="UseCase_III.html" />
     <link rel="prev" title="Science User Case - Inspecting a Candidate List" href="UseCase_I.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NASA-NAVO Workshops Notebooks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">NASA-NAVO Workshops Notebooks</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -94,406 +150,301 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_Catalog_Queries.html">
-   Accessing  astronomical catalogs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_Image_Access.html">
-   Searching for and retrieving images
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_Spectral_Access.html">
-   Retrieve spectra using Simple Spectral Access protocol
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_UCDs.html">
-   UCDs:  working with heterogeneous tables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_VO_Tables.html">
-   Creating a VO Table from a CSV file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise_I.html">
-   Science User Case - Inspecting a Candidate List
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise_II.html">
-   Preparing a proposal
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise_III.html">
-   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="QuickReference.html">
-   Quick Reference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="UseCase_I.html">
-   Science User Case - Inspecting a Candidate List
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Preparing a proposal
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="UseCase_III.html">
-   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="CS_Catalog_Queries.html">Accessing  astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_Image_Access.html">Searching for and retrieving images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_Spectral_Access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_UCDs.html">UCDs:  working with heterogeneous tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_VO_Tables.html">Creating a VO Table from a CSV file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise_I.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise_II.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise_III.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QuickReference.html">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UseCase_I.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UseCase_III.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
 </ul>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="00_SETUP.html">
-   Configuring the Workshop Environment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="KNOWN_ISSUES.html">
-   Known issues and workarounds
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="00_SETUP.html">Configuring the Workshop Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KNOWN_ISSUES.html">Known issues and workarounds</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/UseCase_II.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/UseCase_II.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/UseCase_II.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/UseCase_II.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/UseCase_II.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2FUseCase_II.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/UseCase_II.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/NASA-NAVO/navo-workshop"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2FUseCase_II.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/UseCase_II.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/UseCase_II.ipynb.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">
-   Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-make-images">
-   Step 2: Make Images:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-ultraviolet-and-x-ray-images">
-     Create ultraviolet and X-ray images
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-make-a-spectrum">
-   Step 3: Make a spectrum:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">
-     Find what Chandra spectral observations exist already for this source.
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Preparing a proposal</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">
-   Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-make-images">
-   Step 2: Make Images:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-ultraviolet-and-x-ray-images">
-     Create ultraviolet and X-ray images
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-make-a-spectrum">
-   Step 3: Make a spectrum:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">
-     Find what Chandra spectral observations exist already for this source.
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Preparing a proposal</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-images">Step 2: Make Images:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ultraviolet-and-x-ray-images">Create ultraviolet and X-ray images</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-make-a-spectrum">Step 3: Make a spectrum:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="preparing-a-proposal">
 <h1>Preparing a proposal<a class="headerlink" href="#preparing-a-proposal" title="Permalink to this headline">#</a></h1>
 <p>The Story: Suppose that you are preparing to write a proposal on NGC1365, aiming to investigate the intriguing black hole spin this galaxy with Chandra grating observations (see: <a class="reference external" href="https://www.space.com/19980-monster-black-hole-spin-discovery.html">Monster Blackhole Spin Revealed</a>)</p>
@@ -581,7 +532,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table139826815156960" class="table-striped table-bordered table-condensed">
+<table id="table140688699583856" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>exposure</th><th>flux</th><th>flux_lower</th><th>flux_upper</th></tr></thead>
 <thead><tr><th>degree</th><th>degree</th><th>s</th><th>erg/s/cm^2</th><th>erg/s/cm^2</th><th>erg/s/cm^2</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -604,7 +555,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139826815980384" class="table-striped table-bordered table-condensed">
+<table id="table140687760938832" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td></tr>
@@ -623,7 +574,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139826759522992" class="table-striped table-bordered table-condensed">
+<table id="table140687816347264" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td></tr>
@@ -651,24 +602,24 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=174</i>
-<table id="table139826759529616" class="table-striped table-bordered table-condensed">
+<table id="table140688699587264" class="table-striped table-bordered table-condensed">
 <thead><tr><th>collection</th><th>insname</th><th>name</th><th>trgPosRA</th><th>trgPosDec</th><th>contentlength</th><th>midpoint</th><th>naxes</th><th>naxis</th><th>scale</th><th>contenttype</th><th>coordFrame</th><th>projection</th><th>crpix</th><th>crval</th><th>cdmatrix</th><th>enremband</th><th>enrUnits</th><th>enrValue</th><th>enrMax</th><th>enrMin</th><th>accessURL</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th></tr></thead>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-nd-int.fits.gz</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>4691479</td><td>54460.4016261574</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/fits</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-nd-int.fits.gz</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_medium_annot.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>618132</td><td>54460.4016261574</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_medium_annot.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-nd-int.fits.gz</td><td>52.7737068509356</td><td>-35.944179375355</td><td>6367456</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/fits</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/AIS_423_sg40-nd-int.fits.gz</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-xd-int_2color.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>3070766</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/qa/AIS_423_sg40-xd-int_2color.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-xd-int_2color_large.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>591035</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/qa/AIS_423_sg40-xd-int_2color_large.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-xd-int_2color_medium.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>418414</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/qa/AIS_423_sg40-xd-int_2color_medium.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-xd-int_2color_small.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>101576</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/qa/AIS_423_sg40-xd-int_2color_small.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-xd-int_2color_medium_annot.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>528088</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/qa/AIS_423_sg40-xd-int_2color_medium_annot.jpg</td></tr>
 <tr><td>GALEX</td><td>GALEX</td><td>nga_ngc1365_0001-xd-int_2color.jpg</td><td>53.3535818526198</td><td>-36.1316454402734</td><td>2373420</td><td>53320.0105034722</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.3536 -36.1316]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/05057-NGA_NGC1365/d/00-visits/0001-img/07-try/qa/NGA_NGC1365_0001-xd-int_2color.jpg</td></tr>
 <tr><td>GALEX</td><td>GALEX</td><td>nga_ngc1365_0001-xd-int_2color_large.jpg</td><td>53.3535818526198</td><td>-36.1316454402734</td><td>427080</td><td>53320.0105034722</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.3536 -36.1316]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/05057-NGA_NGC1365/d/00-visits/0001-img/07-try/qa/NGA_NGC1365_0001-xd-int_2color_large.jpg</td></tr>
 <tr><td>GALEX</td><td>GALEX</td><td>nga_ngc1365_0001-xd-int_2color_medium.jpg</td><td>53.3535818526198</td><td>-36.1316454402734</td><td>381854</td><td>53320.0105034722</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.3536 -36.1316]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/05057-NGA_NGC1365/d/00-visits/0001-img/07-try/qa/NGA_NGC1365_0001-xd-int_2color_medium.jpg</td></tr>
 <tr><td>GALEX</td><td>GALEX</td><td>nga_ngc1365_0001-xd-int_2color_small.jpg</td><td>53.3535818526198</td><td>-36.1316454402734</td><td>99957</td><td>53320.0105034722</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.3536 -36.1316]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/05057-NGA_NGC1365/d/00-visits/0001-img/07-try/qa/NGA_NGC1365_0001-xd-int_2color_small.jpg</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-nd-int.fits.gz</td><td>52.7737068509356</td><td>-35.944179375355</td><td>6367456</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/fits</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/AIS_423_sg40-nd-int.fits.gz</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-xd-int_2color.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>3070766</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/qa/AIS_423_sg40-xd-int_2color.jpg</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_sg40-xd-int_2color_large.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>591035</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/01-main/0001-img/07-try/qa/AIS_423_sg40-xd-int_2color_large.jpg</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>nga_ngc1365_0001-nd-int.fits.gz</td><td>53.3535818526198</td><td>-36.1316454402734</td><td>14549885</td><td>53320.0105034722</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/fits</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.3536 -36.1316]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/01-vsn/05057-NGA_NGC1365/d/00-visits/0001-img/07-try/NGA_NGC1365_0001-nd-int.fits.gz</td></tr>
 <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0001_sg49-xd-int_2color.jpg</td><td>53.9651195061398</td><td>-36.1056249532337</td><td>3467081</td><td>54385.4244791667</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9651 -36.1056]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0001-img/07-try/qa/AIS_423_0001_sg49-xd-int_2color.jpg</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0001_sg49-xd-int_2color_large.jpg</td><td>53.9651195061398</td><td>-36.1056249532337</td><td>657176</td><td>54385.4244791667</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9651 -36.1056]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0001-img/07-try/qa/AIS_423_0001_sg49-xd-int_2color_large.jpg</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0001_sg49-xd-int_2color_medium.jpg</td><td>53.9651195061398</td><td>-36.1056249532337</td><td>572260</td><td>54385.4244791667</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9651 -36.1056]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0001-img/07-try/qa/AIS_423_0001_sg49-xd-int_2color_medium.jpg</td></tr>
-<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0001_sg49-xd-int_2color_small.jpg</td><td>53.9651195061398</td><td>-36.1056249532337</td><td>133489</td><td>54385.4244791667</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9651 -36.1056]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0001-img/07-try/qa/AIS_423_0001_sg49-xd-int_2color_small.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0001_sg40-xd-int_2color.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>3076550</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0001-img/07-try/qa/AIS_423_0001_sg40-xd-int_2color.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0001_sg40-xd-int_2color_large.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>592242</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0001-img/07-try/qa/AIS_423_0001_sg40-xd-int_2color_large.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0001_sg40-xd-int_2color_medium.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>419817</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0001-img/07-try/qa/AIS_423_0001_sg40-xd-int_2color_medium.jpg</td></tr>
+<tr><td>GALEX</td><td>GALEX</td><td>ais_423_0001_sg40-xd-int_2color_small.jpg</td><td>52.7737068509356</td><td>-35.944179375355</td><td>102134</td><td>55859.6050115741</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[52.7737 -35.9442]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>2.35e-07</td><td>3.007e-07</td><td>1.693e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0001-img/07-try/qa/AIS_423_0001_sg40-xd-int_2color_small.jpg</td></tr>
 <tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>3487526</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color.jpg</td></tr>
 <tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_large.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>663752</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_large.jpg</td></tr>
 <tr><td>GALEX</td><td>GALEX</td><td>ais_423_0002_sg49-xd-int_2color_medium.jpg</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>575892</td><td>54460.4015972222</td><td>2</td><td>[3840 3840]</td><td>[0.000416667 0.000416667]</td><td>image/jpeg</td><td>ICRS</td><td>TAN</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>UV</td><td>meters</td><td>1.573e-07</td><td>1.806e-07</td><td>1.34e-07</td><td>http://galex.stsci.edu/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_medium.jpg</td></tr>
@@ -688,11 +639,11 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table139826759523952" class="table-striped table-bordered table-condensed">
+<table id="table140687761483968" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
 <thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>galexnear</td><td>53.40190833</td><td>-36.14065833</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.40190833%2C-36.14065833&amp;survey=galexnear&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489376656&amp;return=FITS</td><td>1</td></tr>
-<tr><td>galexfar</td><td>53.40190833</td><td>-36.14065833</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.40190833%2C-36.14065833&amp;survey=galexfar&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489377005&amp;return=FITS</td><td>2</td></tr>
+<tr><td>galexnear</td><td>53.4019083</td><td>-36.1406583</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.4019083%2C-36.1406583&amp;survey=galexnear&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319584508&amp;return=FITS</td><td>1</td></tr>
+<tr><td>galexfar</td><td>53.4019083</td><td>-36.1406583</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.4019083%2C-36.1406583&amp;survey=galexfar&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319584949&amp;return=FITS</td><td>2</td></tr>
 </table></div></div></div>
 </div>
 <div class="cell docutils container">
@@ -724,10 +675,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f2bf43e6d10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff46bea7f70&gt;
 </pre></div>
 </div>
-<img alt="_images/77745e9b58b5622732a9672e88e1246a4a311a508bfd83a807e6e9e6cd64bbcb.png" src="_images/77745e9b58b5622732a9672e88e1246a4a311a508bfd83a807e6e9e6cd64bbcb.png" />
+<img alt="_images/2fe38f2db14f2f9e111ba8331db76a18f5854dec70cfa91a334f617cac3608e4.png" src="_images/2fe38f2db14f2f9e111ba8331db76a18f5854dec70cfa91a334f617cac3608e4.png" />
 </div>
 </div>
 <p>Hint: Repeat steps for X-ray image. (Note: Ideally, we would find an image in the Chandra ‘cxc’ catalog)</p>
@@ -786,7 +737,7 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(460.0, 560.0)
 </pre></div>
 </div>
-<img alt="_images/8922aca5156802068c516ab0aa3c27c1862353d60e731e4fbbf5147329d95fc2.png" src="_images/8922aca5156802068c516ab0aa3c27c1862353d60e731e4fbbf5147329d95fc2.png" />
+<img alt="_images/7faf6a01e6494cd1bbbc02aeb58645ad398c1304ea4d39e42c2e6e46a483f37a.png" src="_images/7faf6a01e6494cd1bbbc02aeb58645ad398c1304ea4d39e42c2e6e46a483f37a.png" />
 </div>
 </div>
 </section>
@@ -806,7 +757,7 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table139826756451296" class="table-striped table-bordered table-condensed">
+<table id="table140687760943680" class="table-striped table-bordered table-condensed">
 <thead><tr><th>short_name</th><th>ivoid</th><th>waveband</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>Chandra</td><td>ivo://nasa.heasarc/chanmaster</td><td>x-ray</td></tr>
@@ -831,25 +782,25 @@ WARNING: UnitsWarning: Unit &#39;meter&#39; not supported by the VOUnit standard
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=15</i>
-<table id="table139826702849344" class="table-striped table-bordered table-condensed">
+<table id="table140687704687136" class="table-striped table-bordered table-condensed">
 <thead><tr><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>datalink</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_fov</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degree</th><th>degree</th><th>mjd</th><th></th><th></th><th>s</th><th></th><th></th><th>mjd</th><th></th><th>mjd</th><th>mjd</th><th>mjd</th><th>s</th><th>degree</th><th>degree</th><th>degree</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>degree</th><th>meter</th><th>meter</th><th>meter</th><th>meter</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
-<tr><td>24737</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59319.8031</td><td>ACIS-S</td><td>HETG</td><td>20080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4258:chandra.obs.misc</td><td>59319.8030787037</td><td>--</td><td>--</td><td>20080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24737N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/24737/primary/acisf24737N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24787</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59340.0616</td><td>ACIS-S</td><td>HETG</td><td>39090</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4259:chandra.obs.misc</td><td>59340.0615740741</td><td>--</td><td>--</td><td>39090.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24787N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/24787/primary/acisf24787N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24790</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59343.4834</td><td>ACIS-S</td><td>HETG</td><td>18080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4260:chandra.obs.misc</td><td>59343.4834143519</td><td>--</td><td>--</td><td>18080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24790N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/24790/primary/acisf24790N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24795</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59328.2974</td><td>ACIS-S</td><td>HETG</td><td>27880</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4261:chandra.obs.misc</td><td>59328.2974189815</td><td>--</td><td>--</td><td>27880.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24795N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/5/24795/primary/acisf24795N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24789</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59333.3037</td><td>ACIS-S</td><td>HETG</td><td>21280</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4262:chandra.obs.misc</td><td>59333.30375</td><td>--</td><td>--</td><td>21280.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24789N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/24789/primary/acisf24789N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24792</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59344.0923</td><td>ACIS-S</td><td>HETG</td><td>17080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4263:chandra.obs.misc</td><td>59344.0923148148</td><td>--</td><td>--</td><td>17080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24792N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/2/24792/primary/acisf24792N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24794</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59321.5437</td><td>ACIS-S</td><td>HETG</td><td>38090</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4264:chandra.obs.misc</td><td>59321.5437152778</td><td>--</td><td>--</td><td>38090.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24794N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/4/24794/primary/acisf24794N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>25024</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59340.9376</td><td>ACIS-S</td><td>HETG</td><td>14080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4265:chandra.obs.misc</td><td>59340.9376041667</td><td>--</td><td>--</td><td>14080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf25024N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/4/25024/primary/acisf25024N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24791</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59326.8302</td><td>ACIS-S</td><td>HETG</td><td>26580</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4266:chandra.obs.misc</td><td>59326.8301736111</td><td>--</td><td>--</td><td>26580.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24791N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/1/24791/primary/acisf24791N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24788</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59342.738</td><td>ACIS-S</td><td>HETG</td><td>25080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4267:chandra.obs.misc</td><td>59342.737974537</td><td>--</td><td>--</td><td>25080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24788N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/24788/primary/acisf24788N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>24793</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59335.6602</td><td>ACIS-S</td><td>HETG</td><td>17080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4268:chandra.obs.misc</td><td>59335.6602083333</td><td>--</td><td>--</td><td>17080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24793N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/3/24793/primary/acisf24793N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>25036</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59345.6677</td><td>ACIS-S</td><td>HETG</td><td>18180</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4269:chandra.obs.misc</td><td>59345.6677199074</td><td>--</td><td>--</td><td>18180.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf25036N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/25036/primary/acisf25036N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>25015</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59336.1988</td><td>ACIS-S</td><td>HETG</td><td>17080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4270:chandra.obs.misc</td><td>59336.1987962963</td><td>--</td><td>--</td><td>17080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf25015N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/5/25015/primary/acisf25015N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>13920</td><td>archived</td><td>NGC 1365</td><td>53.40167</td><td>-36.14028</td><td>56026.4065</td><td>ACIS-S</td><td>HETG</td><td>90040</td><td>GO</td><td>Reeves</td><td>56398</td><td>4275:chandra.obs.misc</td><td>56026.4065162037</td><td>--</td><td>--</td><td>90040.0</td><td>--</td><td>53.40167</td><td>-36.14028</td><td>acisf13920N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/13920/primary/acisf13920N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>13921</td><td>archived</td><td>NGC 1365</td><td>53.40167</td><td>-36.14028</td><td>56029.0272</td><td>ACIS-S</td><td>HETG</td><td>110050</td><td>GO</td><td>Reeves</td><td>56398</td><td>4277:chandra.obs.misc</td><td>56029.0271643518</td><td>--</td><td>--</td><td>110050.0</td><td>--</td><td>53.40167</td><td>-36.14028</td><td>acisf13921N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/1/13921/primary/acisf13921N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24794</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59321.5437</td><td>ACIS-S</td><td>HETG</td><td>38090</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4278:chandra.obs.misc</td><td>59321.5437152778</td><td>--</td><td>--</td><td>38090.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24794N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/4/24794/primary/acisf24794N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24789</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59333.3037</td><td>ACIS-S</td><td>HETG</td><td>21280</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4279:chandra.obs.misc</td><td>59333.30375</td><td>--</td><td>--</td><td>21280.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24789N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/24789/primary/acisf24789N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24788</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59342.738</td><td>ACIS-S</td><td>HETG</td><td>25080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4280:chandra.obs.misc</td><td>59342.737974537</td><td>--</td><td>--</td><td>25080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24788N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/24788/primary/acisf24788N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>25015</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59336.1988</td><td>ACIS-S</td><td>HETG</td><td>17080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4281:chandra.obs.misc</td><td>59336.1987962963</td><td>--</td><td>--</td><td>17080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf25015N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/5/25015/primary/acisf25015N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24793</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59335.6602</td><td>ACIS-S</td><td>HETG</td><td>17080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4282:chandra.obs.misc</td><td>59335.6602083333</td><td>--</td><td>--</td><td>17080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24793N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/3/24793/primary/acisf24793N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>25024</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59340.9376</td><td>ACIS-S</td><td>HETG</td><td>14080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4283:chandra.obs.misc</td><td>59340.9376041667</td><td>--</td><td>--</td><td>14080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf25024N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/4/25024/primary/acisf25024N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24790</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59343.4834</td><td>ACIS-S</td><td>HETG</td><td>18080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4284:chandra.obs.misc</td><td>59343.4834143519</td><td>--</td><td>--</td><td>18080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24790N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/24790/primary/acisf24790N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24792</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59344.0923</td><td>ACIS-S</td><td>HETG</td><td>17080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4285:chandra.obs.misc</td><td>59344.0923148148</td><td>--</td><td>--</td><td>17080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24792N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/2/24792/primary/acisf24792N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24787</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59340.0616</td><td>ACIS-S</td><td>HETG</td><td>39090</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4286:chandra.obs.misc</td><td>59340.0615740741</td><td>--</td><td>--</td><td>39090.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24787N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/24787/primary/acisf24787N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24737</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59319.8031</td><td>ACIS-S</td><td>HETG</td><td>20080</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4287:chandra.obs.misc</td><td>59319.8030787037</td><td>--</td><td>--</td><td>20080.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24737N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/24737/primary/acisf24737N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24795</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59328.2974</td><td>ACIS-S</td><td>HETG</td><td>27880</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4288:chandra.obs.misc</td><td>59328.2974189815</td><td>--</td><td>--</td><td>27880.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24795N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/5/24795/primary/acisf24795N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>25036</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59345.6677</td><td>ACIS-S</td><td>HETG</td><td>18180</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4289:chandra.obs.misc</td><td>59345.6677199074</td><td>--</td><td>--</td><td>18180.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf25036N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/25036/primary/acisf25036N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>24791</td><td>archived</td><td>NGC 1365</td><td>53.40192</td><td>-36.14066</td><td>59326.8302</td><td>ACIS-S</td><td>HETG</td><td>26580</td><td>GTO</td><td>Canizares</td><td>59710</td><td>4290:chandra.obs.misc</td><td>59326.8301736111</td><td>--</td><td>--</td><td>26580.0</td><td>--</td><td>53.40192</td><td>-36.14066</td><td>acisf24791N001_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/1/24791/primary/acisf24791N001_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>13920</td><td>archived</td><td>NGC 1365</td><td>53.40167</td><td>-36.14028</td><td>56026.4065</td><td>ACIS-S</td><td>HETG</td><td>90040</td><td>GO</td><td>Reeves</td><td>56398</td><td>4291:chandra.obs.misc</td><td>56026.4065162037</td><td>--</td><td>--</td><td>90040.0</td><td>--</td><td>53.40167</td><td>-36.14028</td><td>acisf13920N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/13920/primary/acisf13920N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>13921</td><td>archived</td><td>NGC 1365</td><td>53.40167</td><td>-36.14028</td><td>56029.0272</td><td>ACIS-S</td><td>HETG</td><td>110050</td><td>GO</td><td>Reeves</td><td>56398</td><td>4299:chandra.obs.misc</td><td>56029.0271643518</td><td>--</td><td>--</td><td>110050.0</td><td>--</td><td>53.40167</td><td>-36.14028</td><td>acisf13921N002_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/1/13921/primary/acisf13921N002_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
 </table></div></div></div>
 </div>
 <p>Hint 3: Download the data to make a spectrum. Note: you might end here and use Xspec to plot and model the spectrum. Or … you can also try to take a quick look at the spectrum.</p>
@@ -921,7 +872,7 @@ WARNING: UnitsWarning: Unit &#39;meter&#39; not supported by the VOUnit standard
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/506cfb3bd360ab1772f11af20249f4667561f79e45728d09fee545b9d6939cfa.png" src="_images/506cfb3bd360ab1772f11af20249f4667561f79e45728d09fee545b9d6939cfa.png" />
+<img alt="_images/cb300a03028db32737560bb81c0963d745f5261bd7630a4d6bc3886de045ebe7.png" src="_images/cb300a03028db32737560bb81c0963d745f5261bd7630a4d6bc3886de045ebe7.png" />
 </div>
 </div>
 <p>This can then be analyzed in your favorite spectral analysis tool, e.g., <a class="reference external" href="https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html">pyXspec</a>.  (For the winter 2018 AAS workshop, we demonstrated this in a <a class="reference external" href="https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.ipynb">notebook</a> that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.)</p>
@@ -931,50 +882,113 @@ WARNING: UnitsWarning: Unit &#39;meter&#39; not supported by the VOUnit standard
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="UseCase_I.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Science User Case - Inspecting a Candidate List</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="UseCase_I.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Science User Case - Inspecting a Candidate List</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="UseCase_III.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="UseCase_III.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By NASA-NAVO developers<br/>
-  
-      &copy; Copyright 2018-2022, NASA-NAVO developers.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-images">Step 2: Make Images:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ultraviolet-and-x-ray-images">Create ultraviolet and X-ray images</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-make-a-spectrum">Step 3: Make a spectrum:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By NASA-NAVO developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2018-2022, NASA-NAVO developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

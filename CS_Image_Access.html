@@ -1,32 +1,42 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Searching for and retrieving images &#8212; NASA-NAVO Workshops Notebooks</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -34,57 +44,103 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS_Image_Access';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Retrieve spectra using Simple Spectral Access protocol" href="CS_Spectral_Access.html" />
     <link rel="prev" title="Accessing astronomical catalogs" href="CS_Catalog_Queries.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NASA-NAVO Workshops Notebooks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">NASA-NAVO Workshops Notebooks</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -94,450 +150,307 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_Catalog_Queries.html">
-   Accessing  astronomical catalogs
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Searching for and retrieving images
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_Spectral_Access.html">
-   Retrieve spectra using Simple Spectral Access protocol
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_UCDs.html">
-   UCDs:  working with heterogeneous tables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CS_VO_Tables.html">
-   Creating a VO Table from a CSV file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise_I.html">
-   Science User Case - Inspecting a Candidate List
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise_II.html">
-   Preparing a proposal
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise_III.html">
-   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="QuickReference.html">
-   Quick Reference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="UseCase_I.html">
-   Science User Case - Inspecting a Candidate List
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="UseCase_II.html">
-   Preparing a proposal
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="UseCase_III.html">
-   Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="CS_Catalog_Queries.html">Accessing  astronomical catalogs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Searching for and retrieving images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_Spectral_Access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_UCDs.html">UCDs:  working with heterogeneous tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_VO_Tables.html">Creating a VO Table from a CSV file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise_I.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise_II.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise_III.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QuickReference.html">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UseCase_I.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UseCase_II.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UseCase_III.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
 </ul>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="00_SETUP.html">
-   Configuring the Workshop Environment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="KNOWN_ISSUES.html">
-   Known issues and workarounds
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="00_SETUP.html">Configuring the Workshop Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KNOWN_ISSUES.html">Known issues and workarounds</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Image_Access.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Image_Access.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Image_Access.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Image_Access.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Image_Access.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2FCS_Image_Access.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CS_Image_Access.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/NASA-NAVO/navo-workshop"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2FCS_Image_Access.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Image_Access.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/CS_Image_Access.ipynb.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-sia-resources-from-the-registry">
-   1.  Finding SIA resources from the Registry
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-sia-to-retrieve-an-image">
-   2. Using SIA to retrieve an image
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viewing-the-resulting-image">
-   3. Viewing the resulting image
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jpg-images">
-     JPG images
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fits-files">
-     Fits files
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-imshow">
-       Using imshow
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-of-data-available-through-multiple-services">
-   4. Example of data available through multiple services
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-heasarc">
-     Using HEASARC
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-sdss-skyserver">
-     Using SDSS SkyServer
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Searching for and retrieving images</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-sia-resources-from-the-registry">
-   1.  Finding SIA resources from the Registry
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-sia-to-retrieve-an-image">
-   2. Using SIA to retrieve an image
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viewing-the-resulting-image">
-   3. Viewing the resulting image
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jpg-images">
-     JPG images
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fits-files">
-     Fits files
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-imshow">
-       Using imshow
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-of-data-available-through-multiple-services">
-   4. Example of data available through multiple services
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-heasarc">
-     Using HEASARC
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-sdss-skyserver">
-     Using SDSS SkyServer
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Searching for and retrieving images</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-sia-resources-from-the-registry">1.  Finding SIA resources from the Registry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sia-to-retrieve-an-image">2. Using SIA to retrieve an image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-resulting-image">3. Viewing the resulting image</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jpg-images">JPG images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fits-files">Fits files</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-imshow">Using imshow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-data-available-through-multiple-services">4. Example of data available through multiple services</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-heasarc">Using HEASARC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sdss-skyserver">Using SDSS SkyServer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="searching-for-and-retrieving-images">
 <h1>Searching for and retrieving images<a class="headerlink" href="#searching-for-and-retrieving-images" title="Permalink to this headline">#</a></h1>
 <p>In this notebook, we show how to search for and retrieve images from VO services using the Registry and the <strong><a class="reference external" href="http://www.ivoa.net/documents/SIA/">Simple Image Access</a></strong> (SIA) protocol.</p>
@@ -584,7 +497,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=18</i>
-<table id="table140380266865728" class="table-striped table-bordered table-condensed">
+<table id="table140109842263552" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer</td></tr>
@@ -617,7 +530,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table140380266865440" class="table-striped table-bordered table-condensed">
+<table id="table140109842496480" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://nasa.heasarc/skyview/swiftuvot</td><td>SWIFTUVOT</td><td>Swift UVOT Combined V Intensity Images</td></tr>
@@ -641,15 +554,15 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table140380267543856" class="table-striped table-bordered table-condensed">
+<table id="table140109842267536" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
 <thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>swiftuvotvint</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489136105&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>1</td></tr>
-<tr><td>swiftuvotbint</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=swiftuvotbint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489137026&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>2</td></tr>
-<tr><td>swiftuvotuint</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=swiftuvotuint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489140817&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>3</td></tr>
-<tr><td>swiftuvotuvw1int</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=swiftuvotuvw1int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489141986&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>4</td></tr>
-<tr><td>swiftuvotuvw2int</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=swiftuvotuvw2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489143562&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>5</td></tr>
-<tr><td>swiftuvotuvm2int</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=swiftuvotuvm2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489145028&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>6</td></tr>
+<tr><td>swiftuvotvint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319290180&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>1</td></tr>
+<tr><td>swiftuvotbint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotbint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319290530&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>2</td></tr>
+<tr><td>swiftuvotuint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319291850&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>3</td></tr>
+<tr><td>swiftuvotuvw1int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw1int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319292329&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>4</td></tr>
+<tr><td>swiftuvotuvw2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319292790&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>5</td></tr>
+<tr><td>swiftuvotuvm2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvm2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319293281&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>6</td></tr>
 </table></div></div></div>
 </div>
 <p>Extract the fields you’re interested in, e.g., the URLs of the images made by skyview.  Note that specifying as we did SwiftUVOT, we get a number of different images, e.g., UVOT U, V, B, W1, W2, etc.  For each survey, there are two URLs, first the FITS IMAGE and second the JPEG.</p>
@@ -662,7 +575,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489136105&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319290180&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg
 </pre></div>
 </div>
 </div>
@@ -681,7 +594,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><img src="https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&survey=swiftuvotvint&pixels=300%2C300&sampler=LI&size=0.20000000000000004%2C0.20000000000000004&projection=Tan&coordinates=J2000.0&requestID=skv1676489136105&nofits=1&quicklook=jpeg&return=jpeg"/></div></div>
+<div class="output text_html"><img src="https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&survey=swiftuvotvint&pixels=300%2C300&sampler=LI&size=0.20000000000000004%2C0.20000000000000004&projection=Tan&coordinates=J2000.0&requestID=skv1681319290180&nofits=1&quicklook=jpeg&return=jpeg"/></div></div>
 </div>
 </section>
 <section id="fits-files">
@@ -700,7 +613,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: /home/runner/.astropy/cache/download/url/96210cf37b43ae26e55872bf42fae8b8/contents
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: /home/runner/.astropy/cache/download/url/ce6db1a47d04ecba2d59811505676fad/contents
 No.    Name      Ver    Type      Cards   Dimensions   Format
   0  PRIMARY       1 PrimaryHDU     111   (300, 300)   float32   
 </pre></div>
@@ -716,10 +629,10 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7facd3fb9d50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f6da3fae920&gt;
 </pre></div>
 </div>
-<img alt="_images/5a6f2ab7e1757d96c095acb363eb53be03390cd066b2007d71096dadc2fff3d9.png" src="_images/5a6f2ab7e1757d96c095acb363eb53be03390cd066b2007d71096dadc2fff3d9.png" />
+<img alt="_images/5027ed3a689bf9e497aeccaf97091b1d5a91c89f836ada21584de9f9a6da94f7.png" src="_images/5027ed3a689bf9e497aeccaf97091b1d5a91c89f836ada21584de9f9a6da94f7.png" />
 </div>
 </div>
 </section>
@@ -737,7 +650,7 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140380267540160" class="table-striped table-bordered table-condensed">
+<table id="table140108875398496" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://nasa.heasarc/skyview/sdssdr7</td><td>SDSSDR7</td></tr>
@@ -758,14 +671,14 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table140380267529792" class="table-striped table-bordered table-condensed">
+<table id="table140108875397440" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
 <thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>sdssdr7g</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=sdssdr7g&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489160490&amp;return=FITS</td><td>1</td></tr>
-<tr><td>sdssdr7i</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=sdssdr7i&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489160978&amp;return=FITS</td><td>2</td></tr>
-<tr><td>sdssdr7u</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=sdssdr7u&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489161478&amp;return=FITS</td><td>3</td></tr>
-<tr><td>sdssdr7r</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=sdssdr7r&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489162084&amp;return=FITS</td><td>4</td></tr>
-<tr><td>sdssdr7z</td><td>202.469575</td><td>47.19525833</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.19525833&amp;survey=sdssdr7z&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1676489162548&amp;return=FITS</td><td>5</td></tr>
+<tr><td>sdssdr7g</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7g&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319301236&amp;return=FITS</td><td>1</td></tr>
+<tr><td>sdssdr7i</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7i&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319301738&amp;return=FITS</td><td>2</td></tr>
+<tr><td>sdssdr7u</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7u&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319302244&amp;return=FITS</td><td>3</td></tr>
+<tr><td>sdssdr7r</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7r&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319302719&amp;return=FITS</td><td>4</td></tr>
+<tr><td>sdssdr7z</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7z&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1681319303445&amp;return=FITS</td><td>5</td></tr>
 </table></div></div></div>
 </div>
 <div class="cell docutils container">
@@ -785,10 +698,10 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7facd3fb9330&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f6da3fadc60&gt;
 </pre></div>
 </div>
-<img alt="_images/b7be442762ebf248542d9d303c9ae2c406c27131b1147b66574dd2cb5bc8fd98.png" src="_images/b7be442762ebf248542d9d303c9ae2c406c27131b1147b66574dd2cb5bc8fd98.png" />
+<img alt="_images/bd9ab78181004166418f3b7654b9bb6ecdfcbfc40911b156e03720a21bc92a53.png" src="_images/bd9ab78181004166418f3b7654b9bb6ecdfcbfc40911b156e03720a21bc92a53.png" />
 </div>
 </div>
 </section>
@@ -808,7 +721,7 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><i>Table length=30</i>
-<table id="table140380252167552-224725" class="table-striped table-bordered table-condensed">
+<table id="table140108839994656-641917" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>Title</th><th>width</th><th>height</th><th>size</th><th>RA</th><th>DEC</th><th>scale</th><th>format</th><th>url</th><th>equinox</th><th>naxes</th><th>naxis</th><th>crtype</th><th>crpix</th><th>crval</th><th>cdval</th></tr></thead>
 <tr><td>0</td><td>Sloan Digital Sky Survey - Filter u</td><td>2048</td><td>1489</td><td>3049472.0</td><td>202.439715840115</td><td>47.1222952774076</td><td>[0.000110035211267606]</td><td>image/fits</td><td>http://das.sdss.org/imaging/3699/41/corr/6/fpC-003699-u6-0100.fit.gz</td><td>--</td><td>2</td><td>[2048 1489]</td><td>RA--TAN,DEC--TAN</td><td>[744.5 1024.5]</td><td>[202.439715840115 47.1222952774076]</td><td>[3.57829352076884e-05 0.000157654334590212 0.000107291403325821\n -2.42761847386219e-05]</td></tr>
 <tr><td>1</td><td>Sloan Digital Sky Survey - Filter g</td><td>2048</td><td>1489</td><td>3049472.0</td><td>202.438763451233</td><td>47.1224982411069</td><td>[0.000110035211267606]</td><td>image/fits</td><td>http://das.sdss.org/imaging/3699/41/corr/6/fpC-003699-g6-0100.fit.gz</td><td>--</td><td>2</td><td>[2048 1489]</td><td>RA--TAN,DEC--TAN</td><td>[744.5 1024.5]</td><td>[202.438763451233 47.1224982411069]</td><td>[3.57455198349534e-05 0.000157658871914506 0.000107248674325512\n -2.4298297148212e-05]</td></tr>
@@ -863,14 +776,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140380252167552-224725').dataTable()");
+    console.log("$('#table140108839994656-641917').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140380252167552-224725').dataTable({
+    $('#table140108839994656-641917').dataTable({
         order: [],
         pageLength: 5,
         lengthMenu: [[5, 10, 25, 50, 100, 500, 1000, -1], [5, 10, 25, 50, 100, 500, 1000, 'All']],
@@ -892,10 +805,10 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7facd3595ba0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f6da1a60670&gt;
 </pre></div>
 </div>
-<img alt="_images/89fd4e78a5c030246a7205ecd594189d11c56ca554caf17067a19a2b326d9010.png" src="_images/89fd4e78a5c030246a7205ecd594189d11c56ca554caf17067a19a2b326d9010.png" />
+<img alt="_images/c07a2c1f1fa0587c420a80358882ca7fd1e784d8829d0bd1b5b33d7c6003f819.png" src="_images/c07a2c1f1fa0587c420a80358882ca7fd1e784d8829d0bd1b5b33d7c6003f819.png" />
 </div>
 </div>
 <p>It turns out that SkyView is just getting images by using the SIAP internally to get the data from the SDSS service.  The point of the VO protocols is that you don’t need to know where the data are coming from.  But they can be processed differently.</p>
@@ -904,50 +817,119 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="CS_Catalog_Queries.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Accessing  astronomical catalogs</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="CS_Catalog_Queries.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing  astronomical catalogs</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="CS_Spectral_Access.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="CS_Spectral_Access.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Retrieve spectra using Simple Spectral Access protocol</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By NASA-NAVO developers<br/>
-  
-      &copy; Copyright 2018-2022, NASA-NAVO developers.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-sia-resources-from-the-registry">1.  Finding SIA resources from the Registry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sia-to-retrieve-an-image">2. Using SIA to retrieve an image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-resulting-image">3. Viewing the resulting image</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jpg-images">JPG images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fits-files">Fits files</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-imshow">Using imshow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-data-available-through-multiple-services">4. Example of data available through multiple services</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-heasarc">Using HEASARC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sdss-skyserver">Using SDSS SkyServer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By NASA-NAVO developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2018-2022, NASA-NAVO developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
