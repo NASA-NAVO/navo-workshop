@@ -22,7 +22,7 @@ operating system: [https://docs.conda.io/en/latest/miniconda.html](https://docs.
 Mambaforge. You can obtain an installer for your operating system at
 [https://github.com/conda-forge/miniforge#mambaforge](https://github.com/conda-forge/miniforge#mambaforge).
 Then follow the installation instructions at 
-[https://github.com/conda-forge/miniforge#mambaforge](https://github.com/conda-forge/miniforge#mambaforge).
+[https://github.com/conda-forge/miniforge#install](https://github.com/conda-forge/miniforge#install).
 You can then use `mamba` as a drop-in replacement for  `conda` in the
 installation instructions below.)
 
