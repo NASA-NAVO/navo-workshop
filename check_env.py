@@ -12,11 +12,11 @@ from packaging.version import Version
 # Set both min and max versions to avoid ambiguity.
 # This should match environment.yml file.
 PKGS = {'jupyter': None,
-        'notebook': ('6.0', None),
         'numpy': ('1.24', None),
         'matplotlib': ('3.2', None),
         'jupyterlab': ('3.1', None),
         'astropy': ('5.2', None),
+        'scipy': ('1.0', None),
         'pyvo': ('1.4', None),
         'astroquery': ('0.4.4', None)
         }
