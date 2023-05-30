@@ -18,14 +18,6 @@ conda info
 If Miniconda is not already installed, follow these instructions for your
 operating system: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
 
-(If you have trouble installing Miniconda, an alternative is to install
-Mambaforge. You can obtain an installer for your operating system at
-[https://github.com/conda-forge/miniforge#mambaforge](https://github.com/conda-forge/miniforge#mambaforge).
-Then follow the installation instructions at 
-[https://github.com/conda-forge/miniforge#install](https://github.com/conda-forge/miniforge#install).
-You can then use `mamba` as a drop-in replacement for  `conda` in the
-installation instructions below.)
-
 On Windows, you might also need
 [additional compilers](https://github.com/conda/conda-build/wiki/Windows-Compilers).
 
@@ -84,10 +76,17 @@ following:
 cd navo-workshop
 ```
 
+To speed up the installation of the environment, install the
+`conda-libmamba-solver` package:
+
+```console
+conda install conda-libmamba-solver
+```
+
 And finally, on any platform, to install and activate the conda environment for the workshop, type:
 
 ```console
-conda env create --file environment.yml
+conda env create --solver=libmamba --file environment.yml
 conda activate navo-env
 ```
 
