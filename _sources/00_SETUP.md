@@ -16,7 +16,7 @@ conda info
 ```
 
 If Miniconda is not already installed, follow these instructions for your
-operating system: https://docs.conda.io/en/latest/miniconda.html
+operating system: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
 
 On Windows, you might also need
 [additional compilers](https://github.com/conda/conda-build/wiki/Windows-Compilers).
@@ -76,12 +76,21 @@ following:
 cd navo-workshop
 ```
 
+To speed up the installation of the environment, install the
+`conda-libmamba-solver` package:
+
+```console
+conda install conda-libmamba-solver
+```
+
 And finally, on any platform, to install and activate the conda environment for the workshop, type:
 
 ```console
-conda env create --file environment.yml
+conda env create --solver=libmamba --file environment.yml
 conda activate navo-env
 ```
+
+The creation of the environment can take some time to run.
 
 ## 6. Check Installation
 

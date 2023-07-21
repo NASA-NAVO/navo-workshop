@@ -410,7 +410,7 @@ already installed, you can skip to the next step.</em></p>
 </pre></div>
 </div>
 <p>If Miniconda is not already installed, follow these instructions for your
-operating system: https://docs.conda.io/en/latest/miniconda.html</p>
+operating system: <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a></p>
 <p>On Windows, you might also need
 <a class="reference external" href="https://github.com/conda/conda-build/wiki/Windows-Compilers">additional compilers</a>.</p>
 </section>
@@ -458,11 +458,17 @@ following:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd navo-workshop</span>
 </pre></div>
 </div>
+<p>To speed up the installation of the environment, install the
+<code class="docutils literal notranslate"><span class="pre">conda-libmamba-solver</span></code> package:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda install conda-libmamba-solver</span>
+</pre></div>
+</div>
 <p>And finally, on any platform, to install and activate the conda environment for the workshop, type:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda env create --file environment.yml</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda env create --solver=libmamba --file environment.yml</span>
 <span class="go">conda activate navo-env</span>
 </pre></div>
 </div>
+<p>The creation of the environment can take some time to run.</p>
 </section>
 <section id="check-installation">
 <h2>6. Check Installation<a class="headerlink" href="#check-installation" title="Permalink to this headline">#</a></h2>
