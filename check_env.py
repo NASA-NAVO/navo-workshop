@@ -18,7 +18,7 @@ PKGS = {'jupyter': None,
         'astropy': ('5.2', None),
         'scipy': ('1.0', None),
         'pyvo': ('1.4', None),
-        'astroquery': ('0.4.4', None)
+        'astroquery': ('0.4.7dev', None)
         }
 
 

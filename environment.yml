@@ -5,8 +5,11 @@ dependencies:
   - python=3.9
   - numpy>=1.24
   - astropy>=5.2
-  - astroquery>=0.4.4
   - matplotlib>=3.2
   - jupyterlab>=3.1
   - pyvo>=1.4
   - scipy>=1.0
+  - pip
+  - pip:
+    - astroquery
+    - --pre
