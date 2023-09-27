@@ -23,3 +23,16 @@ This badge opens Jupyterlab session on Binder which can be used to run the works
 being left unattended for several minutes.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NASA-NAVO/notebooks/main?urlpath=lab)
+
+
+## Running on Sciserver
+
+The workshop notebooks can also be run on [Sciserver](https://sciserver.org/), which offer an online jypyter platform. To use it for the workshop, follow these steps:
+
+- Create an account on sciserver, if you do not already have one.
+
+- Once logged in, select the *Compute* app.
+
+- Create a container, give it name, select the *'Sciserver Essentials 2.0'* image, and click *Create*. Click on the container name to launch the jupyterlab interface.
+
+- Launch a terminal, navigate to `/home/idies/workspace/Storage/USER/persistent` (replace `USER` by you username), and follow the [installation and setup instructions](https://nasa-navo.github.io/navo-workshop/00_SETUP.html).
