@@ -5,4 +5,3 @@ sphinx-book-theme
 sphinx-copybutton
 nbval
 pytest
-jupytext

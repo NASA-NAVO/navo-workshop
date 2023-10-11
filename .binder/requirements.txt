@@ -5,3 +5,5 @@ astropy
 astroquery>=0.4.7dev0
 pyvo>=1.4
 scipy
+# For supporting .md-based notebooks
+jupytext
