@@ -61,6 +61,8 @@ jobs:
       run:
         shell: bash -l {0}
     strategy:
+      # Don't cancel jobs if one is failing
+      fail-fast: false
       matrix:
         os: ["windows-latest", "ubuntu-latest", "macos-latest"]
 
