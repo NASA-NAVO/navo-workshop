@@ -150,7 +150,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Accessing  astronomical catalogs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Accessing astronomical catalogs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_Image_Access.html">Searching for and retrieving images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_Spectral_Access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_UCDs.html">UCDs:  working with heterogeneous tables</a></li>
@@ -220,7 +220,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Catalog_Queries.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Catalog_Queries.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -238,7 +238,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Catalog_Queries.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Catalog_Queries.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Catalog_Queries.ipynb" target="_blank"
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Catalog_Queries.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,6 +334,23 @@
       
       
       <li><a href="_sources/CS_Catalog_Queries.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/CS_Catalog_Queries.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +360,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -415,7 +432,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Accessing  astronomical catalogs</h1>
+    <h1>Accessing astronomical catalogs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,19 +443,19 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-cone-search">1. Simple cone search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-access-protocol-queries">2.  Table Access Protocol queries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-services">2.1  TAP services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-access-protocol-queries">2. Table Access Protocol queries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-services">2.1 TAP services</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expressing-queries-in-adql">2.2 Expressing queries in ADQL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-use-case">2.3   A use case</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-examples-for-a-given-service">2.4  TAP examples for a given service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-use-case">2.3 A use case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-examples-for-a-given-service">2.4 TAP examples for a given service</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-tap-to-cross-correlate-and-combine">3.  Using the TAP to cross-correlate and combine</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-to-combine-catalogs">3.1  Cross-correlating to combine catalogs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-with-user-defined-columns">3.2  Cross-correlating with user-defined columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-tap-to-cross-correlate-and-combine">3. Using the TAP to cross-correlate and combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-to-combine-catalogs">3.1 Cross-correlating to combine catalogs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-with-user-defined-columns">3.2 Cross-correlating with user-defined columns</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-versus-asynchronous-queries">4  Synchronous versus asynchronous queries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-versus-asynchronous-queries">4. Synchronous versus asynchronous queries</a></li>
 </ul>
             </nav>
         </div>
@@ -451,12 +468,33 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="accessing-astronomical-catalogs">
-<h1>Accessing  astronomical catalogs<a class="headerlink" href="#accessing-astronomical-catalogs" title="Permalink to this headline">#</a></h1>
+<h1>Accessing astronomical catalogs<a class="headerlink" href="#accessing-astronomical-catalogs" title="Permalink to this headline">#</a></h1>
 <p>There are two ways to access astronomical data catalogs that are provided as table data with a VO API.</p>
 <p>First, there is a <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ConeSearch.html">Simple Cone Search (SCS) protocol</a></strong>  used to search a given table with a given position and radius, getting back a table of results.  The interface requires only a position and search radius.</p>
 <p>For more complicated searches, the <strong><a class="reference external" href="http://www.ivoa.net/documents/TAP/">Table Access Protocol</a></strong> (TAP) protocol is  a powerful tool to search any VO table.  Here, we expand on its usage and that of the <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ADQL.html">Astronomical Data Query Language</a></strong> (ADQL) that it uses.</p>
-<p><span class="tocSkip"></span></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Accessing--astronomical-catalogs" data-toc-modified-id="Accessing--astronomical-catalogs-1">Accessing  astronomical catalogs</a></span><ul class="toc-item"><li><span><a href="#1.-Simple-cone-search-example" data-toc-modified-id="1.-Simple-cone-search-example-1.1">1. Simple cone search example</a></span></li><li><span><a href="#2.--Table-Access-Protocol-queries" data-toc-modified-id="2.--Table-Access-Protocol-queries-1.2">2.  Table Access Protocol queries</a></span><ul class="toc-item"><li><span><a href="#2.1--TAP-services" data-toc-modified-id="2.1--TAP-services-1.2.1">2.1  TAP services</a></span></li><li><span><a href="#2.2-Expressing-queries-in-ADQL" data-toc-modified-id="2.2-Expressing-queries-in-ADQL-1.2.2">2.2 Expressing queries in ADQL</a></span></li><li><span><a href="#2.3---A-use-case" data-toc-modified-id="2.3---A-use-case-1.2.3">2.3   A use case</a></span></li><li><span><a href="#2.4--TAP-examples-for-a-given-service" data-toc-modified-id="2.4--TAP-examples-for-a-given-service-1.2.4">2.4  TAP examples for a given service</a></span></li></ul></li><li><span><a href="#3.--Using-the-TAP-to-cross-correlate-and-combine" data-toc-modified-id="3.--Using-the-TAP-to-cross-correlate-and-combine-1.3">3.  Using the TAP to cross-correlate and combine</a></span><ul class="toc-item"><li><span><a href="#3.1--Cross-correlating-to-combine-catalogs" data-toc-modified-id="3.1--Cross-correlating-to-combine-catalogs-1.3.1">3.1  Cross-correlating to combine catalogs</a></span></li><li><span><a href="#3.2--Cross-correlating-with-user-defined-columns" data-toc-modified-id="3.2--Cross-correlating-with-user-defined-columns-1.3.2">3.2  Cross-correlating with user-defined columns</a></span></li></ul></li><li><span><a href="#4--Synchronous-versus-asynchronous-queries" data-toc-modified-id="4--Synchronous-versus-asynchronous-queries-1.4">4  Synchronous versus asynchronous queries</a></span></li></ul></li></ul></div><div class="cell docutils container">
+<ul class="simple">
+<li><p><a class="reference internal" href="#accessing-astronomical-catalogs"><span class="std std-doc">Accessing astronomical catalogs</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#simple-cone-search"><span class="std std-doc">1. Simple cone search</span></a></p></li>
+<li><p><a class="reference internal" href="#table-access-protocol-queries"><span class="std std-doc">2. Table Access Protocol queries</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#tap-services"><span class="std std-doc">2.1 TAP services</span></a></p></li>
+<li><p><a class="reference internal" href="#expressing-queries-in-adql"><span class="std std-doc">2.2 Expressing queries in ADQL</span></a></p></li>
+<li><p><a class="reference internal" href="#a-use-case"><span class="std std-doc">2.3 A use case</span></a></p></li>
+<li><p><a class="reference internal" href="#tap-examples-for-a-given-service"><span class="std std-doc">2.4 TAP examples for a given service</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#using-the-tap-to-cross-correlate-and-combine"><span class="std std-doc">3. Using the TAP to cross-correlate and combine</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#cross-correlating-to-combine-catalogs"><span class="std std-doc">3.1 Cross-correlating to combine catalogs</span></a></p></li>
+<li><p><a class="reference internal" href="#cross-correlating-with-user-defined-columns"><span class="std std-doc">3.2 Cross-correlating with user-defined columns</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#synchronous-versus-asynchronous-queries"><span class="std std-doc">4. Synchronous versus asynchronous queries</span></a></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># suppress some specific warnings that are not important</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -480,7 +518,6 @@ document.write(`
 </div>
 </div>
 </div>
-<p><a id="scs1"></a></p>
 <section id="simple-cone-search">
 <h2>1. Simple cone search<a class="headerlink" href="#simple-cone-search" title="Permalink to this headline">#</a></h2>
 <p>Starting with a single simple source first:</p>
@@ -516,7 +553,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table140550507563760" class="table-striped table-bordered table-condensed">
+<table id="table139842278350112" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://cds.vizier/j/mnras/339/652</td><td>J/MNRAS/339/652</td><td>The FLASH Redshift Survey</td></tr>
@@ -542,7 +579,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140550505946784" class="table-striped table-bordered table-condensed">
+<table id="table139842276784256" class="table-striped table-bordered table-condensed">
 <thead><tr><th>__row</th><th>name</th><th>ra</th><th>dec</th><th>bmag</th><th>radial_velocity</th><th>radial_velocity_error</th><th>redshift</th><th>class</th><th>Search_Offset</th></tr></thead>
 <thead><tr><th></th><th></th><th>deg</th><th>deg</th><th></th><th>km / s</th><th>km / s</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>int32</th><th>int16</th><th>float64</th><th>int16</th><th>float64</th></tr></thead>
@@ -551,13 +588,12 @@ document.write(`
 </table></div></div></div>
 </div>
 <p>The SCS is quite straightforward and returns all of the columns of the given table (which can be anything) for the sources in the region queried.</p>
-<p><a id="basic"></a></p>
 </section>
 <section id="table-access-protocol-queries">
-<h2>2.  Table Access Protocol queries<a class="headerlink" href="#table-access-protocol-queries" title="Permalink to this headline">#</a></h2>
+<h2>2. Table Access Protocol queries<a class="headerlink" href="#table-access-protocol-queries" title="Permalink to this headline">#</a></h2>
 <p>A TAP query is the most powerful way to search a catalog. A Simple Cone Search only allows you to ask for a position and radius, but TAP allows you to do much more, since the available tables contain much more information.</p>
 <section id="tap-services">
-<h3>2.1  TAP services<a class="headerlink" href="#tap-services" title="Permalink to this headline">#</a></h3>
+<h3>2.1 TAP services<a class="headerlink" href="#tap-services" title="Permalink to this headline">#</a></h3>
 <p>Many services list a single TAP service in the Registry that can access many catalogs, boosting your efficiency, and letting you add constraints based on any column. This is the power of the TAP!</p>
 <p>Suppose for our example, we want to select bright galaxy candidates but don’t know the coordinates. Therefore, we start from figuring out the best table to query.</p>
 <p>As before, we use the <code class="docutils literal notranslate"><span class="pre">vo.regsearch()</span></code> for a servicetype ‘tap’.  There are a lot of TAP services in the registry, but they are listed slightly differently than cone services.  The metadata on each catalog is usually published in the registry with its cone service, and then the full TAP service is listed as an “auxiliary” service.  So to find a TAP service for a given catalog, we need to add the option <em>includeaux=True</em>. Alternatively, you can start with a single TAP service and then ask it specifically which tables it serves, but for this use case, that is less efficient.</p>
@@ -571,7 +607,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=18</i>
-<table id="table140550507280416" class="table-striped table-bordered table-condensed">
+<table id="table139842278348048" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://cds.vizier/j/a+a/408/905</td><td>J/A+A/408/905</td><td>Very Luminous Galaxies</td></tr>
@@ -737,7 +773,6 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <p>There are a number of tables that appear to be useful table for our goal, including the ZCAT,  which contains columns with the information that we need to select a sample of the brightest nearby spiral galaxy candidates.</p>
 <p>Now that we know all the possible column information in the zcat catalog, we can do more than query on position (as in a cone search) but also on any other column (e.g., redshift, bmag, morph_type).  The query has to be expressed in a language called <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ADQL.html">ADQL</a></strong>.</p>
-<p><a id="adql"></a></p>
 </section>
 <section id="expressing-queries-in-adql">
 <h3>2.2 Expressing queries in ADQL<a class="headerlink" href="#expressing-queries-in-adql" title="Permalink to this headline">#</a></h3>
@@ -771,10 +806,9 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </ul>
 <p>is how you would ask for any catalog entries whose RA,DEC lie within a circular region defined by RA,DEC 210.5,-6.5 and a radius of 0.5 (all in degrees).  The ‘ICRS’ specifies the coordinate system.</p>
 <p>See the ADQL documentation for more.</p>
-<p><a id="usecase"></a></p>
 </section>
 <section id="a-use-case">
-<h3>2.3   A use case<a class="headerlink" href="#a-use-case" title="Permalink to this headline">#</a></h3>
+<h3>2.3 A use case<a class="headerlink" href="#a-use-case" title="Permalink to this headline">#</a></h3>
 <p>Here is a simple ADQL query where we print out the relevant columns for the bright (Bmag &lt;14) sources found within 1 degree of M51 (we will discuss how to define the table and column names below):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -806,7 +840,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table140550503248704" class="table-striped table-bordered table-condensed">
+<table id="table139843198777904" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>degree</th><th>degree</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
@@ -837,7 +871,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1120</i>
-<table id="table140550503082512" class="table-striped table-bordered table-condensed">
+<table id="table139842274151104" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>degree</th><th>degree</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
@@ -863,10 +897,9 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 <tr><td>149.05805</td><td>59.30739</td><td>2996</td><td>20</td><td>13.30</td><td>3</td></tr>
 </table></div></div></div>
 </div>
-<p><a id="examples"></a></p>
 </section>
 <section id="tap-examples-for-a-given-service">
-<h3>2.4  TAP examples for a given service<a class="headerlink" href="#tap-examples-for-a-given-service" title="Permalink to this headline">#</a></h3>
+<h3>2.4 TAP examples for a given service<a class="headerlink" href="#tap-examples-for-a-given-service" title="Permalink to this headline">#</a></h3>
 <p>Each service may also provide some example queries.  If they do, then you can see them with, e.g.:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -902,7 +935,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140550503248224" class="table-striped table-bordered table-condensed">
+<table id="table139842274150240" class="table-striped table-bordered table-condensed">
 <thead><tr><th>__row</th><th>seq_id</th><th>ra</th><th>dec</th><th>lii</th><th>bii</th><th>instrument</th><th>filter</th><th>site</th><th>exposure</th><th>requested_exposure</th><th>fits_type</th><th>start_time</th><th>end_time</th><th>name</th><th>pi_lname</th><th>pi_fname</th><th>ror</th><th>index_id</th><th>subj_cat</th><th>proc_rev</th><th>title</th><th>qa_number</th><th>ao</th><th>proposal_number</th><th>roll</th><th>rday_begin</th><th>rday_end</th><th>class</th><th>__x_ra_dec</th><th>__y_ra_dec</th><th>__z_ra_dec</th></tr></thead>
 <thead><tr><th></th><th></th><th>degree</th><th>degree</th><th>degree</th><th>degree</th><th></th><th></th><th></th><th>s</th><th>s</th><th></th><th>mjd</th><th>mjd</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>degree</th><th>d</th><th>d</th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>int16</th><th>int16</th><th>object</th><th>int32</th><th>int16</th><th>int32</th><th>int16</th><th>int32</th><th>int32</th><th>int16</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -910,13 +943,12 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 <tr><td>2</td><td>RH202299N00</td><td>49.3200</td><td>-85.5400</td><td>299.8517</td><td>-30.6815</td><td>HRI</td><td>N</td><td>MPE</td><td>36146</td><td>70000</td><td>RDF 4_2</td><td>50174.4961921296</td><td>50187.9867476852</td><td>RE J0317-853</td><td>BURLEIGH</td><td>MATTHEW</td><td>202299</td><td>n00</td><td>2</td><td>2</td><td>RE J0317-853</td><td>24302</td><td>6</td><td>7128</td><td>307</td><td>2163</td><td>2177</td><td>2900</td><td>0.0589725712332591</td><td>0.0506886092544769</td><td>-0.996971865567923</td></tr>
 </table></div></div></div>
 </div>
-<p><a id="cc"></a></p>
 </section>
 </section>
 <section id="using-the-tap-to-cross-correlate-and-combine">
-<h2>3.  Using the TAP to cross-correlate and combine<a class="headerlink" href="#using-the-tap-to-cross-correlate-and-combine" title="Permalink to this headline">#</a></h2>
+<h2>3. Using the TAP to cross-correlate and combine<a class="headerlink" href="#using-the-tap-to-cross-correlate-and-combine" title="Permalink to this headline">#</a></h2>
 <section id="cross-correlating-to-combine-catalogs">
-<h3>3.1  Cross-correlating to combine catalogs<a class="headerlink" href="#cross-correlating-to-combine-catalogs" title="Permalink to this headline">#</a></h3>
+<h3>3.1 Cross-correlating to combine catalogs<a class="headerlink" href="#cross-correlating-to-combine-catalogs" title="Permalink to this headline">#</a></h3>
 <p>TAP can also be a powerful way to collect a lot of useful information from existing catalogs in one quick step. For this exercise, we will start with a list of sources, uploaded from our own table, and do a ‘cross-correlation’ with the <em>zcat</em> table.</p>
 <p>For more on creating and working with VO tables, see that <a class="reference internal" href="CS_VO_Tables.html"><span class="doc std std-doc">notebook</span></a>.  Here, we just read one in that’s already prepared:</p>
 <p>First, check that this service can handle uploaded tables.   Not all do.</p>
@@ -952,7 +984,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=14</i>
-<table id="table140550446470080" class="table-striped table-bordered table-condensed">
+<table id="table139843198777664" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>degree</th><th>degree</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>float32</th><th>int16</th></tr></thead>
@@ -973,10 +1005,9 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </table></div></div></div>
 </div>
 <p>Therefore we now have the Bmag, morphological type and radial velocities for all the sources in our list with a single TAP query.</p>
-<p><a id="combo"></a></p>
 </section>
 <section id="cross-correlating-with-user-defined-columns">
-<h3>3.2  Cross-correlating with user-defined columns<a class="headerlink" href="#cross-correlating-with-user-defined-columns" title="Permalink to this headline">#</a></h3>
+<h3>3.2 Cross-correlating with user-defined columns<a class="headerlink" href="#cross-correlating-with-user-defined-columns" title="Permalink to this headline">#</a></h3>
 <p>Our input list of sources contains galaxy pair candidates that may be interacting with each other. Therefore it would be interesting to know what the morphological type and the Bmagnitude are for the potential companions.</p>
 <p>In this advanced example, we want our search to be physically motivated since the criterion for galaxy interaction depends on the physical separation of the galaxies. Unlike the previous case, the search radius is not a constant, but varies for each candidate by the distance to the source. Specifically, we want to search for companions that are within 50 kpc of the candidate and therefore first need to find the angular diameter distance that corresponds to galaxy’s distance (in our case the radial velocity).</p>
 <p>Therefore, we begin by taking our table of objects and adding an angDdeg column:</p>
@@ -998,7 +1029,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=14</i>
-<table id="table140550446470080" class="table-striped table-bordered table-condensed">
+<table id="table139843198777664" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>bmag</th><th>morph_type</th><th>redshift</th><th>angDdeg</th></tr></thead>
 <thead><tr><th>degree</th><th>degree</th><th></th><th></th><th></th><th></th><th>deg</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>float32</th><th>int16</th><th>float64</th><th>float64</th></tr></thead>
@@ -1043,7 +1074,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=9</i>
-<table id="table140550446476512" class="table-striped table-bordered table-condensed">
+<table id="table139842217672224" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>ra2</th><th>dec2</th><th>radial_velocity</th><th>morph_type</th><th>bmag</th></tr></thead>
 <thead><tr><th>degree</th><th>degree</th><th>degree</th><th>degree</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th></tr></thead>
@@ -1059,11 +1090,10 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </table></div></div></div>
 </div>
 <p>Therefore, by adding new information to our original data table, we could cross-correlate with the TAP.  We find that, in our candidate list, there is one true pair of galaxies.</p>
-<p><a id="async"></a></p>
 </section>
 </section>
 <section id="synchronous-versus-asynchronous-queries">
-<h2>4  Synchronous versus asynchronous queries<a class="headerlink" href="#synchronous-versus-asynchronous-queries" title="Permalink to this headline">#</a></h2>
+<h2>4. Synchronous versus asynchronous queries<a class="headerlink" href="#synchronous-versus-asynchronous-queries" title="Permalink to this headline">#</a></h2>
 <p>There is one technical detail about TAP queries that you will need to know.  In the code cells above, there are two commands for sending the query, one of which is commented out.  This is because, with the TAP, there are two ways to send such queries.  The default when you use the <code class="docutils literal notranslate"><span class="pre">search()</span></code> method is to us a synchronous query, which means that the query is sent and the client waits for the response.  For large and complicated queries, this may time out, or you may want to run several in parallel.  So there are other options.</p>
 <p>The method <code class="docutils literal notranslate"><span class="pre">service.run_async()</span></code> uses an asynchronous query, which means that the query is sent, and then (under the hood without you needing to do anything), the method checks for a response.  From your point of view, these methods look the same;  PyVO is doing different things under the hood, but the method will not return until it has your result.</p>
 <p>You need to know about these two methods for a couple of reasons.  First, some services will limit synchronous queries, i.e. they will not necessarily return <em>all</em> the results if there are too many of them.  An asynchronous query should have no such restrictions.  In the case of the HEASARC service that we use above, it does not matter, but you should be aware of this and be in the habit of using the asynchronous queries for complete results after an initial interactive exploration.</p>
@@ -1121,19 +1151,19 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-cone-search">1. Simple cone search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-access-protocol-queries">2.  Table Access Protocol queries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-services">2.1  TAP services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-access-protocol-queries">2. Table Access Protocol queries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-services">2.1 TAP services</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expressing-queries-in-adql">2.2 Expressing queries in ADQL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-use-case">2.3   A use case</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-examples-for-a-given-service">2.4  TAP examples for a given service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-use-case">2.3 A use case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-examples-for-a-given-service">2.4 TAP examples for a given service</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-tap-to-cross-correlate-and-combine">3.  Using the TAP to cross-correlate and combine</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-to-combine-catalogs">3.1  Cross-correlating to combine catalogs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-with-user-defined-columns">3.2  Cross-correlating with user-defined columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-tap-to-cross-correlate-and-combine">3. Using the TAP to cross-correlate and combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-to-combine-catalogs">3.1 Cross-correlating to combine catalogs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-with-user-defined-columns">3.2 Cross-correlating with user-defined columns</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-versus-asynchronous-queries">4  Synchronous versus asynchronous queries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-versus-asynchronous-queries">4. Synchronous versus asynchronous queries</a></li>
 </ul>
   </nav></div>
 

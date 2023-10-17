@@ -150,7 +150,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="CS_Catalog_Queries.html">Accessing  astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_Catalog_Queries.html">Accessing astronomical catalogs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Searching for and retrieving images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_Spectral_Access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_UCDs.html">UCDs:  working with heterogeneous tables</a></li>
@@ -220,7 +220,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Image_Access.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Image_Access.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -238,7 +238,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Image_Access.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Image_Access.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Image_Access.ipynb" target="_blank"
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Image_Access.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,6 +334,23 @@
       
       
       <li><a href="_sources/CS_Image_Access.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/CS_Image_Access.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +360,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -425,7 +442,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-sia-resources-from-the-registry">1.  Finding SIA resources from the Registry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-sia-resources-from-the-registry">1. Finding SIA resources from the Registry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sia-to-retrieve-an-image">2. Using SIA to retrieve an image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-resulting-image">3. Viewing the resulting image</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jpg-images">JPG images</a></li>
@@ -454,8 +471,26 @@ document.write(`
   <section id="searching-for-and-retrieving-images">
 <h1>Searching for and retrieving images<a class="headerlink" href="#searching-for-and-retrieving-images" title="Permalink to this headline">#</a></h1>
 <p>In this notebook, we show how to search for and retrieve images from VO services using the Registry and the <strong><a class="reference external" href="http://www.ivoa.net/documents/SIA/">Simple Image Access</a></strong> (SIA) protocol.</p>
-<p><span class="tocSkip"></span></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Searching-for-and-retrieving-images" data-toc-modified-id="Searching-for-and-retrieving-images-1">Searching for and retrieving images</a></span><ul class="toc-item"><li><span><a href="#1.--Finding-SIA-resources-from-the-Registry" data-toc-modified-id="1.--Finding-SIA-resources-from-the-Registry-1.1">1.  Finding SIA resources from the Registry</a></span></li><li><span><a href="#2.-Using-SIA-to-retrieve-an-image" data-toc-modified-id="2.-Using-SIA-to-retrieve-an-image-1.2">2. Using SIA to retrieve an image</a></span></li><li><span><a href="#3.-Viewing-the-resulting-image" data-toc-modified-id="3.-Viewing-the-resulting-image-1.3">3. Viewing the resulting image</a></span><ul class="toc-item"><li><span><a href="#JPG-images" data-toc-modified-id="JPG-images-1.3.1">JPG images</a></span></li><li><span><a href="#Fits-files" data-toc-modified-id="Fits-files-1.3.2">Fits files</a></span><ul class="toc-item"><li><span><a href="#Using-imshow" data-toc-modified-id="Using-imshow-1.3.2.1">Using imshow</a></span></li></ul></li></ul></li><li><span><a href="#4.-Example-of-data-available-through-multiple-services" data-toc-modified-id="4.-Example-of-data-available-through-multiple-services-1.4">4. Example of data available through multiple services</a></span><ul class="toc-item"><li><span><a href="#Using-HEASARC" data-toc-modified-id="Using-HEASARC-1.4.1">Using HEASARC</a></span></li><li><span><a href="#Using-SDSS-SkyServer" data-toc-modified-id="Using-SDSS-SkyServer-1.4.2">Using SDSS SkyServer</a></span></li></ul></li></ul></li></ul></div>
+<ul class="simple">
+<li><p><a class="reference internal" href="#searching-for-and-retrieving-images"><span class="std std-doc">Searching for and retrieving images</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#finding-sia-resources-from-the-registry"><span class="std std-doc">1. Finding SIA resources from the Registry</span></a></p></li>
+<li><p><a class="reference internal" href="#using-sia-to-retrieve-an-image"><span class="std std-doc">2. Using SIA to retrieve an image</span></a></p></li>
+<li><p><a class="reference internal" href="#viewing-the-resulting-image"><span class="std std-doc">3. Viewing the resulting image</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#jpg-images"><span class="std std-doc">JPG images</span></a></p></li>
+<li><p><a class="reference internal" href="#fits-files"><span class="std std-doc">Fits files</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example-of-data-available-through-multiple-services"><span class="std std-doc">4. Example of data available through multiple services</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-heasarc"><span class="std std-doc">Using HEASARC</span></a></p></li>
+<li><p><a class="reference internal" href="#using-sdss-skyserver"><span class="std std-doc">Using SDSS SkyServer</span></a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p><strong>*Note:</strong>  for all of these notebooks, the results depend on real-time queries.  Sometimes there are problems, either because a given service has changed, is undergoing maintenance, or the internet connectivity is having problems, etc.  Always retry a couple of times, come back later and try again, and only then send us the problem report to investigate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -483,9 +518,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p><a id="finding"></a></p>
 <section id="finding-sia-resources-from-the-registry">
-<h2>1.  Finding SIA resources from the Registry<a class="headerlink" href="#finding-sia-resources-from-the-registry" title="Permalink to this headline">#</a></h2>
+<h2>1. Finding SIA resources from the Registry<a class="headerlink" href="#finding-sia-resources-from-the-registry" title="Permalink to this headline">#</a></h2>
 <p>First, how do we find out what  services are available?  These are listed in a registry at STScI (<strong><a class="reference external" href="http://www.ivoa.net/documents/RegTAP/">see here</a></strong>).  Our Registry function gives a simple interface for how to search for services.</p>
 <p>Let’s search for services providing images in the ultraviolet bands:</p>
 <div class="cell docutils container">
@@ -497,7 +531,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=18</i>
-<table id="table140291231369056" class="table-striped table-bordered table-condensed">
+<table id="table140056414679680" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
@@ -530,14 +564,13 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table140290236541552" class="table-striped table-bordered table-condensed">
+<table id="table140055728452032" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://nasa.heasarc/skyview/swiftuvot</td><td>SWIFTUVOT</td><td>Swift UVOT Combined V Intensity Images</td></tr>
 </table></div></div></div>
 </div>
 <p>This shows us that the data we are interested in comes from the HEASARC’s SkyView service, but the point of these VO tools is that you don’t need to know that ahead of time or indeed to care where it comes from.</p>
-<p><a id="sia"></a></p>
 </section>
 <section id="using-sia-to-retrieve-an-image">
 <h2>2. Using SIA to retrieve an image<a class="headerlink" href="#using-sia-to-retrieve-an-image" title="Permalink to this headline">#</a></h2>
@@ -554,15 +587,15 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table140290274619648" class="table-striped table-bordered table-condensed">
+<table id="table140055812737392" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
 <thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>swiftuvotvint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416450353&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>1</td></tr>
-<tr><td>swiftuvotbint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotbint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416450637&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>2</td></tr>
-<tr><td>swiftuvotuint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416451809&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>3</td></tr>
-<tr><td>swiftuvotuvw1int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw1int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416452201&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>4</td></tr>
-<tr><td>swiftuvotuvw2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416452705&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>5</td></tr>
-<tr><td>swiftuvotuvm2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvm2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416453283&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>6</td></tr>
+<tr><td>swiftuvotvint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509768358&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>1</td></tr>
+<tr><td>swiftuvotbint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotbint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509768719&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>2</td></tr>
+<tr><td>swiftuvotuint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509769887&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>3</td></tr>
+<tr><td>swiftuvotuvw1int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw1int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509770727&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>4</td></tr>
+<tr><td>swiftuvotuvw2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509771266&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>5</td></tr>
+<tr><td>swiftuvotuvm2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvm2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509771740&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>6</td></tr>
 </table></div></div></div>
 </div>
 <p>Extract the fields you’re interested in, e.g., the URLs of the images made by skyview.  Note that specifying as we did SwiftUVOT, we get a number of different images, e.g., UVOT U, V, B, W1, W2, etc.  For each survey, there are two URLs, first the FITS IMAGE and second the JPEG.</p>
@@ -575,7 +608,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416450353&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509768358&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg
 </pre></div>
 </div>
 </div>
@@ -594,7 +627,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><img src="https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&survey=swiftuvotvint&pixels=300%2C300&sampler=LI&size=0.20000000000000004%2C0.20000000000000004&projection=Tan&coordinates=J2000.0&requestID=skv1690416450353&nofits=1&quicklook=jpeg&return=jpeg"/></div></div>
+<div class="output text_html"><img src="https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&survey=swiftuvotvint&pixels=300%2C300&sampler=LI&size=0.20000000000000004%2C0.20000000000000004&projection=Tan&coordinates=J2000.0&requestID=skv1697509768358&nofits=1&quicklook=jpeg&return=jpeg"/></div></div>
 </div>
 </section>
 <section id="fits-files">
@@ -613,7 +646,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: /home/runner/.astropy/cache/download/url/027287e510a3dfb9966864897d4f54d5/contents
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: /home/runner/.astropy/cache/download/url/93de04985b9e345a6f2ad6569ac901be/contents
 No.    Name      Ver    Type      Cards   Dimensions   Format
   0  PRIMARY       1 PrimaryHDU     111   (300, 300)   float32   
 </pre></div>
@@ -629,10 +662,10 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f97ddbeb730&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f6143fc2680&gt;
 </pre></div>
 </div>
-<img alt="_images/f81f510fd956cd246b4184873ad425afbddf75a7d5507a177d4837e3e652abe8.png" src="_images/f81f510fd956cd246b4184873ad425afbddf75a7d5507a177d4837e3e652abe8.png" />
+<img alt="_images/f5ae056c437b8aee6fc8d6179d58fb1100450ff4405aa3fd0abee080b14aa6d9.png" src="_images/f5ae056c437b8aee6fc8d6179d58fb1100450ff4405aa3fd0abee080b14aa6d9.png" />
 </div>
 </div>
 </section>
@@ -650,7 +683,7 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140290234345472" class="table-striped table-bordered table-condensed">
+<table id="table140055675450704" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://nasa.heasarc/skyview/sdssdr7</td><td>SDSSDR7</td></tr>
@@ -671,14 +704,14 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table140290234344320" class="table-striped table-bordered table-condensed">
+<table id="table140055675682576" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
 <thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>sdssdr7g</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7g&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416462686&amp;return=FITS</td><td>1</td></tr>
-<tr><td>sdssdr7i</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7i&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416463107&amp;return=FITS</td><td>2</td></tr>
-<tr><td>sdssdr7u</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7u&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416463518&amp;return=FITS</td><td>3</td></tr>
-<tr><td>sdssdr7r</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7r&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416464044&amp;return=FITS</td><td>4</td></tr>
-<tr><td>sdssdr7z</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7z&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1690416464478&amp;return=FITS</td><td>5</td></tr>
+<tr><td>sdssdr7g</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7g&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509780316&amp;return=FITS</td><td>1</td></tr>
+<tr><td>sdssdr7i</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7i&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509780766&amp;return=FITS</td><td>2</td></tr>
+<tr><td>sdssdr7u</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7u&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509781200&amp;return=FITS</td><td>3</td></tr>
+<tr><td>sdssdr7r</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7r&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509781678&amp;return=FITS</td><td>4</td></tr>
+<tr><td>sdssdr7z</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=sdssdr7z&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1697509782165&amp;return=FITS</td><td>5</td></tr>
 </table></div></div></div>
 </div>
 <div class="cell docutils container">
@@ -698,10 +731,10 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f97ddbea9e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f6140d32ce0&gt;
 </pre></div>
 </div>
-<img alt="_images/10be9f81f692669969cd9971194f61cda94d4b0548c4c701e2db87e3192c5bbb.png" src="_images/10be9f81f692669969cd9971194f61cda94d4b0548c4c701e2db87e3192c5bbb.png" />
+<img alt="_images/6ff1131712de6ea95dc974ec924015428a323fcd2144d3b4e138355f393b34b5.png" src="_images/6ff1131712de6ea95dc974ec924015428a323fcd2144d3b4e138355f393b34b5.png" />
 </div>
 </div>
 </section>
@@ -721,7 +754,7 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><i>Table length=30</i>
-<table id="table140290234957104-479495" class="table-striped table-bordered table-condensed">
+<table id="table140055675672016-306213" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>Title</th><th>width</th><th>height</th><th>size</th><th>RA</th><th>DEC</th><th>scale</th><th>format</th><th>url</th><th>equinox</th><th>naxes</th><th>naxis</th><th>crtype</th><th>crpix</th><th>crval</th><th>cdval</th></tr></thead>
 <tr><td>0</td><td>Sloan Digital Sky Survey - Filter u</td><td>2048</td><td>1489</td><td>3049472.0</td><td>202.439715840115</td><td>47.1222952774076</td><td>[0.000110035211267606]</td><td>image/fits</td><td>http://das.sdss.org/imaging/3699/41/corr/6/fpC-003699-u6-0100.fit.gz</td><td>--</td><td>2</td><td>[2048 1489]</td><td>RA--TAN,DEC--TAN</td><td>[744.5 1024.5]</td><td>[202.439715840115 47.1222952774076]</td><td>[3.57829352076884e-05 0.000157654334590212 0.000107291403325821\n -2.42761847386219e-05]</td></tr>
 <tr><td>1</td><td>Sloan Digital Sky Survey - Filter g</td><td>2048</td><td>1489</td><td>3049472.0</td><td>202.438763451233</td><td>47.1224982411069</td><td>[0.000110035211267606]</td><td>image/fits</td><td>http://das.sdss.org/imaging/3699/41/corr/6/fpC-003699-g6-0100.fit.gz</td><td>--</td><td>2</td><td>[2048 1489]</td><td>RA--TAN,DEC--TAN</td><td>[744.5 1024.5]</td><td>[202.438763451233 47.1224982411069]</td><td>[3.57455198349534e-05 0.000157658871914506 0.000107248674325512\n -2.4298297148212e-05]</td></tr>
@@ -776,14 +809,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140290234957104-479495').dataTable()");
+    console.log("$('#table140055675672016-306213').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140290234957104-479495').dataTable({
+    $('#table140055675672016-306213').dataTable({
         order: [],
         pageLength: 5,
         lengthMenu: [[5, 10, 25, 50, 100, 500, 1000, -1], [5, 10, 25, 50, 100, 500, 1000, 'All']],
@@ -805,10 +838,10 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f97dd986b30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f6140cf1540&gt;
 </pre></div>
 </div>
-<img alt="_images/3512caeb9de76f7e32f5c9198cae092107b329811af2fd73496eac401d150696.png" src="_images/3512caeb9de76f7e32f5c9198cae092107b329811af2fd73496eac401d150696.png" />
+<img alt="_images/ea107bb7bc80600bda73d60d2758e15db8c470ef3899a139f179ea1787773a6c.png" src="_images/ea107bb7bc80600bda73d60d2758e15db8c470ef3899a139f179ea1787773a6c.png" />
 </div>
 </div>
 <p>It turns out that SkyView is just getting images by using the SIAP internally to get the data from the SDSS service.  The point of the VO protocols is that you don’t need to know where the data are coming from.  But they can be processed differently.</p>
@@ -834,7 +867,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Accessing  astronomical catalogs</p>
+        <p class="prev-next-title">Accessing astronomical catalogs</p>
       </div>
     </a>
     <a class="right-next"
@@ -864,7 +897,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-sia-resources-from-the-registry">1.  Finding SIA resources from the Registry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-sia-resources-from-the-registry">1. Finding SIA resources from the Registry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sia-to-retrieve-an-image">2. Using SIA to retrieve an image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-resulting-image">3. Viewing the resulting image</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jpg-images">JPG images</a></li>

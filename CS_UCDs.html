@@ -150,7 +150,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="CS_Catalog_Queries.html">Accessing  astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_Catalog_Queries.html">Accessing astronomical catalogs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_Image_Access.html">Searching for and retrieving images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_Spectral_Access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">UCDs:  working with heterogeneous tables</a></li>
@@ -220,7 +220,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_UCDs.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_UCDs.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -238,7 +238,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_UCDs.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_UCDs.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_UCDs.ipynb" target="_blank"
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_UCDs.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,6 +334,23 @@
       
       
       <li><a href="_sources/CS_UCDs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/CS_UCDs.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +360,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -477,70 +494,92 @@ The Table Access Protocol (TAP) lets you execute queries against our database ta
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31 tables:
-tap_schema.schemas             - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32 tables:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.schemas             - description of schemas in this dataset
 ----
-tap_schema.tables              - None
+tap_schema.tables              - description of tables in this dataset
 ----
-tap_schema.columns             - None
+tap_schema.columns             - description of columns in this dataset
 ----
-tap_schema.keys                - None
+tap_schema.keys                - description of foreign keys in this dataset
 ----
-tap_schema.key_columns         - None
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.key_columns         - description of foreign key columns in this dataset
 ----
-dbo.Catalog_ACS_SourceExtractor - This table contains the Source Extractor information for each single filter, detected, ACS source. Source Extractor is described &lt;a href=&quot;http://adsabs.harvard.edu/abs/1996A%26AS..117..393B&quot;&gt;&lt;style=&quot;font-size:medium&quot;&gt;here &lt;/a&gt;.
+dbo.DetailedCatalog            - None
 ----
-dbo.Catalog_Image_MetaData     - This table describes the properties of images and their source lists. The source lists are contained in tables Catalog_WFPC2_SourceExtractor, Catalog_WFC3_SourceExtractor, Catalog_WFPC2_SourceExtractor.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SumMagAper2Cat             - None
 ----
-dbo.Catalog_WFC3_SourceExtractor - This table contains the Source Extractor information for each single filter, detected, WFC3 source. Source Extractor is described &lt;a href=&quot;http://adsabs.harvard.edu/abs/1996A%26AS..117..393B&quot;&gt;&lt;style=&quot;font-size:medium&quot;&gt;here &lt;/a&gt;.
+dbo.SumMagAutoCat              - None
 ----
-dbo.Catalog_WFPC2_SourceExtractor - This table contains the Source Extractor information for each single filter, detected, WFPC2 source. Source Extractor is described &lt;a href=&quot;http://adsabs.harvard.edu/abs/1996A%26AS..117..393B&quot;&gt;&lt;style=&quot;font-size:medium&quot;&gt;here &lt;/a&gt;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Catalog_ACS_SourceExtractor - None
 ----
-dbo.CloseMatch                 - For each match, this table contains a list of other matches that lie within 1 arcsecond of its position.
+dbo.Catalog_WFC3_SourceExtractor - None
 ----
-dbo.ClosestMatch               - This table contains the nearest neighbor for each match in table SumPropMagAper2Cat, provided there is a neighbor that lies  with 1 arcsecond of the match.  This table is a subset of table CloseMatch.
+dbo.Catalog_WFPC2_SourceExtractor - None
 ----
-dbo.DetailedCatalog            - This table contains the properties of each source in the Hubble Source Catalog.
+dbo.Catalog_Image_MetaData     - None
 ----
-dbo.GroupMembers               - This table lists the white light images that make up each group.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.CloseMatch                 - None
 ----
-dbo.Groups                     - This table summarizes properties of the image group, a collection of white light images that each intersect with another image in the group.
+dbo.ClosestMatch               - None
 ----
-dbo.HLAScience                 - This table describes the Hubble Legacy  Archive images that make up the white light images.
+dbo.GroupMembers               - None
 ----
-dbo.ImageMembers               - This table describes  the Hubble Legacy  Archive images that make up the white light images.
+dbo.Groups                     - None
 ----
-dbo.Images                     - This table summarizes properties of each white light image.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVdetailedView            - None
 ----
-dbo.ProductMembers             - This table provides the names and IDs of the single exposures that are used in each combined the single filter product image.   The single filter product images are used by the Hubble Source Catalog  to produce white light images for each visit.
+dbo.HCVsummaryView             - None
 ----
-dbo.SourceLinks                - This table links the Hubble Source Catalog tables to the Hubble Legacy Archive Tables (HLAScience, Catalog_Image_Metadata,  ACS_Catalog_SourceExtractor, WFPC2_Catalog_SourceExtractor, and WFC3_Catalog_SourceExtractor). For given  white light source (SourceID)  and single filter image  (ImageName, SciID, or MemberID), there is a unique   single filter source (ObjID). These Hubble Legacy archive tables provide  additional information that is not in the Hubble Source Catalog tables.
+dbo.HLAscience                 - None
 ----
-dbo.Sources                    - This table provides properties of each white light source.
+dbo.ImageMembers               - None
 ----
-dbo.SourcePositionsView        - This view contains positional information about the individual white light source detections of objects. The information is used to determine the astrometric parameters given in table AstromProperMotions.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Images                     - None
 ----
-dbo.SumMagAper2cat             - This table provides Source Extractor magaper2 information for each match based on sources with valid Source Extractor aper2 magnitudes. The companion table SumPropMagAper2Cat  contains other summary information for the corresponding match
+dbo.ProductMembers             - None
 ----
-dbo.ProperMotionsView          - This table contains proper motion information for the SWEEPS field. The proper motion is determined by a median fit to the source positions given in table AstromSourcePositions as a function of time for right ascension and declination independently and Galactic latitude and longitude independently. The fit is performed using the medfit algorithm in Numerical Recipes (Press et al. 1993). For right ascension (RA) in degrees, the fit for an object has the form
-RA(t) = raMean + 3.6x10^6*pmRA/cos(Dec)*(t-epochMean)/365.25,
-where t is the time expressed as an MJD, epochMean is the mean MJD of the object detections, raMean is the RA at the mean epoch, and pmRA is the RA proper motion in mas/yr. The first step in the medfit algorithm involves a least squares fit. The RA standard errors (1 sigma) of the least squares fit for the position at the mean epoch and the proper motion are designated by raMeanErr and pmRAErr, respectively. They are obtained using equations 34 and 35 of MathWorld. For a given object, medfit minimizes the mean absolute deviation of the RA data values from the fit. These RA directed distance value are given by dRA in table AstromSourcePositions. The mean absolute deviation of the RA data from the fit is designated by pmRADev. Similar fits are made for declination and Galactic longitude and latitude.
+dbo.ProperMotionsView          - None
 ----
-dbo.SumMagAutoCat              - This table provides Source Extractor magauto information for each match based on sources with valid Source Extractor auto magnitudes. The companion table SumPropMagAutoCat  contains other summary information for the corresponding match
+dbo.SourceLinks                - None
 ----
-dbo.HCVdetailedView            - This view summarizes detailed properties of each match in the Hubble Catalog of Variables (HCV). This table provides source properties for each match, filter, and epoch of observation.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SourcePositionsView        - None
 ----
-dbo.SumPropMagAper2Cat         - This table summarizes properties of each match based on sources with valid Source Extractor aper2 magnitudes. The companion table SumMagAper2Cat  contains the aper2 magnitude information for the match.
+dbo.Sources                    - None
 ----
-dbo.SumPropMagAutoCat          - This table summarizes properties of each match based on sources with valid Source Extractor auto magnitudes. The companion table SumMagAutoCat  contains the auto magnitude information for the  match.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SumMagAper2CatView         - None
 ----
-dbo.WFPC2PCFrac                - This table lists for each WFPC2 white light source the fraction of exposure time that was covered by the PC chip.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SumMagAutoCatView          - None
 ----
-dbo.XMatchV2                   - For each match, this table contains a list of possible corresponding matches from Version 1 of the HSC.
+dbo.WFPC2PCFRAC                - None
 ----
-dbo.SumMagAper2CatView         - This table provides Source Extractor magaper2 information for each match based on sources with valid Source Extractor aper2 magnitudes. The companion table SumMagAper2CatViewView  contains other summary information for the corresponding match
+dbo.XMatchV2                   - None
 ----
-dbo.HCVsummaryView             - This table summarizes source properties for a match and filter in the Hubble Catalog of Variables (HCV).
+dbo.HCVdetailedViewT           - None
+----
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVsummaryViewT            - None
 ----
 </pre></div>
 </div>
@@ -556,45 +595,41 @@ dbo.HCVsummaryView             - This table summarizes source properties for a m
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MatchRA [pos.eq.ra;meta.main]  - right ascension coordinate of the match position
-MatchDec [pos.eq.dec;meta.main] - declination coordinate of the match position
-SourceRA [None]                - right ascension coordinate of the source position
-SourceDec [None]               - declination coordinate of the match position
-D [None]                       - offset distance of source from match position
-DSigma [None]                  - standard deviation of source positions from match position
-AbsCorr [None]                 - Y/N indicator of whether the astrometric correction included alignment with a standard catalog
-XImage [None]                  - x position of source in image coordinates
-YImage [None]                  - y position of source in image coordinates
-ImageName [None]               - Hubble Legacy Archive image name
-Instrument [meta.id;instr]     - instrument name
-Mode [None]                    - observation mode
-Detector [meta.id;instr.det]   - detector
-Aperture [None]                - aperture
-ExposureTime [None]            - exposure time
-StartTime [time.start]         - earliest start time of exposures in image
-StopTime [time.end]            - latest stop time of exposures in image
-StartMJD [time.start]          - modified Julian date (MJD) for earliest start time of exposures in image
-StopMJD [time.end]             - modified Julian date (MJD) for latest start time of exposures in image
-WaveLength [None]              - central wavelength of filter
-Filter [meta.id;instr.filter]  - filter
-TargetName [meta.id;src]       - target name
-FluxAper2 [phot.count]         - aper2 flux
-MagAper2 [phot.mag]            - aper2 magnitude
-MagAuto [phot.mag]             - auto magnitude
-PropID [None]                  - HST proposal ID
-CI [None]                      - normalized concentration index
-KronRadius [None]              - Kron radius
-Flags [None]                   - bit encoded representation of source properties: 0 for point source, 1 for extended source, 4 for saturated source
-HTMID [None]                   - hierarchical triangular index (HTM) identifier
-X [None]                       - x coordinate of source on unit celestial sphere
-Y [None]                       - y coordinate of source on unit celestial sphere
-Z [None]                       - z coordinate of source in unit celestial sphere
-CatID [meta.id;meta.main]      - unique row identifier
-MatchID [None]                 - match identifier
-MemID [None]                   - source number within match
-SourceID [None]                - white light source identifier
-ImageID [None]                 - white light image identified
-Det [None]                     - Y/N indicator of whether source was detected in the specified filter
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CatID [meta.id;meta.main]      - Unique identifier for the catalog entry
+MatchID [meta.id.cross]        - identifier for the match
+MemID [meta.id.assoc]          - Unique identifier for each source of a match
+SourceID [meta.id.assoc]       - Source identifier from white light (detection) image
+ImageID [meta.id.parent]       - Identifier for the HLA image
+Det [meta.code.status]         - Is source detected in this observation (Y/N)
+MatchRA [pos.eq.ra;meta.main]  - Right Ascension (J2000)of match
+MatchDec [pos.eq.dec;meta.main] - Declination (J2000) of match
+SourceRA [pos.eq.ra;meta.main] - Right Ascension (J2000)of source
+SourceDec [pos.eq.dec;meta.main] - Declination (J2000) of source
+D [pos.angDistance]            - distance between source and match
+Dsigma [stat.stdev;pos.angDistance] - std dev of distance between source and match
+AbsCorr [meta.code.status]     - Astrometry correction flag
+Ximage [pos.cartesian.x]       - X position of source in image coordinates
+Yimage [pos.cartesian.y]       - Y position of source in image coordinates
+ImageName [meta.dataset]       - HLA image Name
+Instrument [instr]             - Instrument
+Mode [instr.setup]             - Observing mode
+Detector [instr.setup;instr.det] - Detector
+Aperture [instr.setup]         - Aperture
+ExposureTime [time.duration]   - Exposure time
+StartTime [time.start]         - Observation Start Time
+StopTime [time.end]            - Observation Stop Time
+StartMJD [time.start]          - Observation MJD Start Time
+StopMJD [time.end]             - Observation MJD Stop Time
+Wavelength [em.wl]             - Pivot wavelength in Angstroms
+Filter [instr.setup;instr.filter] - Filter
+TargetName [meta.id.assoc]     - Target Name for observation
+FluxAper2 [phot.flux]          - Count rate with an aperture radius 0.3 arcsec (WFPC2); 0.15 arcsec (ACS and WFC3/UVIS); 0.45 arcsec (WFC3/IR)
+MagAper2 [phot.mag]            - Magnitude  with an aperture radius 0.3 arcsec (WFPC2); 0.15 arcsec (ACS and WFC3/UVIS); 0.45 arcsec (WFC3/IR)
+MagAuto [phot.mag]             - Estimated total magnitude using Source Extractor algorithm
+PropID [obs.param]             - HST proposal number
+CI [phot.mag;arith.diff]       - Normalized (by detector and filter) mean value of Concentration Index defined as difference between magnitude in small and large apertures
+KronRadius [phys.size.radius;stat.mean] - Mean value of the Kron Radius from Source Extractor
+Flags [meta.code.status]       - Bit encoded flag: bit 0 (value 0) = point source; (value 1) = extended; bits 1 or 2 (values 2 or 4) = saturated
 </pre></div>
 </div>
 </div>
@@ -684,26 +719,21 @@ Looking at service from ivo://cefca/j-plus/j-plus-dr2
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 55363 results from ivoa.ObsCore
+    Found 55363 results from ivoa.ObsCore
 
 Looking at service from ivo://cefca/j-plus/j-plus-dr3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 82014 results from ivoa.ObsCore
+    Found 82014 results from ivoa.ObsCore
 
 Looking at service from ivo://cefca/minijpas/minij-pas-pdr201912
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
     Found 240 results from ivoa.ObsCore
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://cxc.harvard.edu/cda
+
+Looking at service from ivo://cxc.harvard.edu/cda
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.obsplan has the right columns.  Counting rows matching my time.
@@ -752,12 +782,12 @@ Problem executing query.  Continuing to next.
     Table dbo.ssa has the right columns.  Counting rows matching my time.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 2044432 results from dbo.ssa
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 2074857 results from dbo.ssa
 
     Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 3961983 results from ivoa.ObsCore
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 4003196 results from ivoa.ObsCore
 
 Looking at service from ivo://jvo/subaru/sxds/v1.0
 </pre></div>
@@ -819,16 +849,16 @@ WARNING: W02: None:1216:4: W02: &#39;UNKNOWN&#39; is not a valid datatype accord
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[21.94580078125,
- 22.5403995513916,
- 22.0459003448486,
- 19.3535995483398,
- 22.0848999023438,
- 22.1319999694824,
- 18.7014007568359,
- 21.6016998291016,
- 21.2751007080078,
- 22.0634002685547]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20.276399612426758,
+ 22.451000213623047,
+ 25.335100173950195,
+ 22.437999725341797,
+ 24.32939910888672,
+ 21.936500549316406,
+ 25.478700637817383,
+ 21.499900817871094,
+ 19.24180030822754,
+ 24.578399658203125]
 </pre></div>
 </div>
 </div>

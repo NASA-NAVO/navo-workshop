@@ -150,7 +150,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="CS_Catalog_Queries.html">Accessing  astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CS_Catalog_Queries.html">Accessing astronomical catalogs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_Image_Access.html">Searching for and retrieving images</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Retrieve spectra using Simple Spectral Access protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CS_UCDs.html">UCDs:  working with heterogeneous tables</a></li>
@@ -220,7 +220,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Spectral_Access.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/CS_Spectral_Access.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -238,7 +238,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Spectral_Access.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/CS_Spectral_Access.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Spectral_Access.ipynb" target="_blank"
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/CS_Spectral_Access.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,6 +334,23 @@
       
       
       <li><a href="_sources/CS_Spectral_Access.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/CS_Spectral_Access.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +360,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -481,7 +498,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table140541326927440" class="table-striped table-bordered table-condensed">
+<table id="table139752806627600" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://nasa.heasarc/chanmaster</td><td>Chandra</td></tr>
@@ -522,19 +539,18 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;degree&#39; not supported by the VOUnit standard.  [astropy.units.format.vounit]
 WARNING: UnitsWarning: Unit &#39;mjd&#39; not supported by the VOUnit standard. Did you mean MD, MJ, Md, mD, mJ or md? [astropy.units.format.vounit]
-WARNING: UnitsWarning: Unit &#39;meter&#39; not supported by the VOUnit standard.  [astropy.units.format.vounit]
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=6</i>
-<table id="table140542197235520-764640" class="table-striped table-bordered table-condensed">
-<thead><tr><th>idx</th><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>datalink</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_fov</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th></tr></thead>
-<thead><tr><th></th><th></th><th></th><th></th><th>degree</th><th>degree</th><th>mjd</th><th></th><th></th><th>s</th><th></th><th></th><th>mjd</th><th></th><th>mjd</th><th>mjd</th><th>mjd</th><th>s</th><th>degree</th><th>degree</th><th>degree</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>degree</th><th>meter</th><th>meter</th><th>meter</th><th>meter</th></tr></thead>
-<tr><td>0</td><td>639</td><td>archived</td><td>DELTA ORI</td><td>83.00125</td><td>-0.29917</td><td>51556.1364</td><td>ACIS-S</td><td>HETG</td><td>49680</td><td>GO</td><td>Cassinelli</td><td>52037</td><td>10778:chandra.obs.misc</td><td>51556.136400463</td><td>--</td><td>--</td><td>49680.0</td><td>--</td><td>83.00125</td><td>-0.29917</td><td>acisf00639N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/639/primary/acisf00639N004_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>1</td><td>14569</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56283.254</td><td>ACIS-S</td><td>HETG</td><td>120850</td><td>GO</td><td>Corcoran</td><td>56650</td><td>10779:chandra.obs.misc</td><td>56283.2539814815</td><td>--</td><td>--</td><td>120850.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>acisf14569N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>2</td><td>7416</td><td>archived</td><td>delta Ori (HD 36486)</td><td>83.00167</td><td>-0.29908</td><td>54413.427</td><td>HRC-S</td><td>LETG</td><td>97080</td><td>GO</td><td>Raassen</td><td>54783</td><td>10780:chandra.obs.misc</td><td>54413.4270486111</td><td>--</td><td>--</td><td>97080.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>hrcf07416N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz</td><td>2</td><td>Spectrum-1.0</td><td>HRC-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>3</td><td>14567</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56280.7037</td><td>ACIS-S</td><td>HETG</td><td>116500</td><td>GO</td><td>Corcoran</td><td>56647</td><td>10781:chandra.obs.misc</td><td>56280.7036921296</td><td>--</td><td>--</td><td>116500.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>acisf14567N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>4</td><td>14568</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56288.1612</td><td>ACIS-S</td><td>HETG</td><td>123600</td><td>GO</td><td>Corcoran</td><td>56655</td><td>10782:chandra.obs.misc</td><td>56288.1612268519</td><td>--</td><td>--</td><td>123600.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>acisf14568N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
-<tr><td>5</td><td>14570</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56285.5508</td><td>ACIS-S</td><td>HETG</td><td>124100</td><td>GO</td><td>Corcoran</td><td>56652</td><td>10783:chandra.obs.misc</td><td>56285.5507986111</td><td>--</td><td>--</td><td>124100.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>acisf14570N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>0.81</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<table id="table139752806108416-752798" class="table-striped table-bordered table-condensed">
+<thead><tr><th>idx</th><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>datalink</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_fov</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th>degree</th><th>degree</th><th>mjd</th><th></th><th></th><th>s</th><th></th><th></th><th>mjd</th><th></th><th>mjd</th><th>mjd</th><th>mjd</th><th>s</th><th>degree</th><th>degree</th><th>degree</th><th>degree</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>m</th><th>m</th><th>m</th><th>m</th></tr></thead>
+<tr><td>0</td><td>639</td><td>archived</td><td>DELTA ORI</td><td>83.00125</td><td>-0.29917</td><td>51556.1364</td><td>ACIS-S</td><td>HETG</td><td>49680</td><td>GO</td><td>Cassinelli</td><td>52037</td><td>11109:chandra.obs.misc</td><td>51556.136400463</td><td>--</td><td>--</td><td>49680.0</td><td>--</td><td>83.00125</td><td>-0.29917</td><td>0.81</td><td>acisf00639N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/639/primary/acisf00639N004_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>1</td><td>14568</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56288.1612</td><td>ACIS-S</td><td>HETG</td><td>123600</td><td>GO</td><td>Corcoran</td><td>56655</td><td>11110:chandra.obs.misc</td><td>56288.1612268519</td><td>--</td><td>--</td><td>123600.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14568N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>2</td><td>14567</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56280.7037</td><td>ACIS-S</td><td>HETG</td><td>116500</td><td>GO</td><td>Corcoran</td><td>56647</td><td>11111:chandra.obs.misc</td><td>56280.7036921296</td><td>--</td><td>--</td><td>116500.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14567N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>3</td><td>14569</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56283.254</td><td>ACIS-S</td><td>HETG</td><td>120850</td><td>GO</td><td>Corcoran</td><td>56650</td><td>11112:chandra.obs.misc</td><td>56283.2539814815</td><td>--</td><td>--</td><td>120850.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14569N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>4</td><td>14570</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56285.5508</td><td>ACIS-S</td><td>HETG</td><td>124100</td><td>GO</td><td>Corcoran</td><td>56652</td><td>11113:chandra.obs.misc</td><td>56285.5507986111</td><td>--</td><td>--</td><td>124100.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14570N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
+<tr><td>5</td><td>7416</td><td>archived</td><td>delta Ori (HD 36486)</td><td>83.00167</td><td>-0.29908</td><td>54413.427</td><td>HRC-S</td><td>LETG</td><td>97080</td><td>GO</td><td>Raassen</td><td>54783</td><td>11114:chandra.obs.misc</td><td>54413.4270486111</td><td>--</td><td>--</td><td>97080.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>hrcf07416N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz</td><td>2</td><td>Spectrum-1.0</td><td>HRC-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td></tr>
 </table><style>table.dataTable {clear: both; width: auto !important; margin: 0 !important;}
 .dataTables_info, .dataTables_length, .dataTables_filter, .dataTables_paginate{
 display: inline-block; margin-right: 1em; }
@@ -558,19 +574,19 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140542197235520-764640').dataTable()");
+    console.log("$('#table139752806108416-752798').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140542197235520-764640').dataTable({
+    $('#table139752806108416-752798').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
         pagingType: "full_numbers",
-        columnDefs: [{targets: [0, 4, 5, 6, 9, 12, 14, 15, 16, 17, 18, 19, 20, 28, 29, 30, 31, 32], type: "optionalnum"}]
+        columnDefs: [{targets: [0, 4, 5, 6, 9, 12, 14, 15, 16, 17, 18, 19, 20, 21, 29, 30, 31, 32], type: "optionalnum"}]
     });
 });
 </script>
@@ -602,7 +618,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=12</i>
-<table id="table140541284204400" class="table-striped table-bordered table-condensed">
+<table id="table139752804124032" class="table-striped table-bordered table-condensed">
 <thead><tr><th>SPEC_NUM</th><th>TG_M</th><th>TG_PART</th><th>TG_SRCID</th><th>X</th><th>Y</th><th>CHANNEL</th><th>COUNTS</th><th>STAT_ERR</th><th>BACKGROUND_UP</th><th>BACKGROUND_DOWN</th><th>BIN_LO</th><th>BIN_HI</th></tr></thead>
 <thead><tr><th>int16</th><th>int16</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>int16[8192]</th><th>int16[8192]</th><th>float32[8192]</th><th>int16[8192]</th><th>int16[8192]</th><th>float64[8192]</th><th>float64[8192]</th></tr></thead>
 <tr><td>1</td><td>-3</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>7.159166666667378 .. 0.3333333333333333</td><td>7.160000000000712 .. 0.33416666666666667</td></tr>
@@ -643,14 +659,10 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1970/3896105884.py:18: UserWarning: The figure layout has changed to tight
-  plt.tight_layout()
-</pre></div>
-</div>
-<img alt="_images/2f6236f77587aec4df1bfa5223da0d038be67d6197bce70b91911d8482f7b9f6.png" src="_images/2f6236f77587aec4df1bfa5223da0d038be67d6197bce70b91911d8482f7b9f6.png" />
+<img alt="_images/8ecbe432e22f61d14a0362747fae74b4988288878aa9c76dd796dc05b3d6a972.png" src="_images/8ecbe432e22f61d14a0362747fae74b4988288878aa9c76dd796dc05b3d6a972.png" />
 </div>
 </div>
-<p>This can then be analyzed in your favorite spectral analysis tool, e.g., <a class="reference external" href="https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html">pyXspec</a>.  (For the winter 2018 AAS workshop, we demonstrated this in a <a class="reference external" href="https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.ipynb">notebook</a> that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.)</p>
+<p>This can then be analyzed in your favorite spectral analysis tool, e.g., <a class="reference external" href="https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html">pyXspec</a>.  (For the winter 2018 AAS workshop, we demonstrated this in a <a class="reference external" href="https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.md">notebook</a> that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.)</p>
 </section>
 </section>
 
