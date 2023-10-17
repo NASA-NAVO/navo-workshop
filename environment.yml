@@ -11,5 +11,6 @@ dependencies:
   - scipy>=1.0
   - pip
   - pip:
+    - jupytext>=1.14
     - astroquery
     - --pre
