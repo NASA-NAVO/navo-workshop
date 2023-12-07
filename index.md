@@ -7,18 +7,18 @@
 maxdepth: 2
 ---
 
-CS_Catalog_Queries
-CS_Image_Access
-CS_Spectral_Access
-CS_UCDs
-CS_VO_Tables
-Exercise_I
-Exercise_II
-Exercise_III
-QuickReference
-UseCase_I
-UseCase_II
-UseCase_III
+content/reference_notebooks/catalog_queries
+content/reference_notebooks/image_access
+content/reference_notebooks/spectral_access
+content/reference_notebooks/ucds_unified_content_descriptors
+content/reference_notebooks/votables
+content/use_case_notebooks/candidate_list_exercise
+content/use_case_notebooks/proposal_prep_exercise
+content/use_case_notebooks/hr_diagram_exercise
+content/reference_notebooks/basic_reference
+content/use_case_notebooks/candidate_list_solution
+content/use_case_notebooks/proposal_prep_solution
+content/use_case_notebooks/hr_diagram_solution
 ```
 
 
