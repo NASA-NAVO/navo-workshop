@@ -72,6 +72,9 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Content generated during notebook execution
+*ipynb
+
 # pyenv
 .python-version
 
@@ -105,4 +108,3 @@ venv.bak/
 
 # nbcollection output
 _build/
-
