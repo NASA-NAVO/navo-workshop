@@ -126,12 +126,14 @@ the `jupytext` package has to be installed before your Jupyterlab session starts
 To open one of these notebooks (in the `content/reference_notebooks` and the
 `content/use_case_notebooks` subdirectories), in the Jupyterlab file panel,
 right-click on the notebook, choose "Open With", and select "Notebook" or
-"Jupytext Notebook" from the drop-down menu.
+"Jupytext Notebook" from the drop-down menu. See the screenshot below.
+
+![Right-click on Markdown notebook](_static/jupytext_rightclick.png "Open With Notebook")
 
 It is possible to change your Jupyterlab settings to allow double-clicking on a
 Markdown notebook to open automatically as a Jupytext Notebook. In Jupyterlab,
 navigate from the top-level menu item "Settings" and select "Settings Editor"
-in the drop-down. In the left sidebar of the Setting Editor tab, select 
+in the drop-down. In the left sidebar of the Setting Editor tab, select
 "Document Manager". The display should look like the image included below. In
 the "Default Viewers" section, add a `newKey` of `markdown` and a `New Value`
 of `Jupytext Notebook`. This will allow a double-click to open the Markdown
