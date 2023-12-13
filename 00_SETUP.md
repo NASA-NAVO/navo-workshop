@@ -114,6 +114,31 @@ From the directory containing the notebooks:
 ```console
 jupyter lab
 ```
+
+## 8. Handling Notebooks in MyST-Markdown format
+
+The Jupyter notebooks in this repository are in
+[MyST-Markdown format](https://myst-nb.readthedocs.io/en/v0.13.2/use/markdown.html).
+The [jupytext](https://jupytext.readthedocs.io/en/latest/index.html) package is
+included in your `navo-env` environment to work with these notebooks. Note that
+the `jupytext` package has to be installed before your Jupyterlab session starts.
+
+To open one of these notebooks (in the `content/reference_notebooks` and the
+`content/use_case_notebooks` subdirectories), in the Jupyterlab file panel,
+right-click on the notebook, choose "Open With", and select "Notebook" or
+"Jupytext Notebook" from the drop-down menu.
+
+It is possible to change your Jupyterlab settings to allow double-clicking on a
+Markdown notebook to open automatically as a Jupytext Notebook. In Jupyterlab,
+navigate from the top-level menu item "Settings" and select "Settings Editor"
+in the drop-down. In the left sidebar of the Setting Editor tab, select 
+"Document Manager". The display should look like the image included below. In
+the "Default Viewers" section, add a `newKey` of `markdown` and a `New Value`
+of `Jupytext Notebook`. This will allow a double-click to open the Markdown
+notebooks appropriately.
+
+![Jupyterlab Document Manager settings](_static/jupytext_settings.png "Open Notebooks with Jupytext")
+
 ## Additional Resources
 
 - [Set up git](https://help.github.com/articles/set-up-git/)
