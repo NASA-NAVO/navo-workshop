@@ -1,0 +1,830 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Science User Case - Inspecting a Candidate List &#8212; NASA-NAVO Workshops Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/use_case_notebooks/candidate_list_exercise';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Preparing a proposal" href="proposal_prep_exercise.html" />
+    <link rel="prev" title="Creating a VO Table from a CSV file" href="../reference_notebooks/votables.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NASA-NAVO Workshops Notebooks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    NASA-NAVO notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/catalog_queries.html">Accessing astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/image_access.html">Searching for and retrieving images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/votables.html">Creating a VO Table from a CSV file</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal_prep_exercise.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/basic_reference.html">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal_prep_solution.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../KNOWN_ISSUES.html">Known issues and workarounds</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/content/use_case_notebooks/candidate_list_exercise.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/content/use_case_notebooks/candidate_list_exercise.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/content/use_case_notebooks/candidate_list_exercise.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2Fcontent/use_case_notebooks/candidate_list_exercise.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/use_case_notebooks/candidate_list_exercise.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/content/use_case_notebooks/candidate_list_exercise.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Science User Case - Inspecting a Candidate List</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-python-modules-we-ll-be-using">1. Import the Python modules we’ll be using.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-ned-for-objects-in-this-paper">2. Search NED for objects in this paper.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-the-ned-results">3. Filter the NED results.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-the-navo-registry-for-image-resources">4. Search the NAVO Registry for image resources.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images">5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-the-allwise-image-service-that-you-are-interested-in">6. Choose the AllWISE image service that you are interested in.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-one-of-the-galaxies-in-the-ned-list">7. Choose one of the galaxies in the NED list.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-for-a-list-of-allwise-images-that-cover-this-galaxy">8. Search for a list of AllWISE images that cover this galaxy.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-to-table-method-to-view-the-results-as-an-astropy-table">9. Use the .to_table() method to view the results as an Astropy table.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-result-in-8-select-the-first-record-for-an-image-taken-in-wise-band-w1-3-6-micron">10. From the result in 8., select the first record for an image taken in WISE band W1 (3.6 micron)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-this-allwise-image">11. Visualize this AllWISE image.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-a-cutout-of-the-allwise-image-centered-on-your-position">12. Plot a cutout of the AllWISE image, centered on your position.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">13. Try visualizing a cutout of a GALEX image that covers your position.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position">14. Try visualizing a cutout of an SDSS image that covers your position.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">15. Try looping over all positions and plotting multiwavelength cutouts.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="science-user-case-inspecting-a-candidate-list">
+<h1>Science User Case - Inspecting a Candidate List<a class="headerlink" href="#science-user-case-inspecting-a-candidate-list" title="Permalink to this headline">#</a></h1>
+<p>Ogle et al. (2016) mined the NASA/IPAC Extragalactic Database (NED) to identify a new type of galaxy: Superluminous Spiral Galaxies.</p>
+<p>Here’s the paper: https://ui.adsabs.harvard.edu/abs/2016ApJ…817..109O/abstract</p>
+<p>Table 1 lists the positions of these Super Spirals. Based on those positions, let’s create multiwavelength cutouts for each super spiral to see what is unique about this new class of objects.</p>
+<section id="import-the-python-modules-we-ll-be-using">
+<h2>1. Import the Python modules we’ll be using.<a class="headerlink" href="#import-the-python-modules-we-ll-be-using" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suppress unimportant warnings.</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;pyvo.utils.xml.*&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="s1">&#39;.*RADECSYS=*&#39;</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># For downloading files</span>
+<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="n">Cutout2D</span>
+<span class="kn">import</span> <span class="nn">astropy.visualization</span> <span class="k">as</span> <span class="nn">vis</span>
+<span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
+<span class="kn">from</span> <span class="nn">astroquery.ipac.ned</span> <span class="kn">import</span> <span class="n">Ned</span>
+
+<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next cell prepares the notebook to display our visualizations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="search-ned-for-objects-in-this-paper">
+<h2>2. Search NED for objects in this paper.<a class="headerlink" href="#search-ned-for-objects-in-this-paper" title="Permalink to this headline">#</a></h2>
+<p>Insert a Code Cell below by clicking on the “Insert” Menu and choosing “Insert Cell Below”. Then consult QuickReference.md to figure out how to use astroquery to search NED for all objects in a paper, based on the refcode of the paper. Inspect the resulting astropy table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
+<span class="c1">#objects_in_paper = Ned.query_refcode(&#39;2018ApJ...858...62K&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="filter-the-ned-results">
+<h2>3. Filter the NED results.<a class="headerlink" href="#filter-the-ned-results" title="Permalink to this headline">#</a></h2>
+<p>The results from NED will include galaxies, but also other kinds of objects (e.g. galaxy clusters, galaxy groups). Print the ‘Type’ column to see the full range of classifications and filter the results so that we only keep the galaxies in the list.</p>
+</section>
+<section id="search-the-navo-registry-for-image-resources">
+<h2>4. Search the NAVO Registry for image resources.<a class="headerlink" href="#search-the-navo-registry-for-image-resources" title="Permalink to this headline">#</a></h2>
+<p>The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for all image resources, using the ‘service_type’ search parameter. How many image resources are currently available?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
+<span class="c1">#  services = vo.regsearch(servicetype=&#39;conesearch&#39;, keywords=[&#39;swift&#39;])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images">
+<h2>5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images.<a class="headerlink" href="#search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images" title="Permalink to this headline">#</a></h2>
+<p>There are hundreds of image resources…too many to quickly read through. Try adding the ‘keywords’ search parameter to your registry search, and find the image resource you would need to search the AllWISE images. Remember from the Known Issues that ‘keywords’ must be a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
+<span class="c1">#  services = vo.regsearch(servicetype=&#39;conesearch&#39;, keywords=[&#39;swift&#39;])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="choose-the-allwise-image-service-that-you-are-interested-in">
+<h2>6. Choose the AllWISE image service that you are interested in.<a class="headerlink" href="#choose-the-allwise-image-service-that-you-are-interested-in" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="choose-one-of-the-galaxies-in-the-ned-list">
+<h2>7. Choose one of the galaxies in the NED list.<a class="headerlink" href="#choose-one-of-the-galaxies-in-the-ned-list" title="Permalink to this headline">#</a></h2>
+<p>What is the position of this galaxy?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
+<span class="c1">#  m83_pos = SkyCoord(&#39;13h37m00.950s -29d51m55.51s&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="search-for-a-list-of-allwise-images-that-cover-this-galaxy">
+<h2>8. Search for a list of AllWISE images that cover this galaxy.<a class="headerlink" href="#search-for-a-list-of-allwise-images-that-cover-this-galaxy" title="Permalink to this headline">#</a></h2>
+<p>How many images are returned? Which are you most interested in?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
+<span class="c1">#results = services[1].search(pos=m83_pos, size=.2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-the-to-table-method-to-view-the-results-as-an-astropy-table">
+<h2>9. Use the .to_table() method to view the results as an Astropy table.<a class="headerlink" href="#use-the-to-table-method-to-view-the-results-as-an-astropy-table" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="from-the-result-in-8-select-the-first-record-for-an-image-taken-in-wise-band-w1-3-6-micron">
+<h2>10. From the result in 8., select the first record for an image taken in WISE band W1 (3.6 micron)<a class="headerlink" href="#from-the-result-in-8-select-the-first-record-for-an-image-taken-in-wise-band-w1-3-6-micron" title="Permalink to this headline">#</a></h2>
+<p>Hints:</p>
+<ul class="simple">
+<li><p>Loop over records and test on the <code class="docutils literal notranslate"><span class="pre">.bandpass_id</span></code> attribute of each record</p></li>
+<li><p>Print the <code class="docutils literal notranslate"><span class="pre">.title</span></code> and <code class="docutils literal notranslate"><span class="pre">.bandpass_id</span></code> of the record you find, to verify it is the right one.</p></li>
+</ul>
+</section>
+<section id="visualize-this-allwise-image">
+<h2>11. Visualize this AllWISE image.<a class="headerlink" href="#visualize-this-allwise-image" title="Permalink to this headline">#</a></h2>
+<p>Hint: Locate the galaxy in the image by overplotting a ring centered on the galaxy on the image</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  the QuickReference has this example:</span>
+<span class="c1">#  file_name = download_file(results[0].getdataurl()) </span>
+<span class="c1">#  Hint:  when displaying the fits file play with the vmax value, a </span>
+<span class="c1">#  vmax value around 10 will display a nice image</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-a-cutout-of-the-allwise-image-centered-on-your-position">
+<h2>12. Plot a cutout of the AllWISE image, centered on your position.<a class="headerlink" href="#plot-a-cutout-of-the-allwise-image-centered-on-your-position" title="Permalink to this headline">#</a></h2>
+<p>Try a 60 arcsecond cutout.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  using Cutout2D imported above from from astropy.nddata</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">
+<h2>13. Try visualizing a cutout of a GALEX image that covers your position.<a class="headerlink" href="#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position" title="Permalink to this headline">#</a></h2>
+<p>Repeat steps 5, 6, 8 through 12 for GALEX.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Steps 5 &amp; 6: Search the services found in step 4 for GALEX Sources</span>
+<span class="c1"># Hint: Choose the GALEX service on STSCI</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Steps 8 &amp; 9: Find the images that contain your chosen galaxy</span>
+<span class="c1"># and display using .to_table()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 10: Select one of the images and print the title and relevent </span>
+<span class="c1"># info. For example you can select an image with an &#39;enrValue&#39; of 2.35e-07</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 11: Visualize the image and overplot a ring on the image centered </span>
+<span class="c1"># on your galaxy. (A very small vmax value around 0.01 is recomended)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 12: Use Cutout2D to get a 60 arcsecond cutout</span>
+<span class="c1"># centered on the galaxy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position">
+<h2>14. Try visualizing a cutout of an SDSS image that covers your position.<a class="headerlink" href="#try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position" title="Permalink to this headline">#</a></h2>
+<p>Hints:</p>
+<ul class="simple">
+<li><p>Search the registry using `keywords=[‘sloan’]</p></li>
+<li><p>Find the service with a <code class="docutils literal notranslate"><span class="pre">short_name</span></code> of <code class="docutils literal notranslate"><span class="pre">'SDSS</span> <span class="pre">SIAP'</span></code></p></li>
+<li><p>From Known Issues, recall that an empty string must be specified to the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter dues to a bug in the service.</p></li>
+<li><p>After obtaining your search results, select r-band images using the <code class="docutils literal notranslate"><span class="pre">.title</span></code> attribute of the records that are returned, since <code class="docutils literal notranslate"><span class="pre">.bandpass_id</span></code> is not populated.</p></li>
+</ul>
+<p>(As a workaround to a bug in the SDSS service, pass <code class="docutils literal notranslate"><span class="pre">format=''</span></code> as an argument to the search() function when using the SDSS service.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Search the registery to find a service</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Search the SDSS SIAP service for images containing your galaxy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find an image taken in the r filter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the image and overplot a ring centered on the galaxy</span>
+<span class="c1"># Hint: a vmax around 0.01 will produce a nice image</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use Cutout2D to get a 60 arcsecond cutout centered on the galaxy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">
+<h2>15. Try looping over all positions and plotting multiwavelength cutouts.<a class="headerlink" href="#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts" title="Permalink to this headline">#</a></h2>
+<p>Hint: Gather the data in ALLWISE, GALEX, and SDSS for each galaxy and plot as seperate cutouts centered on the galaxy position</p>
+<p>Warning: this takes a long time to run!  You can limit it to the first three galaxies only, for example, for testing.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../reference_notebooks/votables.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creating a VO Table from a CSV file</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="proposal_prep_exercise.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Preparing a proposal</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-python-modules-we-ll-be-using">1. Import the Python modules we’ll be using.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-ned-for-objects-in-this-paper">2. Search NED for objects in this paper.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-the-ned-results">3. Filter the NED results.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-the-navo-registry-for-image-resources">4. Search the NAVO Registry for image resources.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images">5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-the-allwise-image-service-that-you-are-interested-in">6. Choose the AllWISE image service that you are interested in.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-one-of-the-galaxies-in-the-ned-list">7. Choose one of the galaxies in the NED list.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-for-a-list-of-allwise-images-that-cover-this-galaxy">8. Search for a list of AllWISE images that cover this galaxy.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-to-table-method-to-view-the-results-as-an-astropy-table">9. Use the .to_table() method to view the results as an Astropy table.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-result-in-8-select-the-first-record-for-an-image-taken-in-wise-band-w1-3-6-micron">10. From the result in 8., select the first record for an image taken in WISE band W1 (3.6 micron)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-this-allwise-image">11. Visualize this AllWISE image.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-a-cutout-of-the-allwise-image-centered-on-your-position">12. Plot a cutout of the AllWISE image, centered on your position.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">13. Try visualizing a cutout of a GALEX image that covers your position.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position">14. Try visualizing a cutout of an SDSS image that covers your position.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">15. Try looping over all positions and plotting multiwavelength cutouts.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By NASA-NAVO developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2018-2022, NASA-NAVO developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

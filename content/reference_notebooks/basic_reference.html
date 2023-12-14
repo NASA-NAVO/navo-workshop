@@ -1,0 +1,2197 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Quick Reference &#8212; NASA-NAVO Workshops Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/reference_notebooks/basic_reference';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Science User Case - Inspecting a Candidate List" href="../use_case_notebooks/candidate_list_solution.html" />
+    <link rel="prev" title="Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram" href="../use_case_notebooks/hr_diagram_exercise.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NASA-NAVO Workshops Notebooks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    NASA-NAVO notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="catalog_queries.html">Accessing astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image_access.html">Searching for and retrieving images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="votables.html">Creating a VO Table from a CSV file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../KNOWN_ISSUES.html">Known issues and workarounds</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/content/reference_notebooks/basic_reference.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/content/reference_notebooks/basic_reference.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/content/reference_notebooks/basic_reference.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2Fcontent/reference_notebooks/basic_reference.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/reference_notebooks/basic_reference.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/content/reference_notebooks/basic_reference.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quick Reference</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">0. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vo-services">2. VO Services</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-necessary-packages">2.0 Import Necessary Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-up-services-in-vo-registry">2.1 Look Up Services in VO Registry</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-different-arguments-values-to-modify-the-simple-example">2.1.1 Use different arguments/values to modify the simple example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-results">2.1.2 Inspect the results.</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pyvo">Using pyvo</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-results">Filtering results</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-astropy">Using astropy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cone-search">2.2 Cone search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-search">2.3 Image search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#find-an-image-service">Find an image service</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#search-one-of-the-services">Search one of the services</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-an-image">Download an image</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-search">2.4 Spectral search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-search">2.5 Table search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#column-information">Column Information</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-a-query">Perform a Query</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astroquery">3. Astroquery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ned">3.1 NED</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="quick-reference">
+<h1>Quick Reference<a class="headerlink" href="#quick-reference" title="Permalink to this headline">#</a></h1>
+<section id="setup">
+<h2>0. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
+<p>Please make sure your environment is set up according to the <a class="reference external" href="https://nasa-navo.github.io/navo-workshop/00_SETUP.html">instructions here</a>.</p>
+<p>Ensure you have the latest version of the workshop material by updating your environment:
+TBD</p>
+</section>
+<section id="overview">
+<h2>1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>NASA services can be queried from Python in multiple ways.</p>
+<ul class="simple">
+<li><p>Generic Virtual Observatory (VO) queries.</p>
+<ul>
+<li><p>Call sequence is consistent, including for non-NASA resources.</p></li>
+<li><p>Use the <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">pyvo</span></code> package</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/NASA-NAVO/navo-workshop/blob/main/KNOWN_ISSUES.md">Known issues/caveats</a>.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/">Astroquery</a> interfaces:</p>
+<ul>
+<li><p>Call sequences not quite as consistent, but follow similar patterns.</p></li>
+</ul>
+</li>
+<li><p>Ad hoc archive-specific interfaces</p></li>
+</ul>
+</section>
+<section id="vo-services">
+<h2>2. VO Services<a class="headerlink" href="#vo-services" title="Permalink to this headline">#</a></h2>
+<p>This workshop will introduce 4 types of VO queries:</p>
+<ul class="simple">
+<li><p><strong>VO Registry</strong> - Discover what services are available worldwide</p></li>
+<li><p><strong>Simple Cone Search</strong> - Search for catalog object within a specified cone region</p></li>
+<li><p><strong>Simple Image Access</strong> - Search for image products within a spatial region</p></li>
+<li><p><strong>Simple Spectral Access</strong> - Search for spectral products within a spatial region</p></li>
+<li><p><strong>Table Access</strong> - SQL-like queries to databases</p></li>
+</ul>
+<section id="import-necessary-packages">
+<h3>2.0 Import Necessary Packages<a class="headerlink" href="#import-necessary-packages" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generic VO access routines</span>
+<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+
+<span class="c1"># For specifying coordinates and angles</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">Angle</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+
+<span class="c1"># For downloading files</span>
+<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+
+<span class="c1"># Ignore unimportant warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="s1">&#39;.*Unknown element mirrorURL.*&#39;</span><span class="p">,</span> <span class="n">vo</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">UnknownElementWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="look-up-services-in-vo-registry">
+<h3>2.1 Look Up Services in VO Registry<a class="headerlink" href="#look-up-services-in-vo-registry" title="Permalink to this headline">#</a></h3>
+<p>Simple example:  Find Simple Cone Search (conesearch) services related to SWIFT.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;conesearch&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;swift&#39;</span><span class="p">])</span>
+<span class="n">services</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Table length=207&gt;
+                 ivoid                  ...       intf_roles     
+                                        ...                      
+                 object                 ...         object       
+--------------------------------------- ... ---------------------
+ivo://archive.stsci.edu/catalogs/mastcs ...                   std
+    ivo://bsdc.icranet.org/sds82/q/cone ...                   std
+               ivo://cds.vizier/b/swift ...                   std
+                ivo://cds.vizier/ii/339 ... std:::py VO sep:::std
+                 ivo://cds.vizier/ix/43 ... std:::py VO sep:::std
+                 ivo://cds.vizier/ix/51 ...                   std
+                 ivo://cds.vizier/ix/58 ... std:::py VO sep:::std
+          ivo://cds.vizier/j/a+a/427/87 ...                   std
+          ivo://cds.vizier/j/a+a/448/l9 ...                   std
+                                    ... ...                   ...
+          ivo://nasa.heasarc/swiftmastr ...                   std
+          ivo://nasa.heasarc/swifttdrss ...                   std
+          ivo://nasa.heasarc/swiftuvlog ...                   std
+          ivo://nasa.heasarc/swiftxrlog ...                   std
+           ivo://nasa.heasarc/swsdssqso ...                   std
+           ivo://nasa.heasarc/swuvotssc ...                   std
+          ivo://nasa.heasarc/swuvotssob ...                   std
+            ivo://nasa.heasarc/swxcscat ...                   std
+           ivo://nasa.heasarc/swxrt1fgl ...                   std
+           ivo://nasa.heasarc/xmmvaragn ...                   std
+</pre></div>
+</div>
+</div>
+</div>
+<section id="use-different-arguments-values-to-modify-the-simple-example">
+<h4>2.1.1 Use different arguments/values to modify the simple example<a class="headerlink" href="#use-different-arguments-values-to-modify-the-simple-example" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Argument</p></th>
+<th class="text-left head"><p>Description</p></th>
+<th class="text-left head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>servicetype</strong></p></td>
+<td class="text-left"><p>Type of service</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">conesearch</span></code> or <code class="docutils literal notranslate"><span class="pre">scs</span></code> for <strong>Simple Cone Search</strong><br> <code class="docutils literal notranslate"><span class="pre">image</span></code> or <code class="docutils literal notranslate"><span class="pre">sia</span></code> for <strong>Simple Image Access</strong><br> <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> or <code class="docutils literal notranslate"><span class="pre">ssa</span></code> for <strong>Simple Spectral Access</strong><br> <code class="docutils literal notranslate"><span class="pre">table</span></code> or <code class="docutils literal notranslate"><span class="pre">tap</span></code> for <strong>Table Access Protocol</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>keyword</strong></p></td>
+<td class="text-left"><p>List of one or more keyword(s) to match service’s metadata. Both ORs and ANDs may be specified.<br><ul><li>(OR) A list of keywords match a service if <strong>any</strong> of the keywords match the service.</li><li>(AND) If a  keyword contains multiple space-delimited words, <strong>all</strong> the words must match the metadata.</li></ul></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">['galex',</span> <span class="pre">'swift']</span></code> matches ‘galex’ or ‘swift’<br><code class="docutils literal notranslate"><span class="pre">['hst</span> <span class="pre">survey']</span></code> matches services mentioning both ‘hst’ and ‘survey’</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>waveband</strong></p></td>
+<td class="text-left"><p>Resulting services have data in the specified waveband(s)</p></td>
+<td class="text-left"><p>‘radio’, ‘millimeter’, ‘infrared’, ‘optical’, ‘uv’, ‘euv’, ‘x-ray’ ‘gamma-ray’</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inspect-the-results">
+<h4>2.1.2 Inspect the results.<a class="headerlink" href="#inspect-the-results" title="Permalink to this headline">#</a></h4>
+<section id="using-pyvo">
+<h5>Using pyvo<a class="headerlink" href="#using-pyvo" title="Permalink to this headline">#</a></h5>
+<p>Although not lists, <code class="docutils literal notranslate"><span class="pre">pyvo</span></code> results can be iterated over to see each individual result.  The results are specialized based on the type of query, providing access to the important properties of the results.  Some useful accessors with registry results are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">short_name</span></code> - A short name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">res_title</span></code> - A more descriptive title</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">res_description</span></code> - A more verbose description</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reference_url</span></code> - A link for more information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ivoid</span></code> - A unique identifier for the service.  Gives some indication of what organization is serving the data.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the number of results and the 1st 4 short names and titles.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of results: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">services</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">services</span><span class="p">)[:</span><span class="mi">4</span><span class="p">]:</span>  <span class="c1"># (Treat services as list to get the subset of rows)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">short_name</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">res_title</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of results: 207
+
+MAST CS - MAST ConeSearch
+sds82 cone - SDS82 catalog
+B/swift - Swift Master Catalog
+II/339 - Swift/UVOT Serendipitous Source Catalog
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="filtering-results">
+<h5>Filtering results<a class="headerlink" href="#filtering-results" title="Permalink to this headline">#</a></h5>
+<p>Of the services we found, which one(s) have ‘stsci.edu’ in their unique identifier?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stsci_services</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;stsci.edu&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">ivoid</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stsci_services</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;(STScI): </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">short_name</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">res_title</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(STScI): MAST CS - MAST ConeSearch
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-astropy">
+<h5>Using astropy<a class="headerlink" href="#using-astropy" title="Permalink to this headline">#</a></h5>
+<p>With the <code class="docutils literal notranslate"><span class="pre">to_table()</span></code> method, <code class="docutils literal notranslate"><span class="pre">pyvo</span></code> results can also be converted to Astropy <code class="docutils literal notranslate"><span class="pre">Table</span></code> objects which offer a variety of addional features. See <a class="reference external" href="http://docs.astropy.org/en/stable/table/">astropy.table</a> for more on working with Astropy Tables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert to an Astropy Table</span>
+<span class="n">services_table</span> <span class="o">=</span> <span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+
+<span class="c1"># Print the column names and display 1st 3 rows with a subset of columns</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Column Names:</span><span class="se">\n</span><span class="si">{</span><span class="n">services_table</span><span class="o">.</span><span class="n">colnames</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>  
+<span class="n">services_table</span><span class="p">[</span><span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">,</span> <span class="s1">&#39;res_description&#39;</span><span class="p">][:</span><span class="mi">3</span><span class="p">]</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column Names:
+[&#39;ivoid&#39;, &#39;res_type&#39;, &#39;short_name&#39;, &#39;res_title&#39;, &#39;content_level&#39;, &#39;res_description&#39;, &#39;reference_url&#39;, &#39;creator_seq&#39;, &#39;content_type&#39;, &#39;source_format&#39;, &#39;source_value&#39;, &#39;region_of_regard&#39;, &#39;waveband&#39;, &#39;access_urls&#39;, &#39;standard_ids&#39;, &#39;intf_types&#39;, &#39;intf_roles&#39;]
+</pre></div>
+</div>
+<div class="output text_html"><div><i>Table length=3</i>
+<table id="table140116270828224" class="table-striped table-bordered table-condensed">
+<thead><tr><th>short_name</th><th>res_title</th><th>res_description</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>MAST CS</td><td>MAST ConeSearch</td><td>All MAST catalog holdings are available via a ConeSearch endpoint. \nThis service provides access to all, with an optional non-standard parameter for an individual catalog to query. \nThe available missions are listed at http://archive.stsci.edu/vo/mast_services.html, \nand include Hubble (HST) data, Kepler, K2, IUE, HUT, EUVE, FUSE, UIT, WUPPE, BEFS, TUES, IMAPS, High Level Science Products (HLSP), Copernicus, HPOL, VLA First, XMM-OM, and SWIFT.</td></tr>
+<tr><td>sds82 cone</td><td>SDS82 catalog</td><td>The SDS82 catalog is the result of the Swift DeepSky pipeline over\nall observations made by Swift-XRT within the Stripe82.</td></tr>
+<tr><td>B/swift</td><td>Swift Master Catalog</td><td>(no description available)</td></tr>
+</table></div></div></div>
+</div>
+</section>
+</section>
+</section>
+<section id="cone-search">
+<h3>2.2 Cone search<a class="headerlink" href="#cone-search" title="Permalink to this headline">#</a></h3>
+<p>Example:  Find a cone search service for the USNO-B catalog and search it around M51 with a .1 degree radius.  (More inspection could be done on the service list instead of blindly choosing the first service.)</p>
+<p>The position (<code class="docutils literal notranslate"><span class="pre">pos</span></code>) is best specified with <a class="reference external" href="http://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html">SkyCoord</a> objects.</p>
+<p>The size of the region is specified with the <code class="docutils literal notranslate"><span class="pre">radius</span></code> keyword and may be decimal degrees or an Astropy <a class="reference external" href="http://docs.astropy.org/en/stable/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle">Angle</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m51_pos</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m51&quot;</span><span class="p">)</span>
+<span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;conesearch&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="s1">&#39;usno-b&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">m51_pos</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="c1"># Astropy Table is useful for displaying cone search results.</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=316</i>
+<table id="table140117018263168" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ObjID</th><th>Zone</th><th>SeqNo</th><th>RA</th><th>DEC</th><th>pmRA</th><th>pmDEC</th><th>e_pmRA</th><th>e_pmDEC</th><th>e_RA</th><th>e_DEC</th><th>Epoch</th><th>B1Mag</th><th>R1s_g</th><th>B2Mag</th><th>B2s_g</th><th>R2Mag</th><th>R2s_g</th><th>NMag</th><th>mag</th><th>B1s_g</th><th>R1Mag</th><th>distance</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th>deg</th><th>deg</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>arcsec</th><th>arcsec</th><th>yr</th><th>mag</th><th></th><th>mag</th><th></th><th>mag</th><th></th><th>mag</th><th>mag</th><th></th><th>mag</th><th>arcsec</th></tr></thead>
+<thead><tr><th>int64</th><th>int32</th><th>int32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>int32</th><th>float32</th><th>int32</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>float32</th></tr></thead>
+<tr><td>5888400445251</td><td>1371</td><td>282435</td><td>202.472919444444</td><td>47.1954444444444</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>999.0</td><td>999.0</td><td>1981.8</td><td>-999999500.0</td><td>1</td><td>9.4</td><td>9</td><td>-999999500.0</td><td>0</td><td>7.86</td><td>-999999500.0</td><td>0</td><td>8.98</td><td>0.13680981</td></tr>
+<tr><td>5892695420475</td><td>1372</td><td>290363</td><td>202.494625</td><td>47.2065472222222</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>332.0</td><td>999.0</td><td>1956.2</td><td>20.13</td><td>3</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>-999999500.0</td><td>4</td><td>15.79</td><td>1.225397</td></tr>
+<tr><td>5892695420458</td><td>1372</td><td>290346</td><td>202.436875</td><td>47.2094416666667</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>999.0</td><td>359.0</td><td>1976.2</td><td>-999999500.0</td><td>1</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>10.89</td><td>-999999500.0</td><td>0</td><td>13.27</td><td>1.5814886</td></tr>
+<tr><td>5892695420468</td><td>1372</td><td>290356</td><td>202.469830555556</td><td>47.2232805555556</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>560.0</td><td>934.0</td><td>1976.2</td><td>-999999500.0</td><td>3</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>18.4</td><td>-999999500.0</td><td>0</td><td>17.78</td><td>1.6813676</td></tr>
+<tr><td>5888400445256</td><td>1371</td><td>282440</td><td>202.480638888889</td><td>47.1682194444444</td><td>-20.0</td><td>-6.0</td><td>5.0</td><td>5.0</td><td>205.0</td><td>201.0</td><td>1969.5</td><td>12.79</td><td>8</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>14.87</td><td>-999999500.0</td><td>1</td><td>15.4</td><td>1.6839039</td></tr>
+<tr><td>5892695420469</td><td>1372</td><td>290357</td><td>202.4706</td><td>47.2235555555556</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>709.0</td><td>130.0</td><td>1956.2</td><td>15.89</td><td>3</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>-999999500.0</td><td>1</td><td>17.68</td><td>1.6983492</td></tr>
+<tr><td>5892695420470</td><td>1372</td><td>290358</td><td>202.474338888889</td><td>47.2264416666667</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>200.0</td><td>490.0</td><td>1956.2</td><td>13.49</td><td>4</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>-999999500.0</td><td>1</td><td>18.74</td><td>1.8810501</td></tr>
+<tr><td>5888400445204</td><td>1371</td><td>282388</td><td>202.423558333333</td><td>47.1977666666667</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>466.0</td><td>480.0</td><td>1969.5</td><td>15.66</td><td>8</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>14.97</td><td>-999999500.0</td><td>1</td><td>15.22</td><td>1.8820878</td></tr>
+<tr><td>5888400445231</td><td>1371</td><td>282415</td><td>202.459627777778</td><td>47.1625777777778</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>945.0</td><td>999.0</td><td>1976.2</td><td>-999999500.0</td><td>1</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>17.22</td><td>-999999500.0</td><td>0</td><td>10.02</td><td>2.0023563</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>5888400445380</td><td>1371</td><td>282564</td><td>202.612638888889</td><td>47.1861444444444</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>395.0</td><td>999.0</td><td>1982.2</td><td>-999999500.0</td><td>4</td><td>-999999500.0</td><td>0</td><td>20.65</td><td>3</td><td>18.63</td><td>20.65</td><td>0</td><td>19.85</td><td>5.858807</td></tr>
+<tr><td>5888400445151</td><td>1371</td><td>282335</td><td>202.351194444444</td><td>47.1387361111111</td><td>4.0</td><td>12.0</td><td>0.0</td><td>12.0</td><td>23.0</td><td>324.0</td><td>1981.2</td><td>20.72</td><td>0</td><td>20.92</td><td>7</td><td>19.53</td><td>3</td><td>-999999500.0</td><td>19.53</td><td>1</td><td>-999999500.0</td><td>5.9008446</td></tr>
+<tr><td>5888400445298</td><td>1371</td><td>282482</td><td>202.515788888889</td><td>47.1018111111111</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>394.0</td><td>190.0</td><td>1975.3</td><td>20.84</td><td>0</td><td>-999999500.0</td><td>0</td><td>17.89</td><td>1</td><td>-999999500.0</td><td>17.89</td><td>2</td><td>-999999500.0</td><td>5.915472</td></tr>
+<tr><td>5888400445142</td><td>1371</td><td>282326</td><td>202.342727777778</td><td>47.1468222222222</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>999.0</td><td>999.0</td><td>1995.6</td><td>-999999500.0</td><td>0</td><td>21.08</td><td>4</td><td>20.49</td><td>5</td><td>17.92</td><td>20.49</td><td>0</td><td>-999999500.0</td><td>5.934256</td></tr>
+<tr><td>5888400445376</td><td>1371</td><td>282560</td><td>202.609608333333</td><td>47.167975</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>999.0</td><td>999.0</td><td>1996.8</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>20.82</td><td>3</td><td>19.06</td><td>20.82</td><td>0</td><td>-999999500.0</td><td>5.9406395</td></tr>
+<tr><td>5888400445150</td><td>1371</td><td>282334</td><td>202.350063888889</td><td>47.1384194444444</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>999.0</td><td>999.0</td><td>1975.3</td><td>-999999500.0</td><td>3</td><td>20.53</td><td>1</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>-999999500.0</td><td>0</td><td>19.62</td><td>5.9495263</td></tr>
+<tr><td>5888400445175</td><td>1371</td><td>282359</td><td>202.374458333333</td><td>47.1198861111111</td><td>-54.0</td><td>296.0</td><td>13.0</td><td>13.0</td><td>352.0</td><td>352.0</td><td>1981.7</td><td>-999999500.0</td><td>3</td><td>19.74</td><td>3</td><td>20.36</td><td>1</td><td>-999999500.0</td><td>20.36</td><td>0</td><td>19.55</td><td>5.9591174</td></tr>
+<tr><td>5892695420507</td><td>1372</td><td>290395</td><td>202.586555555556</td><td>47.2552055555556</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>783.0</td><td>999.0</td><td>1976.2</td><td>20.84</td><td>0</td><td>-999999500.0</td><td>0</td><td>-999999500.0</td><td>0</td><td>19.2</td><td>-999999500.0</td><td>2</td><td>-999999500.0</td><td>5.9714193</td></tr>
+<tr><td>5888400445176</td><td>1371</td><td>282360</td><td>202.374952777778</td><td>47.119275</td><td>2.081668e-13</td><td>2.081668e-13</td><td>0.0</td><td>0.0</td><td>200.0</td><td>76.0</td><td>1979.2</td><td>20.84</td><td>2</td><td>19.89</td><td>2</td><td>18.84</td><td>10</td><td>18.56</td><td>18.84</td><td>9</td><td>19.42</td><td>5.9739494</td></tr>
+<tr><td>5888400445139</td><td>1371</td><td>282323</td><td>202.340863888889</td><td>47.1474416666667</td><td>-34.0</td><td>-26.0</td><td>13.0</td><td>4.0</td><td>313.0</td><td>111.0</td><td>1985.0</td><td>-999999500.0</td><td>3</td><td>19.1</td><td>9</td><td>18.0</td><td>2</td><td>17.74</td><td>18.0</td><td>0</td><td>19.6</td><td>5.982718</td></tr>
+</table></div></div></div>
+</div>
+</section>
+<section id="image-search">
+<h3>2.3 Image search<a class="headerlink" href="#image-search" title="Permalink to this headline">#</a></h3>
+<p>Example:  Find an image search service for GALEX, and search it around coordinates 13:37:00.950,-29:51:55.51 (M83) with a radius of .2 degrees.  Download the first file in the results.</p>
+<section id="find-an-image-service">
+<h4>Find an image service<a class="headerlink" href="#find-an-image-service" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;galex&#39;</span><span class="p">])</span>
+<span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=3</i>
+<table id="table140116267250160" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
+<tr><td>ivo://mast.stsci/siap/galex_atlas</td><td>GALEX_Atlas</td><td>GALEX Atlas of Nearby Galaxies</td></tr>
+<tr><td>ivo://nasa.heasarc/skyview/galex</td><td>GALEX</td><td>Galaxy Explorer All Sky Survey: Near UV</td></tr>
+</table></div></div></div>
+</div>
+</section>
+<section id="search-one-of-the-services">
+<h4>Search one of the services<a class="headerlink" href="#search-one-of-the-services" title="Permalink to this headline">#</a></h4>
+<p>The first service looks good.  Search it!</p>
+<p>For more details on using <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code>, see <a class="reference external" href="http://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord">its documentation</a></p>
+<p><strong>NOTE</strong>:  For image searches, the size of the region is defined by the <code class="docutils literal notranslate"><span class="pre">size</span></code> keyword which is more like a diameter than a radius.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m83_pos</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="s1">&#39;13h37m00.950s -29d51m55.51s&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">m83_pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+
+<span class="c1"># We can look at the results.</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=2</i>
+<table id="table140116270832736" class="table-striped table-bordered table-condensed">
+<thead><tr><th>filename</th><th>id</th><th>ra_j2000</th><th>dec_j2000</th><th>url</th><th>filesize</th><th>mjdmean</th><th>naxes</th><th>naxis</th><th>scale</th><th>cd</th><th>format</th><th>ref_frame</th><th>equinox</th><th>coord_projection</th><th>crpix</th><th>crval</th><th>ctype</th><th>bandpass_id</th><th>bandpass_refvalue</th><th>bandpass_unit</th><th>bandpass_hilimit</th><th>bandpass_lolimit</th><th>processing</th><th>project</th><th>preview</th><th>representative</th><th>object_id</th></tr></thead>
+<thead><tr><th></th><th></th><th>deg</th><th>deg</th><th></th><th>byte</th><th>d</th><th></th><th>pix</th><th>deg / pix</th><th>deg / pix</th><th></th><th></th><th>yr</th><th></th><th>pix</th><th>pix</th><th></th><th></th><th>m</th><th>m</th><th>m</th><th>m</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>int32</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float32</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>h_m83-fd-int.fits.gz</td><td>MAST.GALEX</td><td>204.25375</td><td>-29.86575</td><td>http://archive.stsci.edu/pub/hlsp/galex_atlas/h_m83-fd-int.fits.gz</td><td>13032100</td><td>--</td><td>2</td><td>[1805 1805]</td><td>[-0.0004166667 0.0004166667]</td><td>[-0.0004166667 0.0004166667]</td><td>image/fits</td><td>FK5</td><td>2000.0</td><td>TAN</td><td>[1889.5 366.5]</td><td>[203.78 -30.0903]</td><td>RA---TAN DEC--TAN</td><td>GALEX FUV</td><td>1516.0</td><td>meters</td><td>1350.0</td><td>1750.0</td><td>Z</td><td>galex_atlas</td><td></td><td>n</td><td>MESSIER083</td></tr>
+<tr><td>h_m83-nd-int.fits.gz</td><td>MAST.GALEX</td><td>204.25375</td><td>-29.86575</td><td>http://archive.stsci.edu/pub/hlsp/galex_atlas/h_m83-nd-int.fits.gz</td><td>13032100</td><td>--</td><td>2</td><td>[1805 1805]</td><td>[-0.0004166667 0.0004166667]</td><td>[-0.0004166667 0.0004166667]</td><td>image/fits</td><td>FK5</td><td>2000.0</td><td>TAN</td><td>[1889.5 366.5]</td><td>[203.78 -30.0903]</td><td>RA---TAN DEC--TAN</td><td>GALEX NUV</td><td>2267.0</td><td>meters</td><td>1750.0</td><td>2800.0</td><td>Z</td><td>galex_atlas</td><td></td><td>n</td><td>MESSIER083</td></tr>
+</table></div></div></div>
+</div>
+</section>
+<section id="download-an-image">
+<h4>Download an image<a class="headerlink" href="#download-an-image" title="Permalink to this headline">#</a></h4>
+<p>For the first result, print the file format and download the file. If repeatedly executing this code, add <code class="docutils literal notranslate"><span class="pre">cache=True</span></code> to <code class="docutils literal notranslate"><span class="pre">download_file()</span></code> to prevent repeated downloads.</p>
+<p>See <a class="reference external" href="https://docs.astropy.org/en/stable/api/astropy.utils.data.download_file.html#astropy.utils.data.download_file"><code class="docutils literal notranslate"><span class="pre">download_file()</span></code> documentation here.</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">())</span>  
+<span class="n">file_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>image/fits
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-2035-mvp2n0ur&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="spectral-search">
+<h3>2.4 Spectral search<a class="headerlink" href="#spectral-search" title="Permalink to this headline">#</a></h3>
+<p>Example:  Find a spectral service for x-ray data.  Query it around Delta Ori with a search <strong>diameter</strong> of 10 arc minutes, and download the first data product.  Note that the results table can be inspected for potentially useful columns.</p>
+<p>Spectral search is very similar to image search. In this example, note:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">diameter</span></code></strong> defines the size of the search region</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">waveband</span></code> used in <code class="docutils literal notranslate"><span class="pre">regsearch()</span></code></p></li>
+<li><p>Astropy <code class="docutils literal notranslate"><span class="pre">Angle</span></code> used to specify radius units other than degrees.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Search for a spectrum search service that has x-ray data.</span>
+<span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;x-ray&#39;</span><span class="p">)</span>
+
+<span class="c1"># Assuming there are services and the first one is OK...</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;Delta Ori&quot;</span><span class="p">),</span> 
+                             <span class="n">diameter</span><span class="o">=</span><span class="n">Angle</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">))</span>
+
+<span class="c1"># Assuming there are results, download the first file.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Title: </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">, Format: </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">())</span>  
+<span class="n">file_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title: acisf00639N004_pha2.fits, Format: application/fits
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-2035-cg9frdq8&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="table-search">
+<h3>2.5 Table search<a class="headerlink" href="#table-search" title="Permalink to this headline">#</a></h3>
+<p>Example:  Find the HEASARC Table Access Protocol (TAP) service, get some information about the available tables.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;heasarc&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">services</span><span class="p">)</span><span class="si">}</span><span class="s1"> service(s) found.&#39;</span><span class="p">)</span>
+<span class="c1"># We found only one service.  Print some info about the service and its tables.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">tables</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">tables</span>  <span class="c1"># Queries for details of the service&#39;s tables</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span><span class="si">}</span><span class="s1"> tables:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s1">30s</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># A more succinct option than t.describe()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 service(s) found.
+HEASARC Xamin Catalog Interface
+Short Name: HEASARC
+IVOA Identifier: ivo://nasa.heasarc/services/xamin
+Access modes: tap
+Base URL: https://heasarc.gsfc.nasa.gov/xamin/vo/tap
+
+The HEASARC is NASA domain archive for high-energy and microwave astronomy.
+The Xamin interface provides access to over 600 observation and object tables.
+This includes observation tables for more than 30 missions and observatories
+and hundreds of derived object tables. Non-high energy tables are included to
+make it easier for users to compare information.
+
+Subjects: HEASARC
+Waveband Coverage:
+None
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1022 tables:
+TAP_SCHEMA.columns             - Available columns
+TAP_SCHEMA.key_columns         - Key/Foreign key pairs -- usused
+TAP_SCHEMA.keys                - Joins between tables -- unused
+TAP_SCHEMA.schemas             - Available schemas
+TAP_SCHEMA.tables              - Available tables
+&quot;first&quot;                        - Faint Images of the Radio Sky at Twenty cm (FIRST)
+a1                             - HEAO 1 A1 X-Ray Source Catalog
+a1point                        - HEAO 1 A1 Lightcurves
+a2lcpoint                      - HEAO 1 A2 Pointed Lightcurves
+a2lcscan                       - HEAO 1 A2 Scanned Lightcurves
+a2led                          - HEAO 1 A2 LED Catalog
+a2pic                          - HEAO 1 A2 Piccinotti Catalog
+a2point                        - HEAO 1 A2 Pointing Catalog
+a2rtraw                        - HEAO 1 A2 Raw Rates
+a2specback                     - HEAO 1 A2 Spectra Background
+a2spectra                      - HEAO 1 A2 Spectra
+a3                             - HEAO 1 A3 MC LASS Catalog
+a4                             - HEAO 1 A4 Catalog of High-Energy X-Ray Sources
+a4spectra                      - HEAO 1 A4 Spectra
+aavsovsx                       - AAVSO International Variable Star Index
+abell                          - Abell Clusters
+abellzcat                      - Abell Clusters Measured Redshifts Catalog
+acceptcat                      - Archive of Chandra Cluster Entropy Profile Tables (ACCEPT) Catal
+acrs                           - Astrographic Catalog of Reference Stars
+actegsrcat                     - Atacama Cosmology Telescope 2008 Survey 148-GHz Extragalactic So
+actmadcows                     - ACT Massive and Distant Clusters of WISE Survey (MaDCoWS) Candid
+actsouth                       - Atacama Cosmology Telescope (ACT) Extragalactic Southern Sources
+actssrcat                      - Atacama Cosmology Telescope 2008 Southern Survey 148/218 GHz Sou
+actszclust                     - Atacama Cosmology Telescope DR5 Sunyaev-Zeldovich Cluster Catalo
+aegis20                        - All-Wavelength Extended Groth Strip Int. Survey (AEGIS) VLA 20-c
+aegis20id                      - All-Wavelength Extended Groth Strip Int. Survey (AEGIS) 20-cm Fu
+aegisx                         - AEGIS-X Chandra Extended Groth Strip X-Ray Point Source Catalog
+aegisxdcxo                     - AEGIS-X Deep Survey Chandra X-Ray Point Source Catalog
+agilecat                       - First AGILE Catalog of High-Confidence Gamma-Ray Sources
+agileupvar                     - Updated AGILE Catalog of Bright Gamma-Ray Sources and Variabilit
+agnsdssxm2                     - Sloan Digital Sky Survey/XMM-Newton Type1 AGN X-Ray and Radio Pr
+agnsdssxmm                     - Sloan Digital Sky Survey/XMM-Newton AGN Spectral Properties Cata
+akaribsc                       - AKARI/FIS All-Sky Survey Bright Source Catalog, Version 1
+akaripsc                       - AKARI/IRC All-Sky Survey Point Source Catalog, Version 1
+aknepdfcxo                     - Akari North Ecliptic Pole Deep Field Chandra X-Ray Point Source
+alfperxmm                      - Alpha Per Open Cluster XMM-Newton X-Ray Source Catalog
+allwiseagn                     - AllWISE Catalog of Mid-IR AGNs
+ami10c15gz                     - 10C Survey at 15.7 GHz Radio Source Catalog
+amigps16gh                     - AMI Galactic Plane Survey 16-GHz Source Catalog
+ansuvpscat                     - ANS Ultraviolet Photometry Catalog of Point Sources
+arcquincxo                     - Arches and Quintuplet Clusters Chandra X-Ray Point Source Catalo
+ariel3a                        - 3rd Ariel-V SSI Catalog
+ariel5                         - Ariel V All-Sky Monitor
+arxa                           - Atlas of Radio/X-Ray Associations (ARXA)
+ascaegclus                     - ASCA Elliptical Galaxies and Galaxy Clusters Catalog
+ascagis                        - ASCA GIS Source Catalog (AMSS-I + AMSS-II)
+ascagps                        - ASCA Galactic Plane Survey of Faint X-Ray Sources
+ascalss                        - ASCA Large Sky Survey
+ascamaster                     - ASCA Master Catalog
+ascao                          - ASCA Proposals
+ascaprspec                     - ASCA Proposal Info &amp; Abstracts
+ascasis                        - ASCA SIS Source Catalog
+asiagosn                       - Asiago Supernova Catalog (Dynamic Version)
+askapbeta                      - BETA Pilot Multi-Epoch Continuum Survey of Spitzer SPT Deep Fiel
+at20g                          - Australia Telescope 20-GHz (AT20G) Survey Catalog
+at20g1fgl                      - AT20G/Fermi 1FGL Source Catalog
+at20gbspol                     - Bright Extra-Galactic AT20G Sources Polarizations Catalog
+at20gbss                       - Australia Telescope 20-GHz Survey Bright Source Sample
+at20gharc                      - Australia Telescope 20-GHz (AT20G) High-Angular Resolution Catal
+at2fglus                       - Australia Telescope 2FGL Unassociated Sources Radio Source Catal
+atats                          - Allen Telescope Array Twenty-cm Survey (ATATS) Source Catalog
+atcaadfs20                     - Australia Telescope Compact Array AKARI Deep Field South 20-cm S
+atcdfsss82                     - Australia Telescope Chandra Deep Field-South and SDSS Stripe 82
+atesp1p4gh                     - Australia Telescope ESO Slice Project 1.4-GHz Source Catalog
+athdfs1p4g                     - Australia Telescope Hubble Deep Field-South 1.4-GHz Source Catal
+athdfs3frq                     - Australia Telescope Hubble Deep Field-South 2.5, 5.2 and 8.7-GHz
+athdfsccat                     - Australia Telescope Hubble Deep Field-South Combined Source Cata
+athdfsoid                      - Australia Telescope Hubble Deep Field-South Optical Identificati
+atlas2p3gh                     - AT Large Area Survey (ATLAS) ELAIS-S1 &amp; CDF-S 2.3-GHz Source Cat
+atlas5p5gh                     - AT Large Area Survey (ATLAS) E-CDF-S 5.5-GHz Components Catalog
+atlascscpt                     - AT Large Area Survey (ATLAS) CDF-S/SWIRE 1.4-GHz Components Cata
+atlascsid                      - AT Large Area Survey (ATLAS) CDF-S/SWIRE ID and Classification C
+atlasd2cpt                     - AT Large Area Survey (ATLAS) CDF-S &amp; ELAIS-S1 1.4-GHz DR2 Compon
+atlasescpt                     - AT Large Area Survey (ATLAS) ELAIS-S1/SWIRE 1.4-GHz Components C
+atlasesid                      - AT Large Area Survey (ATLAS) ELAIS-S1/SWIRE ID and Classificatio
+atlasspecz                     - AT Large Area Survey (ATLAS) Spectroscopic Classes &amp; Redshifts C
+atlbs1p4gh                     - Australia Telescope Low-Brightness Survey Source Catalog
+atlgds2p1g                     - Australia Telescope Local Group Dwarf Spheroidals 2.1-GHz Compon
+atnfpulsar                     - ATNF Pulsar Catalog
+atpmncat                       - Australia Telescope-PMN Catalog of Southern Radio Sources
+axis                           - AXIS XMM-Newton Source Catalog
+bat5bgrbsp                     - CGRO/BATSE 5B Gamma-Ray Burst Spectral Catalog
+batse4b                        - CGRO/BATSE 4B Catalog
+batsedaily                     - CGRO/BATSE Daily Data
+batseeocat                     - CGRO/BATSE Earth Occultation Catalog of Low-Energy Gamma-Ray Sou
+batsegrb                       - CGRO/BATSE Gamma-Ray Burst Catalog
+batsegrbsp                     - CGRO/BATSE Complete Spectral Catalog of Bright GRBs
+batsepulsr                     - CGRO/BATSE Pulsar Observations
+batsetrigs                     - CGRO/BATSE Trigger Data
+baxgalclus                     - BAX X-Ray Galaxy Clusters and Groups Catalog
+bbxrt                          - BBXRT Archive
+bestars                        - Be Stars Catalog
+bhrfscid                       - Byurakan/Hamburg/ROSAT Catalog of Optical IDs
+bmwchancat                     - Brera Multi-scale Wavelet Chandra Source Catalog
+bmwhricat                      - Brera Multi-scale Wavelet ROSAT HRI Source Catalog
+bnmdspecat                     - Brightest M Dwarfs in the Northern Sky Spectroscopic Catalog
+boof153mhz                     - Bootes Field GMRT 153-MHz Source Catalog
+bootesdf                       - Bootes Deep Field WSRT 1.4-GHz Source Catalog
+bsc5p                          - Bright Star Catalog
+caixa                          - Catalog of AGN in the XMM-Newton Archive
+calchdmstr                     - CALET CHarge Detector (CHD) Master Catalog
+calgbmmstr                     - CALET Gamma-Ray Burst Monitor (GBM) Master Catalog
+candelscxo                     - CANDELS H-Band Selected Chandra Source Catalog
+cargm31cxo                     - Carina Nebula Gum 31 Chandra X-Ray Point Source Catalog
+carinaclas                     - Carina Nebula Chandra X-Ray Point Source Classes
+carinacxo                      - Carina Nebula Chandra X-Ray Point Source Catalog
+carinaxmm                      - Carina OB1 Association XMM-Newton X-Ray Point Source Catalog
+cbatpicagn                     - CGRO BATSE-Observed Piccinotti Sample of Active Galactic Nuclei
+cbfgrxecxo                     - Chandra Bulge Field X-Ray Point Source Catalog
+ccosmoscat                     - Chandra COSMOS (C-COSMOS) Survey X-Ray Point Source Catalog
+ccosmosoid                     - Chandra COSMOS (C-COSMOS) Survey Optical/IR Counterparts Catalog
+ccosmphotz                     - Chandra COSMOS (C-COSMOS) Survey Photometric Redshift Catalog
+ccosrssfag                     - Chandra COSMOS Radio-Selected Star-Forming Galaxies and AGN Cata
+cdfn2msnew                     - Chandra Deep Field North 2-Megasecond Improved Point Source Cata
+cdfn2msoi2                     - Chandra Deep Field North Updated Optical &amp; IR Catalog
+cdfn2msoid                     - Chandra Deep Field North 2-Megasecond Optical &amp; IR Catalog
+cdfsagncxo                     - Chandra Deep Field South AGN Spectral Properties Catalog
+cenacxo                        - Centaurus A Galaxy Chandra X-Ray Point Source Catalog
+cepaxmm                        - Cepheus A SFR XMM-Newton X-Ray Point Source Catalog
+cepbob3cxo                     - Cep B/OB3 Star-Forming Region Chandra X-Ray Point Source Catalog
+cepbob3oid                     - Cep B/OB3 Star-Forming Region Chandra Point Source Optical/IR ID
+cfa2s                          - CfA Redshift Survey: South Galactic Cap Data
+cfhtlsgxmm                     - XMM-Newton CFHTLS W1 Field Galaxy Groups Catalog
+cg12cxo                        - CG 12 Chandra X-Ray Point Source Catalog
+cgmw                           - Candidate Galaxies Behind the Milky Way
+cgpsngpcat                     - Canadian Galactic Plane Survey (CGPS) 1420-MHz Compact Source Ca
+cgrabs                         - Candidate Gamma-Ray Blazar Survey Source Catalog
+cgroprspec                     - CGRO Proposal Info &amp; Abstracts
+cgrotl                         - CGRO Timeline
+chainthcxo                     - Chamaeleon I North Cloud Chandra X-Ray Point Source Catalog
+champhxagn                     - CHAMP (Chandra Multiwavelength Project) Hard X-Ray Emitting AGN
+champlane                      - Chandra Multiwavelength Plane Survey Optical ID Catalog
+champlanex                     - ChaMPlane Galactic Bulge and Center X-Ray Source Catalog
+champpsc                       - Chandra Multiwavelength Project (ChaMP) Point Source Catalog
+champsdssa                     - CHAMP/SDSS Nearby Low-Luminosity AGN Catalog
+chandfn1ms                     - Chandra Deep Field North 1-Megasecond Catalog
+chandfn2ms                     - Chandra Deep Field North 2-Megasecond Catalog
+chandfs1ms                     - Chandra Deep Field South 1-Megasecond Catalog
+chandfs2ms                     - Chandra Deep Field South 2-Megasecond Catalog
+chandfs4ms                     - Chandra Deep Field South 4-Megasecond Catalog
+chandfs7ms                     - Chandra Deep Field-South 7-Megasecond X-Ray Source Catalog
+chanextdfs                     - Chandra Extended Deep Field South Survey Point Source Catalog
+changalxrb                     - Chandra X-Ray Binary Catalog of SINGS Galaxies
+changbscat                     - Chandra Galactic Bulge Survey Full X-Ray Point Source Catalog
+chanmaster                     - Chandra Observations
+channsgpsc                     - Chandra Nearby Spiral Galaxies Point Source Catalog
+chansexagn                     - Chandra Serendipitous Extragalactic X-Ray Source ID (SEXSI)/Spit
+chansexoid                     - Chandra Serendipitous Extragalactic X-Ray Source ID (SEXSI) Opti
+chansexsi                      - Chandra Serendipitous Extragalactic X-Ray Source ID (SEXSI) Cata
+chansngcat                     - Chandra ACIS Survey for X-Ray AGN in Nearby Galaxies
+chantypgpr                     - Chandra Typical Galactic Plane Region Point Source Catalog
+chanulxcat                     - Chandra Archive Of Galaxies Ultraluminous X-Ray Source Catalog
+chanvguide                     - Chandra Variable Guide Star Catalog
+chasfrxray                     - ROSAT All-Sky Survey: Chamaeleon Star Forming Region Study
+chesscat                       - ChaMP Extended Stellar Survey (ChESS) X-Ray Catalog
+chicagocxo                     - ChIcAGO Survey Chandra X-Ray Source Catalog
+chngpscliu                     - Chandra ACIS Survey of Nearby Galaxies X-Ray Point Source Catalo
+chpngptsrc                     - Chandra Nearby Galaxies Point Source Catalog
+clans                          - Chandra Lockman Area North Survey (CLANS) X-Ray Source Catalog
+clansoid                       - Chandra Lockman Area North Survey (CLANS) Optical &amp; IR Catalog
+class                          - HEASARC Object Classifications
+clasxs                         - Chandra Large-Area Synoptic X-Ray Survey of Lockman Hole-NW
+clasxsoid                      - Chandra Large-Area Synoptic X-Ray Survey Optical &amp; IR Catalog
+clscat                         - Chandra Legacy Survey (CLS) Catalog
+cma                            - EXOSAT/CMA Sources (Unscreened)
+cmaimage                       - EXOSAT CMA Images for Each Pointing
+cmaob1nir                      - CMa OB1 XMM-Newton Point Source Near-Infrared Counterpart Proper
+cmaob1xmm                      - CMa OB1 XMM-Newton X-Ray Point Source Catalog
+cmar1xray                      - ROSAT PSPC Catalog of Canis Major R1 X-Ray Sources
+cmascreen                      - EXOSAT/CMA Sources (Screened for Quality)
+cmbmaster                      - LAMBDA Cosmic Microwave Background Experiments Master Catalog
+cns3                           - Gliese Catalog of Nearby Stars, 3rd Edition
+cocd                           - COCD: Catalog of Open Cluster Data
+cocdext1                       - COCD: Catalog of Open Cluster Data First Extension
+coll69oid                      - Collinder 69 Cluster Optical/IR Counterparts to XMM-Newton X-Ray
+coll69xmm                      - Collinder 69 Cluster XMM-Newton X-Ray Point Source Catalog
+comptel                        - CGRO/COMPTEL Low-Level Data and Maps
+corotexlog                     - CoRoT Stellar Targets for Exoplanet Detection Observation Log
+cosbmaps                       - COS-B Map Product Catalog
+cosbraw                        - COS-B Photon Events Catalog
+cosmosvlba                     - COSMOS Field VLBA Observations 1.4-GHz Source Catalog
+cosxfirmwc                     - COSMOS Field X-Ray &amp; FIR Detected AGN Multiwavelength Properties
+coup                           - Chandra Orion Ultradeep Point Source Catalog
+cpstars                        - Catalog of Ap, HgMn and Am Stars
+cr261cxo                       - Collinder 261 Chandra X-Ray Point Source Catalog
+cr261oid                       - Collinder 261 Chandra X-Ray Source Optical Counterparts Catalog
+crabtime                       - Crab Pulsar Timing
+crates                         - CRATES Flat-Spectrum Radio Source Catalog
+cratesocrap                    - OCRA-p Survey of a Subset of CRATES Sources
+csc                            - Chandra Source Catalog, v2.0
+cvcat                          - Cataclysmic Variables Catalog (2006 Final Edition)
+cxogsgsrc                      - Chandra ACIS GSG Point-Like X-Ray Source Catalog
+cxoxassist                     - Chandra XAssist Source List
+cyder                          - Calan-Yale Deep Extragalactic Research Survey X-Ray Source Catal
+cygob2cxo                      - Cygnus OB2 Association Chandra X-Ray Point Source Catalog
+cygob2cxo2                     - Cygnus OB2 Association Chandra X-Ray Point Source Catalog 2
+cygob2xmm                      - Cygnus OB2 Association XMM-Newton X-Ray Point Source Catalog
+cygtevcxo                      - Cygnus TeV Source Chandra X-Ray Point Source Catalog
+denisigal                      - First DENIS I-band Extragalactic Catalog
+dirbepsc                       - COBE DIRBE Point Source Catalog
+dixon                          - Dixon Master List of Radio Sources (Version 43)
+dncvobcat                      - Outburst Catalog of Dwarf Novae-type and Other Cataclysmic Varia
+duerbeck                       - Galactic Novae References Catalog
+dxrbs                          - ROSAT Deep X-Ray Radio Blazar Survey Catalog
+ecdfscxo                       - Extended Chandra Deep Field-South X-Ray Point Source Catalog
+ecdfsnew                       - Extended Chandra Deep Field South 250-ks Improved Point Source C
+ecdfsoid                       - Extended Chandra Deep Field-South Survey Optical Identifications
+ecdfsoid2                      - Extended Chandra Deep Field-South Optical and Near-IR Counterpar
+ecdfsrssam                     - Radio-Selected Extended Chandra Deep Field South Source Catalog
+efedshard                      - eROSITA eFEDS Hard X-Ray (2.3-5.0 keV) Source Catalog
+efedsmain                      - eROSITA eFEDS Main X-Ray (0.2-2.3 keV) Source Catalog
+egrcat                         - CGRO/EGRET Revised Catalog of Gamma-Ray Sources
+egret3                         - CGRO/EGRET Third Source Catalog
+egretdata                      - CGRO/EGRET Photon Lists and Maps
+eingalcat                      - Catalog of Galaxies Observed by the Einstein Observatory IPC &amp; H
+eingalclus                     - Einstein Observatory Clusters of Galaxies Catalog
+einopslgal                     - Einstein Survey of Optically Selected Galaxies
+einstein2e                     - Einstein Observatory 2E Catalog of IPC X-Ray Sources
+elaiscxo                       - ELAIS N1 and N2 Fields Chandra X-Ray Point Source Catalog
+elaisfbmc                      - European Large-Area ISO Survey (ELAIS) Final Band-Merged Catalog
+elaiss1oid                     - ELAIS S1 Field X-Ray Source Optical/IR Identifications Catalog
+elaiss1xmm                     - ELAIS S1 Field XMM-Newton X-Ray Source Catalog
+emss                           - Einstein Catalog IPC EMSS Survey
+erosmaster                     - eROSITA Observations Master Catalog
+erosxmm                        - Extremely Red Objects XMM-Newton Survey Catalog
+esouppsala                     - ESO-Uppsala ESO(B) Survey
+etachahard                     - Eta Chamaeleontis eROSITA EDR Field X-Ray (2.3-5.0 keV) Source C
+etachamain                     - Eta Chamaeleontis eROSITA EDR Field X-Ray (0.2-2.3 keV) Source C
+etgalcxo                       - Early-Type Galaxies Chandra X-Ray Point Source Catalog
+etgalxray                      - Early-Type Galaxies X-Ray Luminosities Catalog
+euv                            - Master EUV Catalog
+euvebsl                        - EUVE Bright Sources
+euvecat2                       - EUVE Second Source Catalog
+euvemaster                     - EUVE Archive and Observation Log
+euverap1                       - EUVE Right Angle Program, 1st Catalog
+euverap2                       - EUVE Right Angle Program, 2nd Catalog
+euverap3                       - EUVE Right Angle Program, 3rd Catalog
+euvexrtcat                     - All-Sky Catalog of Faint EUV Sources
+exgalemobj                     - Hewitt &amp; Burbidge (1991) Catalog of Extragalactic Emission-Line
+exms                           - EXOSAT ME Slew Catalog
+exofot                         - EXOSAT Final Observation Tapes
+exogps                         - EXOSAT/ME Galactic Plane Survey
+exohgls                        - EXOSAT/CMA High Galactic Latitude Survey
+exolog                         - EXOSAT Observation Log
+exomaster                      - EXOSAT Master Observation List
+exoplanets                     - Extrasolar Planets Encyclopedia
+exoplanodb                     - Exoplanet Orbit Database
+exopubs                        - EXOSAT Bibliography
+exss                           - Einstein Extended Source Survey
+faust                          - Faust Far-UV Point Source Catalog
+fbsbsocat                      - First Byurakan Survey Blue Stellar Objects Catalog
+feedback                       - Bugs and requests from users
+fer2fusrid                     - Fermi 2FGL Unassociated Gamma-Ray Sources Possible Radio Identif
+fermi2favs                     - Fermi All-Sky Variability Analysis Second Catalog of Flaring Gam
+fermi3fgl                      - Fermi LAT 4-Year Point Source Catalog
+fermi3fhl                      - Third Catalog of Hard Fermi-LAT Sources (3FHL)
+fermifhl                       - Second Catalog of Hard Fermi-LAT Sources (2FHL)
+fermigbrst                     - Fermi GBM Burst Catalog
+fermigdays                     - Fermi GBM Daily Data
+fermigsol                      - Fermi GBM Solar Flare Catalog
+fermigtrig                     - Fermi GBM Trigger Catalog
+fermil2psr                     - Fermi LAT Second Catalog of Gamma-Ray Pulsars (2PC)
+fermilac                       - Fermi LAT Fourth AGN Catalog
+fermilasp                      - Fermi LAT Monitored Source List
+fermilatra                     - Fermi LAT Sources Refined Associations Catalog
+fermilblaz                     - Fermi LAT Gamma-Ray Blazar Classification Catalog
+fermilbsl                      - Fermi LAT Bright Source List
+fermilgrb                      - Fermi LAT Second Gamma-Ray Burst Catalog
+fermilhesc                     - Fermi LAT High-Energy Source Catalog (1FHL)
+fermille                       - Fermi LAT Low-Energy Events Catalog
+fermilpsc                      - Fermi LAT 14-Year Point Source Catalog (4FGL-DR4)
+fermiltrns                     - Fermi LAT Long-Term Transient Source Catalog
+fermilweek                     - Fermi LAT Weekly Data
+flarestars                     - UV Cet-type Flare Stars &amp; Related Objects Catalog
+fornaxacxo                     - Fornax A (NGC 1316) Chandra X-Ray Source Catalog
+fornaxxmm                      - Fornax Dwarf Galaxy XMM-Newton X-Ray Point Source Catalog
+fpcsfits                       - Einstein FPCS Events Files
+fricat                         - FIRST Catalog of FR I Radio Galaxies
+friicat                        - FIRST Catalog of FR II Radio Galaxies
+fsvsclustr                     - Faint Sky Variability Survey Catalog of Galaxy Clusters and Rich
+fuselog                        - Far Ultraviolet Explorer (FUSE) Observation Log
+galccxonid                     - Galactic Center Chandra X-Ray Source Near-IR Counterparts
+galcencxo                      - Galactic Center Chandra X-Ray Point Source Catalog
+galcenpspc                     - ROSAT PSPC Galactic Center Soft X-Ray Source Catalog
+galexlog                       - Galaxy Evolution Explorer (GALEX) Observation Log
+galextdsc                      - GALEX Time Domain Survey Catalog
+galobstars                     - Catalog of Galactic OB Stars
+gb6                            - Green Bank 6-cm (GB6) Radio Source Catalog
+gbt31ghz                       - Green Bank Telescope 100-m 31-GHZ Radio Source Catalog
+gc47tuccx2                     - 47 Tuc Globular Cluster Chandra X-Ray Point Source Catalog (2017
+gc47tuccxo                     - 47 Tuc Globular Cluster Chandra X-Ray Point Source Catalog (2005
+gcps                           - Galactic Center P-Band (330 MHz) Survey
+gcptsrccxo                     - Chandra Point Sources in 18 Distant Galaxy Clusters
+gcscat                         - Globular Cluster Systems of Galaxies Catalog
+gcvs                           - General Catalog of Variable Stars (June 2022 Version)
+gcvsegvars                     - General Catalog of Variable Stars (GCVS4.2): Extragalactic Varia
+gcvsnsvars                     - General Catalog of Variable Stars, March 2012 Version: Suspected
+gingaasmlc                     - Ginga ASM Source Lightcurves
+gingabgd                       - Ginga Background Lightcurves &amp; Spectra
+gingalac                       - Ginga Source Lightcurves &amp; Spectra
+gingalog                       - Ginga LAC Log
+gingamode                      - Ginga LAC Mode Catalog
+gingaraw                       - Ginga LAC Raw Data
+gleamegcat                     - GaLactic and Extragalactic All-sky MWA Survey (GLEAM) Extragalac
+gliese2mas                     - Gliese Catalog Stars with Accurate Coordinates and 2MASS Cross-I
+globclust                      - Milky Way Globular Clusters Catalog (December 2010 Version)
+glxsdssqs2                     - GALEX/SDSS z=0.5-1.5 QSO Candidates Catalog
+glxsdssqso                     - GALEX/SDSS Quasar Catalog
+gmrt1hxcsf                     - Giant Metrewave Radio Telescope 1h XMM/Chandra Survey Fld 610-MH
+gmrt4f150m                     - Giant Metrewave Radio Telescope Field I 150-MHz Radio Source Cat
+gmrtas150m                     - Giant Metrewave Radio Telescope All-Sky 150-MHz Radio Source Cat
+gmrtelain1                     - Giant Metrewave Radio Telescope ELAIS-N1 Field 610-MHz Radio Sou
+gmrtelain2                     - Giant Metrewave Radio Telescope ELAIS-N2 Field 610-MHz Radio Sou
+gmrtha325m                     - Giant Metrewave Radio Telescope Herschel-ATLAS/GAMA Flds 325-MHz
+gmrtj0916                      - Giant Metrewave Radio Telescope J0916+6348 Field Radio Source Ca
+gmrtk2f1lf                     - Giant Metrewave Radio Telescope 150-MHz Survey of Kepler K2 Fiel
+gmrtlbdsly                     - Giant Metrewave Radio Telescope LBDS-Lynx Region 150-MHz Radio S
+gmrtlhcat                      - Giant Metrewave Radio Telescope Lockman Hole 610-MHz Radio Sourc
+gmrtlhcat2                     - Giant Metrewave Radio Telescope Lockman Hole 610-MHz Radio Sourc
+gmrtlhcat3                     - Giant Metrewave Radio Telescope Lockman Hole 610-MHz Radio Sourc
+gmrtspxfls                     - Giant Metrewave Radio Telescope Spitzer xFLS Field 610-MHz Radio
+gmrtvvdsvl                     - Giant Metrewave Radio Telescope VVDS-VLA Deep Field 610-MHz Radi
+gmrtxl240m                     - Giant Metrewave Radio Telescope XMM Large Scale Structure 240-MH
+gmrtxl610m                     - Giant Metrewave Radio Telescope XMM Large Scale Structure 610-MH
+goscat                         - Galactic O Stars with Accurate Spectral Classes Catalog
+gp7c151mhz                     - 7C(G) 151-MHz Northern Galactic Plane Survey Catalog
+gpa                            - First Galactic Plane Survey at 8.35 and 14.35 GHz
+grbcat                         - Catalog of Gamma-Ray Bursts
+grbcatag                       - Catalog of Gamma-Ray Bursts: Afterglows
+grbcatann                      - Catalog of Gamma-Ray Bursts: Annulus Regions
+grbcatbox                      - Catalog of Gamma-Ray Bursts: Box Regions
+grbcatcirc                     - Catalog of Gamma-Ray Bursts: Circle Regions
+grbcatdual                     - Catalog of Gamma-Ray Bursts: Dual Regions
+grbcatflux                     - Catalog of Gamma-Ray Bursts: Fluxes and Fluences
+grbcatint                      - Catalog of Gamma-Ray Bursts: Intersect Regions
+grbcatinta                     - Catalog of Gamma-Ray Bursts: Annulus Intersect Regions
+grbcatirr                      - Catalog of Gamma-Ray Bursts: Irregular Regions
+gs                             - EXOSAT GSPC Spectra and Lightcurves
+gusbad                         - GRBs Uniformly Selected from BATSE Archival Data (Version 2.1)
+gwsstrpcxo                     - Groth-Westphal Strip Chandra X-Ray Point Source Catalog
+halomaster                     - HaloSat Master Catalog
+halotimelg                     - HaloSat Time Log
+hbc                            - Herbig &amp; Bell Catalog of Orion Pop. Emission-Line Stars
+hcg                            - Hickson Compact Groups of Galaxies (HCG) Catalog
+hcggalaxy                      - Hickson Compact Groups of Galaxies (HCG) Individual Galaxies Dat
+hcgxrbs                        - X-Ray Observations of Compact Group Galaxies
+hdec                           - Henry Draper Extension Charts Catalog
+heabib                         - High Energy Astrophysics Comprehensive Bibliography Catalog
+hers82cat                      - Herschel Stripe 82 Survey (HerS) Point Source Catalog
+herschllog                     - Herschel Space Observatory Log of Observations
+hesscat                        - HESS (High Energy Stereoscopic System) Source Catalog
+hete2gcn                       - HETE-2 GCN Triggers Catalog
+hete2grb                       - HETE-2 Gamma-Ray Bursts
+hete2tl                        - HETE-2 Timeline
+hic                            - Hipparcos Input Catalog
+hiiregion                      - Sharpless H II Regions
+hipnewcat                      - Hipparcos New Astrometric Catalog
+hipparcos                      - Hipparcos Main Catalog
+hitomaster                     - Hitomi Master Catalog
+hmxbcat                        - Catalog of High-Mass X-Ray Binaries in the Galaxy (4th Ed.)
+hmxbcat2                       - Catalog of High-Mass X-Ray Binaries in the Galaxy (Dynamic Versi
+hperseicxo                     - H Persei Chandra X-Ray Point Source Catalog
+hrasscat                       - Hamburg/RASS Catalog: X-Ray Sources
+hrassoptid                     - Hamburg/RASS Catalog: Optical Identifications
+hricfa                         - Einstein Catalog HRI CFA Sources
+hrideep                        - Einstein Catalog HRI Deep Survey
+hriexo                         - Einstein Catalog HRI ESTEC Sources
+hriimage                       - Einstein HRI Images
+hriphot                        - Einstein HRI Photon Event Data
+hstpaec                        - HST Planned and Archived Observations
+hubbleudf                      - Hubble Ultra Deep Field Catalog
+hyadesxray                     - ROSAT All-Sky Survey: Hyades Cluster Region
+ibiscat                        - Fifth IBIS/ISGRI Soft Gamma-Ray Survey Catalog
+ic10cxo                        - IC 10 Chandra X-ray Point Source Catalog
+ic10xmmcxo                     - IC 10 XMM-Newton and Chandra X-Ray Point Source Catalog
+ic1396acxo                     - IC 1396A &amp; Trumpler 37 Cluster Chandra X-Ray Point Source Catalo
+ic1396ncxo                     - IC 1396N Chandra X-Ray Point Source Catalog
+ic1805xmm                      - IC 1805 XMM-Newton X-Ray Source Catalog
+ic2944xmm                      - IC 2944/2948 XMM-Newton X-Ray Source Catalog
+ic348cxo                       - IC 348 Chandra X-Ray Point Source Catalog
+ic348cxo2                      - IC 348 Chandra X-Ray Point Source Catalog 2
+icecubepsc                     - IceCube All-Sky Point-Source Neutrino Events Catalog (2008-2018)
+infrared                       - Catalog of Infrared Observations (CIO), Edition 5
+intagncat                      - Second INTEGRAL AGN Catalog
+intbsc                         - INTEGRAL Bright Source Catalog
+integralao                     - INTEGRAL Observing Program
+intgccat                       - INTEGRAL IBIS Hard X-Ray Survey of Galactic Center
+intibisag2                     - INTEGRAL IBIS AGN Catalog Update
+intibisagn                     - INTEGRAL IBIS AGN Catalog
+intibisass                     - INTEGRAL IBIS All-Sky Survey of Hard X-Ray Sources
+intibisgal                     - INTEGRAL IBIS 9-Year Galactic Hard X-Ray Survey Catalog
+intibisvhd                     - INTEGRAL IBIS Hard X-Ray Survey Above 100 keV Source Catalog
+intomcvs                       - INTEGRAL OMC First Catalog of Optically Variable Sources
+intpublic                      - INTEGRAL Public Data Results Catalog
+intrefcat                      - INTEGRAL Reference Catalog
+intscw                         - INTEGRAL Science Window Data
+intscwpub                      - INTEGRAL Public Pointed Science Window Data
+intspiagrb                     - INTEGRAL First SPI-ACS Gamma-Ray Burst Catalog
+intvarcat                      - INTEGRAL/ISGRI Catalog of Variable X-Ray Sources
+ipc                            - Einstein IPC Sources Catalog
+ipcdeep                        - Einstein Catalog IPC Deep Survey
+ipcimage                       - Einstein IPC Images
+ipclxlbol                      - Einstein LX &amp; LBL Values for IPC O Stars
+ipcostars                      - Einstein Count Rates for IPC O Stars
+ipcphot                        - Einstein IPC Photon Event Data
+ipcslew                        - Einstein Catalog IPC Slew Survey
+ipcultsoft                     - Einstein IPC Ultrasoft Sources Catalog
+ipcunscrnd                     - Einstein IPC Unscreened Photon Event List
+ipngrb                         - Gamma-Ray Bursts from the Interplanetary Network
+ir20126cxo                     - IRAS 20126+4104 Chandra X-Ray Point Source Catalog
+iram30mlog                     - IRAM 30-m Single-Dish Telescope Observation Log
+iramnoelog                     - IRAM NOEMA (NOrthern Extended Millimeter Array) Observation Log
+irampdblog                     - IRAM Plateau de Bure Interferometer Observation Log
+irasfsc                        - IRAS Faint Source Catalog, Version 2.0
+iraspsc                        - IRAS Point Source Catalog, Version 2.0
+iraspscz                       - IRAS Point Source Catalog Redshift (PSCz) Catalog
+irasssc                        - IRAS Serendipitous Survey Catalog
+iraszsurv                      - IRAS 1.2-Jy Redshift Survey
+isgri4yrct                     - INTEGRAL ISGRI 4-Year Source Catalog
+isolog                         - ISO (Infrared Space Observatory) Observation Log
+iuelog                         - IUE (International Ultraviolet Explorer) Final Merged Observatio
+ixmaster                       - IXPE Master Catalog
+kaporixmm                      - Kappa Orionis XMM-Newton X-Ray Point Source Catalog
+kommersgrb                     - Kommers et al. (2001) BATSE Non-Triggered Gamma-Ray Burst Catalo
+konus                          - Venera KONUS 11 &amp; 12 Bursts
+kuehr                          - Extragalactic Radio Sources
+kvttmcomis                     - Kvant TTM/COMIS X-Ray Source Catalog
+l1641ioxmm                     - Lynds 1641 and iota Ori Region XMM-Newton X-Ray Point Source Cat
+lalaboocxo                     - LALA Bootes Field Chandra X-Ray Point Source Catalog
+lalacetcxo                     - LALA Cetus Field Chandra X-Ray Point Source Catalog
+lamorixmm                      - Lambda Orionis Cluster XMM-Newton X-Ray Point Source Catalog
+lbn                            - Lynds Catalog of Bright Nebulae
+lbqs                           - Large Bright Quasar Survey
+lcrscat                        - Las Campanas Redshift Survey Catalog
+ld7c151mhz                     - 7C 151-MHz Low-Declination Survey Catalog
+ldn                            - Lynds Catalog of Dark Nebulae
+le                             - CMA Catalog Central 6 Arcmin
+lkha101cxo                     - LkH-alpha 101 Star Formation Region Chandra X-Ray Point Source C
+lmc30drcxo                     - LMC 30 Doradus Complex Chandra X-Ray Point Source Catalog
+lmcclustrs                     - LMC Clusters Catalog
+lmcextobj                      - Large Magellanic Cloud Extended Objects Catalog
+lmchrixray                     - ROSAT HRI Catalog of LMC X-Ray Sources (Sasaki et al.)
+lmcn11cxo                      - LMC N11 Giant HII Region Chandra X-Ray Point Source Catalog
+lmcrosxray                     - ROSAT PSPC Catalog of LMC X-Ray Sources (Haberl &amp; Pietsch)
+lmcxray                        - LMC X-Ray Discrete Sources
+lmxbcat                        - Low-Mass X-Ray Binary Catalog (4th Edition, 2007)
+lockmanoir                     - Lockman Hole AGN Optical and Infrared Properties Catalog
+lockmanxm2                     - Lockman Hole XMM-Newton X-Ray Point Source Catalog
+lockmanxmm                     - Lockman Hole Field XMM-Newton X-Ray Point Source Catalog
+lof3c29534                     - LOFAR 3C295 Field 34-MHz Source Catalog
+lof3c29546                     - LOFAR 3C295 Field 46-MHz Source Catalog
+lof3c29562                     - LOFAR 3C295 Field 62-MHz Source Catalog
+lofarbf62m                     - LOFAR Bootes Field 62-MHz Source Catalog
+lofhatlas                      - LOFAR Radio Catalog of Herschel-ATLAS North Galactic Pole Field
+lorcat                         - Low-Frequency Radio Catalog of Flat-Spectrum Sources
+lotssprcat                     - LOFAR 2-Meter Sky Survey Preliminary Data Release Source Catalog
+lowzvlqvla                     - VLA 6-GHz Observations of Low-Redshift SDSS QSOs
+lpffiles                       - LISA Pathfinder Archive Data Summary
+lqac                           - Large Quasar Astrometric Catalog, 3rd Release
+lspmnorth                      - Lepine and Shara Northern Stars Proper Motion (LSPM-North) Catal
+lupus3xmm                      - Lupus 3 SFR XMM-Newton X-Ray Point Source Catalog
+lyngaclust                     - Lynga Open Clusters Catalog
+m101cxo                        - M 101 Chandra X-Ray Point Source Catalog
+m101xmm                        - M 101 XMM-Newton X-Ray Point Source Catalog
+m108cxo                        - M 108 Chandra X-Ray Compact Source Catalog
+m16cxo                         - M 16 (Eagle Nebula) Chandra X-Ray Point Source Catalog
+m17cxo                         - M 17 Chandra X-Ray Point Source Catalog
+m31cfcxo                       - M 31 Central Field Chandra HRI X-Ray Point Source Catalog
+m31clustrs                     - M 31 Globular Cluster Candidates Catalog
+m31cxo2                        - M 31 Bulge Chandra X-Ray Point Source Catalog
+m31cxohrc2                     - M 31 Chandra HRC X-Ray Source Catalog
+m31cxoxray                     - M 31 Central Region Chandra X-Ray Point Source Catalog
+m31deepxmm                     - M 31 Deep XMM-Newton Survey X-Ray Source Catalog
+m31phatcxo                     - M 31 Disk Chandra PHAT Survey: X-Ray Source Catalog
+m31phatsfh                     - M 31 Disk Chandra PHAT Survey: HST-Derived Star Formation Histor
+m31rbcgc                       - M 31 Revised Bologna Clusters and Candidates Catalog (Version 5)
+m31rosxray                     - ROSAT PSPC M 31 Source Catalog
+m31stars                       - M 31 Field Brightest Stars Catalog
+m31stars2                      - MIT/Amsterdam M 31 Survey
+m31xmm2                        - M 31 XMM-Newton Spectral Survey X-Ray Point Source Catalog
+m31xmmxray                     - XMM-Newton M 31 Survey Source Catalog
+m33chase                       - M 33 Chandra ACIS Survey (ChASeM33) Final Source Catalog
+m33cxoxray                     - M 33 Chandra X-Ray Point Source Catalog
+m33deepxmm                     - M 33 Deep XMM-Newton Survey X-Ray Source Catalog
+m33snrxmm                      - M 33 XMM-Newton Supernova Remnants Catalog
+m33xmm2                        - M 33 XMM-Newton X-Ray Variability Source Catalog
+m33xmmxray                     - XMM-Newton M 33 Survey Catalog
+m37cxo                         - M 37 Chandra X-Ray Point Source Catalog
+m51cxo                         - M 51 Chandra X-Ray Discrete Source Catalog
+m51cxo2                        - M 51 Deep Chandra ACIS X-Ray Point Source Catalog
+m67cxo                         - M 67 Chandra X-Ray Point Source Catalog
+m71cxo                         - M 71 Chandra X-Ray Point Source and Optical/Infrared Counterpart
+m81cxo                         - M 81 Chandra X-Ray Discrete Source Catalog
+m81cxo2                        - M 81 Chandra X-Ray Point Source Catalog
+m83cxo                         - M 83 Chandra X-Ray Point Source Catalog
+m83xmm                         - M 83 XMM-Newton X-Ray Point Source Catalog
+m83xrbcxo                      - M 83 Chandra X-Ray Binary Classifications Using HST
+m87cxo                         - M 87 Chandra X-Ray Point Source Catalog
+macs                           - Magellanic Catalog of Stars
+maghmxbcat                     - Magellanic Clouds High-Mass X-Ray Binaries Catalog
+magpis                         - Multi-Array Galactic Plane Imaging Survey
+maranoxmm                      - Marano Field XMM-Newton X-Ray Source Optical Counterparts
+markarian                      - First Byurakan Survey (Markarian) Catalog of UV-Excess Galaxies
+markarian2                     - Markarian Galaxies Optical Database
+mashpncat                      - MASH Catalogs of MASH Planetary Nebulae
+maxigsc7yr                     - MAXI/GSC 7-Year High and Low Galactic Latitude Source Catalog (3
+maxigschgl                     - 37-Month MAXI/GSC High Galactic-Latitude Source Catalog
+maximaster                     - MAXI Master Catalog
+maxissccat                     - MAXI/SSC Catalog of X-Ray Sources in 0.7-7.0 keV Band
+mcg                            - Morphological Galaxy Catalog
+mcksion                        - McCook-Sion White Dwarf Catalog (Web Version)
+mcxc                           - MCXC Meta-Catalog of X-Ray Detected Clusters of Galaxies
+mdwarfasc                      - Bright M Dwarf All-Sky Catalog
+mdwf10pcux                     - UV/X-Ray Data for M Dwarfs Within 10 Parsecs
+me                             - EXOSAT ME Spectra and Lightcurves
+messier                        - Messier Nebulae
+metainfo                       - Metadata for Xamin tables
+mggammacat                     - Gamma-Ray Source Summary Catalog (Macomb &amp; Gehrels 1999 &amp; 2001)
+mggammadet                     - Gamma-Ray Source Detailed Catalog (Macomb &amp; Gehrels 1999)
+mgps2                          - Molonglo Galactic Plane Survey 2nd Epoch Compact Source Catalog
+milliquas                      - Million Quasars Catalog (MILLIQUAS), Version 8 (2 August 2023)
+mitgb6cm                       - MIT-Green Bank 5-GHz Survey Catalog
+monr2cxo                       - Monoceros R2 Cloud Chandra X-Ray Point Source Catalog
+morbbincat                     - Dynamical Masses of Selected Orbital Binary Systems
+morx                           - Millions of Optical Radio/X-Ray (MORX) Associations Catalog, Ver
+mostatlas                      - Molonglo Observatory Synthesis Telescope ATLAS 843-MHz Source Ca
+mostsnrcat                     - Molonglo Observatory Synthesis Telescope Supernova Remnant Catal
+moxc                           - Massive Star-Forming Regions Omnibus X-Ray Catalog
+mpcraw                         - Einstein MPC Raw Data
+mrc                            - Molonglo Reference Catalog of Radio Sources
+msxpsc                         - Midcourse Space Experiment (MSX) Point Source Catalog, V2.3
+msxuvpsc                       - Midcourse Space Experiment (MSX) Ultraviolet Point Source Catalo
+mwa32thgl                      - Murchison Widefield Array 32-T Low-Frequency Source Catalog
+mwacs                          - Murchison Widefield Array Commissioning Survey Compact Low-Frequ
+mwak2f1lfc                     - Murchison Widefield Array Low-Frequency Radio Survey of Kepler K
+mwmc                           - Milky Way Molecular Clouds from CO Measurements
+mwp1bubble                     - Milky Way Project First Data Release IR Bubble Catalog
+mwsc                           - Milky Way Star Clusters Catalog
+mystixires                     - Massive Young Star-Forming Complex Study in IR &amp; X-Rays: IR-Exce
+mystixmidi                     - Massive Young Star-Forming Complex Study in IR &amp; X-Rays: Mid-IR
+mystixmpcm                     - Massive Young Star-Forming Complex Stdy in IR &amp; X-Rays: MYStIX P
+mystixxray                     - Massive Young Star-Forming Complex Study in IR &amp; X-Rays: X-Ray S
+napexmmcxo                     - North America (NGC 7000) &amp; Pelican (IC 5070) Nebulae X-Ray Sourc
+narcscat                       - Norma Arm Region Chandra Survey Point &amp; Extended Source Catalog
+ncp21cma                       - North Celestial Pole Region Radio Sources Detected by the 21cm A
+neargalcat                     - Updated Nearby Galaxy Catalog
+newmdwarfs                     - New M Dwarfs in the Solar Neighborhood
+ngc1068cxo                     - NGC 1068 Chandra X-Ray Compact Source Catalog
+ngc1291cxo                     - NGC 1291 Chandra X-Ray Point Source Catalog
+ngc1332cxo                     - NGC 1332 Chandra X-Ray Compact Source Catalog
+ngc1333cxo                     - NGC 1333 Chandra X-Ray Point Source Catalog
+ngc1399cxo                     - NGC 1399 Chandra X-Ray Source Catalog
+ngc1512xmm                     - NGC 1512/NGC 1510 XMM-Newton X-Ray Point Source Catalog
+ngc1600cxo                     - NGC 1600 Chandra X-Ray Discrete Source Catalog
+ngc1893cxo                     - NGC 1893 Chandra X-Ray Point Source Catalog
+ngc2000                        - NGC2000.0: Complete New General Catalog and Index Catalog
+ngc2024cxo                     - NGC 2024 Chandra X-Ray Point Source Catalog
+ngc2237cxo                     - NGC 2237 Chandra X-Ray Point Source Catalog
+ngc2244cxo                     - NGC 2244/Rosette Nebula Chandra X-Ray Point Source Catalog
+ngc2264cx2                     - NGC 2264 Chandra X-Ray Point Source Catalog 2
+ngc2264cxo                     - NGC 2264 Chandra X-Ray Point Source Catalog
+ngc2264xmm                     - NGC 2264 XMM-Newton X-Ray Point Source Catalog
+ngc2362cxo                     - NGC 2362 Chandra X-Ray Point Source Catalog
+ngc2403cx2                     - NGC 2403 Chandra X-Ray Point Source Catalog
+ngc2403cxo                     - NGC 2403 Central 3-kpc Region Chandra Source Catalog
+ngc2516cxo                     - NGC 2516 Chandra X-Ray Point Source Catalog
+ngc2516xmm                     - NGC 2516 Cluster XMM-Newton X-Ray Point Source Catalog
+ngc253xmm                      - NGC 253 XMM-Newton X-Ray Point Source Catalog
+ngc2547xmm                     - NGC 2547 XMM-Newton X-Ray Point Source Catalog
+ngc2808cxo                     - NGC 2808 Chandra X-Ray Point Source Catalog
+ngc2808xmm                     - NGC 2808 XMM-Newton X-Ray Point Source Catalog
+ngc2903cxo                     - NGC 2903 Central Region Chandra X-Ray Point Source Catalog
+ngc300cxo                      - NGC 300 Chandra X-Ray Point Source Catalog
+ngc3115cxo                     - NGC 3115 Chandra X-Ray Point Source Catalog
+ngc3293cxo                     - NGC 3293 Chandra X-Ray Point Source Catalog
+ngc404cxo                      - NGC 404 Chandra X-Ray Point Source Catalog
+ngc4214cxo                     - NGC 4214 Chandra X-Ray Point Source Catalog
+ngc4278cxo                     - NGC 4278 Chandra X-Ray Point Source Catalog
+ngc4365cxo                     - NGC 4365 Chandra LMXB Catalog
+ngc4382cxo                     - NGC 4382 Chandra LMXB Catalog
+ngc4472cxo                     - NGC 4472 Chandra X-Ray Point Source Catalog
+ngc4636cxo                     - NGC 4636 Chandra X-Ray Point Source Catalog
+ngc4649cx2                     - NGC 4649 Chandra X-Ray Point Source Catalog 2
+ngc4649cxo                     - NGC 4649 Chandra X-Ray Discrete Source Catalog
+ngc55cxo                       - NGC 55 Chandra X-Ray Point Source Catalog
+ngc5866cxo                     - NGC 5866 Chandra X-Ray Point Source Catalog
+ngc6231cx2                     - NGC 6231 Chandra X-Ray Point Source Catalog 2
+ngc6231cxo                     - NGC 6231 Chandra X-Ray Point Source Catalog
+ngc6231xmm                     - NGC 6231 XMM-Newton X-Ray Source Catalog
+ngc6334cxo                     - NGC 6334 Chandra X-Ray Point Source Catalog
+ngc6357cxo                     - NGC 6357 Chandra X-Ray Point Source Catalog
+ngc6357oid                     - NGC 6357/Pismis 24 Chandra Point Source Optical/IR Identificatio
+ngc6530cxo                     - NGC 6530 Chandra X-Ray Point Source Catalog
+ngc6530oid                     - NGC 6530 Chandra Point Source Optical/IR Identifications Catalog
+ngc6530xmm                     - NGC 6530 XMM-Newton X-Ray Point Source Catalog
+ngc6791cxo                     - NGC 6791 Chandra X-Ray Point Source Catalog
+ngc752cxo                      - NGC 752 Chandra X-Ray Point Source Catalog
+ngc752xmm                      - NGC 752 XMM-Newton X-Ray Point Source Catalog
+nicermastr                     - NICER Master Catalog
+nltt                           - NLTT Catalog &amp; First Supplement
+noras                          - Northern ROSAT All-Sky (NORAS) Galaxy Cluster Survey Catalog
+north20cm                      - 20cm Radio Catalog
+north6cm                       - 6cm Radio Catalog
+nuaftl                         - NuSTAR As-Flown Timeline
+nucosmosfc                     - NuSTAR COSMOS Field X-Ray Source Catalog
+nuecdfscat                     - NuSTAR Survey of Extended Chandra Deep Field South (ECDF-S) Sour
+nugalcen                       - NuSTAR Hard X-Ray Survey of the Galactic Center
+numaster                       - NuSTAR Master Catalog
+nustarssc                      - NuSTAR Serendipitous Survey 40-Month Primary Source Catalog
+nustarssc2                     - NuSTAR Serendipitous Survey 40-Month Secondary Source Catalog
+nuvbemdcat                     - Near-UV Detected Bright Early-M Dwarf Star Catalog
+nvss                           - NRAO VLA Sky Survey Catalog
+nwayawgros                     - AllWISE Counterparts and Gaia Matches to ROSAT/2RXS X-Ray Source
+nwayawgxmm                     - AllWISE Counterparts and Gaia Matches to XMM-Newton Slew Survey
+omc2p3cxo                      - OMC-2 and OMC-3 Chandra X-Ray Point Source Catalog
+omegcencx2                     - Omega Centauri Globular Cluster Chandra Deep Survey X-Ray Point
+omegcencxo                     - Omega Centauri Globular Cluster Chandra X-Ray Point Source Catal
+omegcenxmm                     - Omega Centauri XMM-Newton X-Ray Point Source Catalog
+onccxoopt                      - Orion Nebula Cluster Chandra HRC Optical Sample
+onccxoxray                     - Orion Nebula Cluster Chandra HRC X-Ray Point Source Catalog
+openclust                      - New Optically Visible Open Clusters and Candidates Catalog
+orionffcxo                     - Orion Flanking Fields Chandra X-Ray Point Source Catalog
+orionxray                      - ROSAT Survey of the Orion Nebula
+orionxstar                     - ROSAT HRI Orion Group 1 Stars
+oriysoir                       - Orion Nebula YSO IR Properties
+oso8alc                        - OSO8 A Detector Lightcurves
+oso8bclc                       - OSO8 B&amp;C Detector Lightcurves
+oso8pharaw                     - OSO8 GCXSE Raw PHA
+oso8rtraw                      - OSO8 GCXSE Raw Rates
+osqsonvss                      - Optically-Selected QSOS NVSS-Detected Source Catalog
+osrilqxray                     - Optically Selected Radio-Intermediate and Loud Quasars X-ray Emi
+osse                           - CGRO/OSSE Observations
+ostars                         - Galactic O Stars Catalog
+ovro31ghz                      - Owens Valley Radio Observatory 40-m 31-GHZ Radio Source Catalog
+pacobscat                      - Planck-ATCA Co-eval Observations (PACO) Project Bright Sample Ca
+pacofscat                      - Planck-ATCA Co-eval Observations (PACO) Project Faint Sample Cat
+pccs030ghz                     - Planck Catalog of 30-GHz Compact Sources (PCCS) Release 2
+pccs044ghz                     - Planck Catalog of 44-GHz Compact Sources (PCCS) Release 2
+pccs070ghz                     - Planck Catalog of 70-GHz Compact Sources (PCCS) Release 2
+pccs100ghz                     - Planck Catalog of 100-GHz Compact Sources (PCCS) Release 2
+pccs143ghz                     - Planck Catalog of 143-GHz Compact Sources (PCCS) Release 2
+pccs217ghz                     - Planck Catalog of 217-GHz Compact Sources (PCCS) Release 2
+pccs353ghz                     - Planck Catalog of 353-GHz Compact Sources (PCCS) Release 2
+pccs545ghz                     - Planck Catalog of 545-GHz Compact Sources (PCCS) Release 2
+pccs857ghz                     - Planck Catalog of 857-GHz Compact Sources (PCCS) Release 2
+pds1p4ghz                      - Phoenix Deep Survey 1.4-GHz Catalog
+pdsoid                         - Phoenix Deep Survey Optical and Near-Infrared Counterparts Catal
+pdsoid2                        - Phoenix Deep Survey Optical and Near-Infrared Counterparts Catal
+pg                             - Palomar-Green Catalog of UV-Excess Stellar Objects
+pgc2003                        - Principal Galaxy Catalog (PGC) 2003
+phebus                         - Granat Phebus Gamma-Ray Bursts
+pigssboofd                     - Allen Telescope Array Pi GHz Sky Survey (PiGSS) Boo Field Source
+pigsselcnf                     - Allen Telescope Array Pi GHz Sky Survey (PiGSS) Deep Fields Sour
+pkscat90                       - Parkes Southern Radio Source Catalog, Version 1.01
+planckeszc                     - Planck Early Sunyaev-Zeldovich Detected Cluster Candidates Catal
+planckgcc                      - Planck Catalog of Galactic Cold Clumps (PGCC)
+planckhzsc                     - Planck High-Redshift Source Candidates Catalog
+plancksz                       - Updated Planck Catalog of Sunyaev-Zeldovich Sources Release 1
+plancksz2                      - Planck 2nd Sunyaev-Zeldovich Source Catalog
+pleiadxray                     - ROSAT PSPC Catalog of the Pleiades (Micela et al. 1996)
+plnebulae                      - Galactic Planetary Nebulae Catalog
+pmn                            - Parkes-MIT-NRAO (PMN) Surveys
+pmpulsar                       - Parkes Multibeam Survey New Pulsar Catalog
+pmsucat                        - Palomar/MSU Nearby Star Survey
+ppm                            - Positions and Proper Motions Catalog
+ppmxlbmd                       - PPM-XL Bright M Dwarfs Catalog
+pulsar                         - Pulsar Catalog
+pvogrb                         - PVO Gamma-Ray Bursts
+qorgcat                        - All-Sky Optical Catalog of Radio/X-Ray Sources
+qso                            - Hewitt &amp; Burbidge (1993) QSO Catalog
+radio                          - Master Radio Catalog
+rass2foid                      - ROSAT All-Sky Survey Two Selected Fields Optical Identifications
+rass2fxray                     - ROSAT All-Sky Survey Two Selected Fields X-Ray Source Catalog
+rass2mass                      - ROSAT All-Sky Survey BSC/2MASS PSC Cross-Associations XID II Cat
+rass2rxs                       - Second ROSAT All-Sky Survey Point Source Catalog (2RXS)
+rass6dfgs                      - ROSAT All-Sky Survey/6dF Galaxy Survey Catalog of X-Ray Selected
+rassaeqso                      - ROSAT All-Sky Survey/ASIAGO-ESO QSO Survey Catalog
+rassasaseb                     - RASS/All-Sky Automated Survey Eclipsing Binaries Catalog
+rassasaspv                     - All-Sky Automatic Survey (ASAS) Photometry of ROSAT All-Sky Surv
+rassbsc                        - ROSAT All-Sky Survey: Bright Sources
+rassbscpgc                     - ROSAT All-Sky Survey Bright Source Catalog/Catalog of Principal
+rasscals                       - ROSAT All-Sky Survey CALS Galaxy Groups Catalog
+rasscndins                     - ROSAT All-Sky Survey Candidate Isolated Neutron Stars
+rasscns3                       - ROSAT All-Sky Survey: Nearby Stars
+rassdssagn                     - ROSAT All-Sky Survey and SDSS DR5 Sample of X-Ray Emitting AGN
+rassdsstar                     - ROSAT All-Sky Survey and SDSS Sample of X-Ray Emitting Stars
+rassdwarf                      - ROSAT All-Sky Survey: A-K Dwarfs/Subgiants
+rassebcs                       - ROSAT All-Sky Survey Extended Brightest Cluster Sample
+rassfirst                      - ROSAT All-Sky Survey Single FIRST Matches Catalog
+rassfsc                        - ROSAT All-Sky Survey: Faint Sources
+rassgb                         - RASS/Green Bank Catalog
+rassgiant                      - ROSAT All-Sky Survey: Giants &amp; Supergiants
+rasshgsft2                     - ROSAT All-Sky Survey: Soft High Galactic-Latitude X-Ray Sources
+rasshgsoft                     - ROSAT All-Sky Survey: Soft High Galactic-Latitude X-Ray Sources
+rassmaster                     - ROSAT All-Sky Survey Archival Data
+rassnorsam                     - ROSAT All-Sky Survey Completely Identified Northern Sample
+rassob                         - ROSAT All-Sky Survey: OB Stars
+rasssdssgc                     - ROSAT All-Sky Survey and Sloan Digital Sky Survey DR7 Galaxy Clu
+rassusnoid                     - ROSAT All-Sky Survey Bright Source Catalog USNO A2 Cross-Associa
+rassvars                       - RASS X-Ray Variable Sources Catalog
+rasswd                         - ROSAT All-Sky Survey: White Dwarfs
+rbs                            - ROSAT Bright Survey (Schwope et al. 2000)
+rbscnvss                       - ROSAT All-Sky Survey/NVSS Bright X-Ray Source Sample
+rc3                            - Third Reference Catalog of Bright Galaxies
+rcw108cxo                      - RCW 108 Star Formation Region Chandra X-Ray Point Source Catalog
+rcw38cxo                       - RCW 38 Chandra X-Ray Point Source Catalog
+rcw38cxo2                      - RCW 38 Chandra X-Ray Point Source Catalog 2
+rcw38yso                       - RCW 38 Young Stellar Objects Catalog
+rcw49cxo                       - RCW 49 Chandra X-Ray Point Source Catalog
+reflex                         - ROSAT-ESO Flux-Limited X-Ray (REFLEX) Galaxy Cluster Survey
+refnebulae                     - Merged Catalog of Reflection Nebulae
+revisedlhs                     - Revised Luyten Half-Second (LHS) Catalog
+rhessigrb                      - RHESSI Gamma-Ray Burst Catalog
+rhoophcxo                      - Rho Ophiuchi SFR Chandra X-Ray Point Source Catalog
+rittercv                       - Ritter Cataclysmic Binaries Catalog (7.21 Edition)
+ritterlmxb                     - Ritter Low-Mass X-Ray Binaries Catalog (7.21 Edition)
+ritterrbin                     - Ritter Binaries Related to CVs Catalog (7.21 Edition)
+rixos                          - ROSAT International X-Ray/Optical Survey Source Catalog
+romabzcat                      - Roma-BZCAT Multi-Frequency Catalog of Blazars
+ros13hrcxo                     - ROSAT/XMM-Newton 13-hour Field Chandra X-Ray Source Catalog
+ros13hrvla                     - ROSAT/XMM-Newton 13-hr Deep Field VLA 20-cm Source Catalog
+ros13hrxmm                     - ROSAT 13-hour Field XMM-Newton X-Ray Source Catalog
+ros400gcls                     - ROSAT PSPC 400 Square Degree Galaxy Cluster Catalog
+rosathard                      - ROSAT Hard-Spectrum X-Ray Source Catalog
+rosatlog                       - ROSAT Observation Log
+rosatrlq                       - ROSAT Radio-Loud Quasars Catalog
+rosatrqq                       - ROSAT Radio-Quiet Quasars Catalog
+rosatxuv                       - ROSAT XUV Pointed Phase
+rosettecxo                     - Rosette Molecular Cloud Chandra X-Ray Point Source Catalog
+rosgalclus                     - ROSAT PSPC Catalog of Clusters of Galaxies
+roshri                         - ROSAT Results Archive Sources for the HRI
+roshritotal                    - ROSAT Complete Results Archive Sources for the HRI
+rosmaster                      - ROSAT Archival Data
+rosnepagn                      - ROSAT North Ecliptic Pole Survey Active Galactic Nuclei Catalog
+rosnepoid                      - ROSAT North Ecliptic Pole Survey Optical Identifications
+rosnepxray                     - ROSAT North Ecliptic Pole Survey X-Ray Source Catalog
+rosprspec                      - ROSAT Proposal Abstracts
+rospspc                        - ROSAT Results Archive Sources for the PSPC
+rospspcf                       - ROSAT Results Archive Sources for the PSPC with Filter
+rospspcftot                    - ROSAT Complete Results Archive Sources for the PSPC with Filter
+rospspctotal                   - ROSAT Complete Results Archive Sources for the PSPC
+roswfc2re                      - ROSAT Catalog WFC 2RE Sources
+rotxraycat                     - Stars with Rotation Periods &amp; X-Ray Luminosities Catalog
+roxa                           - ROXA (Radio-Optical-X-ray at ASDC) Blazars Catalog
+rrs8c38mhz                     - 8C Revised Rees Survey 38-MHz Source Catalog
+rssgrbag                       - Radio-Selected Gamma-Ray Burst Afterglow Catalog
+rt9cc15ghz                     - 9C Continued 15-GHz Ryle Telescope Survey of VSA Fields Source C
+rtv9c15ghz                     - 9C 15-GHz Ryle Telescope Survey of VSA Fields Source Catalog
+s254258cxo                     - S254-S258 Star-Forming Region Chandra X-Ray Point Source Catalog
+sa57xmm                        - Selected Area 57 XMM-Newton X-Ray Source Catalog
+sacshpscat                     - Swift AGN &amp; Cluster Survey (SACS) Hard-Band (2-10 keV) Point Sou
+sacssescat                     - Swift AGN &amp; Cluster Survey (SACS) Soft-Band (0.5-2 keV) Extended
+sacsspscat                     - Swift AGN &amp; Cluster Survey (SACS) Soft-Band (0.5-2 keV) Point So
+sacstpscat                     - Swift AGN &amp; Cluster Survey (SACS) Total-Band (0.2-10 keV) Point
+sacy                           - SACY (Search for Associations Containing Young Stars) Catalog
+saisncat                       - Sternberg Astronomical Institute Catalog of Supernovae
+sao                            - Smithsonian Astrophysical Observatory Star Catalog
+sas2maps                       - SAS-2 Map Product Catalog
+sas2raw                        - SAS-2 Photon Events Catalog
+sas3ylog                       - SAS-3 Y-Axis Pointed Obs Log
+sax2to10                       - BeppoSAX 2-10 keV Survey
+saxao                          - BeppoSAX Approved Pointings
+saxgrbmgrb                     - BeppoSAX/GRBM Gamma-Ray Burst Catalog
+saxhellas                      - BeppoSAX High-Energy Large Area Survey (HELLAS) X-Ray Source Cat
+saxhellasr                     - BeppoSAX High-Energy Large Area Survey (HELLAS) Radio Source Cat
+saxnfilog                      - BeppoSAX NFI Archive and Observation Log
+saxwfccat                      - BeppoSAX Wide Field Camera X-Ray Source Catalog
+saxwfccat2                     - BeppoSAX Wide Field Camera Unbiased X-Ray Source Catalog
+saxwfclog                      - BeppoSAX WFC Observation Log
+sborbitcat                     - Spectroscopic Binary Orbits Ninth Catalog (Dynamic Version)
+sbsggencat                     - Second Byurakan Survey General Catalog Galaxies Optical Database
+scubafemoc                     - SCUBA Legacy Fundamental and Extended Map Object Catalogs
+sdssbalqs2                     - Sloan Digital Sky Survey Broad Absorption Line Quasars Catalog:
+sdssbalqso                     - Sloan Digital Sky Survey Broad Absorption Line Quasars Catalog:
+sdsscvcat                      - Sloan Digital Sky Survey I/II Cataclysmic Variables Catalog
+sdsscxoqso                     - Sloan Digital Sky Survey Quasars Detected by Chandra
+sdssdr10wd                     - Sloan Digital Sky Survey DR10 New White Dwarf Catalog
+sdssdr7wd                      - Sloan Digital Sky Survey DR7 White Dwarf Catalog
+sdsslasqso                     - Sloan Digital Sky Survey/UKIRT DSS Large Area Survey Matched Qua
+sdssnbckde                     - SDSS NBCKDE Catalog of Photometrically Selected Quasar Candidate
+sdssnbcqsc                     - Sloan Digital Sky Survey NBC Quasar Candidate Catalog
+sdssquasar                     - Sloan Digital Sky Survey Quasar Catalog (Twelfth Data Release: D
+sdsss82cxo                     - Sloan Digital Sky Survey Stripe 82 Chandra Source Match Catalog
+sdsss82xmm                     - Sloan Digital Sky Survey Stripe 82 XMM-Newton Source Match Catal
+sdssunuqsr                     - Sloan Digital Sky Survey Unusual Quasars Catalog
+sdsswdsd                       - Sloan Digital Sky Survey DR4 White Dwarf &amp; Hot Subdwarf Catalog
+sdsswhlgc                      - Sloan Digital Sky Survey DR6 Galaxy Clusters Catalog
+sdssxmmqso                     - Sloan Digital Sky Survey (DR5)/XMM-Newton Quasar Survey Catalog
+selhcgcxo                      - Selected Hickson Compact Groups Chandra X-Ray Point Source Catal
+sfgalhmxb                      - Star-Forming Galaxies High-Mass X-Ray Binaries Catalog
+sfincspcm                      - Star Formation in Nearby Clouds (SFiNCs) Probable Cluster Member
+sfincsxray                     - Star Formation in Nearby Clouds (SFiNCs) X-Ray Source Catalog
+sgraregcsc                     - Sgr A* Region Compact Radio Source Catalog
+shk                            - Shakbazian Compact Groups of Galaxies
+shkgalaxy                      - Shakhabazian (Shk) Compact Groups of Galaxies: Individual Galaxi
+sigorixmm                      - Sigma Orionis Cluster XMM-Newton X-Ray Point Source Catalog
+sixdfgs                        - 6dFGS Galaxy Survey Final Redshift Release Catalog
+sixsrvycat                     - Swift-INTEGRAL X-Ray (SIX) Survey Catalog
+smc1400mhz                     - Small Magellanic Cloud ATCA and Parkes 1400-MHz Source Catalog
+smc4800mhz                     - Small Magellanic Cloud ATCA 4800-MHz Source Catalog
+smc843mhz                      - Small Magellanic Cloud MOST 843-MHz Source Catalog
+smc8640mhz                     - Small Magellanic Cloud ATCA 8640-MHz Source Catalog
+smcclustrs                     - SMC &amp; Bridge Clusters Catalog
+smcdfscxo                      - Small Magellanic Cloud Deep Fields X-Ray Point Source Catalog
+smcpscxmm                      - Small Magellanic Cloud XMM-Newton Point Source Catalog
+smcradio                       - Small Magellanic Cloud ATCA Radio Continuum Sources
+smcrosxray                     - ROSAT PSPC Survey of the Small Magellanic Cloud
+smcrosxry2                     - ROSAT PSPC Catalog of SMC X-Ray Sources (Haberl et al.)
+smcstars                       - SMC Probable Member Stars Catalog
+smcstars2                      - SMC H-Alpha Emission Stars/Nebulae
+smcwingcxo                     - Small Magellanic Cloud Wing Survey Chandra X-Ray Point Source Ca
+smcxray                        - SMC X-Ray Discrete Sources
+smmgrs                         - GRS Gamma-Ray Bursts
+snrgreen                       - Green Catalog of Galactic SNRs (June 2017 Version)
+spass2p3gh                     - S-PASS (S-Band Polarization All-Sky Survey) 2.3-GHz Source Catal
+spicescxo                      - SPICES Lynx Field Chandra X-Ray Source Catalog
+spidersros                     - SDSS-IV/SPIDERS ROSAT-Based X-Ray Point Source Spectroscopic Cat
+spidersxmm                     - SDSS-IV/SPIDERS XMM-Based X-Ray Point Source Spectroscopic Catal
+spitzmastr                     - Spitzer Space Telescope Observation Log
+sporiabyso                     - Spitzer Survey of Orion A and B Molecular Clouds YSOs Catalog
+sptmm87sd                      - South Pole Telescope 87-Square Degree Survey Millimeter Source C
+sptszgalcl                     - South Pole Telescope-Sunyarv-Zeldovich (SPT-SZ) Survey Catalog
+sptszspsc                      - South Pole Telescope Sunyaev-Zeldovich Survey Point Source Catal
+ssa22cxo                       - SSA22 Field Chandra X-Ray Point Source Catalog
+sss                            - Einstein SSS Spectra and Lightcurves
+sssraw                         - Einstein SSS and MPC Raw Data
+sterngrb                       - Stern et al. (2001) BATSE Gamma-Ray Burst Catalog
+subpfclog                      - Subaru Prime Focus Camera (Suprime-Cam) Exposures Log
+subtab                         - Subtables of  Vizier resources
+sumss                          - Sydney University Molonglo Sky Survey (SUMSS) Source Catalog
+suzakuwam                      - Suzaku Wide-Band All-Sky Monitor (WAM) Catalog of Event Lightcur
+suzamaster                     - Suzaku Master Catalog
+suzaxislog                     - Suzaku XIS Configuration Log
+swbat105m                      - Swift-BAT 105-Month All-Sky Hard X-Ray Survey
+swbatagn60                     - Swift BAT 60-Month Survey of Active Galactic Nuclei Catalog
+swbatmontr                     - Swift BAT Transient Monitoring Catalog
+swbatsfxt                      - Swift BAT 100-Month Supergiant Fast X-Ray Transient Catalog
+swif1swxrt                     - The Seven-Year Swift-XRT Point Source Catalog (1SWXRT)
+swift2sxps                     - Swift-XRT Point Source Catalog (2SXPS)
+swiftbalog                     - Swift BAT Instrument Log
+swiftft                        - Swift Serendipitous Survey in Deep XRT GRB Fields (SwiftFT)
+swiftgrb                       - Swift Gamma Ray Bursts Catalog
+swiftguano                     - Swift Gamma-ray Urgent Archiver for Novel Opportunities (GUANO)
+swiftmastr                     - Swift Master Catalog
+swifttdrss                     - Swift TDRSS Messages
+swiftuvlog                     - Swift UVOT Instrument Log
+swiftxrlog                     - Swift XRT Instrument Log
+swirecxo                       - Spitzer Wide-Area IR Extra-Galactic Survey Chandra X-Ray Sources
+swirelhcxo                     - SWIRE/Chandra Lockman Hole Field X-Ray Source Catalog
+swsdssqso                      - Swift Simultaneous UV, Optical, and X-Ray Observed Quasar Catalo
+swuvotssc                      - Swift/UVOT Serendipitous Source Catalog, v1.1
+swuvotssob                     - Swift/UVOT Serendipitous Source Catalog, v1.1: Observations IDs
+swxcscat                       - Swift X-Ray Telescope Cluster Survey Catalog
+swxcsoxid                      - Swift X-Ray Telescope Cluster Survey Cross-Correlation Catalog
+swxrt1fgl                      - Swift XRT Counterparts to Unidentified 1FGL Sources
+sxdscat                        - Subaru/XMM-Newton Deep Survey X-Ray Source List
+symbiotics                     - Symbiotic Stars Catalog
+sza31ghz                       - Sunyaev-Zeldovich Array 31-GHZ Radio Source Catalog
+table_classes                  - Types of Vizier tables
+tabledocs                      - Internal documentation for Xamin tables
+tartarus                       - Tartarus: Reduced ASCA AGN Data (Version 3.1)
+taurusxmm                      - Taurus Molecular Cloud XMM-Newton X-Ray Source Catalog
+td1                            - TD1 Stellar Ultraviolet Fluxes Catalog
+tevcat                         - TeV Gamma-Ray Source Catalog
+texas                          - Texas Survey of Radio Sources at 365 MHz
+tgs                            - EXOSAT TGS L and R Orders
+tgs2                           - EXOSAT TGS Spectra and Lightcurves
+tramisuboo                     - Two-Meter Radio Mini Survey (T-RaMiSu) of the Bootes Field
+trifidcxo                      - Trifid Nebula (M 20) Chandra X-Ray Point Source Catalog
+twodfqsoz                      - 2dF QSO Redshift (2QZ) Survey
+twomassrsc                     - 2MASS Redshift Survey (2MRS) Catalog
+twosigma                       - Einstein Two-Sigma Catalog
+tycho2                         - Tycho-2 Catalog of the 2.5 Million Brightest Stars
+uc7c151mhz                     - 7C Catalog 151-MHz Survey Final Unified Source Catalog
+ugc                            - Uppsala General Catalog of Galaxies
+uhuru4                         - Uhuru Fourth (4U) Catalog
+uit                            - Ultraviolet Imaging Telescope Near-UV Bright Objects Catalog
+uitmaster                      - Ultraviolet Imaging Telescope Master Catalog
+ulxngcat                       - Ultraluminous X-Ray Sources in Nearby Galaxies Catalog
+ulxrbcat                       - Ultraluminous X-Ray Sources in External Galaxies Catalog
+upprscoxmm                     - Upper Sco XMM-Newton X-Ray Point Source Catalog
+uvotbscat                      - UVOT Bright Star Catalog
+uvqs                           - UV-Bright Quasar Survey (UVQS) DR1 Catalog
+uzc                            - Updated Zwicky Catalog
+vela5b                         - Vela 5B All-Sky Monitor Lightcurves
+verimaster                     - VERITAS Source Catalog
+veroncat                       - Veron Catalog of Quasars &amp; AGN, 13th Edition
+vla23901p4                     - VLA A2390 Cluster of Galaxies 1.4-GHz Source Catalog
+vla3701p4                      - VLA A370 Cluster of Galaxies 1.4-GHz Source Catalog
+vla74mhzdp                     - VLA 74-MHz Deep High-Resolution Survey Source Catalog
+vlacdfscat                     - VLA Survey of Chandra Deep Field South
+vlacomacat                     - VLA Coma Cluster of Galaxies 1.4-GHz Source Catalog
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vlacos324m                     - VLA-COSMOS Survey 324-MHz Continuum Source Catalog
+vlacos3ghz                     - VLA-COSMOS 3-GHz Large Project Source Catalog
+vlacosmjsc                     - VLA-COSMOS Project 1.4-GHz Joint Source Catalog
+vlacosmos                      - VLA-COSMOS Large Project 1.4-GHz Source Catalog
+vlacosxoid                     - VLA-COSMOS 3-GHz Large Project Multiwavelength Counterparts Cata
+vlaecdfs1p4                    - VLA Extended-Chandra Deep Field-South 1.4-GHz Source Catalog
+vlaecdfscls                    - VLA Extended-Chandra Deep Field-South Classification Catalog
+vlaecdfsoi                     - VLA Extended-Chandra Deep Field-South 1.4-GHz Sources Opt/IR Cou
+vlaen20cm                      - VLA ELAIS N1, N2, N3 Fields 20-cm Source Catalog
+vlagbsoph                      - VLA Goulds Belt Survey Ophiuchus Complex Source Catalog
+vlagbsori                      - VLA Goulds Belt Survey Orion Complex Source Catalog
+vlagbsper                      - VLA Goulds Belt Survey Perseus Region Source Catalog
+vlagbsser                      - VLA Goulds Belt Survey Serpens Region Source Catalog
+vlagbstau                      - VLA Goulds Belt Survey Taurus-Auriga Complex Source Catalog
+vlagoodsn                      - VLA GOODS-North Field 1.4-GHz Source Catalog
+vlahdf20cm                     - VLA Hubble Deep Field 20-cm Source Catalog
+vlalh1400m                     - VLA Lockman Hole 1400-MHz Radio Source Catalog
+vlalhn3ghz                     - VLA Lockman Hole 3-GHz Radio Source Catalog
+vlam311p4g                     - VLA M 31 1.4-GHz Source Catalog
+vlam31325m                     - VLA M 31 325-MHz Source Catalog
+vlanep                         - VLA 1.5-GHz North Ecliptic Pole Survey
+vlaonccat                      - VLA Orion Nebula Cluster Compact Source Catalog
+vlasdf20cm                     - VLA SWIRE Deep Field 20-cm Source Catalog
+vlasdf90cm                     - VLA SWIRE Deep Field 90-cm Source Catalog
+vlass821p4                     - VLA SDSS Stripe 82 Survey 1.4-GHz Source Catalog
+vlasxdf1p4                     - VLA Subaru/XMM-Newton Deep Field 1.4-GHz Source Catalog
+vlasxdfoid                     - VLA Subaru/XMM-Newton Deep Field 1.4-GHz Sources Optical/Near-IR
+vlaxl325mh                     - VLA XMM Large Scale Structure Field 325-MHz Source Catalog
+vlaxl74mhz                     - VLA XMM Large Scale Structure Field 74-MHz Source Catalog
+vlssr                          - VLA Low-Frequency Sky Survey Redux Source Catalog
+vlulxcat                       - Extremely Luminous X-Ray Source Candidates Catalog
+vvds20cm                       - VLA-VIRMOS Deep Field 20-cm Source Catalog
+w2ragncat                      - WISE/2MASS/RASS (W2R) AGN Sample Catalog
+w40sfrcxo                      - W 40 Star-Forming Region Chandra X-Ray Point Source Catalog
+wackerling                     - Wackerling Catalog of Early-Type Emission-Line Stars
+warps                          - Wide Angle ROSAT Pointed Survey, First Phase (WARPS-I)
+warps2                         - Wide Angle ROSAT Pointed Survey, Second Phase (WARPS-II) Cluster
+wbhgp20cm                      - New Catalog of Compact 20cm Sources in the Galactic Plane
+wbhgp6cm                       - New Catalog of Compact 6cm Sources in the Galactic Plane
+wbl                            - WBL Poor Galaxy Clusters Catalog (White et al. 1999)
+wblgalaxy                      - WBL Individual Galaxies Data Catalog (White et al. 1999)
+wd1cxo                         - Westerlund 1 Chandra X-Ray Point Source Catalog
+wds                            - Washington Double Star Catalog
+wenss                          - Westerbork Northern Sky Survey
+wfcpoint                       - ROSAT Archival WFC EUV Data
+wgacat                         - ROSAT Catalog PSPC WGA Sources
+wibrals                        - WISE Blazar-like Radio-Loud Source (WIBRaLS) Catalog
+wisehspcat                     - 2WHSP Catalog of High Synchrotron Peaked Blazars and Candidates
+wish                           - Westerbork in the Southern Hemisphere (WISH) Source Catalog
+wmapcmbfps                     - WMAP Nine-Year CMB-Free QVW Point Source Catalog
+wmapitnpts                     - WMAP 7-Year Internal Templates and Needlets New Source Catalog
+wmapptsrc                      - WMAP Nine-Year Five-Band Point Source Catalog
+woodebcat                      - Wood Interacting Binaries Catalog
+woolley                        - Woolley Catalog of Stars within 25 Parsecs
+wrcat                          - The VIIth Catalog of Galactic Wolf-Rayet Stars
+wsrt20anep                     - AKARI NEP WSRT 20-cm Source Catalog
+wsrtgp                         - WSRT Galactic Plane Compact 327-MHz Source Catalog
+xbootes                        - XBOOTES: NDWFS Bootes Field X-Ray Point Source Catalog
+xbootesoid                     - XBOOTES: NDWFS Bootes Field Optical &amp; Near IR Counterparts
+xcopraw                        - Copernicus X-Ray Observations
+xcs                            - XMM-Newton Cluster Survey Catalog, DR1 Version
+xdeep2                         - DEEP2 Galaxy Redshift Survey Fields Chandra Point Source Catalog
+xmdsvvds4s                     - XMM-Newton Medium Deep Survey/VIRMOS VLT Deep Survey 4-Sigma Cat
+xmmao                          - XMM-Newton Accepted Targets
+xmmatlas                       - XMM-Newton Survey Catalog in the Herschel-ATLAS Field
+xmmbss                         - XMM-Newton Bright Serendipitous Survey
+xmmbssagn                      - XMM-Newton Bright Serendipitous Survey: AGN X-Ray Spectral Prope
+xmmcdfs210                     - XMM-Newton Deep Survey in the CDF-S 2-10 keV Source Catalog
+xmmcdfs510                     - XMM-Newton Deep Survey in the CDF-S 5-10 keV Source Catalog
+xmmcfrscat                     - XMM-Newton/Canada-France Redshift Survey Fields X-Ray Sources
+xmmcfrsoid                     - XMM-Newton/Canada-France Redshift Survey Fields Optical Identifi
+xmmcosmagn                     - XMM-COSMOS Catalog of X-Ray Selected Type 1 AGN
+xmmcosmoid                     - XMM-COSMOS Catalog of Optical/IR Counterparts
+xmmcosmos                      - XMM-Newton COSMOS X-Ray Point Source Catalog
+xmmcphotz                      - XMM-Newton COSMOS (XMM-COSMOS) Survey Photometric Redshift Catal
+xmmcty2agn                     - XMM-COSMOS X-Ray Selected Type-2 AGN
+xmmgps                         - XMM-Newton Galactic Plane Survey - XGPS
+xmmlss                         - XMM-Newton Large-Scale Structure X-Ray Source Catalog
+xmmlss10ks                     - XMM-Newton Large-Scale Structure Uniform 10-ksec Exposure X-Ray
+xmmlssclas                     - XMM-Newton Large-Scale Structure Optical Counterparts and Redshi
+xmmlssdeep                     - XMM-Newton Large-Scale Structure Deep Full-Exposure X-Ray Source
+xmmlssoid                      - XMM-Newton Large-Scale Structure Optical Identifications Catalog
+xmmmaster                      - XMM-Newton Master Log &amp; Public Archive
+xmmobstars                     - XMM-Newton OB Stars Catalog
+xmmomcat                       - XMM-Newton OM Object Catalog
+xmmomcdfs                      - XMM-Newton Optical Monitor Chandra Deep Field-South UV Catalog
+xmmomsuob                      - XMM-Newton Optical Monitor SUSS Catalog, v6.1: Observation IDs
+xmmomsuss                      - XMM-Newton Optical Monitor Serendipitous UV Source Survey Catalo
+xmmsdssgce                     - 2XMMi/SDSS Galaxy Cluster Survey Extension
+xmmsdssgcs                     - 2XMMi/SDSS Galaxy Cluster Survey
+xmmslewcln                     - XMM-Newton Slew Survey Clean Source Catalog, v2.0
+xmmslewegs                     - XMM-Newton Slew Survey Extragalactic Sample
+xmmslewful                     - XMM-Newton Slew Survey Full Source Catalog, v2.0
+xmmssc                         - XMM-Newton Serendipitous Source Catalog (4XMM-DR13 Version)
+xmmsscgps                      - XMM-Newton Survey Science Center Survey of the Galactic Plane
+xmmssclwbd                     - XMM-Newton 2XMMi-DR3 Selected Source Detections Catalog
+xmmssclwbs                     - XMM-Newton 2XMMi-DR3 Selected Source Classifications Catalog
+xmmstack                       - XMM-Newton Serendipitous Source Catalog from Stacked Observation
+xmmstackob                     - XMM-Newton Serendipitous Source Catalog from Stacked Observation
+xmmt2flare                     - 2XMM Flares Detected from Tycho-2 Stars
+xmmvaragn                      - Ensemble X-Ray Variability of AGN in 2XMMi-DR3
+xmmxassist                     - XMM-Newton XAssist Source List
+xms                            - XMM-Newton Medium Sensitivity Survey (XMS) Source Catalog
+xray                           - Master X-Ray Catalog
+xrayselbll                     - X-Ray Selected BL Lac Objects Catalog
+xrbcat                         - X-Ray Binaries Catalog
+xshzagncxo                     - X-Ray Selected High-z AGN Catalog
+xteao                          - XTE Proposal Info &amp; Abstracts
+xteasmlong                     - XTE All-Sky Monitor Long-Term Observed Sources
+xteassagn                      - XTE All-Sky Slew Survey AGN Catalog
+xteasscat                      - XTE All-Sky Slew Survey Catalog
+xteindex                       - XTE Target Index Catalog
+xtemaster                      - XTE Master Catalog
+xtemlcat                       - XTE Mission-Long Source Catalog
+xteslew                        - XTE Archived Public Slew Data
+xwas                           - XMM-Newton Wide Angle Survey
+zcat                           - CfA Redshift Catalog (June 1995 Version)
+zwclusters                     - Zwicky Clusters
+zzbib                          - METADATA: Bibliography Codes
+MASTER_TABLE.indexview         - View of metainfo table data as table
+MASTER_TABLE.pos_big           - Position only queries, &gt; 1 degree FOV
+MASTER_TABLE.pos_small         - Position only queries, &lt;= 1 degree FOV
+MASTER_TABLE.pos_time_big      - Position/time  queries, &gt; 1 degree FOV
+MASTER_TABLE.pos_time_small    - Position/time queries, &lt;= 1 degree FOV
+MASTER_TABLE.time              - Time only queries
+</pre></div>
+</div>
+</div>
+</div>
+<section id="column-information">
+<h4>Column Information<a class="headerlink" href="#column-information" title="Permalink to this headline">#</a></h4>
+<p>For any table, we can list the column names and descriptions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">[</span><span class="s1">&#39;zcat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s1">30s</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>comments                       - Comments
+&quot;__row&quot;                        - System index column
+diameter_2                     - Diameter 2 (arcmin)
+structure                      - Structure Flag
+&quot;distance&quot;                     - Distance Determined by Independent Source (Mpc)
+notes                          - Diameter (arcmin) or Spectrum ID
+class                          - Browse Object Classification
+lii                            - Galactic Longitude
+bii                            - Galactic Latitude
+&quot;__y_ra_dec&quot;                   - System unit vector column
+ugc_or_eso                     - UGC or ESO Number
+morph_type                     - Morphological (T) Type
+ref_bmag                       - Reference Code for B Magnitude
+name                           - Catalog Designation
+radial_velocity_error          - Radial Velocity Error
+rfn_number                     - Plate Number
+ref_radial_velocity            - Reference Code for Radial Velocity
+&quot;__x_ra_dec&quot;                   - System unit vector column
+ref_redshift                   - Reference Code for Redshift
+bar_type                       - Bar Type
+dec                            - Declination
+ra                             - Right Ascension
+bt_mag                         - B_T Magnitude
+redshift                       - Redshift
+radial_velocity                - Heliocentric Radial Velocity (km/s)
+bmag                           - B Magnitude
+&quot;__z_ra_dec&quot;                   - System unit vector column
+diameter_1                     - Diameter 1 (arcmin)
+luminosity_class               - Luminosity Class
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="perform-a-query">
+<h4>Perform a Query<a class="headerlink" href="#perform-a-query" title="Permalink to this headline">#</a></h4>
+<p>Example:  Perform a cone search on the ZCAT catalog at M83 with a 1.0 degree radius.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m83&quot;</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where </span>
+<span class="s1">contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,</span><span class="si">{</span><span class="n">coord</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">coord</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="si">}</span><span class="s1">,1.0))=1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=13</i>
+<table id="table140117018262496" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
+<tr><td>204.79302</td><td>-30.74322</td><td>4795</td><td>--</td><td>16.70</td><td>--</td></tr>
+<tr><td>203.96838</td><td>-30.43180</td><td>3847</td><td>53</td><td>--</td><td>--</td></tr>
+<tr><td>203.59607</td><td>-30.39890</td><td>10310</td><td>300</td><td>--</td><td>--</td></tr>
+<tr><td>203.95738</td><td>-30.38237</td><td>4196</td><td>--</td><td>16.40</td><td>--</td></tr>
+<tr><td>203.78459</td><td>-30.11771</td><td>300</td><td>--</td><td>16.70</td><td>--</td></tr>
+<tr><td>204.36462</td><td>-30.03935</td><td>14985</td><td>--</td><td>18.00</td><td>--</td></tr>
+<tr><td>203.23058</td><td>-29.91932</td><td>300</td><td>--</td><td>16.60</td><td>--</td></tr>
+<tr><td>204.25515</td><td>-29.87123</td><td>518</td><td>5</td><td>8.22</td><td>5</td></tr>
+<tr><td>203.85405</td><td>-29.83868</td><td>76746</td><td>300</td><td>--</td><td>--</td></tr>
+<tr><td>204.80539</td><td>-29.43681</td><td>13310</td><td>120</td><td>--</td><td>--</td></tr>
+<tr><td>204.12819</td><td>-29.23648</td><td>570</td><td>2</td><td>--</td><td>10</td></tr>
+<tr><td>203.95692</td><td>-29.22959</td><td>14027</td><td>48</td><td>--</td><td>-2</td></tr>
+<tr><td>204.14326</td><td>-29.08812</td><td>4473</td><td>36</td><td>--</td><td>3</td></tr>
+</table></div></div></div>
+</div>
+</section>
+</section>
+</section>
+<section id="astroquery">
+<h2>3. Astroquery<a class="headerlink" href="#astroquery" title="Permalink to this headline">#</a></h2>
+<p>Many archives have Astroquery or Astroquery-compliant modules for data access, including:</p>
+<ul class="simple">
+<li><p>Astroquery</p>
+<ul>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/heasarc/heasarc.html">HEASARC Queries (astroquery.heasarc)</a></p></li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/hitran/hitran.html">HITRAN Queries (astroquery.hitran)</a></p></li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/ibe/ibe.html">IRSA Image Server program interface (IBE) Queries (astroquery.ibe)</a></p></li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/ipac/irsa/irsa.html">IRSA Queries (astroquery.ipac.irsa)</a></p></li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/ipac/irsa/irsa_dust.html">IRSA Dust Extinction Service Queries (astroquery.ipac.irsa.irsa_dust)</a></p></li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/jplspec/jplspec.html">JPL Spectroscopy Queries (astroquery.jplspec)</a></p></li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/mast/mast.html">MAST Queries (astroquery.mast)</a></p></li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/nasa_ads/nasa_ads.html">NASA ADS Queries (astroquery.nasa_ads)</a></p></li>
+<li><p><a class="reference external" href="https://astroquery.readthedocs.io/en/latest/ipac/ned/ned.html">NED Queries (astroquery.ipac.ned)</a></p></li>
+</ul>
+</li>
+<li><p>Astroquery-compliant</p>
+<ul>
+<li><p><a class="reference external" href="https://koa.ipac.caltech.edu/UserGuide/PyKOA/PyKOA.html">KOA Queries (pykoa.koa)</a></p></li>
+</ul>
+</li>
+</ul>
+<p>For more, see https://astroquery.readthedocs.io/en/latest/</p>
+<section id="ned">
+<h3>3.1 NED<a class="headerlink" href="#ned" title="Permalink to this headline">#</a></h3>
+<p>Example:  Get an Astropy Table containing the objects from paper 2018ApJ…858…62K.  For more on the API, see <a class="reference external" href="https://astroquery.readthedocs.io/en/latest/ipac/ned/ned.html">astroquery</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astroquery.ipac.ned</span> <span class="kn">import</span> <span class="n">Ned</span>
+<span class="n">objects_in_paper</span> <span class="o">=</span> <span class="n">Ned</span><span class="o">.</span><span class="n">query_refcode</span><span class="p">(</span><span class="s1">&#39;2018ApJ...858...62K&#39;</span><span class="p">)</span>
+<span class="n">objects_in_paper</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=41</i>
+<table id="table140116270143552" class="table-striped table-bordered table-condensed">
+<thead><tr><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
+<thead><tr><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>int32</th><th>str30</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>float64</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th></tr></thead>
+<tr><td>1</td><td>WISEA J115844.06+273505.3</td><td>179.68371</td><td>27.585</td><td>G</td><td>106.0</td><td>0.000354</td><td>SLS</td><td>17.2g</td><td>--</td><td>27</td><td>0</td><td>22</td><td>12</td><td>7</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>KUG 1207+367</td><td>182.48529</td><td>36.43433</td><td>G</td><td>341.0</td><td>0.001137</td><td>SUN</td><td>15.5</td><td>--</td><td>38</td><td>0</td><td>28</td><td>17</td><td>7</td><td>4</td><td>0</td></tr>
+<tr><td>3</td><td>NGC 4244</td><td>184.37358</td><td>37.80711</td><td>G</td><td>244.0</td><td>0.000815</td><td>SUN</td><td>10.88</td><td>--</td><td>469</td><td>15</td><td>94</td><td>52</td><td>25</td><td>7</td><td>1</td></tr>
+<tr><td>4</td><td>SDSS J121731.98+323157.7</td><td>184.38329</td><td>32.53271</td><td>G</td><td>447.0</td><td>0.001492</td><td>SLS</td><td>17.95</td><td>--</td><td>6</td><td>0</td><td>15</td><td>6</td><td>2</td><td>4</td><td>0</td></tr>
+<tr><td>5</td><td>SDSS J121811.04+465501.2</td><td>184.54614</td><td>46.91685</td><td>G</td><td>402.0</td><td>0.001341</td><td>SLS</td><td>17.75</td><td>--</td><td>20</td><td>0</td><td>37</td><td>18</td><td>11</td><td>4</td><td>0</td></tr>
+<tr><td>6</td><td>VCC 0530</td><td>185.53154</td><td>15.79911</td><td>G</td><td>1299.0</td><td>0.004333</td><td>SUN</td><td>15.8</td><td>--</td><td>67</td><td>1</td><td>20</td><td>23</td><td>13</td><td>3</td><td>3</td></tr>
+<tr><td>7</td><td>PGC1 0040692 NED033</td><td>186.37146</td><td>28.48244</td><td>G</td><td>483.0</td><td>0.001611</td><td>SUN</td><td>16.47</td><td>--</td><td>39</td><td>0</td><td>7</td><td>14</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>8</td><td>UGC 07512</td><td>186.42223</td><td>2.15898</td><td>G</td><td>1505.0</td><td>0.00502</td><td>SUN</td><td>15.00</td><td>--</td><td>64</td><td>1</td><td>21</td><td>17</td><td>12</td><td>4</td><td>0</td></tr>
+<tr><td>9</td><td>NGC 4395</td><td>186.45359</td><td>33.54693</td><td>G</td><td>319.0</td><td>0.001064</td><td>SUN</td><td>10.64</td><td>--</td><td>860</td><td>31</td><td>210</td><td>101</td><td>58</td><td>17</td><td>0</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>32</td><td>NGC 4789A</td><td>193.52187</td><td>27.14964</td><td>G</td><td>364.0</td><td>0.001214</td><td>S1L</td><td>13.94</td><td>--</td><td>436</td><td>8</td><td>114</td><td>50</td><td>22</td><td>8</td><td>0</td></tr>
+<tr><td>33</td><td>LSBC D575-05</td><td>193.921</td><td>19.20908</td><td>G</td><td>419.0</td><td>0.001396</td><td>S1L</td><td>16.52</td><td>--</td><td>44</td><td>1</td><td>2</td><td>16</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>34</td><td>MESSIER 064</td><td>194.18184</td><td>21.68297</td><td>G</td><td>409.0</td><td>0.001364</td><td>S1L</td><td>9.36</td><td>--</td><td>818</td><td>24</td><td>298</td><td>90</td><td>32</td><td>10</td><td>0</td></tr>
+<tr><td>35</td><td>UGC 08061</td><td>194.1835</td><td>11.93203</td><td>G</td><td>569.0</td><td>0.001898</td><td>UUN</td><td>15.5B</td><td>--</td><td>47</td><td>2</td><td>15</td><td>19</td><td>13</td><td>3</td><td>5</td></tr>
+<tr><td>36</td><td>KK 176</td><td>194.98458</td><td>-19.41306</td><td>G</td><td>825.0</td><td>0.002753</td><td>SUN</td><td>17.5</td><td>--</td><td>31</td><td>0</td><td>19</td><td>13</td><td>9</td><td>2</td><td>0</td></tr>
+<tr><td>37</td><td>UGCA 319</td><td>195.55994</td><td>-17.23754</td><td>G</td><td>755.0</td><td>0.002518</td><td>UUN</td><td>15.33</td><td>--</td><td>68</td><td>2</td><td>46</td><td>26</td><td>8</td><td>3</td><td>0</td></tr>
+<tr><td>38</td><td>IC 4107</td><td>195.67446</td><td>21.99739</td><td>G</td><td>267.0</td><td>0.000892</td><td>SLS</td><td>17.4g</td><td>--</td><td>20</td><td>0</td><td>20</td><td>11</td><td>5</td><td>4</td><td>0</td></tr>
+<tr><td>39</td><td>UGCA 320</td><td>195.81975</td><td>-17.42303</td><td>G</td><td>742.0</td><td>0.002475</td><td>UUN</td><td>13.78</td><td>--</td><td>119</td><td>7</td><td>64</td><td>27</td><td>13</td><td>6</td><td>0</td></tr>
+<tr><td>40</td><td>KDG 218</td><td>196.43278</td><td>-7.75884</td><td>G</td><td>--</td><td>--</td><td></td><td>20.35</td><td>--</td><td>12</td><td>0</td><td>1</td><td>7</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>41</td><td>NGC 5068</td><td>199.72837</td><td>-21.03911</td><td>G</td><td>670.0</td><td>0.002235</td><td>UUN</td><td>10.52</td><td>--</td><td>304</td><td>12</td><td>72</td><td>43</td><td>15</td><td>18</td><td>0</td></tr>
+</table></div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../use_case_notebooks/hr_diagram_exercise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../use_case_notebooks/candidate_list_solution.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Science User Case - Inspecting a Candidate List</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">0. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vo-services">2. VO Services</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-necessary-packages">2.0 Import Necessary Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-up-services-in-vo-registry">2.1 Look Up Services in VO Registry</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-different-arguments-values-to-modify-the-simple-example">2.1.1 Use different arguments/values to modify the simple example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-results">2.1.2 Inspect the results.</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pyvo">Using pyvo</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-results">Filtering results</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-astropy">Using astropy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cone-search">2.2 Cone search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-search">2.3 Image search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#find-an-image-service">Find an image service</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#search-one-of-the-services">Search one of the services</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-an-image">Download an image</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-search">2.4 Spectral search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-search">2.5 Table search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#column-information">Column Information</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-a-query">Perform a Query</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astroquery">3. Astroquery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ned">3.1 NED</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By NASA-NAVO developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2018-2022, NASA-NAVO developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

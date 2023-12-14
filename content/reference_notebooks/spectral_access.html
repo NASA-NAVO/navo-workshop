@@ -1,0 +1,769 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Retrieve spectra using Simple Spectral Access protocol &#8212; NASA-NAVO Workshops Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/reference_notebooks/spectral_access';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="UCDs: working with heterogeneous tables" href="ucds_unified_content_descriptors.html" />
+    <link rel="prev" title="Searching for and retrieving images" href="image_access.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NASA-NAVO Workshops Notebooks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    NASA-NAVO notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="catalog_queries.html">Accessing astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image_access.html">Searching for and retrieving images</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Retrieve spectra using Simple Spectral Access protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="votables.html">Creating a VO Table from a CSV file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_reference.html">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../KNOWN_ISSUES.html">Known issues and workarounds</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/content/reference_notebooks/spectral_access.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/content/reference_notebooks/spectral_access.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/content/reference_notebooks/spectral_access.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2Fcontent/reference_notebooks/spectral_access.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/reference_notebooks/spectral_access.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/content/reference_notebooks/spectral_access.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Retrieve spectra using Simple Spectral Access protocol</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-available-spectral-access-services">Finding available Spectral Access Services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chandra-spectrum-of-delta-ori">Chandra Spectrum of Delta Ori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-example-of-plotting-a-spectrum">Simple example of plotting a spectrum</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="retrieve-spectra-using-simple-spectral-access-protocol">
+<h1>Retrieve spectra using Simple Spectral Access protocol<a class="headerlink" href="#retrieve-spectra-using-simple-spectral-access-protocol" title="Permalink to this headline">#</a></h1>
+<p>This notebook is one of a set produced by NAVO to demonstrate data access with python tools.</p>
+<p>In this notebook, we show how to search for and retrieve spectra from VO services using the Registry and the <strong><a class="reference external" href="http://www.ivoa.net/documents/SSA/">Simple Spectral Access</a></strong> (SSA) protocol.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline  
+
+<span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">io</span>
+
+<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">import</span> <span class="nn">astropy.io.fits</span> <span class="k">as</span> <span class="nn">fits</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="c1"># For downloading files</span>
+<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+
+<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+
+<span class="c1"># There are a number of relatively unimportant warnings that show up, so for now, suppress them:</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;pyvo.utils.xml.*&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="finding-available-spectral-access-services">
+<h2>Finding available Spectral Access Services<a class="headerlink" href="#finding-available-spectral-access-services" title="Permalink to this headline">#</a></h2>
+<p>First, we find out what spectral access services (‘ssa’) are available in the Registry offering x-ray data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;ssa&#39;</span><span class="p">,</span><span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;x-ray&#39;</span><span class="p">)</span>
+<span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span><span class="s1">&#39;short_name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=6</i>
+<table id="table140596532137360" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
+<thead><tr><th>object</th><th>object</th></tr></thead>
+<tr><td>ivo://nasa.heasarc/chanmaster</td><td>Chandra</td></tr>
+<tr><td>ivo://nasa.heasarc/hitomaster</td><td>HITOMASTER</td></tr>
+<tr><td>ivo://nasa.heasarc/intbsc</td><td>INTEGRAL/BSC</td></tr>
+<tr><td>ivo://nasa.heasarc/xtemaster</td><td>RXTE</td></tr>
+<tr><td>ivo://ned.ipac/sed_data_near_position</td><td>NED_SED</td></tr>
+<tr><td>ivo://wfau.roe.ac.uk/heavens_at_isdc/light-curves</td><td>HEAVENS @ ISDC</td></tr>
+</table></div></div></div>
+</div>
+<p>We can look at only the Chandra entry:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chandra_service</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;Chandra&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">short_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
+<span class="n">chandra_service</span><span class="o">.</span><span class="n">access_url</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://heasarc.gsfc.nasa.gov/xamin/vo/ssa?table=chanmaster&amp;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="chandra-spectrum-of-delta-ori">
+<h2>Chandra Spectrum of Delta Ori<a class="headerlink" href="#chandra-spectrum-of-delta-ori" title="Permalink to this headline">#</a></h2>
+<p>Getting the list of spectra.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delori</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;Delta Ori&quot;</span><span class="p">)</span>
+
+<span class="n">spec_tables</span> <span class="o">=</span> <span class="n">chandra_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">delori</span><span class="p">,</span><span class="n">diameter</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">spec_tables</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span><span class="o">.</span><span class="n">show_in_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><i>Table length=6</i>
+<table id="table140595577846704-124245" class="table-striped table-bordered table-condensed">
+<thead><tr><th>idx</th><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>datalink</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_fov</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th><th>cloud_access</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>d</th><th></th><th></th><th>s</th><th></th><th></th><th>d</th><th></th><th>d</th><th>d</th><th>d</th><th>s</th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>m</th><th>m</th><th>m</th><th>m</th><th></th></tr></thead>
+<tr><td>0</td><td>639</td><td>archived</td><td>DELTA ORI</td><td>83.00125</td><td>-0.29917</td><td>51556.1364</td><td>ACIS-S</td><td>HETG</td><td>49680</td><td>GO</td><td>Cassinelli</td><td>52037</td><td>11157:chandra.obs.misc</td><td>51556.136400463</td><td>--</td><td>--</td><td>49680.0</td><td>--</td><td>83.00125</td><td>-0.29917</td><td>0.81</td><td>acisf00639N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/639/primary/acisf00639N004_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/639/primary/acisf00639N004_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>1</td><td>14569</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56283.254</td><td>ACIS-S</td><td>HETG</td><td>120850</td><td>GO</td><td>Corcoran</td><td>56650</td><td>11158:chandra.obs.misc</td><td>56283.2539814815</td><td>--</td><td>--</td><td>120850.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14569N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>2</td><td>14568</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56288.1612</td><td>ACIS-S</td><td>HETG</td><td>123600</td><td>GO</td><td>Corcoran</td><td>56655</td><td>11159:chandra.obs.misc</td><td>56288.1612268519</td><td>--</td><td>--</td><td>123600.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14568N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>3</td><td>14567</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56280.7037</td><td>ACIS-S</td><td>HETG</td><td>116500</td><td>GO</td><td>Corcoran</td><td>56647</td><td>11160:chandra.obs.misc</td><td>56280.7036921296</td><td>--</td><td>--</td><td>116500.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14567N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>4</td><td>7416</td><td>archived</td><td>delta Ori (HD 36486)</td><td>83.00167</td><td>-0.29908</td><td>54413.427</td><td>HRC-S</td><td>LETG</td><td>97080</td><td>GO</td><td>Raassen</td><td>54783</td><td>11161:chandra.obs.misc</td><td>54413.4270486111</td><td>--</td><td>--</td><td>97080.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>hrcf07416N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz</td><td>2</td><td>Spectrum-1.0</td><td>HRC-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>5</td><td>14570</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56285.5508</td><td>ACIS-S</td><td>HETG</td><td>124100</td><td>GO</td><td>Corcoran</td><td>56652</td><td>11162:chandra.obs.misc</td><td>56285.5507986111</td><td>--</td><td>--</td><td>124100.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14570N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz&quot;}}</td></tr>
+</table><style>table.dataTable {clear: both; width: auto !important; margin: 0 !important;}
+.dataTables_info, .dataTables_length, .dataTables_filter, .dataTables_paginate{
+display: inline-block; margin-right: 1em; }
+.paginate_button { margin-right: 5px; }
+</style>
+<script>
+
+var astropy_sort_num = function(a, b) {
+    var a_num = parseFloat(a);
+    var b_num = parseFloat(b);
+
+    if (isNaN(a_num) && isNaN(b_num))
+        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+    else if (!isNaN(a_num) && !isNaN(b_num))
+        return ((a_num < b_num) ? -1 : ((a_num > b_num) ? 1 : 0));
+    else
+        return isNaN(a_num) ? -1 : 1;
+}
+
+require.config({paths: {
+    datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
+}});
+require(["datatables"], function(){
+    console.log("$('#table140595577846704-124245').dataTable()");
+    
+jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+    "optionalnum-asc": astropy_sort_num,
+    "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
+});
+
+    $('#table140595577846704-124245').dataTable({
+        order: [],
+        pageLength: 50,
+        lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
+        pagingType: "full_numbers",
+        columnDefs: [{targets: [0, 4, 5, 6, 9, 12, 14, 15, 16, 17, 18, 19, 20, 21, 29, 30, 31, 32], type: "optionalnum"}]
+    });
+});
+</script>
+</div></div>
+</div>
+<p>Accessing one of the spectra.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## If you only run this once, you can do it in memory in one line:</span>
+<span class="c1">##  This fetches the FITS as an astropy.io.fits object in memory</span>
+<span class="c1"># hdu_list = spec_tables[0].getdataobj()</span>
+<span class="c1">## But if you might run this notebook repeatedly with limited bandwidth, </span>
+<span class="c1">##  download it once and cache it.  </span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">spec_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">(),</span><span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">hdu_list</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simple-example-of-plotting-a-spectrum">
+<h2>Simple example of plotting a spectrum<a class="headerlink" href="#simple-example-of-plotting-a-spectrum" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spec_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">hdu_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">spec_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=12</i>
+<table id="table140595576906096" class="table-striped table-bordered table-condensed">
+<thead><tr><th>SPEC_NUM</th><th>TG_M</th><th>TG_PART</th><th>TG_SRCID</th><th>X</th><th>Y</th><th>CHANNEL</th><th>COUNTS</th><th>STAT_ERR</th><th>BACKGROUND_UP</th><th>BACKGROUND_DOWN</th><th>BIN_LO</th><th>BIN_HI</th></tr></thead>
+<thead><tr><th>int16</th><th>int16</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>int16[8192]</th><th>int16[8192]</th><th>float32[8192]</th><th>int16[8192]</th><th>int16[8192]</th><th>float64[8192]</th><th>float64[8192]</th></tr></thead>
+<tr><td>1</td><td>-3</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>7.159166666667378 .. 0.3333333333333333</td><td>7.160000000000712 .. 0.33416666666666667</td></tr>
+<tr><td>2</td><td>-2</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>10.738750000000886 .. 0.5</td><td>10.740000000000887 .. 0.50125</td></tr>
+<tr><td>3</td><td>-1</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>21.477500000001772 .. 1.0</td><td>21.480000000001773 .. 1.0025</td></tr>
+<tr><td>4</td><td>1</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>21.477500000001772 .. 1.0</td><td>21.480000000001773 .. 1.0025</td></tr>
+<tr><td>5</td><td>2</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>10.738750000000886 .. 0.5</td><td>10.740000000000887 .. 0.50125</td></tr>
+<tr><td>6</td><td>3</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>7.159166666667378 .. 0.3333333333333333</td><td>7.160000000000712 .. 0.33416666666666667</td></tr>
+<tr><td>7</td><td>-3</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>13.985000000001373 .. 0.3333333333333333</td><td>13.98666666666804 .. 0.33499999999999996</td></tr>
+<tr><td>8</td><td>-2</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>20.977500000001505 .. 0.5</td><td>20.980000000001507 .. 0.5025</td></tr>
+<tr><td>9</td><td>-1</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>41.95500000000301 .. 1.0</td><td>41.960000000003014 .. 1.005</td></tr>
+<tr><td>10</td><td>1</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>41.95500000000301 .. 1.0</td><td>41.960000000003014 .. 1.005</td></tr>
+<tr><td>11</td><td>2</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>20.977500000001505 .. 0.5</td><td>20.980000000001507 .. 0.5025</td></tr>
+<tr><td>12</td><td>3</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>13.985000000001373 .. 0.3333333333333333</td><td>13.98666666666804 .. 0.33499999999999996</td></tr>
+</table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">spec_table</span><span class="p">)):</span> 
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pha</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">spec_table</span><span class="p">[</span><span class="s1">&#39;CHANNEL&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="n">spec_table</span><span class="p">[</span><span class="s1">&#39;COUNTS&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">spec_table</span><span class="p">[</span><span class="s1">&#39;TG_PART&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">instr</span><span class="o">=</span><span class="s1">&#39;HEG&#39;</span>
+    <span class="k">if</span> <span class="n">spec_table</span><span class="p">[</span><span class="s1">&#39;TG_PART&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">instr</span><span class="o">=</span><span class="s1">&#39;MEG&#39;</span>
+    <span class="k">if</span> <span class="n">spec_table</span><span class="p">[</span><span class="s1">&#39;TG_PART&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">instr</span><span class="o">=</span><span class="s1">&#39;LEG&#39;</span>
+        
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{grating}{order:+d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grating</span><span class="o">=</span><span class="n">instr</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">spec_table</span><span class="p">[</span><span class="s1">&#39;TG_M&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/32574a1cc3e011d5057d17765b7880f448c88b93b46f0ee47001ab17527015d7.png" src="../../_images/32574a1cc3e011d5057d17765b7880f448c88b93b46f0ee47001ab17527015d7.png" />
+</div>
+</div>
+<p>This can then be analyzed in your favorite spectral analysis tool, e.g., <a class="reference external" href="https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html">pyXspec</a>.  (For the winter 2018 AAS workshop, we demonstrated this in a <a class="reference external" href="https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.md">notebook</a> that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.)</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="image_access.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Searching for and retrieving images</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ucds_unified_content_descriptors.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">UCDs:  working with heterogeneous tables</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-available-spectral-access-services">Finding available Spectral Access Services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chandra-spectrum-of-delta-ori">Chandra Spectrum of Delta Ori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-example-of-plotting-a-spectrum">Simple example of plotting a spectrum</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By NASA-NAVO developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2018-2022, NASA-NAVO developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

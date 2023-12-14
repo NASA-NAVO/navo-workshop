@@ -1,0 +1,880 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram &#8212; NASA-NAVO Workshops Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/use_case_notebooks/hr_diagram_exercise';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Quick Reference" href="../reference_notebooks/basic_reference.html" />
+    <link rel="prev" title="Preparing a proposal" href="proposal_prep_exercise.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NASA-NAVO Workshops Notebooks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    NASA-NAVO notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/catalog_queries.html">Accessing astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/image_access.html">Searching for and retrieving images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/votables.html">Creating a VO Table from a CSV file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal_prep_exercise.html">Preparing a proposal</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/basic_reference.html">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal_prep_solution.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../KNOWN_ISSUES.html">Known issues and workarounds</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/content/use_case_notebooks/hr_diagram_exercise.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/content/use_case_notebooks/hr_diagram_exercise.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/content/use_case_notebooks/hr_diagram_exercise.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2Fcontent/use_case_notebooks/hr_diagram_exercise.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/use_case_notebooks/hr_diagram_exercise.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/content/use_case_notebooks/hr_diagram_exercise.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-appropriate-catalogs">Step 1: Find appropriate catalogs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-steps">DATA DISCOVERY STEPS:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-you-can-proceed-to-step-2">At this point, you can proceed to Step 2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-a-different-data-discovery-method">Try a different data discovery method!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned">Alternative Method: Use ADS to search for appropriate paper and access data via NED.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting…</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator!</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="creating-a-stellar-color-magnitude-or-hertzsprung-russell-diagram">
+<h1>Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram<a class="headerlink" href="#creating-a-stellar-color-magnitude-or-hertzsprung-russell-diagram" title="Permalink to this headline">#</a></h1>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram">Hertzsprung-Russell diagram</a> is a fundamental diagram in astronomy that displays important relationships between the stellar color (or temperature) and absolute brightness (or luminosity).</p>
+<p>In this exercise, we will use existing stellar catalogs to produce the H-R diagram.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:   </span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline  
+
+<span class="c1"># For downloading files</span>
+<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+
+<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+<span class="kn">from</span> <span class="nn">pyvo</span> <span class="kn">import</span> <span class="n">registry</span>
+
+<span class="c1">## There are a number of relatively unimportant warnings that </span>
+<span class="c1">## show up, so for now, suppress them:</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;pyvo.utils.xml.*&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="step-1-find-appropriate-catalogs">
+<h2>Step 1: Find appropriate catalogs<a class="headerlink" href="#step-1-find-appropriate-catalogs" title="Permalink to this headline">#</a></h2>
+<p>We want to find a star catalog that has the available data to produce the H-R diagram, i.e., the absolute magnitudes (or both apparent magnitudes AND distances, so we can calculate the absolute magnitudes) in two optical bands (e.g., B and V). This would give us color. Or we need B- OR V- band magnitude and the stellar temperature.</p>
+<p>To simplify this problem, we want to find a catalog of an open cluster of stars, where all the stars were born around the same time and are located in one cluster. This simplifies the issue of getting accurate distances to the stars. One famous cluster is the Pleiades in the constellation of Taurus. So first we start by searching for an existing catalog with data on Pleiades that will provide the necessary information about the stars: magnitudes in two bands (e.g., B and V), which can be used to measure color, or temperature of the star plus one magnitude.</p>
+<section id="data-discovery-steps">
+<h3>DATA DISCOVERY STEPS:<a class="headerlink" href="#data-discovery-steps" title="Permalink to this headline">#</a></h3>
+<p>Here is useful link for <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/registry/index.html">how the pyvo registry search works</a>.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write some code to perform a registry search using </span>
+<span class="c1"># appropriate keywords and specify the service type. </span>
+<span class="c1"># Also apply the includeaux=True option to return </span>
+<span class="c1"># the maximum number of services: </span>
+
+
+<span class="c1"># Print the size of the output table and get a summary of the sources:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note: The includeaux=True includes auxiliary services.</p>
+<p>Because we specified the service type, this returns only the TAP services for each of the avalible resorces matching our search criteria.  So, the ‘interfaces’ column will only show TAP service as an avalible service, even if other services are avalible from the same resource. We know we need the service to be a TAP service since we know that we want to eventually access the search using additional column information (i.e., beyond RA and Dec, which is all that Simple Cone Search returns).</p>
+<section id="next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">
+<h4>Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram.<a class="headerlink" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram" title="Permalink to this headline">#</a></h4>
+<p>We can re-run the registry search, but further restrict the results by column UCD.  We want tables that have magnitude columns; the most basic UCD to describe a magnitude column is phot.mag</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform another registry search, this time searching</span>
+<span class="c1"># tables that have at least 1 magnitude column. </span>
+<span class="c1"># Note: &#39;%&#39; serves as a wild card when searching columns</span>
+
+<span class="c1"># How many tables do you get? </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note: the ‘%’ serves as a wild card when searching by UCD</p>
+<p>The IOVA standard enables resources to be as sepecific as they would like when defining the UCD of columns.  For example, ‘phot.mag’ and ‘phot.mag;em.opt.V’ can both be used to describe a column containing the V magnitudes of objects.  If a resource uses the latter to describe a column, a search using ‘phot.mag’ will not return that resource.  A wild card would need to be used or the exact column UCD. The UCD search requires an exact match for a resource to be returned, so using the wild card will make it easier to discover a wider variety of resources.</p>
+<p>So using this we can reduce the matched tables to ones that are a bit more catered to our experiment. Note, that there is redundancy in some resources since these are available via multiple services and/or publishers. Therefore a bit more cleaning can be done to provide only the unique matches.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the &#39;ivoid&#39; column for these tables </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function that searches the result and only</span>
+<span class="c1"># outputs unique tables</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can read more information about the results we found.  For each resource element (i.e. row in the table above), there are useful attributes, which are <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource">described here</a></p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output the descriptions of the resulting matches:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><i> RESULT: Based on these, the second one (by Eichhorn et al) looks like a good start. </i></p>
+</section>
+</section>
+<section id="at-this-point-you-can-proceed-to-step-2">
+<h3>At this point, you can proceed to Step 2.<a class="headerlink" href="#at-this-point-you-can-proceed-to-step-2" title="Permalink to this headline">#</a></h3>
+<p>– OR –</p>
+</section>
+<section id="try-a-different-data-discovery-method">
+<h3>Try a different data discovery method!<a class="headerlink" href="#try-a-different-data-discovery-method" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned">
+<h3>Alternative Method: Use ADS to search for appropriate paper and access data via NED.<a class="headerlink" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned" title="Permalink to this headline">#</a></h3>
+<p>There are multiple paths for the data discovery. So it may also be that you know the paper that has the data you are interested in and want to access via the bibcode or authors, etc.</p>
+<p>In this case, let’s assume that we have the information that the Eichhorn+1970 paper has the data that we need to create the H-R diagram: https://ui.adsabs.harvard.edu/abs/1970MmRAS..73..125E/abstract</p>
+<p>We can either search by bibcode (1970MmRAS..73..125E) or “Eichhorn” to get the access_urls that will allow us to work with the data.</p>
+<p>Before this step, if may help to see the names of the fields available to use. Notice the following fields:</p>
+<p>“source_value” contains the bibcode information that we want; “creator_seq” lists the authors;</p>
+<p>and</p>
+<p>“access_url” provides the url from where the data can be accessed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the fieldnames for the tap services. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, Try using bibcode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibcode</span> <span class="o">=</span> <span class="s1">&#39;1970MmRAS..73..125E&#39;</span> <span class="c1"># Eichhorn</span>
+
+<span class="c1">#  </span>
+<span class="c1"># print &quot;short_name&quot;, &quot;source_value&quot; and &quot;access_url&quot; information </span>
+<span class="c1"># for the table entry that matches this bibcode. </span>
+<span class="c1">#</span>
+<span class="c1">#  Note that using the to_table() lets you search the result </span>
+<span class="c1">#   easily using all columns.  But in the end, you want to get</span>
+<span class="c1">#   back not an astropy table row, which you cannot use, but the</span>
+<span class="c1">#   original RegistryResult that has the callable TAP service. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the URL is a generic TAP url for Vizier.  All of its tables can be accessed by that same TAP services.  It’ll be in the ADQL query itself that you specify the table name.  We’ll see this below.</p>
+<p>Next, try using Author name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;Eichhorn&#39;</span>
+
+<span class="c1">#  </span>
+<span class="c1"># print &quot;short_name&quot;, &quot;reference_url&quot; and &quot;access_url&quot; information </span>
+<span class="c1"># for the table entry that matches this author name. </span>
+<span class="c1">#</span>
+<span class="c1"># Hint: The pyVO Registry resource page may help:</span>
+<span class="c1"># https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource.search</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These examples provide a few ways to access the information of interest.</p>
+<p>Below are a few other ways to see what the tap_service table contains.</p>
+<ol class="arabic simple">
+<li><p>To view the column information: tap_services.to_table().columns() shows the metadata contained in the tap service. We will reference some of this columns below as we try to find the appropriate table.</p></li>
+<li><p>tap_services[index].describe(): The table with the tap_services output has, in our case, 83 tables listed and each includes metadata containing some human readable description. You can get the description for one case or for all the records by iterating through the resource. In the former case, we show the description for the Eichhorn data. The latter case also follows.</p></li>
+</ol>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the full description for the Eichhorn+1970 example. </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-2-acquire-the-relevant-data-and-make-a-plot">
+<h2>Step 2: Acquire the relevant data and make a plot!<a class="headerlink" href="#step-2-acquire-the-relevant-data-and-make-a-plot" title="Permalink to this headline">#</a></h2>
+<p>In order to query the table, we need the table name, note this is NOT the same as the short name we found above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the table name for the Eichhorn+1970 data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the data to output the table information (i.e. the data in the </span>
+<span class="c1"># columns in the table)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can access the column data as array using the .getcolumn(colname) attribute, where the colname is given in the table above. In particular the “CI” is the color index and “Ptm” is the photovisual magnitude. See <a class="reference external" href="https://vizier.u-strasbg.fr/viz-bin/VizieR?-source=I/90">here</a> for details about the columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get color and magnitude column information for</span>
+<span class="c1"># stars in this table. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="plotting">
+<h3>Plotting…<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h3>
+<p>Note: The magnitudes here are apparent and therefore in plotting, the color-magnitude diagram is typically brightness increasing upwards (higher y-axis) so we will flip the y-axis here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;V [apparent mag]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;B-V&quot;</span><span class="p">)</span>
+<span class="c1">#</span>
+<span class="c1"># plot color and magnitude data: </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;B-V&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/602054ce3071ffd0839087625b88991b649e2c414bb763b177fe064d567c634f.png" src="../../_images/602054ce3071ffd0839087625b88991b649e2c414bb763b177fe064d567c634f.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">
+<h2>Step 3. Compare with other color-magnitude diagrams for Pleiades:<a class="headerlink" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades" title="Permalink to this headline">#</a></h2>
+<p>There is nice discussion here: http://www.southastrodel.com/Page03009a.htm  about the color-magnitude diagram. Their Fig 4 looks slightly cleaner because part of this investigation was to select the 270 stars that are vetted members and restricted to stellar types more massive than K0.</p>
+<p>The dataset is from Raboud+1998 (1998A&amp;A…329..101R)</p>
+<p>Therefore in this next step, we will use the bibcode to select this data and overplot with the previous data to compare.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibcode</span> <span class="o">=</span> <span class="s1">&#39;1998A&amp;A...329..101R&#39;</span> <span class="c1"># Raboud</span>
+
+<span class="c1"># Repeat steps above with this other dataset:</span>
+<span class="c1"># First find the table usign the bib code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then query the table using the table name and get the</span>
+<span class="c1"># appropriate columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then plot!</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;V [apparent mag]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;B-V&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot the Eichhorn data as black circles and </span>
+<span class="c1"># Raboud data as red squares. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;B-V&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/602054ce3071ffd0839087625b88991b649e2c414bb763b177fe064d567c634f.png" src="../../_images/602054ce3071ffd0839087625b88991b649e2c414bb763b177fe064d567c634f.png" />
+</div>
+</div>
+</section>
+<section id="bonus-step-4-the-cmd-as-a-distance-indicator">
+<h2>BONUS: Step 4: The CMD as a distance indicator!<a class="headerlink" href="#bonus-step-4-the-cmd-as-a-distance-indicator" title="Permalink to this headline">#</a></h2>
+<p>Since the y-axis above is apparent magnitude, we can use the obvious features (e.g., main sequence curve) to translate the apparent magnitudes to absolute magnitudes (by comparing to published H-R diagrams given in absolute magnitudes) and measure the distance to Pleiades!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sun_color</span> <span class="o">=</span> <span class="mf">0.65</span>  <span class="c1"># from http://www.astro.ucla.edu/~wright/magcolor.htm</span>
+
+<span class="c1"># Based on the color-magnitude diagram, what would be</span>
+<span class="c1"># the Sun&#39;s apparent magnitude at the distance of the Pleiades?</span>
+<span class="c1"># i.e. if you overplot the Sun on the CMD above</span>
+<span class="c1"># what&#39;s the Sun&#39;s magnitude, corresponding to the sun&#39;s color</span>
+<span class="c1"># given as B-V=0.65? </span>
+
+<span class="c1"># Overplot the sun in the plot above for reference. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Measure the distance to the Pleaides, using the Sun</span>
+<span class="c1"># as a reference. We know the Sun&#39;s absolute magnitude: </span>
+<span class="n">Vabs</span> <span class="o">=</span> <span class="mf">4.8</span>   <span class="c1">## Sun @ B-V = 0.65 (taken from Wikipedia)</span>
+
+<span class="c1"># Using the Sun&#39;s apparent magnitude from your estimate above</span>
+<span class="c1"># what&#39;s the distance to Pleiades in pc? </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>True distance to Pleaides is 136.2 pc  (https://en.wikipedia.org/wiki/Pleiades ). Not bad!</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="proposal_prep_exercise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preparing a proposal</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../reference_notebooks/basic_reference.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Quick Reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-appropriate-catalogs">Step 1: Find appropriate catalogs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-steps">DATA DISCOVERY STEPS:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-you-can-proceed-to-step-2">At this point, you can proceed to Step 2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-a-different-data-discovery-method">Try a different data discovery method!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned">Alternative Method: Use ADS to search for appropriate paper and access data via NED.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting…</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator!</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By NASA-NAVO developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2018-2022, NASA-NAVO developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

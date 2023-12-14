@@ -1,0 +1,1216 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Accessing astronomical catalogs &#8212; NASA-NAVO Workshops Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/reference_notebooks/catalog_queries';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Searching for and retrieving images" href="image_access.html" />
+    <link rel="prev" title="NASA-NAVO notebooks" href="../../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NASA-NAVO Workshops Notebooks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    NASA-NAVO notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Accessing astronomical catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image_access.html">Searching for and retrieving images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="votables.html">Creating a VO Table from a CSV file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_reference.html">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../KNOWN_ISSUES.html">Known issues and workarounds</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/content/reference_notebooks/catalog_queries.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/content/reference_notebooks/catalog_queries.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/edit/main/content/reference_notebooks/catalog_queries.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/NASA-NAVO/navo-workshop/issues/new?title=Issue%20on%20page%20%2Fcontent/reference_notebooks/catalog_queries.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/reference_notebooks/catalog_queries.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/content/reference_notebooks/catalog_queries.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Accessing astronomical catalogs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-cone-search">1. Simple cone search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-access-protocol-queries">2. Table Access Protocol queries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-services">2.1 TAP services</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expressing-queries-in-adql">2.2 Expressing queries in ADQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-use-case">2.3 A use case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-examples-for-a-given-service">2.4 TAP examples for a given service</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-tap-to-cross-correlate-and-combine">3. Using the TAP to cross-correlate and combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-to-combine-catalogs">3.1 Cross-correlating to combine catalogs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-with-user-defined-columns">3.2 Cross-correlating with user-defined columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-versus-asynchronous-queries">4. Synchronous versus asynchronous queries</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="accessing-astronomical-catalogs">
+<h1>Accessing astronomical catalogs<a class="headerlink" href="#accessing-astronomical-catalogs" title="Permalink to this headline">#</a></h1>
+<p>There are two ways to access astronomical data catalogs that are provided as table data with a VO API.</p>
+<p>First, there is a <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ConeSearch.html">Simple Cone Search (SCS) protocol</a></strong>  used to search a given table with a given position and radius, getting back a table of results.  The interface requires only a position and search radius.</p>
+<p>For more complicated searches, the <strong><a class="reference external" href="http://www.ivoa.net/documents/TAP/">Table Access Protocol</a></strong> (TAP) protocol is  a powerful tool to search any VO table.  Here, we expand on its usage and that of the <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ADQL.html">Astronomical Data Query Language</a></strong> (ADQL) that it uses.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#accessing-astronomical-catalogs"><span class="std std-doc">Accessing astronomical catalogs</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#simple-cone-search"><span class="std std-doc">1. Simple cone search</span></a></p></li>
+<li><p><a class="reference internal" href="#table-access-protocol-queries"><span class="std std-doc">2. Table Access Protocol queries</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#tap-services"><span class="std std-doc">2.1 TAP services</span></a></p></li>
+<li><p><a class="reference internal" href="#expressing-queries-in-adql"><span class="std std-doc">2.2 Expressing queries in ADQL</span></a></p></li>
+<li><p><a class="reference internal" href="#a-use-case"><span class="std std-doc">2.3 A use case</span></a></p></li>
+<li><p><a class="reference internal" href="#tap-examples-for-a-given-service"><span class="std std-doc">2.4 TAP examples for a given service</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#using-the-tap-to-cross-correlate-and-combine"><span class="std std-doc">3. Using the TAP to cross-correlate and combine</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#cross-correlating-to-combine-catalogs"><span class="std std-doc">3.1 Cross-correlating to combine catalogs</span></a></p></li>
+<li><p><a class="reference internal" href="#cross-correlating-with-user-defined-columns"><span class="std std-doc">3.2 Cross-correlating with user-defined columns</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#synchronous-versus-asynchronous-queries"><span class="std std-doc">4. Synchronous versus asynchronous queries</span></a></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># suppress some specific warnings that are not important</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;pyvo.utils.xml.*&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Astropy imports</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="kn">import</span> <span class="nn">astropy.constants</span> <span class="k">as</span> <span class="nn">const</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">Planck15</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">votable</span> <span class="k">as</span> <span class="n">apvot</span>
+<span class="kn">import</span> <span class="nn">scipy.integrate</span>
+
+<span class="c1">## Generic VO access routines</span>
+<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="simple-cone-search">
+<h2>1. Simple cone search<a class="headerlink" href="#simple-cone-search" title="Permalink to this headline">#</a></h2>
+<p>Starting with a single simple source first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m51&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SkyCoord (ICRS): (ra, dec) in deg
+    (202.469575, 47.1952583)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below, we go through the exercise of how we can figure out the most relevant table. But for now, let’s assume that we know that we want the CFA redshift catalog refered to as ‘zcat’. VO services are listed in a central Registry that can be searched through a <a class="reference external" href="http://vao.stsci.edu/keyword-search/">web interface</a> or using PyVO’s <code class="docutils literal notranslate"><span class="pre">regsearch</span></code>.  We use the registry to find the corresponding cone service and then submit our cone search.</p>
+<p>Registry services are of the following type:</p>
+<ul class="simple">
+<li><p>simple cone search:  “scs”</p></li>
+<li><p>table access protocol:  “tap” or “table”</p></li>
+<li><p>simple image search:  “sia” or “image”</p></li>
+<li><p>simple spectral access: “ssa”</p></li>
+</ul>
+<p>There are a number of things in the registry related to ‘zcat’ so we find the specific one that we want, which is the CFA version:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;scs&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;zcat&#39;</span><span class="p">])</span>
+<span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=6</i>
+<table id="table140233512544688" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>ivo://cds.vizier/j/mnras/339/652</td><td>J/MNRAS/339/652</td><td>The FLASH Redshift Survey</td></tr>
+<tr><td>ivo://cds.vizier/vii/259</td><td>VII/259</td><td>6dF galaxy survey final redshift release</td></tr>
+<tr><td>ivo://nasa.heasarc/sixdfgs</td><td>SIXDFGS</td><td>6dFGS Galaxy Survey Final Redshift Release Catalog</td></tr>
+<tr><td>ivo://nasa.heasarc/uzc</td><td>UZC</td><td>Updated Zwicky Catalog</td></tr>
+<tr><td>ivo://nasa.heasarc/zcat</td><td>CFAZ</td><td>CfA Redshift Catalog (June 1995 Version)</td></tr>
+<tr><td>ivo://wfau.roe.ac.uk/twompz-dsa</td><td></td><td>2MASS Photometric Redshift catalogue (2MPZ)</td></tr>
+</table></div></div></div>
+</div>
+<p>Supposing that we want the table with the short_name CFAZ, and we want to retrieve the data for all sources within an arcminute of our specified location:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use the one that&#39;s CFAZ.</span>
+<span class="c1">##  Use list comprehension to check each service&#39;s short_name attribute and use the first.</span>
+<span class="n">cfaz_cone_service</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;CFAZ&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">short_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1">## We are searching for sources within 10 arcminutes of M51.</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cfaz_cone_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">coord</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=2</i>
+<table id="table140233510990848" class="table-striped table-bordered table-condensed">
+<thead><tr><th>__row</th><th>name</th><th>ra</th><th>dec</th><th>bmag</th><th>radial_velocity</th><th>radial_velocity_error</th><th>redshift</th><th>class</th><th>Search_Offset</th></tr></thead>
+<thead><tr><th></th><th></th><th>deg</th><th>deg</th><th></th><th>km / s</th><th>km / s</th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>int32</th><th>int16</th><th>float64</th><th>int16</th><th>float64</th></tr></thead>
+<tr><td>52427</td><td>N5194</td><td>202.46823</td><td>47.19815</td><td>9.03</td><td>474</td><td>23</td><td>--</td><td>6200</td><td>0.1819</td></tr>
+<tr><td>52452</td><td>N5195</td><td>202.49491</td><td>47.26792</td><td>10.94</td><td>558</td><td>23</td><td>--</td><td>6200</td><td>4.4802</td></tr>
+</table></div></div></div>
+</div>
+<p>The SCS is quite straightforward and returns all of the columns of the given table (which can be anything) for the sources in the region queried.</p>
+</section>
+<section id="table-access-protocol-queries">
+<h2>2. Table Access Protocol queries<a class="headerlink" href="#table-access-protocol-queries" title="Permalink to this headline">#</a></h2>
+<p>A TAP query is the most powerful way to search a catalog. A Simple Cone Search only allows you to ask for a position and radius, but TAP allows you to do much more, since the available tables contain much more information.</p>
+<section id="tap-services">
+<h3>2.1 TAP services<a class="headerlink" href="#tap-services" title="Permalink to this headline">#</a></h3>
+<p>Many services list a single TAP service in the Registry that can access many catalogs, boosting your efficiency, and letting you add constraints based on any column. This is the power of the TAP!</p>
+<p>Suppose for our example, we want to select bright galaxy candidates but don’t know the coordinates. Therefore, we start from figuring out the best table to query.</p>
+<p>As before, we use the <code class="docutils literal notranslate"><span class="pre">vo.regsearch()</span></code> for a servicetype ‘tap’.  There are a lot of TAP services in the registry, but they are listed slightly differently than cone services.  The metadata on each catalog is usually published in the registry with its cone service, and then the full TAP service is listed as an “auxiliary” service.  So to find a TAP service for a given catalog, we need to add the option <em>includeaux=True</em>. Alternatively, you can start with a single TAP service and then ask it specifically which tables it serves, but for this use case, that is less efficient.</p>
+<p>We’ll first do a registry search for all auxiliary TAP services related to the “CfA” and “redshift”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cfa redshift&#39;</span><span class="p">],</span> <span class="n">includeaux</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tap_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=20</i>
+<table id="table140233510992384" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>ivo://cds.vizier/j/a+a/408/905</td><td>J/A+A/408/905</td><td>Very Luminous Galaxies</td></tr>
+<tr><td>ivo://cds.vizier/j/a+a/506/1477</td><td>J/A+A/506/1477</td><td>Radio source distribution</td></tr>
+<tr><td>ivo://cds.vizier/j/a+a/679/a95</td><td>J/A+A/679/A95</td><td>Type Ia infrared data</td></tr>
+<tr><td>ivo://cds.vizier/j/a+as/139/525</td><td>J/A+AS/139/525</td><td>Abell 496 heliocentric velocities</td></tr>
+<tr><td>ivo://cds.vizier/j/aj/109/1458</td><td>J/AJ/109/1458</td><td>Neighborhoods of 36 loose groups of galaxies</td></tr>
+<tr><td>ivo://cds.vizier/j/aj/109/2368</td><td>J/AJ/109/2368</td><td>Redshifts in First CfA Slice. III.</td></tr>
+<tr><td>ivo://cds.vizier/j/aj/112/1803</td><td>J/AJ/112/1803</td><td>Large Scale Structure</td></tr>
+<tr><td>ivo://cds.vizier/j/aj/147/99</td><td>J/AJ/147/99</td><td>Spectroscopy of 73 stripped core-collapse supernovae</td></tr>
+<tr><td>ivo://cds.vizier/j/apj/655/790</td><td>J/ApJ/655/790</td><td>Groups of galaxies in 2MASS survey</td></tr>
+<tr><td>ivo://cds.vizier/j/apj/885/85</td><td>J/ApJ/885/85</td><td>Automated DASH classification for supernovae</td></tr>
+<tr><td>ivo://cds.vizier/j/apjs/119/277</td><td>J/ApJS/119/277</td><td>-3.5&lt;=DE&lt;=8.5, 11.5&lt;RA&lt;13.5 redshift survey</td></tr>
+<tr><td>ivo://cds.vizier/j/apjs/121/287</td><td>J/ApJS/121/287</td><td>The CfA2S catalog</td></tr>
+<tr><td>ivo://cds.vizier/j/apjs/213/19</td><td>J/ApJS/213/19</td><td>Optical and near-IR light curves of 64 SNe</td></tr>
+<tr><td>ivo://cds.vizier/j/pasp/111/438</td><td>J/PASP/111/438</td><td>Updated Zwicky catalog (UZC)</td></tr>
+<tr><td>ivo://cds.vizier/vii/193</td><td>VII/193</td><td>The CfA Redshift Catalogue, Version June 1995</td></tr>
+<tr><td>ivo://cds.vizier/vii/84a</td><td>VII/84A</td><td>Groups of Galaxies. III. The CfA Survey</td></tr>
+<tr><td>ivo://nasa.heasarc/cfa2s</td><td>CfARed.S.</td><td>CfA Redshift Survey: South Galactic Cap Data</td></tr>
+<tr><td>ivo://nasa.heasarc/rasscals</td><td>RASS-CALS</td><td>ROSAT All-Sky Survey CALS Galaxy Groups Catalog</td></tr>
+<tr><td>ivo://nasa.heasarc/uzc</td><td>UZC</td><td>Updated Zwicky Catalog</td></tr>
+<tr><td>ivo://nasa.heasarc/zcat</td><td>CFAZ</td><td>CfA Redshift Catalog (June 1995 Version)</td></tr>
+</table></div></div></div>
+</div>
+<p>There are many tables that mention these keywords. Pick some likely looking ones and look at the descriptions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tap_services</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">&quot;cfa&quot;</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">res_title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">and</span> <span class="s2">&quot;magnitude&quot;</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">res_description</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">ivoid</span><span class="si">}</span><span class="s2">:  </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">res_description</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ivo://cds.vizier/j/aj/109/2368:  We have measured redshifts for 241 galaxies selected from the Zwicky catalog with magnitudes 15.6 or 15.7 in the region (26.5deg&lt;=delta&lt;=32.5deg, 8h&lt;=alpha=&lt;17h). This region is the original CfA &quot;Slice of the Universe&quot;, which was complete to 15.5; now nearly all Zwicky-catalog galaxies in the region have measured redshifts. These somewhat fainter galaxies outline the same structures as the brighter ones. By examinating a sample of 27 galaxies within the most prominent void we find (1) the fraction of absorption-line galaxies is typical of regions outside the cores of rich clusters; and (2) the local morphology-density relation holds within the globally underdense void.
+
+ivo://cds.vizier/j/apjs/121/287:  We present redshifts for a sample of 4391 galaxies with magnitude m_B(0)_&lt;=15.5 covering 20h&lt;=RA&lt;=4h in right ascension and -2.5{deg}&lt;=DE&lt;=90{deg} in declination. This sample is complete for all galaxies in the merge of the Zwicky et al. and Nilson catalogs in the south Galactic cap. Redshifts for 2964 of these were measured as part of the second CfA Redshift Survey. The data reveal large voids in the foreground and background of the Perseus-Pisces Supercluster. The largest of these voids lies at a mean velocity ~8000km/s, has diameter ~5000km/s, and is enclosed by a complex of dense structures. The large structure known as the Perseus-Pisces Supercluster forms the near side of this complex. On the far side of this large void, at a mean velocity ~12000km/s, there is another coherent dense wall. The structures in this survey support the view that galaxies generally lie on surfaces surrounding or nearly surrounding low-density regions or voids.
+
+ivo://cds.vizier/vii/193:  The catalog (files zcat.dat and zbig.dat) incorporates much of the latest velocity data from the Whipple Observatory and other sources as well as velocities from earlier compilations such as the Second Reference Catalogue of de Vaucouleurs, de Vaucouleurs, and Corwin; the Index of Galaxy Spectra of Gisler and Friel, and the Catalogue of Radial Velocities of Galaxies of Palumbo, Tanzella-Nitti, and Vettolani. The data included here are BT magnitudes and a few UGC numbers with increased &quot;accuracy&quot; in the velocity source information. The following separate tables contain selected objects from the CfA Redshift Survey: - the first CfA Redsdhift Survey (Huchra et al., 1983ApJS...52...89H); this catalogue contains 2395 galaxies, a number slightly smaller than the published number of 2399, since there have been small corrections to the magnitudes for multiple galaxies. This version has had new morphological types added by me as well as POSS diameters measured for those galaxies that were not in the UGC or did not have UGC diameters. - the first slice of the second CfA redshift survey (Huchra et al., 1990ApJS...72..433H) - the second slice of the CfA redshift survey (Huchra et al., 1995ApJS...99..391H) See the complete description in &#39;zcom.tex&#39; (in plain TeX), or zcom.txt (plain ascii)
+
+ivo://cds.vizier/vii/84a:  The catalog contains statistically homogeneous groups of galaxies based on the Harvard-Smithsonian Center for Astrophysics (CfA) redshift survey. Groups in the catalog are all density enhancements in redshift space of a factor greater than 20. All groups contain at least three members. There are 176 groups in the catalog and 102 groups have been identified in one or more previous studies. The catalog includes group numbers, numbers of members, equatorial coordinates, mean flow-corrected galactocentric velocities, line-of-sight-velocity dispersion, integrated group magnitudes, crossing times for the groups, and mean harmonic radii of the groups.
+
+ivo://nasa.heasarc/cfa2s:  The Center for Astrophysics (CfA) Redshift Survey South Galactic Cap (CFA2S) Catalog contains redshifts for a sample of about 4300 galaxies with blue (Zwicky B(0) type) magnitude &amp;lt;= 15.5 covering the range from 20 h to 4h in right ascension and from -2.5 deg to 90 deg in declination. This sample is complete for all galaxies in the merge of the Zwicky et al. and Nilson catalogs in the south Galactic cap. Redshifts for 2964 of these were measured as part of the second CfA Redshift Survey. The data reveal large voids in the foreground and background of the Perseus-Pisces Supercluster. The largest of these voids lies at a mean velocity ~ 8000km/s, has diameter of ~ 5000km/s, and is enclosed by a complex of dense structures. The large structure known as the Perseus-Pisces Supercluster forms the near side of this complex. On the far side of this large void, at a mean velocity of ~ 12000km/s, there is another coherent dense wall. The structures in this survey support the view that galaxies generally lie on surfaces surrounding or nearly surrounding low-density regions or voids.
+
+ivo://nasa.heasarc/zcat:  The ZCAT database contains the CfA Redshift Catalog, which incorporates much of the latest velocity data from the Whipple Observatory and other sources, as well as velocities from earlier compilations such as the &amp;quot;Second Reference Catalog&amp;quot; of de Vaucouleurs, de Vaucouleurs, and Corwin; the &amp;quot;Index of Galaxy Spectra&amp;quot; of Gisler and Friel; and the &amp;quot;Catalog of Radial Velocities of Galaxies&amp;quot; of Palumbo, Tanzella-Nitti, and Vettolani. It includes BT magnitudes, some UGC numbers, and increased &amp;quot;accuracy&amp;quot; in the velocity source information. The data presented here have primarily been assembled for the purpose of studying the large scale structure of the universe, and, as such, are nearly complete in redshift information, but are not necessarily complete in such categories as diameter, magnitude, and cross-references to other catalogues.
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the above information, you can choose the table you want and then use the specified TAP service to query it as described below.</p>
+<p>But first we’ll look at the other way of finding tables to query with TAP:  by starting with the TAP services listed individually in the Registry.  We see above that the HEASARC has the ZCAT, so what else does it have?</p>
+<p>You can find out which tables a TAP serves and then look at the tables descriptions. The last line here sends a query directly to the service to ask it for a list of tables.  (This can take a minute, since there may be a lot of tables.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Here, we&#39;re looking for a specific service, and we don&#39;t need the includeaux option:</span>
+<span class="n">tap_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;heasarc&#39;</span><span class="p">])</span>
+<span class="n">heasarc</span> <span class="o">=</span> <span class="n">tap_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">heasarc_tables</span><span class="o">=</span><span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">tables</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then let’s look for tables matching the terms we’re interested in as above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tablename</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">&quot;redshift&quot;</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="p">[</span><span class="n">tablename</span><span class="p">]</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">heasarc_tables</span><span class="p">[</span><span class="n">tablename</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Columns=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">k</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="p">[</span><span class="n">tablename</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="p">])))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abellzcat
+    Abell Clusters Measured Redshifts Catalog
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;abell_distance_class&#39;, &#39;abell_radius&#39;, &#39;abell_richness_class&#39;, &#39;bautz_morgan_class&#39;, &#39;bautz_morgan_flag&#39;, &#39;bii&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;lii&#39;, &#39;log_redshift_ratio&#39;, &#39;mag_10&#39;, &#39;name&#39;, &#39;ra&#39;, &#39;redshift&#39;, &#39;redshift_flag&#39;, &#39;ref_redshift&#39;]
+----
+atlasspecz
+    AT Large Area Survey (ATLAS) Spectroscopic Classes &amp; Redshifts C
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;abs_rmag&#39;, &#39;bii&#39;, &#39;bmag&#39;, &#39;broad_type&#39;, &#39;dec&#39;, &#39;flux_1p4_ghz&#39;, &#39;lii&#39;, &#39;log_lum_1p4_ghz&#39;, &#39;name&#39;, &#39;ra&#39;, &#39;redshift&#39;, &#39;rmag&#39;, &#39;source_id&#39;]
+----
+ccosmphotz
+    Chandra COSMOS (C-COSMOS) Survey Photometric Redshift Catalog
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;best_fit_template&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;ilbert_source_number&#39;, &#39;lii&#39;, &#39;morph_class&#39;, &#39;name&#39;, &#39;phot_redshift&#39;, &#39;phot_redshift_max&#39;, &#39;phot_redshift_min&#39;, &#39;ra&#39;, &#39;redshift_pdf&#39;, &#39;source_number&#39;, &#39;variability&#39;]
+----
+cfa2s
+    CfA Redshift Survey: South Galactic Cap Data
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;bar_type&#39;, &#39;bii&#39;, &#39;bmag&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;lii&#39;, &#39;luminosity_class&#39;, &#39;major_axis&#39;, &#39;minor_axis&#39;, &#39;morph_type&#39;, &#39;name&#39;, &#39;notes&#39;, &#39;peculiar_type&#39;, &#39;ra&#39;, &#39;radial_velocity&#39;, &#39;radial_velocity_error&#39;, &#39;ref_bmag&#39;, &#39;ref_radial_velocity&#39;, &#39;ugc_multiplicity&#39;, &#39;ugc_number&#39;]
+----
+iraspscz
+    IRAS Point Source Catalog Redshift (PSCz) Catalog
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;alt_name&#39;, &#39;bii&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;flux_60um&#39;, &#39;hex_hsd_flag&#39;, &#39;lii&#39;, &#39;lune_bin_100_um_bck&#39;, &#39;lune_bin_bmag_extinction&#39;, &#39;lune_bin_number&#39;, &#39;name&#39;, &#39;number_hcon_coverages&#39;, &#39;optical_class_code&#39;, &#39;ra&#39;, &#39;radial_velocity&#39;, &#39;radial_velocity_error&#39;, &#39;ratio_100_to_60_um_flux&#39;, &#39;redshift_status&#39;, &#39;ref_radial_velocity&#39;, &#39;source_sample&#39;, &#39;source_type&#39;]
+----
+iraszsurv
+    IRAS 1.2-Jy Redshift Survey
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;bii&#39;, &#39;cirrus_flag&#39;, &#39;class&#39;, &#39;comments&#39;, &#39;dec&#39;, &#39;extend_flag&#39;, &#39;helio_velocity&#39;, &#39;helio_velocity_error&#39;, &#39;lii&#39;, &#39;micron_flux_100&#39;, &#39;micron_flux_100_flag&#39;, &#39;micron_flux_12&#39;, &#39;micron_flux_12_flag&#39;, &#39;micron_flux_25&#39;, &#39;micron_flux_25_flag&#39;, &#39;micron_flux_60&#39;, &#39;micron_flux_60_flag&#39;, &#39;name&#39;, &#39;obj_id_flag&#39;, &#39;opt_mag&#39;, &#39;psc_id&#39;, &#39;ra&#39;, &#39;source&#39;, &#39;spectrum_flag&#39;, &#39;t_type&#39;, &#39;ugc_or_eso_number&#39;, &#39;var_flag&#39;]
+----
+lcrscat
+    Las Campanas Redshift Survey Catalog
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;bii&#39;, &#39;broad_type&#39;, &#39;central_mag&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;drift_scan&#39;, &#39;field_name&#39;, &#39;gsf_product&#39;, &#39;isophotal_mag&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;nearby_radial_velocity&#39;, &#39;phot_cat_obj_num&#39;, &#39;ra&#39;, &#39;radial_velocity&#39;, &#39;radial_velocity_error&#39;, &#39;sf_product&#39;, &#39;spect_fiber&#39;]
+----
+lowzvlqvla
+    VLA 6-GHz Observations of Low-Redshift SDSS QSOs
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;abs_imag&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;flux_6_ghz&#39;, &#39;flux_6_ghz_error&#39;, &#39;imag&#39;, &#39;int_flux_6_ghz&#39;, &#39;int_flux_6_ghz_error&#39;, &#39;lii&#39;, &#39;log_luminosity_6_ghz&#39;, &#39;name&#39;, &#39;off_set&#39;, &#39;peak_over_int_ratio&#39;, &#39;ra&#39;, &#39;radio_over_iband_ratio&#39;, &#39;redshift&#39;]
+----
+planckhzsc
+    Planck High-Redshift Source Candidates Catalog
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;bii&#39;, &#39;cc_sel_prob&#39;, &#39;dec&#39;, &#39;e_bv_aperture&#39;, &#39;e_bv_aperture_error&#39;, &#39;e_bv_mean&#39;, &#39;fir_lum_25k&#39;, &#39;fir_lum_25k_neg_err&#39;, &#39;fir_lum_25k_pos_err&#39;, &#39;fir_lum_30k&#39;, &#39;fir_lum_30k_neg_err&#39;, &#39;fir_lum_30k_pos_err&#39;, &#39;fir_lum_35k&#39;, &#39;fir_lum_35k_neg_err&#39;, &#39;fir_lum_35k_pos_err&#39;, &#39;fir_lum_40k&#39;, &#39;fir_lum_40k_neg_err&#39;, &#39;fir_lum_40k_pos_err&#39;, &#39;fir_lum_45k&#39;, &#39;fir_lum_45k_neg_err&#39;, &#39;fir_lum_45k_pos_err&#39;, &#39;fir_lum_50k&#39;, &#39;fir_lum_50k_neg_err&#39;, &#39;fir_lum_50k_pos_err&#39;, &#39;flux_217_ghz&#39;, &#39;flux_217_ghz_fit_err&#39;, &#39;flux_217_ghz_meas_err&#39;, &#39;flux_217_ghz_sky_err&#39;, &#39;flux_353_ghz&#39;, &#39;flux_353_ghz_fit_err&#39;, &#39;flux_353_ghz_meas_err&#39;, &#39;flux_353_ghz_sky_err&#39;, &#39;flux_545_ghz&#39;, &#39;flux_545_ghz_fit_err&#39;, &#39;flux_545_ghz_meas_err&#39;, &#39;flux_545_ghz_sky_err&#39;, &#39;flux_857_ghz&#39;, &#39;flux_857_ghz_fit_err&#39;, &#39;flux_857_ghz_meas_err&#39;, &#39;flux_857_ghz_sky_err&#39;, &#39;herschel_flag&#39;, &#39;lii&#39;, &#39;major_axis&#39;, &#39;major_axis_error&#39;, &#39;matching_planck_catalogs&#39;, &#39;minor_axis&#39;, &#39;minor_axis_error&#39;, &#39;name&#39;, &#39;phot_redshift_25&#39;, &#39;phot_redshift_25_chi2&#39;, &#39;phot_redshift_25_neg_err&#39;, &#39;phot_redshift_25_pos_err&#39;, &#39;phot_redshift_30&#39;, &#39;phot_redshift_30_chi2&#39;, &#39;phot_redshift_30_neg_err&#39;, &#39;phot_redshift_30_pos_err&#39;, &#39;phot_redshift_35&#39;, &#39;phot_redshift_35_chi2&#39;, &#39;phot_redshift_35_neg_err&#39;, &#39;phot_redshift_35_pos_err&#39;, &#39;phot_redshift_40&#39;, &#39;phot_redshift_40_chi2&#39;, &#39;phot_redshift_40_neg_err&#39;, &#39;phot_redshift_40_pos_err&#39;, &#39;phot_redshift_45&#39;, &#39;phot_redshift_45_chi2&#39;, &#39;phot_redshift_45_neg_err&#39;, &#39;phot_redshift_45_pos_err&#39;, &#39;phot_redshift_50&#39;, &#39;phot_redshift_50_chi2&#39;, &#39;phot_redshift_50_neg_err&#39;, &#39;phot_redshift_50_pos_err&#39;, &#39;position_angle&#39;, &#39;position_angle_error&#39;, &#39;ra&#39;, &#39;sfr_25k&#39;, &#39;sfr_25k_neg_err&#39;, &#39;sfr_25k_pos_err&#39;, &#39;sfr_30k&#39;, &#39;sfr_30k_neg_err&#39;, &#39;sfr_30k_pos_err&#39;, &#39;sfr_35k&#39;, &#39;sfr_35k_neg_err&#39;, &#39;sfr_35k_pos_err&#39;, &#39;sfr_40k&#39;, &#39;sfr_40k_neg_err&#39;, &#39;sfr_40k_pos_err&#39;, &#39;sfr_45k&#39;, &#39;sfr_45k_neg_err&#39;, &#39;sfr_45k_pos_err&#39;, &#39;sfr_50k&#39;, &#39;sfr_50k_neg_err&#39;, &#39;sfr_50k_pos_err&#39;, &#39;snr_353_ghz&#39;, &#39;snr_545_ghz&#39;, &#39;snr_857_ghz&#39;, &#39;snr_excess_545_ghz&#39;]
+----
+sixdfgs
+    6dFGS Galaxy Survey Final Redshift Release Catalog
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;av&#39;, &#39;bii&#39;, &#39;bj_mag&#39;, &#39;dec&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;name_redshift_field&#39;, &#39;num_highq_measure&#39;, &#39;num_total_measures&#39;, &#39;original_weight&#39;, &#39;program_id&#39;, &#39;ra&#39;, &#39;radial_velocity&#39;, &#39;radial_velocity_compflag&#39;, &#39;radial_velocity_error&#39;, &#39;radial_velocity_qualflag&#39;, &#39;ref_radial_velocity&#39;, &#39;rf_mag&#39;, &#39;specid_values&#39;, &#39;supercosmos_class&#39;, &#39;target_id&#39;, &#39;template_code&#39;]
+----
+twodfqsoz
+    2dF QSO Redshift (2QZ) Survey
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;apm_x_pos&#39;, &#39;apm_y_pos&#39;, &#39;bii&#39;, &#39;bj_mag&#39;, &#39;bj_r_color&#39;, &#39;broad_type_1&#39;, &#39;broad_type_2&#39;, &#39;class&#39;, &#39;comment_spectrum_1&#39;, &#39;comment_spectrum_2&#39;, &#39;dec&#39;, &#39;fiber_number_1&#39;, &#39;fiber_number_2&#39;, &#39;field_spect_number_1&#39;, &#39;field_spect_number_2&#39;, &#39;flux_20_cm&#39;, &#39;internal_name&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;num_obs&#39;, &#39;previous_redshift&#39;, &#39;quality_flag_1&#39;, &#39;quality_flag_2&#39;, &#39;ra&#39;, &#39;rass_flux&#39;, &#39;reddening&#39;, &#39;redshift_1&#39;, &#39;redshift_2&#39;, &#39;sector_name&#39;, &#39;snr_spectrum_1&#39;, &#39;snr_spectrum_2&#39;, &#39;source_number&#39;, &#39;spectrum_1_date&#39;, &#39;spectrum_2_date&#39;, &#39;u_bj_color&#39;, &#39;ukst_field_number&#39;]
+----
+twomassrsc
+    2MASS Redshift Survey (2MRS) Catalog
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;alt_name&#39;, &#39;axis_ratio&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;hmag_0&#39;, &#39;hmag_0_error&#39;, &#39;hmag_0_tot&#39;, &#39;hmag_0_tot_error&#39;, &#39;jmag_0&#39;, &#39;jmag_0_error&#39;, &#39;jmag_0_tot&#39;, &#39;jmag_0_tot_error&#39;, &#39;ks_mag_0&#39;, &#39;ks_mag_0_error&#39;, &#39;ks_mag_0_tot&#39;, &#39;ks_mag_0_tot_error&#39;, &#39;lii&#39;, &#39;log_k20_semimajor_axis&#39;, &#39;log_tot_semimajor_axis&#39;, &#39;morph_type&#39;, &#39;name&#39;, &#39;ra&#39;, &#39;radial_velocity&#39;, &#39;radial_velocity_error&#39;, &#39;radial_velocity_source&#39;, &#39;reddening&#39;, &#39;ref_morph_type&#39;, &#39;ref_radial_velocity&#39;, &#39;xsc_ppc_flags&#39;]
+----
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>xdeep2
+    DEEP2 Galaxy Redshift Survey Fields Chandra Point Source Catalog
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;bayesian_galaxy_prob&#39;, &#39;bii&#39;, &#39;bmag&#39;, &#39;csc_name&#39;, &#39;dec&#39;, &#39;error_radius&#39;, &#39;fb_counts_50pc_eef&#39;, &#39;fb_counts_50pc_eef_error&#39;, &#39;fb_counts_50pc_eef_limit&#39;, &#39;fb_counts_90pc_eef&#39;, &#39;fb_counts_90pc_eef_error&#39;, &#39;fb_counts_90pc_eef_limit&#39;, &#39;fb_flux&#39;, &#39;fb_flux_error&#39;, &#39;fb_flux_limit&#39;, &#39;field_number&#39;, &#39;field_subfield_id&#39;, &#39;flux_ratio&#39;, &#39;flux_ratio_lower&#39;, &#39;flux_ratio_upper&#39;, &#39;hardness_ratio&#39;, &#39;hardness_ratio_lower&#39;, &#39;hardness_ratio_upper&#39;, &#39;hb_counts_50pc_eef&#39;, &#39;hb_counts_50pc_eef_error&#39;, &#39;hb_counts_50pc_eef_limit&#39;, &#39;hb_counts_90pc_eef&#39;, &#39;hb_counts_90pc_eef_error&#39;, &#39;hb_counts_90pc_eef_limit&#39;, &#39;hb_flux&#39;, &#39;hb_flux_error&#39;, &#39;hb_flux_limit&#39;, &#39;imag&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;off_axis&#39;, &#39;off_set&#39;, &#39;opt_dec&#39;, &#39;opt_ra&#39;, &#39;opt_source_number&#39;, &#39;ra&#39;, &#39;radius_50pc_eef&#39;, &#39;radius_90pc_eef&#39;, &#39;redshift&#39;, &#39;rmag&#39;, &#39;sb_counts_50pc_eef&#39;, &#39;sb_counts_50pc_eef_error&#39;, &#39;sb_counts_50pc_eef_limit&#39;, &#39;sb_counts_90pc_eef&#39;, &#39;sb_counts_90pc_eef_error&#39;, &#39;sb_counts_90pc_eef_limit&#39;, &#39;sb_flux&#39;, &#39;sb_flux_error&#39;, &#39;sb_flux_limit&#39;]
+----
+xmmcfrscat
+    XMM-Newton/Canada-France Redshift Survey Fields X-Ray Sources
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;bii&#39;, &#39;counts&#39;, &#39;dec&#39;, &#39;flux&#39;, &#39;flux_error&#39;, &#39;hb_flux&#39;, &#39;hb_flux_error&#39;, &#39;lii&#39;, &#39;mos1_hr&#39;, &#39;mos1_hr_error&#39;, &#39;mos2_hr&#39;, &#39;mos2_hr_error&#39;, &#39;name&#39;, &#39;notes&#39;, &#39;pn_hr&#39;, &#39;pn_hr_error&#39;, &#39;ra&#39;, &#39;sb_flux&#39;, &#39;sb_flux_error&#39;]
+----
+xmmcfrsoid
+    XMM-Newton/Canada-France Redshift Survey Fields Optical Identifi
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;bii&#39;, &#39;bmag&#39;, &#39;bmag_error&#39;, &#39;cfdf_number&#39;, &#39;dec&#39;, &#39;imag&#39;, &#39;imag_error&#39;, &#39;itot_mag&#39;, &#39;kmag&#39;, &#39;kmag_error&#39;, &#39;lii&#39;, &#39;name&#39;, &#39;notes&#39;, &#39;phot_redshift_1&#39;, &#39;phot_redshift_1_flag&#39;, &#39;phot_redshift_2&#39;, &#39;phot_redshift_2_flag&#39;, &#39;phot_redshift_3&#39;, &#39;phot_redshift_3_flag&#39;, &#39;ra&#39;, &#39;redshift&#39;, &#39;true_probability&#39;, &#39;umag&#39;, &#39;umag_error&#39;, &#39;vmag&#39;, &#39;vmag_error&#39;, &#39;xo_offset&#39;]
+----
+xmmcphotz
+    XMM-Newton COSMOS (XMM-COSMOS) Survey Photometric Redshift Catal
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;best_fit_template&#39;, &#39;bii&#39;, &#39;dec&#39;, &#39;ilbert_source_number&#39;, &#39;lii&#39;, &#39;morph_class&#39;, &#39;name&#39;, &#39;phot_redshift&#39;, &#39;phot_redshift_max&#39;, &#39;phot_redshift_min&#39;, &#39;ra&#39;, &#39;redshift_pdf&#39;, &#39;source_number&#39;, &#39;variability&#39;]
+----
+zcat
+    CfA Redshift Catalog (June 1995 Version)
+
+Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;&quot;distance&quot;&#39;, &#39;bar_type&#39;, &#39;bii&#39;, &#39;bmag&#39;, &#39;bt_mag&#39;, &#39;class&#39;, &#39;comments&#39;, &#39;dec&#39;, &#39;diameter_1&#39;, &#39;diameter_2&#39;, &#39;lii&#39;, &#39;luminosity_class&#39;, &#39;morph_type&#39;, &#39;name&#39;, &#39;notes&#39;, &#39;ra&#39;, &#39;radial_velocity&#39;, &#39;radial_velocity_error&#39;, &#39;redshift&#39;, &#39;ref_bmag&#39;, &#39;ref_radial_velocity&#39;, &#39;ref_redshift&#39;, &#39;rfn_number&#39;, &#39;structure&#39;, &#39;ugc_or_eso&#39;]
+----
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a number of tables that appear to be useful table for our goal, including the ZCAT,  which contains columns with the information that we need to select a sample of the brightest nearby spiral galaxy candidates.</p>
+<p>Now that we know all the possible column information in the zcat catalog, we can do more than query on position (as in a cone search) but also on any other column (e.g., redshift, bmag, morph_type).  The query has to be expressed in a language called <strong><a class="reference external" href="http://www.ivoa.net/documents/latest/ADQL.html">ADQL</a></strong>.</p>
+</section>
+<section id="expressing-queries-in-adql">
+<h3>2.2 Expressing queries in ADQL<a class="headerlink" href="#expressing-queries-in-adql" title="Permalink to this headline">#</a></h3>
+<p>The basics of ADQL:</p>
+<ul class="simple">
+<li><p><em>SELECT * FROM my.interesting.catalog as cat…</em></p></li>
+</ul>
+<p>says you want all (“*”) columns from the catalog called “my.interesting.catalog”, which you will refer to in the rest of the query by the more compact name of “cat”.</p>
+<p>Instead of returning all columns, you can</p>
+<ul class="simple">
+<li><p><em>SELECT cat.RA, cat.DEC, cat.bmag from catalog as cat…</em></p></li>
+</ul>
+<p>to only return the columns you’re interested in. To use multiple catalogs, your query could start, e.g.,</p>
+<ul class="simple">
+<li><p><em>SELECT c1.RA,c1.DEC,c2.BMAG FROM catalog1 as c1 natural join catalog2 as c2…</em></p></li>
+</ul>
+<p>says that you want to query two catalogs zipped together the “natural” way, i.e., by looking for a common column.</p>
+<p>To select only some rows of the catalog based on the value in a column, you can add:</p>
+<ul class="simple">
+<li><p><em>WHERE cat.bmag &lt; 14</em></p></li>
+</ul>
+<p>says that you want to retrieve only those entries in the catalog whose bmag column has a value less than 14.</p>
+<p>You can also append</p>
+<ul class="simple">
+<li><p><em>ORDER by cat.bmag</em></p></li>
+</ul>
+<p>to return the result sorted ascending by one of the columns, adding <em>DESC</em> to the end for descending.</p>
+<p>A few special functions in the ADQL allow you to query regions:</p>
+<ul class="simple">
+<li><p><em>WHERE contains( point(‘ICRS’, cat.ra, cat.dec), circle(‘ICRS’, 210.5, -6.5, 0.5))=1</em></p></li>
+</ul>
+<p>is how you would ask for any catalog entries whose RA,DEC lie within a circular region defined by RA,DEC 210.5,-6.5 and a radius of 0.5 (all in degrees).  The ‘ICRS’ specifies the coordinate system.</p>
+<p>See the ADQL documentation for more.</p>
+</section>
+<section id="a-use-case">
+<h3>2.3 A use case<a class="headerlink" href="#a-use-case" title="Permalink to this headline">#</a></h3>
+<p>Here is a simple ADQL query where we print out the relevant columns for the bright (Bmag &lt;14) sources found within 1 degree of M51 (we will discuss how to define the table and column names below):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##  Inside the format call, the {} are replaced by the given variables in order.</span>
+<span class="c1">##  So this asks for</span>
+<span class="c1">##  rows of public.zcat where that row&#39;s ra and dec (cat.ra and cat.dec from the catalog)</span>
+<span class="c1">##  are within radius 1deg of the given RA and DEC we got above for M51</span>
+<span class="c1">##  (coord.ra.deg and coord.dec.deg from our variables defined above), and where</span>
+<span class="c1">##  the bmag column is less than 14.</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where</span>
+<span class="s2">    contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,1.0))=1 and</span>
+<span class="s2">    cat.bmag &lt; 14</span>
+<span class="s2">    order by cat.radial_velocity_error</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">coord</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">=</span><span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="c1">#results = heasarc.search(query)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=3</i>
+<table id="table140233451529472" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
+<tr><td>202.46823</td><td>47.19815</td><td>474</td><td>23</td><td>9.03</td><td>4</td></tr>
+<tr><td>202.49491</td><td>47.26792</td><td>558</td><td>23</td><td>10.94</td><td>0</td></tr>
+<tr><td>202.54745</td><td>46.66996</td><td>2569</td><td>25</td><td>13.30</td><td>-5</td></tr>
+</table></div></div></div>
+</div>
+<p>See the <strong><a class="reference external" href="https://heasarc.gsfc.nasa.gov/W3Browse/galaxy-catalog/zcat.html">information on the zcat</a></strong> for column information. (We will use the ‘radial_velocity’ column rather than the ‘redshift’ column.) We note that spiral galaxies have morph_type between 1 - 9.</p>
+<p>Therefore, we can generalize the query above to complete our exercise and select the brightest (bmag &lt; 14), nearby (radial velocity &lt; 3000), spiral ( morph_type = 1 - 9) galaxies as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where</span>
+<span class="s2">    cat.bmag &lt; 14 and cat.morph_type between 1 and 9 and cat.Radial_Velocity &lt; 3000</span>
+<span class="s2">    order by cat.Radial_velocity</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">coord</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="c1">#results = heasarc.search(query)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1120</i>
+<table id="table140233508327232" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
+<tr><td>10.68474</td><td>41.26883</td><td>-297</td><td>1</td><td>4.30</td><td>3</td></tr>
+<tr><td>189.20757</td><td>13.16275</td><td>-223</td><td>18</td><td>10.58</td><td>2</td></tr>
+<tr><td>186.73679</td><td>15.04782</td><td>-182</td><td>12</td><td>12.23</td><td>1</td></tr>
+<tr><td>23.46218</td><td>30.66019</td><td>-180</td><td>1</td><td>6.50</td><td>5</td></tr>
+<tr><td>186.49551</td><td>15.67102</td><td>-155</td><td>26</td><td>13.70</td><td>7</td></tr>
+<tr><td>183.45115</td><td>14.90010</td><td>-98</td><td>15</td><td>11.00</td><td>2</td></tr>
+<tr><td>183.91296</td><td>13.90134</td><td>-84</td><td>27</td><td>12.08</td><td>4</td></tr>
+<tr><td>148.89929</td><td>69.06297</td><td>-40</td><td>5</td><td>7.75</td><td>2</td></tr>
+<tr><td>68.21188</td><td>71.88872</td><td>-28</td><td>10</td><td>12.10</td><td>7</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>25.54105</td><td>12.60244</td><td>2964</td><td>27</td><td>13.60</td><td>3</td></tr>
+<tr><td>160.76076</td><td>-36.36216</td><td>2965</td><td>36</td><td>13.80</td><td>5</td></tr>
+<tr><td>186.92024</td><td>-8.27657</td><td>2978</td><td>20</td><td>13.13</td><td>2</td></tr>
+<tr><td>327.32062</td><td>-60.60958</td><td>2981</td><td>2</td><td>13.23</td><td>5</td></tr>
+<tr><td>85.81306</td><td>-30.07849</td><td>2982</td><td>32</td><td>13.67</td><td>1</td></tr>
+<tr><td>199.74246</td><td>-47.91271</td><td>2982</td><td>10</td><td>13.10</td><td>3</td></tr>
+<tr><td>268.99556</td><td>18.34047</td><td>2986</td><td>20</td><td>13.40</td><td>2</td></tr>
+<tr><td>234.99208</td><td>58.08230</td><td>2987</td><td>22</td><td>13.30</td><td>3</td></tr>
+<tr><td>165.35109</td><td>57.67702</td><td>2994</td><td>20</td><td>13.70</td><td>5</td></tr>
+<tr><td>149.05805</td><td>59.30739</td><td>2996</td><td>20</td><td>13.30</td><td>3</td></tr>
+</table></div></div></div>
+</div>
+</section>
+<section id="tap-examples-for-a-given-service">
+<h3>2.4 TAP examples for a given service<a class="headerlink" href="#tap-examples-for-a-given-service" title="Permalink to this headline">#</a></h3>
+<p>Each service may also provide some example queries.  If they do, then you can see them with, e.g.:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">examples</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;REQUEST&#39;: &#39;doQuery&#39;,
+ &#39;LANG&#39;: &#39;ADQL&#39;,
+ &#39;QUERY&#39;: &quot;SELECT * FROM rosmaster WHERE exposure &gt; 10000 AND 1=CONTAINS(POINT(&#39;ICRS&#39;, ra, dec),CIRCLE(&#39;ICRS&#39;, 50, -85, 1))          &quot;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above, these examples look like a list of dictionaries.  But they are actually a list of objects that can be executed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">examples</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s1">&#39;QUERY&#39;</span><span class="p">])</span>
+    <span class="n">result</span><span class="o">=</span><span class="n">example</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+    <span class="c1">#  Stop at one</span>
+    <span class="k">break</span>
+<span class="n">result</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SELECT * FROM rosmaster WHERE exposure &gt; 10000 AND 1=CONTAINS(POINT(&#39;ICRS&#39;, ra, dec),CIRCLE(&#39;ICRS&#39;, 50, -85, 1))          
+</pre></div>
+</div>
+<div class="output text_html"><div><i>Table length=2</i>
+<table id="table140233510990128" class="table-striped table-bordered table-condensed">
+<thead><tr><th>__row</th><th>seq_id</th><th>ra</th><th>dec</th><th>lii</th><th>bii</th><th>instrument</th><th>filter</th><th>site</th><th>exposure</th><th>requested_exposure</th><th>fits_type</th><th>start_time</th><th>end_time</th><th>name</th><th>pi_lname</th><th>pi_fname</th><th>ror</th><th>index_id</th><th>subj_cat</th><th>proc_rev</th><th>title</th><th>qa_number</th><th>ao</th><th>proposal_number</th><th>roll</th><th>rday_begin</th><th>rday_end</th><th>class</th><th>__x_ra_dec</th><th>__y_ra_dec</th><th>__z_ra_dec</th></tr></thead>
+<thead><tr><th></th><th></th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th>s</th><th>s</th><th></th><th>d</th><th>d</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>d</th><th>d</th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>int16</th><th>int16</th><th>object</th><th>int32</th><th>int16</th><th>int32</th><th>int16</th><th>int32</th><th>int32</th><th>int16</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>1</td><td>RH202299A01</td><td>49.3200</td><td>-85.5400</td><td>299.8517</td><td>-30.6815</td><td>HRI</td><td>N</td><td>MPE</td><td>43683</td><td>70000</td><td>RDF 3_6</td><td>50324.7425347222</td><td>50377.4775925926</td><td>RE J0317-853</td><td>BURLEIGH</td><td>MATTHEW</td><td>202299</td><td>a01</td><td>2</td><td>2</td><td>RE J0317-853</td><td>24301</td><td>6</td><td>7128</td><td>162</td><td>2316</td><td>2369</td><td>2900</td><td>0.0589725712332591</td><td>0.0506886092544769</td><td>-0.996971865567923</td></tr>
+<tr><td>2</td><td>RH202299N00</td><td>49.3200</td><td>-85.5400</td><td>299.8517</td><td>-30.6815</td><td>HRI</td><td>N</td><td>MPE</td><td>36146</td><td>70000</td><td>RDF 4_2</td><td>50174.4961921296</td><td>50187.9867476852</td><td>RE J0317-853</td><td>BURLEIGH</td><td>MATTHEW</td><td>202299</td><td>n00</td><td>2</td><td>2</td><td>RE J0317-853</td><td>24302</td><td>6</td><td>7128</td><td>307</td><td>2163</td><td>2177</td><td>2900</td><td>0.0589725712332591</td><td>0.0506886092544769</td><td>-0.996971865567923</td></tr>
+</table></div></div></div>
+</div>
+</section>
+</section>
+<section id="using-the-tap-to-cross-correlate-and-combine">
+<h2>3. Using the TAP to cross-correlate and combine<a class="headerlink" href="#using-the-tap-to-cross-correlate-and-combine" title="Permalink to this headline">#</a></h2>
+<section id="cross-correlating-to-combine-catalogs">
+<h3>3.1 Cross-correlating to combine catalogs<a class="headerlink" href="#cross-correlating-to-combine-catalogs" title="Permalink to this headline">#</a></h3>
+<p>TAP can also be a powerful way to collect a lot of useful information from existing catalogs in one quick step. For this exercise, we will start with a list of sources, uploaded from our own table, and do a ‘cross-correlation’ with the <em>zcat</em> table.</p>
+<p>For more on creating and working with VO tables, see that <a class="reference internal" href="votables.html"><span class="doc std std-doc">notebook</span></a>.  Here, we just read one in that’s already prepared:</p>
+<p>First, check that this service can handle uploaded tables.   Not all do.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">upload_methods</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;UploadMethod ivo-id=&quot;ivo://ivoa.net/std/TAPRegExt#upload-http&quot;/&gt;,
+ &lt;UploadMethod ivo-id=&quot;ivo://ivoa.net/std/TAPRegExt#upload-inline&quot;/&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The inline method is what PyVO will use.  These take a while, i.e. half a minute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    SELECT cat.ra, cat.dec, Radial_Velocity, bmag, morph_type</span>
+<span class="s2">    FROM zcat cat, tap_upload.mysources mt</span>
+<span class="s2">    WHERE</span>
+<span class="s2">    contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,mt.ra,mt.dec,0.01))=1</span>
+<span class="s2">    and Radial_Velocity &gt; 0</span>
+<span class="s2">    ORDER by cat.ra&quot;&quot;&quot;</span>
+<span class="n">zcattable</span> <span class="o">=</span> <span class="n">heasarc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">uploads</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;mysources&#39;</span><span class="p">:</span> <span class="s1">&#39;data/my_sources.xml&#39;</span><span class="p">})</span>
+<span class="c1">#zcattable = heasarc.search(query, uploads={&#39;mysources&#39;: &#39;data/my_sources.xml&#39;})</span>
+<span class="n">mytable</span> <span class="o">=</span> <span class="n">zcattable</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">mytable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=14</i>
+<table id="table140233507929776" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>bmag</th><th>morph_type</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>int32</th><th>float32</th><th>int16</th></tr></thead>
+<tr><td>136.00074</td><td>21.96792</td><td>3093</td><td>13.80</td><td>20</td></tr>
+<tr><td>146.70334</td><td>22.01827</td><td>7446</td><td>14.60</td><td>-1</td></tr>
+<tr><td>146.70334</td><td>22.01827</td><td>7597</td><td>15.00</td><td>-2</td></tr>
+<tr><td>148.77806</td><td>14.29613</td><td>7194</td><td>15.10</td><td>2</td></tr>
+<tr><td>175.03940</td><td>15.32725</td><td>3325</td><td>14.40</td><td>3</td></tr>
+<tr><td>191.54199</td><td>30.73227</td><td>6651</td><td>15.00</td><td>20</td></tr>
+<tr><td>191.54740</td><td>30.72338</td><td>6517</td><td>14.70</td><td>-2</td></tr>
+<tr><td>194.91294</td><td>28.89537</td><td>6093</td><td>15.00</td><td>0</td></tr>
+<tr><td>206.57164</td><td>43.85051</td><td>2229</td><td>15.00</td><td>-1</td></tr>
+<tr><td>206.57996</td><td>43.84386</td><td>25864</td><td>18.50</td><td>--</td></tr>
+<tr><td>209.96260</td><td>38.18183</td><td>2759</td><td>14.90</td><td>3</td></tr>
+<tr><td>213.55601</td><td>15.62222</td><td>4644</td><td>14.00</td><td>3</td></tr>
+<tr><td>219.96650</td><td>42.74234</td><td>2517</td><td>14.70</td><td>20</td></tr>
+<tr><td>333.82170</td><td>37.29922</td><td>5207</td><td>15.30</td><td>1</td></tr>
+</table></div></div></div>
+</div>
+<p>Therefore we now have the Bmag, morphological type and radial velocities for all the sources in our list with a single TAP query.</p>
+</section>
+<section id="cross-correlating-with-user-defined-columns">
+<h3>3.2 Cross-correlating with user-defined columns<a class="headerlink" href="#cross-correlating-with-user-defined-columns" title="Permalink to this headline">#</a></h3>
+<p>Our input list of sources contains galaxy pair candidates that may be interacting with each other. Therefore it would be interesting to know what the morphological type and the Bmagnitude are for the potential companions.</p>
+<p>In this advanced example, we want our search to be physically motivated since the criterion for galaxy interaction depends on the physical separation of the galaxies. Unlike the previous case, the search radius is not a constant, but varies for each candidate by the distance to the source. Specifically, we want to search for companions that are within 50 kpc of the candidate and therefore first need to find the angular diameter distance that corresponds to galaxy’s distance (in our case the radial velocity).</p>
+<p>Therefore, we begin by taking our table of objects and adding an angDdeg column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## The column &#39;radial_velocity&#39; is c*z but doesn&#39;t include the unit; it is km/s</span>
+<span class="c1">## Get the speed of light from astropy.constants and express in km/s</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="n">redshifts</span> <span class="o">=</span> <span class="n">mytable</span><span class="p">[</span><span class="s1">&#39;radial_velocity&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">c</span>
+<span class="n">mytable</span><span class="p">[</span><span class="s1">&#39;redshift&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">redshifts</span>
+<span class="n">physdist</span> <span class="o">=</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Mpc</span> <span class="c1"># 50 kpc physical distance</span>
+
+<span class="n">angDdist</span> <span class="o">=</span> <span class="n">Planck15</span><span class="o">.</span><span class="n">angular_diameter_distance</span><span class="p">(</span><span class="n">mytable</span><span class="p">[</span><span class="s1">&#39;redshift&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">angDrad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">physdist</span><span class="o">/</span><span class="n">angDdist</span><span class="p">)</span>
+<span class="n">mytable</span><span class="p">[</span><span class="s1">&#39;angDdeg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">angDrad</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+<span class="n">mytable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=14</i>
+<table id="table140233507929776" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>bmag</th><th>morph_type</th><th>redshift</th><th>angDdeg</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th>deg</th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>int32</th><th>float32</th><th>int16</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>136.00074</td><td>21.96792</td><td>3093</td><td>13.80</td><td>20</td><td>0.010317137464478843</td><td>0.06354147623734327</td></tr>
+<tr><td>146.70334</td><td>22.01827</td><td>7446</td><td>14.60</td><td>-1</td><td>0.024837182528454405</td><td>0.026865139047937883</td></tr>
+<tr><td>146.70334</td><td>22.01827</td><td>7597</td><td>15.00</td><td>-2</td><td>0.02534086431220361</td><td>0.026347225109192074</td></tr>
+<tr><td>148.77806</td><td>14.29613</td><td>7194</td><td>15.10</td><td>2</td><td>0.02399660100855506</td><td>0.027777901534139626</td></tr>
+<tr><td>175.03940</td><td>15.32725</td><td>3325</td><td>14.40</td><td>3</td><td>0.011091006165338556</td><td>0.0591638655187596</td></tr>
+<tr><td>191.54199</td><td>30.73227</td><td>6651</td><td>15.00</td><td>20</td><td>0.022185347971629094</td><td>0.02997982632048326</td></tr>
+<tr><td>191.54740</td><td>30.72338</td><td>6517</td><td>14.70</td><td>-2</td><td>0.02173837208406357</td><td>0.030579669183669427</td></tr>
+<tr><td>194.91294</td><td>28.89537</td><td>6093</td><td>15.00</td><td>0</td><td>0.020324060320423405</td><td>0.032651528395800614</td></tr>
+<tr><td>206.57164</td><td>43.85051</td><td>2229</td><td>15.00</td><td>-1</td><td>0.007435143681966809</td><td>0.08786069920287261</td></tr>
+<tr><td>206.57996</td><td>43.84386</td><td>25864</td><td>18.50</td><td>--</td><td>0.08627301758205005</td><td>0.008319382638265264</td></tr>
+<tr><td>209.96260</td><td>38.18183</td><td>2759</td><td>14.90</td><td>3</td><td>0.009203033386517016</td><td>0.07113666025554453</td></tr>
+<tr><td>213.55601</td><td>15.62222</td><td>4644</td><td>14.00</td><td>3</td><td>0.015490716581002182</td><td>0.042588105321019934</td></tr>
+<tr><td>219.96650</td><td>42.74234</td><td>2517</td><td>14.70</td><td>20</td><td>0.008395808276137487</td><td>0.0778991456401862</td></tr>
+<tr><td>333.82170</td><td>37.29922</td><td>5207</td><td>15.30</td><td>1</td><td>0.017368682436967778</td><td>0.03807030457673168</td></tr>
+</table></div></div></div>
+</div>
+<p>Now we construct and run a query that uses the new angDdeg column in every row search. Note, we also don’t want to list the original candidates since we know these are in the catalog and we want rather to find any companions. Therefore, we exclude the match if the radial velocities match exactly.</p>
+<p>This time, rather than write the table to disk, we’ll keep it in memory and give Tap.query() a “file-like” object using io.BytesIO().  This can take half a minute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## In memory only, use an IO stream.</span>
+<span class="n">vot_obj</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
+<span class="n">apvot</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">apvot</span><span class="o">.</span><span class="n">from_table</span><span class="p">(</span><span class="n">mytable</span><span class="p">),</span><span class="n">vot_obj</span><span class="p">)</span>
+<span class="c1">## (Reset the &quot;file-like&quot; object to the beginning.)</span>
+<span class="n">vot_obj</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;SELECT mt.ra, mt.dec, cat.ra, cat.dec, cat.Radial_Velocity, cat.morph_type, cat.bmag</span>
+<span class="s2">    FROM zcat cat, tap_upload.mytable mt</span>
+<span class="s2">    WHERE</span>
+<span class="s2">    contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,mt.ra,mt.dec,mt.angDdeg))=1</span>
+<span class="s2">    and cat.Radial_Velocity &gt; 0 and cat.radial_velocity != mt.radial_velocity</span>
+<span class="s2">    ORDER by cat.ra&quot;&quot;&quot;</span>
+<span class="c1">#  Currently broken due to a bug.</span>
+<span class="c1">#mytable2 = heasarc.service.run_async(query, uploads={&#39;mytable&#39;:vot_obj})</span>
+<span class="n">mytable2</span> <span class="o">=</span> <span class="n">heasarc</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">uploads</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;mytable&#39;</span><span class="p">:</span><span class="n">vot_obj</span><span class="p">})</span>
+<span class="n">vot_obj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">mytable2</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=9</i>
+<table id="table140233449750336" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ra</th><th>dec</th><th>ra2</th><th>dec2</th><th>radial_velocity</th><th>morph_type</th><th>bmag</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th></tr></thead>
+<tr><td>146.70334</td><td>22.01827</td><td>146.70334</td><td>22.01827</td><td>7597</td><td>-2</td><td>15.00</td></tr>
+<tr><td>146.70334</td><td>22.01827</td><td>146.70334</td><td>22.01827</td><td>7446</td><td>-1</td><td>14.60</td></tr>
+<tr><td>175.03940</td><td>15.32725</td><td>175.05522</td><td>15.34280</td><td>3299</td><td>3</td><td>13.10</td></tr>
+<tr><td>191.54740</td><td>30.72338</td><td>191.54199</td><td>30.73227</td><td>6651</td><td>20</td><td>15.00</td></tr>
+<tr><td>191.54199</td><td>30.73227</td><td>191.54740</td><td>30.72338</td><td>6517</td><td>-2</td><td>14.70</td></tr>
+<tr><td>206.57164</td><td>43.85051</td><td>206.57996</td><td>43.84386</td><td>25864</td><td>--</td><td>18.50</td></tr>
+<tr><td>206.57164</td><td>43.85051</td><td>206.59810</td><td>43.87223</td><td>2420</td><td>4</td><td>12.72</td></tr>
+<tr><td>219.96650</td><td>42.74234</td><td>220.03854</td><td>42.77895</td><td>2545</td><td>7</td><td>14.00</td></tr>
+<tr><td>333.82170</td><td>37.29922</td><td>333.84684</td><td>37.28261</td><td>5984</td><td>-3</td><td>15.06</td></tr>
+</table></div></div></div>
+</div>
+<p>Therefore, by adding new information to our original data table, we could cross-correlate with the TAP.  We find that, in our candidate list, there is one true pair of galaxies.</p>
+</section>
+</section>
+<section id="synchronous-versus-asynchronous-queries">
+<h2>4. Synchronous versus asynchronous queries<a class="headerlink" href="#synchronous-versus-asynchronous-queries" title="Permalink to this headline">#</a></h2>
+<p>There is one technical detail about TAP queries that you will need to know.  In the code cells above, there are two commands for sending the query, one of which is commented out.  This is because, with the TAP, there are two ways to send such queries.  The default when you use the <code class="docutils literal notranslate"><span class="pre">search()</span></code> method is to us a synchronous query, which means that the query is sent and the client waits for the response.  For large and complicated queries, this may time out, or you may want to run several in parallel.  So there are other options.</p>
+<p>The method <code class="docutils literal notranslate"><span class="pre">service.run_async()</span></code> uses an asynchronous query, which means that the query is sent, and then (under the hood without you needing to do anything), the method checks for a response.  From your point of view, these methods look the same;  PyVO is doing different things under the hood, but the method will not return until it has your result.</p>
+<p>You need to know about these two methods for a couple of reasons.  First, some services will limit synchronous queries, i.e. they will not necessarily return <em>all</em> the results if there are too many of them.  An asynchronous query should have no such restrictions.  In the case of the HEASARC service that we use above, it does not matter, but you should be aware of this and be in the habit of using the asynchronous queries for complete results after an initial interactive exploration.</p>
+<p>The second reason to be aware of this is that asynchronous queries may be queued by the service, and they can take a lot longer if the service is very busy or the job is very large.  (The synchronous option in this case may either time out, or it may return quickly but with incomplete results.)</p>
+<p>For very large queries, or for submitting queries in parallel, you may wish to use the <code class="docutils literal notranslate"><span class="pre">submit_job()</span></code>, <code class="docutils literal notranslate"><span class="pre">wait()</span></code>, and <code class="docutils literal notranslate"><span class="pre">fetch_results()</span></code> methods to avoid locking up your Python session.  This is described in the <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/dal/index.html#jobs">pyvo documentation</a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">NASA-NAVO notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="image_access.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Searching for and retrieving images</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-cone-search">1. Simple cone search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-access-protocol-queries">2. Table Access Protocol queries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-services">2.1 TAP services</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expressing-queries-in-adql">2.2 Expressing queries in ADQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-use-case">2.3 A use case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-examples-for-a-given-service">2.4 TAP examples for a given service</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-tap-to-cross-correlate-and-combine">3. Using the TAP to cross-correlate and combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-to-combine-catalogs">3.1 Cross-correlating to combine catalogs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-correlating-with-user-defined-columns">3.2 Cross-correlating with user-defined columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-versus-asynchronous-queries">4. Synchronous versus asynchronous queries</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By NASA-NAVO developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2018-2022, NASA-NAVO developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

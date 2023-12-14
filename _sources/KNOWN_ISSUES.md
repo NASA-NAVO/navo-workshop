@@ -109,12 +109,12 @@ jhu_dr7_service = [s for s in services if ('SDSSDR7' in s.short_name) and ('jhu'
 sdss_table = jhu_dr7_service.search(pos=coords, size=0.1, format='image/jpeg')
 ```
 
-will throw an error because the service URL has a format hard-wired.  If you ask for another format, it will error.  Or if you specify no format whatsoever, then PyVO will add (silently) *format='all'*, which will then error.
+will throw an error because the service URL has a format hard-wired.  If you ask for another format, it will error.
 
 **Workaround**:
 
-We do not currently have a workaround for this, since our previous
-workaround (specifying format='') no longer works.  TBD.  
+We do not currently have a workaround for this, other than to omit the `format`
+keyword in this search.
 
 
 ## pyvo.dal.ssa.SSARecord.make_dataset_filename() writes suffix  'None'

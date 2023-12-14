@@ -21,7 +21,7 @@ operating system: [https://docs.conda.io/en/latest/miniconda.html](https://docs.
 On Windows, you might also need
 [additional compilers](https://github.com/conda/conda-build/wiki/Windows-Compilers).
 
-## 2. Open the conda command prompt
+## 2. Update conda version
 
 *Miniconda includes an environment manager called conda. Environments
 allow you to have multiple sets of Python packages installed at the same
@@ -29,16 +29,33 @@ time, making reproducibility and upgrades easier. You can create,
 export, list, remove, and update environments that have different versions of
 Python and/or packages installed in them. For this workshop, we will configure the environment using the conda command prompt.*
 
-On Mac or Linux, the `bash` shell will handle the conda commands.  Open your terminal and verify your shell environment:
+Open a terminal window and verify that conda is working:
 
-```console
-echo $SHELL
-```
+    % conda info
 
-If the output text does not contain `bash`, switch to the bash shell before
-being able to run anything related to conda.
+If you are having trouble, check your shell in a terminal window:
 
-On Windows, open the `Anaconda Prompt` terminal app.
+    % echo $SHELL
+
+then run the initialization if needed, in that same terminal window:
+
+    % conda init `basename $SHELL`
+
+You should open a new terminal window after `conda init` is run.
+
+It is advisable to update your conda to the latest version. We recommend a minimum
+version of 23.10.0. Check your conda version with:
+
+    % conda --version
+
+Update it with:
+
+    % conda update conda
+
+or
+
+    % conda update -n base conda
+
 
 ## 3. Install git (if needed)
 
@@ -76,17 +93,10 @@ following:
 cd navo-workshop
 ```
 
-To speed up the installation of the environment, install the
-`conda-libmamba-solver` package:
+To install and activate the conda environment for the workshop, type:
 
 ```console
-conda install conda-libmamba-solver
-```
-
-And finally, on any platform, to install and activate the conda environment for the workshop, type:
-
-```console
-conda env create --solver=libmamba --file environment.yml
+conda env create --file environment.yml
 conda activate navo-env
 ```
 
@@ -114,6 +124,33 @@ From the directory containing the notebooks:
 ```console
 jupyter lab
 ```
+
+## 8. Handling Notebooks in MyST-Markdown format
+
+The Jupyter notebooks in this repository are in
+[MyST-Markdown format](https://myst-nb.readthedocs.io/en/v0.13.2/use/markdown.html).
+The [jupytext](https://jupytext.readthedocs.io/en/latest/index.html) package is
+included in your `navo-env` environment to work with these notebooks. Note that
+the `jupytext` package has to be installed before your Jupyterlab session starts.
+
+To open one of these notebooks (in the `content/reference_notebooks` and the
+`content/use_case_notebooks` subdirectories), in the Jupyterlab file panel,
+right-click on the notebook, choose "Open With", and select "Notebook" or
+"Jupytext Notebook" from the drop-down menu. See the screenshot below.
+
+![Right-click on Markdown notebook](_static/jupytext_rightclick.png "Open With Notebook")
+
+It is possible to change your Jupyterlab settings to allow double-clicking on a
+Markdown notebook to open automatically as a Jupytext Notebook. In Jupyterlab,
+navigate from the top-level menu item "Settings" and select "Settings Editor"
+in the drop-down. In the left sidebar of the Setting Editor tab, select
+"Document Manager". The display should look like the image included below. In
+the "Default Viewers" section, add a `newKey` of `markdown` and a `New Value`
+of `Jupytext Notebook`. This will allow a double-click to open the Markdown
+notebooks appropriately.
+
+![Jupyterlab Document Manager settings](_static/jupytext_settings.png "Open Notebooks with Jupytext")
+
 ## Additional Resources
 
 - [Set up git](https://help.github.com/articles/set-up-git/)
