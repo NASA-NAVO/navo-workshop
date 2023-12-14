@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.4
+    jupytext_version: 1.16.0
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -19,7 +19,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-  version: 3.9.13
+  version: 3.11.6
 toc:
   base_numbering: 1
   nav_menu: {}
@@ -278,7 +278,6 @@ ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', f
 Hints:
 * Search the registry using `keywords=['sloan']
 * Find the service with a `short_name` of `'SDSS SIAP'`
-* From Known Issues, recall that an empty string must be specified to the `format` parameter dues to a bug in the service.
 * After obtaining your search results, select r-band images using the `.title` attribute of the records that are returned, since `.bandpass_id` is not populated.
 
 ```{code-cell} ipython3
@@ -293,10 +292,8 @@ sdss_image_service = [s for s in sdss_image_services if 'SDSS SIAP' in s.short_n
 sdss_image_service.short_name
 ```
 
-As a workaround to a bug in the SDSS service, pass `format=None` when searching.
-
 ```{code-cell} ipython3
-sdss_image_table = sdss_image_service.search(pos=pos, size=0.0, format=None, intersect='covers')
+sdss_image_table = sdss_image_service.search(pos=pos, size=0.0)
 len(sdss_image_table['Title'])
 ```
 
@@ -391,7 +388,7 @@ for galaxy in galaxy_subset:
     # SDSS
     
     # Find the SDSS images that overlap the position.
-    sdss_image_table = sdss_image_service.search(pos=pos, size=0, format=None)
+    sdss_image_table = sdss_image_service.search(pos=pos, size=0)
     
     # Find the first SDSS r-band image.
     sdss_rband_record = None
