@@ -76,8 +76,8 @@ jobs:
         - run: pip install -r doc-requirements.txt
         - run: |
             python check_env.py
-            jupytext --to notebook *.md
-            pytest --nbval
+            bash -c 'find content -name "*.md" | xargs jupytext --to notebook '
+            pytest --nbval content/
 
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
