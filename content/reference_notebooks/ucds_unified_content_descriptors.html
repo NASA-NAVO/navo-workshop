@@ -495,15 +495,13 @@ The Table Access Protocol (TAP) lets you execute queries against our database ta
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32 tables:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.schemas             - description of schemas in this dataset
-----
-tap_schema.tables              - description of tables in this dataset
+tap_schema.schemas             - description of schemas in this dataset
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.columns             - description of columns in this dataset
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.tables              - description of tables in this dataset
+----
+tap_schema.columns             - description of columns in this dataset
 ----
 tap_schema.keys                - description of foreign keys in this dataset
 ----
@@ -513,9 +511,7 @@ tap_schema.key_columns         - description of foreign key columns in this data
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.DetailedCatalog            - None
 ----
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SumMagAper2Cat             - None
+dbo.SumMagAper2Cat             - None
 ----
 </pre></div>
 </div>
@@ -523,49 +519,43 @@ tap_schema.key_columns         - description of foreign key columns in this data
 ----
 dbo.Catalog_ACS_SourceExtractor - None
 ----
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Catalog_WFC3_SourceExtractor - None
+dbo.Catalog_WFC3_SourceExtractor - None
 ----
 dbo.Catalog_WFPC2_SourceExtractor - None
 ----
-dbo.Catalog_Image_MetaData     - None
-----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.CloseMatch                 - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Catalog_Image_MetaData     - None
+----
+dbo.CloseMatch                 - None
 ----
 dbo.ClosestMatch               - None
 ----
+dbo.GroupMembers               - None
+----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.GroupMembers               - None
-----
-dbo.Groups                     - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Groups                     - None
 ----
 dbo.HCVdetailedView            - None
 ----
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVsummaryView             - None
+dbo.HCVsummaryView             - None
+----
+dbo.HLAscience                 - None
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HLAscience                 - None
-----
-dbo.ImageMembers               - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.ImageMembers               - None
 ----
 dbo.Images                     - None
 ----
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.ProductMembers             - None
+dbo.ProductMembers             - None
+----
+dbo.ProperMotionsView          - None
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.ProperMotionsView          - None
-----
-dbo.SourceLinks                - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SourceLinks                - None
 ----
 dbo.SourcePositionsView        - None
 ----
@@ -792,12 +782,12 @@ Problem executing query.  Continuing to next.
     Table dbo.ssa has the right columns.  Counting rows matching my time.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 2097555 results from dbo.ssa
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 2097627 results from dbo.ssa
 
     Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 4042090 results from ivoa.ObsCore
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 4042162 results from ivoa.ObsCore
 
 Looking at service from ivo://jvo/subaru/sxds/v1.0
 </pre></div>
@@ -859,16 +849,16 @@ WARNING: W02: None:1216:4: W02: &#39;UNKNOWN&#39; is not a valid datatype accord
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20.276399612426758,
- 22.451000213623047,
- 25.335100173950195,
- 22.437999725341797,
- 24.32939910888672,
- 21.936500549316406,
- 25.478700637817383,
- 21.499900817871094,
- 19.24180030822754,
- 24.578399658203125]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nan,
+ 20.231000900268555,
+ 20.659799575805664,
+ 20.813199996948242,
+ 21.020200729370117,
+ 21.049100875854492,
+ 20.983800888061523,
+ 21.05500030517578,
+ 21.337299346923828,
+ 18.671100616455078]
 </pre></div>
 </div>
 </div>
