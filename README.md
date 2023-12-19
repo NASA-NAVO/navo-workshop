@@ -33,6 +33,6 @@ The workshop notebooks can also be run on [Sciserver](https://sciserver.org/), w
 
 - Once logged in, select the *Compute* app.
 
-- Create a container, give it name, select the *'Sciserver Essentials 2.0'* image, and click *Create*. Click on the container name to launch the jupyterlab interface.
+- Create a container, give it name, select the *'NAVO-workshop'* image, and click *Create*. Click on the container name to launch the jupyterlab interface.
 
-- Launch a terminal, navigate to `/home/idies/workspace/Storage/USER/persistent` (replace `USER` by you username), and follow the [installation and setup instructions](https://nasa-navo.github.io/navo-workshop/00_SETUP.html).
+- The conda environment `navo-env` contains all the packages required to run the notebooks. The notebooks themselves are available under `/home/idies/workspace/navo-workshop`.
