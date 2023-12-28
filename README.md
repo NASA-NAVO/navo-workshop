@@ -27,9 +27,9 @@ being left unattended for several minutes.
 
 ## Running on Sciserver
 
-The workshop notebooks can also be run on [Sciserver](https://sciserver.org/), which offer an online jypyter platform. To use it for the workshop, follow these steps:
+The workshop notebooks can also be run on [Sciserver](https://sciserver.org/), which offers an online Jupyter platform. To use it for the workshop, follow these steps:
 
-- Create an account on sciserver, if you do not already have one.
+- Create an account on Sciserver, if you do not already have one.
 
 - Once logged in, select the *Compute* app.
 
