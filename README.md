@@ -23,3 +23,16 @@ This badge opens Jupyterlab session on Binder which can be used to run the works
 being left unattended for several minutes.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NASA-NAVO/notebooks/main?urlpath=lab)
+
+
+## Running on Sciserver
+
+The workshop notebooks can also be run on [Sciserver](https://sciserver.org/), which offers an online Jupyter platform. To use it for the workshop, follow these steps:
+
+- Create an account on Sciserver, if you do not already have one.
+
+- Once logged in, select the *Compute* app.
+
+- Create a container, give it name, select the *'NAVO-workshop'* image, and click *Create*. Click on the container name to launch the jupyterlab interface.
+
+- The conda environment `navo-env` contains all the packages required to run the notebooks. The notebooks themselves are available under `/home/idies/workspace/navo-workshop`.
