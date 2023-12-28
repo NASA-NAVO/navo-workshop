@@ -495,15 +495,17 @@ The Table Access Protocol (TAP) lets you execute queries against our database ta
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32 tables:
-tap_schema.schemas             - description of schemas in this dataset
-----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.tables              - description of tables in this dataset
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.schemas             - description of schemas in this dataset
+----
+tap_schema.tables              - description of tables in this dataset
 ----
 tap_schema.columns             - description of columns in this dataset
 ----
-tap_schema.keys                - description of foreign keys in this dataset
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.keys                - description of foreign keys in this dataset
 ----
 tap_schema.key_columns         - description of foreign key columns in this dataset
 ----
@@ -521,23 +523,25 @@ dbo.Catalog_ACS_SourceExtractor - None
 ----
 dbo.Catalog_WFC3_SourceExtractor - None
 ----
-dbo.Catalog_WFPC2_SourceExtractor - None
-----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Catalog_Image_MetaData     - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Catalog_WFPC2_SourceExtractor - None
+----
+dbo.Catalog_Image_MetaData     - None
 ----
 dbo.CloseMatch                 - None
 ----
-dbo.ClosestMatch               - None
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.ClosestMatch               - None
 ----
 dbo.GroupMembers               - None
 ----
+dbo.Groups                     - None
+----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Groups                     - None
-----
-dbo.HCVdetailedView            - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVdetailedView            - None
 ----
 dbo.HCVsummaryView             - None
 ----
@@ -551,29 +555,31 @@ dbo.Images                     - None
 ----
 dbo.ProductMembers             - None
 ----
-dbo.ProperMotionsView          - None
-----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SourceLinks                - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.ProperMotionsView          - None
+----
+dbo.SourceLinks                - None
 ----
 dbo.SourcePositionsView        - None
 ----
-dbo.Sources                    - None
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Sources                    - None
+----
+dbo.SumMagAper2CatView         - None
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SumMagAper2CatView         - None
-----
-dbo.SumMagAutoCatView          - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SumMagAutoCatView          - None
 ----
 dbo.WFPC2PCFRAC                - None
 ----
+dbo.XMatchV2                   - None
+----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.XMatchV2                   - None
-----
-dbo.HCVdetailedViewT           - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVdetailedViewT           - None
 ----
 dbo.HCVsummaryViewT            - None
 ----
@@ -704,112 +710,6 @@ Flags [meta.code.status]       - Bit encoded flag: bit 0 (value 0) = point sourc
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://cefca/j-plus/j-plus-dr1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-    Found 6132 results from ivoa.ObsCore
-
-Looking at service from ivo://cefca/j-plus/j-plus-dr2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-    Found 55363 results from ivoa.ObsCore
-
-Looking at service from ivo://cefca/j-plus/j-plus-dr3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-    Found 82014 results from ivoa.ObsCore
-
-Looking at service from ivo://cefca/minijpas/minij-pas-pdr201912
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-    Found 240 results from ivoa.ObsCore
-
-Looking at service from ivo://cxc.harvard.edu/cda
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Problem executing query.  Continuing to next.
-    Table ivoa.obsplan has the right columns.  Counting rows matching my time.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Problem executing query.  Continuing to next.
-Looking at service from ivo://cxc.harvard.edu/csc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://cxc.harvard.edu/cscr1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table csc1.obi_source has the right columns.  Counting rows matching my time.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Problem executing query.  Continuing to next.
-Looking at service from ivo://cxc.harvard.edu/cscr2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://esavo/xmm/tap
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://eso.org/tap_cat
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: W02: None:12357:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12404:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12583:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12630:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12677:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12724:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12771:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12854:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12901:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:12948:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table XQ_100_summary_fits_V1 has the right columns.  Counting rows matching my time.
-    Found 100 results from XQ_100_summary_fits_V1
-
-Looking at service from ivo://eso.org/tap_obs
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Table dbo.raw has the right columns.  Counting rows matching my time.
-Problem executing query.  Continuing to next.
-    Table dbo.ssa has the right columns.  Counting rows matching my time.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 2097627 results from dbo.ssa
-
-    Table ivoa.ObsCore has the right columns.  Counting rows matching my time.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found 4042162 results from ivoa.ObsCore
-
-Looking at service from ivo://jvo/subaru/sxds/v1.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking at service from ivo://xcatdb/3xmmdr5/tap
-Problem with this service&#39;s tables endpoint.  Continuing to next.
-Looking at service from ivo://xcatdb/4xmm/tap
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: W02: None:72:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:91:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:104:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:123:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:305:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:378:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:747:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:753:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:853:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-WARNING: W02: None:1216:4: W02: &#39;UNKNOWN&#39; is not a valid datatype according to the VOSI spec [pyvo.io.vosi.vodataservice]
-</pre></div>
-</div>
-</div>
 </div>
 <p>You can also use UCDs to look at the results.  Above, we collected just the first 10 rows of the four columns we’re interested in from every catalog that had them.  But these tables still have their original column names.  So the UCDs will still be useful, and PyVO provides a simple routine to convert from UCD to column (field) name.</p>
 <p>Note, however,  that returning the UCDs as part of the result is not mandatory, and some services do not do it.  So you’ll have to check.</p>
@@ -832,13 +732,6 @@ WARNING: W02: None:1216:4: W02: &#39;UNKNOWN&#39; is not a valid datatype accord
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (Table ivoa.ObsCore didn&#39;t find the UCD.)
-  (Table XQ_100_summary_fits_V1 didn&#39;t find the UCD.)
-  (Table dbo.ssa didn&#39;t find the UCD.)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Lastly, if you have a table of results from a TAP query (and if that service includes the UCDs), then you can get data based on UCDs with the getbyucd() method, which simply gets the corresponding element using fieldname_with_ucd():</p>
 <div class="cell docutils container">
@@ -849,16 +742,16 @@ WARNING: W02: None:1216:4: W02: &#39;UNKNOWN&#39; is not a valid datatype accord
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nan,
- 20.231000900268555,
- 20.659799575805664,
- 20.813199996948242,
- 21.020200729370117,
- 21.049100875854492,
- 20.983800888061523,
- 21.05500030517578,
- 21.337299346923828,
- 18.671100616455078]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20.276399612426758,
+ 22.451000213623047,
+ 25.335100173950195,
+ 22.437999725341797,
+ 24.32939910888672,
+ 21.936500549316406,
+ 25.478700637817383,
+ 21.499900817871094,
+ 19.24180030822754,
+ 24.578399658203125]
 </pre></div>
 </div>
 </div>
