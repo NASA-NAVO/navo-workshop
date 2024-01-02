@@ -38,19 +38,19 @@ widgets:
   version: 1.1.1
 ---
 
-# Searching for and retrieving images
+# Image Access
 
 In this notebook, we show how to search for and retrieve images from VO services using the Registry and the __[Simple Image Access](http://www.ivoa.net/documents/SIA/)__ (SIA) protocol.
 
-- [Searching for and retrieving images](#searching-for-and-retrieving-images)
-    - [1. Finding SIA resources from the Registry](#1-finding-sia-resources-from-the-registry)
-    - [2. Using SIA to retrieve an image](#2-using-sia-to-retrieve-an-image)
-    - [3. Viewing the resulting image](#3-viewing-the-resulting-image)
-        - [JPG images](#jpg-images)
-        - [Fits files](#fits-files)
-    - [4. Example of data available through multiple services](#4-example-of-data-available-through-multiple-services)
-        - [Using HEASARC](#using-heasarc)
-        - [Using SDSS SkyServer](#using-sdss-skyserver)
+- [Image Access](#image-access)
+  - [1. Finding SIA resources from the Registry](#1-finding-sia-resources-from-the-registry)
+  - [2. Using SIA to retrieve an image](#2-using-sia-to-retrieve-an-image)
+  - [3. Viewing the resulting image](#3-viewing-the-resulting-image)
+    - [JPG images](#jpg-images)
+    - [Fits files](#fits-files)
+  - [4. Example of data available through multiple services](#4-example-of-data-available-through-multiple-services)
+    - [Using HEASARC](#using-heasarc)
+    - [Using SDSS SkyServer](#using-sdss-skyserver)
 
 +++
 
@@ -63,7 +63,7 @@ import numpy as np
 
 import matplotlib
 import matplotlib.pyplot as plt
-%matplotlib inline  
+%matplotlib inline
 
 import pyvo as vo
 
@@ -81,7 +81,7 @@ warnings.filterwarnings("ignore", module="pyvo.utils.xml.*")
 
 ## 1. Finding SIA resources from the Registry
 
-First, how do we find out what  services are available?  These are listed in a registry at STScI (__[see here](http://www.ivoa.net/documents/RegTAP/)__).  Our Registry function gives a simple interface for how to search for services.  
+First, how do we find out what  services are available?  These are listed in a registry at STScI (__[see here](http://www.ivoa.net/documents/RegTAP/)__).  Our Registry function gives a simple interface for how to search for services.
 
 Let's search for services providing images in the ultraviolet bands:
 
@@ -103,9 +103,9 @@ This shows us that the data we are interested in comes from the HEASARC's SkyVie
 
 ## 2. Using SIA to retrieve an image
 
-Now we look for images of our favorite source.  See __[the SIA definition](http://www.ivoa.net/documents/WD/SIA/sia-20040524.html)__ for usage.  In short, you can specify the central position and the size (degrees as one or two floats for the RA, DEC directions).  It is up to the service to determine how to provide this. Optionally, you can limit it to the format you want, e.g., "image/fits" or "image/png" etc.  
+Now we look for images of our favorite source.  See __[the SIA definition](http://www.ivoa.net/documents/WD/SIA/sia-20040524.html)__ for usage.  In short, you can specify the central position and the size (degrees as one or two floats for the RA, DEC directions).  It is up to the service to determine how to provide this. Optionally, you can limit it to the format you want, e.g., "image/fits" or "image/png" etc.
 
-What is returned to you is not the image itself but a list of images available and how to access them.  This is easiest shown by example:  
+What is returned to you is not the image itself but a list of images available and how to access them.  This is easiest shown by example:
 
 ```{code-cell} ipython3
 coords = coord.SkyCoord.from_name("m51")
@@ -114,7 +114,7 @@ im_table = uvot_services[0].search(pos=coords,size=0.2,format='image/jpeg')
 im_table.to_table()
 ```
 
-Extract the fields you're interested in, e.g., the URLs of the images made by skyview.  Note that specifying as we did SwiftUVOT, we get a number of different images, e.g., UVOT U, V, B, W1, W2, etc.  For each survey, there are two URLs, first the FITS IMAGE and second the JPEG.  
+Extract the fields you're interested in, e.g., the URLs of the images made by skyview.  Note that specifying as we did SwiftUVOT, we get a number of different images, e.g., UVOT U, V, B, W1, W2, etc.  For each survey, there are two URLs, first the FITS IMAGE and second the JPEG.
 
 Note that different services will return different column names, but all will have a column giving the URL to access the image.  Though it has different column names in different services, it can always be accessed through the `getdataurl` function.
 
@@ -166,7 +166,7 @@ services = vo.regsearch(servicetype='image', keywords=['sloan'], waveband='optic
 services.to_table()[np.where(np.isin(services.to_table()['short_name'], 'SDSSDR7'))]['ivoid', 'short_name']
 ```
 
-So one of these is served by SDSS's SkyServer and the other by HEASARC's SkyView.  
+So one of these is served by SDSS's SkyServer and the other by HEASARC's SkyView.
 
 +++
 
@@ -183,8 +183,8 @@ sdss_table_heasarc.to_table()
 ## If you only run this once, you can do it in memory in one line:
 ##  This fetches the FITS as an astropy.io.fits object in memory
 # hdu_list = sdss_table_heasarc[0].getdataobj()
-## But if you might run this notebook repeatedly with limited bandwidth, 
-##  download it once and cache it.  
+## But if you might run this notebook repeatedly with limited bandwidth,
+##  download it once and cache it.
 
 #  Get the filter g version
 file_name=download_file(sdss_table_heasarc[0].getdataurl(), cache=True, timeout=600)
@@ -198,8 +198,8 @@ plt.imshow(hdu_list[0].data, cmap='gray', origin='lower', vmax=1200, vmin=1010)
 ```{code-cell} ipython3
 jhu_dr7_service = [s for s in services if 'SDSSDR7' in s.short_name and 'jhu' in s.ivoid][0]
 
-# Note: jhu_dr7_service access url has hard-wired "format=image/fits". 
-# If you specify anythign else, it errors. If you specify nothing, 
+# Note: jhu_dr7_service access url has hard-wired "format=image/fits".
+# If you specify anythign else, it errors. If you specify nothing,
 # then the search() method puts "format=all", which errors. So specify "format=None" for now.
 sdss_table_jhu=jhu_dr7_service.search(pos=coords,size=0.2, format=None)
 sdss_table_jhu.to_table().show_in_notebook(display_length = 5)

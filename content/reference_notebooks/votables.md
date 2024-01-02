@@ -35,18 +35,21 @@ toc:
   toc_window_display: true
 ---
 
-# Creating a VO Table from a CSV file 
+# VO Tables
+
+## Create a VO Table from an Astropy Table
 
 +++
 
 There are several ways of doing this, and there are a few object layers here, which can be confusing:
+
 - Standard [astropy Table](https://docs.astropy.org/en/stable/table/) objects
 - [Votable Table](https://docs.astropy.org/en/stable/api/astropy.io.votable.tree.Table.html#astropy.io.votable.tree.Table) objects
 - [Votable VOTableFile](https://docs.astropy.org/en/stable/api/astropy.io.votable.tree.VOTableFile.html#astropy.io.votable.tree.VOTableFile) objects (may contain multiple votable Tables)
 
-Although some things can be done with generic astropy Tables, other VO operations can only be done with VO Tables or VOTableFile objects.  
+Although some things can be done with generic astropy Tables, other VO operations can only be done with VO Tables or VOTableFile objects.
 
-This is easiest to see with an example.  
+This is easiest to see with an example.
 
 ```{code-cell} ipython3
 import io, numpy
@@ -81,7 +84,7 @@ myaptable=aptable.Table(
             [241.519,       20.8014],
             [317.088,       18.2002],
             [329.235,       6.64845],
-            [333.830,       37.3012] ]), 
+            [333.830,       37.3012] ]),
     names=["RA","DEC"])
 
 print(type(myaptable))
