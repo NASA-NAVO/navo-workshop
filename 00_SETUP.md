@@ -131,11 +131,23 @@ python check_env.py
 ```
 
 ## 7. Starting Jupyterlab
-From the directory containing the notebooks:
+
+From the top-level directory of the repository, change directory to the
+`content/` subdirectory:
+
+```console
+cd content
+```
+
+Start Jupyterlab from this subdirectory:
 
 ```console
 jupyter lab
 ```
+
+You can then use the Jupyterlab file browser to navigate to the
+`reference_notebooks` and `use_case_notebooks` subdirectories that contain
+the notebooks.
 
 ## 8. Handling Notebooks in MyST-Markdown format
 
