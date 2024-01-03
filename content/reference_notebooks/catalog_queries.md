@@ -176,7 +176,8 @@ Then let's look for tables matching the terms we're interested in as above.
 
 ```{code-cell} ipython3
 for tablename in heasarc_tables.keys():
-    if "redshift" in heasarc_tables[tablename].description.lower():
+    description = heasarc_tables[tablename].description
+    if description and "redshift" in description.lower():
         heasarc_tables[tablename].describe()
         print("Columns={}".format(sorted([k.name for k in heasarc_tables[tablename].columns ])))
         print("----")
