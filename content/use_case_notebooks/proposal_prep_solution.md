@@ -39,18 +39,18 @@ widgets:
   version: 1.1.1
 ---
 
-# Preparing a proposal
+# Proposal Preparation Solution
 
-The Story: Suppose that you are preparing to write a proposal on NGC1365, aiming to investigate the intriguing black hole spin this galaxy with Chandra grating observations (see: [Monster Blackhole Spin Revealed](https://www.space.com/19980-monster-black-hole-spin-discovery.html)) 
+The Story: Suppose that you are preparing to write a proposal on NGC1365, aiming to investigate the intriguing black hole spin this galaxy with Chandra grating observations (see: [Monster Blackhole Spin Revealed](https://www.space.com/19980-monster-black-hole-spin-discovery.html))
 
-In writing proposals, there are often the same tasks that are required: including finding and analyzing previous observations of the proposal, and creating figures that include, e.g., multiwavelength images and spectrum for the source. 
+In writing proposals, there are often the same tasks that are required: including finding and analyzing previous observations of the proposal, and creating figures that include, e.g., multiwavelength images and spectrum for the source.
 
 ```{code-cell} ipython3
-# As a hint, we include the code block for Python modules that you will likely need to import:   
+# As a hint, we include the code block for Python modules that you will likely need to import:
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-%matplotlib inline  
+%matplotlib inline
 
 # For downloading files
 from astropy.utils.data import download_file
@@ -58,14 +58,14 @@ from astropy.io import fits
 
 import pyvo as vo
 
-## There are a number of relatively unimportant warnings that 
+## There are a number of relatively unimportant warnings that
 ## show up, so for now, suppress them:
 import warnings
 warnings.filterwarnings("ignore", module="astropy.io.votable.*")
 warnings.filterwarnings("ignore", module="pyvo.utils.xml.*")
 ```
 
-## Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.  
+## Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365
 
 Hint: Do a Registry search for tables served by the HEASARC (where high energy data are archived) to find potential table with this information
 
@@ -80,7 +80,7 @@ Hint: The [Chansngcat](https://heasarc.gsfc.nasa.gov/W3Browse/chandra/chansngcat
 
 ```{code-cell} ipython3
 for tablename in heasarc_tables.keys():
-    if "chansng" in tablename:  
+    if "chansng" in tablename:
         print("Table {} has columns={}\n".format(
             tablename,
             sorted([k.name for k in heasarc_tables[tablename].columns ])))
@@ -93,10 +93,10 @@ pos=coord.SkyCoord.from_name("ngc1365")
 ```
 
 ```{code-cell} ipython3
-# Construct a query that will get the ra, dec, exposure time, flux, and flux errors 
+# Construct a query that will get the ra, dec, exposure time, flux, and flux errors
 #  from this catalog in the region around this source:
-query="""SELECT ra, dec, exposure, flux, flux_lower, flux_upper FROM public.chansngcat as cat 
-    where contains(point('ICRS',cat.ra,cat.dec),circle('ICRS',{},{},0.1))=1 
+query="""SELECT ra, dec, exposure, flux, flux_lower, flux_upper FROM public.chansngcat as cat
+    where contains(point('ICRS',cat.ra,cat.dec),circle('ICRS',{},{},0.1))=1
     and cat.exposure > 0 order by cat.exposure""".format(pos.ra.deg, pos.dec.deg)
 #  Submit the query.  (See the CS_Catalog_queries.md for
 #    information about these two search options.)
@@ -106,9 +106,10 @@ results=tap_services[0].service.run_async(query)
 results.to_table()
 ```
 
-## Step 2: Make Images: 
+## Step 2: Make Images
 
 ### Create ultraviolet and X-ray images
+
 Hint: Start by checking what UV image services exist (e.g., GALEX?)
 
 ```{code-cell} ipython3
@@ -132,7 +133,7 @@ galex_stsci=[s for s in uv_services if 'GALEX' in s.short_name and 'stsci' in s.
 galex_heasarc=[s for s in uv_services if 'GALEX' in s.short_name and 'heasarc' in s.ivoid][0]
 ```
 
-Hint: Next create a UV image for the source 
+Hint: Next create a UV image for the source
 
 ```{code-cell} ipython3
 # Do an image search for NGC 1365 in the UV service found above
@@ -141,7 +142,7 @@ im_table_stsci.to_table()
 ```
 
 ```{code-cell} ipython3
-#  Let's see what HEASARC offers, and this time limit it to FITS 
+#  Let's see what HEASARC offers, and this time limit it to FITS
 #   this option doesn't currently work for STScI's service)
 im_table_heasarc=galex_heasarc.search(pos=pos,size=0.1,format='image/fits')
 im_table_heasarc.to_table()
@@ -151,8 +152,8 @@ im_table_heasarc.to_table()
 ## If you only run this once, you can do it in memory in one line:
 ##  This fetches the FITS as an astropy.io.fits object in memory
 #dataobj=im_table_heasarc[0].getdataobj()
-## But if you might run this notebook repeatedly with limited bandwidth, 
-##  download it once and cache it.  
+## But if you might run this notebook repeatedly with limited bandwidth,
+##  download it once and cache it.
 file_name = download_file(im_table_heasarc[0].getdataurl(), cache=True, timeout=600)
 dataobj=fits.open(file_name)
 print(type(dataobj))
@@ -165,7 +166,7 @@ from matplotlib.colors import LogNorm
 plt.matshow(dataobj[0].data, origin='lower', cmap=cm.gray_r, norm=LogNorm(vmin=0.005, vmax=0.3))
 ```
 
-Hint: Repeat steps for X-ray image. (Note: Ideally, we would find an image in the Chandra 'cxc' catalog) 
+Hint: Repeat steps for X-ray image. (Note: Ideally, we would find an image in the Chandra 'cxc' catalog)
 
 ```{code-cell} ipython3
 x_services=vo.regsearch(servicetype='image',keywords=['chandra'], waveband='x-ray')
@@ -177,7 +178,7 @@ print(x_services.to_table()['short_name','ivoid'])
 xim_table=x_services[0].search(pos=pos,size=0.2)
 ## Some of these are FITS and some JPEG.  Look at the columns:
 print( xim_table.to_table().columns )
-first_fits_image_row = [x for x in xim_table if 'image/fits' in x.format][0] 
+first_fits_image_row = [x for x in xim_table if 'image/fits' in x.format][0]
 ```
 
 ```{code-cell} ipython3
@@ -193,9 +194,10 @@ plt.xlim(460, 560)
 plt.ylim(460, 560)
 ```
 
-## Step 3: Make a spectrum: 
+## Step 3: Make a spectrum
 
-### Find what Chandra spectral observations exist already for this source. 
+### Find what Chandra spectral observations exist already for this source
+
 Hint: try searching for X-ray spectral data tables using the registry query
 
 ```{code-cell} ipython3
@@ -211,7 +213,7 @@ spec_tables=xsp_services[0].search(pos=pos,radius=0.2,verbose=True)
 spec_tables.to_table()
 ```
 
-Hint 3: Download the data to make a spectrum. Note: you might end here and use Xspec to plot and model the spectrum. Or ... you can also try to take a quick look at the spectrum. 
+Hint 3: Download the data to make a spectrum. Note: you might end here and use Xspec to plot and model the spectrum. Or ... you can also try to take a quick look at the spectrum.
 
 ```{code-cell} ipython3
 #  Get it and look at it:
@@ -253,7 +255,7 @@ for i in range(len(spectra)):
         j=j+1
 ```
 
-This can then be analyzed in your favorite spectral analysis tool, e.g., [pyXspec](https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html).  (For the winter 2018 AAS workshop, we demonstrated this in a [notebook](https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.md) that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.) 
+This can then be analyzed in your favorite spectral analysis tool, e.g., [pyXspec](https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html).  (For the winter 2018 AAS workshop, we demonstrated this in a [notebook](https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.md) that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.)
 
 +++
 
