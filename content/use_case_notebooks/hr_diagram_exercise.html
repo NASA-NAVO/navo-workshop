@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram &#8212; NASA-NAVO Workshops Notebooks</title>
+    <title>HR (Hertzsprung-Russell) Diagram Exercise &#8212; NASA-NAVO Workshops Notebooks</title>
   
   
   
@@ -48,8 +48,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/use_case_notebooks/hr_diagram_exercise';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Quick Reference" href="../reference_notebooks/basic_reference.html" />
-    <link rel="prev" title="Preparing a proposal" href="proposal_prep_exercise.html" />
+    <link rel="next" title="Candidate List Solution" href="candidate_list_solution.html" />
+    <link rel="prev" title="Proposal Preparation Exercise" href="proposal_prep_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -149,19 +149,23 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/catalog_queries.html">Accessing astronomical catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/image_access.html">Searching for and retrieving images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/votables.html">Creating a VO Table from a CSV file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proposal_prep_exercise.html">Preparing a proposal</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/basic_reference.html">Quick Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proposal_prep_solution.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/basic_reference.html">Basic Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/image_access.html">Image Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/catalog_queries.html">Catalog Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/spectral_access.html">Spectral Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/votables.html">VO Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/ucds_unified_content_descriptors.html">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_exercise.html">Candidate List Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal_prep_exercise.html">Proposal Preparation Exercise</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">HR (Hertzsprung-Russell) Diagram Exercise</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_solution.html">Candidate List Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal_prep_solution.html">Proposal Preparation Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
@@ -432,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</h1>
+    <h1>HR (Hertzsprung-Russell) Diagram Exercise</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -443,21 +447,21 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-appropriate-catalogs">Step 1: Find appropriate catalogs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-steps">DATA DISCOVERY STEPS:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-steps">DATA DISCOVERY STEPS</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-you-can-proceed-to-step-2">At this point, you can proceed to Step 2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-a-different-data-discovery-method">Try a different data discovery method!</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned">Alternative Method: Use ADS to search for appropriate paper and access data via NED.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-you-can-proceed-to-step-2">At this point, you can proceed to Step 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-a-different-data-discovery-method">Try a different data discovery method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned">Alternative Method: Use ADS to search for appropriate paper and access data via NED</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator</a></li>
 </ul>
             </nav>
         </div>
@@ -469,17 +473,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="creating-a-stellar-color-magnitude-or-hertzsprung-russell-diagram">
-<h1>Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram<a class="headerlink" href="#creating-a-stellar-color-magnitude-or-hertzsprung-russell-diagram" title="Permalink to this headline">#</a></h1>
+  <section id="hr-hertzsprung-russell-diagram-exercise">
+<h1>HR (Hertzsprung-Russell) Diagram Exercise<a class="headerlink" href="#hr-hertzsprung-russell-diagram-exercise" title="Permalink to this headline">#</a></h1>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram">Hertzsprung-Russell diagram</a> is a fundamental diagram in astronomy that displays important relationships between the stellar color (or temperature) and absolute brightness (or luminosity).</p>
 <p>In this exercise, we will use existing stellar catalogs to produce the H-R diagram.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:   </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline  
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># For downloading files</span>
 <span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
@@ -488,7 +492,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
 <span class="kn">from</span> <span class="nn">pyvo</span> <span class="kn">import</span> <span class="n">registry</span>
 
-<span class="c1">## There are a number of relatively unimportant warnings that </span>
+<span class="c1">## There are a number of relatively unimportant warnings that</span>
 <span class="c1">## show up, so for now, suppress them:</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
@@ -502,14 +506,14 @@ document.write(`
 <p>We want to find a star catalog that has the available data to produce the H-R diagram, i.e., the absolute magnitudes (or both apparent magnitudes AND distances, so we can calculate the absolute magnitudes) in two optical bands (e.g., B and V). This would give us color. Or we need B- OR V- band magnitude and the stellar temperature.</p>
 <p>To simplify this problem, we want to find a catalog of an open cluster of stars, where all the stars were born around the same time and are located in one cluster. This simplifies the issue of getting accurate distances to the stars. One famous cluster is the Pleiades in the constellation of Taurus. So first we start by searching for an existing catalog with data on Pleiades that will provide the necessary information about the stars: magnitudes in two bands (e.g., B and V), which can be used to measure color, or temperature of the star plus one magnitude.</p>
 <section id="data-discovery-steps">
-<h3>DATA DISCOVERY STEPS:<a class="headerlink" href="#data-discovery-steps" title="Permalink to this headline">#</a></h3>
+<h3>DATA DISCOVERY STEPS<a class="headerlink" href="#data-discovery-steps" title="Permalink to this headline">#</a></h3>
 <p>Here is useful link for <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/registry/index.html">how the pyvo registry search works</a>.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write some code to perform a registry search using </span>
-<span class="c1"># appropriate keywords and specify the service type. </span>
-<span class="c1"># Also apply the includeaux=True option to return </span>
-<span class="c1"># the maximum number of services: </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write some code to perform a registry search using</span>
+<span class="c1"># appropriate keywords and specify the service type.</span>
+<span class="c1"># Also apply the includeaux=True option to return</span>
+<span class="c1"># the maximum number of services:</span>
 
 
 <span class="c1"># Print the size of the output table and get a summary of the sources:</span>
@@ -520,15 +524,15 @@ document.write(`
 <p>Note: The includeaux=True includes auxiliary services.</p>
 <p>Because we specified the service type, this returns only the TAP services for each of the avalible resorces matching our search criteria.  So, the ‘interfaces’ column will only show TAP service as an avalible service, even if other services are avalible from the same resource. We know we need the service to be a TAP service since we know that we want to eventually access the search using additional column information (i.e., beyond RA and Dec, which is all that Simple Cone Search returns).</p>
 <section id="next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">
-<h4>Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram.<a class="headerlink" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram" title="Permalink to this headline">#</a></h4>
+<h4>Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram<a class="headerlink" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram" title="Permalink to this headline">#</a></h4>
 <p>We can re-run the registry search, but further restrict the results by column UCD.  We want tables that have magnitude columns; the most basic UCD to describe a magnitude column is phot.mag</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform another registry search, this time searching</span>
-<span class="c1"># tables that have at least 1 magnitude column. </span>
+<span class="c1"># tables that have at least 1 magnitude column.</span>
 <span class="c1"># Note: &#39;%&#39; serves as a wild card when searching columns</span>
 
-<span class="c1"># How many tables do you get? </span>
+<span class="c1"># How many tables do you get?</span>
 </pre></div>
 </div>
 </div>
@@ -538,7 +542,7 @@ document.write(`
 <p>So using this we can reduce the matched tables to ones that are a bit more catered to our experiment. Note, that there is redundancy in some resources since these are available via multiple services and/or publishers. Therefore a bit more cleaning can be done to provide only the unique matches.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the &#39;ivoid&#39; column for these tables </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the &#39;ivoid&#39; column for these tables</span>
 </pre></div>
 </div>
 </div>
@@ -563,16 +567,16 @@ document.write(`
 </section>
 </section>
 <section id="at-this-point-you-can-proceed-to-step-2">
-<h3>At this point, you can proceed to Step 2.<a class="headerlink" href="#at-this-point-you-can-proceed-to-step-2" title="Permalink to this headline">#</a></h3>
+<h3>At this point, you can proceed to Step 2<a class="headerlink" href="#at-this-point-you-can-proceed-to-step-2" title="Permalink to this headline">#</a></h3>
 <p>– OR –</p>
 </section>
 <section id="try-a-different-data-discovery-method">
-<h3>Try a different data discovery method!<a class="headerlink" href="#try-a-different-data-discovery-method" title="Permalink to this headline">#</a></h3>
+<h3>Try a different data discovery method<a class="headerlink" href="#try-a-different-data-discovery-method" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned">
-<h3>Alternative Method: Use ADS to search for appropriate paper and access data via NED.<a class="headerlink" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned" title="Permalink to this headline">#</a></h3>
+<h3>Alternative Method: Use ADS to search for appropriate paper and access data via NED<a class="headerlink" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned" title="Permalink to this headline">#</a></h3>
 <p>There are multiple paths for the data discovery. So it may also be that you know the paper that has the data you are interested in and want to access via the bibcode or authors, etc.</p>
-<p>In this case, let’s assume that we have the information that the Eichhorn+1970 paper has the data that we need to create the H-R diagram: https://ui.adsabs.harvard.edu/abs/1970MmRAS..73..125E/abstract</p>
+<p>In this case, let’s assume that we have the information that the Eichhorn+1970 paper has the data that we need to create the H-R diagram: <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/1970MmRAS..73..125E/abstract">https://ui.adsabs.harvard.edu/abs/1970MmRAS..73..125E/abstract</a></p>
 <p>We can either search by bibcode (1970MmRAS..73..125E) or “Eichhorn” to get the access_urls that will allow us to work with the data.</p>
 <p>Before this step, if may help to see the names of the fields available to use. Notice the following fields:</p>
 <p>“source_value” contains the bibcode information that we want; “creator_seq” lists the authors;</p>
@@ -580,7 +584,7 @@ document.write(`
 <p>“access_url” provides the url from where the data can be accessed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the fieldnames for the tap services. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the fieldnames for the tap services.</span>
 </pre></div>
 </div>
 </div>
@@ -590,14 +594,14 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibcode</span> <span class="o">=</span> <span class="s1">&#39;1970MmRAS..73..125E&#39;</span> <span class="c1"># Eichhorn</span>
 
-<span class="c1">#  </span>
-<span class="c1"># print &quot;short_name&quot;, &quot;source_value&quot; and &quot;access_url&quot; information </span>
-<span class="c1"># for the table entry that matches this bibcode. </span>
 <span class="c1">#</span>
-<span class="c1">#  Note that using the to_table() lets you search the result </span>
+<span class="c1"># print &quot;short_name&quot;, &quot;source_value&quot; and &quot;access_url&quot; information</span>
+<span class="c1"># for the table entry that matches this bibcode.</span>
+<span class="c1">#</span>
+<span class="c1">#  Note that using the to_table() lets you search the result</span>
 <span class="c1">#   easily using all columns.  But in the end, you want to get</span>
 <span class="c1">#   back not an astropy table row, which you cannot use, but the</span>
-<span class="c1">#   original RegistryResult that has the callable TAP service. </span>
+<span class="c1">#   original RegistryResult that has the callable TAP service.</span>
 </pre></div>
 </div>
 </div>
@@ -608,9 +612,9 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;Eichhorn&#39;</span>
 
-<span class="c1">#  </span>
-<span class="c1"># print &quot;short_name&quot;, &quot;reference_url&quot; and &quot;access_url&quot; information </span>
-<span class="c1"># for the table entry that matches this author name. </span>
+<span class="c1">#</span>
+<span class="c1"># print &quot;short_name&quot;, &quot;reference_url&quot; and &quot;access_url&quot; information</span>
+<span class="c1"># for the table entry that matches this author name.</span>
 <span class="c1">#</span>
 <span class="c1"># Hint: The pyVO Registry resource page may help:</span>
 <span class="c1"># https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource.search</span>
@@ -626,7 +630,7 @@ document.write(`
 </ol>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the full description for the Eichhorn+1970 example. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the full description for the Eichhorn+1970 example.</span>
 </pre></div>
 </div>
 </div>
@@ -634,7 +638,7 @@ document.write(`
 </section>
 </section>
 <section id="step-2-acquire-the-relevant-data-and-make-a-plot">
-<h2>Step 2: Acquire the relevant data and make a plot!<a class="headerlink" href="#step-2-acquire-the-relevant-data-and-make-a-plot" title="Permalink to this headline">#</a></h2>
+<h2>Step 2: Acquire the relevant data and make a plot<a class="headerlink" href="#step-2-acquire-the-relevant-data-and-make-a-plot" title="Permalink to this headline">#</a></h2>
 <p>In order to query the table, we need the table name, note this is NOT the same as the short name we found above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -645,7 +649,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the data to output the table information (i.e. the data in the </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the data to output the table information (i.e. the data in the</span>
 <span class="c1"># columns in the table)</span>
 </pre></div>
 </div>
@@ -655,13 +659,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get color and magnitude column information for</span>
-<span class="c1"># stars in this table. </span>
+<span class="c1"># stars in this table.</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="plotting">
-<h3>Plotting…<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h3>
+<h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h3>
 <p>Note: The magnitudes here are apparent and therefore in plotting, the color-magnitude diagram is typically brightness increasing upwards (higher y-axis) so we will flip the y-axis here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,7 +673,7 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;V [apparent mag]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;B-V&quot;</span><span class="p">)</span>
 <span class="c1">#</span>
-<span class="c1"># plot color and magnitude data: </span>
+<span class="c1"># plot color and magnitude data:</span>
 </pre></div>
 </div>
 </div>
@@ -683,8 +687,8 @@ document.write(`
 </section>
 </section>
 <section id="step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">
-<h2>Step 3. Compare with other color-magnitude diagrams for Pleiades:<a class="headerlink" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades" title="Permalink to this headline">#</a></h2>
-<p>There is nice discussion here: http://www.southastrodel.com/Page03009a.htm  about the color-magnitude diagram. Their Fig 4 looks slightly cleaner because part of this investigation was to select the 270 stars that are vetted members and restricted to stellar types more massive than K0.</p>
+<h2>Step 3. Compare with other color-magnitude diagrams for Pleiades<a class="headerlink" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades" title="Permalink to this headline">#</a></h2>
+<p>There is nice discussion here: <a class="reference external" href="http://www.southastrodel.com/Page03009a.htm">http://www.southastrodel.com/Page03009a.htm</a>  about the color-magnitude diagram. Their Fig 4 looks slightly cleaner because part of this investigation was to select the 270 stars that are vetted members and restricted to stellar types more massive than K0.</p>
 <p>The dataset is from Raboud+1998 (1998A&amp;A…329..101R)</p>
 <p>Therefore in this next step, we will use the bibcode to select this data and overplot with the previous data to compare.</p>
 <div class="cell docutils container">
@@ -713,8 +717,8 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;V [apparent mag]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;B-V&quot;</span><span class="p">)</span>
 
-<span class="c1"># Plot the Eichhorn data as black circles and </span>
-<span class="c1"># Raboud data as red squares. </span>
+<span class="c1"># Plot the Eichhorn data as black circles and</span>
+<span class="c1"># Raboud data as red squares.</span>
 </pre></div>
 </div>
 </div>
@@ -727,7 +731,7 @@ document.write(`
 </div>
 </section>
 <section id="bonus-step-4-the-cmd-as-a-distance-indicator">
-<h2>BONUS: Step 4: The CMD as a distance indicator!<a class="headerlink" href="#bonus-step-4-the-cmd-as-a-distance-indicator" title="Permalink to this headline">#</a></h2>
+<h2>BONUS: Step 4: The CMD as a distance indicator<a class="headerlink" href="#bonus-step-4-the-cmd-as-a-distance-indicator" title="Permalink to this headline">#</a></h2>
 <p>Since the y-axis above is apparent magnitude, we can use the obvious features (e.g., main sequence curve) to translate the apparent magnitudes to absolute magnitudes (by comparing to published H-R diagrams given in absolute magnitudes) and measure the distance to Pleiades!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,9 +741,9 @@ document.write(`
 <span class="c1"># the Sun&#39;s apparent magnitude at the distance of the Pleiades?</span>
 <span class="c1"># i.e. if you overplot the Sun on the CMD above</span>
 <span class="c1"># what&#39;s the Sun&#39;s magnitude, corresponding to the sun&#39;s color</span>
-<span class="c1"># given as B-V=0.65? </span>
+<span class="c1"># given as B-V=0.65?</span>
 
-<span class="c1"># Overplot the sun in the plot above for reference. </span>
+<span class="c1"># Overplot the sun in the plot above for reference.</span>
 </pre></div>
 </div>
 </div>
@@ -747,16 +751,16 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Measure the distance to the Pleaides, using the Sun</span>
-<span class="c1"># as a reference. We know the Sun&#39;s absolute magnitude: </span>
+<span class="c1"># as a reference. We know the Sun&#39;s absolute magnitude:</span>
 <span class="n">Vabs</span> <span class="o">=</span> <span class="mf">4.8</span>   <span class="c1">## Sun @ B-V = 0.65 (taken from Wikipedia)</span>
 
 <span class="c1"># Using the Sun&#39;s apparent magnitude from your estimate above</span>
-<span class="c1"># what&#39;s the distance to Pleiades in pc? </span>
+<span class="c1"># what&#39;s the distance to Pleiades in pc?</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>True distance to Pleaides is 136.2 pc  (https://en.wikipedia.org/wiki/Pleiades ). Not bad!</p>
+<p>True distance to Pleaides is 136.2 pc  (<a class="reference external" href="https://en.wikipedia.org/wiki/Pleiades">https://en.wikipedia.org/wiki/Pleiades</a> ). Not bad!</p>
 </section>
 </section>
 
@@ -778,15 +782,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Preparing a proposal</p>
+        <p class="prev-next-title">Proposal Preparation Exercise</p>
       </div>
     </a>
     <a class="right-next"
-       href="../reference_notebooks/basic_reference.html"
+       href="candidate_list_solution.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Quick Reference</p>
+        <p class="prev-next-title">Candidate List Solution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -809,21 +813,21 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-appropriate-catalogs">Step 1: Find appropriate catalogs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-steps">DATA DISCOVERY STEPS:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-steps">DATA DISCOVERY STEPS</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-you-can-proceed-to-step-2">At this point, you can proceed to Step 2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-a-different-data-discovery-method">Try a different data discovery method!</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned">Alternative Method: Use ADS to search for appropriate paper and access data via NED.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-you-can-proceed-to-step-2">At this point, you can proceed to Step 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-a-different-data-discovery-method">Try a different data discovery method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-method-use-ads-to-search-for-appropriate-paper-and-access-data-via-ned">Alternative Method: Use ADS to search for appropriate paper and access data via NED</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator</a></li>
 </ul>
   </nav></div>
 

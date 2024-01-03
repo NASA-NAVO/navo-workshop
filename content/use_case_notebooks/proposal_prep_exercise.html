@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Preparing a proposal &#8212; NASA-NAVO Workshops Notebooks</title>
+    <title>Proposal Preparation Exercise &#8212; NASA-NAVO Workshops Notebooks</title>
   
   
   
@@ -48,8 +48,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/use_case_notebooks/proposal_prep_exercise';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram" href="hr_diagram_exercise.html" />
-    <link rel="prev" title="Science User Case - Inspecting a Candidate List" href="candidate_list_exercise.html" />
+    <link rel="next" title="HR (Hertzsprung-Russell) Diagram Exercise" href="hr_diagram_exercise.html" />
+    <link rel="prev" title="Candidate List Exercise" href="candidate_list_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -149,19 +149,23 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/catalog_queries.html">Accessing astronomical catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/image_access.html">Searching for and retrieving images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/votables.html">Creating a VO Table from a CSV file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/basic_reference.html">Quick Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proposal_prep_solution.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/basic_reference.html">Basic Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/image_access.html">Image Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/catalog_queries.html">Catalog Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/spectral_access.html">Spectral Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/votables.html">VO Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/ucds_unified_content_descriptors.html">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_exercise.html">Candidate List Exercise</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Proposal Preparation Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hr_diagram_exercise.html">HR (Hertzsprung-Russell) Diagram Exercise</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_solution.html">Candidate List Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal_prep_solution.html">Proposal Preparation Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
@@ -432,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preparing a proposal</h1>
+    <h1>Proposal Preparation Exercise</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,13 +446,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-images">Step 2: Make Images</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ultraviolet-and-x-ray-images">Create ultraviolet and X-ray images</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-make-a-spectrum">Step 3: Make a spectrum</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source</a></li>
 </ul>
 </li>
 </ul>
@@ -462,17 +466,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="preparing-a-proposal">
-<h1>Preparing a proposal<a class="headerlink" href="#preparing-a-proposal" title="Permalink to this headline">#</a></h1>
-<p>The Story: Suppose that you are preparing to write a proposal on NGC1365, aiming to investigate the intriguing black hole spin this galaxy with Chandra grating observations (see: https://www.space.com/19980-monster-black-hole-spin-discovery.html )</p>
+  <section id="proposal-preparation-exercise">
+<h1>Proposal Preparation Exercise<a class="headerlink" href="#proposal-preparation-exercise" title="Permalink to this headline">#</a></h1>
+<p>The Story: Suppose that you are preparing to write a proposal on NGC1365, aiming to investigate the intriguing black hole spin this galaxy with Chandra grating observations (see: <a class="reference external" href="https://www.space.com/19980-monster-black-hole-spin-discovery.html">https://www.space.com/19980-monster-black-hole-spin-discovery.html</a> )</p>
 <p>In writing proposals, there are often the same tasks that are required: including finding and analyzing previous observations of the proposal, and creating figures that include, e.g., multiwavelength images and spectrum for the source.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:   </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline  
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># For downloading files</span>
 <span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
@@ -480,7 +484,7 @@ document.write(`
 
 <span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
 
-<span class="c1">## There are a number of relatively unimportant warnings that </span>
+<span class="c1">## There are a number of relatively unimportant warnings that</span>
 <span class="c1">## show up, so for now, suppress them:</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
@@ -490,16 +494,16 @@ document.write(`
 </div>
 </div>
 <section id="step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">
-<h2>Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.<a class="headerlink" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365" title="Permalink to this headline">#</a></h2>
+<h2>Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365<a class="headerlink" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365" title="Permalink to this headline">#</a></h2>
 <p>Hint: Do a Registry search for tables served by the HEASARC (where high energy data are archived) to find potential table with this information</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Start with a Registry query to find table services for the HEASARC.</span>
 <span class="c1">#   Then get the list of tables that this service serves.</span>
-<span class="c1">#  </span>
+<span class="c1">#</span>
 <span class="c1">#  Hint:  the QuickReference has this example:</span>
 <span class="c1">#services = vo.regsearch(servicetype=&#39;tap&#39;, keywords=[&#39;heasarc&#39;])</span>
-<span class="c1">#tables = services[0].service.tables  </span>
+<span class="c1">#tables = services[0].service.tables</span>
 <span class="c1">#</span>
 <span class="c1">#  Hint2:  the QuickReference also has this example:</span>
 <span class="c1">#for c in tables[&#39;zcat&#39;].columns:</span>
@@ -508,23 +512,23 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Hint: The Chansngcat ( https://heasarc.gsfc.nasa.gov/W3Browse/chandra/chansngcat.html ) table is likely the best table.  Create a table with ra, dec, exposure time, and flux (and flux errors) from the public.chansngcat catalog for Chandra observations matched within 0.1 degree.</p>
+<p>Hint: The Chansngcat ( <a class="reference external" href="https://heasarc.gsfc.nasa.gov/W3Browse/chandra/chansngcat.html">https://heasarc.gsfc.nasa.gov/W3Browse/chandra/chansngcat.html</a> ) table is likely the best table.  Create a table with ra, dec, exposure time, and flux (and flux errors) from the public.chansngcat catalog for Chandra observations matched within 0.1 degree.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the coordinate for NGC 1365 with astropy.  </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the coordinate for NGC 1365 with astropy.</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct a query that will get the ra, dec, exposure time, flux, and flux errors </span>
-<span class="c1">#  from this catalog in the region around this source and submit the query.  </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct a query that will get the ra, dec, exposure time, flux, and flux errors</span>
+<span class="c1">#  from this catalog in the region around this source and submit the query.</span>
 <span class="c1">#  (See the CS_Catalog_queries.md )</span>
 <span class="c1">#  Hint:  the QuickReference has this example:</span>
 <span class="c1">#coord = SkyCoord.from_name(&quot;m83&quot;)</span>
 <span class="c1">#query = f&#39;&#39;&#39;</span>
-<span class="c1">#SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where </span>
+<span class="c1">#SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where</span>
 <span class="c1">#contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,{coord.ra.deg},{coord.dec.deg},1.0))=1</span>
 <span class="c1">#&#39;&#39;&#39;</span>
 <span class="c1">#results = services[0].service.run_async(query)</span>
@@ -556,7 +560,7 @@ document.write(`
 <p>Though using the result as an Astropy Table makes it easier to look at the contents, to call the service itself, we cannot use the row of that table.  You have to use the entry in the service result list itself.  So use the table to browse, but select the list of services itself using the properties that have been defined as attributes such as short_name and ivoid:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  You may find more than one service.  Look at both.  </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  You may find more than one service.  Look at both.</span>
 </pre></div>
 </div>
 </div>
@@ -574,10 +578,10 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a FITS file and visualize the image </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a FITS file and visualize the image</span>
 <span class="c1">#</span>
 <span class="c1">#  Hint:  the QuickReference has this example:</span>
-<span class="c1">#file_name = download_file(results[0].getdataurl())  </span>
+<span class="c1">#file_name = download_file(results[0].getdataurl())</span>
 </pre></div>
 </div>
 </div>
@@ -588,7 +592,7 @@ document.write(`
 <section id="step-3-make-a-spectrum">
 <h2>Step 3: Make a spectrum<a class="headerlink" href="#step-3-make-a-spectrum" title="Permalink to this headline">#</a></h2>
 <section id="find-what-chandra-spectral-observations-exist-already-for-this-source">
-<h3>Find what Chandra spectral observations exist already for this source.<a class="headerlink" href="#find-what-chandra-spectral-observations-exist-already-for-this-source" title="Permalink to this headline">#</a></h3>
+<h3>Find what Chandra spectral observations exist already for this source<a class="headerlink" href="#find-what-chandra-spectral-observations-exist-already-for-this-source" title="Permalink to this headline">#</a></h3>
 <p>Hint: try searching for X-ray spectral data tables using the registry query</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -616,7 +620,7 @@ document.write(`
 <p>Extension: Making a “quick look” spectrum. For our purposes, the 1st order of the HEG grating data would be sufficient.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  You&#39;ll have to look into the details of the spectra.  </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Hint:  You&#39;ll have to look into the details of the spectra.</span>
 </pre></div>
 </div>
 </div>
@@ -645,7 +649,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Science User Case - Inspecting a Candidate List</p>
+        <p class="prev-next-title">Candidate List Exercise</p>
       </div>
     </a>
     <a class="right-next"
@@ -653,7 +657,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</p>
+        <p class="prev-next-title">HR (Hertzsprung-Russell) Diagram Exercise</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -675,13 +679,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-images">Step 2: Make Images</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ultraviolet-and-x-ray-images">Create ultraviolet and X-ray images</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-make-a-spectrum">Step 3: Make a spectrum</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source</a></li>
 </ul>
 </li>
 </ul>

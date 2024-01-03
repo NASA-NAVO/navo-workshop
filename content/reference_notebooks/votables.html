@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Creating a VO Table from a CSV file &#8212; NASA-NAVO Workshops Notebooks</title>
+    <title>VO Tables &#8212; NASA-NAVO Workshops Notebooks</title>
   
   
   
@@ -48,8 +48,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/reference_notebooks/votables';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Science User Case - Inspecting a Candidate List" href="../use_case_notebooks/candidate_list_exercise.html" />
-    <link rel="prev" title="UCDs: working with heterogeneous tables" href="ucds_unified_content_descriptors.html" />
+    <link rel="next" title="UCDs (Unified Content Descriptors)" href="ucds_unified_content_descriptors.html" />
+    <link rel="prev" title="Spectral Access" href="spectral_access.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -150,18 +150,22 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="catalog_queries.html">Accessing astronomical catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image_access.html">Searching for and retrieving images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a VO Table from a CSV file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_reference.html">Quick Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_reference.html">Basic Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image_access.html">Image Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catalog_queries.html">Catalog Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spectral_access.html">Spectral Access</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">VO Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ucds_unified_content_descriptors.html">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Candidate List Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Proposal Preparation Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">HR (Hertzsprung-Russell) Diagram Exercise</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Candidate List Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Proposal Preparation Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
@@ -432,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Creating a VO Table from a CSV file</h1>
+    <h1>VO Tables</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,6 +446,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-vo-table-from-an-astropy-table">Create a VO Table from an Astropy Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-table-with-only-two-columns-starting-from-an-astropy-table">Create a table with only two columns starting from an astropy Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#then-convert-this-to-a-votablefile-object-which-contains-a-nested-set-of-resources-and-tables-in-this-case-only-one-of-each">Then convert this to a VOTableFile object which contains a nested set of <em>resources</em> and <em>tables</em> (in this case, only one of each)</a></li>
 </ul>
@@ -455,8 +460,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="creating-a-vo-table-from-a-csv-file">
-<h1>Creating a VO Table from a CSV file<a class="headerlink" href="#creating-a-vo-table-from-a-csv-file" title="Permalink to this headline">#</a></h1>
+  <section id="vo-tables">
+<h1>VO Tables<a class="headerlink" href="#vo-tables" title="Permalink to this headline">#</a></h1>
+<section id="create-a-vo-table-from-an-astropy-table">
+<h2>Create a VO Table from an Astropy Table<a class="headerlink" href="#create-a-vo-table-from-an-astropy-table" title="Permalink to this headline">#</a></h2>
 <p>There are several ways of doing this, and there are a few object layers here, which can be confusing:</p>
 <ul class="simple">
 <li><p>Standard <a class="reference external" href="https://docs.astropy.org/en/stable/table/">astropy Table</a> objects</p></li>
@@ -475,6 +482,7 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section id="create-a-table-with-only-two-columns-starting-from-an-astropy-table">
 <h2>Create a table with only two columns starting from an astropy Table<a class="headerlink" href="#create-a-table-with-only-two-columns-starting-from-an-astropy-table" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
@@ -502,7 +510,7 @@ document.write(`
             <span class="p">[</span><span class="mf">241.519</span><span class="p">,</span>       <span class="mf">20.8014</span><span class="p">],</span>
             <span class="p">[</span><span class="mf">317.088</span><span class="p">,</span>       <span class="mf">18.2002</span><span class="p">],</span>
             <span class="p">[</span><span class="mf">329.235</span><span class="p">,</span>       <span class="mf">6.64845</span><span class="p">],</span>
-            <span class="p">[</span><span class="mf">333.830</span><span class="p">,</span>       <span class="mf">37.3012</span><span class="p">]</span> <span class="p">]),</span> 
+            <span class="p">[</span><span class="mf">333.830</span><span class="p">,</span>       <span class="mf">37.3012</span><span class="p">]</span> <span class="p">]),</span>
     <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RA&quot;</span><span class="p">,</span><span class="s2">&quot;DEC&quot;</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">myaptable</span><span class="p">))</span>
@@ -601,20 +609,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ucds_unified_content_descriptors.html"
+       href="spectral_access.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UCDs:  working with heterogeneous tables</p>
+        <p class="prev-next-title">Spectral Access</p>
       </div>
     </a>
     <a class="right-next"
-       href="../use_case_notebooks/candidate_list_exercise.html"
+       href="ucds_unified_content_descriptors.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Science User Case - Inspecting a Candidate List</p>
+        <p class="prev-next-title">UCDs (Unified Content Descriptors)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -636,6 +644,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-vo-table-from-an-astropy-table">Create a VO Table from an Astropy Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-table-with-only-two-columns-starting-from-an-astropy-table">Create a table with only two columns starting from an astropy Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#then-convert-this-to-a-votablefile-object-which-contains-a-nested-set-of-resources-and-tables-in-this-case-only-one-of-each">Then convert this to a VOTableFile object which contains a nested set of <em>resources</em> and <em>tables</em> (in this case, only one of each)</a></li>
 </ul>

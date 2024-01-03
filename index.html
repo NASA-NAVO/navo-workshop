@@ -48,7 +48,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Accessing astronomical catalogs" href="content/reference_notebooks/catalog_queries.html" />
+    <link rel="next" title="Basic Reference" href="content/reference_notebooks/basic_reference.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -149,18 +149,22 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html">Accessing astronomical catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/image_access.html">Searching for and retrieving images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/votables.html">Creating a VO Table from a CSV file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/basic_reference.html">Quick Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/basic_reference.html">Basic Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/image_access.html">Image Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html">Catalog Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/spectral_access.html">Spectral Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/votables.html">VO Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/ucds_unified_content_descriptors.html">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html">Candidate List Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html">Proposal Preparation Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html">HR (Hertzsprung-Russell) Diagram Exercise</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html">Candidate List Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html">Proposal Preparation Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_SETUP.html">Configuring the Workshop Environment</a></li>
@@ -375,8 +379,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content">Content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-notebooks">Reference Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-exercises">Use Case Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-solutions">Use Case Solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
 </ul>
             </nav>
         </div>
@@ -390,110 +396,125 @@ document.write(`
                   
   <section id="nasa-navo-notebooks">
 <h1>NASA-NAVO notebooks<a class="headerlink" href="#nasa-navo-notebooks" title="Permalink to this headline">#</a></h1>
-<section id="content">
-<h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">#</a></h2>
+<section id="reference-notebooks">
+<h2>Reference Notebooks<a class="headerlink" href="#reference-notebooks" title="Permalink to this headline">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html">Accessing astronomical catalogs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html#simple-cone-search">1. Simple cone search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html#table-access-protocol-queries">2. Table Access Protocol queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html#using-the-tap-to-cross-correlate-and-combine">3. Using the TAP to cross-correlate and combine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html#synchronous-versus-asynchronous-queries">4. Synchronous versus asynchronous queries</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/image_access.html">Searching for and retrieving images</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/image_access.html#finding-sia-resources-from-the-registry">1. Finding SIA resources from the Registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/image_access.html#using-sia-to-retrieve-an-image">2. Using SIA to retrieve an image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/image_access.html#viewing-the-resulting-image">3. Viewing the resulting image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/image_access.html#example-of-data-available-through-multiple-services">4. Example of data available through multiple services</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/spectral_access.html#finding-available-spectral-access-services">Finding available Spectral Access Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/spectral_access.html#chandra-spectrum-of-delta-ori">Chandra Spectrum of Delta Ori</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/spectral_access.html#simple-example-of-plotting-a-spectrum">Simple example of plotting a spectrum</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/votables.html">Creating a VO Table from a CSV file</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/votables.html#create-a-table-with-only-two-columns-starting-from-an-astropy-table">Create a table with only two columns starting from an astropy Table</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/votables.html#then-convert-this-to-a-votablefile-object-which-contains-a-nested-set-of-resources-and-tables-in-this-case-only-one-of-each">Then convert this to a VOTableFile object which contains a nested set of <em>resources</em> and <em>tables</em> (in this case, only one of each)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#import-the-python-modules-we-ll-be-using">1. Import the Python modules we’ll be using.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#search-ned-for-objects-in-this-paper">2. Search NED for objects in this paper.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#filter-the-ned-results">3. Filter the NED results.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#search-the-navo-registry-for-image-resources">4. Search the NAVO Registry for image resources.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images">5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#choose-the-allwise-image-service-that-you-are-interested-in">6. Choose the AllWISE image service that you are interested in.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#choose-one-of-the-galaxies-in-the-ned-list">7. Choose one of the galaxies in the NED list.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#search-for-a-list-of-allwise-images-that-cover-this-galaxy">8. Search for a list of AllWISE images that cover this galaxy.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#use-the-to-table-method-to-view-the-results-as-an-astropy-table">9. Use the .to_table() method to view the results as an Astropy table.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#from-the-result-in-8-select-the-first-record-for-an-image-taken-in-wise-band-w1-3-6-micron">10. From the result in 8., select the first record for an image taken in WISE band W1 (3.6 micron)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#visualize-this-allwise-image">11. Visualize this AllWISE image.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#plot-a-cutout-of-the-allwise-image-centered-on-your-position">12. Plot a cutout of the AllWISE image, centered on your position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">13. Try visualizing a cutout of a GALEX image that covers your position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position">14. Try visualizing a cutout of an SDSS image that covers your position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">15. Try looping over all positions and plotting multiwavelength cutouts.</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html#step-2-make-images">Step 2: Make Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html#step-3-make-a-spectrum">Step 3: Make a spectrum</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html#step-1-find-appropriate-catalogs">Step 1: Find appropriate catalogs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator!</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/basic_reference.html">Quick Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/basic_reference.html">Basic Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/basic_reference.html#setup">0. Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/basic_reference.html#overview">1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/basic_reference.html#vo-services">2. VO Services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/basic_reference.html#astroquery">3. Astroquery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#import-the-python-modules-we-ll-be-using">1. Import the Python modules we’ll be using.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#search-ned-for-objects-in-this-paper">2. Search NED for objects in this paper.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#filter-the-ned-results">3. Filter the NED results.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#search-the-navo-registry-for-image-resources">4. Search the NAVO Registry for image resources.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images">5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#choose-the-allwise-image-service-that-you-are-interested-in">6. Choose the AllWISE image service that you are interested in.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#choose-one-of-the-galaxies-in-the-ned-list">7. Choose one of the galaxies in the NED list.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#search-for-a-list-of-allwise-images-that-cover-this-galaxy">8. Search for a list of AllWISE images that cover this galaxy.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#use-the-to-table-method-to-view-the-results-as-an-astropy-table">9. Use the .to_table() method to view the results as an Astropy table.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/image_access.html">Image Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/image_access.html#finding-sia-resources-from-the-registry">1. Finding SIA resources from the Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/image_access.html#using-sia-to-retrieve-an-image">2. Using SIA to retrieve an image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/image_access.html#viewing-the-resulting-image">3. Viewing the resulting image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/image_access.html#example-of-data-available-through-multiple-services">4. Example of data available through multiple services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html">Catalog Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html#simple-cone-search">1. Simple cone search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html#table-access-protocol-queries">2. Table Access Protocol queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html#using-the-tap-to-cross-correlate-and-combine">3. Using the TAP to cross-correlate and combine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html#synchronous-versus-asynchronous-queries">4. Synchronous versus asynchronous queries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/spectral_access.html">Spectral Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/spectral_access.html#finding-available-spectral-access-services">Finding available Spectral Access Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/spectral_access.html#chandra-spectrum-of-delta-ori">Chandra Spectrum of Delta Ori</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/spectral_access.html#simple-example-of-plotting-a-spectrum">Simple example of plotting a spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/votables.html">VO Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/votables.html#create-a-vo-table-from-an-astropy-table">Create a VO Table from an Astropy Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/votables.html#create-a-table-with-only-two-columns-starting-from-an-astropy-table">Create a table with only two columns starting from an astropy Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/reference_notebooks/votables.html#then-convert-this-to-a-votablefile-object-which-contains-a-nested-set-of-resources-and-tables-in-this-case-only-one-of-each">Then convert this to a VOTableFile object which contains a nested set of <em>resources</em> and <em>tables</em> (in this case, only one of each)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/ucds_unified_content_descriptors.html">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+</div>
+</section>
+<section id="use-case-exercises">
+<h2>Use Case Exercises<a class="headerlink" href="#use-case-exercises" title="Permalink to this headline">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html">Candidate List Exercise</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#import-the-python-modules-we-ll-be-using">1. Import the Python modules we’ll be using</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#search-ned-for-objects-in-this-paper">2. Search NED for objects in this paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#filter-the-ned-results">3. Filter the NED results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#search-the-navo-registry-for-image-resources">4. Search the NAVO Registry for image resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images">5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#choose-the-allwise-image-service-that-you-are-interested-in">6. Choose the AllWISE image service that you are interested in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#choose-one-of-the-galaxies-in-the-ned-list">7. Choose one of the galaxies in the NED list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#search-for-a-list-of-allwise-images-that-cover-this-galaxy">8. Search for a list of AllWISE images that cover this galaxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#use-the-to-table-method-to-view-the-results-as-an-astropy-table">9. Use the .to_table() method to view the results as an Astropy table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#from-the-result-in-8-select-the-first-record-for-an-image-taken-in-wise-band-w1-3-6-micron">10. From the result in 8., select the first record for an image taken in WISE band W1 (3.6 micron)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#visualize-this-allwise-image">11. Visualize this AllWISE image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#plot-a-cutout-of-the-allwise-image-centered-on-your-position">12. Plot a cutout of the AllWISE image, centered on your position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">13. Try visualizing a cutout of a GALEX image that covers your position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position">14. Try visualizing a cutout of an SDSS image that covers your position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">15. Try looping over all positions and plotting multiwavelength cutouts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html">Proposal Preparation Exercise</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html#step-2-make-images">Step 2: Make Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html#step-3-make-a-spectrum">Step 3: Make a spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html">HR (Hertzsprung-Russell) Diagram Exercise</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html#step-1-find-appropriate-catalogs">Step 1: Find appropriate catalogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="use-case-solutions">
+<h2>Use Case Solutions<a class="headerlink" href="#use-case-solutions" title="Permalink to this headline">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html">Candidate List Solution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#import-the-python-modules-we-ll-be-using">1. Import the Python modules we’ll be using</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#search-ned-for-objects-in-this-paper">2. Search NED for objects in this paper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#filter-the-ned-results">3. Filter the NED results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#search-the-navo-registry-for-image-resources">4. Search the NAVO Registry for image resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images">5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#choose-the-allwise-image-service-that-you-are-interested-in">6. Choose the AllWISE image service that you are interested in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#choose-one-of-the-galaxies-in-the-ned-list">7. Choose one of the galaxies in the NED list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#search-for-a-list-of-allwise-images-that-cover-this-galaxy">8. Search for a list of AllWISE images that cover this galaxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#use-the-to-table-method-to-view-the-results-as-an-astropy-table">9. Use the .to_table() method to view the results as an Astropy table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#from-the-result-in-8-select-the-first-record-for-an-image-taken-in-wise-band-w1-3-6-micron">10. From the result in 8., select the first record for an image taken in WISE band W1 (3.6 micron)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#visualize-this-allwise-image">11. Visualize this AllWISE image.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#plot-a-cutout-of-the-allwise-image-centered-on-your-position">12. Plot a cutout of the AllWISE image, centered on your position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">13. Try visualizing a cutout of a GALEX image that covers your position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position">14. Try visualizing a cutout of an SDSS image that covers your position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">15. Try looping over all positions and plotting multiwavelength cutouts.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#visualize-this-allwise-image">11. Visualize this AllWISE image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#plot-a-cutout-of-the-allwise-image-centered-on-your-position">12. Plot a cutout of the AllWISE image, centered on your position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">13. Try visualizing a cutout of a GALEX image that covers your position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#try-visualizing-a-cutout-of-an-sdss-image-that-covers-your-position">14. Try visualizing a cutout of an SDSS image that covers your position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">15. Try looping over all positions and plotting multiwavelength cutouts</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html#step-2-make-images">Step 2: Make Images:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html#step-3-make-a-spectrum">Step 3: Make a spectrum:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html">Proposal Preparation Solution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html#step-2-make-images">Step 2: Make Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html#step-3-make-a-spectrum">Step 3: Make a spectrum</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html#step-1-find-appropriate-catalogs">Step 1: Find appropriate catalogs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html#step-2-acquire-the-relevant-data-and-make-a-plot">Step 2: Acquire the relevant data and make a plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html#step-3-compare-with-other-color-magnitude-diagrams-for-pleiades">Step 3. Compare with other color-magnitude diagrams for Pleiades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html#bonus-step-4-the-cmd-as-a-distance-indicator">BONUS: Step 4: The CMD as a distance indicator</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </section>
 <section id="additional-resources">
-<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="00_SETUP.html">Configuring the Workshop Environment</a></li>
@@ -516,11 +537,11 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
-       href="content/reference_notebooks/catalog_queries.html"
+       href="content/reference_notebooks/basic_reference.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Accessing astronomical catalogs</p>
+        <p class="prev-next-title">Basic Reference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -542,8 +563,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content">Content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-notebooks">Reference Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-exercises">Use Case Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-solutions">Use Case Solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
 </ul>
   </nav></div>
 

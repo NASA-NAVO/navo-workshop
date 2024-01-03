@@ -22,17 +22,17 @@ language_info:
   version: 3.8.2
 ---
 
-# Science User Case - Inspecting a Candidate List
+# Candidate List Exercise
 
 Ogle et al. (2016) mined the NASA/IPAC Extragalactic Database (NED) to identify a new type of galaxy: Superluminous Spiral Galaxies.
 
-Here's the paper: https://ui.adsabs.harvard.edu/abs/2016ApJ...817..109O/abstract
+Here's the paper: <https://ui.adsabs.harvard.edu/abs/2016ApJ...817..109O/abstract>
 
 Table 1 lists the positions of these Super Spirals. Based on those positions, let's create multiwavelength cutouts for each super spiral to see what is unique about this new class of objects.
 
 +++
 
-## 1. Import the Python modules we'll be using.
+## 1. Import the Python modules we'll be using
 
 ```{code-cell} ipython3
 # Suppress unimportant warnings.
@@ -60,10 +60,10 @@ import pyvo as vo
 The next cell prepares the notebook to display our visualizations.
 
 ```{code-cell} ipython3
-%matplotlib inline  
+%matplotlib inline
 ```
 
-## 2. Search NED for objects in this paper.
+## 2. Search NED for objects in this paper
 
 Insert a Code Cell below by clicking on the "Insert" Menu and choosing "Insert Cell Below". Then consult QuickReference.md to figure out how to use astroquery to search NED for all objects in a paper, based on the refcode of the paper. Inspect the resulting astropy table.
 
@@ -72,7 +72,7 @@ Insert a Code Cell below by clicking on the "Insert" Menu and choosing "Insert C
 #objects_in_paper = Ned.query_refcode('2018ApJ...858...62K')
 ```
 
-## 3. Filter the NED results.
+## 3. Filter the NED results
 
 The results from NED will include galaxies, but also other kinds of objects (e.g. galaxy clusters, galaxy groups). Print the 'Type' column to see the full range of classifications and filter the results so that we only keep the galaxies in the list.
 
@@ -80,7 +80,7 @@ The results from NED will include galaxies, but also other kinds of objects (e.g
 
 ```
 
-## 4. Search the NAVO Registry for image resources.
+## 4. Search the NAVO Registry for image resources
 
 The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for all image resources, using the 'service_type' search parameter. How many image resources are currently available?
 
@@ -89,7 +89,7 @@ The paper selected super spirals using WISE, SDSS, and GALEX images. Search the 
 #  services = vo.regsearch(servicetype='conesearch', keywords=['swift'])
 ```
 
-## 5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images.
+## 5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images
 
 There are hundreds of image resources...too many to quickly read through. Try adding the 'keywords' search parameter to your registry search, and find the image resource you would need to search the AllWISE images. Remember from the Known Issues that 'keywords' must be a list.
 
@@ -98,13 +98,14 @@ There are hundreds of image resources...too many to quickly read through. Try ad
 #  services = vo.regsearch(servicetype='conesearch', keywords=['swift'])
 ```
 
-## 6. Choose the AllWISE image service that you are interested in.
+## 6. Choose the AllWISE image service that you are interested in
 
 ```{code-cell} ipython3
 
 ```
 
-## 7. Choose one of the galaxies in the NED list.
+## 7. Choose one of the galaxies in the NED list
+
 What is the position of this galaxy?
 
 ```{code-cell} ipython3
@@ -112,7 +113,7 @@ What is the position of this galaxy?
 #  m83_pos = SkyCoord('13h37m00.950s -29d51m55.51s')
 ```
 
-## 8. Search for a list of AllWISE images that cover this galaxy.
+## 8. Search for a list of AllWISE images that cover this galaxy
 
 How many images are returned? Which are you most interested in?
 
@@ -121,7 +122,7 @@ How many images are returned? Which are you most interested in?
 #results = services[1].search(pos=m83_pos, size=.2)
 ```
 
-## 9. Use the .to_table() method to view the results as an Astropy table.
+## 9. Use the .to_table() method to view the results as an Astropy table
 
 ```{code-cell} ipython3
 
@@ -130,6 +131,7 @@ How many images are returned? Which are you most interested in?
 ## 10. From the result in 8., select the first record for an image taken in WISE band W1 (3.6 micron)
 
 Hints:
+
 * Loop over records and test on the `.bandpass_id` attribute of each record
 * Print the `.title` and `.bandpass_id` of the record you find, to verify it is the right one.
 
@@ -137,17 +139,18 @@ Hints:
 
 ```
 
-## 11. Visualize this AllWISE image.
+## 11. Visualize this AllWISE image
+
 Hint: Locate the galaxy in the image by overplotting a ring centered on the galaxy on the image
 
 ```{code-cell} ipython3
 #  Hint:  the QuickReference has this example:
-#  file_name = download_file(results[0].getdataurl()) 
-#  Hint:  when displaying the fits file play with the vmax value, a 
+#  file_name = download_file(results[0].getdataurl())
+#  Hint:  when displaying the fits file play with the vmax value, a
 #  vmax value around 10 will display a nice image
 ```
 
-## 12. Plot a cutout of the AllWISE image, centered on your position.
+## 12. Plot a cutout of the AllWISE image, centered on your position
 
 Try a 60 arcsecond cutout.
 
@@ -155,7 +158,7 @@ Try a 60 arcsecond cutout.
 #  Hint:  using Cutout2D imported above from from astropy.nddata
 ```
 
-## 13. Try visualizing a cutout of a GALEX image that covers your position.
+## 13. Try visualizing a cutout of a GALEX image that covers your position
 
 Repeat steps 5, 6, 8 through 12 for GALEX.
 
@@ -172,12 +175,12 @@ Repeat steps 5, 6, 8 through 12 for GALEX.
 ```
 
 ```{code-cell} ipython3
-# Step 10: Select one of the images and print the title and relevent 
+# Step 10: Select one of the images and print the title and relevent
 # info. For example you can select an image with an 'enrValue' of 2.35e-07
 ```
 
 ```{code-cell} ipython3
-# Step 11: Visualize the image and overplot a ring on the image centered 
+# Step 11: Visualize the image and overplot a ring on the image centered
 # on your galaxy. (A very small vmax value around 0.01 is recomended)
 ```
 
@@ -186,9 +189,10 @@ Repeat steps 5, 6, 8 through 12 for GALEX.
 # centered on the galaxy
 ```
 
-## 14. Try visualizing a cutout of an SDSS image that covers your position.
+## 14. Try visualizing a cutout of an SDSS image that covers your position
 
 Hints:
+
 * Search the registry using `keywords=['sloan']
 * Find the service with a `short_name` of `'SDSS SIAP'`
 * From Known Issues, recall that an empty string must be specified to the `format` parameter dues to a bug in the service.
@@ -219,7 +223,8 @@ Hints:
 # use Cutout2D to get a 60 arcsecond cutout centered on the galaxy
 ```
 
-## 15. Try looping over all positions and plotting multiwavelength cutouts.
+## 15. Try looping over all positions and plotting multiwavelength cutouts
+
 Hint: Gather the data in ALLWISE, GALEX, and SDSS for each galaxy and plot as seperate cutouts centered on the galaxy position
 
 +++

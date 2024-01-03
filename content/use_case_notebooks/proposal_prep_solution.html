@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Preparing a proposal &#8212; NASA-NAVO Workshops Notebooks</title>
+    <title>Proposal Preparation Solution &#8212; NASA-NAVO Workshops Notebooks</title>
   
   
   
@@ -48,8 +48,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/use_case_notebooks/proposal_prep_solution';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram" href="hr_diagram_solution.html" />
-    <link rel="prev" title="Science User Case - Inspecting a Candidate List" href="candidate_list_solution.html" />
+    <link rel="next" title="HR (Hertzsprung-Russell) Diagram Solution" href="hr_diagram_solution.html" />
+    <link rel="prev" title="Candidate List Solution" href="candidate_list_solution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -149,19 +149,23 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/catalog_queries.html">Accessing astronomical catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/image_access.html">Searching for and retrieving images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/votables.html">Creating a VO Table from a CSV file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proposal_prep_exercise.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/basic_reference.html">Quick Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/basic_reference.html">Basic Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/image_access.html">Image Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/catalog_queries.html">Catalog Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/spectral_access.html">Spectral Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/votables.html">VO Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_notebooks/ucds_unified_content_descriptors.html">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_exercise.html">Candidate List Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal_prep_exercise.html">Proposal Preparation Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hr_diagram_exercise.html">HR (Hertzsprung-Russell) Diagram Exercise</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="candidate_list_solution.html">Candidate List Solution</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Proposal Preparation Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
@@ -432,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preparing a proposal</h1>
+    <h1>Proposal Preparation Solution</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,13 +446,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-images">Step 2: Make Images:</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-images">Step 2: Make Images</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ultraviolet-and-x-ray-images">Create ultraviolet and X-ray images</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-make-a-spectrum">Step 3: Make a spectrum:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-make-a-spectrum">Step 3: Make a spectrum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source</a></li>
 </ul>
 </li>
 </ul>
@@ -462,17 +466,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="preparing-a-proposal">
-<h1>Preparing a proposal<a class="headerlink" href="#preparing-a-proposal" title="Permalink to this headline">#</a></h1>
+  <section id="proposal-preparation-solution">
+<h1>Proposal Preparation Solution<a class="headerlink" href="#proposal-preparation-solution" title="Permalink to this headline">#</a></h1>
 <p>The Story: Suppose that you are preparing to write a proposal on NGC1365, aiming to investigate the intriguing black hole spin this galaxy with Chandra grating observations (see: <a class="reference external" href="https://www.space.com/19980-monster-black-hole-spin-discovery.html">Monster Blackhole Spin Revealed</a>)</p>
 <p>In writing proposals, there are often the same tasks that are required: including finding and analyzing previous observations of the proposal, and creating figures that include, e.g., multiwavelength images and spectrum for the source.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:   </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline  
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># For downloading files</span>
 <span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
@@ -480,7 +484,7 @@ document.write(`
 
 <span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
 
-<span class="c1">## There are a number of relatively unimportant warnings that </span>
+<span class="c1">## There are a number of relatively unimportant warnings that</span>
 <span class="c1">## show up, so for now, suppress them:</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
@@ -490,7 +494,7 @@ document.write(`
 </div>
 </div>
 <section id="step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">
-<h2>Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.<a class="headerlink" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365" title="Permalink to this headline">#</a></h2>
+<h2>Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365<a class="headerlink" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365" title="Permalink to this headline">#</a></h2>
 <p>Hint: Do a Registry search for tables served by the HEASARC (where high energy data are archived) to find potential table with this information</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -506,7 +510,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tablename</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="k">if</span> <span class="s2">&quot;chansng&quot;</span> <span class="ow">in</span> <span class="n">tablename</span><span class="p">:</span>  
+    <span class="k">if</span> <span class="s2">&quot;chansng&quot;</span> <span class="ow">in</span> <span class="n">tablename</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Table </span><span class="si">{}</span><span class="s2"> has columns=</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">tablename</span><span class="p">,</span>
             <span class="nb">sorted</span><span class="p">([</span><span class="n">k</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">heasarc_tables</span><span class="p">[</span><span class="n">tablename</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="p">])))</span>
@@ -514,7 +518,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Table chansngcat has columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&quot;__y_ra_dec&quot;&#39;, &#39;&quot;__z_ra_dec&quot;&#39;, &#39;&quot;distance&quot;&#39;, &#39;agn_flag&#39;, &#39;bii&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;exposure&#39;, &#39;fit_chi_squared&#39;, &#39;fit_dof&#39;, &#39;flux&#39;, &#39;flux_lower&#39;, &#39;flux_upper&#39;, &#39;hardness_ratio_0&#39;, &#39;hardness_ratio_0_error&#39;, &#39;hardness_ratio_1&#39;, &#39;hardness_ratio_1_error&#39;, &#39;hardness_ratio_2&#39;, &#39;hardness_ratio_2_error&#39;, &#39;hubble_type&#39;, &#39;instrument&#39;, &#39;lii&#39;, &#39;log_blackhole_mass&#39;, &#39;log_blackhole_mass_lower&#39;, &#39;log_blackhole_mass_upper&#39;, &#39;log_l_cpt1&#39;, &#39;log_l_cpt2&#39;, &#39;log_l_halpha&#39;, &#39;log_l_halpha_flag&#39;, &#39;log_lx&#39;, &#39;log_lx_lower&#39;, &#39;log_lx_note&#39;, &#39;log_lx_upper&#39;, &#39;name&#39;, &#39;nh&#39;, &#39;nh_from_hr&#39;, &#39;nh_from_hr_lower&#39;, &#39;nh_from_hr_upper&#39;, &#39;nh_gal&#39;, &#39;nh_lower&#39;, &#39;nh_upper&#39;, &#39;nuclear_class&#39;, &#39;obsid&#39;, &#39;off_set&#39;, &#39;ra&#39;, &#39;ref_spectrum&#39;, &#39;sigma&#39;, &#39;sigma_error&#39;, &#39;source_number&#39;, &#39;spectral_index&#39;, &#39;spectral_index_lower&#39;, &#39;spectral_index_upper&#39;, &#39;spectral_model&#39;, &#39;spectral_norm_cpt1&#39;, &#39;spectral_norm_cpt2&#39;, &#39;temperature&#39;, &#39;temperature_lower&#39;, &#39;temperature_upper&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Table chansngcat has columns=[&#39;__row&#39;, &#39;__x_ra_dec&#39;, &#39;__y_ra_dec&#39;, &#39;__z_ra_dec&#39;, &#39;agn_flag&#39;, &#39;bii&#39;, &#39;class&#39;, &#39;dec&#39;, &#39;distance&#39;, &#39;exposure&#39;, &#39;fit_chi_squared&#39;, &#39;fit_dof&#39;, &#39;flux&#39;, &#39;flux_lower&#39;, &#39;flux_upper&#39;, &#39;hardness_ratio_0&#39;, &#39;hardness_ratio_0_error&#39;, &#39;hardness_ratio_1&#39;, &#39;hardness_ratio_1_error&#39;, &#39;hardness_ratio_2&#39;, &#39;hardness_ratio_2_error&#39;, &#39;hubble_type&#39;, &#39;instrument&#39;, &#39;lii&#39;, &#39;log_blackhole_mass&#39;, &#39;log_blackhole_mass_lower&#39;, &#39;log_blackhole_mass_upper&#39;, &#39;log_l_cpt1&#39;, &#39;log_l_cpt2&#39;, &#39;log_l_halpha&#39;, &#39;log_l_halpha_flag&#39;, &#39;log_lx&#39;, &#39;log_lx_lower&#39;, &#39;log_lx_note&#39;, &#39;log_lx_upper&#39;, &#39;name&#39;, &#39;nh&#39;, &#39;nh_from_hr&#39;, &#39;nh_from_hr_lower&#39;, &#39;nh_from_hr_upper&#39;, &#39;nh_gal&#39;, &#39;nh_lower&#39;, &#39;nh_upper&#39;, &#39;nuclear_class&#39;, &#39;obsid&#39;, &#39;off_set&#39;, &#39;ra&#39;, &#39;ref_spectrum&#39;, &#39;sigma&#39;, &#39;sigma_error&#39;, &#39;source_number&#39;, &#39;spectral_index&#39;, &#39;spectral_index_lower&#39;, &#39;spectral_index_upper&#39;, &#39;spectral_model&#39;, &#39;spectral_norm_cpt1&#39;, &#39;spectral_norm_cpt2&#39;, &#39;temperature&#39;, &#39;temperature_lower&#39;, &#39;temperature_upper&#39;]
 </pre></div>
 </div>
 </div>
@@ -530,10 +534,10 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct a query that will get the ra, dec, exposure time, flux, and flux errors </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct a query that will get the ra, dec, exposure time, flux, and flux errors</span>
 <span class="c1">#  from this catalog in the region around this source:</span>
-<span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;SELECT ra, dec, exposure, flux, flux_lower, flux_upper FROM public.chansngcat as cat </span>
-<span class="s2">    where contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,0.1))=1 </span>
+<span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;SELECT ra, dec, exposure, flux, flux_lower, flux_upper FROM public.chansngcat as cat</span>
+<span class="s2">    where contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,0.1))=1</span>
 <span class="s2">    and cat.exposure &gt; 0 order by cat.exposure&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">pos</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
 <span class="c1">#  Submit the query.  (See the CS_Catalog_queries.md for</span>
 <span class="c1">#    information about these two search options.)</span>
@@ -546,7 +550,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table139620373212336" class="table-striped table-bordered table-condensed">
+<table id="table140196281023216" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>exposure</th><th>flux</th><th>flux_lower</th><th>flux_upper</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>s</th><th>erg/s/cm^2</th><th>erg/s/cm^2</th><th>erg/s/cm^2</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -555,7 +559,7 @@ document.write(`
 </div>
 </section>
 <section id="step-2-make-images">
-<h2>Step 2: Make Images:<a class="headerlink" href="#step-2-make-images" title="Permalink to this headline">#</a></h2>
+<h2>Step 2: Make Images<a class="headerlink" href="#step-2-make-images" title="Permalink to this headline">#</a></h2>
 <section id="create-ultraviolet-and-x-ray-images">
 <h3>Create ultraviolet and X-ray images<a class="headerlink" href="#create-ultraviolet-and-x-ray-images" title="Permalink to this headline">#</a></h3>
 <p>Hint: Start by checking what UV image services exist (e.g., GALEX?)</p>
@@ -569,7 +573,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139620607628176" class="table-striped table-bordered table-condensed">
+<table id="table140196280861984" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td></tr>
@@ -588,7 +592,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139621362146400" class="table-striped table-bordered table-condensed">
+<table id="table140196281016784" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td></tr>
@@ -616,7 +620,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=809</i>
-<table id="table139620313552912" class="table-striped table-bordered table-condensed">
+<table id="table140196281011552" class="table-striped table-bordered table-condensed">
 <thead><tr><th>productType</th><th>imageFormat</th><th>contentLength</th><th>name</th><th>collection</th><th>insname</th><th>metaRelease</th><th>dataRelease</th><th>trgposRA</th><th>trgPosDec</th><th>s_region</th><th>position_naxes</th><th>position_naxis</th><th>position_scale</th><th>crpix</th><th>crval</th><th>cdmatrix</th><th>coordFrame</th><th>projection</th><th>position_ctype1</th><th>position_ctype2</th><th>position_cunit1</th><th>position_cunit2</th><th>timBoundsSTCS</th><th>time_bounds_cval1</th><th>time_bounds_cval2</th><th>time_bounds_center</th><th>timExposure</th><th>energy_bandpassName</th><th>energy_bounds_cval1</th><th>energy_bounds_cval2</th><th>energy_bounds_center</th><th>energy_units</th><th>publisherDID</th><th>accessURL</th><th>cloud_access</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>CATALOG</td><td>image/fits</td><td>12795448</td><td>FORNAX_MOS07-xd-mcat.fits.gz</td><td>GALEX</td><td>GALEX</td><td>5/11/2010 12:14:57 AM</td><td>5/11/2010 12:14:57 AM</td><td>54.0331936068986</td><td>-36.367881838288</td><td>CIRCLE ICRS  54.03319361 -36.36788184 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[54.0332 -36.3679]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54105.698090 55148.072083</td><td>54105.6980902778</td><td>55148.0720833333</td><td>54626.8850868056</td><td>3241.6</td><td>NUV</td><td>1.693e-07</td><td>3.007e-07</td><td>2.35e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?2555337728220725248</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/01-vsn/07091-FORNAX_MOS07/d/01-main/0001-img/07-try/FORNAX_MOS07-xd-mcat.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/01-vsn/07091-FORNAX_MOS07/d/01-main/0001-img/07-try/FORNAX_MOS07-xd-mcat.fits.gz&quot;}}</td></tr>
@@ -630,6 +634,7 @@ document.write(`
 <tr><td>AUXILIARY</td><td>image/fits</td><td>6466083</td><td>FORNAX_MOS07-nd-cnt.fits.gz</td><td>GALEX</td><td>GALEX</td><td>5/11/2010 12:14:57 AM</td><td>5/11/2010 12:14:57 AM</td><td>54.0331936068986</td><td>-36.367881838288</td><td>CIRCLE ICRS  54.03319361 -36.36788184 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[54.0332 -36.3679]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54105.698090 55148.072083</td><td>54105.6980902778</td><td>55148.0720833333</td><td>54626.8850868056</td><td>3241.6</td><td>NUV</td><td>1.693e-07</td><td>3.007e-07</td><td>2.35e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?2555337728220725248</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/01-vsn/07091-FORNAX_MOS07/d/01-main/0001-img/07-try/FORNAX_MOS07-nd-cnt.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/01-vsn/07091-FORNAX_MOS07/d/01-main/0001-img/07-try/FORNAX_MOS07-nd-cnt.fits.gz&quot;}}</td></tr>
 <tr><td>AUXILIARY</td><td>image/fits</td><td>2512896</td><td>FORNAX_MOS07-nd-skybg.fits.gz</td><td>GALEX</td><td>GALEX</td><td>5/11/2010 12:14:57 AM</td><td>5/11/2010 12:14:57 AM</td><td>54.0331936068986</td><td>-36.367881838288</td><td>CIRCLE ICRS  54.03319361 -36.36788184 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[54.0332 -36.3679]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54105.698090 55148.072083</td><td>54105.6980902778</td><td>55148.0720833333</td><td>54626.8850868056</td><td>3241.6</td><td>NUV</td><td>1.693e-07</td><td>3.007e-07</td><td>2.35e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?2555337728220725248</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/01-vsn/07091-FORNAX_MOS07/d/01-main/0001-img/07-try/FORNAX_MOS07-nd-skybg.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/01-vsn/07091-FORNAX_MOS07/d/01-main/0001-img/07-try/FORNAX_MOS07-nd-skybg.fits.gz&quot;}}</td></tr>
 <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>THUMBNAIL</td><td>image/jpeg</td><td>9796</td><td>AIS_423_0002_sg49-xd-int_2color_thumb.jpg</td><td>GALEX</td><td>GALEX</td><td>6/16/2010 2:52:42 AM</td><td>6/16/2010 2:52:42 AM</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>CIRCLE ICRS  53.94523010 -36.11176509 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54460.401042 54460.402153</td><td>54460.4010416667</td><td>54460.4021527778</td><td>54460.4015972222</td><td>96.0</td><td>FUV</td><td>1.34e-07</td><td>1.806e-07</td><td>1.573e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?6385798660088659968</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_thumb.jpg</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/qa/AIS_423_0002_sg49-xd-int_2color_thumb.jpg&quot;}}</td></tr>
 <tr><td>INFO</td><td>image/fits</td><td>33054</td><td>AIS_423_0002_sg49-scst.fits.gz</td><td>GALEX</td><td>GALEX</td><td>6/16/2010 2:52:42 AM</td><td>6/16/2010 2:52:42 AM</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>CIRCLE ICRS  53.94523010 -36.11176509 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54460.401042 54460.402153</td><td>54460.4010416667</td><td>54460.4021527778</td><td>54460.4015972222</td><td>96.0</td><td>FUV</td><td>1.34e-07</td><td>1.806e-07</td><td>1.573e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?6385798660088659968</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-scst.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-scst.fits.gz&quot;}}</td></tr>
 <tr><td>INFO</td><td>image/fits</td><td>9178</td><td>AIS_423_0002_sg49-asprta.fits.gz</td><td>GALEX</td><td>GALEX</td><td>6/16/2010 2:52:42 AM</td><td>6/16/2010 2:52:42 AM</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>CIRCLE ICRS  53.94523010 -36.11176509 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54460.401042 54460.402153</td><td>54460.4010416667</td><td>54460.4021527778</td><td>54460.4015972222</td><td>96.0</td><td>FUV</td><td>1.34e-07</td><td>1.806e-07</td><td>1.573e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?6385798660088659968</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-asprta.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-asprta.fits.gz&quot;}}</td></tr>
 <tr><td>AUXILIARY</td><td>image/fits</td><td>2203</td><td>AIS_423_0002_sg49-fd-flag_tbl.fits.gz</td><td>GALEX</td><td>GALEX</td><td>6/16/2010 2:52:42 AM</td><td>6/16/2010 2:52:42 AM</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>CIRCLE ICRS  53.94523010 -36.11176509 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54460.401042 54460.402153</td><td>54460.4010416667</td><td>54460.4021527778</td><td>54460.4015972222</td><td>96.0</td><td>FUV</td><td>1.34e-07</td><td>1.806e-07</td><td>1.573e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?6385798660088659968</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-fd-flag_tbl.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-fd-flag_tbl.fits.gz&quot;}}</td></tr>
@@ -639,12 +644,11 @@ document.write(`
 <tr><td>AUXILIARY</td><td>image/fits</td><td>11794</td><td>AIS_423_0002_sg49-fd-flags.fits.gz</td><td>GALEX</td><td>GALEX</td><td>6/16/2010 2:52:42 AM</td><td>6/16/2010 2:52:42 AM</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>CIRCLE ICRS  53.94523010 -36.11176509 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54460.401042 54460.402153</td><td>54460.4010416667</td><td>54460.4021527778</td><td>54460.4015972222</td><td>96.0</td><td>FUV</td><td>1.34e-07</td><td>1.806e-07</td><td>1.573e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?6385798660088659968</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-fd-flags.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-fd-flags.fits.gz&quot;}}</td></tr>
 <tr><td>INFO</td><td>image/fits</td><td>13483</td><td>AIS_423_0002_sg49-rtastar.fits.gz</td><td>GALEX</td><td>GALEX</td><td>6/16/2010 2:52:42 AM</td><td>6/16/2010 2:52:42 AM</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>CIRCLE ICRS  53.94523010 -36.11176509 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54460.401042 54460.402153</td><td>54460.4010416667</td><td>54460.4021527778</td><td>54460.4015972222</td><td>96.0</td><td>FUV</td><td>1.34e-07</td><td>1.806e-07</td><td>1.573e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?6385798660088659968</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-rtastar.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-rtastar.fits.gz&quot;}}</td></tr>
 <tr><td>INFO</td><td>image/fits</td><td>8757</td><td>AIS_423_0002_sg49-aspraw.fits.gz</td><td>GALEX</td><td>GALEX</td><td>6/16/2010 2:52:42 AM</td><td>6/16/2010 2:52:42 AM</td><td>53.9452301043047</td><td>-36.1117650864775</td><td>CIRCLE ICRS  53.94523010 -36.11176509 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[53.9452 -36.1118]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 54460.401042 54460.402153</td><td>54460.4010416667</td><td>54460.4021527778</td><td>54460.4015972222</td><td>96.0</td><td>FUV</td><td>1.34e-07</td><td>1.806e-07</td><td>1.573e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?6385798660088659968</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-aspraw.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/02-vsn/50423-AIS_423/d/00-visits/0002-img/07-try/AIS_423_0002_sg49-aspraw.fits.gz&quot;}}</td></tr>
-<tr><td>AUXILIARY</td><td>image/fits</td><td>187477</td><td>FORNAX_MOS07_0003-nd-objmask.fits.gz</td><td>GALEX</td><td>GALEX</td><td>4/29/2010 7:42:02 AM</td><td>4/29/2010 7:42:02 AM</td><td>54.057710750028</td><td>-36.3903391229071</td><td>CIRCLE ICRS  54.05771075 -36.39033912 0.625</td><td>2</td><td>[3840 3840]</td><td>[-0.00041666667 0.00041666667]</td><td>[1920.5 1920.5]</td><td>[54.0577 -36.3903]</td><td>[-0.000416667 -0.0 -0.0 0.000416667]</td><td>ICRS</td><td>TAN</td><td>RA---TAN</td><td>DEC--TAN</td><td>deg</td><td>deg</td><td>RANGE 55147.926562 55147.934178</td><td>55147.9265625</td><td>55147.9341782407</td><td>55147.9303703704</td><td>658.35</td><td>NUV</td><td>1.693e-07</td><td>3.007e-07</td><td>2.35e-07</td><td>meters</td><td>ivo://archive.stsci.edu/GALEX?2555337590848880640</td><td>https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:GALEX/url/data/GR6/pipe/01-vsn/07091-FORNAX_MOS07/d/00-visits/0003-img/07-try/FORNAX_MOS07_0003-nd-objmask.fits.gz</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;:&quot;stpubdata&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;access&quot;:&quot;open&quot;,&quot;key&quot;:&quot;galex/GR6/pipe/01-vsn/07091-FORNAX_MOS07/d/00-visits/0003-img/07-try/FORNAX_MOS07_0003-nd-objmask.fits.gz&quot;}}</td></tr>
 </table></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Let&#39;s see what HEASARC offers, and this time limit it to FITS </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Let&#39;s see what HEASARC offers, and this time limit it to FITS</span>
 <span class="c1">#   this option doesn&#39;t currently work for STScI&#39;s service)</span>
 <span class="n">im_table_heasarc</span><span class="o">=</span><span class="n">galex_heasarc</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;image/fits&#39;</span><span class="p">)</span>
 <span class="n">im_table_heasarc</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
@@ -653,11 +657,11 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table139620313557712" class="table-striped table-bordered table-condensed">
+<table id="table140196281139552" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
 <thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>galexnear</td><td>53.4019083</td><td>-36.1406583</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.4019083%2C-36.1406583&amp;survey=galexnear&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1703797636186&amp;return=FITS</td><td>1</td></tr>
-<tr><td>galexfar</td><td>53.4019083</td><td>-36.1406583</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.4019083%2C-36.1406583&amp;survey=galexfar&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1703797636403&amp;return=FITS</td><td>2</td></tr>
+<tr><td>galexnear</td><td>53.4019083</td><td>-36.1406583</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.4019083%2C-36.1406583&amp;survey=galexnear&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1704299328392&amp;return=FITS</td><td>1</td></tr>
+<tr><td>galexfar</td><td>53.4019083</td><td>-36.1406583</td><td>2</td><td>[300 300]</td><td>[-0.0003333333333333334 0.0003333333333333334]</td><td>image/fits</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=53.4019083%2C-36.1406583&amp;survey=galexfar&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.10000000000000002%2C0.10000000000000002&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1704299328604&amp;return=FITS</td><td>2</td></tr>
 </table></div></div></div>
 </div>
 <div class="cell docutils container">
@@ -665,8 +669,8 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## If you only run this once, you can do it in memory in one line:</span>
 <span class="c1">##  This fetches the FITS as an astropy.io.fits object in memory</span>
 <span class="c1">#dataobj=im_table_heasarc[0].getdataobj()</span>
-<span class="c1">## But if you might run this notebook repeatedly with limited bandwidth, </span>
-<span class="c1">##  download it once and cache it.  </span>
+<span class="c1">## But if you might run this notebook repeatedly with limited bandwidth,</span>
+<span class="c1">##  download it once and cache it.</span>
 <span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">im_table_heasarc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">(),</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 <span class="n">dataobj</span><span class="o">=</span><span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dataobj</span><span class="p">))</span>
@@ -689,7 +693,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7efbe2dd1630&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f81fd222440&gt;
 </pre></div>
 </div>
 <img alt="../../_images/562a1eb47a96225892d2d094c82a4147202e02a94623836882b39f281951770e.png" src="../../_images/562a1eb47a96225892d2d094c82a4147202e02a94623836882b39f281951770e.png" />
@@ -722,7 +726,7 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 <span class="n">xim_table</span><span class="o">=</span><span class="n">x_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <span class="c1">## Some of these are FITS and some JPEG.  Look at the columns:</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">xim_table</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
-<span class="n">first_fits_image_row</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xim_table</span> <span class="k">if</span> <span class="s1">&#39;image/fits&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">format</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
+<span class="n">first_fits_image_row</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xim_table</span> <span class="k">if</span> <span class="s1">&#39;image/fits&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">format</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -757,9 +761,9 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </section>
 </section>
 <section id="step-3-make-a-spectrum">
-<h2>Step 3: Make a spectrum:<a class="headerlink" href="#step-3-make-a-spectrum" title="Permalink to this headline">#</a></h2>
+<h2>Step 3: Make a spectrum<a class="headerlink" href="#step-3-make-a-spectrum" title="Permalink to this headline">#</a></h2>
 <section id="find-what-chandra-spectral-observations-exist-already-for-this-source">
-<h3>Find what Chandra spectral observations exist already for this source.<a class="headerlink" href="#find-what-chandra-spectral-observations-exist-already-for-this-source" title="Permalink to this headline">#</a></h3>
+<h3>Find what Chandra spectral observations exist already for this source<a class="headerlink" href="#find-what-chandra-spectral-observations-exist-already-for-this-source" title="Permalink to this headline">#</a></h3>
 <p>Hint: try searching for X-ray spectral data tables using the registry query</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -771,7 +775,7 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table139620270713264" class="table-striped table-bordered table-condensed">
+<table id="table140196273205552" class="table-striped table-bordered table-condensed">
 <thead><tr><th>short_name</th><th>ivoid</th><th>waveband</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>Chandra</td><td>ivo://nasa.heasarc/chanmaster</td><td>x-ray</td></tr>
@@ -792,7 +796,7 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=15</i>
-<table id="table139620270712544" class="table-striped table-bordered table-condensed">
+<table id="table140196152406080" class="table-striped table-bordered table-condensed">
 <thead><tr><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>datalink</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_fov</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th><th>cloud_access</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>deg</th><th>deg</th><th>d</th><th></th><th></th><th>s</th><th></th><th></th><th>d</th><th></th><th>d</th><th>d</th><th>d</th><th>s</th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>m</th><th>m</th><th>m</th><th>m</th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th></tr></thead>
@@ -909,7 +913,7 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Science User Case - Inspecting a Candidate List</p>
+        <p class="prev-next-title">Candidate List Solution</p>
       </div>
     </a>
     <a class="right-next"
@@ -917,7 +921,7 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</p>
+        <p class="prev-next-title">HR (Hertzsprung-Russell) Diagram Solution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -939,13 +943,13 @@ GOODSACISFB ivo://nasa.heasarc/skyview/goodsacisfb
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-images">Step 2: Make Images:</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-find-out-what-the-previously-quoted-chandra-2-10-kev-flux-of-the-central-source-is-for-ngc-1365">Step 1: Find out what the previously quoted Chandra 2-10 keV flux of the central source is for NGC 1365</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-images">Step 2: Make Images</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ultraviolet-and-x-ray-images">Create ultraviolet and X-ray images</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-make-a-spectrum">Step 3: Make a spectrum:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-make-a-spectrum">Step 3: Make a spectrum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-what-chandra-spectral-observations-exist-already-for-this-source">Find what Chandra spectral observations exist already for this source</a></li>
 </ul>
 </li>
 </ul>

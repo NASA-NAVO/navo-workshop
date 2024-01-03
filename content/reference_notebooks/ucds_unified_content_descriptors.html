@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>UCDs: working with heterogeneous tables &#8212; NASA-NAVO Workshops Notebooks</title>
+    <title>UCDs (Unified Content Descriptors) &#8212; NASA-NAVO Workshops Notebooks</title>
   
   
   
@@ -48,8 +48,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/reference_notebooks/ucds_unified_content_descriptors';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Creating a VO Table from a CSV file" href="votables.html" />
-    <link rel="prev" title="Retrieve spectra using Simple Spectral Access protocol" href="spectral_access.html" />
+    <link rel="next" title="Candidate List Exercise" href="../use_case_notebooks/candidate_list_exercise.html" />
+    <link rel="prev" title="VO Tables" href="votables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -150,18 +150,22 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="catalog_queries.html">Accessing astronomical catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image_access.html">Searching for and retrieving images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="votables.html">Creating a VO Table from a CSV file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_reference.html">Quick Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_reference.html">Basic Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image_access.html">Image Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catalog_queries.html">Catalog Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spectral_access.html">Spectral Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="votables.html">VO Tables</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Candidate List Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Proposal Preparation Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">HR (Hertzsprung-Russell) Diagram Exercise</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Candidate List Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Proposal Preparation Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
@@ -430,7 +434,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>UCDs:  working with heterogeneous tables</h1>
+    <h1>UCDs (Unified Content Descriptors)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -444,8 +448,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="ucds-working-with-heterogeneous-tables">
-<h1>UCDs:  working with heterogeneous tables<a class="headerlink" href="#ucds-working-with-heterogeneous-tables" title="Permalink to this headline">#</a></h1>
+  <section id="ucds-unified-content-descriptors">
+<h1>UCDs (Unified Content Descriptors)<a class="headerlink" href="#ucds-unified-content-descriptors" title="Permalink to this headline">#</a></h1>
 <p>Suppose you want to do something using a column that you expect to find in a bunch of different tables, like coordinates and time.  It’s a good bet that many if not most of the tables have coordinate columns, but there’s no rule about what they have to be named.</p>
 <p>When doing detailed catalog queries with the TAP, you can obviously examine the columns of every table you’re interested in to find the columns you want.  Then you can hard-code the correct ones into each query for each table and service.</p>
 <p>Or, you can also search for keywords like “ra” or “ascension” in the columns and their descriptions to get the columns you want automatically that way.</p>
@@ -501,33 +505,35 @@ The Table Access Protocol (TAP) lets you execute queries against our database ta
 ----
 tap_schema.tables              - description of tables in this dataset
 ----
-tap_schema.columns             - description of columns in this dataset
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.columns             - description of columns in this dataset
+----
+tap_schema.keys                - description of foreign keys in this dataset
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.keys                - description of foreign keys in this dataset
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.key_columns         - description of foreign key columns in this dataset
 ----
-tap_schema.key_columns         - description of foreign key columns in this dataset
-----
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.DetailedCatalog            - None
-----
-dbo.SumMagAper2Cat             - None
+dbo.DetailedCatalog            - None
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SumMagAutoCat              - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SumMagAper2Cat             - None
 ----
-dbo.Catalog_ACS_SourceExtractor - None
+dbo.SumMagAutoCat              - None
+----
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Catalog_ACS_SourceExtractor - None
 ----
 dbo.Catalog_WFC3_SourceExtractor - None
 ----
+dbo.Catalog_WFPC2_SourceExtractor - None
+----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Catalog_WFPC2_SourceExtractor - None
-----
-dbo.Catalog_Image_MetaData     - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Catalog_Image_MetaData     - None
 ----
 dbo.CloseMatch                 - None
 ----
@@ -537,13 +543,15 @@ dbo.CloseMatch                 - None
 ----
 dbo.GroupMembers               - None
 ----
-dbo.Groups                     - None
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.Groups                     - None
+----
+dbo.HCVdetailedView            - None
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVdetailedView            - None
-----
-dbo.HCVsummaryView             - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVsummaryView             - None
 ----
 dbo.HLAscience                 - None
 ----
@@ -553,13 +561,15 @@ dbo.HLAscience                 - None
 ----
 dbo.Images                     - None
 ----
-dbo.ProductMembers             - None
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.ProductMembers             - None
+----
+dbo.ProperMotionsView          - None
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.ProperMotionsView          - None
-----
-dbo.SourceLinks                - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.SourceLinks                - None
 ----
 dbo.SourcePositionsView        - None
 ----
@@ -575,13 +585,15 @@ dbo.SumMagAper2CatView         - None
 ----
 dbo.WFPC2PCFRAC                - None
 ----
-dbo.XMatchV2                   - None
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.XMatchV2                   - None
+----
+dbo.HCVdetailedViewT           - None
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVdetailedViewT           - None
-----
-dbo.HCVsummaryViewT            - None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.HCVsummaryViewT            - None
 ----
 </pre></div>
 </div>
@@ -686,25 +698,25 @@ Flags [meta.code.status]       - Bit encoded flag: bit 0 (value 0) = point sourc
         <span class="n">names</span><span class="o">=</span><span class="p">{}</span>
         <span class="k">for</span> <span class="n">ucd</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;pos.eq.ra&#39;</span><span class="p">,</span><span class="s1">&#39;pos.eq.dec&#39;</span><span class="p">,</span><span class="s1">&#39;time.start&#39;</span><span class="p">,</span><span class="s1">&#39;time.end&#39;</span><span class="p">]:</span>
             <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span> <span class="ow">and</span> <span class="n">ucd</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="p">]</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">names</span><span class="p">[</span><span class="n">ucd</span><span class="p">]</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># use the first that matches</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>  
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Table </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has the right columns.  Counting rows matching my time.&quot;</span><span class="p">)</span>
-            <span class="c1">#  For a first look, a very simple query counting rows in a </span>
+            <span class="c1">#  For a first look, a very simple query counting rows in a</span>
             <span class="c1">#  time range of interest:</span>
             <span class="n">query</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;select count(</span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="s1">&#39;time.start&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) from </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span> \
-                  <span class="sa">f</span><span class="s2">&quot; where </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="s1">&#39;time.start&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &gt; 52000 &quot;</span> 
+                  <span class="sa">f</span><span class="s2">&quot; where </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="s1">&#39;time.start&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &gt; 52000 &quot;</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">results</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
             <span class="k">except</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Problem executing query.  Continuing to next.&quot;</span><span class="p">)</span>
                 <span class="k">continue</span>
-            <span class="c1">#  For this simple query, the result is a single number, the count.  </span>
-            <span class="c1">#   But different services might name the result differently, so </span>
-            <span class="c1">#   don&#39;t assume you know the column  name.  </span>
+            <span class="c1">#  For this simple query, the result is a single number, the count.</span>
+            <span class="c1">#   But different services might name the result differently, so</span>
+            <span class="c1">#   don&#39;t assume you know the column  name.</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    Found </span><span class="si">{}</span><span class="s2"> results from </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
             <span class="c1">#  If the query above asked for the matching data rather than the</span>
-            <span class="c1">#  count, you might want to collect the results.  </span>
+            <span class="c1">#  count, you might want to collect the results.</span>
             <span class="c1">#  Careful:  here we&#39;re assuming the table names are unique</span>
             <span class="n">collection</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">=</span><span class="n">results</span>
 </pre></div>
@@ -772,20 +784,20 @@ Flags [meta.code.status]       - Bit encoded flag: bit 0 (value 0) = point sourc
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="spectral_access.html"
+       href="votables.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Retrieve spectra using Simple Spectral Access protocol</p>
+        <p class="prev-next-title">VO Tables</p>
       </div>
     </a>
     <a class="right-next"
-       href="votables.html"
+       href="../use_case_notebooks/candidate_list_exercise.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating a VO Table from a CSV file</p>
+        <p class="prev-next-title">Candidate List Exercise</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -1,6 +1,18 @@
 # Configuring the Workshop Environment
 These directions walk through installing miniconda, a lightweight distribution of the python package installer conda, downloading the NAVO workshop material, then creating and testing the custom environment for the  workshop.
 
+## 0. (Only for Windows) Install WSL
+
+*This step is is only for Windows users and is adapted from [step 0 of the Astropy Workshop instructions](https://github.com/astropy/astropy-workshop/blob/main/00-Install_and_Setup/README.md#0-only-for-windows-install-wsl).*
+
+*If you are using Windows, we now recommend using the Windows Subsystem for Linux (WSL) instead of using native Windows tools. WSL is now fully supported by Microsoft and tends to result in fewer install headaches, and lets you use tools that were developed for Linux seamlessly in Windows.  Since installing WSL requires admin privileges, this approach is suitable if you already have WSL installed or have admin privileges.  If neither of those is true,  you may still have success using the Windows-native installation of Miniconda in step 1, but can also run and save all the workshop content via a web browser using the [Running on Sciserver instructions](https://github.com/NASA-NAVO/navo-workshop#running-on-sciserver).* 
+
+If you are not using Windows, proceed to step 1.
+
+If WSL is already installed with Ubuntu, proceed to step 1 and follow the instructions using WSL as if you were fully on Ubuntu Linux.
+
+To install WSL, you should follow the instructions Microsoft provides here: https://docs.microsoft.com/en-us/windows/wsl/install. While you may choose an alternative Linux distribution from the default Ubuntu, the instructions below have been tested on Ubuntu, so unless you have a specific reason, we suggest you stick with the default.  Once you reach the point in the instructions with a working Linux terminal prompt, you can proceed to step 1 of these instructions.
+
 ## 1. Install Miniconda (if needed)
 
 *Miniconda is a free minimal installer for conda. It is a small, bootstrap

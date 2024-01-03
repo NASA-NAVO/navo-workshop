@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.4
+    jupytext_version: 1.16.0
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -20,7 +20,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-  version: 3.10.11
+  version: 3.11.7
 toc:
   base_numbering: 1
   nav_menu: {}
@@ -42,7 +42,7 @@ widgets:
   version: 1.1.1
 ---
 
-# Accessing astronomical catalogs
+# Catalog Queries
 
 There are two ways to access astronomical data catalogs that are provided as table data with a VO API.
 
@@ -50,17 +50,17 @@ First, there is a __[Simple Cone Search (SCS) protocol](http://www.ivoa.net/docu
 
 For more complicated searches, the __[Table Access Protocol](http://www.ivoa.net/documents/TAP/)__ (TAP) protocol is  a powerful tool to search any VO table.  Here, we expand on its usage and that of the __[Astronomical Data Query Language](http://www.ivoa.net/documents/latest/ADQL.html)__ (ADQL) that it uses.
 
-- [Accessing astronomical catalogs](#accessing-astronomical-catalogs)
-    - [1. Simple cone search](#1-simple-cone-search)
-    - [2. Table Access Protocol queries](#2-table-access-protocol-queries)
-        - [2.1 TAP services](#21-tap-services)
-        - [2.2 Expressing queries in ADQL](#22-expressing-queries-in-adql)
-        - [2.3 A use case](#23-a-use-case)
-        - [2.4 TAP examples for a given service](#24-tap-examples-for-a-given-service)
-    - [3. Using the TAP to cross-correlate and combine](#3-using-the-tap-to-cross-correlate-and-combine)
-        - [3.1 Cross-correlating to combine catalogs](#31-cross-correlating-to-combine-catalogs)
-        - [3.2 Cross-correlating with user-defined columns](#32-cross-correlating-with-user-defined-columns)
-    - [4. Synchronous versus asynchronous queries](#4-synchronous-versus-asynchronous-queries)
+- [Catalog Queries](#catalog-queries)
+  - [1. Simple cone search](#1-simple-cone-search)
+  - [2. Table Access Protocol queries](#2-table-access-protocol-queries)
+    - [2.1 TAP services](#21-tap-services)
+    - [2.2 Expressing queries in ADQL](#22-expressing-queries-in-adql)
+    - [2.3 A use case](#23-a-use-case)
+    - [2.4 TAP examples for a given service](#24-tap-examples-for-a-given-service)
+  - [3. Using the TAP to cross-correlate and combine](#3-using-the-tap-to-cross-correlate-and-combine)
+    - [3.1 Cross-correlating to combine catalogs](#31-cross-correlating-to-combine-catalogs)
+    - [3.2 Cross-correlating with user-defined columns](#32-cross-correlating-with-user-defined-columns)
+  - [4. Synchronous versus asynchronous queries](#4-synchronous-versus-asynchronous-queries)
 
 ```{code-cell} ipython3
 # suppress some specific warnings that are not important
@@ -97,10 +97,11 @@ print(coord)
 Below, we go through the exercise of how we can figure out the most relevant table. But for now, let's assume that we know that we want the CFA redshift catalog refered to as 'zcat'. VO services are listed in a central Registry that can be searched through a [web interface](http://vao.stsci.edu/keyword-search/) or using PyVO's `regsearch`.  We use the registry to find the corresponding cone service and then submit our cone search.
 
 Registry services are of the following type:
-* simple cone search:  "scs"
-* table access protocol:  "tap" or "table"
-* simple image search:  "sia" or "image"
-* simple spectral access: "ssa"
+
+- simple cone search:  "scs"
+- table access protocol:  "tap" or "table"
+- simple image search:  "sia" or "image"
+- simple spectral access: "ssa"
 
 There are a number of things in the registry related to 'zcat' so we find the specific one that we want, which is the CFA version:
 
@@ -175,7 +176,8 @@ Then let's look for tables matching the terms we're interested in as above.
 
 ```{code-cell} ipython3
 for tablename in heasarc_tables.keys():
-    if "redshift" in heasarc_tables[tablename].description.lower():
+    description = heasarc_tables[tablename].description
+    if description and "redshift" in description.lower():
         heasarc_tables[tablename].describe()
         print("Columns={}".format(sorted([k.name for k in heasarc_tables[tablename].columns ])))
         print("----")
@@ -193,35 +195,35 @@ Now that we know all the possible column information in the zcat catalog, we can
 
 The basics of ADQL:
 
-* *SELECT &#42; FROM my.interesting.catalog as cat...*
+- *SELECT &#42; FROM my.interesting.catalog as cat...*
 
 says you want all ("&#42;") columns from the catalog called "my.interesting.catalog", which you will refer to in the rest of the query by the more compact name of "cat".
 
 Instead of returning all columns, you can
 
-* *SELECT cat.RA, cat.DEC, cat.bmag from catalog as cat...*
+- *SELECT cat.RA, cat.DEC, cat.bmag from catalog as cat...*
 
 to only return the columns you're interested in. To use multiple catalogs, your query could start, e.g.,
 
-* *SELECT c1.RA,c1.DEC,c2.BMAG FROM catalog1 as c1 natural join catalog2 as c2...*
+- *SELECT c1.RA,c1.DEC,c2.BMAG FROM catalog1 as c1 natural join catalog2 as c2...*
 
 says that you want to query two catalogs zipped together the "natural" way, i.e., by looking for a common column.
 
 To select only some rows of the catalog based on the value in a column, you can add:
 
-* *WHERE cat.bmag < 14*
+- *WHERE cat.bmag < 14*
 
 says that you want to retrieve only those entries in the catalog whose bmag column has a value less than 14.
 
 You can also append
 
-* *ORDER by cat.bmag*
+- *ORDER by cat.bmag*
 
 to return the result sorted ascending by one of the columns, adding *DESC* to the end for descending.
 
 A few special functions in the ADQL allow you to query regions:
 
-* *WHERE contains( point('ICRS', cat.ra, cat.dec), circle('ICRS', 210.5, -6.5, 0.5))=1*
+- *WHERE contains( point('ICRS', cat.ra, cat.dec), circle('ICRS', 210.5, -6.5, 0.5))=1*
 
 is how you would ask for any catalog entries whose RA,DEC lie within a circular region defined by RA,DEC 210.5,-6.5 and a radius of 0.5 (all in degrees).  The 'ICRS' specifies the coordinate system.
 

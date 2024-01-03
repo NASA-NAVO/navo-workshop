@@ -19,7 +19,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-  version: 3.11.6
+  version: 3.11.7
 toc:
   base_numbering: 1
   nav_menu: {}
@@ -37,7 +37,7 @@ widgets:
   version: 1.1.1
 ---
 
-# Science User Case - Inspecting a Candidate List
+# Candidate List Solution
 
 [Ogle et al. (2016)](https://ui.adsabs.harvard.edu/abs/2016ApJ...817..109O/abstract) mined the NASA/IPAC Extragalactic Database (NED) to identify a new type of galaxy: Superluminous Spiral Galaxies.
 
@@ -45,7 +45,7 @@ Table 1 lists the positions of these Super Spirals. Based on those positions, le
 
 +++
 
-## 1. Import the Python modules we'll be using.
+## 1. Import the Python modules we'll be using
 
 ```{code-cell} ipython3
 # Suppress unimportant warnings.
@@ -73,10 +73,10 @@ import pyvo as vo
 The next cell prepares the notebook to display our visualizations.
 
 ```{code-cell} ipython3
-%matplotlib inline  
+%matplotlib inline
 ```
 
-## 2. Search NED for objects in this paper.
+## 2. Search NED for objects in this paper
 
 Insert a Code Cell below by clicking on the "Insert" Menu and choosing "Insert Cell Below". Then consult QuickReference.md to figure out how to use astroquery to search NED for all objects in a paper, based on the refcode of the paper. Inspect the resulting astropy table.
 
@@ -87,7 +87,7 @@ objects_in_paper = Ned.query_refcode('2016ApJ...817..109O')
 objects_in_paper.show_in_notebook()
 ```
 
-## 3. Filter the NED results.
+## 3. Filter the NED results
 
 The results from NED will include galaxies, but also other kinds of objects (e.g. galaxy clusters, galaxy groups). Print the 'Type' column to see the full range of classifications and filter the results so that we only keep the galaxies in the list.
 
@@ -104,7 +104,7 @@ galaxies = objects_in_paper[np.array(objects_in_paper['Type']) == 'G']
 galaxies.show_in_notebook()
 ```
 
-## 4. Search the NAVO Registry for image resources.
+## 4. Search the NAVO Registry for image resources
 
 The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for all image resources, using the 'service_type' search parameter. How many image resources are currently available?
 
@@ -116,7 +116,7 @@ print(f'{len(image_services)} result(s) found.')
 image_services.to_table()['ivoid', 'short_name', 'res_title']
 ```
 
-## 5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images.
+## 5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images
 
 There are hundreds of image resources...too many to quickly read through. Try adding the 'keywords' search parameter to your registry search, and find the image resource you would need to search the AllWISE images. Remember from the Known Issues that 'keywords' must be a list.
 
@@ -128,14 +128,14 @@ print(f'{len(allwise_image_services)} result(s) found.')
 allwise_image_services.to_table()['ivoid', 'short_name', 'res_title']
 ```
 
-## 6. Choose the AllWISE image service that you are interested in.
+## 6. Choose the AllWISE image service that you are interested in
 
 ```{code-cell} ipython3
 allwise_image_service = allwise_image_services[0]
 allwise_image_service.service
 ```
 
-## 7. Choose one of the galaxies in the NED list.
+## 7. Choose one of the galaxies in the NED list
 
 ```{code-cell} ipython3
 ra = galaxies['RA'][0]
@@ -147,7 +147,7 @@ pos = SkyCoord(ra, dec, unit = 'deg')
 ra,dec
 ```
 
-## 8. Search for a list of AllWISE images that cover this galaxy.
+## 8. Search for a list of AllWISE images that cover this galaxy
 
 How many images are returned? Which are you most interested in?
 
@@ -156,7 +156,7 @@ allwise_image_table = allwise_image_service.search(pos=pos, size=0)
 allwise_image_table
 ```
 
-## 9. Use the .to_table() method to view the results as an Astropy table.
+## 9. Use the .to_table() method to view the results as an Astropy table
 
 ```{code-cell} ipython3
 allwise_images = allwise_image_table.to_table()
@@ -166,6 +166,7 @@ allwise_images
 ## 10. From the result in 8., select the first record for an image taken in WISE band W1 (3.6 micron)
 
 Hints:
+
 * Loop over records and test on the `.bandpass_id` attribute of each record
 * Print the `.title` and `.bandpass_id` of the record you find, to verify it is the right one.
 
@@ -176,15 +177,15 @@ for allwise_image_record in allwise_image_table:
 print(allwise_image_record.title, allwise_image_record.bandpass_id)
 ```
 
-## 11. Visualize this AllWISE image.
+## 11. Visualize this AllWISE image
 
 ```{code-cell} ipython3
 ## If you only run this once, you can do it in memory in one line:
 ##  This fetches the FITS as an astropy.io.fits object in memory
 #allwise_w1_image = allwise_image_record.getdataobj()
-## But if you might run this notebook repeatedly with limited bandwidth, 
-##  download it once and cache it.  
-file_name = download_file(allwise_image_record.getdataurl(), cache=True)  
+## But if you might run this notebook repeatedly with limited bandwidth,
+##  download it once and cache it.
+file_name = download_file(allwise_image_record.getdataurl(), cache=True)
 allwise_w1_image = fits.open(file_name)
 ```
 
@@ -197,7 +198,7 @@ ax.imshow(allwise_w1_image[0].data, cmap='gray_r', origin='lower', vmax = 10)
 ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', facecolor='none')
 ```
 
-## 12. Plot a cutout of the AllWISE image, centered on your position.
+## 12. Plot a cutout of the AllWISE image, centered on your position
 
 Try a 60 arcsecond cutout.
 
@@ -213,7 +214,7 @@ ax.imshow(cutout.data, cmap='gray_r', origin='lower', vmax = 10)
 ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', facecolor='none')
 ```
 
-## 13. Try visualizing a cutout of a GALEX image that covers your position.
+## 13. Try visualizing a cutout of a GALEX image that covers your position
 
 Repeat steps 4, 5, 6, 8 through 12 for GALEX.
 
@@ -242,9 +243,9 @@ print(galex_image_record.title, galex_image_record.bandpass_id)
 ```
 
 ```{code-cell} ipython3
-## See above regarding two ways to do this: 
+## See above regarding two ways to do this:
 #galex_nuv_image = fits.open(galex_image_record.getdataurl())
-file_name = download_file(galex_image_record.getdataurl(), cache=True)  
+file_name = download_file(galex_image_record.getdataurl(), cache=True)
 galex_nuv_image=fits.open(file_name)
 ```
 
@@ -260,7 +261,7 @@ print('Stdev:', np.std(image_data))
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1, projection=WCS(galex_nuv_image[0].header))
 ax.imshow(galex_nuv_image[0].data, cmap='gray_r', origin='lower', vmin=0.0, vmax=0.01)
-ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', facecolor='none')   
+ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', facecolor='none')
 ```
 
 ```{code-cell} ipython3
@@ -273,9 +274,10 @@ ax.imshow(cutout.data, cmap='gray_r', origin='lower', vmin = 0.0, vmax = 0.01)
 ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', facecolor='none')
 ```
 
-## 14. Try visualizing a cutout of an SDSS image that covers your position.
+## 14. Try visualizing a cutout of an SDSS image that covers your position
 
 Hints:
+
 * Search the registry using `keywords=['sloan']
 * Find the service with a `short_name` of `'SDSS SIAP'`
 * After obtaining your search results, select r-band images using the `.title` attribute of the records that are returned, since `.bandpass_id` is not populated.
@@ -287,7 +289,7 @@ sdss_image_services.to_table()['ivoid', 'short_name', 'res_title', 'source_value
 
 ```{code-cell} ipython3
 #  Use list comprehension to check each service's short_name attribute.
-#   Given the above, we know the first match is the right one.  
+#   Given the above, we know the first match is the right one.
 sdss_image_service = [s for s in sdss_image_services if 'SDSS SIAP' in s.short_name ][0]
 sdss_image_service.short_name
 ```
@@ -307,7 +309,7 @@ print(sdss_rband_record.title, sdss_rband_record.bandpass_id)
 ```{code-cell} ipython3
 ##  See above regarding two ways to do this
 # sdss_rband_image = fits.open(sdss_rband_record.getdataurl())
-file_name = download_file(sdss_rband_record.getdataurl(), cache=True)  
+file_name = download_file(sdss_rband_record.getdataurl(), cache=True)
 sdss_rband_image=fits.open(file_name)
 ```
 
@@ -319,7 +321,7 @@ ax = fig.add_subplot(1, 1, 1, projection=WCS(sdss_rband_image[0].header))
 interval = vis.PercentileInterval(99.9)
 vmin,vmax = interval.get_limits(sdss_rband_image[0].data)
 norm = vis.ImageNormalize(vmin=vmin, vmax=vmax, stretch=vis.LogStretch(1000))
-ax.imshow(sdss_rband_image[0].data, cmap = 'gray_r', norm = norm, origin = 'lower')          
+ax.imshow(sdss_rband_image[0].data, cmap = 'gray_r', norm = norm, origin = 'lower')
 ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', facecolor='none')
 ```
 
@@ -329,11 +331,11 @@ fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1, projection=cutout.wcs)
 vmin,vmax = interval.get_limits(sdss_rband_image[0].data)
 norm = vis.ImageNormalize(vmin=vmin, vmax=vmax, stretch=vis.LogStretch(1000))
-ax.imshow(cutout.data, cmap = 'gray_r', norm = norm, origin = 'lower')          
+ax.imshow(cutout.data, cmap = 'gray_r', norm = norm, origin = 'lower')
 ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', facecolor='none')
 ```
 
-## 15. Try looping over all positions and plotting multiwavelength cutouts.
+## 15. Try looping over all positions and plotting multiwavelength cutouts
 
 +++
 
@@ -349,18 +351,18 @@ for galaxy in galaxy_subset:
     # Establish the position.
     ra = galaxy['RA']
     dec = galaxy['DEC']
-    pos = SkyCoord(ra, dec, unit = 'deg')  
-    
+    pos = SkyCoord(ra, dec, unit = 'deg')
+
     # Set up the plot for this position.
     fig = plt.figure(figsize=(20,6))
     plt.suptitle('POSITION = ' + str(ra) + ', ' + str(dec), fontsize=16)
 
     # GALEX
-    
+
     # Find the GALEX images that overlap the position.
     galex_image_table = galex_image_service.search(pos=pos, size=0.25)
-    
-    # Find the GALEX All-Sky Image Survey (AIS) Near-UV FITS coadd. 
+
+    # Find the GALEX All-Sky Image Survey (AIS) Near-UV FITS coadd.
     galex_image_record = None
     for record in galex_image_table:
         if (('image/fits' in record.format) and
@@ -368,10 +370,10 @@ for galaxy in galaxy_subset:
             (record['productType'] == 'SCIENCE')):
             galex_image_record = record
             break
-    
+
     if galex_image_record is not None:
         # Create a cutout.
-        file_name = download_file(galex_image_record.getdataurl(), cache=True)  
+        file_name = download_file(galex_image_record.getdataurl(), cache=True)
         gimage = fits.open(file_name)
         galex_cutout = Cutout2D(gimage[0].data, pos, size, wcs=WCS(gimage[0].header))
 
@@ -384,22 +386,22 @@ for galaxy in galaxy_subset:
         # We didn't find a suitable image, so leave that subplot blank.
         ax = fig.add_subplot(1, 3, 1, projection=galex_cutout.wcs)
         ax.set_title('GALEX image not found')
-    
+
     # SDSS
-    
+
     # Find the SDSS images that overlap the position.
     sdss_image_table = sdss_image_service.search(pos=pos, size=0)
-    
+
     # Find the first SDSS r-band image.
     sdss_rband_record = None
     for record in sdss_image_table:
         if 'Sloan Digital Sky Survey - Filter r' in record.title:
             sdss_rband_record = record
             break
-    
+
     if sdss_rband_record is not None:
         # Create a cutout.
-        file_name = download_file(sdss_rband_record.getdataurl(), cache=True)  
+        file_name = download_file(sdss_rband_record.getdataurl(), cache=True)
         sdss_rband_image=fits.open(file_name)
 
         sdss_cutout = Cutout2D(sdss_rband_image[0].data, pos, size,
@@ -409,29 +411,29 @@ for galaxy in galaxy_subset:
         vmin,vmax = interval.get_limits(sdss_cutout.data)
         norm = vis.ImageNormalize(vmin=vmin, vmax=vmax, stretch=vis.LogStretch(1000))
         ax = fig.add_subplot(1, 3, 2, projection=sdss_cutout.wcs)
-        ax.imshow(sdss_cutout.data, cmap = 'gray_r', norm = norm, origin = 'lower')          
+        ax.imshow(sdss_cutout.data, cmap = 'gray_r', norm = norm, origin = 'lower')
         ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', facecolor='none')
         ax.set_title(sdss_rband_record.title)
     else:
         # We didn't find a suitable image, so leave that subplot blank.
         ax = fig.add_subplot(1, 3, 2, projection=galex_cutout.wcs)
         ax.set_title('SDSS rband image not found')
-    
+
     # AllWISE
-    
+
     # Find the AllWISE images that overlap the position.
     allwise_image_table = allwise_image_service.search(pos=pos, size=0)
-    
+
     # Find the first AllWISE W1 channel image.
     allwise_image_record = None
     for record in allwise_image_table:
         if 'W1' in record.bandpass_id:
             allwise_image_record = record
             break
-            
+
     if allwise_image_record is not None:
         # Create a cutout.
-        file_name = download_file(allwise_image_record.getdataurl(), cache=True)  
+        file_name = download_file(allwise_image_record.getdataurl(), cache=True)
         allwise_w1_image=fits.open(file_name)
 
         allwise_cutout = Cutout2D(allwise_w1_image[0].data, pos, (size, size),

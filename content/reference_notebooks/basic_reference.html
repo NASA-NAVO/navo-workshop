@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Quick Reference &#8212; NASA-NAVO Workshops Notebooks</title>
+    <title>Basic Reference &#8212; NASA-NAVO Workshops Notebooks</title>
   
   
   
@@ -48,8 +48,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/reference_notebooks/basic_reference';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Science User Case - Inspecting a Candidate List" href="../use_case_notebooks/candidate_list_solution.html" />
-    <link rel="prev" title="Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram" href="../use_case_notebooks/hr_diagram_exercise.html" />
+    <link rel="next" title="Image Access" href="image_access.html" />
+    <link rel="prev" title="NASA-NAVO notebooks" href="../../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -150,18 +150,22 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="catalog_queries.html">Accessing astronomical catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="image_access.html">Searching for and retrieving images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="votables.html">Creating a VO Table from a CSV file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quick Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image_access.html">Image Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catalog_queries.html">Catalog Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spectral_access.html">Spectral Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="votables.html">VO Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ucds_unified_content_descriptors.html">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_exercise.html">Candidate List Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_exercise.html">Proposal Preparation Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_exercise.html">HR (Hertzsprung-Russell) Diagram Exercise</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/candidate_list_solution.html">Candidate List Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/proposal_prep_solution.html">Proposal Preparation Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use_case_notebooks/hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../00_SETUP.html">Configuring the Workshop Environment</a></li>
@@ -432,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quick Reference</h1>
+    <h1>Basic Reference</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -448,7 +452,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-necessary-packages">2.0 Import Necessary Packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-up-services-in-vo-registry">2.1 Look Up Services in VO Registry</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-different-arguments-values-to-modify-the-simple-example">2.1.1 Use different arguments/values to modify the simple example</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-results">2.1.2 Inspect the results.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-results">2.1.2 Inspect the results</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pyvo">Using pyvo</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-results">Filtering results</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-astropy">Using astropy</a></li>
@@ -486,13 +490,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="quick-reference">
-<h1>Quick Reference<a class="headerlink" href="#quick-reference" title="Permalink to this headline">#</a></h1>
+  <section id="basic-reference">
+<h1>Basic Reference<a class="headerlink" href="#basic-reference" title="Permalink to this headline">#</a></h1>
 <section id="setup">
 <h2>0. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
 <p>Please make sure your environment is set up according to the <a class="reference external" href="https://nasa-navo.github.io/navo-workshop/00_SETUP.html">instructions here</a>.</p>
-<p>Ensure you have the latest version of the workshop material by updating your environment:
-TBD</p>
 </section>
 <section id="overview">
 <h2>1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
@@ -612,7 +614,7 @@ ivo://archive.stsci.edu/catalogs/mastcs ...
 </table>
 </section>
 <section id="inspect-the-results">
-<h4>2.1.2 Inspect the results.<a class="headerlink" href="#inspect-the-results" title="Permalink to this headline">#</a></h4>
+<h4>2.1.2 Inspect the results<a class="headerlink" href="#inspect-the-results" title="Permalink to this headline">#</a></h4>
 <section id="using-pyvo">
 <h5>Using pyvo<a class="headerlink" href="#using-pyvo" title="Permalink to this headline">#</a></h5>
 <p>Although not lists, <code class="docutils literal notranslate"><span class="pre">pyvo</span></code> results can be iterated over to see each individual result.  The results are specialized based on the type of query, providing access to the important properties of the results.  Some useful accessors with registry results are:</p>
@@ -671,8 +673,8 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <span class="n">services_table</span> <span class="o">=</span> <span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
 
 <span class="c1"># Print the column names and display 1st 3 rows with a subset of columns</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Column Names:</span><span class="se">\n</span><span class="si">{</span><span class="n">services_table</span><span class="o">.</span><span class="n">colnames</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>  
-<span class="n">services_table</span><span class="p">[</span><span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">,</span> <span class="s1">&#39;res_description&#39;</span><span class="p">][:</span><span class="mi">3</span><span class="p">]</span>  
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Column Names:</span><span class="se">\n</span><span class="si">{</span><span class="n">services_table</span><span class="o">.</span><span class="n">colnames</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">services_table</span><span class="p">[</span><span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">,</span> <span class="s1">&#39;res_description&#39;</span><span class="p">][:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -682,7 +684,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table140385168535808" class="table-striped table-bordered table-condensed">
+<table id="table140323428107264" class="table-striped table-bordered table-condensed">
 <thead><tr><th>short_name</th><th>res_title</th><th>res_description</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>MAST CS</td><td>MAST ConeSearch</td><td>All MAST catalog holdings are available via a ConeSearch endpoint. \nThis service provides access to all, with an optional non-standard parameter for an individual catalog to query. \nThe available missions are listed at http://archive.stsci.edu/vo/mast_services.html, \nand include Hubble (HST) data, Kepler, K2, IUE, HUT, EUVE, FUSE, UIT, WUPPE, BEFS, TUES, IMAPS, High Level Science Products (HLSP), Copernicus, HPOL, VLA First, XMM-OM, and SWIFT.</td></tr>
@@ -704,13 +706,13 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;conesearch&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="s1">&#39;usno-b&#39;</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">m51_pos</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="c1"># Astropy Table is useful for displaying cone search results.</span>
-<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>  
+<span class="n">results</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=316</i>
-<table id="table140385797471872" class="table-striped table-bordered table-condensed">
+<table id="table140323431676320" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ObjID</th><th>Zone</th><th>SeqNo</th><th>RA</th><th>DEC</th><th>pmRA</th><th>pmDEC</th><th>e_pmRA</th><th>e_pmDEC</th><th>e_RA</th><th>e_DEC</th><th>Epoch</th><th>B1Mag</th><th>R1s_g</th><th>B2Mag</th><th>B2s_g</th><th>R2Mag</th><th>R2s_g</th><th>NMag</th><th>mag</th><th>B1s_g</th><th>R1Mag</th><th>distance</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>deg</th><th>deg</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>arcsec</th><th>arcsec</th><th>yr</th><th>mag</th><th></th><th>mag</th><th></th><th>mag</th><th></th><th>mag</th><th>mag</th><th></th><th>mag</th><th>arcsec</th></tr></thead>
 <thead><tr><th>int64</th><th>int32</th><th>int32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>int32</th><th>float32</th><th>int32</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>float32</th></tr></thead>
@@ -751,7 +753,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table140385099170288" class="table-striped table-bordered table-condensed">
+<table id="table140323428271728" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
@@ -777,7 +779,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140385099171200" class="table-striped table-bordered table-condensed">
+<table id="table140323428273648" class="table-striped table-bordered table-condensed">
 <thead><tr><th>filename</th><th>id</th><th>ra_j2000</th><th>dec_j2000</th><th>url</th><th>filesize</th><th>mjdmean</th><th>naxes</th><th>naxis</th><th>scale</th><th>cd</th><th>format</th><th>ref_frame</th><th>equinox</th><th>coord_projection</th><th>crpix</th><th>crval</th><th>ctype</th><th>bandpass_id</th><th>bandpass_refvalue</th><th>bandpass_unit</th><th>bandpass_hilimit</th><th>bandpass_lolimit</th><th>processing</th><th>project</th><th>preview</th><th>representative</th><th>object_id</th></tr></thead>
 <thead><tr><th></th><th></th><th>deg</th><th>deg</th><th></th><th>byte</th><th>d</th><th></th><th>pix</th><th>deg / pix</th><th>deg / pix</th><th></th><th></th><th>yr</th><th></th><th>pix</th><th>pix</th><th></th><th></th><th>m</th><th>m</th><th>m</th><th>m</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>int32</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float32</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -793,7 +795,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
-<span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">())</span>  
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">())</span>
 <span class="n">file_name</span>
 </pre></div>
 </div>
@@ -802,7 +804,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>image/fits
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-1904-bmqp9gjh&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-1892-v485b1rc&#39;
 </pre></div>
 </div>
 </div>
@@ -824,12 +826,12 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;x-ray&#39;</span><span class="p">)</span>
 
 <span class="c1"># Assuming there are services and the first one is OK...</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;Delta Ori&quot;</span><span class="p">),</span> 
+<span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;Delta Ori&quot;</span><span class="p">),</span>
                              <span class="n">diameter</span><span class="o">=</span><span class="n">Angle</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">))</span>
 
 <span class="c1"># Assuming there are results, download the first file.</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Title: </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">, Format: </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">())</span>  
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">())</span>
 <span class="n">file_name</span>
 </pre></div>
 </div>
@@ -838,7 +840,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title: acisf00639N004_pha2.fits, Format: application/fits
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-1904-t27i5itq&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-1892-ymola9at&#39;
 </pre></div>
 </div>
 </div>
@@ -884,7 +886,7 @@ TAP_SCHEMA.key_columns         - Key/Foreign key pairs -- usused
 TAP_SCHEMA.keys                - Joins between tables -- unused
 TAP_SCHEMA.schemas             - Available schemas
 TAP_SCHEMA.tables              - Available tables
-&quot;first&quot;                        - Faint Images of the Radio Sky at Twenty cm (FIRST)
+first                          - None
 a1                             - HEAO 1 A1 X-Ray Source Catalog
 a1point                        - HEAO 1 A1 Lightcurves
 a2lcpoint                      - HEAO 1 A2 Pointed Lightcurves
@@ -1770,9 +1772,7 @@ uvqs                           - UV-Bright Quasar Survey (UVQS) DR1 Catalog
 uzc                            - Updated Zwicky Catalog
 vela5b                         - Vela 5B All-Sky Monitor Lightcurves
 verimaster                     - VERITAS Source Catalog
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>veroncat                       - Veron Catalog of Quasars &amp; AGN, 13th Edition
+veroncat                       - Veron Catalog of Quasars &amp; AGN, 13th Edition
 vla23901p4                     - VLA A2390 Cluster of Galaxies 1.4-GHz Source Catalog
 vla3701p4                      - VLA A370 Cluster of Galaxies 1.4-GHz Source Catalog
 vla74mhzdp                     - VLA 74-MHz Deep High-Resolution Survey Source Catalog
@@ -1783,7 +1783,9 @@ vlacos3ghz                     - VLA-COSMOS 3-GHz Large Project Source Catalog
 vlacosmjsc                     - VLA-COSMOS Project 1.4-GHz Joint Source Catalog
 vlacosmos                      - VLA-COSMOS Large Project 1.4-GHz Source Catalog
 vlacosxoid                     - VLA-COSMOS 3-GHz Large Project Multiwavelength Counterparts Cata
-vlaecdfs1p4                    - VLA Extended-Chandra Deep Field-South 1.4-GHz Source Catalog
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vlaecdfs1p4                    - VLA Extended-Chandra Deep Field-South 1.4-GHz Source Catalog
 vlaecdfscls                    - VLA Extended-Chandra Deep Field-South Classification Catalog
 vlaecdfsoi                     - VLA Extended-Chandra Deep Field-South 1.4-GHz Sources Opt/IR Cou
 vlaen20cm                      - VLA ELAIS N1, N2, N3 Fields 20-cm Source Catalog
@@ -1918,11 +1920,11 @@ MASTER_TABLE.time              - Time only queries
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;distance&quot;                     - Distance Determined by Independent Source (Mpc)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>distance                       - Distance Determined by Independent Source (Mpc)
 ra                             - Right Ascension
-&quot;__x_ra_dec&quot;                   - System unit vector column
+__x_ra_dec                     - System unit vector column
 class                          - Browse Object Classification
-&quot;__z_ra_dec&quot;                   - System unit vector column
+__z_ra_dec                     - System unit vector column
 bt_mag                         - B_T Magnitude
 comments                       - Comments
 luminosity_class               - Luminosity Class
@@ -1931,7 +1933,7 @@ bar_type                       - Bar Type
 radial_velocity                - Heliocentric Radial Velocity (km/s)
 ref_bmag                       - Reference Code for B Magnitude
 bii                            - Galactic Latitude
-&quot;__y_ra_dec&quot;                   - System unit vector column
+__y_ra_dec                     - System unit vector column
 name                           - Catalog Designation
 ref_redshift                   - Reference Code for Redshift
 radial_velocity_error          - Radial Velocity Error
@@ -1946,7 +1948,7 @@ notes                          - Diameter (arcmin) or Spectrum ID
 rfn_number                     - Plate Number
 diameter_1                     - Diameter 1 (arcmin)
 redshift                       - Redshift
-&quot;__row&quot;                        - System index column
+__row                          - System index column
 </pre></div>
 </div>
 </div>
@@ -1959,7 +1961,7 @@ redshift                       - Redshift
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m83&quot;</span><span class="p">)</span>
 <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where </span>
+<span class="s1">SELECT ra, dec, Radial_Velocity, radial_velocity_error, bmag, morph_type FROM public.zcat as cat where</span>
 <span class="s1">contains(point(&#39;ICRS&#39;,cat.ra,cat.dec),circle(&#39;ICRS&#39;,</span><span class="si">{</span><span class="n">coord</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">coord</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="si">}</span><span class="s1">,1.0))=1</span>
 <span class="s1">&#39;&#39;&#39;</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
@@ -1970,7 +1972,7 @@ redshift                       - Redshift
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=13</i>
-<table id="table140385168538592" class="table-striped table-bordered table-condensed">
+<table id="table140323428106544" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
@@ -2015,7 +2017,7 @@ redshift                       - Redshift
 </ul>
 </li>
 </ul>
-<p>For more, see https://astroquery.readthedocs.io/en/latest/</p>
+<p>For more, see <a class="reference external" href="https://astroquery.readthedocs.io/en/latest/">https://astroquery.readthedocs.io/en/latest/</a></p>
 <section id="ned">
 <h3>3.1 NED<a class="headerlink" href="#ned" title="Permalink to this headline">#</a></h3>
 <p>Example:  Get an Astropy Table containing the objects from paper 2018ApJ…858…62K.  For more on the API, see <a class="reference external" href="https://astroquery.readthedocs.io/en/latest/ipac/ned/ned.html">astroquery</a></p>
@@ -2029,7 +2031,7 @@ redshift                       - Redshift
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=41</i>
-<table id="table140384767605440" class="table-striped table-bordered table-condensed">
+<table id="table140322880578480" class="table-striped table-bordered table-condensed">
 <thead><tr><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>int32</th><th>str30</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>float64</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th></tr></thead>
@@ -2072,20 +2074,20 @@ redshift                       - Redshift
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../use_case_notebooks/hr_diagram_exercise.html"
+       href="../../index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</p>
+        <p class="prev-next-title">NASA-NAVO notebooks</p>
       </div>
     </a>
     <a class="right-next"
-       href="../use_case_notebooks/candidate_list_solution.html"
+       href="image_access.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Science User Case - Inspecting a Candidate List</p>
+        <p class="prev-next-title">Image Access</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2113,7 +2115,7 @@ redshift                       - Redshift
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-necessary-packages">2.0 Import Necessary Packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-up-services-in-vo-registry">2.1 Look Up Services in VO Registry</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-different-arguments-values-to-modify-the-simple-example">2.1.1 Use different arguments/values to modify the simple example</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-results">2.1.2 Inspect the results.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-results">2.1.2 Inspect the results</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pyvo">Using pyvo</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-results">Filtering results</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-astropy">Using astropy</a></li>

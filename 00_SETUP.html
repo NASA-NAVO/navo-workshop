@@ -49,7 +49,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Known issues and workarounds" href="KNOWN_ISSUES.html" />
-    <link rel="prev" title="Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram" href="content/use_case_notebooks/hr_diagram_solution.html" />
+    <link rel="prev" title="HR (Hertzsprung-Russell) Diagram Solution" href="content/use_case_notebooks/hr_diagram_solution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -150,18 +150,22 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html">Accessing astronomical catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/image_access.html">Searching for and retrieving images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/spectral_access.html">Retrieve spectra using Simple Spectral Access protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/ucds_unified_content_descriptors.html">UCDs:  working with heterogeneous tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/votables.html">Creating a VO Table from a CSV file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/basic_reference.html">Quick Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html">Science User Case - Inspecting a Candidate List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html">Preparing a proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/basic_reference.html">Basic Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/image_access.html">Image Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/catalog_queries.html">Catalog Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/spectral_access.html">Spectral Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/votables.html">VO Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/reference_notebooks/ucds_unified_content_descriptors.html">UCDs (Unified Content Descriptors)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_exercise.html">Candidate List Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_exercise.html">Proposal Preparation Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_exercise.html">HR (Hertzsprung-Russell) Diagram Exercise</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/candidate_list_solution.html">Candidate List Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/proposal_prep_solution.html">Proposal Preparation Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/use_case_notebooks/hr_diagram_solution.html">HR (Hertzsprung-Russell) Diagram Solution</a></li>
 </ul>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Configuring the Workshop Environment</a></li>
@@ -376,6 +380,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-for-windows-install-wsl">0. (Only for Windows) Install WSL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-miniconda-if-needed">1. Install Miniconda (if needed)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-conda-version">2. Update conda version</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-git-if-needed">3. Install git (if needed)</a></li>
@@ -399,6 +404,14 @@ document.write(`
   <section id="configuring-the-workshop-environment">
 <h1>Configuring the Workshop Environment<a class="headerlink" href="#configuring-the-workshop-environment" title="Permalink to this headline">#</a></h1>
 <p>These directions walk through installing miniconda, a lightweight distribution of the python package installer conda, downloading the NAVO workshop material, then creating and testing the custom environment for the  workshop.</p>
+<section id="only-for-windows-install-wsl">
+<h2>0. (Only for Windows) Install WSL<a class="headerlink" href="#only-for-windows-install-wsl" title="Permalink to this headline">#</a></h2>
+<p><em>This step is is only for Windows users and is adapted from <a class="reference external" href="https://github.com/astropy/astropy-workshop/blob/main/00-Install_and_Setup/README.md#0-only-for-windows-install-wsl">step 0 of the Astropy Workshop instructions</a>.</em></p>
+<p><em>If you are using Windows, we now recommend using the Windows Subsystem for Linux (WSL) instead of using native Windows tools. WSL is now fully supported by Microsoft and tends to result in fewer install headaches, and lets you use tools that were developed for Linux seamlessly in Windows.  Since installing WSL requires admin privileges, this approach is suitable if you already have WSL installed or have admin privileges.  If neither of those is true,  you may still have success using the Windows-native installation of Miniconda in step 1, but can also run and save all the workshop content via a web browser using the <a class="reference external" href="https://github.com/NASA-NAVO/navo-workshop#running-on-sciserver">Running on Sciserver instructions</a>.</em></p>
+<p>If you are not using Windows, proceed to step 1.</p>
+<p>If WSL is already installed with Ubuntu, proceed to step 1 and follow the instructions using WSL as if you were fully on Ubuntu Linux.</p>
+<p>To install WSL, you should follow the instructions Microsoft provides here: https://docs.microsoft.com/en-us/windows/wsl/install. While you may choose an alternative Linux distribution from the default Ubuntu, the instructions below have been tested on Ubuntu, so unless you have a specific reason, we suggest you stick with the default.  Once you reach the point in the instructions with a working Linux terminal prompt, you can proceed to step 1 of these instructions.</p>
+</section>
 <section id="install-miniconda-if-needed">
 <h2>1. Install Miniconda (if needed)<a class="headerlink" href="#install-miniconda-if-needed" title="Permalink to this headline">#</a></h2>
 <p><em>Miniconda is a free minimal installer for conda. It is a small, bootstrap
@@ -554,7 +567,7 @@ notebooks appropriately.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Creating a stellar color-magnitude (or Hertzsprung-Russell) diagram</p>
+        <p class="prev-next-title">HR (Hertzsprung-Russell) Diagram Solution</p>
       </div>
     </a>
     <a class="right-next"
@@ -584,6 +597,7 @@ notebooks appropriately.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-for-windows-install-wsl">0. (Only for Windows) Install WSL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-miniconda-if-needed">1. Install Miniconda (if needed)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-conda-version">2. Update conda version</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-git-if-needed">3. Install git (if needed)</a></li>
