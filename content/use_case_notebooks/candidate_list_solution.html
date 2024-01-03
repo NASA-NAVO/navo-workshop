@@ -525,7 +525,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><i>Table length=62</i>
-<table id="table140078787934576-309345" class="table-striped table-bordered table-condensed">
+<table id="table140424149481648-140739" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
@@ -613,14 +613,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140078787934576-309345').dataTable()");
+    console.log("$('#table140424149481648-140739').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140078787934576-309345').dataTable({
+    $('#table140424149481648-140739').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -682,7 +682,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><i>Table length=53</i>
-<table id="table140078014625584-810573" class="table-striped table-bordered table-condensed">
+<table id="table140424097708976-576277" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
@@ -761,14 +761,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140078014625584-810573').dataTable()");
+    console.log("$('#table140424097708976-576277').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140078014625584-810573').dataTable({
+    $('#table140424097708976-576277').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -798,7 +798,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=263</i>
-<table id="table140077791202080" class="table-striped table-bordered table-condensed">
+<table id="table140423153209152" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://3crsnapshots/sia</td><td>3CRSnap.sia</td><td>3CRSnapshots Simple Image Access Service</td></tr>
@@ -843,7 +843,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table140077790176320" class="table-striped table-bordered table-condensed">
+<table id="table140423161719504" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://irsa.ipac/wise/images/allwise/l3a</td><td>AllWISE L3a</td><td>AllWISE Atlas (L3a) Coadd Images</td></tr>
@@ -860,7 +860,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyvo.dal.sia.SIAService at 0x7f6666e0be20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyvo.dal.sia.SIAService at 0x7fb6d071e0e0&gt;
 </pre></div>
 </div>
 </div>
@@ -926,7 +926,7 @@ W2 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=4</i>
-<table id="table140077790324112" class="table-striped table-bordered table-condensed">
+<table id="table140423152262912" class="table-striped table-bordered table-condensed">
 <thead><tr><th>sia_title</th><th>sia_url</th><th>cloud_access</th><th>sia_naxes</th><th>sia_fmt</th><th>sia_ra</th><th>sia_dec</th><th>sia_naxis</th><th>sia_crpix</th><th>sia_crval</th><th>sia_proj</th><th>sia_scale</th><th>sia_cd</th><th>sia_bp_id</th><th>sia_bp_ref</th><th>sia_bp_hi</th><th>sia_bp_lo</th><th>magzp</th><th>magzpunc</th><th>unc_url</th><th>cov_url</th><th>coadd_id</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th></th><th>pix</th><th>deg</th><th></th><th>deg / pix</th><th>deg / pix</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -987,7 +987,7 @@ W2 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f6666af9450&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb6cfdc1900&gt;
 </pre></div>
 </div>
 <img alt="../../_images/88926761088696a84a5443fc969b1499cae72c2355b10eaaed4b1aa481ff7431.png" src="../../_images/88926761088696a84a5443fc969b1499cae72c2355b10eaaed4b1aa481ff7431.png" />
@@ -1012,7 +1012,7 @@ W2 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f66668b3850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb6c7bc04f0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/7f7768c40ab8e6c435cff1790189f87b0d5c2c11b0c772dea86aa59fab9a4ef3.png" src="../../_images/7f7768c40ab8e6c435cff1790189f87b0d5c2c11b0c772dea86aa59fab9a4ef3.png" />
@@ -1035,7 +1035,7 @@ W2 Coadd 0046m107_ac51 ... 0046m107_ac51
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table140077784051632" class="table-striped table-bordered table-condensed">
+<table id="table140423011777216" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
@@ -1114,7 +1114,7 @@ Stdev: 0.012639926
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f665c6e2d70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb6c49af220&gt;
 </pre></div>
 </div>
 <img alt="../../_images/dbeadc26e4c82dd94a33fe2e09bc5481c33e61416f2df56d08cdaefb0d337bf6.png" src="../../_images/dbeadc26e4c82dd94a33fe2e09bc5481c33e61416f2df56d08cdaefb0d337bf6.png" />
@@ -1133,7 +1133,7 @@ Stdev: 0.012639926
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f665c55bb20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb6c7bc39a0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/37910653d03212071d306b83905f5bde1837fc089353551935006ec543ae4fa3.png" src="../../_images/37910653d03212071d306b83905f5bde1837fc089353551935006ec543ae4fa3.png" />
@@ -1157,7 +1157,7 @@ Stdev: 0.012639926
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=21</i>
-<table id="table140077614546656" class="table-striped table-bordered table-condensed">
+<table id="table140422958860656" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th><th>source_value</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://mast.stsci/siap/al218</td><td>VLA.AL218</td><td>VLA-A Array AL218 Texas Survey Source Snapshots (AL218)</td><td></td></tr>
@@ -1254,7 +1254,7 @@ Stdev: 0.012639926
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f665c45fc40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb6c4740070&gt;
 </pre></div>
 </div>
 <img alt="../../_images/22ac5111c66af718cd6f344643a56ab61cc64a582ce930dd152a50a3c4210738.png" src="../../_images/22ac5111c66af718cd6f344643a56ab61cc64a582ce930dd152a50a3c4210738.png" />
@@ -1276,7 +1276,7 @@ Stdev: 0.012639926
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f665c4f2dd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb6c47a7280&gt;
 </pre></div>
 </div>
 <img alt="../../_images/92f706abac1dc55aadb8bd6474f78cc5b08f3fabbe6e50329d6e4ff52dd36dc1.png" src="../../_images/92f706abac1dc55aadb8bd6474f78cc5b08f3fabbe6e50329d6e4ff52dd36dc1.png" />
@@ -1407,7 +1407,7 @@ Stdev: 0.012639926
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 51465.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<img alt="../../_images/07f01920a1de347b66ada205750e076278a021279aaf0fdeaf061309957b456e.png" src="../../_images/07f01920a1de347b66ada205750e076278a021279aaf0fdeaf061309957b456e.png" />
+<img alt="../../_images/0295e5af704deb4898f9c1d3b5e2af602858f483975397c7ce87cae163581123.png" src="../../_images/0295e5af704deb4898f9c1d3b5e2af602858f483975397c7ce87cae163581123.png" />
 <img alt="../../_images/890e6d9138472f492319fae5d24e370b5388a454b2190121385e12b94120bac5.png" src="../../_images/890e6d9138472f492319fae5d24e370b5388a454b2190121385e12b94120bac5.png" />
 <img alt="../../_images/9a23ad48383bf3f9c15bd11f56e2761a02e0392bdc649d380834693d7a2ae084.png" src="../../_images/9a23ad48383bf3f9c15bd11f56e2761a02e0392bdc649d380834693d7a2ae084.png" />
 </div>
