@@ -35,4 +35,13 @@ The workshop notebooks can also be run on [Sciserver](https://sciserver.org/), w
 
 - Create a container, give it name, select the *'NAVO-workshop'* image, and click *Create*. Click on the container name to launch the jupyterlab interface.
 
-- The conda environment `navo-env` contains all the packages required to run the notebooks. The notebooks themselves are available under `/home/idies/workspace/navo-workshop`.
+- The conda environment `navo-env` contains all the packages required to run the notebooks. On the file system, the notebooks are available under `/home/idies/workspace/navo-workshop`.
+
+- You can use the Jupyterlab file browser to navigate to the `navo_workshop` then `content` directory, then either the `reference_notebooks` or `use_case_notebooks` subdirectories that contain the notebooks.
+
+- To ensure you get the latest version of the tutorials, open the terminal (click the blue icon with + in the top left, then select Terminal), and navigate to `/home/idies/workspace/navo-workshop`, then use `git` to download the latest updates. Note that the following will remove any changes you made to the notebooks:
+```sh
+cd /home/idies/workspace/navo-workshop
+git fetch --all
+git reset --hard origin/main
+```
