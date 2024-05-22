@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.4
+    jupytext_version: 1.16.2
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 language_info:
@@ -19,7 +19,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-  version: 3.7.10
+  version: 3.11.9
 ---
 
 # UCDs (Unified Content Descriptors)
@@ -65,7 +65,7 @@ for t in tables:
 Let's look at the first 10 columns of the DetailedCatalog table.  Again, note that calling the columns attribute sends another query to the service to ask for the columns.
 
 ```{code-cell} ipython3
-columns=tables['dbo.DetailedCatalog'].columns
+columns=tables['dbo.detailedcatalog'].columns
 for c in columns:
     print(f'{f"{c.name} [{c.ucd}]":30s} - {c.description}')
 ```
