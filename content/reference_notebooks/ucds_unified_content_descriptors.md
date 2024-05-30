@@ -159,7 +159,7 @@ for tname,results in collection.items():
 Lastly, if you have a table of results from a TAP query (and if that service includes the UCDs), then you can get data based on UCDs with the getbyucd() method, which simply gets the corresponding element using fieldname_with_ucd():
 
 ```{code-cell} ipython3
-results=hsc.service.search("select top 10 * from dbo.DetailedCatalog")
+results=hsc.service.search("select top 10 * from dbo.detailedcatalog")
 [r.getbyucd('phot.mag') for r in results]
 ```
 
