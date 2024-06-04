@@ -1,5 +1,5 @@
 # Doc and testing requirements
-sphinx<5
+sphinx
 myst-nb>=0.14
 sphinx-book-theme
 sphinx-copybutton
