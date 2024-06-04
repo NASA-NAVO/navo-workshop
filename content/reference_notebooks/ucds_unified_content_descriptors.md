@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.4
+    jupytext_version: 1.16.2
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 language_info:
@@ -19,7 +19,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-  version: 3.7.10
+  version: 3.11.9
 ---
 
 # UCDs (Unified Content Descriptors)
@@ -65,21 +65,21 @@ for t in tables:
 Let's look at the first 10 columns of the DetailedCatalog table.  Again, note that calling the columns attribute sends another query to the service to ask for the columns.
 
 ```{code-cell} ipython3
-columns=tables['dbo.DetailedCatalog'].columns
+columns=tables['dbo.detailedcatalog'].columns
 for c in columns:
     print(f'{f"{c.name} [{c.ucd}]":30s} - {c.description}')
 ```
 
-The PyVO method to get the columns will automatically fetch all the meta-data about those columns.  It's up to the service provider to set them correctly, of course, but in this case, we see that the column named "MatchRA" is identified with the UCD "pos.eq.ra".
+The PyVO method to get the columns will automatically fetch all the meta-data about those columns.  It's up to the service provider to set them correctly, of course, but in this case, we see that the column named "matchra" is identified with the UCD "pos.eq.ra".
 
-So if we did not know the exact name used in HSCv3 for the RA, we could do something like this looking for the string "RA":
+So if we did not know the exact name used in HSCv3 for the RA, we could do something like this looking for the string "ra":
 
 ```{code-cell} ipython3
-ra_name=[c.name for c in columns if 'RA' in c.name or "ascension" in c.name.lower()]
+ra_name=[c.name for c in columns if 'ra' in c.name.lower() or "ascension" in c.name.lower()]
 print(ra_name)
 ```
 
-But a more general approach is to check for the correct UCD.  It also has the further advantage that it can be used to label columns that should be used for certain purposes when there are multiple possibilities.  For instance, this table has MatchRA and SourceRA.  Let's check the UCD:
+Since that guessing doesn't give a unique answer, the more general and reliable approach is to check for the correct UCD.  It also has the further advantage that it can be used to label columns that should be used for certain purposes when there are multiple possibilities.  For instance, this table has MatchRA and SourceRA.  Let's check the UCD:
 
 (Note that the UCD is not required.  If it isn't there, you get a None type, so code the check carefully)
 
@@ -159,7 +159,7 @@ for tname,results in collection.items():
 Lastly, if you have a table of results from a TAP query (and if that service includes the UCDs), then you can get data based on UCDs with the getbyucd() method, which simply gets the corresponding element using fieldname_with_ucd():
 
 ```{code-cell} ipython3
-results=hsc.service.search("select top 10 * from dbo.DetailedCatalog")
+results=hsc.service.search("select top 10 * from dbo.detailedcatalog")
 [r.getbyucd('phot.mag') for r in results]
 ```
 
