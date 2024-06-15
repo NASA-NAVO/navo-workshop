@@ -40,6 +40,11 @@ jobs:
             python: '3.9'
             toxenv: py39-test
 
+          - name: Python 3.12 and latest or pre-release version of dependencies
+            os: ubuntu-latest
+            python: '3.12'
+            toxenv: py312-test-predeps
+
     steps:
       - uses: actions/checkout@v4
 
