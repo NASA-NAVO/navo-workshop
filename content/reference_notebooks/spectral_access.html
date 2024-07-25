@@ -18,32 +18,32 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/reference_notebooks/spectral_access';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -126,6 +126,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../index.html">
   
@@ -137,7 +139,7 @@
     <p class="title logo__title">NASA-NAVO Workshops Notebooks</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -148,7 +150,7 @@
           
           
           
-          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/NASA-NAVO/navo-workshop" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -156,7 +158,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -223,9 +225,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -250,14 +252,14 @@
       
       <li><a href="https://mybinder.org/v2/gh/NASA-NAVO/navo-workshop/main?urlpath=tree/content/reference_notebooks/spectral_access.md" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -268,14 +270,14 @@
       
       <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/content/reference_notebooks/spectral_access.md" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -433,10 +435,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -444,14 +446,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -528,7 +530,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table139709529528768" class="table-striped table-bordered table-condensed">
+<table id="table139733944232704" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://nasa.heasarc/chanmaster</td><td>Chandra</td></tr>
@@ -575,15 +577,15 @@ document.write(`
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=6</i>
-<table id="table139709487382288-667917" class="table-striped table-bordered table-condensed">
+<table id="table139733947341008-145553" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>datalink</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_fov</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th><th>cloud_access</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>d</th><th></th><th></th><th>s</th><th></th><th></th><th>d</th><th></th><th>d</th><th>d</th><th>d</th><th>s</th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>m</th><th>m</th><th>m</th><th>m</th><th></th></tr></thead>
-<tr><td>0</td><td>639</td><td>archived</td><td>DELTA ORI</td><td>83.00125</td><td>-0.29917</td><td>51556.1364</td><td>ACIS-S</td><td>HETG</td><td>49680</td><td>GO</td><td>Cassinelli</td><td>52037</td><td>11279:chandra.obs.misc</td><td>51556.136400463</td><td>--</td><td>--</td><td>49680.0</td><td>--</td><td>83.00125</td><td>-0.29917</td><td>0.81</td><td>acisf00639N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/639/primary/acisf00639N004_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/639/primary/acisf00639N004_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>1</td><td>7416</td><td>archived</td><td>delta Ori (HD 36486)</td><td>83.00167</td><td>-0.29908</td><td>54413.427</td><td>HRC-S</td><td>LETG</td><td>97080</td><td>GO</td><td>Raassen</td><td>54783</td><td>11280:chandra.obs.misc</td><td>54413.4270486111</td><td>--</td><td>--</td><td>97080.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>hrcf07416N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz</td><td>2</td><td>Spectrum-1.0</td><td>HRC-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>2</td><td>14570</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56285.5508</td><td>ACIS-S</td><td>HETG</td><td>124100</td><td>GO</td><td>Corcoran</td><td>56652</td><td>11281:chandra.obs.misc</td><td>56285.5507986111</td><td>--</td><td>--</td><td>124100.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14570N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>3</td><td>14568</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56288.1612</td><td>ACIS-S</td><td>HETG</td><td>123600</td><td>GO</td><td>Corcoran</td><td>56655</td><td>11282:chandra.obs.misc</td><td>56288.1612268519</td><td>--</td><td>--</td><td>123600.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14568N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>4</td><td>14567</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56280.7037</td><td>ACIS-S</td><td>HETG</td><td>116500</td><td>GO</td><td>Corcoran</td><td>56647</td><td>11283:chandra.obs.misc</td><td>56280.7036921296</td><td>--</td><td>--</td><td>116500.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14567N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>5</td><td>14569</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56283.254</td><td>ACIS-S</td><td>HETG</td><td>120850</td><td>GO</td><td>Corcoran</td><td>56650</td><td>11284:chandra.obs.misc</td><td>56283.2539814815</td><td>--</td><td>--</td><td>120850.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14569N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>0</td><td>639</td><td>archived</td><td>DELTA ORI</td><td>83.00125</td><td>-0.29917</td><td>51556.1364</td><td>ACIS-S</td><td>HETG</td><td>49680</td><td>GO</td><td>Cassinelli</td><td>52037</td><td>11321:chandra.obs.misc</td><td>51556.136400463</td><td>--</td><td>--</td><td>49680.0</td><td>--</td><td>83.00125</td><td>-0.29917</td><td>0.81</td><td>acisf00639N005_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/639/primary/acisf00639N005_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/639/primary/acisf00639N005_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>1</td><td>14567</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56280.7037</td><td>ACIS-S</td><td>HETG</td><td>116500</td><td>GO</td><td>Corcoran</td><td>56647</td><td>11322:chandra.obs.misc</td><td>56280.7036921296</td><td>--</td><td>--</td><td>116500.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14567N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>2</td><td>14570</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56285.5508</td><td>ACIS-S</td><td>HETG</td><td>124100</td><td>GO</td><td>Corcoran</td><td>56652</td><td>11323:chandra.obs.misc</td><td>56285.5507986111</td><td>--</td><td>--</td><td>124100.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14570N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>3</td><td>14569</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56283.254</td><td>ACIS-S</td><td>HETG</td><td>120850</td><td>GO</td><td>Corcoran</td><td>56650</td><td>11324:chandra.obs.misc</td><td>56283.2539814815</td><td>--</td><td>--</td><td>120850.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14569N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>4</td><td>14568</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56288.1612</td><td>ACIS-S</td><td>HETG</td><td>123600</td><td>GO</td><td>Corcoran</td><td>56655</td><td>11325:chandra.obs.misc</td><td>56288.1612268519</td><td>--</td><td>--</td><td>123600.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14568N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>5</td><td>7416</td><td>archived</td><td>delta Ori (HD 36486)</td><td>83.00167</td><td>-0.29908</td><td>54413.427</td><td>HRC-S</td><td>LETG</td><td>97080</td><td>GO</td><td>Raassen</td><td>54783</td><td>11326:chandra.obs.misc</td><td>54413.4270486111</td><td>--</td><td>--</td><td>97080.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>hrcf07416N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz</td><td>2</td><td>Spectrum-1.0</td><td>HRC-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz&quot;}}</td></tr>
 </table><style>table.dataTable {clear: both; width: auto !important; margin: 0 !important;}
 .dataTables_info, .dataTables_length, .dataTables_filter, .dataTables_paginate{
 display: inline-block; margin-right: 1em; }
@@ -607,14 +609,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139709487382288-667917').dataTable()");
+    console.log("$('#table139733947341008-145553').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139709487382288-667917').dataTable({
+    $('#table139733947341008-145553').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -651,21 +653,21 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=12</i>
-<table id="table139709486387632" class="table-striped table-bordered table-condensed">
+<table id="table139733722968464" class="table-striped table-bordered table-condensed">
 <thead><tr><th>SPEC_NUM</th><th>TG_M</th><th>TG_PART</th><th>TG_SRCID</th><th>X</th><th>Y</th><th>CHANNEL</th><th>COUNTS</th><th>STAT_ERR</th><th>BACKGROUND_UP</th><th>BACKGROUND_DOWN</th><th>BIN_LO</th><th>BIN_HI</th></tr></thead>
 <thead><tr><th>int16</th><th>int16</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>int16[8192]</th><th>int16[8192]</th><th>float32[8192]</th><th>int16[8192]</th><th>int16[8192]</th><th>float64[8192]</th><th>float64[8192]</th></tr></thead>
-<tr><td>1</td><td>-3</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>7.159166666667378 .. 0.3333333333333333</td><td>7.160000000000712 .. 0.33416666666666667</td></tr>
-<tr><td>2</td><td>-2</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>10.738750000000886 .. 0.5</td><td>10.740000000000887 .. 0.50125</td></tr>
-<tr><td>3</td><td>-1</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>21.477500000001772 .. 1.0</td><td>21.480000000001773 .. 1.0025</td></tr>
-<tr><td>4</td><td>1</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>21.477500000001772 .. 1.0</td><td>21.480000000001773 .. 1.0025</td></tr>
-<tr><td>5</td><td>2</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>10.738750000000886 .. 0.5</td><td>10.740000000000887 .. 0.50125</td></tr>
-<tr><td>6</td><td>3</td><td>1</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>7.159166666667378 .. 0.3333333333333333</td><td>7.160000000000712 .. 0.33416666666666667</td></tr>
-<tr><td>7</td><td>-3</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>13.985000000001373 .. 0.3333333333333333</td><td>13.98666666666804 .. 0.33499999999999996</td></tr>
-<tr><td>8</td><td>-2</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>20.977500000001505 .. 0.5</td><td>20.980000000001507 .. 0.5025</td></tr>
-<tr><td>9</td><td>-1</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>41.95500000000301 .. 1.0</td><td>41.960000000003014 .. 1.005</td></tr>
-<tr><td>10</td><td>1</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>41.95500000000301 .. 1.0</td><td>41.960000000003014 .. 1.005</td></tr>
-<tr><td>11</td><td>2</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>20.977500000001505 .. 0.5</td><td>20.980000000001507 .. 0.5025</td></tr>
-<tr><td>12</td><td>3</td><td>2</td><td>1</td><td>4102.815</td><td>4131.828</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>13.985000000001373 .. 0.3333333333333333</td><td>13.98666666666804 .. 0.33499999999999996</td></tr>
+<tr><td>1</td><td>-3</td><td>1</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>7.159166666667378 .. 0.3333333333333333</td><td>7.160000000000712 .. 0.33416666666666667</td></tr>
+<tr><td>2</td><td>-2</td><td>1</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>10.738750000000886 .. 0.5</td><td>10.740000000000887 .. 0.50125</td></tr>
+<tr><td>3</td><td>-1</td><td>1</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>21.477500000001772 .. 1.0</td><td>21.480000000001773 .. 1.0025</td></tr>
+<tr><td>4</td><td>1</td><td>1</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>21.477500000001772 .. 1.0</td><td>21.480000000001773 .. 1.0025</td></tr>
+<tr><td>5</td><td>2</td><td>1</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>10.738750000000886 .. 0.5</td><td>10.740000000000887 .. 0.50125</td></tr>
+<tr><td>6</td><td>3</td><td>1</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>7.159166666667378 .. 0.3333333333333333</td><td>7.160000000000712 .. 0.33416666666666667</td></tr>
+<tr><td>7</td><td>-3</td><td>2</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>13.985000000001373 .. 0.3333333333333333</td><td>13.98666666666804 .. 0.33499999999999996</td></tr>
+<tr><td>8</td><td>-2</td><td>2</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>20.977500000001505 .. 0.5</td><td>20.980000000001507 .. 0.5025</td></tr>
+<tr><td>9</td><td>-1</td><td>2</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>41.95500000000301 .. 1.0</td><td>41.960000000003014 .. 1.005</td></tr>
+<tr><td>10</td><td>1</td><td>2</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>41.95500000000301 .. 1.0</td><td>41.960000000003014 .. 1.005</td></tr>
+<tr><td>11</td><td>2</td><td>2</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>20.977500000001505 .. 0.5</td><td>20.980000000001507 .. 0.5025</td></tr>
+<tr><td>12</td><td>3</td><td>2</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>13.985000000001373 .. 0.3333333333333333</td><td>13.98666666666804 .. 0.33499999999999996</td></tr>
 </table></div></div></div>
 </div>
 <div class="cell docutils container">
@@ -692,7 +694,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6a1210287a3d4497deb235f23ee24f091ee27a16ab0597753fa514a52f22c21d.png" src="../../_images/6a1210287a3d4497deb235f23ee24f091ee27a16ab0597753fa514a52f22c21d.png" />
+<img alt="../../_images/04b514ac1e56d7bf9f82d63ef0913d631be0dad6caf3ff5fb192adc4561e041e.png" src="../../_images/04b514ac1e56d7bf9f82d63ef0913d631be0dad6caf3ff5fb192adc4561e041e.png" />
 </div>
 </div>
 <p>This can then be analyzed in your favorite spectral analysis tool, e.g., <a class="reference external" href="https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html">pyXspec</a>.  (For the winter 2018 AAS workshop, we demonstrated this in a <a class="reference external" href="https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.md">notebook</a> that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.)</p>
@@ -795,8 +797,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
