@@ -145,7 +145,7 @@ Example:  Find an image search service for GALEX, and search it around coordinat
 #### Find an image service
 
 ```{code-cell} ipython3
-services = vo.regsearch(servicetype='image', keywords=['galex'])
+services = vo.regsearch(servicetype='sia', keywords=['galex'])
 services.to_table()['ivoid', 'short_name', 'res_title']
 ```
 

@@ -109,7 +109,7 @@ galaxies.show_in_notebook()
 The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for all image resources, using the 'service_type' search parameter. How many image resources are currently available?
 
 ```{code-cell} ipython3
-image_services = vo.regsearch(servicetype='image')
+image_services = vo.regsearch(servicetype='sia')
 
 print(f'{len(image_services)} result(s) found.')
 
@@ -121,7 +121,7 @@ image_services.to_table()['ivoid', 'short_name', 'res_title']
 There are hundreds of image resources...too many to quickly read through. Try adding the 'keywords' search parameter to your registry search, and find the image resource you would need to search the AllWISE images. Remember from the Known Issues that 'keywords' must be a list.
 
 ```{code-cell} ipython3
-allwise_image_services = vo.regsearch(servicetype='image', keywords=['allwise'])
+allwise_image_services = vo.regsearch(servicetype='sia', keywords=['allwise'])
 
 print(f'{len(allwise_image_services)} result(s) found.')
 
@@ -219,7 +219,7 @@ ax.scatter(ra, dec, transform=ax.get_transform('fk5'), s=500, edgecolor='red', f
 Repeat steps 4, 5, 6, 8 through 12 for GALEX.
 
 ```{code-cell} ipython3
-galex_image_services = vo.regsearch(keywords=['galex'], servicetype='image')
+galex_image_services = vo.regsearch(keywords=['galex'], servicetype='sia')
 print(f'{len(galex_image_services)} result(s) found.')
 galex_image_services.to_table()['ivoid', 'short_name', 'res_title']
 ```
@@ -283,7 +283,7 @@ Hints:
 * After obtaining your search results, select r-band images using the `.title` attribute of the records that are returned, since `.bandpass_id` is not populated.
 
 ```{code-cell} ipython3
-sdss_image_services = vo.regsearch(keywords=['sloan'], servicetype='image')
+sdss_image_services = vo.regsearch(keywords=['sloan'], servicetype='sia')
 sdss_image_services.to_table()['ivoid', 'short_name', 'res_title', 'source_value']
 ```
 
