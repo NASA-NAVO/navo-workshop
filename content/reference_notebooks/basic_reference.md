@@ -189,7 +189,7 @@ Spectral search is very similar to image search. In this example, note:
 
 ```{code-cell} ipython3
 # Search for a spectrum search service that has x-ray data.
-services = vo.regsearch(servicetype='spectrum', waveband='x-ray')
+services = vo.regsearch(servicetype='ssa', waveband='x-ray')
 
 # Assuming there are services and the first one is OK...
 results = services[0].search(pos=SkyCoord.from_name("Delta Ori"),
