@@ -76,7 +76,7 @@ services
 
 | Argument | Description | Examples |
 | :-----: | :----------- | :-------- |
-| **servicetype** | Type of service | `conesearch` or `scs` for **Simple Cone Search**<br> `image` or `sia` for **Simple Image Access**<br> `spectrum` or `ssa` for **Simple Spectral Access**<br> `table` or `tap` for **Table Access Protocol**|
+| **servicetype** | Type of service | `conesearch` or `scs` for **Simple Cone Search**<br> `sia` for **Simple Image Access**<br>, `ssa` for **Simple Spectral Access**<br> `table` or `tap` for **Table Access Protocol**|
 | **keyword** | List of one or more keyword(s) to match service's metadata. Both ORs and ANDs may be specified.<br><ul><li>(OR) A list of keywords match a service if **any** of the keywords match the service.</li><li>(AND) If a  keyword contains multiple space-delimited words, **all** the words must match the metadata.</li></ul>| `['galex', 'swift']` matches 'galex' or 'swift'<br>`['hst survey']` matches services mentioning both 'hst' and 'survey' |
 | **waveband** | Resulting services have data in the specified waveband(s) | ‘radio’, ‘millimeter’, ‘infrared’, ‘optical’, ‘uv’, ‘euv’, ‘x-ray’ ‘gamma-ray’ |
 

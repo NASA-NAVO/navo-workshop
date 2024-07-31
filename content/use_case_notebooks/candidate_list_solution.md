@@ -106,7 +106,7 @@ galaxies.show_in_notebook()
 
 ## 4. Search the NAVO Registry for image resources
 
-The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for all image resources, using the 'service_type' search parameter. How many image resources are currently available?
+The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for image resources, using the 'servicetype' search parameter. How many image resources are currently available?
 
 ```{code-cell} ipython3
 image_services = vo.regsearch(servicetype='sia')
