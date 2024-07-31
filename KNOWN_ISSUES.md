@@ -16,7 +16,7 @@ PyVO's registry search functions have been updated to allow for more
 powerful methods of data discovery.  Previously you could
 use arguments keywords, servicetype, and waveband, and these still work:
 ```
-image_services = vo.regsearch(servicetype='image', keywords=['sloan vla'])
+image_services = vo.regsearch(servicetype='sia', keywords=['sloan vla'])
 ```
 This searches for the strings 'sloan' AND 'vla' in the same entry.  If you instead used ``keywords=['sloan','vla']``,
 it would return records with either string, not only both.
@@ -38,7 +38,7 @@ the latest documentation of the Registry searching, see
 ## Indexing and slicing registry results
 
 ```
-services=vo.regsearch(servicetype='image')
+services=vo.regsearch(servicetype='sia')
 ```
 
 returns a RegistryResults object.  This works like a list in that
@@ -81,13 +81,13 @@ This part of data discovery is often still a hands-on task based, for example, o
 ## Galex service from STScI doesn't take format specification:
 
 ```
-galex_image_services = vo.regsearch(keywords=['galex'], servicetype='image')[0].search(pos=[0,0], size=0.1)
+galex_image_services = vo.regsearch(keywords=['galex'], servicetype='sia')[0].search(pos=[0,0], size=0.1)
 ```
 
 produces lots. But
 
 ```
-galex_image_services = vo.regsearch(keywords=['galex'], servicetype='image')[0].search(pos=[0,0],
+galex_image_services = vo.regsearch(keywords=['galex'], servicetype='sia')[0].search(pos=[0,0],
     size=0.1, format='image/fits')
 ```
 
@@ -102,7 +102,7 @@ or 'image/jpeg' produces nothing.
 For example,
 
 ```
-services = vo.regsearch(servicetype='image', keywords=['sloan'], waveband='optical')
+services = vo.regsearch(servicetype='sia', keywords=['sloan'], waveband='optical')
 
 jhu_dr7_service = [s for s in services if ('SDSSDR7' in s.short_name) and ('jhu' in s.ivoid)][0]
 

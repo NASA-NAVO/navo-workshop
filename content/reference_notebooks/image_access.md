@@ -86,14 +86,14 @@ First, how do we find out what  services are available?  These are listed in a r
 Let's search for services providing images in the ultraviolet bands:
 
 ```{code-cell} ipython3
-uv_services = vo.regsearch(servicetype='image',waveband='uv')
+uv_services = vo.regsearch(servicetype='sia',waveband='uv')
 uv_services.to_table()['ivoid','short_name','res_title']
 ```
 
 This returns an astropy table containing information about the services available.  We can then specify the service we want by using the corresponding row.  We'll repeat the search with additional qualifiers to isolate the row we want (note that in the keyword search the "%" character can be used as a wild card):
 
 ```{code-cell} ipython3
-uvot_services = vo.regsearch(servicetype='image',waveband='uv',keywords=['swift'])
+uvot_services = vo.regsearch(servicetype='sia',waveband='uv',keywords=['swift'])
 uvot_services.to_table()['ivoid','short_name','res_title']
 ```
 
@@ -162,7 +162,7 @@ plt.imshow(hdu_list[0].data, cmap='gray', origin='lower',vmax=0.1)
 Suppose we want Sloan DSS data.  A generic query finds us a number of possibilities (note that this doesn't work for keywords=['sdss'];  be flexible and try several search terms):
 
 ```{code-cell} ipython3
-services = vo.regsearch(servicetype='image', keywords=['sloan'], waveband='optical')
+services = vo.regsearch(servicetype='sia', keywords=['sloan'], waveband='optical')
 services.to_table()[np.where(np.isin(services.to_table()['short_name'], 'SDSSDR7'))]['ivoid', 'short_name']
 ```
 
