@@ -100,7 +100,7 @@ Registry services are of the following type:
 
 - simple cone search:  "scs"
 - table access protocol:  "tap" or "table"
-- simple image search:  "sia"
+- simple image search:  "sia" or "sia2" for SIAv2 services
 - simple spectral access: "ssa"
 
 There are a number of things in the registry related to 'zcat' so we find the specific one that we want, which is the CFA version:
