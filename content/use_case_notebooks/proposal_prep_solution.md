@@ -114,7 +114,7 @@ Hint: Start by checking what UV image services exist (e.g., GALEX?)
 
 ```{code-cell} ipython3
 ## Note that to browse the columns, use the .to_table() method
-uv_services=vo.regsearch(servicetype='image',keywords='galex', waveband='uv')
+uv_services=vo.regsearch(servicetype='sia',keywords='galex', waveband='uv')
 uv_services.to_table()['ivoid','short_name']
 ```
 
@@ -169,7 +169,7 @@ plt.matshow(dataobj[0].data, origin='lower', cmap=cm.gray_r, norm=LogNorm(vmin=0
 Hint: Repeat steps for X-ray image. (Note: Ideally, we would find an image in the Chandra 'cxc' catalog)
 
 ```{code-cell} ipython3
-x_services=vo.regsearch(servicetype='image',keywords=['chandra'], waveband='x-ray')
+x_services=vo.regsearch(servicetype='sia',keywords=['chandra'], waveband='x-ray')
 print(x_services.to_table()['short_name','ivoid'])
 ```
 
