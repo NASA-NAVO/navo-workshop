@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -51,6 +54,7 @@
     <link rel="prev" title="HR (Hertzsprung-Russell) Diagram Exercise" href="hr_diagram_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -66,19 +70,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -86,7 +79,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -94,8 +86,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -111,7 +103,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,15 +149,11 @@
 </ul></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -433,24 +422,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -560,71 +541,71 @@ document.write(`
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=62</i>
-<table id="table139716977556544-779500" class="table-striped table-bordered table-condensed">
+<table id="table140623209600896-503948" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
-<tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
-<tr><td>1</td><td>2</td><td>WISEA J003807.80-010936.7</td><td>9.53252</td><td>-1.16024</td><td>G</td><td>62442.0</td><td>0.208284</td><td>SLS</td><td>18.0g</td><td>--</td><td>16</td><td>0</td><td>72</td><td>12</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>2</td><td>3</td><td>WISEA J040422.92-054134.8</td><td>61.09548</td><td>-5.69303</td><td>G</td><td>75113.0</td><td>0.250549</td><td>SLS</td><td>18.6g</td><td>--</td><td>7</td><td>0</td><td>61</td><td>10</td><td>7</td><td>8</td><td>0</td></tr>
-<tr><td>3</td><td>4</td><td>WISEA J073806.16+282359.6</td><td>114.52568</td><td>28.39995</td><td>G</td><td>69225.0</td><td>0.230909</td><td>SLS</td><td>18.0g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>4</td><td>5</td><td>2MASX J07550424+1353261</td><td>118.76776</td><td>13.89065</td><td>G</td><td>66746.0</td><td>0.22264</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>38</td><td>7</td><td>6</td><td>6</td><td>0</td></tr>
-<tr><td>5</td><td>6</td><td>WISEA J082655.11+181147.7</td><td>126.72969</td><td>18.19665</td><td>G</td><td>79580.0</td><td>0.265449</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>46</td><td>7</td><td>6</td><td>6</td><td>0</td></tr>
-<tr><td>6</td><td>7</td><td>2MASX J08542169+0449308</td><td>133.59033</td><td>4.82511</td><td>G</td><td>47005.0</td><td>0.156793</td><td>SLS</td><td>16.7g</td><td>--</td><td>18</td><td>0</td><td>58</td><td>8</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>7</td><td>8</td><td>WHL J090944.8+222607</td><td>137.4367</td><td>22.43539</td><td>GClstr</td><td>88683.0</td><td>0.295813</td><td>PUN</td><td></td><td>--</td><td>7</td><td>0</td><td>0</td><td>4</td><td>5</td><td>0</td><td>0</td></tr>
-<tr><td>8</td><td>9</td><td>2MASX J09094480+2226078</td><td>137.4367</td><td>22.43538</td><td>G</td><td>85557.0</td><td>0.285388</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>30</td><td>5</td><td>6</td><td>6</td><td>0</td></tr>
-<tr><td>9</td><td>10</td><td>2MASX J09260805+2405242</td><td>141.53357</td><td>24.09004</td><td>G</td><td>66672.0</td><td>0.222393</td><td>SLS</td><td>17.8g</td><td>--</td><td>16</td><td>0</td><td>32</td><td>7</td><td>9</td><td>6</td><td>0</td></tr>
-<tr><td>10</td><td>11</td><td>WHL J092608.1+240524</td><td>141.53357</td><td>24.09004</td><td>GClstr</td><td>66284.0</td><td>0.2211</td><td>SUN</td><td></td><td>--</td><td>8</td><td>0</td><td>0</td><td>6</td><td>7</td><td>0</td><td>0</td></tr>
-<tr><td>11</td><td>12</td><td>WISEA J093347.77+211436.7</td><td>143.44901</td><td>21.24346</td><td>G</td><td>51620.0</td><td>0.172186</td><td>SLS</td><td>16.9g</td><td>--</td><td>49</td><td>0</td><td>51</td><td>21</td><td>16</td><td>6</td><td>1</td></tr>
-<tr><td>12</td><td>13</td><td>WISEA J093622.14+390628.9</td><td>144.09222</td><td>39.10801</td><td>G</td><td>84821.0</td><td>0.282931</td><td>SLS</td><td>18.5g</td><td>--</td><td>6</td><td>0</td><td>66</td><td>7</td><td>3</td><td>10</td><td>0</td></tr>
-<tr><td>13</td><td>14</td><td>MSPM 05544</td><td>146.2235</td><td>22.8851</td><td>GClstr</td><td>26738.0</td><td>0.08919</td><td>MUN</td><td></td><td>--</td><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>14</td><td>15</td><td>CGCG 122-067</td><td>146.22351</td><td>22.88512</td><td>G</td><td>26686.0</td><td>0.089016</td><td>SLS</td><td>15.3g</td><td>--</td><td>34</td><td>0</td><td>49</td><td>13</td><td>11</td><td>8</td><td>0</td></tr>
-<tr><td>15</td><td>16</td><td>WISEA J094700.08+254045.8</td><td>146.75035</td><td>25.67938</td><td>G</td><td>32690.0</td><td>0.109043</td><td>SLS</td><td>15.8g</td><td>--</td><td>22</td><td>0</td><td>46</td><td>8</td><td>7</td><td>6</td><td>0</td></tr>
-<tr><td>16</td><td>17</td><td>SDSS J095727.02+083501.7</td><td>149.36259</td><td>8.58383</td><td>G</td><td>76903.0</td><td>0.256521</td><td>SLS</td><td>18.3g</td><td>--</td><td>8</td><td>0</td><td>39</td><td>5</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>17</td><td>18</td><td>WISEA J100356.88+382902.1</td><td>150.98703</td><td>38.48391</td><td>G</td><td>77525.0</td><td>0.258596</td><td>SLS</td><td>17.8g</td><td>--</td><td>8</td><td>0</td><td>57</td><td>7</td><td>4</td><td>8</td><td>0</td></tr>
-<tr><td>18</td><td>19</td><td>WISEA J100416.04+295844.1</td><td>151.06683</td><td>29.97899</td><td>G</td><td>89471.0</td><td>0.298443</td><td>SLS</td><td>18.7g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>19</td><td>20</td><td>WISEA J100956.35+261132.0</td><td>152.48475</td><td>26.19223</td><td>G</td><td>72216.0</td><td>0.240886</td><td>SLS</td><td>18.1g</td><td>--</td><td>13</td><td>0</td><td>46</td><td>7</td><td>4</td><td>6</td><td>0</td></tr>
-<tr><td>20</td><td>21</td><td>GMBCG J152.52936+32.89139</td><td>152.52936</td><td>32.89139</td><td>GClstr</td><td>95634.0</td><td>0.319</td><td>PUN</td><td></td><td>--</td><td>4</td><td>0</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td></tr>
-<tr><td>21</td><td>22</td><td>WISEA J101007.05+325329.0</td><td>152.52936</td><td>32.89141</td><td>G</td><td>86909.0</td><td>0.289896</td><td>SLS</td><td>18.7g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>22</td><td>23</td><td>2MASS J10160396+3037481</td><td>154.01655</td><td>30.62998</td><td>G</td><td>75520.0</td><td>0.251906</td><td>SLS</td><td>18.7g</td><td>--</td><td>6</td><td>0</td><td>49</td><td>7</td><td>4</td><td>8</td><td>0</td></tr>
-<tr><td>23</td><td>24</td><td>WISEA J102154.85+072415.5</td><td>155.47856</td><td>7.40432</td><td>G</td><td>87123.0</td><td>0.290611</td><td>SLS</td><td>18.4g</td><td>--</td><td>6</td><td>0</td><td>55</td><td>7</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>24</td><td>25</td><td>WISEA J103015.74-010607.0</td><td>157.56561</td><td>-1.10198</td><td>G</td><td>84625.0</td><td>0.282277</td><td>SLS</td><td>18.3g</td><td>--</td><td>11</td><td>0</td><td>62</td><td>9</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>25</td><td>26</td><td>2MASX J10304263+0418219</td><td>157.67753</td><td>4.30602</td><td>G</td><td>48244.0</td><td>0.160924</td><td>SLS</td><td>16.8g</td><td>--</td><td>24</td><td>0</td><td>59</td><td>8</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>26</td><td>27</td><td>SDSS CE J160.241898-01.069106</td><td>160.235</td><td>-1.06611</td><td>GClstr</td><td>75548.0</td><td>0.252</td><td>SUN</td><td></td><td>--</td><td>8</td><td>0</td><td>0</td><td>5</td><td>7</td><td>0</td><td>0</td></tr>
-<tr><td>27</td><td>28</td><td>2MASX J10405643-0103584</td><td>160.23509</td><td>-1.06632</td><td>G</td><td>75021.0</td><td>0.250242</td><td>SLS</td><td>18.2g</td><td>--</td><td>17</td><td>0</td><td>51</td><td>9</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>28</td><td>29</td><td>WISEA J104724.97+230917.4</td><td>161.85435</td><td>23.15474</td><td>G</td><td>54729.0</td><td>0.182556</td><td>SLS</td><td>18.46</td><td>--</td><td>19</td><td>0</td><td>46</td><td>8</td><td>6</td><td>6</td><td>0</td></tr>
-<tr><td>29</td><td>30</td><td>WISEA J111917.41+141946.5</td><td>169.8226</td><td>14.3296</td><td>G</td><td>43101.0</td><td>0.143771</td><td>SLS</td><td>16.6g</td><td>--</td><td>20</td><td>0</td><td>66</td><td>8</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>30</td><td>31</td><td>2MASS J11292875+0255498</td><td>172.36978</td><td>2.93055</td><td>G</td><td>71830.0</td><td>0.239599</td><td>SLS</td><td>17.5g</td><td>--</td><td>9</td><td>0</td><td>49</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>31</td><td>32</td><td>WISEA J113800.86+521303.8</td><td>174.50367</td><td>52.21775</td><td>G</td><td>88717.0</td><td>0.295927</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>32</td><td>33</td><td>WISEA J114100.04+384807.4</td><td>175.25022</td><td>38.80207</td><td>G</td><td>80255.0</td><td>0.267701</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>8</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>33</td><td>34</td><td>WISEA J115052.96+460448.1</td><td>177.72076</td><td>46.08006</td><td>G</td><td>86778.0</td><td>0.289461</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>53</td><td>9</td><td>7</td><td>8</td><td>0</td></tr>
-<tr><td>34</td><td>35</td><td>WISEA J115356.21+492355.4</td><td>178.48416</td><td>49.39881</td><td>G</td><td>49984.0</td><td>0.166728</td><td>SLS</td><td>17.1g</td><td>--</td><td>19</td><td>0</td><td>67</td><td>9</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>35</td><td>36</td><td>2MASX J11593546+1257080</td><td>179.89761</td><td>12.95205</td><td>G</td><td>79003.0</td><td>0.263525</td><td>SLS</td><td>18.3g</td><td>--</td><td>7</td><td>0</td><td>54</td><td>6</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>36</td><td>37</td><td>WISEA J120053.92+480007.8</td><td>180.22477</td><td>48.00213</td><td>G</td><td>83466.0</td><td>0.278413</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>70</td><td>7</td><td>5</td><td>10</td><td>0</td></tr>
-<tr><td>37</td><td>38</td><td>GMBCG J180.22479+48.00211</td><td>180.22479</td><td>48.00211</td><td>GClstr</td><td>74948.0</td><td>0.25</td><td>PUN</td><td></td><td>--</td><td>6</td><td>0</td><td>0</td><td>3</td><td>4</td><td>0</td><td>0</td></tr>
-<tr><td>38</td><td>39</td><td>WISEA J121644.33+122450.5</td><td>184.18477</td><td>12.41404</td><td>G</td><td>77030.0</td><td>0.256944</td><td>SLS</td><td>18.3g</td><td>--</td><td>5</td><td>0</td><td>55</td><td>7</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>39</td><td>40</td><td>WISEA J122100.50+482729.1</td><td>185.25209</td><td>48.45807</td><td>G</td><td>89836.0</td><td>0.299659</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>61</td><td>8</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>40</td><td>41</td><td>WISEA J123215.19+102119.1</td><td>188.06311</td><td>10.35535</td><td>G</td><td>49729.0</td><td>0.165877</td><td>SLS</td><td>17.2g</td><td>--</td><td>19</td><td>0</td><td>66</td><td>9</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>41</td><td>42</td><td>WISEA J123431.08+515629.7</td><td>188.62952</td><td>51.94146</td><td>G</td><td>88714.0</td><td>0.295917</td><td>SLS</td><td>18.1g</td><td>--</td><td>32</td><td>0</td><td>64</td><td>12</td><td>13</td><td>10</td><td>0</td></tr>
-<tr><td>42</td><td>43</td><td>WISEA J123746.63+481227.5</td><td>189.44448</td><td>48.20767</td><td>G</td><td>81679.0</td><td>0.272452</td><td>SLS</td><td>18.2g</td><td>--</td><td>8</td><td>0</td><td>65</td><td>8</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>43</td><td>44</td><td>WISEA J131039.32+223502.8</td><td>197.66385</td><td>22.58407</td><td>G</td><td>69320.0</td><td>0.231225</td><td>SLS</td><td>18.1g</td><td>--</td><td>12</td><td>0</td><td>48</td><td>8</td><td>5</td><td>6</td><td>1</td></tr>
-<tr><td>44</td><td>45</td><td>WISEA J132757.52+334529.3</td><td>201.98969</td><td>33.75806</td><td>G</td><td>74623.0</td><td>0.248916</td><td>SLS</td><td>17.7g</td><td>--</td><td>16</td><td>0</td><td>88</td><td>12</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>45</td><td>46</td><td>WISEA J134228.33+115734.5</td><td>205.61806</td><td>11.95954</td><td>G</td><td>83561.0</td><td>0.27873</td><td>SLS</td><td>19.0g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>46</td><td>47</td><td>WISEA J134355.49+244048.1</td><td>205.98124</td><td>24.68001</td><td>G</td><td>41147.0</td><td>0.13725</td><td>SLS</td><td>17.81</td><td>--</td><td>21</td><td>0</td><td>46</td><td>10</td><td>8</td><td>6</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>1</td><td>2</td><td>WISEA J003807.80-010936.7</td><td>9.53254</td><td>-1.16022</td><td>G</td><td>62442.0</td><td>0.208284</td><td>SLS</td><td>18.0g</td><td>--</td><td>16</td><td>0</td><td>72</td><td>12</td><td>11</td><td>10</td><td>0</td></tr>
+<tr><td>2</td><td>3</td><td>WISEA J040422.92-054134.8</td><td>61.09553</td><td>-5.693</td><td>G</td><td>75113.0</td><td>0.250549</td><td>SLS</td><td>18.6g</td><td>--</td><td>7</td><td>0</td><td>61</td><td>10</td><td>9</td><td>8</td><td>0</td></tr>
+<tr><td>3</td><td>4</td><td>WISEA J073806.16+282359.6</td><td>114.52568</td><td>28.3999</td><td>G</td><td>69225.0</td><td>0.230909</td><td>SLS</td><td>18.0g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>4</td><td>5</td><td>2MASX J07550424+1353261</td><td>118.76779</td><td>13.89069</td><td>G</td><td>66746.0</td><td>0.22264</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>38</td><td>7</td><td>9</td><td>6</td><td>0</td></tr>
+<tr><td>5</td><td>6</td><td>WISEA J082655.11+181147.7</td><td>126.72963</td><td>18.19659</td><td>G</td><td>79580.0</td><td>0.265449</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>46</td><td>7</td><td>8</td><td>6</td><td>0</td></tr>
+<tr><td>6</td><td>7</td><td>2MASX J08542169+0449308</td><td>133.59031</td><td>4.82505</td><td>G</td><td>47005.0</td><td>0.156793</td><td>SLS</td><td>16.7g</td><td>--</td><td>18</td><td>0</td><td>58</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>7</td><td>8</td><td>WHL J090944.8+222607</td><td>137.43669</td><td>22.43538</td><td>GClstr</td><td>88683.0</td><td>0.295813</td><td>PUN</td><td></td><td>--</td><td>7</td><td>0</td><td>0</td><td>4</td><td>6</td><td>0</td><td>0</td></tr>
+<tr><td>8</td><td>9</td><td>2MASX J09094480+2226078</td><td>137.43671</td><td>22.43535</td><td>G</td><td>85557.0</td><td>0.285388</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>30</td><td>5</td><td>8</td><td>6</td><td>0</td></tr>
+<tr><td>9</td><td>10</td><td>2MASX J09260805+2405242</td><td>141.53355</td><td>24.09009</td><td>G</td><td>66672.0</td><td>0.222393</td><td>SLS</td><td>17.8g</td><td>--</td><td>16</td><td>0</td><td>32</td><td>7</td><td>13</td><td>6</td><td>0</td></tr>
+<tr><td>10</td><td>11</td><td>WHL J092608.1+240524</td><td>141.53357</td><td>24.09003</td><td>GClstr</td><td>66284.0</td><td>0.2211</td><td>SUN</td><td></td><td>--</td><td>8</td><td>0</td><td>0</td><td>6</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>11</td><td>12</td><td>WISEA J093347.77+211436.7</td><td>143.44906</td><td>21.24354</td><td>G</td><td>51620.0</td><td>0.172186</td><td>SLS</td><td>16.9g</td><td>--</td><td>49</td><td>0</td><td>51</td><td>21</td><td>19</td><td>6</td><td>1</td></tr>
+<tr><td>12</td><td>13</td><td>WISEA J093622.14+390628.9</td><td>144.09227</td><td>39.10805</td><td>G</td><td>84821.0</td><td>0.282931</td><td>SLS</td><td>18.5g</td><td>--</td><td>6</td><td>0</td><td>66</td><td>7</td><td>5</td><td>10</td><td>0</td></tr>
+<tr><td>13</td><td>14</td><td>MSPM 05544</td><td>146.2235</td><td>22.8851</td><td>GClstr</td><td>26738.0</td><td>0.08919</td><td>SUN</td><td></td><td>--</td><td>3</td><td>0</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+<tr><td>14</td><td>15</td><td>CGCG 122-067</td><td>146.22362</td><td>22.88533</td><td>G</td><td>26686.0</td><td>0.089016</td><td>SLS</td><td>15.3g</td><td>--</td><td>34</td><td>0</td><td>49</td><td>13</td><td>16</td><td>8</td><td>0</td></tr>
+<tr><td>15</td><td>16</td><td>WISEA J094700.08+254045.8</td><td>146.75036</td><td>25.6794</td><td>G</td><td>32690.0</td><td>0.109043</td><td>SLS</td><td>15.8g</td><td>--</td><td>22</td><td>0</td><td>46</td><td>8</td><td>10</td><td>6</td><td>0</td></tr>
+<tr><td>16</td><td>17</td><td>SDSS J095727.02+083501.7</td><td>149.36259</td><td>8.58385</td><td>G</td><td>76903.0</td><td>0.256521</td><td>SLS</td><td>18.3g</td><td>--</td><td>8</td><td>0</td><td>39</td><td>5</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>17</td><td>18</td><td>WISEA J100356.88+382902.1</td><td>150.98703</td><td>38.48393</td><td>G</td><td>77525.0</td><td>0.258596</td><td>SLS</td><td>17.8g</td><td>--</td><td>8</td><td>0</td><td>57</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
+<tr><td>18</td><td>19</td><td>WISEA J100416.04+295844.1</td><td>151.06686</td><td>29.97893</td><td>G</td><td>89471.0</td><td>0.298443</td><td>SLS</td><td>18.7g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>19</td><td>20</td><td>WISEA J100956.35+261132.0</td><td>152.48482</td><td>26.19222</td><td>G</td><td>72216.0</td><td>0.240886</td><td>SLS</td><td>18.1g</td><td>--</td><td>13</td><td>0</td><td>46</td><td>7</td><td>6</td><td>6</td><td>0</td></tr>
+<tr><td>20</td><td>21</td><td>GMBCG J152.52936+32.89139</td><td>152.52936</td><td>32.89139</td><td>GClstr</td><td>95634.0</td><td>0.319</td><td>PUN</td><td></td><td>--</td><td>4</td><td>0</td><td>0</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
+<tr><td>21</td><td>22</td><td>WISEA J101007.05+325329.0</td><td>152.52939</td><td>32.89142</td><td>G</td><td>86909.0</td><td>0.289896</td><td>SLS</td><td>18.7g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>22</td><td>23</td><td>2MASS J10160396+3037481</td><td>154.01652</td><td>30.63005</td><td>G</td><td>75520.0</td><td>0.251906</td><td>SLS</td><td>18.7g</td><td>--</td><td>6</td><td>0</td><td>49</td><td>7</td><td>6</td><td>8</td><td>0</td></tr>
+<tr><td>23</td><td>24</td><td>WISEA J102154.85+072415.5</td><td>155.47855</td><td>7.40433</td><td>G</td><td>87123.0</td><td>0.290611</td><td>SLS</td><td>18.4g</td><td>--</td><td>6</td><td>0</td><td>55</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>24</td><td>25</td><td>WISEA J103015.74-010607.0</td><td>157.56562</td><td>-1.10196</td><td>G</td><td>84625.0</td><td>0.282277</td><td>SLS</td><td>18.3g</td><td>--</td><td>11</td><td>0</td><td>62</td><td>9</td><td>8</td><td>10</td><td>0</td></tr>
+<tr><td>25</td><td>26</td><td>2MASX J10304263+0418219</td><td>157.67755</td><td>4.306</td><td>G</td><td>48244.0</td><td>0.160924</td><td>SLS</td><td>16.8g</td><td>--</td><td>24</td><td>0</td><td>59</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>26</td><td>27</td><td>2MASX J10405643-0103584</td><td>160.23509</td><td>-1.06629</td><td>G</td><td>75021.0</td><td>0.250242</td><td>SLS</td><td>18.2g</td><td>--</td><td>17</td><td>0</td><td>51</td><td>9</td><td>12</td><td>10</td><td>0</td></tr>
+<tr><td>27</td><td>28</td><td>SDSS CE J160.241898-01.069106</td><td>160.23509</td><td>-1.06631</td><td>GClstr</td><td>75548.0</td><td>0.252</td><td>SUN</td><td></td><td>--</td><td>8</td><td>0</td><td>0</td><td>5</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>28</td><td>29</td><td>WISEA J104724.97+230917.4</td><td>161.85407</td><td>23.15485</td><td>G</td><td>54729.0</td><td>0.182556</td><td>SLS</td><td>18.46</td><td>--</td><td>19</td><td>0</td><td>46</td><td>8</td><td>8</td><td>6</td><td>0</td></tr>
+<tr><td>29</td><td>30</td><td>WISEA J111917.41+141946.5</td><td>169.82258</td><td>14.3296</td><td>G</td><td>43101.0</td><td>0.143771</td><td>SLS</td><td>16.6g</td><td>--</td><td>20</td><td>0</td><td>66</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>30</td><td>31</td><td>2MASS J11292875+0255498</td><td>172.36979</td><td>2.93052</td><td>G</td><td>71830.0</td><td>0.239599</td><td>SLS</td><td>17.5g</td><td>--</td><td>9</td><td>0</td><td>49</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
+<tr><td>31</td><td>32</td><td>WISEA J113800.86+521303.8</td><td>174.50359</td><td>52.21773</td><td>G</td><td>88717.0</td><td>0.295927</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>6</td><td>8</td><td>0</td></tr>
+<tr><td>32</td><td>33</td><td>WISEA J114100.04+384807.4</td><td>175.2502</td><td>38.80206</td><td>G</td><td>80255.0</td><td>0.267701</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>8</td><td>8</td><td>10</td><td>0</td></tr>
+<tr><td>33</td><td>34</td><td>WISEA J115052.96+460448.1</td><td>177.72067</td><td>46.08004</td><td>G</td><td>86778.0</td><td>0.289461</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>53</td><td>9</td><td>9</td><td>8</td><td>0</td></tr>
+<tr><td>34</td><td>35</td><td>WISEA J115356.21+492355.4</td><td>178.48421</td><td>49.39875</td><td>G</td><td>49984.0</td><td>0.166728</td><td>SLS</td><td>17.1g</td><td>--</td><td>19</td><td>0</td><td>67</td><td>9</td><td>10</td><td>10</td><td>0</td></tr>
+<tr><td>35</td><td>36</td><td>2MASX J11593546+1257080</td><td>179.8977</td><td>12.95193</td><td>G</td><td>79003.0</td><td>0.263525</td><td>SLS</td><td>18.3g</td><td>--</td><td>7</td><td>0</td><td>54</td><td>6</td><td>6</td><td>10</td><td>0</td></tr>
+<tr><td>36</td><td>37</td><td>WISEA J120053.92+480007.8</td><td>180.22468</td><td>48.00217</td><td>G</td><td>83466.0</td><td>0.278413</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>70</td><td>7</td><td>8</td><td>10</td><td>0</td></tr>
+<tr><td>37</td><td>38</td><td>GMBCG J180.22479+48.00211</td><td>180.22479</td><td>48.00211</td><td>GClstr</td><td>74948.0</td><td>0.25</td><td>PUN</td><td></td><td>--</td><td>6</td><td>0</td><td>0</td><td>3</td><td>5</td><td>0</td><td>0</td></tr>
+<tr><td>38</td><td>39</td><td>WISEA J121644.33+122450.5</td><td>184.18471</td><td>12.41404</td><td>G</td><td>77030.0</td><td>0.256944</td><td>SLS</td><td>18.3g</td><td>--</td><td>5</td><td>0</td><td>55</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>39</td><td>40</td><td>WISEA J122100.50+482729.1</td><td>185.25209</td><td>48.4581</td><td>G</td><td>89836.0</td><td>0.299659</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>61</td><td>8</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>40</td><td>41</td><td>WISEA J123215.19+102119.1</td><td>188.06332</td><td>10.35531</td><td>G</td><td>49729.0</td><td>0.165877</td><td>SLS</td><td>17.2g</td><td>--</td><td>19</td><td>0</td><td>66</td><td>9</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>41</td><td>42</td><td>WISEA J123431.08+515629.7</td><td>188.62952</td><td>51.94159</td><td>G</td><td>88714.0</td><td>0.295917</td><td>SLS</td><td>18.1g</td><td>--</td><td>33</td><td>0</td><td>64</td><td>12</td><td>16</td><td>10</td><td>0</td></tr>
+<tr><td>42</td><td>43</td><td>WISEA J123746.63+481227.5</td><td>189.44429</td><td>48.20764</td><td>G</td><td>81679.0</td><td>0.272452</td><td>SLS</td><td>18.2g</td><td>--</td><td>8</td><td>0</td><td>65</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>43</td><td>44</td><td>WISEA J131039.32+223502.8</td><td>197.66385</td><td>22.58413</td><td>G</td><td>69320.0</td><td>0.231225</td><td>SLS</td><td>18.1g</td><td>--</td><td>12</td><td>0</td><td>48</td><td>8</td><td>7</td><td>6</td><td>1</td></tr>
+<tr><td>44</td><td>45</td><td>WISEA J132757.52+334529.3</td><td>201.98959</td><td>33.75825</td><td>G</td><td>74623.0</td><td>0.248916</td><td>SLS</td><td>17.7g</td><td>--</td><td>16</td><td>0</td><td>88</td><td>12</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>45</td><td>46</td><td>WISEA J134228.33+115734.5</td><td>205.61806</td><td>11.9596</td><td>G</td><td>83561.0</td><td>0.27873</td><td>SLS</td><td>19.0g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
+<tr><td>46</td><td>47</td><td>WISEA J134355.49+244048.1</td><td>205.98122</td><td>24.68004</td><td>G</td><td>41147.0</td><td>0.13725</td><td>SLS</td><td>17.81</td><td>--</td><td>24</td><td>0</td><td>46</td><td>13</td><td>13</td><td>6</td><td>0</td></tr>
 <tr><td>47</td><td>48</td><td>SDSSCGB 16827</td><td>206.99833</td><td>32.44039</td><td>GGroup</td><td>--</td><td>--</td><td></td><td>18.44</td><td>--</td><td>3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>48</td><td>49</td><td>2MASX J13475962+3227100</td><td>206.99841</td><td>32.45286</td><td>G</td><td>66870.0</td><td>0.223055</td><td>SLS</td><td>18.1g</td><td>--</td><td>11</td><td>0</td><td>54</td><td>6</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>49</td><td>50</td><td>WISEA J135546.08+025456.0</td><td>208.942</td><td>2.91553</td><td>G</td><td>71602.0</td><td>0.238837</td><td>SLS</td><td>18.7g</td><td>--</td><td>11</td><td>0</td><td>51</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>50</td><td>51</td><td>WISEA J140138.37+263527.6</td><td>210.40991</td><td>26.591</td><td>G</td><td>85128.0</td><td>0.283958</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>30</td><td>5</td><td>4</td><td>4</td><td>0</td></tr>
-<tr><td>51</td><td>52</td><td>2MASS J14175497+2704341</td><td>214.47905</td><td>27.07624</td><td>G</td><td>47226.0</td><td>0.15753</td><td>SLS</td><td>16.9g</td><td>--</td><td>17</td><td>0</td><td>25</td><td>6</td><td>6</td><td>4</td><td>0</td></tr>
-<tr><td>52</td><td>53</td><td>WISEA J143447.88+020228.8</td><td>218.69942</td><td>2.04129</td><td>G</td><td>83914.0</td><td>0.279907</td><td>SLS</td><td>18.6g</td><td>--</td><td>10</td><td>0</td><td>62</td><td>9</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>53</td><td>54</td><td>WISEA J144728.35+590831.9</td><td>221.86807</td><td>59.14209</td><td>G</td><td>73602.0</td><td>0.245509</td><td>SLS</td><td>18.3g</td><td>--</td><td>15</td><td>0</td><td>70</td><td>11</td><td>8</td><td>10</td><td>0</td></tr>
-<tr><td>54</td><td>55</td><td>WISEA J153619.01+452247.7</td><td>234.07909</td><td>45.37968</td><td>G</td><td>70804.0</td><td>0.236177</td><td>SLS</td><td>18.1g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>55</td><td>56</td><td>WISEA J154307.78+193751.7</td><td>235.78241</td><td>19.63104</td><td>G</td><td>68774.0</td><td>0.229405</td><td>SLS</td><td>17.0g</td><td>--</td><td>44</td><td>1</td><td>50</td><td>22</td><td>19</td><td>6</td><td>0</td></tr>
-<tr><td>56</td><td>57</td><td>WISEA J154950.90+234444.0</td><td>237.46216</td><td>23.7456</td><td>G</td><td>78570.0</td><td>0.262082</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>31</td><td>5</td><td>4</td><td>4</td><td>0</td></tr>
-<tr><td>57</td><td>58</td><td>GMBCG J240.41924+27.30444</td><td>240.41924</td><td>27.30444</td><td>GClstr</td><td>57860.0</td><td>0.193</td><td>PUN</td><td></td><td>--</td><td>4</td><td>0</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td></tr>
-<tr><td>58</td><td>59</td><td>2MASX J16014061+2718161</td><td>240.41924</td><td>27.30443</td><td>G</td><td>49285.0</td><td>0.164398</td><td>SLS</td><td>16.7g</td><td>--</td><td>22</td><td>0</td><td>54</td><td>7</td><td>7</td><td>10</td><td>1</td></tr>
-<tr><td>59</td><td>60</td><td>WISEA J163945.96+460905.8</td><td>249.94148</td><td>46.1517</td><td>G</td><td>74087.0</td><td>0.247128</td><td>SLS</td><td>18.3g</td><td>--</td><td>13</td><td>0</td><td>70</td><td>8</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>60</td><td>61</td><td>WISEA J173406.17+602919.1</td><td>263.52577</td><td>60.48859</td><td>G</td><td>82730.0</td><td>0.275956</td><td>SLS</td><td>18.5g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>61</td><td>62</td><td>SDSSCGB 59704</td><td>263.53292</td><td>60.48197</td><td>GGroup</td><td>82743.0</td><td>0.276</td><td>SST</td><td>17.20</td><td>--</td><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>48</td><td>49</td><td>2MASX J13475962+3227100</td><td>206.99837</td><td>32.45284</td><td>G</td><td>66870.0</td><td>0.223055</td><td>SLS</td><td>18.1g</td><td>--</td><td>11</td><td>0</td><td>54</td><td>6</td><td>6</td><td>10</td><td>0</td></tr>
+<tr><td>49</td><td>50</td><td>WISEA J135546.08+025456.0</td><td>208.94203</td><td>2.91557</td><td>G</td><td>71602.0</td><td>0.238837</td><td>SLS</td><td>18.7g</td><td>--</td><td>11</td><td>0</td><td>51</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
+<tr><td>50</td><td>51</td><td>WISEA J140138.37+263527.6</td><td>210.40992</td><td>26.59101</td><td>G</td><td>85128.0</td><td>0.283958</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>30</td><td>5</td><td>6</td><td>4</td><td>0</td></tr>
+<tr><td>51</td><td>52</td><td>2MASS J14175497+2704341</td><td>214.47905</td><td>27.07617</td><td>G</td><td>47226.0</td><td>0.15753</td><td>SLS</td><td>16.9g</td><td>--</td><td>17</td><td>0</td><td>25</td><td>6</td><td>9</td><td>4</td><td>0</td></tr>
+<tr><td>52</td><td>53</td><td>WISEA J143447.88+020228.8</td><td>218.6995</td><td>2.04136</td><td>G</td><td>83828.0</td><td>0.279619</td><td>SLS</td><td>18.6g</td><td>--</td><td>10</td><td>0</td><td>62</td><td>10</td><td>8</td><td>8</td><td>0</td></tr>
+<tr><td>53</td><td>54</td><td>WISEA J144728.35+590831.9</td><td>221.86816</td><td>59.1422</td><td>G</td><td>73602.0</td><td>0.245509</td><td>SLS</td><td>18.3g</td><td>--</td><td>15</td><td>0</td><td>70</td><td>11</td><td>10</td><td>10</td><td>0</td></tr>
+<tr><td>54</td><td>55</td><td>WISEA J153619.01+452247.7</td><td>234.07923</td><td>45.37992</td><td>G</td><td>70804.0</td><td>0.236177</td><td>SLS</td><td>18.1g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>55</td><td>56</td><td>WISEA J154307.78+193751.7</td><td>235.78245</td><td>19.63105</td><td>G</td><td>68774.0</td><td>0.229405</td><td>SLS</td><td>17.0g</td><td>--</td><td>44</td><td>1</td><td>50</td><td>22</td><td>21</td><td>6</td><td>0</td></tr>
+<tr><td>56</td><td>57</td><td>WISEA J154950.90+234444.0</td><td>237.46211</td><td>23.74557</td><td>G</td><td>78570.0</td><td>0.262082</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>31</td><td>5</td><td>6</td><td>4</td><td>0</td></tr>
+<tr><td>57</td><td>58</td><td>GMBCG J240.41924+27.30444</td><td>240.41924</td><td>27.30444</td><td>GClstr</td><td>57860.0</td><td>0.193</td><td>PUN</td><td></td><td>--</td><td>4</td><td>0</td><td>0</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
+<tr><td>58</td><td>59</td><td>2MASX J16014061+2718161</td><td>240.41925</td><td>27.3044</td><td>G</td><td>49285.0</td><td>0.164398</td><td>SLS</td><td>16.7g</td><td>--</td><td>22</td><td>0</td><td>54</td><td>7</td><td>11</td><td>10</td><td>1</td></tr>
+<tr><td>59</td><td>60</td><td>WISEA J163945.96+460905.8</td><td>249.9415</td><td>46.15163</td><td>G</td><td>74087.0</td><td>0.247128</td><td>SLS</td><td>18.3g</td><td>--</td><td>13</td><td>0</td><td>70</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>60</td><td>61</td><td>WISEA J173406.17+602919.1</td><td>263.52572</td><td>60.48865</td><td>G</td><td>82730.0</td><td>0.275956</td><td>SLS</td><td>18.5g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
+<tr><td>61</td><td>62</td><td>SDSSCGB 59704</td><td>263.53292</td><td>60.48197</td><td>GGroup</td><td>82743.0</td><td>0.276</td><td>SUN</td><td>17.20</td><td>--</td><td>3</td><td>0</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
 </table><style>table.dataTable {clear: both; width: auto !important; margin: 0 !important;}
 .dataTables_info, .dataTables_length, .dataTables_filter, .dataTables_paginate{
 display: inline-block; margin-right: 1em; }
@@ -648,14 +629,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139716977556544-779500').dataTable()");
+    console.log("$('#table140623209600896-503948').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139716977556544-779500').dataTable({
+    $('#table140623209600896-503948').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -723,62 +704,62 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=53</i>
-<table id="table139716600745264-80435" class="table-striped table-bordered table-condensed">
+<table id="table140622290008912-244879" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
-<tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
-<tr><td>1</td><td>2</td><td>WISEA J003807.80-010936.7</td><td>9.53252</td><td>-1.16024</td><td>G</td><td>62442.0</td><td>0.208284</td><td>SLS</td><td>18.0g</td><td>--</td><td>16</td><td>0</td><td>72</td><td>12</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>2</td><td>3</td><td>WISEA J040422.92-054134.8</td><td>61.09548</td><td>-5.69303</td><td>G</td><td>75113.0</td><td>0.250549</td><td>SLS</td><td>18.6g</td><td>--</td><td>7</td><td>0</td><td>61</td><td>10</td><td>7</td><td>8</td><td>0</td></tr>
-<tr><td>3</td><td>4</td><td>WISEA J073806.16+282359.6</td><td>114.52568</td><td>28.39995</td><td>G</td><td>69225.0</td><td>0.230909</td><td>SLS</td><td>18.0g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>4</td><td>5</td><td>2MASX J07550424+1353261</td><td>118.76776</td><td>13.89065</td><td>G</td><td>66746.0</td><td>0.22264</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>38</td><td>7</td><td>6</td><td>6</td><td>0</td></tr>
-<tr><td>5</td><td>6</td><td>WISEA J082655.11+181147.7</td><td>126.72969</td><td>18.19665</td><td>G</td><td>79580.0</td><td>0.265449</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>46</td><td>7</td><td>6</td><td>6</td><td>0</td></tr>
-<tr><td>6</td><td>7</td><td>2MASX J08542169+0449308</td><td>133.59033</td><td>4.82511</td><td>G</td><td>47005.0</td><td>0.156793</td><td>SLS</td><td>16.7g</td><td>--</td><td>18</td><td>0</td><td>58</td><td>8</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>7</td><td>9</td><td>2MASX J09094480+2226078</td><td>137.4367</td><td>22.43538</td><td>G</td><td>85557.0</td><td>0.285388</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>30</td><td>5</td><td>6</td><td>6</td><td>0</td></tr>
-<tr><td>8</td><td>10</td><td>2MASX J09260805+2405242</td><td>141.53357</td><td>24.09004</td><td>G</td><td>66672.0</td><td>0.222393</td><td>SLS</td><td>17.8g</td><td>--</td><td>16</td><td>0</td><td>32</td><td>7</td><td>9</td><td>6</td><td>0</td></tr>
-<tr><td>9</td><td>12</td><td>WISEA J093347.77+211436.7</td><td>143.44901</td><td>21.24346</td><td>G</td><td>51620.0</td><td>0.172186</td><td>SLS</td><td>16.9g</td><td>--</td><td>49</td><td>0</td><td>51</td><td>21</td><td>16</td><td>6</td><td>1</td></tr>
-<tr><td>10</td><td>13</td><td>WISEA J093622.14+390628.9</td><td>144.09222</td><td>39.10801</td><td>G</td><td>84821.0</td><td>0.282931</td><td>SLS</td><td>18.5g</td><td>--</td><td>6</td><td>0</td><td>66</td><td>7</td><td>3</td><td>10</td><td>0</td></tr>
-<tr><td>11</td><td>15</td><td>CGCG 122-067</td><td>146.22351</td><td>22.88512</td><td>G</td><td>26686.0</td><td>0.089016</td><td>SLS</td><td>15.3g</td><td>--</td><td>34</td><td>0</td><td>49</td><td>13</td><td>11</td><td>8</td><td>0</td></tr>
-<tr><td>12</td><td>16</td><td>WISEA J094700.08+254045.8</td><td>146.75035</td><td>25.67938</td><td>G</td><td>32690.0</td><td>0.109043</td><td>SLS</td><td>15.8g</td><td>--</td><td>22</td><td>0</td><td>46</td><td>8</td><td>7</td><td>6</td><td>0</td></tr>
-<tr><td>13</td><td>17</td><td>SDSS J095727.02+083501.7</td><td>149.36259</td><td>8.58383</td><td>G</td><td>76903.0</td><td>0.256521</td><td>SLS</td><td>18.3g</td><td>--</td><td>8</td><td>0</td><td>39</td><td>5</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>14</td><td>18</td><td>WISEA J100356.88+382902.1</td><td>150.98703</td><td>38.48391</td><td>G</td><td>77525.0</td><td>0.258596</td><td>SLS</td><td>17.8g</td><td>--</td><td>8</td><td>0</td><td>57</td><td>7</td><td>4</td><td>8</td><td>0</td></tr>
-<tr><td>15</td><td>19</td><td>WISEA J100416.04+295844.1</td><td>151.06683</td><td>29.97899</td><td>G</td><td>89471.0</td><td>0.298443</td><td>SLS</td><td>18.7g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>16</td><td>20</td><td>WISEA J100956.35+261132.0</td><td>152.48475</td><td>26.19223</td><td>G</td><td>72216.0</td><td>0.240886</td><td>SLS</td><td>18.1g</td><td>--</td><td>13</td><td>0</td><td>46</td><td>7</td><td>4</td><td>6</td><td>0</td></tr>
-<tr><td>17</td><td>22</td><td>WISEA J101007.05+325329.0</td><td>152.52936</td><td>32.89141</td><td>G</td><td>86909.0</td><td>0.289896</td><td>SLS</td><td>18.7g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>18</td><td>23</td><td>2MASS J10160396+3037481</td><td>154.01655</td><td>30.62998</td><td>G</td><td>75520.0</td><td>0.251906</td><td>SLS</td><td>18.7g</td><td>--</td><td>6</td><td>0</td><td>49</td><td>7</td><td>4</td><td>8</td><td>0</td></tr>
-<tr><td>19</td><td>24</td><td>WISEA J102154.85+072415.5</td><td>155.47856</td><td>7.40432</td><td>G</td><td>87123.0</td><td>0.290611</td><td>SLS</td><td>18.4g</td><td>--</td><td>6</td><td>0</td><td>55</td><td>7</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>20</td><td>25</td><td>WISEA J103015.74-010607.0</td><td>157.56561</td><td>-1.10198</td><td>G</td><td>84625.0</td><td>0.282277</td><td>SLS</td><td>18.3g</td><td>--</td><td>11</td><td>0</td><td>62</td><td>9</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>21</td><td>26</td><td>2MASX J10304263+0418219</td><td>157.67753</td><td>4.30602</td><td>G</td><td>48244.0</td><td>0.160924</td><td>SLS</td><td>16.8g</td><td>--</td><td>24</td><td>0</td><td>59</td><td>8</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>22</td><td>28</td><td>2MASX J10405643-0103584</td><td>160.23509</td><td>-1.06632</td><td>G</td><td>75021.0</td><td>0.250242</td><td>SLS</td><td>18.2g</td><td>--</td><td>17</td><td>0</td><td>51</td><td>9</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>23</td><td>29</td><td>WISEA J104724.97+230917.4</td><td>161.85435</td><td>23.15474</td><td>G</td><td>54729.0</td><td>0.182556</td><td>SLS</td><td>18.46</td><td>--</td><td>19</td><td>0</td><td>46</td><td>8</td><td>6</td><td>6</td><td>0</td></tr>
-<tr><td>24</td><td>30</td><td>WISEA J111917.41+141946.5</td><td>169.8226</td><td>14.3296</td><td>G</td><td>43101.0</td><td>0.143771</td><td>SLS</td><td>16.6g</td><td>--</td><td>20</td><td>0</td><td>66</td><td>8</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>25</td><td>31</td><td>2MASS J11292875+0255498</td><td>172.36978</td><td>2.93055</td><td>G</td><td>71830.0</td><td>0.239599</td><td>SLS</td><td>17.5g</td><td>--</td><td>9</td><td>0</td><td>49</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>26</td><td>32</td><td>WISEA J113800.86+521303.8</td><td>174.50367</td><td>52.21775</td><td>G</td><td>88717.0</td><td>0.295927</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>27</td><td>33</td><td>WISEA J114100.04+384807.4</td><td>175.25022</td><td>38.80207</td><td>G</td><td>80255.0</td><td>0.267701</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>8</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>28</td><td>34</td><td>WISEA J115052.96+460448.1</td><td>177.72076</td><td>46.08006</td><td>G</td><td>86778.0</td><td>0.289461</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>53</td><td>9</td><td>7</td><td>8</td><td>0</td></tr>
-<tr><td>29</td><td>35</td><td>WISEA J115356.21+492355.4</td><td>178.48416</td><td>49.39881</td><td>G</td><td>49984.0</td><td>0.166728</td><td>SLS</td><td>17.1g</td><td>--</td><td>19</td><td>0</td><td>67</td><td>9</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>30</td><td>36</td><td>2MASX J11593546+1257080</td><td>179.89761</td><td>12.95205</td><td>G</td><td>79003.0</td><td>0.263525</td><td>SLS</td><td>18.3g</td><td>--</td><td>7</td><td>0</td><td>54</td><td>6</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>31</td><td>37</td><td>WISEA J120053.92+480007.8</td><td>180.22477</td><td>48.00213</td><td>G</td><td>83466.0</td><td>0.278413</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>70</td><td>7</td><td>5</td><td>10</td><td>0</td></tr>
-<tr><td>32</td><td>39</td><td>WISEA J121644.33+122450.5</td><td>184.18477</td><td>12.41404</td><td>G</td><td>77030.0</td><td>0.256944</td><td>SLS</td><td>18.3g</td><td>--</td><td>5</td><td>0</td><td>55</td><td>7</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>33</td><td>40</td><td>WISEA J122100.50+482729.1</td><td>185.25209</td><td>48.45807</td><td>G</td><td>89836.0</td><td>0.299659</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>61</td><td>8</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>34</td><td>41</td><td>WISEA J123215.19+102119.1</td><td>188.06311</td><td>10.35535</td><td>G</td><td>49729.0</td><td>0.165877</td><td>SLS</td><td>17.2g</td><td>--</td><td>19</td><td>0</td><td>66</td><td>9</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>35</td><td>42</td><td>WISEA J123431.08+515629.7</td><td>188.62952</td><td>51.94146</td><td>G</td><td>88714.0</td><td>0.295917</td><td>SLS</td><td>18.1g</td><td>--</td><td>32</td><td>0</td><td>64</td><td>12</td><td>13</td><td>10</td><td>0</td></tr>
-<tr><td>36</td><td>43</td><td>WISEA J123746.63+481227.5</td><td>189.44448</td><td>48.20767</td><td>G</td><td>81679.0</td><td>0.272452</td><td>SLS</td><td>18.2g</td><td>--</td><td>8</td><td>0</td><td>65</td><td>8</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>37</td><td>44</td><td>WISEA J131039.32+223502.8</td><td>197.66385</td><td>22.58407</td><td>G</td><td>69320.0</td><td>0.231225</td><td>SLS</td><td>18.1g</td><td>--</td><td>12</td><td>0</td><td>48</td><td>8</td><td>5</td><td>6</td><td>1</td></tr>
-<tr><td>38</td><td>45</td><td>WISEA J132757.52+334529.3</td><td>201.98969</td><td>33.75806</td><td>G</td><td>74623.0</td><td>0.248916</td><td>SLS</td><td>17.7g</td><td>--</td><td>16</td><td>0</td><td>88</td><td>12</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>39</td><td>46</td><td>WISEA J134228.33+115734.5</td><td>205.61806</td><td>11.95954</td><td>G</td><td>83561.0</td><td>0.27873</td><td>SLS</td><td>19.0g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>40</td><td>47</td><td>WISEA J134355.49+244048.1</td><td>205.98124</td><td>24.68001</td><td>G</td><td>41147.0</td><td>0.13725</td><td>SLS</td><td>17.81</td><td>--</td><td>21</td><td>0</td><td>46</td><td>10</td><td>8</td><td>6</td><td>0</td></tr>
-<tr><td>41</td><td>49</td><td>2MASX J13475962+3227100</td><td>206.99841</td><td>32.45286</td><td>G</td><td>66870.0</td><td>0.223055</td><td>SLS</td><td>18.1g</td><td>--</td><td>11</td><td>0</td><td>54</td><td>6</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>42</td><td>50</td><td>WISEA J135546.08+025456.0</td><td>208.942</td><td>2.91553</td><td>G</td><td>71602.0</td><td>0.238837</td><td>SLS</td><td>18.7g</td><td>--</td><td>11</td><td>0</td><td>51</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>43</td><td>51</td><td>WISEA J140138.37+263527.6</td><td>210.40991</td><td>26.591</td><td>G</td><td>85128.0</td><td>0.283958</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>30</td><td>5</td><td>4</td><td>4</td><td>0</td></tr>
-<tr><td>44</td><td>52</td><td>2MASS J14175497+2704341</td><td>214.47905</td><td>27.07624</td><td>G</td><td>47226.0</td><td>0.15753</td><td>SLS</td><td>16.9g</td><td>--</td><td>17</td><td>0</td><td>25</td><td>6</td><td>6</td><td>4</td><td>0</td></tr>
-<tr><td>45</td><td>53</td><td>WISEA J143447.88+020228.8</td><td>218.69942</td><td>2.04129</td><td>G</td><td>83914.0</td><td>0.279907</td><td>SLS</td><td>18.6g</td><td>--</td><td>10</td><td>0</td><td>62</td><td>9</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>46</td><td>54</td><td>WISEA J144728.35+590831.9</td><td>221.86807</td><td>59.14209</td><td>G</td><td>73602.0</td><td>0.245509</td><td>SLS</td><td>18.3g</td><td>--</td><td>15</td><td>0</td><td>70</td><td>11</td><td>8</td><td>10</td><td>0</td></tr>
-<tr><td>47</td><td>55</td><td>WISEA J153619.01+452247.7</td><td>234.07909</td><td>45.37968</td><td>G</td><td>70804.0</td><td>0.236177</td><td>SLS</td><td>18.1g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>3</td><td>8</td><td>0</td></tr>
-<tr><td>48</td><td>56</td><td>WISEA J154307.78+193751.7</td><td>235.78241</td><td>19.63104</td><td>G</td><td>68774.0</td><td>0.229405</td><td>SLS</td><td>17.0g</td><td>--</td><td>44</td><td>1</td><td>50</td><td>22</td><td>19</td><td>6</td><td>0</td></tr>
-<tr><td>49</td><td>57</td><td>WISEA J154950.90+234444.0</td><td>237.46216</td><td>23.7456</td><td>G</td><td>78570.0</td><td>0.262082</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>31</td><td>5</td><td>4</td><td>4</td><td>0</td></tr>
-<tr><td>50</td><td>59</td><td>2MASX J16014061+2718161</td><td>240.41924</td><td>27.30443</td><td>G</td><td>49285.0</td><td>0.164398</td><td>SLS</td><td>16.7g</td><td>--</td><td>22</td><td>0</td><td>54</td><td>7</td><td>7</td><td>10</td><td>1</td></tr>
-<tr><td>51</td><td>60</td><td>WISEA J163945.96+460905.8</td><td>249.94148</td><td>46.1517</td><td>G</td><td>74087.0</td><td>0.247128</td><td>SLS</td><td>18.3g</td><td>--</td><td>13</td><td>0</td><td>70</td><td>8</td><td>4</td><td>10</td><td>0</td></tr>
-<tr><td>52</td><td>61</td><td>WISEA J173406.17+602919.1</td><td>263.52577</td><td>60.48859</td><td>G</td><td>82730.0</td><td>0.275956</td><td>SLS</td><td>18.5g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>4</td><td>10</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>1</td><td>2</td><td>WISEA J003807.80-010936.7</td><td>9.53254</td><td>-1.16022</td><td>G</td><td>62442.0</td><td>0.208284</td><td>SLS</td><td>18.0g</td><td>--</td><td>16</td><td>0</td><td>72</td><td>12</td><td>11</td><td>10</td><td>0</td></tr>
+<tr><td>2</td><td>3</td><td>WISEA J040422.92-054134.8</td><td>61.09553</td><td>-5.693</td><td>G</td><td>75113.0</td><td>0.250549</td><td>SLS</td><td>18.6g</td><td>--</td><td>7</td><td>0</td><td>61</td><td>10</td><td>9</td><td>8</td><td>0</td></tr>
+<tr><td>3</td><td>4</td><td>WISEA J073806.16+282359.6</td><td>114.52568</td><td>28.3999</td><td>G</td><td>69225.0</td><td>0.230909</td><td>SLS</td><td>18.0g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>4</td><td>5</td><td>2MASX J07550424+1353261</td><td>118.76779</td><td>13.89069</td><td>G</td><td>66746.0</td><td>0.22264</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>38</td><td>7</td><td>9</td><td>6</td><td>0</td></tr>
+<tr><td>5</td><td>6</td><td>WISEA J082655.11+181147.7</td><td>126.72963</td><td>18.19659</td><td>G</td><td>79580.0</td><td>0.265449</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>46</td><td>7</td><td>8</td><td>6</td><td>0</td></tr>
+<tr><td>6</td><td>7</td><td>2MASX J08542169+0449308</td><td>133.59031</td><td>4.82505</td><td>G</td><td>47005.0</td><td>0.156793</td><td>SLS</td><td>16.7g</td><td>--</td><td>18</td><td>0</td><td>58</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>7</td><td>9</td><td>2MASX J09094480+2226078</td><td>137.43671</td><td>22.43535</td><td>G</td><td>85557.0</td><td>0.285388</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>30</td><td>5</td><td>8</td><td>6</td><td>0</td></tr>
+<tr><td>8</td><td>10</td><td>2MASX J09260805+2405242</td><td>141.53355</td><td>24.09009</td><td>G</td><td>66672.0</td><td>0.222393</td><td>SLS</td><td>17.8g</td><td>--</td><td>16</td><td>0</td><td>32</td><td>7</td><td>13</td><td>6</td><td>0</td></tr>
+<tr><td>9</td><td>12</td><td>WISEA J093347.77+211436.7</td><td>143.44906</td><td>21.24354</td><td>G</td><td>51620.0</td><td>0.172186</td><td>SLS</td><td>16.9g</td><td>--</td><td>49</td><td>0</td><td>51</td><td>21</td><td>19</td><td>6</td><td>1</td></tr>
+<tr><td>10</td><td>13</td><td>WISEA J093622.14+390628.9</td><td>144.09227</td><td>39.10805</td><td>G</td><td>84821.0</td><td>0.282931</td><td>SLS</td><td>18.5g</td><td>--</td><td>6</td><td>0</td><td>66</td><td>7</td><td>5</td><td>10</td><td>0</td></tr>
+<tr><td>11</td><td>15</td><td>CGCG 122-067</td><td>146.22362</td><td>22.88533</td><td>G</td><td>26686.0</td><td>0.089016</td><td>SLS</td><td>15.3g</td><td>--</td><td>34</td><td>0</td><td>49</td><td>13</td><td>16</td><td>8</td><td>0</td></tr>
+<tr><td>12</td><td>16</td><td>WISEA J094700.08+254045.8</td><td>146.75036</td><td>25.6794</td><td>G</td><td>32690.0</td><td>0.109043</td><td>SLS</td><td>15.8g</td><td>--</td><td>22</td><td>0</td><td>46</td><td>8</td><td>10</td><td>6</td><td>0</td></tr>
+<tr><td>13</td><td>17</td><td>SDSS J095727.02+083501.7</td><td>149.36259</td><td>8.58385</td><td>G</td><td>76903.0</td><td>0.256521</td><td>SLS</td><td>18.3g</td><td>--</td><td>8</td><td>0</td><td>39</td><td>5</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>14</td><td>18</td><td>WISEA J100356.88+382902.1</td><td>150.98703</td><td>38.48393</td><td>G</td><td>77525.0</td><td>0.258596</td><td>SLS</td><td>17.8g</td><td>--</td><td>8</td><td>0</td><td>57</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
+<tr><td>15</td><td>19</td><td>WISEA J100416.04+295844.1</td><td>151.06686</td><td>29.97893</td><td>G</td><td>89471.0</td><td>0.298443</td><td>SLS</td><td>18.7g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>16</td><td>20</td><td>WISEA J100956.35+261132.0</td><td>152.48482</td><td>26.19222</td><td>G</td><td>72216.0</td><td>0.240886</td><td>SLS</td><td>18.1g</td><td>--</td><td>13</td><td>0</td><td>46</td><td>7</td><td>6</td><td>6</td><td>0</td></tr>
+<tr><td>17</td><td>22</td><td>WISEA J101007.05+325329.0</td><td>152.52939</td><td>32.89142</td><td>G</td><td>86909.0</td><td>0.289896</td><td>SLS</td><td>18.7g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>18</td><td>23</td><td>2MASS J10160396+3037481</td><td>154.01652</td><td>30.63005</td><td>G</td><td>75520.0</td><td>0.251906</td><td>SLS</td><td>18.7g</td><td>--</td><td>6</td><td>0</td><td>49</td><td>7</td><td>6</td><td>8</td><td>0</td></tr>
+<tr><td>19</td><td>24</td><td>WISEA J102154.85+072415.5</td><td>155.47855</td><td>7.40433</td><td>G</td><td>87123.0</td><td>0.290611</td><td>SLS</td><td>18.4g</td><td>--</td><td>6</td><td>0</td><td>55</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>20</td><td>25</td><td>WISEA J103015.74-010607.0</td><td>157.56562</td><td>-1.10196</td><td>G</td><td>84625.0</td><td>0.282277</td><td>SLS</td><td>18.3g</td><td>--</td><td>11</td><td>0</td><td>62</td><td>9</td><td>8</td><td>10</td><td>0</td></tr>
+<tr><td>21</td><td>26</td><td>2MASX J10304263+0418219</td><td>157.67755</td><td>4.306</td><td>G</td><td>48244.0</td><td>0.160924</td><td>SLS</td><td>16.8g</td><td>--</td><td>24</td><td>0</td><td>59</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>22</td><td>27</td><td>2MASX J10405643-0103584</td><td>160.23509</td><td>-1.06629</td><td>G</td><td>75021.0</td><td>0.250242</td><td>SLS</td><td>18.2g</td><td>--</td><td>17</td><td>0</td><td>51</td><td>9</td><td>12</td><td>10</td><td>0</td></tr>
+<tr><td>23</td><td>29</td><td>WISEA J104724.97+230917.4</td><td>161.85407</td><td>23.15485</td><td>G</td><td>54729.0</td><td>0.182556</td><td>SLS</td><td>18.46</td><td>--</td><td>19</td><td>0</td><td>46</td><td>8</td><td>8</td><td>6</td><td>0</td></tr>
+<tr><td>24</td><td>30</td><td>WISEA J111917.41+141946.5</td><td>169.82258</td><td>14.3296</td><td>G</td><td>43101.0</td><td>0.143771</td><td>SLS</td><td>16.6g</td><td>--</td><td>20</td><td>0</td><td>66</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>25</td><td>31</td><td>2MASS J11292875+0255498</td><td>172.36979</td><td>2.93052</td><td>G</td><td>71830.0</td><td>0.239599</td><td>SLS</td><td>17.5g</td><td>--</td><td>9</td><td>0</td><td>49</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
+<tr><td>26</td><td>32</td><td>WISEA J113800.86+521303.8</td><td>174.50359</td><td>52.21773</td><td>G</td><td>88717.0</td><td>0.295927</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>6</td><td>8</td><td>0</td></tr>
+<tr><td>27</td><td>33</td><td>WISEA J114100.04+384807.4</td><td>175.2502</td><td>38.80206</td><td>G</td><td>80255.0</td><td>0.267701</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>8</td><td>8</td><td>10</td><td>0</td></tr>
+<tr><td>28</td><td>34</td><td>WISEA J115052.96+460448.1</td><td>177.72067</td><td>46.08004</td><td>G</td><td>86778.0</td><td>0.289461</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>53</td><td>9</td><td>9</td><td>8</td><td>0</td></tr>
+<tr><td>29</td><td>35</td><td>WISEA J115356.21+492355.4</td><td>178.48421</td><td>49.39875</td><td>G</td><td>49984.0</td><td>0.166728</td><td>SLS</td><td>17.1g</td><td>--</td><td>19</td><td>0</td><td>67</td><td>9</td><td>10</td><td>10</td><td>0</td></tr>
+<tr><td>30</td><td>36</td><td>2MASX J11593546+1257080</td><td>179.8977</td><td>12.95193</td><td>G</td><td>79003.0</td><td>0.263525</td><td>SLS</td><td>18.3g</td><td>--</td><td>7</td><td>0</td><td>54</td><td>6</td><td>6</td><td>10</td><td>0</td></tr>
+<tr><td>31</td><td>37</td><td>WISEA J120053.92+480007.8</td><td>180.22468</td><td>48.00217</td><td>G</td><td>83466.0</td><td>0.278413</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>70</td><td>7</td><td>8</td><td>10</td><td>0</td></tr>
+<tr><td>32</td><td>39</td><td>WISEA J121644.33+122450.5</td><td>184.18471</td><td>12.41404</td><td>G</td><td>77030.0</td><td>0.256944</td><td>SLS</td><td>18.3g</td><td>--</td><td>5</td><td>0</td><td>55</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>33</td><td>40</td><td>WISEA J122100.50+482729.1</td><td>185.25209</td><td>48.4581</td><td>G</td><td>89836.0</td><td>0.299659</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>61</td><td>8</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>34</td><td>41</td><td>WISEA J123215.19+102119.1</td><td>188.06332</td><td>10.35531</td><td>G</td><td>49729.0</td><td>0.165877</td><td>SLS</td><td>17.2g</td><td>--</td><td>19</td><td>0</td><td>66</td><td>9</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>35</td><td>42</td><td>WISEA J123431.08+515629.7</td><td>188.62952</td><td>51.94159</td><td>G</td><td>88714.0</td><td>0.295917</td><td>SLS</td><td>18.1g</td><td>--</td><td>33</td><td>0</td><td>64</td><td>12</td><td>16</td><td>10</td><td>0</td></tr>
+<tr><td>36</td><td>43</td><td>WISEA J123746.63+481227.5</td><td>189.44429</td><td>48.20764</td><td>G</td><td>81679.0</td><td>0.272452</td><td>SLS</td><td>18.2g</td><td>--</td><td>8</td><td>0</td><td>65</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>37</td><td>44</td><td>WISEA J131039.32+223502.8</td><td>197.66385</td><td>22.58413</td><td>G</td><td>69320.0</td><td>0.231225</td><td>SLS</td><td>18.1g</td><td>--</td><td>12</td><td>0</td><td>48</td><td>8</td><td>7</td><td>6</td><td>1</td></tr>
+<tr><td>38</td><td>45</td><td>WISEA J132757.52+334529.3</td><td>201.98959</td><td>33.75825</td><td>G</td><td>74623.0</td><td>0.248916</td><td>SLS</td><td>17.7g</td><td>--</td><td>16</td><td>0</td><td>88</td><td>12</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>39</td><td>46</td><td>WISEA J134228.33+115734.5</td><td>205.61806</td><td>11.9596</td><td>G</td><td>83561.0</td><td>0.27873</td><td>SLS</td><td>19.0g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
+<tr><td>40</td><td>47</td><td>WISEA J134355.49+244048.1</td><td>205.98122</td><td>24.68004</td><td>G</td><td>41147.0</td><td>0.13725</td><td>SLS</td><td>17.81</td><td>--</td><td>24</td><td>0</td><td>46</td><td>13</td><td>13</td><td>6</td><td>0</td></tr>
+<tr><td>41</td><td>49</td><td>2MASX J13475962+3227100</td><td>206.99837</td><td>32.45284</td><td>G</td><td>66870.0</td><td>0.223055</td><td>SLS</td><td>18.1g</td><td>--</td><td>11</td><td>0</td><td>54</td><td>6</td><td>6</td><td>10</td><td>0</td></tr>
+<tr><td>42</td><td>50</td><td>WISEA J135546.08+025456.0</td><td>208.94203</td><td>2.91557</td><td>G</td><td>71602.0</td><td>0.238837</td><td>SLS</td><td>18.7g</td><td>--</td><td>11</td><td>0</td><td>51</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
+<tr><td>43</td><td>51</td><td>WISEA J140138.37+263527.6</td><td>210.40992</td><td>26.59101</td><td>G</td><td>85128.0</td><td>0.283958</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>30</td><td>5</td><td>6</td><td>4</td><td>0</td></tr>
+<tr><td>44</td><td>52</td><td>2MASS J14175497+2704341</td><td>214.47905</td><td>27.07617</td><td>G</td><td>47226.0</td><td>0.15753</td><td>SLS</td><td>16.9g</td><td>--</td><td>17</td><td>0</td><td>25</td><td>6</td><td>9</td><td>4</td><td>0</td></tr>
+<tr><td>45</td><td>53</td><td>WISEA J143447.88+020228.8</td><td>218.6995</td><td>2.04136</td><td>G</td><td>83828.0</td><td>0.279619</td><td>SLS</td><td>18.6g</td><td>--</td><td>10</td><td>0</td><td>62</td><td>10</td><td>8</td><td>8</td><td>0</td></tr>
+<tr><td>46</td><td>54</td><td>WISEA J144728.35+590831.9</td><td>221.86816</td><td>59.1422</td><td>G</td><td>73602.0</td><td>0.245509</td><td>SLS</td><td>18.3g</td><td>--</td><td>15</td><td>0</td><td>70</td><td>11</td><td>10</td><td>10</td><td>0</td></tr>
+<tr><td>47</td><td>55</td><td>WISEA J153619.01+452247.7</td><td>234.07923</td><td>45.37992</td><td>G</td><td>70804.0</td><td>0.236177</td><td>SLS</td><td>18.1g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
+<tr><td>48</td><td>56</td><td>WISEA J154307.78+193751.7</td><td>235.78245</td><td>19.63105</td><td>G</td><td>68774.0</td><td>0.229405</td><td>SLS</td><td>17.0g</td><td>--</td><td>44</td><td>1</td><td>50</td><td>22</td><td>21</td><td>6</td><td>0</td></tr>
+<tr><td>49</td><td>57</td><td>WISEA J154950.90+234444.0</td><td>237.46211</td><td>23.74557</td><td>G</td><td>78570.0</td><td>0.262082</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>31</td><td>5</td><td>6</td><td>4</td><td>0</td></tr>
+<tr><td>50</td><td>59</td><td>2MASX J16014061+2718161</td><td>240.41925</td><td>27.3044</td><td>G</td><td>49285.0</td><td>0.164398</td><td>SLS</td><td>16.7g</td><td>--</td><td>22</td><td>0</td><td>54</td><td>7</td><td>11</td><td>10</td><td>1</td></tr>
+<tr><td>51</td><td>60</td><td>WISEA J163945.96+460905.8</td><td>249.9415</td><td>46.15163</td><td>G</td><td>74087.0</td><td>0.247128</td><td>SLS</td><td>18.3g</td><td>--</td><td>13</td><td>0</td><td>70</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>52</td><td>61</td><td>WISEA J173406.17+602919.1</td><td>263.52572</td><td>60.48865</td><td>G</td><td>82730.0</td><td>0.275956</td><td>SLS</td><td>18.5g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
 </table><style>table.dataTable {clear: both; width: auto !important; margin: 0 !important;}
 .dataTables_info, .dataTables_length, .dataTables_filter, .dataTables_paginate{
 display: inline-block; margin-right: 1em; }
@@ -802,14 +783,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139716600745264-80435').dataTable()");
+    console.log("$('#table140622290008912-244879').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139716600745264-80435').dataTable({
+    $('#table140622290008912-244879').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -823,10 +804,10 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </section>
 <section id="search-the-navo-registry-for-image-resources">
 <h2>4. Search the NAVO Registry for image resources<a class="headerlink" href="#search-the-navo-registry-for-image-resources" title="Link to this heading">#</a></h2>
-<p>The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for all image resources, using the ‘service_type’ search parameter. How many image resources are currently available?</p>
+<p>The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for image resources, using the ‘servicetype’ search parameter. How many image resources are currently available?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">image_services</span><span class="p">)</span><span class="si">}</span><span class="s1"> result(s) found.&#39;</span><span class="p">)</span>
 
@@ -835,11 +816,11 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>265 result(s) found.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>321 result(s) found.
 </pre></div>
 </div>
-<div class="output text_html"><div><i>Table length=265</i>
-<table id="table139716600747904" class="table-striped table-bordered table-condensed">
+<div class="output text_html"><div><i>Table length=321</i>
+<table id="table140622290355968" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://3crsnapshots/sia</td><td>3CRSnap.sia</td><td>3CRSnapshots Simple Image Access Service</td></tr>
@@ -870,7 +851,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <p>There are hundreds of image resources…too many to quickly read through. Try adding the ‘keywords’ search parameter to your registry search, and find the image resource you would need to search the AllWISE images. Remember from the Known Issues that ‘keywords’ must be a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allwise_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;allwise&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allwise_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;allwise&#39;</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">allwise_image_services</span><span class="p">)</span><span class="si">}</span><span class="s1"> result(s) found.&#39;</span><span class="p">)</span>
 
@@ -883,7 +864,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table139716601212320" class="table-striped table-bordered table-condensed">
+<table id="table140622290548720" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://irsa.ipac/wise/images/allwise/l3a</td><td>AllWISE L3a</td><td>AllWISE Atlas (L3a) Coadd Images</td></tr>
@@ -900,7 +881,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyvo.dal.sia.SIAService at 0x7f124e5b51b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SIAService(baseurl : &#39;https://irsa.ipac.caltech.edu/ibe/sia/wise/allwise/p3am_cdd?&#39;, description : &#39;None&#39;)
 </pre></div>
 </div>
 </div>
@@ -966,7 +947,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=4</i>
-<table id="table139716600745696" class="table-striped table-bordered table-condensed">
+<table id="table140622286451904" class="table-striped table-bordered table-condensed">
 <thead><tr><th>sia_title</th><th>sia_url</th><th>cloud_access</th><th>sia_naxes</th><th>sia_fmt</th><th>sia_ra</th><th>sia_dec</th><th>sia_naxis</th><th>sia_crpix</th><th>sia_crval</th><th>sia_proj</th><th>sia_scale</th><th>sia_cd</th><th>sia_bp_id</th><th>sia_bp_ref</th><th>sia_bp_hi</th><th>sia_bp_lo</th><th>sia_bp_unit</th><th>magzp</th><th>magzpunc</th><th>unc_url</th><th>cov_url</th><th>coadd_id</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th></th><th>pix</th><th>deg</th><th></th><th>deg / pix</th><th>deg / pix</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>int32[2]</th><th>float64[2]</th><th>float64[2]</th><th>object</th><th>float64[2]</th><th>float64[4]</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -1027,10 +1008,10 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f124de1f010&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe52d2edf00&gt;
 </pre></div>
 </div>
-<img alt="../../_images/d9609661b8a8472114df969424fa475944832746ca0da612c98c4dd0d3cabf61.png" src="../../_images/d9609661b8a8472114df969424fa475944832746ca0da612c98c4dd0d3cabf61.png" />
+<img alt="../../_images/75895e9e22fc9721d9e3a0e372887b0e91525bfaf927d776137284456fad8085.png" src="../../_images/75895e9e22fc9721d9e3a0e372887b0e91525bfaf927d776137284456fad8085.png" />
 </div>
 </div>
 </section>
@@ -1052,10 +1033,10 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f124dde6e90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe525039c60&gt;
 </pre></div>
 </div>
-<img alt="../../_images/859fcef98debee51969aaec8995bf59aa62786f138cf024982f8c2c86b8a6e0c.png" src="../../_images/859fcef98debee51969aaec8995bf59aa62786f138cf024982f8c2c86b8a6e0c.png" />
+<img alt="../../_images/a09e7fb1b261028f2b2f6833266ed0e8388d469226c565a79bf8d40bf6149f3c.png" src="../../_images/a09e7fb1b261028f2b2f6833266ed0e8388d469226c565a79bf8d40bf6149f3c.png" />
 </div>
 </div>
 </section>
@@ -1064,7 +1045,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 <p>Repeat steps 4, 5, 6, 8 through 12 for GALEX.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">galex_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;galex&#39;</span><span class="p">],</span> <span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">galex_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;galex&#39;</span><span class="p">],</span> <span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">galex_image_services</span><span class="p">)</span><span class="si">}</span><span class="s1"> result(s) found.&#39;</span><span class="p">)</span>
 <span class="n">galex_image_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
 </pre></div>
@@ -1075,7 +1056,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139716438737200" class="table-striped table-bordered table-condensed">
+<table id="table140622145504544" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
@@ -1110,7 +1091,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AIS_270_sg14-nd-int.fits.gz NUV
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AIS_270_0005_sg14-nd-int.fits.gz NUV
 </pre></div>
 </div>
 </div>
@@ -1137,9 +1118,9 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min: 0.0
-Max: 7.1870303
-Mean: 0.0014934327
-Stdev: 0.012639926
+Max: 8.563285
+Mean: 0.0014577592
+Stdev: 0.013107345
 </pre></div>
 </div>
 </div>
@@ -1154,10 +1135,10 @@ Stdev: 0.012639926
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f1244a3fd30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe51de17ac0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/0d695422d5b549cda5c5cceb20cbe73053e65bc3df873d1957c52ce2c0168bab.png" src="../../_images/0d695422d5b549cda5c5cceb20cbe73053e65bc3df873d1957c52ce2c0168bab.png" />
+<img alt="../../_images/c3befaf1105b89d50e9571e86312c0da5abebf5db128de325f9f3fb307f0979c.png" src="../../_images/c3befaf1105b89d50e9571e86312c0da5abebf5db128de325f9f3fb307f0979c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1173,10 +1154,10 @@ Stdev: 0.012639926
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f124498f070&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe51deb7c40&gt;
 </pre></div>
 </div>
-<img alt="../../_images/23b8c68b351d7cecfb24963c90acd8162cb20e9c1a5bac2504a03587a404a9e7.png" src="../../_images/23b8c68b351d7cecfb24963c90acd8162cb20e9c1a5bac2504a03587a404a9e7.png" />
+<img alt="../../_images/b3c3d410b91f513752a7e1545e282a864d37cea2522b87d21a49c7579174d2c2.png" src="../../_images/b3c3d410b91f513752a7e1545e282a864d37cea2522b87d21a49c7579174d2c2.png" />
 </div>
 </div>
 </section>
@@ -1190,14 +1171,14 @@ Stdev: 0.012639926
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sloan&#39;</span><span class="p">],</span> <span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sloan&#39;</span><span class="p">],</span> <span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">)</span>
 <span class="n">sdss_image_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">,</span> <span class="s1">&#39;source_value&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=21</i>
-<table id="table139716437286800" class="table-striped table-bordered table-condensed">
+<table id="table140622145913568" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th><th>source_value</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://mast.stsci/siap/al218</td><td>VLA.AL218</td><td>VLA-A Array AL218 Texas Survey Source Snapshots (AL218)</td><td></td></tr>
@@ -1294,10 +1275,10 @@ Stdev: 0.012639926
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f12448b8910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe516d73070&gt;
 </pre></div>
 </div>
-<img alt="../../_images/0502782ad6970392f47e718ad5d603d26ec562700252626a226dab770b190738.png" src="../../_images/0502782ad6970392f47e718ad5d603d26ec562700252626a226dab770b190738.png" />
+<img alt="../../_images/dd5c7e06a9a1eb775ecb05a7ffa7c158b8da12f1bd294e5a752cd9aba70aafba.png" src="../../_images/dd5c7e06a9a1eb775ecb05a7ffa7c158b8da12f1bd294e5a752cd9aba70aafba.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1316,10 +1297,10 @@ Stdev: 0.012639926
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f12447551b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fe516ba7310&gt;
 </pre></div>
 </div>
-<img alt="../../_images/53081b355fd43873d23702d2f299dca2579e51f8f280f5b69a97ae6c01296109.png" src="../../_images/53081b355fd43873d23702d2f299dca2579e51f8f280f5b69a97ae6c01296109.png" />
+<img alt="../../_images/1c92b1d0712d2c3ecfa05649b24a017140edde3b9174535a25be33a5f6d2db86.png" src="../../_images/1c92b1d0712d2c3ecfa05649b24a017140edde3b9174535a25be33a5f6d2db86.png" />
 </div>
 </div>
 </section>
@@ -1447,9 +1428,9 @@ Stdev: 0.012639926
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 51465.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<img alt="../../_images/2c07f34d9eaa8ba929123c2aa43f84f1f8a951bc604fc7d4c52c348bd0d105a9.png" src="../../_images/2c07f34d9eaa8ba929123c2aa43f84f1f8a951bc604fc7d4c52c348bd0d105a9.png" />
-<img alt="../../_images/f68855a248caa1422a934ebeacb6ec1104fd135d384e9fc6ab9be0c73cd2a68c.png" src="../../_images/f68855a248caa1422a934ebeacb6ec1104fd135d384e9fc6ab9be0c73cd2a68c.png" />
-<img alt="../../_images/385af32f5fbb5e74ca045b0e28396f6dfb8a96b8851cac595ecc243764d0be70.png" src="../../_images/385af32f5fbb5e74ca045b0e28396f6dfb8a96b8851cac595ecc243764d0be70.png" />
+<img alt="../../_images/bd707c9e3fa07a8a86adb6fc4c3feae1cf9ae96ff6a2c55dde83e6c8e19869fc.png" src="../../_images/bd707c9e3fa07a8a86adb6fc4c3feae1cf9ae96ff6a2c55dde83e6c8e19869fc.png" />
+<img alt="../../_images/073761ebe24db97dec0cc4dd573883c2a9532a5ee9fe56650dc1bbe4f71865fe.png" src="../../_images/073761ebe24db97dec0cc4dd573883c2a9532a5ee9fe56650dc1bbe4f71865fe.png" />
+<img alt="../../_images/741e66f02d79f700aad20767445f32b6b4a431e823ba5aee3a4ba73efe32dbea.png" src="../../_images/741e66f02d79f700aad20767445f32b6b4a431e823ba5aee3a4ba73efe32dbea.png" />
 </div>
 </div>
 </section>
@@ -1491,7 +1472,8 @@ Stdev: 0.012639926
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1563,8 +1545,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

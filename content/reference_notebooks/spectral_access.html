@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -51,6 +54,7 @@
     <link rel="prev" title="Catalog Queries" href="catalog_queries.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -66,19 +70,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -86,7 +79,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -94,8 +86,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -111,7 +103,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,15 +149,11 @@
 </ul></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -433,24 +422,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -529,13 +510,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div><i>Table length=6</i>
-<table id="table139733944232704" class="table-striped table-bordered table-condensed">
+<div class="output text_html"><div><i>Table length=7</i>
+<table id="table140066481589792" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://nasa.heasarc/chanmaster</td><td>Chandra</td></tr>
 <tr><td>ivo://nasa.heasarc/hitomaster</td><td>HITOMASTER</td></tr>
 <tr><td>ivo://nasa.heasarc/intbsc</td><td>INTEGRAL/BSC</td></tr>
+<tr><td>ivo://nasa.heasarc/xrismmastr</td><td>XRISMMASTR</td></tr>
 <tr><td>ivo://nasa.heasarc/xtemaster</td><td>RXTE</td></tr>
 <tr><td>ivo://ned.ipac/sed_data_near_position</td><td>NED_SED</td></tr>
 <tr><td>ivo://wfau.roe.ac.uk/heavens_at_isdc/light-curves</td><td>HEAVENS @ ISDC</td></tr>
@@ -577,15 +559,15 @@ document.write(`
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=6</i>
-<table id="table139733947341008-145553" class="table-striped table-bordered table-condensed">
+<table id="table140066482437328-823116" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>obsid</th><th>status</th><th>name</th><th>ra</th><th>dec</th><th>time</th><th>detector</th><th>grating</th><th>exposure</th><th>type</th><th>pi</th><th>public_date</th><th>datalink</th><th>SSA_start_time</th><th>SSA_tmid</th><th>SSA_stop_time</th><th>SSA_duration</th><th>SSA_coord_obs</th><th>SSA_ra</th><th>SSA_dec</th><th>SSA_fov</th><th>SSA_title</th><th>SSA_reference</th><th>SSA_datalength</th><th>SSA_datamodel</th><th>SSA_instrument</th><th>SSA_publisher</th><th>SSA_format</th><th>SSA_wavelength_min</th><th>SSA_wavelength_max</th><th>SSA_bandwidth</th><th>SSA_bandpass</th><th>cloud_access</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>d</th><th></th><th></th><th>s</th><th></th><th></th><th>d</th><th></th><th>d</th><th>d</th><th>d</th><th>s</th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>m</th><th>m</th><th>m</th><th>m</th><th></th></tr></thead>
-<tr><td>0</td><td>639</td><td>archived</td><td>DELTA ORI</td><td>83.00125</td><td>-0.29917</td><td>51556.1364</td><td>ACIS-S</td><td>HETG</td><td>49680</td><td>GO</td><td>Cassinelli</td><td>52037</td><td>11321:chandra.obs.misc</td><td>51556.136400463</td><td>--</td><td>--</td><td>49680.0</td><td>--</td><td>83.00125</td><td>-0.29917</td><td>0.81</td><td>acisf00639N005_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/639/primary/acisf00639N005_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/639/primary/acisf00639N005_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>1</td><td>14567</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56280.7037</td><td>ACIS-S</td><td>HETG</td><td>116500</td><td>GO</td><td>Corcoran</td><td>56647</td><td>11322:chandra.obs.misc</td><td>56280.7036921296</td><td>--</td><td>--</td><td>116500.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14567N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>2</td><td>14570</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56285.5508</td><td>ACIS-S</td><td>HETG</td><td>124100</td><td>GO</td><td>Corcoran</td><td>56652</td><td>11323:chandra.obs.misc</td><td>56285.5507986111</td><td>--</td><td>--</td><td>124100.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14570N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>3</td><td>14569</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56283.254</td><td>ACIS-S</td><td>HETG</td><td>120850</td><td>GO</td><td>Corcoran</td><td>56650</td><td>11324:chandra.obs.misc</td><td>56283.2539814815</td><td>--</td><td>--</td><td>120850.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14569N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>4</td><td>14568</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56288.1612</td><td>ACIS-S</td><td>HETG</td><td>123600</td><td>GO</td><td>Corcoran</td><td>56655</td><td>11325:chandra.obs.misc</td><td>56288.1612268519</td><td>--</td><td>--</td><td>123600.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14568N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz&quot;}}</td></tr>
-<tr><td>5</td><td>7416</td><td>archived</td><td>delta Ori (HD 36486)</td><td>83.00167</td><td>-0.29908</td><td>54413.427</td><td>HRC-S</td><td>LETG</td><td>97080</td><td>GO</td><td>Raassen</td><td>54783</td><td>11326:chandra.obs.misc</td><td>54413.4270486111</td><td>--</td><td>--</td><td>97080.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>hrcf07416N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz</td><td>2</td><td>Spectrum-1.0</td><td>HRC-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>0</td><td>639</td><td>archived</td><td>DELTA ORI</td><td>83.00125</td><td>-0.29917</td><td>51556.1364</td><td>ACIS-S</td><td>HETG</td><td>49680</td><td>GO</td><td>Cassinelli</td><td>52037</td><td>11724:chandra.obs.misc</td><td>51556.136400463</td><td>--</td><td>--</td><td>49680.0</td><td>--</td><td>83.00125</td><td>-0.29917</td><td>0.81</td><td>acisf00639N005_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/639/primary/acisf00639N005_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/639/primary/acisf00639N005_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>1</td><td>7416</td><td>archived</td><td>delta Ori (HD 36486)</td><td>83.00167</td><td>-0.29908</td><td>54413.427</td><td>HRC-S</td><td>LETG</td><td>97080</td><td>GO</td><td>Raassen</td><td>54783</td><td>11725:chandra.obs.misc</td><td>54413.4270486111</td><td>--</td><td>--</td><td>97080.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>hrcf07416N004_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz</td><td>2</td><td>Spectrum-1.0</td><td>HRC-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/6/7416/primary/hrcf07416N004_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>2</td><td>14567</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56280.7037</td><td>ACIS-S</td><td>HETG</td><td>116500</td><td>GO</td><td>Corcoran</td><td>56647</td><td>11726:chandra.obs.misc</td><td>56280.7036921296</td><td>--</td><td>--</td><td>116500.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14567N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/7/14567/primary/acisf14567N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>3</td><td>14568</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56288.1612</td><td>ACIS-S</td><td>HETG</td><td>123600</td><td>GO</td><td>Corcoran</td><td>56655</td><td>11727:chandra.obs.misc</td><td>56288.1612268519</td><td>--</td><td>--</td><td>123600.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14568N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/8/14568/primary/acisf14568N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>4</td><td>14569</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56283.254</td><td>ACIS-S</td><td>HETG</td><td>120850</td><td>GO</td><td>Corcoran</td><td>56650</td><td>11728:chandra.obs.misc</td><td>56283.2539814815</td><td>--</td><td>--</td><td>120850.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14569N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/9/14569/primary/acisf14569N003_pha2.fits.gz&quot;}}</td></tr>
+<tr><td>5</td><td>14570</td><td>archived</td><td>Delta Ori</td><td>83.00167</td><td>-0.29908</td><td>56285.5508</td><td>ACIS-S</td><td>HETG</td><td>124100</td><td>GO</td><td>Corcoran</td><td>56652</td><td>11729:chandra.obs.misc</td><td>56285.5507986111</td><td>--</td><td>--</td><td>124100.0</td><td>--</td><td>83.00167</td><td>-0.29908</td><td>0.81</td><td>acisf14570N003_pha2.fits</td><td>https://heasarc.gsfc.nasa.gov/FTP/chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz</td><td>12</td><td>Spectrum-1.0</td><td>ACIS-S</td><td>HEASARC</td><td>application/fits</td><td>1.2398e-10</td><td>6.1992e-09</td><td>6.07522e-09</td><td>3.16159e-09</td><td>{&quot;aws&quot;:{&quot;bucket_name&quot;:&quot;nasa-heasarc&quot;,&quot;region&quot;:&quot;us-east-1&quot;,&quot;policy&quot;:&quot;open&quot;,&quot;key&quot;:&quot;chandra/data/byobsid/0/14570/primary/acisf14570N003_pha2.fits.gz&quot;}}</td></tr>
 </table><style>table.dataTable {clear: both; width: auto !important; margin: 0 !important;}
 .dataTables_info, .dataTables_length, .dataTables_filter, .dataTables_paginate{
 display: inline-block; margin-right: 1em; }
@@ -609,14 +591,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139733947341008-145553').dataTable()");
+    console.log("$('#table140066482437328-823116').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139733947341008-145553').dataTable({
+    $('#table140066482437328-823116').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -653,7 +635,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=12</i>
-<table id="table139733722968464" class="table-striped table-bordered table-condensed">
+<table id="table140066443680576" class="table-striped table-bordered table-condensed">
 <thead><tr><th>SPEC_NUM</th><th>TG_M</th><th>TG_PART</th><th>TG_SRCID</th><th>X</th><th>Y</th><th>CHANNEL</th><th>COUNTS</th><th>STAT_ERR</th><th>BACKGROUND_UP</th><th>BACKGROUND_DOWN</th><th>BIN_LO</th><th>BIN_HI</th></tr></thead>
 <thead><tr><th>int16</th><th>int16</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>int16[8192]</th><th>int16[8192]</th><th>float32[8192]</th><th>int16[8192]</th><th>int16[8192]</th><th>float64[8192]</th><th>float64[8192]</th></tr></thead>
 <tr><td>1</td><td>-3</td><td>1</td><td>1</td><td>4094.9138</td><td>4132.076</td><td>1 .. 8192</td><td>0 .. 0</td><td>1.8660254 .. 1.8660254</td><td>0 .. 0</td><td>0 .. 0</td><td>7.159166666667378 .. 0.3333333333333333</td><td>7.160000000000712 .. 0.33416666666666667</td></tr>
@@ -694,7 +676,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04b514ac1e56d7bf9f82d63ef0913d631be0dad6caf3ff5fb192adc4561e041e.png" src="../../_images/04b514ac1e56d7bf9f82d63ef0913d631be0dad6caf3ff5fb192adc4561e041e.png" />
+<img alt="../../_images/30257b95e25f26fd51bc900a1b1267a46c0c5e5f7382083c2daffec6fe02ba33.png" src="../../_images/30257b95e25f26fd51bc900a1b1267a46c0c5e5f7382083c2daffec6fe02ba33.png" />
 </div>
 </div>
 <p>This can then be analyzed in your favorite spectral analysis tool, e.g., <a class="reference external" href="https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/index.html">pyXspec</a>.  (For the winter 2018 AAS workshop, we demonstrated this in a <a class="reference external" href="https://github.com/NASA-NAVO/aas_workshop_2018/blob/master/heasarc/heasarc_Spectral_Access.md">notebook</a> that you can consult for how to use pyXspec, but the pyXspec documentation will have more information.)</p>
@@ -737,7 +719,8 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -797,8 +780,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

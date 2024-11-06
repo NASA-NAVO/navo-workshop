@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -51,6 +54,7 @@
     <link rel="prev" title="Image Access" href="image_access.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -66,19 +70,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -86,7 +79,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -94,8 +86,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -111,7 +103,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,15 +149,11 @@
 </ul></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -433,24 +422,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -562,7 +543,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SkyCoord (ICRS): (ra, dec) in deg
-    (202.469575, 47.1952583)&gt;
+    (202.469575, 47.19525833)&gt;
 </pre></div>
 </div>
 </div>
@@ -572,7 +553,7 @@ document.write(`
 <ul class="simple">
 <li><p>simple cone search:  “scs”</p></li>
 <li><p>table access protocol:  “tap” or “table”</p></li>
-<li><p>simple image search:  “sia” or “image”</p></li>
+<li><p>simple image search:  “sia” or “sia2” for SIAv2 services</p></li>
 <li><p>simple spectral access: “ssa”</p></li>
 </ul>
 <p>There are a number of things in the registry related to ‘zcat’ so we find the specific one that we want, which is the CFA version:</p>
@@ -585,7 +566,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table140403496210240" class="table-striped table-bordered table-condensed">
+<table id="table140081537700608" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://cds.vizier/j/mnras/339/652</td><td>J/MNRAS/339/652</td><td>The FLASH Redshift Survey</td></tr>
@@ -611,7 +592,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140403496918448" class="table-striped table-bordered table-condensed">
+<table id="table140081536245168" class="table-striped table-bordered table-condensed">
 <thead><tr><th>__row</th><th>name</th><th>ra</th><th>dec</th><th>bmag</th><th>radial_velocity</th><th>radial_velocity_error</th><th>redshift</th><th>class</th><th>Search_Offset</th></tr></thead>
 <thead><tr><th></th><th></th><th>deg</th><th>deg</th><th></th><th>km / s</th><th>km / s</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>int32</th><th>int16</th><th>float64</th><th>int16</th><th>float64</th></tr></thead>
@@ -639,7 +620,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=20</i>
-<table id="table140403496217824" class="table-striped table-bordered table-condensed">
+<table id="table140082453951968" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://cds.vizier/j/a+a/408/905</td><td>J/A+A/408/905</td><td>Very Luminous Galaxies</td></tr>
@@ -872,7 +853,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table140403496919600" class="table-striped table-bordered table-condensed">
+<table id="table140081536248096" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
@@ -903,7 +884,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1120</i>
-<table id="table140403492059408" class="table-striped table-bordered table-condensed">
+<table id="table140081536249152" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
@@ -963,7 +944,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140403435517696" class="table-striped table-bordered table-condensed">
+<table id="table140081475500928" class="table-striped table-bordered table-condensed">
 <thead><tr><th>__row</th><th>seq_id</th><th>ra</th><th>dec</th><th>lii</th><th>bii</th><th>instrument</th><th>filter</th><th>site</th><th>exposure</th><th>requested_exposure</th><th>fits_type</th><th>start_time</th><th>end_time</th><th>name</th><th>pi_lname</th><th>pi_fname</th><th>ror</th><th>index_id</th><th>subj_cat</th><th>proc_rev</th><th>title</th><th>qa_number</th><th>ao</th><th>proposal_number</th><th>roll</th><th>rday_begin</th><th>rday_end</th><th>class</th><th>__x_ra_dec</th><th>__y_ra_dec</th><th>__z_ra_dec</th></tr></thead>
 <thead><tr><th></th><th></th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th>s</th><th>s</th><th></th><th>d</th><th>d</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>d</th><th>d</th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>int16</th><th>int16</th><th>object</th><th>int32</th><th>int16</th><th>int32</th><th>int16</th><th>int32</th><th>int32</th><th>int16</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -1012,7 +993,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=14</i>
-<table id="table140403496216336" class="table-striped table-bordered table-condensed">
+<table id="table140081475388944" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>float32</th><th>int16</th></tr></thead>
@@ -1057,7 +1038,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=14</i>
-<table id="table140403496216336" class="table-striped table-bordered table-condensed">
+<table id="table140081475388944" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>bmag</th><th>morph_type</th><th>redshift</th><th>angDdeg</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th>deg</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>float32</th><th>int16</th><th>float64</th><th>float64</th></tr></thead>
@@ -1102,7 +1083,7 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=9</i>
-<table id="table140403435645792" class="table-striped table-bordered table-condensed">
+<table id="table140081476058848" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>ra2</th><th>dec2</th><th>radial_velocity</th><th>morph_type</th><th>bmag</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th></tr></thead>
@@ -1166,7 +1147,8 @@ Columns=[&#39;&quot;__row&quot;&#39;, &#39;&quot;__x_ra_dec&quot;&#39;, &#39;&qu
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1237,8 +1219,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
