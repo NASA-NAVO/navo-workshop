@@ -149,7 +149,7 @@ the notebooks.
 
 ## 8. Handling Notebooks in MyST-Markdown format
 
-The Jupyter notebooks in this repository are in [MyST-Markdown format](https://myst-nb.readthedocs.io/en/stable/).
+The Jupyter notebooks in this repository are in [MyST-Markdown format](https://mystmd.org/guide/notebooks-with-markdown).
 The [jupytext](https://jupytext.readthedocs.io/en/latest/index.html) package is included in your `navo-env` environment to work with these notebooks.
 Note that the `jupytext` package has to be installed before your Jupyterlab session starts.
 
