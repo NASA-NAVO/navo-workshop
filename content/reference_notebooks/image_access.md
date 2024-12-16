@@ -48,9 +48,6 @@ In this notebook, we show how to search for and retrieve images from VO services
   - [3. Viewing the resulting image](#3-viewing-the-resulting-image)
     - [JPG images](#jpg-images)
     - [Fits files](#fits-files)
-  - [4. Example of data available through multiple services](#4-example-of-data-available-through-multiple-services)
-    - [Using HEASARC](#using-heasarc)
-    - [Using SDSS SkyServer](#using-sdss-skyserver)
 
 +++
 
