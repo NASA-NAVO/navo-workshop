@@ -353,24 +353,15 @@ mytable
 
 Now we construct and run a query that uses the new angDdeg column in every row search. Note, we also don't want to list the original candidates since we know these are in the catalog and we want rather to find any companions. Therefore, we exclude the match if the radial velocities match exactly.
 
-This time, rather than write the table to disk, we'll keep it in memory and give Tap.query() a "file-like" object using io.BytesIO().  This can take half a minute:
 
 ```{code-cell} ipython3
-## In memory only, use an IO stream.
-vot_obj=io.BytesIO()
-apvot.writeto(apvot.from_table(mytable),vot_obj)
-## (Reset the "file-like" object to the beginning.)
-vot_obj.seek(0)
 query="""SELECT mt.ra, mt.dec, cat.ra, cat.dec, cat.Radial_Velocity, cat.morph_type, cat.bmag
     FROM zcat cat, tap_upload.mytable mt
     WHERE
     contains(point('ICRS',cat.ra,cat.dec),circle('ICRS',mt.ra,mt.dec,mt.angDdeg))=1
     and cat.Radial_Velocity > 0 and cat.radial_velocity != mt.radial_velocity
     ORDER by cat.ra"""
-#  Currently broken due to a bug.
-#mytable2 = heasarc.service.run_async(query, uploads={'mytable':vot_obj})
-mytable2 = heasarc.search(query, uploads={'mytable':vot_obj})
-vot_obj.close()
+mytable2 = heasarc.search(query, uploads={'mytable': mytable})
 mytable2.to_table()
 ```
 
