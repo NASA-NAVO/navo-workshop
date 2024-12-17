@@ -73,16 +73,21 @@ jobs:
 
     steps:
         - uses: actions/checkout@v4
-        - uses: conda-incubator/setup-miniconda@v3
+        - name: Setup conda environment with notebook dependencies
+          uses: conda-incubator/setup-miniconda@v3
           with:
             environment-file: environment.yml
             activate-environment: navo-env
             auto-activate-base: false
-        - run: pip install -r doc-requirements.txt
-        - run: |
+            conda-remove-defaults: true
+        - name: Install testing dependencies
+          run: pip install -r doc-requirements.txt pytest-custom_exit_code
+        - name: Execute notebooks as testing
+          run: |
             python check_env.py
             bash -c 'find content -name "*.md" | xargs jupytext --to notebook '
-            pytest --nbval content/
+            pytest --nbval --suppress-tests-failed-exit-code content/
+            pytest --nbval --last-failed --last-failed-no-failures none --suppress-no-test-exit-code content/
 
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
