@@ -79,6 +79,7 @@ jobs:
             environment-file: environment.yml
             activate-environment: navo-env
             auto-activate-base: false
+            conda-remove-defaults: true
         - name: Install testing dependencies
           run: pip install -r doc-requirements.txt
         - name: Execute notebooks as testing
