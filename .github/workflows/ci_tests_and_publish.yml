@@ -73,13 +73,16 @@ jobs:
 
     steps:
         - uses: actions/checkout@v4
-        - uses: conda-incubator/setup-miniconda@v3
+        - name: Setup conda environment with notebook dependencies
+          uses: conda-incubator/setup-miniconda@v3
           with:
             environment-file: environment.yml
             activate-environment: navo-env
             auto-activate-base: false
-        - run: pip install -r doc-requirements.txt
-        - run: |
+        - name: Install testing dependencies
+          run: pip install -r doc-requirements.txt
+        - name: Execute notebooks as testing
+          run: |
             python check_env.py
             bash -c 'find content -name "*.md" | xargs jupytext --to notebook '
             pytest --nbval content/
