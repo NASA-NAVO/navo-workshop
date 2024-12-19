@@ -14,7 +14,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'NASA-NAVO Workshop Notebooks'
-copyright = '2018-2022, NASA-NAVO developers'
+copyright = '2018-2024, NASA-NAVO developers'
 author = 'NASA-NAVO developers'
 
 
@@ -60,8 +60,6 @@ html_theme_options = {
 
     },
     "home_page_in_toc": True,
-#    "logo_link_url": "https://astroML.org",
-#    "logo_url": "http://www.astroml.org/_images/plot_moving_objects_1.png"
 }
 
 
