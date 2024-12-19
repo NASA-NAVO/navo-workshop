@@ -15,16 +15,6 @@ To create a suitable Python environment for these notebooks, please follow the [
 
 To view the executed notebooks without running them yourself, please see [this page for static renderings of the content](https://nasa-navo.github.io/navo-workshop/).
 
-## Demo in Binder
-
-This badge opens Jupyterlab session on Binder which can be used to run the workshop notebooks.
-
-**Note** that method of running the notebooks is transient, and the session will disappear after
-being left unattended for several minutes.
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NASA-NAVO/notebooks/main?urlpath=lab)
-
-
 ## Running on Sciserver
 
 The workshop notebooks can also be run on [Sciserver](https://sciserver.org/), which offers an online Jupyter platform. To use it for the workshop, follow these steps:
