@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -36,10 +36,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -193,9 +193,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -251,24 +256,6 @@
     <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/NASA-NAVO/navo-workshop/blob/main/content/use_case_notebooks/candidate_list_solution.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
 </a>
 </li>
       
@@ -541,7 +528,7 @@
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=62</i>
-<table id="table139897424905120-953511" class="table-striped table-bordered table-condensed">
+<table id="table140017426249712-851424" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
@@ -629,14 +616,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139897424905120-953511').dataTable()");
+    console.log("$('#table140017426249712-851424').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139897424905120-953511').dataTable({
+    $('#table140017426249712-851424').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -704,7 +691,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=53</i>
-<table id="table139896471553360-93962" class="table-striped table-bordered table-condensed">
+<table id="table140016557343360-902580" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
@@ -783,14 +770,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139896471553360-93962').dataTable()");
+    console.log("$('#table140016557343360-902580').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139896471553360-93962').dataTable({
+    $('#table140016557343360-902580').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -816,11 +803,11 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>322 result(s) found.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>321 result(s) found.
 </pre></div>
 </div>
-<div class="output text_html"><div><i>Table length=322</i>
-<table id="table139896471556672" class="table-striped table-bordered table-condensed">
+<div class="output text_html"><div><i>Table length=321</i>
+<table id="table140016557346336" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://3crsnapshots/sia</td><td>3CRSnap.sia</td><td>3CRSnapshots Simple Image Access Service</td></tr>
@@ -864,7 +851,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table139896467564736" class="table-striped table-bordered table-condensed">
+<table id="table140016553600592" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://irsa.ipac/wise/images/allwise/l3a</td><td>AllWISE L3a</td><td>AllWISE Atlas (L3a) Coadd Images</td></tr>
@@ -947,7 +934,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=4</i>
-<table id="table139896467668320" class="table-striped table-bordered table-condensed">
+<table id="table140016553686496" class="table-striped table-bordered table-condensed">
 <thead><tr><th>sia_title</th><th>sia_url</th><th>cloud_access</th><th>sia_naxes</th><th>sia_fmt</th><th>sia_ra</th><th>sia_dec</th><th>sia_naxis</th><th>sia_crpix</th><th>sia_crval</th><th>sia_proj</th><th>sia_scale</th><th>sia_cd</th><th>sia_bp_id</th><th>sia_bp_ref</th><th>sia_bp_hi</th><th>sia_bp_lo</th><th>sia_bp_unit</th><th>magzp</th><th>magzpunc</th><th>unc_url</th><th>cov_url</th><th>coadd_id</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th></th><th>pix</th><th>deg</th><th></th><th>deg / pix</th><th>deg / pix</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>int32[2]</th><th>float64[2]</th><th>float64[2]</th><th>object</th><th>float64[2]</th><th>float64[4]</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -1008,7 +995,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3c2f02df60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f5824b31ed0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/99c3c57cd0e8b4ac127daf7659df26cb47a7566b0ee83d6e59c1dca8217b280b.png" src="../../_images/99c3c57cd0e8b4ac127daf7659df26cb47a7566b0ee83d6e59c1dca8217b280b.png" />
@@ -1033,7 +1020,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3c26d74220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f58248e9c30&gt;
 </pre></div>
 </div>
 <img alt="../../_images/07fac4eeb5c02470f6d9deef914353d7cfbd875541d034f680f13f6db72d8a7e.png" src="../../_images/07fac4eeb5c02470f6d9deef914353d7cfbd875541d034f680f13f6db72d8a7e.png" />
@@ -1056,7 +1043,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139896326421328" class="table-striped table-bordered table-condensed">
+<table id="table140016547362368" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
@@ -1135,7 +1122,7 @@ Stdev: 0.012639926
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3c24b0efb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f58196bef20&gt;
 </pre></div>
 </div>
 <img alt="../../_images/709471c04f3485c1924208d699a17e5a3b302c2f513c426a456b19a23847adf9.png" src="../../_images/709471c04f3485c1924208d699a17e5a3b302c2f513c426a456b19a23847adf9.png" />
@@ -1154,7 +1141,7 @@ Stdev: 0.012639926
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3c24b90eb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f58196ed000&gt;
 </pre></div>
 </div>
 <img alt="../../_images/a7fdc1e8c14db6bd7ab9ea9ddd10bbca10ff3b2e3d9567c0e377d80f44adbafc.png" src="../../_images/a7fdc1e8c14db6bd7ab9ea9ddd10bbca10ff3b2e3d9567c0e377d80f44adbafc.png" />
@@ -1178,7 +1165,7 @@ Stdev: 0.012639926
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=21</i>
-<table id="table139896326417824" class="table-striped table-bordered table-condensed">
+<table id="table140016552902512" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th><th>source_value</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://mast.stsci/siap/al218</td><td>VLA.AL218</td><td>VLA-A Array AL218 Texas Survey Source Snapshots (AL218)</td><td></td></tr>
@@ -1275,7 +1262,7 @@ Stdev: 0.012639926
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3c24abb3d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f58196bfb20&gt;
 </pre></div>
 </div>
 <img alt="../../_images/c6437eda497b676362e20637ad992737a2bbe1bfb2b33b7b32b18ecb6dc952c5.png" src="../../_images/c6437eda497b676362e20637ad992737a2bbe1bfb2b33b7b32b18ecb6dc952c5.png" />
@@ -1297,7 +1284,7 @@ Stdev: 0.012639926
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3c24ae89a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f5819449120&gt;
 </pre></div>
 </div>
 <img alt="../../_images/cace13656c31942febb4172e15d1c1b59fbd5a36a975dfa024ca98c610680293.png" src="../../_images/cace13656c31942febb4172e15d1c1b59fbd5a36a975dfa024ca98c610680293.png" />
@@ -1430,7 +1417,7 @@ Stdev: 0.012639926
 </div>
 <img alt="../../_images/f985e497b906730d3361e774d3ed3e3946061539b90c046c70a8ccad428bbeb5.png" src="../../_images/f985e497b906730d3361e774d3ed3e3946061539b90c046c70a8ccad428bbeb5.png" />
 <img alt="../../_images/7b2e37a1e5f327e7e3dfaa01a4b2cf2182bab2fa7c2f828a05b357552d32f6b1.png" src="../../_images/7b2e37a1e5f327e7e3dfaa01a4b2cf2182bab2fa7c2f828a05b357552d32f6b1.png" />
-<img alt="../../_images/c36cd3fbea9e9c795a43b7bb4cafc084faeb657101030e8d9a799ce10811d96b.png" src="../../_images/c36cd3fbea9e9c795a43b7bb4cafc084faeb657101030e8d9a799ce10811d96b.png" />
+<img alt="../../_images/51a58b908a1077d99f17c3c4ca2d07db9f53ca2fc8ab8020abe5b3ac7139d85e.png" src="../../_images/51a58b908a1077d99f17c3c4ca2d07db9f53ca2fc8ab8020abe5b3ac7139d85e.png" />
 </div>
 </div>
 </section>
@@ -1521,7 +1508,7 @@ By NASA-NAVO developers
 
   <p class="copyright">
     
-      © Copyright 2018-2022, NASA-NAVO developers.
+      © Copyright 2018-2024, NASA-NAVO developers.
       <br/>
     
   </p>
@@ -1545,8 +1532,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
