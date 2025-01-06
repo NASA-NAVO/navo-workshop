@@ -38,6 +38,11 @@ The workshop notebooks can also be run on [Sciserver](https://sciserver.org/), w
 - The conda environment `navo-env` contains all the packages required to run the notebooks. On the file system, the notebooks are available under `/home/idies/workspace/navo-workshop`.
 
 - You can use the Jupyterlab file browser to navigate to the `navo_workshop` then `content` directory, then either the `reference_notebooks` or `use_case_notebooks` subdirectories that contain the notebooks.
+  - **Note** that each time a notebook is opened for the first time, the kernel needs to be switched to `navo-env`.  Without this step, running the notebook will result in a `ModuleNotFoundError` since the default kernel does not contain the necessary dependencies.
+    - In the upper right corner of the notebook tab click on `Python 3 (ipykernel)`.
+    - Choose `navo-env` from the kernel choices.
+    - Click `Select`.
+    - Save the notebook via `File->Save Markdown File`.
 
 - To ensure you get the latest version of the tutorials, open the terminal (click the blue icon with + in the top left, then select Terminal), and navigate to `/home/idies/workspace/navo-workshop`, then use `git` to download the latest updates. Note that the following will remove any changes you made to the notebooks:
 ```sh
