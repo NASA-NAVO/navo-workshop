@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -476,21 +476,21 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># For downloading files</span>
-<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">download_file</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
 
-<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
-<span class="kn">from</span> <span class="nn">pyvo</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyvo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvo</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
 
 <span class="c1">## There are a number of relatively unimportant warnings that</span>
 <span class="c1">## show up, so for now, suppress them:</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;pyvo.utils.xml.*&quot;</span><span class="p">)</span>
 </pre></div>
@@ -517,7 +517,7 @@
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=145</i>
-<table id="table140599096134096" class="table-striped table-bordered table-condensed">
+<table id="table140479884724736" class="table-striped table-bordered table-condensed">
 <thead><tr><th>index</th><th>short_name</th><th>title</th><th>description</th><th>interfaces</th></tr></thead>
 <thead><tr><th>int64</th><th>str16</th><th>str55</th><th>str4800</th><th>str7</th></tr></thead>
 <tr><td>0</td><td>I/163</td><td>US Naval Observatory Pleiades Catalog</td><td>This catalog is a special subset of the Eichhorn et al. (1970) Pleiades catalog (see &lt;I/90&gt;) updated to B1950.0 positions and with proper motions added. It was prepared for the purpose of predicting occultations of Pleiades stars by the Moon, but is useful for general applications because it contains many faint stars not present in the current series of large astrometric catalogs.</td><td>tap#aux</td></tr>
@@ -601,7 +601,7 @@
 </div>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getunique</span><span class="p">(</span> <span class="n">result</span> <span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">getunique</span><span class="p">(</span> <span class="n">result</span> <span class="p">):</span>
     <span class="n">short_name</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">unique_ind</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
@@ -4042,7 +4042,7 @@ VIII/90/first12
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=502</i>
-<table id="table140598859315040" class="table-striped table-bordered table-condensed">
+<table id="table140479648895888" class="table-striped table-bordered table-condensed">
 <thead><tr><th>recno</th><th>Hertzsprung</th><th>CI</th><th>Ptm</th><th>RAB1900</th><th>e_RAB1900</th><th>DEB1900</th><th>e_DEB1900</th><th>rmsRA</th><th>rmsDE</th><th>rpmRA</th><th>rpmDE</th><th>DrpmRA</th><th>DrpmDE</th><th>DRA</th><th>DDE</th><th>_RA_icrs</th><th>_DE_icrs</th></tr></thead>
 <thead><tr><th></th><th></th><th>mag</th><th>mag</th><th>deg</th><th>ms</th><th>deg</th><th>mas</th><th></th><th></th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>arcsec</th><th>arcsec</th><th>deg</th><th>deg</th></tr></thead>
 <thead><tr><th>int32</th><th>int16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -4090,7 +4090,7 @@ VIII/90/first12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdfb8e84ca0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc3f768f400&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/b42395cf23e56c1d04597a950797687a5b0c98304e196110b7139ca953872f16.png" src="../../_images/b42395cf23e56c1d04597a950797687a5b0c98304e196110b7139ca953872f16.png" />
@@ -4149,7 +4149,7 @@ structure and complete mass function.
 Waveband Coverage:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2086/2733767379.py:11: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2198/2733767379.py:11: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   ind = int(match[0])
 </pre></div>
 </div>
@@ -4186,7 +4186,7 @@ Waveband Coverage:
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=270</i>
-<table id="table140599582051344" class="table-striped table-bordered table-condensed">
+<table id="table140479798477872" class="table-striped table-bordered table-condensed">
 <thead><tr><th>recno</th><th>HII</th><th>Vmag</th><th>B-V</th><th>xpos</th><th>ypos</th><th>Dist</th><th>Mult</th><th>Rem</th><th>Mass</th><th>MassA</th><th>MassB</th><th>MassC</th><th>MassD</th></tr></thead>
 <thead><tr><th></th><th></th><th>mag</th><th>mag</th><th>arcmin</th><th>arcmin</th><th>arcmin</th><th></th><th></th><th>Msun</th><th>Msun</th><th>Msun</th><th>Msun</th><th>Msun</th></tr></thead>
 <thead><tr><th>int32</th><th>int32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int16</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -4225,7 +4225,7 @@ Waveband Coverage:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdfc426d990&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc402b49c00&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/e81e8d079b9354b932c4acff90f479f836ce48f4ef7dce824b71fafb6e3da0a8.png" src="../../_images/e81e8d079b9354b932c4acff90f479f836ce48f4ef7dce824b71fafb6e3da0a8.png" />
@@ -4253,7 +4253,7 @@ Waveband Coverage:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdfc40f20b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc3f7920dc0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/aff688f7fffbd0cff7c2686632192a7fcd4db2b045dd014d666c6b994f3dcc34.png" src="../../_images/aff688f7fffbd0cff7c2686632192a7fcd4db2b045dd014d666c6b994f3dcc34.png" />

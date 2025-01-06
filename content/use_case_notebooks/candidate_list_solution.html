@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -477,25 +477,25 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suppress unimportant warnings.</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;astropy.io.votable.*&quot;</span><span class="p">)</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;pyvo.utils.xml.*&quot;</span><span class="p">)</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="s1">&#39;.*RADECSYS=*&#39;</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># For downloading files</span>
-<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">download_file</span>
 
-<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
-<span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="n">Cutout2D</span>
-<span class="kn">import</span> <span class="nn">astropy.visualization</span> <span class="k">as</span> <span class="nn">vis</span>
-<span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
-<span class="kn">from</span> <span class="nn">astroquery.ipac.ned</span> <span class="kn">import</span> <span class="n">Ned</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.coordinates</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.nddata</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cutout2D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">astropy.visualization</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vis</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.wcs</span><span class="w"> </span><span class="kn">import</span> <span class="n">WCS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.ipac.ned</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ned</span>
 
-<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyvo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vo</span>
 </pre></div>
 </div>
 </div>
@@ -528,7 +528,7 @@
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=62</i>
-<table id="table140669518281360-197907" class="table-striped table-bordered table-condensed">
+<table id="table140718701742736-373550" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
@@ -616,14 +616,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140669518281360-197907').dataTable()");
+    console.log("$('#table140718701742736-373550').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140669518281360-197907').dataTable({
+    $('#table140718701742736-373550').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -691,7 +691,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=53</i>
-<table id="table140668565441216-164848" class="table-striped table-bordered table-condensed">
+<table id="table140717858358848-11152" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
@@ -770,14 +770,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140668565441216-164848').dataTable()");
+    console.log("$('#table140717858358848-11152').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140668565441216-164848').dataTable({
+    $('#table140717858358848-11152').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -807,7 +807,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=321</i>
-<table id="table140668565444768" class="table-striped table-bordered table-condensed">
+<table id="table140717858362352" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://3crsnapshots/sia</td><td>3CRSnap.sia</td><td>3CRSnapshots Simple Image Access Service</td></tr>
@@ -851,7 +851,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table140668560805504" class="table-striped table-bordered table-condensed">
+<table id="table140717854255824" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://irsa.ipac/wise/images/allwise/l3a</td><td>AllWISE L3a</td><td>AllWISE Atlas (L3a) Coadd Images</td></tr>
@@ -934,7 +934,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=4</i>
-<table id="table140668561440624" class="table-striped table-bordered table-condensed">
+<table id="table140717854391744" class="table-striped table-bordered table-condensed">
 <thead><tr><th>sia_title</th><th>sia_url</th><th>cloud_access</th><th>sia_naxes</th><th>sia_fmt</th><th>sia_ra</th><th>sia_dec</th><th>sia_naxis</th><th>sia_crpix</th><th>sia_crval</th><th>sia_proj</th><th>sia_scale</th><th>sia_cd</th><th>sia_bp_id</th><th>sia_bp_ref</th><th>sia_bp_hi</th><th>sia_bp_lo</th><th>sia_bp_unit</th><th>magzp</th><th>magzpunc</th><th>unc_url</th><th>cov_url</th><th>coadd_id</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th></th><th>pix</th><th>deg</th><th></th><th>deg / pix</th><th>deg / pix</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>int32[2]</th><th>float64[2]</th><th>float64[2]</th><th>object</th><th>float64[2]</th><th>float64[4]</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -995,7 +995,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7feff363a6e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ffb6d792200&gt;
 </pre></div>
 </div>
 <img alt="../../_images/99c3c57cd0e8b4ac127daf7659df26cb47a7566b0ee83d6e59c1dca8217b280b.png" src="../../_images/99c3c57cd0e8b4ac127daf7659df26cb47a7566b0ee83d6e59c1dca8217b280b.png" />
@@ -1020,7 +1020,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fefeb3bca90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ffb65460970&gt;
 </pre></div>
 </div>
 <img alt="../../_images/07fac4eeb5c02470f6d9deef914353d7cfbd875541d034f680f13f6db72d8a7e.png" src="../../_images/07fac4eeb5c02470f6d9deef914353d7cfbd875541d034f680f13f6db72d8a7e.png" />
@@ -1043,7 +1043,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table140668420480480" class="table-striped table-bordered table-condensed">
+<table id="table140717713221392" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
@@ -1078,7 +1078,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AIS_270_0001_sg14-nd-int.fits.gz NUV
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AIS_270_0005_sg14-nd-int.fits.gz NUV
 </pre></div>
 </div>
 </div>
@@ -1105,9 +1105,9 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min: 0.0
-Max: 7.6572003
-Mean: 0.0014543837
-Stdev: 0.013401416
+Max: 8.563285
+Mean: 0.0014577592
+Stdev: 0.013107345
 </pre></div>
 </div>
 </div>
@@ -1122,10 +1122,10 @@ Stdev: 0.013401416
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fefe81b45b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ffb6428b670&gt;
 </pre></div>
 </div>
-<img alt="../../_images/b65fb31b02404013bf6ee288e3b106b0f1675842da91339de255ee6d2b1f1311.png" src="../../_images/b65fb31b02404013bf6ee288e3b106b0f1675842da91339de255ee6d2b1f1311.png" />
+<img alt="../../_images/f10b3ccb15285827a233ad1c22c5b75176a4a29d177887a3ed1b6e105dadffe0.png" src="../../_images/f10b3ccb15285827a233ad1c22c5b75176a4a29d177887a3ed1b6e105dadffe0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1141,7 +1141,7 @@ Stdev: 0.013401416
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fefe8024ca0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ffb642b9570&gt;
 </pre></div>
 </div>
 <img alt="../../_images/c99310cbe9f7b3b61ed767fcc2e900d3383789bd8d81529b17da637c9ffdb128.png" src="../../_images/c99310cbe9f7b3b61ed767fcc2e900d3383789bd8d81529b17da637c9ffdb128.png" />
@@ -1165,7 +1165,7 @@ Stdev: 0.013401416
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=21</i>
-<table id="table140668368435184" class="table-striped table-bordered table-condensed">
+<table id="table140717712901936" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th><th>source_value</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://mast.stsci/siap/al218</td><td>VLA.AL218</td><td>VLA-A Array AL218 Texas Survey Source Snapshots (AL218)</td><td></td></tr>
@@ -1262,7 +1262,7 @@ Stdev: 0.013401416
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fefe80fbdc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ffb641e70a0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/c6437eda497b676362e20637ad992737a2bbe1bfb2b33b7b32b18ecb6dc952c5.png" src="../../_images/c6437eda497b676362e20637ad992737a2bbe1bfb2b33b7b32b18ecb6dc952c5.png" />
@@ -1284,7 +1284,7 @@ Stdev: 0.013401416
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fefdcef8670&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ffb640185b0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/cace13656c31942febb4172e15d1c1b59fbd5a36a975dfa024ca98c610680293.png" src="../../_images/cace13656c31942febb4172e15d1c1b59fbd5a36a975dfa024ca98c610680293.png" />
@@ -1415,9 +1415,9 @@ Stdev: 0.013401416
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 51465.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<img alt="../../_images/a608ae0ad3389440663842747b03b82e593e49dc425983626fa11d3151161f87.png" src="../../_images/a608ae0ad3389440663842747b03b82e593e49dc425983626fa11d3151161f87.png" />
-<img alt="../../_images/7b2e37a1e5f327e7e3dfaa01a4b2cf2182bab2fa7c2f828a05b357552d32f6b1.png" src="../../_images/7b2e37a1e5f327e7e3dfaa01a4b2cf2182bab2fa7c2f828a05b357552d32f6b1.png" />
-<img alt="../../_images/c36cd3fbea9e9c795a43b7bb4cafc084faeb657101030e8d9a799ce10811d96b.png" src="../../_images/c36cd3fbea9e9c795a43b7bb4cafc084faeb657101030e8d9a799ce10811d96b.png" />
+<img alt="../../_images/f985e497b906730d3361e774d3ed3e3946061539b90c046c70a8ccad428bbeb5.png" src="../../_images/f985e497b906730d3361e774d3ed3e3946061539b90c046c70a8ccad428bbeb5.png" />
+<img alt="../../_images/cf02e7b0234f4c992aedd6192d99731a601e4e6581d02ff01a81222662ddfb67.png" src="../../_images/cf02e7b0234f4c992aedd6192d99731a601e4e6581d02ff01a81222662ddfb67.png" />
+<img alt="../../_images/f910dc923e42639ecd9ad71ad10be9cc07cbab1a8035475f23529852b55517e2.png" src="../../_images/f910dc923e42639ecd9ad71ad10be9cc07cbab1a8035475f23529852b55517e2.png" />
 </div>
 </div>
 </section>

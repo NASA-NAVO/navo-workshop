@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -454,10 +454,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generic VO access routines</span>
-<span class="kn">import</span> <span class="nn">pyvo</span> <span class="k">as</span> <span class="nn">vo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyvo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vo</span>
 
 <span class="c1"># Ignore unimportant warnings</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="s1">&#39;.*Unknown element .*&#39;</span><span class="p">,</span> <span class="n">vo</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">UnknownElementWarning</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -499,7 +499,9 @@ The Table Access Protocol (TAP) lets you execute queries against our database ta
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.schemas             - description of schemas in this dataset
 ----
-tap_schema.tables              - description of tables in this dataset
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.tables              - description of tables in this dataset
 ----
 tap_schema.columns             - description of columns in this dataset
 ----
@@ -509,23 +511,27 @@ tap_schema.keys                - description of foreign keys in this dataset
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.key_columns         - description of foreign key columns in this dataset
 ----
-dbo.detailedcatalog            - Detailed list of source catalog parameters
-----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.hcvdetailedview            - Detailed list of Hubble Catalog of Variables parameters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.detailedcatalog            - Detailed list of source catalog parameters
+----
+dbo.hcvdetailedview            - Detailed list of Hubble Catalog of Variables parameters
 ----
 dbo.hcvsummaryview             - Summary list of Hubble Catalog of Variables parameters
 ----
-dbo.propermotionsview          - List of proper motion information
-----
-dbo.sourcepositionsview        - List of source position information
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.propermotionsview          - List of proper motion information
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.summagaper2catview         - Summary list of source catalog with Aper2 magnitudes
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.sourcepositionsview        - List of source position information
 ----
-dbo.summagautocatview          - Summary list of source catalog with MagAuto magnitudes
+dbo.summagaper2catview         - Summary list of source catalog with Aper2 magnitudes
+----
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.summagautocatview          - Summary list of source catalog with MagAuto magnitudes
 ----
 dbo.catalog_image_metadata     - Summary list of Image processing metadata
 ----
