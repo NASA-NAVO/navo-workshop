@@ -30,7 +30,7 @@ conda info
 ```
 
 If Miniconda is not already installed, follow these instructions for your
-operating system: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+operating system: [https://docs.anaconda.com/miniconda/install/#installing-miniconda](https://docs.anaconda.com/miniconda/install/#installing-miniconda)
 
 On Windows, you might also need
 [additional compilers](https://github.com/conda/conda-build/wiki/Windows-Compilers).
