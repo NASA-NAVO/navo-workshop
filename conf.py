@@ -70,3 +70,9 @@ html_static_path = ['_static']
 
 # myst configurations
 myst_heading_anchors = 4
+
+nb_execution_excludepatterns = []
+
+# Excluding knowingly broken notebook until
+# https://github.com/NASA-NAVO/navo-workshop/issues/197 is fixed
+nb_execution_excludepatterns += ['hr_diagram_solution.md',]
