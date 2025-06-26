@@ -218,8 +218,9 @@ Hint 3: Download the data to make a spectrum. Note: you might end here and use X
 ```{code-cell} ipython3
 #  Get it and look at it:
 #hdu_list=spec_tables[0].getdataobj()
-file_name = download_file(spec_tables[0].getdataurl(), cache=True, timeout=600)
-hdu_list=fits.open(file_name)
+datalink = spec_tables[0].getdatalink()
+file_name = download_file(datalink.getvalue('access_url', 0),cache=True, timeout=600)
+hdu_list = fits.open(file_name)
 
 spectra=hdu_list[1].data
 print(spectra.columns)
