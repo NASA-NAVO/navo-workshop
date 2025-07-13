@@ -34,8 +34,18 @@ jobs:
       - name: Set output for cron
         if: ${{ github.event_name == 'pull_request' }}
         env:
-          posargs: --report-log cron_output-log.json
+          posargs: --report-log cron_output_log.json
         run: echo $posargs
 
       - name: Execute notebooks as testing
         run: tox -e py312-test-devdeps
+
+      - name: Open issue upon cron failure
+        if: |
+          failure()
+          && steps.status.outcome == 'failure'
+          && github.event_name == 'schedule'
+          && github.repository_owner == 'nasa-navo'
+        uses: scientific-python/issue-from-pytest-log-action@v1
+        with:
+          log-path: cron_output_log.json
