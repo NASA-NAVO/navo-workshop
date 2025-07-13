@@ -81,7 +81,7 @@ jobs:
             auto-activate-base: false
             conda-remove-defaults: true
         - name: Install testing dependencies
-          run: pip install -r doc-requirements.txt pytest-custom_exit_code
+          run: pip install -r doc-test-requirements.txt pytest-custom_exit_code
         - name: Execute notebooks as testing
           run: |
             python check_env.py
