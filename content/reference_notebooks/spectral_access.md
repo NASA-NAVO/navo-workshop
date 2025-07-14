@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.4
+    jupytext_version: 1.16.6
 kernelspec:
   display_name: Python 3
   language: python
@@ -96,7 +96,8 @@ Accessing one of the spectra.
 # hdu_list = spec_tables[0].getdataobj()
 ## But if you might run this notebook repeatedly with limited bandwidth,
 ##  download it once and cache it.
-file_name = download_file(spec_tables[0].getdataurl(),cache=True)
+datalink = spec_tables[0].getdatalink()
+file_name = download_file(datalink.getvalue('access_url', 0),cache=True)
 hdu_list = fits.open(file_name)
 ```
 
