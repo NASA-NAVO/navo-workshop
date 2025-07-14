@@ -1,6 +1,7 @@
 # Doc and testing requirements
 sphinx
-myst-nb>=0.14
+# To pick up newest scroller and dark-mode features
+myst-nb>=1.3
 sphinx-book-theme
 sphinx-copybutton
 nbval

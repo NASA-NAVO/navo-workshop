@@ -81,8 +81,6 @@ The next cell prepares the notebook to display our visualizations.
 Insert a Code Cell below by clicking on the "Insert" Menu and choosing "Insert Cell Below". Then consult QuickReference.md to figure out how to use astroquery to search NED for all objects in a paper, based on the refcode of the paper. Inspect the resulting astropy table.
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 objects_in_paper = Ned.query_refcode('2016ApJ...817..109O')
 objects_in_paper.show_in_notebook()
 ```
@@ -96,8 +94,6 @@ objects_in_paper['Type']
 ```
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # Keep only the galaxies from the list
 galaxies = objects_in_paper[np.array(objects_in_paper['Type']) == 'G']
 

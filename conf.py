@@ -38,6 +38,7 @@ exclude_patterns = ['_build', 'notes', '.tox', '.tmp', '.pytest_cache', 'README.
 
 # MyST-NB configuration
 nb_execution_timeout = 900
+nb_scroll_outputs = True
 
 # -- Options for HTML output -------------------------------------------------
 

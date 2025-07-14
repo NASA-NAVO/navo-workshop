@@ -72,8 +72,6 @@ To simplify this problem, we want to find a catalog of an open cluster of stars,
 Here is useful link for [how the pyvo registry search works](https://pyvo.readthedocs.io/en/latest/registry/index.html).
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # Write some code to perform a registry search using
 # appropriate keywords and specify the service type.
 # Also apply the includeaux=True option to return
@@ -121,8 +119,6 @@ So using this we can reduce the matched tables to ones that are a bit more cater
 We can read more information about the results we found.  For each resource element (i.e. row in the table above), there are useful attributes, which are [described here]( https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource)
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # Output the descriptions of the resulting matches:
 ```
 
@@ -134,7 +130,7 @@ We can read more information about the results we found.  For each resource elem
 
 ### Try a different data discovery method
 
-+++ {"tags": ["output_scroll"]}
++++
 
 ### Alternative Method: Use ADS to search for appropriate paper and access data via NED
 
@@ -197,8 +193,6 @@ Below are a few other ways to see what the tap_service table contains.
 2. tap_services[index].describe(): The table with the tap_services output has, in our case, 83 tables listed and each includes metadata containing some human readable description. You can get the description for one case or for all the records by iterating through the resource. In the former case, we show the description for the Eichhorn data. The latter case also follows.
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # Print the full description for the Eichhorn+1970 example.
 ```
 
