@@ -32,4 +32,15 @@ jobs:
         run: python -m pip install --upgrade tox
 
       - name: Execute notebooks as testing
-        run: tox -e py312-test-devdeps
+        id: test_status
+        run: tox -e py312-test-devdeps -- --report-log output_log_devdeps.json
+
+      - name: Open issue upon cron failure
+        if: |
+          failure()
+          && steps.test_status.outcome == 'failure'
+          && github.event_name == 'pull_request'
+          && github.repository_owner == 'nasa-navo'
+        uses: scientific-python/issue-from-pytest-log-action@v1
+        with:
+          log-path: output_log_devdeps.json
