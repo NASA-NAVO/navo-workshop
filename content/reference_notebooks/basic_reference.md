@@ -206,8 +206,6 @@ file_name
 Example:  Find the HEASARC Table Access Protocol (TAP) service, get some information about the available tables.
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 services = vo.regsearch(servicetype='tap', keywords=['heasarc'])
 print(f'{len(services)} service(s) found.')
 # We found only one service.  Print some info about the service and its tables.
