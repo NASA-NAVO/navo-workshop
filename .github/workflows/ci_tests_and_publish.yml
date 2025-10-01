@@ -46,10 +46,10 @@ jobs:
             toxenv: py312-test-predeps
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python }}
 
@@ -72,7 +72,7 @@ jobs:
         os: ["windows-latest", "ubuntu-latest", "macos-latest"]
 
     steps:
-        - uses: actions/checkout@v4
+        - uses: actions/checkout@v5
         - name: Setup conda environment with notebook dependencies
           uses: conda-incubator/setup-miniconda@v3
           with:
@@ -94,10 +94,10 @@ jobs:
     name: Publish HTML
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.10'
 
