@@ -144,10 +144,16 @@ for i in uniq_ind:
     print("  ***  \n")
     print(tap_services[i].creators)
     print(tap_services[i].res_description)
-
 ```
 
-<i> RESULT: Based on these, the third one (by Eichhorn et al) looks like a good start. </i>
+<i> RESULT: Based on these, the one by Eichhorn et al looks like a good start. </i>
+
+```{code-cell} ipython3
+# Let's save a reference to the desired service.
+for i in uniq_ind:
+    if 'Eichhorn H.' in tap_services[i].creators:
+        eichhorn_tap_service = tap_services[i]
+```
 
 ### At this point, you can proceed to Step 2
 
@@ -213,7 +219,6 @@ for record in tap_services:
         print("For %s: " %record.short_name)
         print("     Access URL: %s" %record['access_urls'][0])
         print("     Reference URL: %s" %record.reference_url)
-
 ```
 
 In the code above, the record is a Registry Resource. You can access the attribute, "creators", from the resource, which is relevant for our example here since this is a direct way to get the author names. The other attributes, "access_url" and "reference_url", provides two types of URLs. The former can be used to access the service resource (as described above) and the latter points to a human-readable document describing this resource.
@@ -239,14 +244,7 @@ print( tap_services.to_table().columns )
 ```
 
 ```{code-cell} ipython3
-tap_services[uniq_ind[2]].describe()   # For Eichhorm+1970 example.
-```
-
-```{code-cell} ipython3
-# To iterate over all the tables:
-for tapsvc in tap_services:
-    print("---------------------------------------------  \n")
-    tapsvc.describe()
+eichhorn_tap_service.describe()   # For Eichhorm+1970 example.
 ```
 
 ## Step 2: Acquire the relevant data and make a plot
@@ -254,7 +252,7 @@ for tapsvc in tap_services:
 In order to query the table, we need the table name, note this is NOT the same as the short name we found above:
 
 ```{code-cell} ipython3
-tables = tap_services[uniq_ind[2]].service.tables
+tables = eichhorn_tap_service.service.tables
 
 short_name = "I/90"
 # find table name:
@@ -278,7 +276,7 @@ for name in tables.keys():
 ```{code-cell} ipython3
 query = 'SELECT * FROM "%s"' %tablename
 print(query)
-results = tap_services[short_name].search(query)
+results = eichhorn_tap_service.search(query)
 results.to_table()
 ```
 
