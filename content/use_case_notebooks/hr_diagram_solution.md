@@ -6,21 +6,21 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.4
+    jupytext_version: 1.17.3
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 language_info:
+  name: python
+  version: 3.11.13
+  mimetype: text/x-python
   codemirror_mode:
     name: ipython
     version: 3
-  file_extension: .py
-  mimetype: text/x-python
-  name: python
-  nbconvert_exporter: python
   pygments_lexer: ipython3
-  version: 3.8.2
+  nbconvert_exporter: python
+  file_extension: .py
 nav_menu: {}
 toc:
   navigate_menu: true
@@ -88,9 +88,11 @@ Because we specified the service type, this returns only the TAP services for ea
 We can re-run the registry search, but further restrict the results by column UCD.  We want tables that have magnitude columns; the most basic UCD to describe a magnitude column is phot.mag
 
 ```{code-cell} ipython3
-tap_services = registry.search(servicetype='tap', keywords=['star pleiades'],
-                               ucd = ['phot.mag%'], includeaux=True)
-print(len(tap_services))
+# Normally this would work, but as of June, 2025, this resource does not have 
+# UCD metadata in the registry, so we will comment this out for now.
+# tap_services = registry.search(servicetype='tap', keywords=['star pleiades'],
+#                                ucd = ['phot.mag%'], includeaux=True)
+# print(len(tap_services))
 ```
 
 Note: the '%' serves as a wild card when searching by UCD
@@ -129,8 +131,6 @@ print(len(uniq_ind))
 tap_services.to_table()[uniq_ind]['ivoid']
 ```
 
-+++
-
 This shows that in this case, all of our TAP results are unique.
 
 +++
@@ -145,12 +145,9 @@ for i in uniq_ind:
     print(tap_services[i].creators)
     print(tap_services[i].res_description)
 
-
 ```
 
-+++
-
-<i> RESULT: Based on these, the second one (by Eichhorn et al) looks like a good start. </i>
+<i> RESULT: Based on these, the third one (by Eichhorn et al) looks like a good start. </i>
 
 ### At this point, you can proceed to Step 2
 
@@ -217,7 +214,6 @@ for record in tap_services:
         print("     Access URL: %s" %record['access_urls'][0])
         print("     Reference URL: %s" %record.reference_url)
 
-
 ```
 
 In the code above, the record is a Registry Resource. You can access the attribute, "creators", from the resource, which is relevant for our example here since this is a direct way to get the author names. The other attributes, "access_url" and "reference_url", provides two types of URLs. The former can be used to access the service resource (as described above) and the latter points to a human-readable document describing this resource.
@@ -243,7 +239,7 @@ print( tap_services.to_table().columns )
 ```
 
 ```{code-cell} ipython3
-tap_services[uniq_ind[1]].describe()   # For Eichhorm+1970 example.
+tap_services[uniq_ind[2]].describe()   # For Eichhorm+1970 example.
 ```
 
 ```{code-cell} ipython3
@@ -253,14 +249,12 @@ for tapsvc in tap_services:
     tapsvc.describe()
 ```
 
-+++
-
 ## Step 2: Acquire the relevant data and make a plot
 
 In order to query the table, we need the table name, note this is NOT the same as the short name we found above:
 
 ```{code-cell} ipython3
-tables = tap_services[uniq_ind[1]].service.tables
+tables = tap_services[uniq_ind[2]].service.tables
 
 short_name = "I/90"
 # find table name:
@@ -268,8 +262,6 @@ for name in tables.keys():
     if short_name in name:
         print(name)
 ```
-
-+++
 
 We can write code to eliminate the other cases (e.g., VI or VIII...) but we wanted to keep this cell to illustrate that the table name (which is required for the query) will likely include the short_name appended to "/catalog" (or "/table").
 
