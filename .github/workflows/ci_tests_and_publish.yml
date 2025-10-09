@@ -27,8 +27,8 @@ jobs:
 
           - name: Linux with the oldest version of dependencies
             os: ubuntu-latest
-            python: '3.8'
-            toxenv: py38-test-oldestdeps
+            python: '3.9'
+            toxenv: py39-test-oldestdeps
 
           - name: OSX
             os: macos-latest
