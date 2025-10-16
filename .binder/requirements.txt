@@ -3,7 +3,7 @@ numpy
 astropy[jupyter]
 # we need 0.4.7. for a fix in the caching
 astroquery>=0.4.7dev0
-pyvo>=1.4
+pyvo>=1.4.2,!=1.7
 scipy
 # For supporting .md-based notebooks
 jupytext
