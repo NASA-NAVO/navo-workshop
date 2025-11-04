@@ -335,6 +335,7 @@ tables = tap_services[ind].service.tables
 
 # find table name:
 for name in tables.keys():
+    name = name.replace('"', '')
     if short_name in name:
         tablename = name
 
