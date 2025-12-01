@@ -7,10 +7,9 @@ dependencies:
   - astropy>=6.0
   - matplotlib>=3.8
   - jupyterlab>=4.0
-  - pyvo>=1.4.2
+  - pyvo>=1.4.2,!=1.7
   - scipy>=1.11
   - pip
   - pip:
     - jupytext>=1.14
     - astroquery
-    - --pre
