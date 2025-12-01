@@ -313,7 +313,7 @@ The inline method is what PyVO will use.  These take a while, i.e. half a minute
 
 ```{code-cell} ipython3
 query="""
-    SELECT cat.ra, cat.dec, Radial_Velocity, bmag, morph_type
+    SELECT cat.ra as ra, cat.dec as dec, Radial_Velocity, bmag, morph_type
     FROM zcat cat, tap_upload.mysources mt
     WHERE
     contains(point('ICRS',cat.ra,cat.dec),circle('ICRS',mt.ra,mt.dec,0.01))=1

@@ -268,6 +268,7 @@ But the other roman numeral catalogs are obviously different catalogs. Therefore
 ```{code-cell} ipython3
 # find (more restricted) table name:
 for name in tables.keys():
+    name = name.replace('"', '')
     if name.startswith(short_name):
         print(name)
         tablename=name
@@ -334,6 +335,7 @@ tables = tap_services[ind].service.tables
 
 # find table name:
 for name in tables.keys():
+    name = name.replace('"', '')
     if short_name in name:
         tablename = name
 
