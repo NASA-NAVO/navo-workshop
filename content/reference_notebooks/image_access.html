@@ -16,30 +16,27 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -54,7 +51,6 @@
     <link rel="prev" title="Basic Reference" href="basic_reference.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -70,8 +66,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -79,6 +86,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -86,8 +94,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -103,8 +111,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,11 +156,15 @@
 </ul></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -193,14 +204,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -409,16 +415,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -481,7 +495,7 @@
 </li>
 </ul>
 <p><strong>*Note:</strong>  for all of these notebooks, the results depend on real-time queries.  Sometimes there are problems, either because a given service has changed, is undergoing maintenance, or the internet connectivity is having problems, etc.  Always retry a couple of times, come back later and try again, and only then send us the problem report to investigate.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
@@ -511,7 +525,7 @@
 <h2>1. Finding SIA resources from the Registry<a class="headerlink" href="#finding-sia-resources-from-the-registry" title="Link to this heading">#</a></h2>
 <p>First, how do we find out what  services are available?  These are listed in a registry at STScI (<strong><a class="reference external" href="http://www.ivoa.net/documents/RegTAP/">see here</a></strong>).  Our Registry function gives a simple interface for how to search for services.</p>
 <p>Let’s search for services providing images in the ultraviolet bands:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uv_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">,</span><span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;uv&#39;</span><span class="p">)</span>
 <span class="n">uv_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span><span class="s1">&#39;short_name&#39;</span><span class="p">,</span><span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
@@ -519,13 +533,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div><i>Table length=18</i>
-<table id="table139647849256976" class="table-striped table-bordered table-condensed">
+<div class="output text_html"><div><i>Table length=17</i>
+<table id="table140620869165328" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
 <tr><td>ivo://archive.stsci.edu/siap/hla</td><td>HLA</td><td>Hubble Legacy Archive</td></tr>
-<tr><td>ivo://irsa.ipac/mast/scrapbook</td><td>MAST-Scrapbook</td><td>The MAST Image Scrapbook</td></tr>
 <tr><td>ivo://mast.stsci/acsggct</td><td>HST.ACSGGCT</td><td>ACS Galactic Globular Cluster Survey (ACSGGCT)</td></tr>
 <tr><td>ivo://mast.stsci/angrrr</td><td>HST.ANGRRR</td><td>Archive of Nearby Galaxies: Reduce, Reuse, Recycle (ANGRRR)</td></tr>
 <tr><td>ivo://mast.stsci/candels</td><td>CANDELS</td><td>Cosmic Assembly Near-IR Deep Extragalactic Legacy Survey (CANDELS)</td></tr>
@@ -544,7 +557,7 @@
 </table></div></div></div>
 </div>
 <p>This returns an astropy table containing information about the services available.  We can then specify the service we want by using the corresponding row.  We’ll repeat the search with additional qualifiers to isolate the row we want (note that in the keyword search the “%” character can be used as a wild card):</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uvot_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">,</span><span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;uv&#39;</span><span class="p">,</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;swift&#39;</span><span class="p">])</span>
 <span class="n">uvot_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span><span class="s1">&#39;short_name&#39;</span><span class="p">,</span><span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
@@ -553,7 +566,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table139647847825760" class="table-striped table-bordered table-condensed">
+<table id="table140620122111184" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://nasa.heasarc/skyview/swiftuvot</td><td>SWIFTUVOT</td><td>Swift UVOT Combined V Intensity Images</td></tr>
@@ -565,7 +578,7 @@
 <h2>2. Using SIA to retrieve an image<a class="headerlink" href="#using-sia-to-retrieve-an-image" title="Link to this heading">#</a></h2>
 <p>Now we look for images of our favorite source.  See <strong><a class="reference external" href="http://www.ivoa.net/documents/WD/SIA/sia-20040524.html">the SIA definition</a></strong> for usage.  In short, you can specify the central position and the size (degrees as one or two floats for the RA, DEC directions).  It is up to the service to determine how to provide this. Optionally, you can limit it to the format you want, e.g., “image/fits” or “image/png” etc.</p>
 <p>What is returned to you is not the image itself but a list of images available and how to access them.  This is easiest shown by example:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="o">=</span> <span class="n">coord</span><span class="o">.</span><span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m51&quot;</span><span class="p">)</span>
 
@@ -576,20 +589,20 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=6</i>
-<table id="table139647849256928" class="table-striped table-bordered table-condensed">
+<table id="table140620139711024" class="table-striped table-bordered table-condensed">
 <thead><tr><th>Survey</th><th>Ra</th><th>Dec</th><th>Dim</th><th>Size</th><th>Scale</th><th>Format</th><th>PixFlags</th><th>URL</th><th>LogicalName</th></tr></thead>
 <thead><tr><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>swiftuvotvint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1736218369342&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>1</td></tr>
-<tr><td>swiftuvotbint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotbint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1736218369598&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>2</td></tr>
-<tr><td>swiftuvotuint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1736218370689&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>3</td></tr>
-<tr><td>swiftuvotuvw1int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw1int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1736218371159&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>4</td></tr>
-<tr><td>swiftuvotuvw2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1736218371636&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>5</td></tr>
-<tr><td>swiftuvotuvm2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvm2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1736218372070&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>6</td></tr>
+<tr><td>swiftuvotvint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1764635374731&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>1</td></tr>
+<tr><td>swiftuvotbint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotbint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1764635374998&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>2</td></tr>
+<tr><td>swiftuvotuint</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1764635376133&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>3</td></tr>
+<tr><td>swiftuvotuvw1int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw1int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1764635376584&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>4</td></tr>
+<tr><td>swiftuvotuvw2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvw2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1764635377080&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>5</td></tr>
+<tr><td>swiftuvotuvm2int</td><td>202.469575</td><td>47.1952583</td><td>2</td><td>[300 300]</td><td>[-0.0006666666666666668 0.0006666666666666668]</td><td>image/jpeg</td><td>F</td><td>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotuvm2int&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1764635377507&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg</td><td>6</td></tr>
 </table></div></div></div>
 </div>
 <p>Extract the fields you’re interested in, e.g., the URLs of the images made by skyview.  Note that specifying as we did SwiftUVOT, we get a number of different images, e.g., UVOT U, V, B, W1, W2, etc.  For each survey, there are two URLs, first the FITS IMAGE and second the JPEG.</p>
 <p>Note that different services will return different column names, but all will have a column giving the URL to access the image.  Though it has different column names in different services, it can always be accessed through the <code class="docutils literal notranslate"><span class="pre">getdataurl</span></code> function.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">im_table</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -597,7 +610,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1736218369342&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&amp;survey=swiftuvotvint&amp;pixels=300%2C300&amp;sampler=LI&amp;size=0.20000000000000004%2C0.20000000000000004&amp;projection=Tan&amp;coordinates=J2000.0&amp;requestID=skv1764635374731&amp;nofits=1&amp;quicklook=jpeg&amp;return=jpeg
 </pre></div>
 </div>
 </div>
@@ -608,7 +621,7 @@
 <section id="jpg-images">
 <h3>JPG images<a class="headerlink" href="#jpg-images" title="Link to this heading">#</a></h3>
 <p>Since we have asked for JPEG images, we can display an image in python easily by using its URL. Each row of the result has a getdataurl() method, and you can then hand the URL to an image displayer such as IPython.display:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">ipImage</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">im_table</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">())</span>
 <span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
@@ -616,14 +629,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><img src="https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&survey=swiftuvotvint&pixels=300%2C300&sampler=LI&size=0.20000000000000004%2C0.20000000000000004&projection=Tan&coordinates=J2000.0&requestID=skv1736218369342&nofits=1&quicklook=jpeg&return=jpeg"/></div></div>
+<div class="output text_html"><img src="https://skyview.gsfc.nasa.gov/cgi-bin/images?position=202.469575%2C47.1952583&survey=swiftuvotvint&pixels=300%2C300&sampler=LI&size=0.20000000000000004%2C0.20000000000000004&projection=Tan&coordinates=J2000.0&requestID=skv1764635374731&nofits=1&quicklook=jpeg&return=jpeg"/></div></div>
 </div>
 </section>
 <section id="fits-files">
 <h3>Fits files<a class="headerlink" href="#fits-files" title="Link to this heading">#</a></h3>
 <p>Or download the FITS image and display it with imshow, or aplpy.</p>
 <p>(This often errors off with a time out message.  Just try it again, possibly a couple of times.)</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Do the search again asking for FITS</span>
 <span class="n">im_table</span> <span class="o">=</span> <span class="n">uvot_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;image/fits&#39;</span><span class="p">)</span>
@@ -635,26 +648,26 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: /home/runner/.astropy/cache/download/url/c1b12b215a17c9d72bac1016bcba1f09/contents
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: /home/runner/.astropy/cache/download/url/095368bf5587106dfc66f63a76277b09/contents
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU     111   (300, 300)   float32   
+  0  PRIMARY       1 PrimaryHDU     116   (300, 300)   float32   
 </pre></div>
 </div>
 </div>
 </div>
 <section id="using-imshow">
 <h4>Using imshow<a class="headerlink" href="#using-imshow" title="Link to this heading">#</a></h4>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hdu_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f024c4f1090&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fe4ac406020&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ba9cffa29f71b5eef810ef3ecd08a619c2bb06f6e3711eda9023615ed0435d98.png" src="../../_images/ba9cffa29f71b5eef810ef3ecd08a619c2bb06f6e3711eda9023615ed0435d98.png" />
+<img alt="../../_images/83fd8a895b54972ce18e0b89cd184e5a4abfad547a7a8729ec167ec1f5cccbf7.png" src="../../_images/83fd8a895b54972ce18e0b89cd184e5a4abfad547a7a8729ec167ec1f5cccbf7.png" />
 </div>
 </div>
 </section>
@@ -698,8 +711,7 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -766,8 +778,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

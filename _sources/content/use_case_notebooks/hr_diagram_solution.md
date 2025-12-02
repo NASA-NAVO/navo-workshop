@@ -6,21 +6,21 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.4
+    jupytext_version: 1.17.3
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 language_info:
+  name: python
+  version: 3.11.13
+  mimetype: text/x-python
   codemirror_mode:
     name: ipython
     version: 3
-  file_extension: .py
-  mimetype: text/x-python
-  name: python
-  nbconvert_exporter: python
   pygments_lexer: ipython3
-  version: 3.8.2
+  nbconvert_exporter: python
+  file_extension: .py
 nav_menu: {}
 toc:
   navigate_menu: true
@@ -72,8 +72,6 @@ To simplify this problem, we want to find a catalog of an open cluster of stars,
 Here is useful link for [how the pyvo registry search works](https://pyvo.readthedocs.io/en/latest/registry/index.html).
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 tap_services = registry.search(servicetype = 'tap', keywords=['star pleiades'], includeaux=True)
 print(len(tap_services))
 tap_services.get_summary()
@@ -90,30 +88,26 @@ Because we specified the service type, this returns only the TAP services for ea
 We can re-run the registry search, but further restrict the results by column UCD.  We want tables that have magnitude columns; the most basic UCD to describe a magnitude column is phot.mag
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
-tap_services = registry.search(servicetype='tap', keywords=['star pleiades'],
-                               ucd = ['phot.mag%'], includeaux=True)
-print(len(tap_services))
+# Normally this would work, but as of June, 2025, this resource does not have 
+# UCD metadata in the registry, so we will comment this out for now.
+# tap_services = registry.search(servicetype='tap', keywords=['star pleiades'],
+#                                ucd = ['phot.mag%'], includeaux=True)
+# print(len(tap_services))
 ```
 
 Note: the '%' serves as a wild card when searching by UCD
 
 The IOVA standard enables resources to be as sepecific as they would like when defining the UCD of columns.  For example, 'phot.mag' and 'phot.mag;em.opt.V' can both be used to describe a column containing the V magnitudes of objects.  If a resource uses the latter to describe a column, a search using 'phot.mag' will not return that resource.  A wild card would need to be used or the exact column UCD. The UCD search requires an exact match for a resource to be returned, so using the wild card will make it easier to discover a wider variety of resources.
 
-+++ {"tags": ["output_scroll"]}
++++
 
 So using this we can reduce the matched tables to ones that are a bit more catered to our experiment. Note, that there can be redundancy in some resources since these are available via multiple services and/or publishers. Therefore a bit more cleaning can be done to provide only the unique matches.
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 tap_services.to_table()['ivoid']
 ```
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 def getunique( result ):
     short_name = []
     unique_ind = []
@@ -129,19 +123,13 @@ def getunique( result ):
 ```
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 uniq_ind=getunique(tap_services)
 print(len(uniq_ind))
 ```
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 tap_services.to_table()[uniq_ind]['ivoid']
 ```
-
-+++ {"tags": ["output_scroll"]}
 
 This shows that in this case, all of our TAP results are unique.
 
@@ -150,21 +138,22 @@ This shows that in this case, all of our TAP results are unique.
 We can read more information about the results we found.  For each resource element (i.e. row in the table above), there are useful attributes, which are [described here]( https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource)
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # To read the descriptions of the resulting matches:
 
 for i in uniq_ind:
     print("  ***  \n")
     print(tap_services[i].creators)
     print(tap_services[i].res_description)
-
-
 ```
 
-+++ {"tags": ["output_scroll"]}
+<i> RESULT: Based on these, the one by Eichhorn et al looks like a good start. </i>
 
-<i> RESULT: Based on these, the second one (by Eichhorn et al) looks like a good start. </i>
+```{code-cell} ipython3
+# Let's save a reference to the desired service.
+for i in uniq_ind:
+    if 'Eichhorn H.' in tap_services[i].creators:
+        eichhorn_tap_service = tap_services[i]
+```
 
 ### At this point, you can proceed to Step 2
 
@@ -172,7 +161,7 @@ for i in uniq_ind:
 
 ### Try a different data discovery method
 
-+++ {"tags": ["output_scroll"]}
++++
 
 ### Alternative Method: Use ADS to search for appropriate paper and access data via NED
 
@@ -222,8 +211,6 @@ Note that the URL is a generic TAP url for Vizier.  All of its tables can be acc
 Next, try using Author name:
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 author = 'Eichhorn'
 
 for record in tap_services:
@@ -232,8 +219,6 @@ for record in tap_services:
         print("For %s: " %record.short_name)
         print("     Access URL: %s" %record['access_urls'][0])
         print("     Reference URL: %s" %record.reference_url)
-
-
 ```
 
 In the code above, the record is a Registry Resource. You can access the attribute, "creators", from the resource, which is relevant for our example here since this is a direct way to get the author names. The other attributes, "access_url" and "reference_url", provides two types of URLs. The former can be used to access the service resource (as described above) and the latter points to a human-readable document describing this resource.
@@ -255,36 +240,19 @@ Below are a few other ways to see what the tap_service table contains.
 2. tap_services[index].describe(): The table with the tap_services output has, in our case, 83 tables listed and each includes metadata containing some human readable description. You can get the description for one case or for all the records by iterating through the resource. In the former case, we show the description for the Eichhorn data, whose index is uniq_ind[1]. The latter case also follows.
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 print( tap_services.to_table().columns )
 ```
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
-tap_services[uniq_ind[1]].describe()   # For Eichhorm+1970 example.
+eichhorn_tap_service.describe()   # For Eichhorm+1970 example.
 ```
-
-```{code-cell} ipython3
-:tags: [output_scroll]
-
-# To iterate over all the tables:
-for tapsvc in tap_services:
-    print("---------------------------------------------  \n")
-    tapsvc.describe()
-```
-
-+++ {"tags": ["output_scroll"]}
 
 ## Step 2: Acquire the relevant data and make a plot
 
 In order to query the table, we need the table name, note this is NOT the same as the short name we found above:
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
-tables = tap_services[uniq_ind[1]].service.tables
+tables = eichhorn_tap_service.service.tables
 
 short_name = "I/90"
 # find table name:
@@ -293,28 +261,23 @@ for name in tables.keys():
         print(name)
 ```
 
-+++ {"tags": ["output_scroll"]}
-
 We can write code to eliminate the other cases (e.g., VI or VIII...) but we wanted to keep this cell to illustrate that the table name (which is required for the query) will likely include the short_name appended to "/catalog" (or "/table").
 
 But the other roman numeral catalogs are obviously different catalogs. Therefore try the below for a better match:
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # find (more restricted) table name:
 for name in tables.keys():
+    name = name.replace('"', '')
     if name.startswith(short_name):
         print(name)
         tablename=name
 ```
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 query = 'SELECT * FROM "%s"' %tablename
 print(query)
-results = tap_services[short_name].search(query)
+results = eichhorn_tap_service.search(query)
 results.to_table()
 ```
 
@@ -362,8 +325,6 @@ tap_services[ind].describe()
 ```
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # Doing steps above to view table from Raboud+1998
 
 # This 'tables' will return the same service tables as the 'tables' defined
@@ -374,6 +335,7 @@ tables = tap_services[ind].service.tables
 
 # find table name:
 for name in tables.keys():
+    name = name.replace('"', '')
     if short_name in name:
         tablename = name
 

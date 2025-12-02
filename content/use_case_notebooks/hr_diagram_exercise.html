@@ -16,30 +16,27 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -54,7 +51,6 @@
     <link rel="prev" title="Proposal Preparation Exercise" href="proposal_prep_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -70,8 +66,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -79,6 +86,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -86,8 +94,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -103,8 +111,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,11 +156,15 @@
 </ul></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -193,14 +204,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -409,16 +415,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -473,7 +487,7 @@
 <h1>HR (Hertzsprung-Russell) Diagram Exercise<a class="headerlink" href="#hr-hertzsprung-russell-diagram-exercise" title="Link to this heading">#</a></h1>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram">Hertzsprung-Russell diagram</a> is a fundamental diagram in astronomy that displays important relationships between the stellar color (or temperature) and absolute brightness (or luminosity).</p>
 <p>In this exercise, we will use existing stellar catalogs to produce the H-R diagram.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As a hint, we include the code block for Python modules that you will likely need to import:</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
@@ -504,7 +518,7 @@
 <section id="data-discovery-steps">
 <h3>DATA DISCOVERY STEPS<a class="headerlink" href="#data-discovery-steps" title="Link to this heading">#</a></h3>
 <p>Here is useful link for <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/registry/index.html">how the pyvo registry search works</a>.</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write some code to perform a registry search using</span>
 <span class="c1"># appropriate keywords and specify the service type.</span>
@@ -522,7 +536,7 @@
 <section id="next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram">
 <h4>Next, we need to find which of these has the columns of interest, i.e. magnitudes in two bands to create the color-magnitude diagram<a class="headerlink" href="#next-we-need-to-find-which-of-these-has-the-columns-of-interest-i-e-magnitudes-in-two-bands-to-create-the-color-magnitude-diagram" title="Link to this heading">#</a></h4>
 <p>We can re-run the registry search, but further restrict the results by column UCD.  We want tables that have magnitude columns; the most basic UCD to describe a magnitude column is phot.mag</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform another registry search, this time searching</span>
 <span class="c1"># tables that have at least 1 magnitude column.</span>
@@ -536,14 +550,14 @@
 <p>Note: the ‘%’ serves as a wild card when searching by UCD</p>
 <p>The IOVA standard enables resources to be as sepecific as they would like when defining the UCD of columns.  For example, ‘phot.mag’ and ‘phot.mag;em.opt.V’ can both be used to describe a column containing the V magnitudes of objects.  If a resource uses the latter to describe a column, a search using ‘phot.mag’ will not return that resource.  A wild card would need to be used or the exact column UCD. The UCD search requires an exact match for a resource to be returned, so using the wild card will make it easier to discover a wider variety of resources.</p>
 <p>So using this we can reduce the matched tables to ones that are a bit more catered to our experiment. Note, that there is redundancy in some resources since these are available via multiple services and/or publishers. Therefore a bit more cleaning can be done to provide only the unique matches.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the &#39;ivoid&#39; column for these tables</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function that searches the result and only</span>
 <span class="c1"># outputs unique tables</span>
@@ -552,7 +566,7 @@
 </div>
 </div>
 <p>We can read more information about the results we found.  For each resource element (i.e. row in the table above), there are useful attributes, which are <a class="reference external" href="https://pyvo.readthedocs.io/en/latest/api/pyvo.registry.regtap.RegistryResource.html#pyvo.registry.regtap.RegistryResource">described here</a></p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output the descriptions of the resulting matches:</span>
 </pre></div>
@@ -578,7 +592,7 @@
 <p>“source_value” contains the bibcode information that we want; “creator_seq” lists the authors;</p>
 <p>and</p>
 <p>“access_url” provides the url from where the data can be accessed.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the fieldnames for the tap services.</span>
 </pre></div>
@@ -586,7 +600,7 @@
 </div>
 </div>
 <p>First, Try using bibcode:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibcode</span> <span class="o">=</span> <span class="s1">&#39;1970MmRAS..73..125E&#39;</span> <span class="c1"># Eichhorn</span>
 
@@ -604,7 +618,7 @@
 </div>
 <p>Note that the URL is a generic TAP url for Vizier.  All of its tables can be accessed by that same TAP services.  It’ll be in the ADQL query itself that you specify the table name.  We’ll see this below.</p>
 <p>Next, try using Author name:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;Eichhorn&#39;</span>
 
@@ -624,7 +638,7 @@
 <li><p>To view the column information: tap_services.to_table().columns() shows the metadata contained in the tap service. We will reference some of this columns below as we try to find the appropriate table.</p></li>
 <li><p>tap_services[index].describe(): The table with the tap_services output has, in our case, 83 tables listed and each includes metadata containing some human readable description. You can get the description for one case or for all the records by iterating through the resource. In the former case, we show the description for the Eichhorn data. The latter case also follows.</p></li>
 </ol>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the full description for the Eichhorn+1970 example.</span>
 </pre></div>
@@ -636,14 +650,14 @@
 <section id="step-2-acquire-the-relevant-data-and-make-a-plot">
 <h2>Step 2: Acquire the relevant data and make a plot<a class="headerlink" href="#step-2-acquire-the-relevant-data-and-make-a-plot" title="Link to this heading">#</a></h2>
 <p>In order to query the table, we need the table name, note this is NOT the same as the short name we found above:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the table name for the Eichhorn+1970 data</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the data to output the table information (i.e. the data in the</span>
 <span class="c1"># columns in the table)</span>
@@ -652,7 +666,7 @@
 </div>
 </div>
 <p>We can access the column data as array using the .getcolumn(colname) attribute, where the colname is given in the table above. In particular the “CI” is the color index and “Ptm” is the photovisual magnitude. See <a class="reference external" href="https://vizier.u-strasbg.fr/viz-bin/VizieR?-source=I/90">here</a> for details about the columns.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get color and magnitude column information for</span>
 <span class="c1"># stars in this table.</span>
@@ -663,7 +677,7 @@
 <section id="plotting">
 <h3>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
 <p>Note: The magnitudes here are apparent and therefore in plotting, the color-magnitude diagram is typically brightness increasing upwards (higher y-axis) so we will flip the y-axis here.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;V [apparent mag]&quot;</span><span class="p">)</span>
@@ -677,7 +691,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;B-V&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/8b7e1a6470e9ceac46f5cf33a77186744ecdc5226bc6ffb10501179330eb4988.png" src="../../_images/8b7e1a6470e9ceac46f5cf33a77186744ecdc5226bc6ffb10501179330eb4988.png" />
+<img alt="../../_images/273d916ad8cca2cfb39cfde5918fcd0128fa71ec72db8d45d8877e0642a42775.png" src="../../_images/273d916ad8cca2cfb39cfde5918fcd0128fa71ec72db8d45d8877e0642a42775.png" />
 </div>
 </div>
 </section>
@@ -687,7 +701,7 @@
 <p>There is nice discussion here: <a class="reference external" href="http://www.southastrodel.com/Page03009a.htm">http://www.southastrodel.com/Page03009a.htm</a>  about the color-magnitude diagram. Their Fig 4 looks slightly cleaner because part of this investigation was to select the 270 stars that are vetted members and restricted to stellar types more massive than K0.</p>
 <p>The dataset is from Raboud+1998 (1998A&amp;A…329..101R)</p>
 <p>Therefore in this next step, we will use the bibcode to select this data and overplot with the previous data to compare.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibcode</span> <span class="o">=</span> <span class="s1">&#39;1998A&amp;A...329..101R&#39;</span> <span class="c1"># Raboud</span>
 
@@ -697,7 +711,7 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then query the table using the table name and get the</span>
 <span class="c1"># appropriate columns</span>
@@ -705,7 +719,7 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then plot!</span>
 
@@ -722,14 +736,14 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;B-V&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/8b7e1a6470e9ceac46f5cf33a77186744ecdc5226bc6ffb10501179330eb4988.png" src="../../_images/8b7e1a6470e9ceac46f5cf33a77186744ecdc5226bc6ffb10501179330eb4988.png" />
+<img alt="../../_images/273d916ad8cca2cfb39cfde5918fcd0128fa71ec72db8d45d8877e0642a42775.png" src="../../_images/273d916ad8cca2cfb39cfde5918fcd0128fa71ec72db8d45d8877e0642a42775.png" />
 </div>
 </div>
 </section>
 <section id="bonus-step-4-the-cmd-as-a-distance-indicator">
 <h2>BONUS: Step 4: The CMD as a distance indicator<a class="headerlink" href="#bonus-step-4-the-cmd-as-a-distance-indicator" title="Link to this heading">#</a></h2>
 <p>Since the y-axis above is apparent magnitude, we can use the obvious features (e.g., main sequence curve) to translate the apparent magnitudes to absolute magnitudes (by comparing to published H-R diagrams given in absolute magnitudes) and measure the distance to Pleiades!</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sun_color</span> <span class="o">=</span> <span class="mf">0.65</span>  <span class="c1"># from http://www.astro.ucla.edu/~wright/magcolor.htm</span>
 
@@ -744,7 +758,7 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Measure the distance to the Pleaides, using the Sun</span>
 <span class="c1"># as a reference. We know the Sun&#39;s absolute magnitude:</span>
@@ -796,8 +810,7 @@
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -870,8 +883,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

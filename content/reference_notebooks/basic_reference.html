@@ -16,30 +16,27 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -54,7 +51,6 @@
     <link rel="prev" title="NASA-NAVO notebooks" href="../../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -70,8 +66,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -79,6 +86,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -86,8 +94,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -103,8 +111,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,11 +156,15 @@
 </ul></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -193,14 +204,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -409,16 +415,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -523,7 +537,7 @@
 </ul>
 <section id="import-necessary-packages">
 <h3>2.0 Import Necessary Packages<a class="headerlink" href="#import-necessary-packages" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generic VO access routines</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyvo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vo</span>
@@ -547,7 +561,7 @@
 <section id="look-up-services-in-vo-registry">
 <h3>2.1 Look Up Services in VO Registry<a class="headerlink" href="#look-up-services-in-vo-registry" title="Link to this heading">#</a></h3>
 <p>Simple example:  Find Simple Cone Search (conesearch) services related to SWIFT.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;conesearch&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;swift&#39;</span><span class="p">])</span>
 <span class="n">services</span>
@@ -555,7 +569,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;DALResultsTable length=229&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: W23: None:116:4860: W23: The executionDuration element must not occur more than once [pyvo.utils.xml.elements]
+WARNING: W25: None:116:5090: W25: The uploadLimit element must not occur more than once [pyvo.utils.xml.elements]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;DALResultsTable length=245&gt;
                  ivoid                  ...
                                         ...
                  object                 ...
@@ -621,7 +639,7 @@ ivo://archive.stsci.edu/catalogs/mastcs ...
 <li><p><code class="docutils literal notranslate"><span class="pre">reference_url</span></code> - A link for more information</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ivoid</span></code> - A unique identifier for the service.  Gives some indication of what organization is serving the data.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the number of results and the 1st 4 short names and titles.</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of results: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">services</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -631,7 +649,7 @@ ivo://archive.stsci.edu/catalogs/mastcs ...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of results: 229
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of results: 245
 
 MAST CS - MAST ConeSearch
 sds82 cone - SDS82 catalog
@@ -645,7 +663,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <section id="filtering-results">
 <h5>Filtering results<a class="headerlink" href="#filtering-results" title="Link to this heading">#</a></h5>
 <p>Of the services we found, which one(s) have ‘stsci.edu’ in their unique identifier?</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stsci_services</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;stsci.edu&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">ivoid</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stsci_services</span><span class="p">:</span>
@@ -663,7 +681,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <section id="using-astropy">
 <h5>Using astropy<a class="headerlink" href="#using-astropy" title="Link to this heading">#</a></h5>
 <p>With the <code class="docutils literal notranslate"><span class="pre">to_table()</span></code> method, <code class="docutils literal notranslate"><span class="pre">pyvo</span></code> results can also be converted to Astropy <code class="docutils literal notranslate"><span class="pre">Table</span></code> objects which offer a variety of addional features. See <a class="reference external" href="http://docs.astropy.org/en/stable/table/">astropy.table</a> for more on working with Astropy Tables.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert to an Astropy Table</span>
 <span class="n">services_table</span> <span class="o">=</span> <span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
@@ -680,7 +698,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139942146994720" class="table-striped table-bordered table-condensed">
+<table id="table140007873203408" class="table-striped table-bordered table-condensed">
 <thead><tr><th>short_name</th><th>res_title</th><th>res_description</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>MAST CS</td><td>MAST ConeSearch</td><td>All MAST catalog holdings are available via a ConeSearch endpoint. \nThis service provides access to all, with an optional non-standard parameter for an individual catalog to query. \nThe available missions are listed at http://archive.stsci.edu/vo/mast_services.html, \nand include Hubble (HST) data, Kepler, K2, IUE, HUT, EUVE, FUSE, UIT, WUPPE, BEFS, TUES, IMAPS, High Level Science Products (HLSP), Copernicus, HPOL, VLA First, XMM-OM, and SWIFT.</td></tr>
@@ -696,7 +714,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <p>Example:  Find a cone search service for the USNO-B catalog and search it around M51 with a .1 degree radius.  (More inspection could be done on the service list instead of blindly choosing the first service.)</p>
 <p>The position (<code class="docutils literal notranslate"><span class="pre">pos</span></code>) is best specified with <a class="reference external" href="http://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html">SkyCoord</a> objects.</p>
 <p>The size of the region is specified with the <code class="docutils literal notranslate"><span class="pre">radius</span></code> keyword and may be decimal degrees or an Astropy <a class="reference external" href="http://docs.astropy.org/en/stable/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle">Angle</a>.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m51_pos</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m51&quot;</span><span class="p">)</span>
 <span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;conesearch&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="s1">&#39;usno-b&#39;</span><span class="p">)</span>
@@ -708,7 +726,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=316</i>
-<table id="table139942123389136" class="table-striped table-bordered table-condensed">
+<table id="table140007914160864" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ObjID</th><th>Zone</th><th>SeqNo</th><th>RA</th><th>DEC</th><th>pmRA</th><th>pmDEC</th><th>e_pmRA</th><th>e_pmDEC</th><th>e_RA</th><th>e_DEC</th><th>Epoch</th><th>B1Mag</th><th>R1s_g</th><th>B2Mag</th><th>B2s_g</th><th>R2Mag</th><th>R2s_g</th><th>NMag</th><th>mag</th><th>B1s_g</th><th>R1Mag</th><th>distance</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>deg</th><th>deg</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>arcsec</th><th>arcsec</th><th>yr</th><th>mag</th><th></th><th>mag</th><th></th><th>mag</th><th></th><th>mag</th><th>mag</th><th></th><th>mag</th><th>arcsec</th></tr></thead>
 <thead><tr><th>int64</th><th>int32</th><th>int32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>int32</th><th>float32</th><th>int32</th><th>float32</th><th>float32</th><th>int32</th><th>float32</th><th>float32</th></tr></thead>
@@ -739,7 +757,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <p>Example:  Find an image search service for GALEX, and search it around coordinates 13:37:00.950,-29:51:55.51 (M83) with a radius of .2 degrees.  Download the first file in the results.</p>
 <section id="find-an-image-service">
 <h4>Find an image service<a class="headerlink" href="#find-an-image-service" title="Link to this heading">#</a></h4>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;galex&#39;</span><span class="p">])</span>
 <span class="n">services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">]</span>
@@ -748,7 +766,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139942146996160" class="table-striped table-bordered table-condensed">
+<table id="table140007872495040" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
@@ -762,7 +780,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <p>The first service looks good.  Search it!</p>
 <p>For more details on using <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code>, see <a class="reference external" href="http://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord">its documentation</a></p>
 <p><strong>NOTE</strong>:  For image searches, the size of the region is defined by the <code class="docutils literal notranslate"><span class="pre">size</span></code> keyword which is more like a diameter than a radius.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m83_pos</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="s1">&#39;13h37m00.950s -29d51m55.51s&#39;</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">services</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">m83_pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
@@ -774,7 +792,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table139942455615328" class="table-striped table-bordered table-condensed">
+<table id="table140008630653168" class="table-striped table-bordered table-condensed">
 <thead><tr><th>filename</th><th>id</th><th>ra_j2000</th><th>dec_j2000</th><th>url</th><th>filesize</th><th>mjdmean</th><th>naxes</th><th>naxis</th><th>scale</th><th>cd</th><th>format</th><th>ref_frame</th><th>equinox</th><th>coord_projection</th><th>crpix</th><th>crval</th><th>ctype</th><th>bandpass_id</th><th>bandpass_refvalue</th><th>bandpass_unit</th><th>bandpass_hilimit</th><th>bandpass_lolimit</th><th>processing</th><th>project</th><th>preview</th><th>representative</th><th>object_id</th></tr></thead>
 <thead><tr><th></th><th></th><th>deg</th><th>deg</th><th></th><th>byte</th><th>d</th><th></th><th>pix</th><th>deg / pix</th><th>deg / pix</th><th></th><th></th><th>yr</th><th></th><th>pix</th><th>pix</th><th></th><th></th><th>m</th><th>m</th><th>m</th><th>m</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>int32</th><th>float64</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float32</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -787,7 +805,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <h4>Download an image<a class="headerlink" href="#download-an-image" title="Link to this heading">#</a></h4>
 <p>For the first result, print the file format and download the file. If repeatedly executing this code, add <code class="docutils literal notranslate"><span class="pre">cache=True</span></code> to <code class="docutils literal notranslate"><span class="pre">download_file()</span></code> to prevent repeated downloads.</p>
 <p>See <a class="reference external" href="https://docs.astropy.org/en/stable/api/astropy.utils.data.download_file.html#astropy.utils.data.download_file"><code class="docutils literal notranslate"><span class="pre">download_file()</span></code> documentation here.</a></p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
 <span class="n">file_name</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">())</span>
@@ -799,7 +817,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>image/fits
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-1903-mzlppv4u&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-2232-0lmrbfs9&#39;
 </pre></div>
 </div>
 </div>
@@ -815,7 +833,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <li><p><code class="docutils literal notranslate"><span class="pre">waveband</span></code> used in <code class="docutils literal notranslate"><span class="pre">regsearch()</span></code></p></li>
 <li><p>Astropy <code class="docutils literal notranslate"><span class="pre">Angle</span></code> used to specify radius units other than degrees.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Search for a spectrum search service that has x-ray data.</span>
 <span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;ssa&#39;</span><span class="p">,</span> <span class="n">waveband</span><span class="o">=</span><span class="s1">&#39;x-ray&#39;</span><span class="p">)</span>
@@ -832,10 +850,10 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title: acisf00639N005_pha2.fits, Format: application/fits
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title: hrcf07416N004_pha2.fits, Format: application/x-votable+xml;content=datalink
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-1903-cnhrv7mc&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/astropy-download-2232-4s62h9f8&#39;
 </pre></div>
 </div>
 </div>
@@ -844,7 +862,7 @@ II/339 - Swift/UVOT Serendipitous Source Catalog
 <section id="table-search">
 <h3>2.5 Table search<a class="headerlink" href="#table-search" title="Link to this heading">#</a></h3>
 <p>Example:  Find the HEASARC Table Access Protocol (TAP) service, get some information about the available tables.</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;heasarc&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">services</span><span class="p">)</span><span class="si">}</span><span class="s1"> service(s) found.&#39;</span><span class="p">)</span>
@@ -876,7 +894,7 @@ Waveband Coverage:
 None
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1026 tables:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1032 tables:
 TAP_SCHEMA.columns             - Available columns
 TAP_SCHEMA.key_columns         - Key/Foreign key pairs -- usused
 TAP_SCHEMA.keys                - Joins between tables -- unused
@@ -981,6 +999,7 @@ bnmdspecat                     - Brightest M Dwarfs in the Northern Sky Spectros
 boof153mhz                     - Bootes Field GMRT 153-MHz Source Catalog
 bootesdf                       - Bootes Deep Field WSRT 1.4-GHz Source Catalog
 bsc5p                          - Bright Star Catalog
+burcbmastr                     - BurstCube Master Observation Catalog
 caixa                          - Catalog of AGN in the XMM-Newton Archive
 calchdmstr                     - CALET CHarge Detector (CHD) Master Catalog
 calgbmmstr                     - CALET Gamma-Ray Burst Monitor (GBM) Master Catalog
@@ -991,6 +1010,7 @@ carinacxo                      - Carina Nebula Chandra X-Ray Point Source Catalo
 carinaxmm                      - Carina OB1 Association XMM-Newton X-Ray Point Source Catalog
 cbatpicagn                     - CGRO BATSE-Observed Piccinotti Sample of Active Galactic Nuclei
 cbfgrxecxo                     - Chandra Bulge Field X-Ray Point Source Catalog
+ccalspec                       - CALET Calorimeter Results Catalog
 ccosmoscat                     - Chandra COSMOS (C-COSMOS) Survey X-Ray Point Source Catalog
 ccosmosoid                     - Chandra COSMOS (C-COSMOS) Survey Optical/IR Counterparts Catalog
 ccosmphotz                     - Chandra COSMOS (C-COSMOS) Survey Photometric Redshift Catalog
@@ -1071,7 +1091,7 @@ cr261oid                       - Collinder 261 Chandra X-Ray Source Optical Coun
 crabtime                       - Crab Pulsar Timing
 crates                         - CRATES Flat-Spectrum Radio Source Catalog
 cratesocrap                    - OCRA-p Survey of a Subset of CRATES Sources
-csc                            - Chandra Source Catalog, v2.0
+csc                            - Chandra Source Catalog, v2.1.1
 cvcat                          - Cataclysmic Variables Catalog (2006 Final Edition)
 cxogsgsrc                      - Chandra ACIS GSG Point-Like X-Ray Source Catalog
 cxoxassist                     - Chandra XAssist Source List
@@ -1080,7 +1100,7 @@ cygob2cxo                      - Cygnus OB2 Association Chandra X-Ray Point Sour
 cygob2cxo2                     - Cygnus OB2 Association Chandra X-Ray Point Source Catalog 2
 cygob2xmm                      - Cygnus OB2 Association XMM-Newton X-Ray Point Source Catalog
 cygtevcxo                      - Cygnus TeV Source Chandra X-Ray Point Source Catalog
-denisigal                      - First DENIS I-band Extragalactic Catalog
+denisigal                      - First DENIS I-Band Extragalactic Catalog
 dirbepsc                       - COBE DIRBE Point Source Catalog
 dixon                          - Dixon Master List of Radio Sources (Version 43)
 dncvobcat                      - Outburst Catalog of Dwarf Novae-type and Other Cataclysmic Varia
@@ -1181,7 +1201,7 @@ gcptsrccxo                     - Chandra Point Sources in 18 Distant Galaxy Clus
 gcscat                         - Globular Cluster Systems of Galaxies Catalog
 gcvs                           - General Catalog of Variable Stars (June 2022 Version)
 gcvsegvars                     - General Catalog of Variable Stars (GCVS4.2): Extragalactic Varia
-gcvsnsvars                     - General Catalog of Variable Stars, March 2012 Version: Suspected
+gcvsnsvars                     - General Catalog of Variable Stars: Suspected Variable Stars (Jul
 gingaasmlc                     - Ginga ASM Source Lightcurves
 gingabgd                       - Ginga Background Lightcurves &amp; Spectra
 gingalac                       - Ginga Source Lightcurves &amp; Spectra
@@ -1719,6 +1739,7 @@ suzakuwam                      - Suzaku Wide-Band All-Sky Monitor (WAM) Catalog 
 suzamaster                     - Suzaku Master Catalog
 suzaxislog                     - Suzaku XIS Configuration Log
 swbat105m                      - Swift-BAT 105-Month All-Sky Hard X-Ray Survey
+swbat157m                      - Swift-BAT 157-Month All-Sky Hard X-Ray Survey
 swbatagn60                     - Swift BAT 60-Month Survey of Active Galactic Nuclei Catalog
 swbatmontr                     - Swift BAT Transient Monitoring Catalog
 swbatsfxt                      - Swift BAT 100-Month Supergiant Fast X-Ray Transient Catalog
@@ -1727,6 +1748,7 @@ swift2sxps                     - Swift-XRT Point Source Catalog (2SXPS)
 swiftbalog                     - Swift BAT Instrument Log
 swiftft                        - Swift Serendipitous Survey in Deep XRT GRB Fields (SwiftFT)
 swiftgrb                       - Swift Gamma Ray Bursts Catalog
+swiftgrbba                     - Swift Gamma Ray Burst Compilation by Burst Advocate
 swiftguano                     - Swift Gamma-ray Urgent Archiver for Novel Opportunities (GUANO)
 swiftmastr                     - Swift Master Catalog
 swifttdrss                     - Swift TDRSS Messages
@@ -1755,7 +1777,9 @@ tgs2                           - EXOSAT TGS Spectra and Lightcurves
 tramisuboo                     - Two-Meter Radio Mini Survey (T-RaMiSu) of the Bootes Field
 trifidcxo                      - Trifid Nebula (M 20) Chandra X-Ray Point Source Catalog
 twodfqsoz                      - 2dF QSO Redshift (2QZ) Survey
-twomassrsc                     - 2MASS Redshift Survey (2MRS) Catalog
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>twomassrsc                     - 2MASS Redshift Survey (2MRS) Catalog
 twosigma                       - Einstein Two-Sigma Catalog
 tycho2                         - Tycho-2 Catalog of the 2.5 Million Brightest Stars
 uc7c151mhz                     - 7C Catalog 151-MHz Survey Final Unified Source Catalog
@@ -1775,9 +1799,7 @@ veroncat                       - Veron Catalog of Quasars &amp; AGN, 13th Editio
 vla23901p4                     - VLA A2390 Cluster of Galaxies 1.4-GHz Source Catalog
 vla3701p4                      - VLA A370 Cluster of Galaxies 1.4-GHz Source Catalog
 vla74mhzdp                     - VLA 74-MHz Deep High-Resolution Survey Source Catalog
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vlacdfscat                     - VLA Survey of Chandra Deep Field South
+vlacdfscat                     - VLA Survey of Chandra Deep Field South
 vlacomacat                     - VLA Coma Cluster of Galaxies 1.4-GHz Source Catalog
 vlacos324m                     - VLA-COSMOS Survey 324-MHz Continuum Source Catalog
 vlacos3ghz                     - VLA-COSMOS 3-GHz Large Project Source Catalog
@@ -1841,6 +1863,7 @@ xbootesoid                     - XBOOTES: NDWFS Bootes Field Optical &amp; Near 
 xcopraw                        - Copernicus X-Ray Observations
 xcs                            - XMM-Newton Cluster Survey Catalog, DR1 Version
 xdeep2                         - DEEP2 Galaxy Redshift Survey Fields Chandra Point Source Catalog
+xlcalmastr                     - XL-Calibur Master Catalog
 xmdsvvds4s                     - XMM-Newton Medium Deep Survey/VIRMOS VLT Deep Survey 4-Sigma Cat
 xmmao                          - XMM-Newton Accepted Targets
 xmmatlas                       - XMM-Newton Survey Catalog in the Herschel-ATLAS Field
@@ -1869,9 +1892,9 @@ xmmomsuob                      - XMM-Newton Optical Monitor SUSS Catalog, v6.1: 
 xmmomsuss                      - XMM-Newton Optical Monitor Serendipitous UV Source Survey Catalo
 xmmsdssgce                     - 2XMMi/SDSS Galaxy Cluster Survey Extension
 xmmsdssgcs                     - 2XMMi/SDSS Galaxy Cluster Survey
-xmmslewcln                     - XMM-Newton Slew Survey Clean Source Catalog, v2.0
+xmmslewcln                     - XMM-Newton Slew Survey Clean Source Catalog, v3.0
 xmmslewegs                     - XMM-Newton Slew Survey Extragalactic Sample
-xmmslewful                     - XMM-Newton Slew Survey Full Source Catalog, v2.0
+xmmslewful                     - XMM-Newton Slew Survey Full Source Catalog, v3.0
 xmmssc                         - XMM-Newton Serendipitous Source Catalog (4XMM-DR14 Version)
 xmmsscgps                      - XMM-Newton Survey Science Center Survey of the Galactic Plane
 xmmssclwbd                     - XMM-Newton 2XMMi-DR3 Selected Source Detections Catalog
@@ -1905,6 +1928,7 @@ MASTER_TABLE.pos_small         - Position only queries, &lt;= 1 degree FOV
 MASTER_TABLE.pos_time_big      - Position/time  queries, &gt; 1 degree FOV
 MASTER_TABLE.pos_time_small    - Position/time queries, &lt;= 1 degree FOV
 MASTER_TABLE.time              - Time only queries
+ivoa.obscore                   - Generic HEASARC data resources
 </pre></div>
 </div>
 </div>
@@ -1912,7 +1936,7 @@ MASTER_TABLE.time              - Time only queries
 <section id="column-information">
 <h4>Column Information<a class="headerlink" href="#column-information" title="Link to this heading">#</a></h4>
 <p>For any table, we can list the column names and descriptions.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">[</span><span class="s1">&#39;zcat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s1">30s</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -1920,35 +1944,35 @@ MASTER_TABLE.time              - Time only queries
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diameter_1                     - Diameter 1 (arcmin)
-notes                          - Diameter (arcmin) or Spectrum ID
-bar_type                       - Bar Type
-rfn_number                     - Plate Number
-bt_mag                         - B_T Magnitude
-morph_type                     - Morphological (T) Type
-comments                       - Comments
-redshift                       - Redshift
-luminosity_class               - Luminosity Class
-diameter_2                     - Diameter 2 (arcmin)
-bii                            - Galactic Latitude
-dec                            - Declination
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ref_bmag                       - Reference Code for B Magnitude
 &quot;__row&quot;                        - System index column
-&quot;distance&quot;                     - Distance Determined by Independent Source (Mpc)
-ref_bmag                       - Reference Code for B Magnitude
-lii                            - Galactic Longitude
-ra                             - Right Ascension
-&quot;__y_ra_dec&quot;                   - System unit vector column
-&quot;__z_ra_dec&quot;                   - System unit vector column
+rfn_number                     - Plate Number
+comments                       - Comments
+diameter_1                     - Diameter 1 (arcmin)
+bar_type                       - Bar Type
+class                          - Browse Object Classification
+ref_redshift                   - Reference Code for Redshift
+dec                            - Declination
+diameter_2                     - Diameter 2 (arcmin)
+bt_mag                         - B_T Magnitude
+ref_radial_velocity            - Reference Code for Radial Velocity
+redshift                       - Redshift
+bii                            - Galactic Latitude
 &quot;__x_ra_dec&quot;                   - System unit vector column
 ugc_or_eso                     - UGC or ESO Number
-radial_velocity                - Heliocentric Radial Velocity (km/s)
-ref_radial_velocity            - Reference Code for Radial Velocity
-structure                      - Structure Flag
-ref_redshift                   - Reference Code for Redshift
-name                           - Catalog Designation
-class                          - Browse Object Classification
-bmag                           - B Magnitude
 radial_velocity_error          - Radial Velocity Error
+&quot;distance&quot;                     - Distance Determined by Independent Source (Mpc)
+lii                            - Galactic Longitude
+morph_type                     - Morphological (T) Type
+name                           - Catalog Designation
+notes                          - Diameter (arcmin) or Spectrum ID
+luminosity_class               - Luminosity Class
+structure                      - Structure Flag
+radial_velocity                - Heliocentric Radial Velocity (km/s)
+&quot;__z_ra_dec&quot;                   - System unit vector column
+bmag                           - B Magnitude
+ra                             - Right Ascension
+&quot;__y_ra_dec&quot;                   - System unit vector column
 </pre></div>
 </div>
 </div>
@@ -1957,7 +1981,7 @@ radial_velocity_error          - Radial Velocity Error
 <section id="perform-a-query">
 <h4>Perform a Query<a class="headerlink" href="#perform-a-query" title="Link to this heading">#</a></h4>
 <p>Example:  Perform a cone search on the ZCAT catalog at M83 with a 1.0 degree radius.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;m83&quot;</span><span class="p">)</span>
 <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
@@ -1972,7 +1996,7 @@ radial_velocity_error          - Radial Velocity Error
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=13</i>
-<table id="table139942119441312" class="table-striped table-bordered table-condensed">
+<table id="table140007873201152" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>radial_velocity</th><th>radial_velocity_error</th><th>bmag</th><th>morph_type</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>float32</th><th>int16</th></tr></thead>
@@ -2021,7 +2045,7 @@ radial_velocity_error          - Radial Velocity Error
 <section id="ned">
 <h3>3.1 NED<a class="headerlink" href="#ned" title="Link to this heading">#</a></h3>
 <p>Example:  Get an Astropy Table containing the objects from paper 2018ApJ…858…62K.  For more on the API, see <a class="reference external" href="https://astroquery.readthedocs.io/en/latest/ipac/ned/ned.html">astroquery</a></p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.ipac.ned</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ned</span>
 <span class="n">objects_in_paper</span> <span class="o">=</span> <span class="n">Ned</span><span class="o">.</span><span class="n">query_refcode</span><span class="p">(</span><span class="s1">&#39;2018ApJ...858...62K&#39;</span><span class="p">)</span>
@@ -2031,29 +2055,29 @@ radial_velocity_error          - Radial Velocity Error
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=41</i>
-<table id="table139941710902752" class="table-striped table-bordered table-condensed">
+<table id="table140007868857408" class="table-striped table-bordered table-condensed">
 <thead><tr><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>int32</th><th>str30</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>float64</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th></tr></thead>
-<tr><td>1</td><td>WISEA J115844.06+273505.3</td><td>179.6836</td><td>27.58481</td><td>G</td><td>106.0</td><td>0.000354</td><td>SLS</td><td>17.2g</td><td>--</td><td>29</td><td>0</td><td>22</td><td>14</td><td>7</td><td>0</td><td>0</td></tr>
-<tr><td>2</td><td>KUG 1207+367</td><td>182.48497</td><td>36.4337</td><td>G</td><td>341.0</td><td>0.001137</td><td>SUN</td><td>15.5</td><td>--</td><td>40</td><td>0</td><td>28</td><td>18</td><td>7</td><td>4</td><td>0</td></tr>
-<tr><td>3</td><td>NGC 4244</td><td>184.37272</td><td>37.80735</td><td>G</td><td>244.0</td><td>0.000815</td><td>SUN</td><td>10.88</td><td>--</td><td>472</td><td>15</td><td>94</td><td>53</td><td>31</td><td>7</td><td>1</td></tr>
-<tr><td>4</td><td>SDSS J121731.98+323157.7</td><td>184.38329</td><td>32.53271</td><td>G</td><td>447.0</td><td>0.001492</td><td>SLS</td><td>17.95</td><td>--</td><td>6</td><td>0</td><td>15</td><td>6</td><td>2</td><td>4</td><td>0</td></tr>
-<tr><td>5</td><td>SDSS J121811.04+465501.2</td><td>184.54614</td><td>46.91685</td><td>G</td><td>402.0</td><td>0.001341</td><td>SLS</td><td>17.75</td><td>--</td><td>22</td><td>0</td><td>37</td><td>19</td><td>11</td><td>4</td><td>0</td></tr>
-<tr><td>6</td><td>VCC 0530</td><td>185.53171</td><td>15.799</td><td>G</td><td>1299.0</td><td>0.004333</td><td>SUN</td><td>15.8</td><td>--</td><td>68</td><td>1</td><td>20</td><td>24</td><td>14</td><td>3</td><td>3</td></tr>
-<tr><td>7</td><td>PGC1 0040692 NED033</td><td>186.37146</td><td>28.48244</td><td>G</td><td>483.0</td><td>0.001611</td><td>SUN</td><td>16.47</td><td>--</td><td>41</td><td>0</td><td>7</td><td>15</td><td>8</td><td>0</td><td>0</td></tr>
-<tr><td>8</td><td>UGC 07512</td><td>186.4221</td><td>2.159</td><td>G</td><td>1505.0</td><td>0.00502</td><td>SUN</td><td>15.00</td><td>--</td><td>64</td><td>1</td><td>21</td><td>17</td><td>12</td><td>4</td><td>0</td></tr>
-<tr><td>9</td><td>NGC 4395</td><td>186.45358</td><td>33.54686</td><td>G</td><td>319.0</td><td>0.001064</td><td>SUN</td><td>10.64</td><td>--</td><td>887</td><td>31</td><td>210</td><td>111</td><td>95</td><td>17</td><td>0</td></tr>
+<tr><td>1</td><td>WISEA J115844.06+273505.3</td><td>179.6836</td><td>27.58481</td><td>G</td><td>106.0</td><td>0.000354</td><td>SLS</td><td>17.2g</td><td>--</td><td>31</td><td>0</td><td>22</td><td>16</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>KUG 1207+367</td><td>182.48497</td><td>36.4337</td><td>G</td><td>341.0</td><td>0.001137</td><td>SUN</td><td>15.5</td><td>--</td><td>42</td><td>0</td><td>28</td><td>20</td><td>9</td><td>4</td><td>0</td></tr>
+<tr><td>3</td><td>NGC 4244</td><td>184.37272</td><td>37.80735</td><td>G</td><td>244.0</td><td>0.000815</td><td>SUN</td><td>10.88</td><td>--</td><td>486</td><td>15</td><td>94</td><td>57</td><td>32</td><td>7</td><td>1</td></tr>
+<tr><td>4</td><td>SDSS J121731.98+323157.7</td><td>184.38329</td><td>32.53271</td><td>G</td><td>447.0</td><td>0.001492</td><td>SLS</td><td>17.95</td><td>--</td><td>7</td><td>0</td><td>15</td><td>7</td><td>3</td><td>4</td><td>0</td></tr>
+<tr><td>5</td><td>SDSS J121811.04+465501.2</td><td>184.54614</td><td>46.91685</td><td>G</td><td>402.0</td><td>0.001341</td><td>SLS</td><td>17.75</td><td>--</td><td>25</td><td>0</td><td>37</td><td>22</td><td>14</td><td>4</td><td>0</td></tr>
+<tr><td>6</td><td>VCC 0530</td><td>185.53171</td><td>15.799</td><td>G</td><td>1299.0</td><td>0.004333</td><td>SUN</td><td>15.8</td><td>--</td><td>70</td><td>1</td><td>20</td><td>26</td><td>15</td><td>3</td><td>3</td></tr>
+<tr><td>7</td><td>PGC1 0040692 NED033</td><td>186.37146</td><td>28.48244</td><td>G</td><td>483.0</td><td>0.001611</td><td>SUN</td><td>16.47</td><td>--</td><td>42</td><td>0</td><td>7</td><td>16</td><td>9</td><td>0</td><td>0</td></tr>
+<tr><td>8</td><td>UGC 07512</td><td>186.4221</td><td>2.159</td><td>G</td><td>1505.0</td><td>0.00502</td><td>SUN</td><td>15.00</td><td>--</td><td>66</td><td>1</td><td>21</td><td>18</td><td>13</td><td>4</td><td>0</td></tr>
+<tr><td>9</td><td>NGC 4395</td><td>186.45358</td><td>33.54686</td><td>G</td><td>319.0</td><td>0.001064</td><td>SUN</td><td>10.64</td><td>--</td><td>934</td><td>31</td><td>210</td><td>127</td><td>111</td><td>17</td><td>0</td></tr>
 <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
-<tr><td>33</td><td>LSBC D575-05</td><td>193.921</td><td>19.20908</td><td>G</td><td>419.0</td><td>0.001396</td><td>S1L</td><td>16.52</td><td>--</td><td>45</td><td>1</td><td>2</td><td>17</td><td>8</td><td>0</td><td>0</td></tr>
-<tr><td>34</td><td>MESSIER 064</td><td>194.18196</td><td>21.68299</td><td>G</td><td>409.0</td><td>0.001364</td><td>S1L</td><td>9.36</td><td>--</td><td>838</td><td>24</td><td>298</td><td>92</td><td>39</td><td>10</td><td>0</td></tr>
-<tr><td>35</td><td>UGC 08061</td><td>194.18441</td><td>11.93224</td><td>G</td><td>569.0</td><td>0.001898</td><td>UUN</td><td>15.5B</td><td>--</td><td>48</td><td>2</td><td>15</td><td>20</td><td>13</td><td>3</td><td>5</td></tr>
-<tr><td>36</td><td>KK 176</td><td>194.98527</td><td>-19.4129</td><td>G</td><td>825.0</td><td>0.002753</td><td>SUN</td><td>17.5</td><td>--</td><td>32</td><td>0</td><td>19</td><td>13</td><td>9</td><td>2</td><td>0</td></tr>
-<tr><td>37</td><td>UGCA 319</td><td>195.56029</td><td>-17.23779</td><td>G</td><td>755.0</td><td>0.002518</td><td>UUN</td><td>15.33</td><td>--</td><td>69</td><td>2</td><td>46</td><td>26</td><td>9</td><td>3</td><td>0</td></tr>
-<tr><td>38</td><td>IC 4107</td><td>195.67446</td><td>21.99739</td><td>G</td><td>267.0</td><td>0.000892</td><td>SLS</td><td>17.4g</td><td>--</td><td>21</td><td>0</td><td>20</td><td>12</td><td>5</td><td>4</td><td>0</td></tr>
-<tr><td>39</td><td>UGCA 320</td><td>195.81975</td><td>-17.42303</td><td>G</td><td>742.0</td><td>0.002475</td><td>UUN</td><td>13.78</td><td>--</td><td>120</td><td>7</td><td>64</td><td>27</td><td>13</td><td>6</td><td>0</td></tr>
-<tr><td>40</td><td>KDG 218</td><td>196.43278</td><td>-7.75884</td><td>G</td><td>--</td><td>--</td><td></td><td>20.35</td><td>--</td><td>12</td><td>0</td><td>1</td><td>7</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>41</td><td>NGC 5068</td><td>199.72819</td><td>-21.03881</td><td>G</td><td>670.0</td><td>0.002235</td><td>UUN</td><td>10.52</td><td>--</td><td>315</td><td>12</td><td>72</td><td>46</td><td>17</td><td>18</td><td>0</td></tr>
+<tr><td>33</td><td>LSBC D575-05</td><td>193.921</td><td>19.20908</td><td>G</td><td>420.0</td><td>0.001401</td><td>S1L</td><td>16.52</td><td>--</td><td>48</td><td>1</td><td>2</td><td>19</td><td>10</td><td>0</td><td>0</td></tr>
+<tr><td>34</td><td>MESSIER 064</td><td>194.18196</td><td>21.68299</td><td>G</td><td>409.0</td><td>0.001364</td><td>S1L</td><td>9.36</td><td>--</td><td>865</td><td>24</td><td>298</td><td>101</td><td>42</td><td>10</td><td>0</td></tr>
+<tr><td>35</td><td>UGC 08061</td><td>194.18441</td><td>11.93224</td><td>G</td><td>569.0</td><td>0.001898</td><td>UUN</td><td>15.5B</td><td>--</td><td>49</td><td>2</td><td>15</td><td>21</td><td>14</td><td>3</td><td>5</td></tr>
+<tr><td>36</td><td>KK 176</td><td>194.98527</td><td>-19.4129</td><td>G</td><td>825.0</td><td>0.002753</td><td>SUN</td><td>17.5</td><td>--</td><td>36</td><td>0</td><td>19</td><td>16</td><td>13</td><td>2</td><td>0</td></tr>
+<tr><td>37</td><td>UGCA 319</td><td>195.56029</td><td>-17.23779</td><td>G</td><td>755.0</td><td>0.002518</td><td>UUN</td><td>15.33</td><td>--</td><td>76</td><td>2</td><td>46</td><td>28</td><td>11</td><td>3</td><td>0</td></tr>
+<tr><td>38</td><td>IC 4107</td><td>195.67446</td><td>21.99739</td><td>G</td><td>267.0</td><td>0.000892</td><td>SLS</td><td>17.4g</td><td>--</td><td>24</td><td>0</td><td>20</td><td>14</td><td>6</td><td>4</td><td>0</td></tr>
+<tr><td>39</td><td>UGCA 320</td><td>195.81975</td><td>-17.42303</td><td>G</td><td>742.0</td><td>0.002475</td><td>UUN</td><td>13.78</td><td>--</td><td>129</td><td>7</td><td>64</td><td>30</td><td>15</td><td>6</td><td>0</td></tr>
+<tr><td>40</td><td>KDG 218</td><td>196.43278</td><td>-7.75884</td><td>G</td><td>--</td><td>--</td><td></td><td>20.35</td><td>--</td><td>13</td><td>0</td><td>1</td><td>8</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>41</td><td>NGC 5068</td><td>199.72819</td><td>-21.03881</td><td>G</td><td>670.0</td><td>0.002235</td><td>UUN</td><td>10.52</td><td>--</td><td>344</td><td>12</td><td>72</td><td>50</td><td>20</td><td>18</td><td>0</td></tr>
 </table></div></div></div>
 </div>
 </section>
@@ -2096,8 +2120,7 @@ radial_velocity_error          - Radial Velocity Error
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2187,8 +2210,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

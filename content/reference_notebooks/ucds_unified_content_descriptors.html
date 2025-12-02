@@ -16,30 +16,27 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -54,7 +51,6 @@
     <link rel="prev" title="VO Tables" href="votables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -70,8 +66,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -79,6 +86,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -86,8 +94,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -103,8 +111,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,11 +156,15 @@
 </ul></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -193,14 +204,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -409,16 +415,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -451,7 +465,7 @@
 <p>Or, you can also search for keywords like “ra” or “ascension” in the columns and their descriptions to get the columns you want automatically that way.</p>
 <p>But is there are more generic way?  <a class="reference external" href="http://www.ivoa.net/documents/latest/UCD.html">Unified Content Descriptors (UCDs)</a> are a VO standard that allows table publishers to name their columns whatever they (or their contributors) want but to identify those that contain standard sorts of data.  For example, the RA column could be called “RA”, “ra”, “Right_Ascension”, etc.  But in all cases, a VO service can label the column with its UCD, which is “pos.eq.ra”.  This information is not part of the table but part of the meta-data that the service may provide with that data. Though not required of all VO services, UCDs are commonly provided precisely to make such tasks as identifying the columns of interest easier to automate.</p>
 <p>This is easiest to show by example.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generic VO access routines</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyvo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">vo</span>
@@ -464,7 +478,7 @@
 </div>
 </div>
 <p>Let’s look at some tables in a little more detail.  Let’s find the Hubble Source Catalog version 3 (HSCv3), assuming there’s only one at MAST.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mast&#39;</span><span class="p">])</span>
 <span class="n">hsc</span><span class="o">=</span><span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">services</span> <span class="k">if</span> <span class="s1">&#39;HSCv3&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">res_title</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -475,6 +489,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: W23: None:116:4860: W23: The executionDuration element must not occur more than once [pyvo.utils.xml.elements]
+WARNING: W25: None:116:5090: W25: The uploadLimit element must not occur more than once [pyvo.utils.xml.elements]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title: MAST STScI Hubble Source Catalog Version 3 (HSCv3) TAP service
 The MAST Archive at STScI TAP end point for the Hubble Source Catalog, version 3.1. The Hubble Source Catalog (HSC) is designed to optimize science from the Hubble Space Telescope by combining the tens of thousands of visit-based source lists in the Hubble Legacy Archive (HLA) into a single master catalog. The Hubble Source Catalog version 3.1 also provides proper motions for over 400,00 stars in the augmented Sagittarius Window Eclipsing Extrasolar Planet Search (SWEEPS) HST field, and the Hubble Catalog of Variables (HCV).
 
@@ -484,7 +502,7 @@ The Table Access Protocol (TAP) lets you execute queries against our database ta
 </div>
 </div>
 <p>Now let’s see what tables are provided by this service for HSCv3.  Note that this is another query to the service:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span> <span class="o">=</span> <span class="n">hsc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">tables</span>  <span class="c1"># Queries for details of the service&#39;s tables</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span><span class="si">}</span><span class="s1"> tables:&#39;</span><span class="p">)</span>
@@ -501,15 +519,13 @@ The Table Access Protocol (TAP) lets you execute queries against our database ta
 ----
 tap_schema.tables              - description of tables in this dataset
 ----
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.columns             - description of columns in this dataset
-----
-tap_schema.keys                - description of foreign keys in this dataset
+tap_schema.columns             - description of columns in this dataset
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.key_columns         - description of foreign key columns in this dataset
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tap_schema.keys                - description of foreign keys in this dataset
+----
+tap_schema.key_columns         - description of foreign key columns in this dataset
 ----
 dbo.detailedcatalog            - Detailed list of source catalog parameters
 ----
@@ -519,15 +535,13 @@ dbo.detailedcatalog            - Detailed list of source catalog parameters
 ----
 dbo.hcvsummaryview             - Summary list of Hubble Catalog of Variables parameters
 ----
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.propermotionsview          - List of proper motion information
-----
-dbo.sourcepositionsview        - List of source position information
+dbo.propermotionsview          - List of proper motion information
 ----
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.summagaper2catview         - Summary list of source catalog with Aper2 magnitudes
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dbo.sourcepositionsview        - List of source position information
+----
+dbo.summagaper2catview         - Summary list of source catalog with Aper2 magnitudes
 ----
 </pre></div>
 </div>
@@ -540,7 +554,7 @@ dbo.catalog_image_metadata     - Summary list of Image processing metadata
 </div>
 </div>
 <p>Let’s look at the first 10 columns of the DetailedCatalog table.  Again, note that calling the columns attribute sends another query to the service to ask for the columns.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span><span class="o">=</span><span class="n">tables</span><span class="p">[</span><span class="s1">&#39;dbo.detailedcatalog&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
@@ -590,7 +604,7 @@ flags [meta.code.status]       - bit encoded flag: bit 0 (value 0) = point sourc
 </div>
 <p>The PyVO method to get the columns will automatically fetch all the meta-data about those columns.  It’s up to the service provider to set them correctly, of course, but in this case, we see that the column named “matchra” is identified with the UCD “pos.eq.ra”.</p>
 <p>So if we did not know the exact name used in HSCv3 for the RA, we could do something like this looking for the string “ra”:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ra_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;ra&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;ascension&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ra_name</span><span class="p">)</span>
@@ -605,7 +619,7 @@ flags [meta.code.status]       - bit encoded flag: bit 0 (value 0) = point sourc
 </div>
 <p>Since that guessing doesn’t give a unique answer, the more general and reliable approach is to check for the correct UCD.  It also has the further advantage that it can be used to label columns that should be used for certain purposes when there are multiple possibilities.  For instance, this table has MatchRA and SourceRA.  Let’s check the UCD:</p>
 <p>(Note that the UCD is not required.  If it isn’t there, you get a None type, so code the check carefully)</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ra_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span> <span class="ow">and</span> <span class="s1">&#39;pos.eq.ra&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">dec_name</span><span class="o">=</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span> <span class="ow">and</span> <span class="s1">&#39;pos.eq.dec&#39;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">ucd</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -621,7 +635,7 @@ flags [meta.code.status]       - bit encoded flag: bit 0 (value 0) = point sourc
 </div>
 <p>What that shows you is that though there are two columns in this table that give RA information, only one has the ‘pos.eq.ra’ UCD. The documentation for this ought to explain the usage of these columns, and the UCD should not be used as a substitute for understanding the table. But it can be a useful tool.</p>
 <p>In particular, you can use the UCDs to look for catalogs that might have the information you’re interested in. Then you can code the same query to work for different tables (with different column names) in a loop.  This sends a bunch of queries but doesn’t take too long, a minute maybe. (One is particularly slow.)</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Look for all TAP services with x-ray and optical data</span>
 <span class="n">collection</span><span class="o">=</span><span class="p">{}</span>
@@ -666,7 +680,7 @@ flags [meta.code.status]       - bit encoded flag: bit 0 (value 0) = point sourc
 <p>You can also use UCDs to look at the results.  Above, we collected just the first 10 rows of the four columns we’re interested in from every catalog that had them.  But these tables still have their original column names.  So the UCDs will still be useful, and PyVO provides a simple routine to convert from UCD to column (field) name.</p>
 <p>Note, however,  that returning the UCDs as part of the result is not mandatory, and some services do not do it.  So you’ll have to check.</p>
 <p>Now we have a collection of rows from different tables with different columns.  In the results object, we have access to a fieldname_with_ucd() function to get the column you want.  Supposing we hadn’t already looked for this in the above loop, let’s now find out which of these tables has a magnitude column:</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ucd=&#39;pos.eq.ra&#39;</span>
 <span class="n">ucd</span><span class="o">=</span><span class="s1">&#39;phot.mag&#39;</span>
@@ -686,7 +700,7 @@ flags [meta.code.status]       - bit encoded flag: bit 0 (value 0) = point sourc
 </div>
 </div>
 <p>Lastly, if you have a table of results from a TAP query (and if that service includes the UCDs), then you can get data based on UCDs with the getbyucd() method, which simply gets the corresponding element using fieldname_with_ucd():</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">=</span><span class="n">hsc</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;select top 10 * from dbo.detailedcatalog&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">getbyucd</span><span class="p">(</span><span class="s1">&#39;phot.mag&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
@@ -694,16 +708,16 @@ flags [meta.code.status]       - bit encoded flag: bit 0 (value 0) = point sourc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(nan),
- np.float64(20.231000900268555),
- np.float64(20.659799575805664),
- np.float64(20.813199996948242),
- np.float64(21.020200729370117),
- np.float64(21.049100875854492),
- np.float64(20.983800888061523),
- np.float64(21.05500030517578),
- np.float64(21.337299346923828),
- np.float64(18.671100616455078)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(20.276399612426758),
+ np.float64(22.451000213623047),
+ np.float64(25.335100173950195),
+ np.float64(22.437999725341797),
+ np.float64(24.32939910888672),
+ np.float64(21.936500549316406),
+ np.float64(25.478700637817383),
+ np.float64(21.499900817871094),
+ np.float64(19.24180030822754),
+ np.float64(24.578399658203125)]
 </pre></div>
 </div>
 </div>
@@ -790,8 +804,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

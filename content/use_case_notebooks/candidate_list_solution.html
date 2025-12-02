@@ -16,30 +16,27 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -54,7 +51,6 @@
     <link rel="prev" title="HR (Hertzsprung-Russell) Diagram Exercise" href="hr_diagram_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -70,8 +66,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -79,6 +86,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -86,8 +94,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -103,8 +111,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,11 +156,15 @@
 </ul></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -193,14 +204,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -409,16 +415,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -474,7 +488,7 @@
 <p>Table 1 lists the positions of these Super Spirals. Based on those positions, let’s create multiwavelength cutouts for each super spiral to see what is unique about this new class of objects.</p>
 <section id="import-the-python-modules-we-ll-be-using">
 <h2>1. Import the Python modules we’ll be using<a class="headerlink" href="#import-the-python-modules-we-ll-be-using" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suppress unimportant warnings.</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
@@ -501,7 +515,7 @@
 </div>
 </div>
 <p>The next cell prepares the notebook to display our visualizations.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -512,7 +526,7 @@
 <section id="search-ned-for-objects-in-this-paper">
 <h2>2. Search NED for objects in this paper<a class="headerlink" href="#search-ned-for-objects-in-this-paper" title="Link to this heading">#</a></h2>
 <p>Insert a Code Cell below by clicking on the “Insert” Menu and choosing “Insert Cell Below”. Then consult QuickReference.md to figure out how to use astroquery to search NED for all objects in a paper, based on the refcode of the paper. Inspect the resulting astropy table.</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objects_in_paper</span> <span class="o">=</span> <span class="n">Ned</span><span class="o">.</span><span class="n">query_refcode</span><span class="p">(</span><span class="s1">&#39;2016ApJ...817..109O&#39;</span><span class="p">)</span>
 <span class="n">objects_in_paper</span><span class="o">.</span><span class="n">show_in_notebook</span><span class="p">()</span>
@@ -528,24 +542,24 @@
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=62</i>
-<table id="table139654222223472-765189" class="table-striped table-bordered table-condensed">
+<table id="table140573954031568-273487" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
-<tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>1</td><td>2</td><td>WISEA J003807.80-010936.7</td><td>9.53254</td><td>-1.16022</td><td>G</td><td>62442.0</td><td>0.208284</td><td>SLS</td><td>18.0g</td><td>--</td><td>16</td><td>0</td><td>72</td><td>12</td><td>11</td><td>10</td><td>0</td></tr>
-<tr><td>2</td><td>3</td><td>WISEA J040422.92-054134.8</td><td>61.09553</td><td>-5.693</td><td>G</td><td>75113.0</td><td>0.250549</td><td>SLS</td><td>18.6g</td><td>--</td><td>7</td><td>0</td><td>61</td><td>10</td><td>9</td><td>8</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>16</td><td>0</td><td>63</td><td>9</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>1</td><td>2</td><td>WISEA J003807.80-010936.7</td><td>9.53254</td><td>-1.16022</td><td>G</td><td>62442.0</td><td>0.208284</td><td>SLS</td><td>18.0g</td><td>--</td><td>17</td><td>0</td><td>72</td><td>13</td><td>12</td><td>10</td><td>0</td></tr>
+<tr><td>2</td><td>3</td><td>WISEA J040422.92-054134.8</td><td>61.09553</td><td>-5.693</td><td>G</td><td>75113.0</td><td>0.250549</td><td>SLS</td><td>18.6g</td><td>--</td><td>8</td><td>0</td><td>61</td><td>11</td><td>10</td><td>8</td><td>0</td></tr>
 <tr><td>3</td><td>4</td><td>WISEA J073806.16+282359.6</td><td>114.52568</td><td>28.3999</td><td>G</td><td>69225.0</td><td>0.230909</td><td>SLS</td><td>18.0g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>4</td><td>5</td><td>2MASX J07550424+1353261</td><td>118.76779</td><td>13.89069</td><td>G</td><td>66746.0</td><td>0.22264</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>38</td><td>7</td><td>9</td><td>6</td><td>0</td></tr>
 <tr><td>5</td><td>6</td><td>WISEA J082655.11+181147.7</td><td>126.72963</td><td>18.19659</td><td>G</td><td>79580.0</td><td>0.265449</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>46</td><td>7</td><td>8</td><td>6</td><td>0</td></tr>
 <tr><td>6</td><td>7</td><td>2MASX J08542169+0449308</td><td>133.59031</td><td>4.82505</td><td>G</td><td>47005.0</td><td>0.156793</td><td>SLS</td><td>16.7g</td><td>--</td><td>18</td><td>0</td><td>58</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>7</td><td>8</td><td>WHL J090944.8+222607</td><td>137.43669</td><td>22.43538</td><td>GClstr</td><td>88683.0</td><td>0.295813</td><td>PUN</td><td></td><td>--</td><td>7</td><td>0</td><td>0</td><td>4</td><td>6</td><td>0</td><td>0</td></tr>
-<tr><td>8</td><td>9</td><td>2MASX J09094480+2226078</td><td>137.43671</td><td>22.43535</td><td>G</td><td>85557.0</td><td>0.285388</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>30</td><td>5</td><td>8</td><td>6</td><td>0</td></tr>
-<tr><td>9</td><td>10</td><td>2MASX J09260805+2405242</td><td>141.53355</td><td>24.09009</td><td>G</td><td>66672.0</td><td>0.222393</td><td>SLS</td><td>17.8g</td><td>--</td><td>16</td><td>0</td><td>32</td><td>7</td><td>13</td><td>6</td><td>0</td></tr>
-<tr><td>10</td><td>11</td><td>WHL J092608.1+240524</td><td>141.53357</td><td>24.09003</td><td>GClstr</td><td>66284.0</td><td>0.2211</td><td>SUN</td><td></td><td>--</td><td>8</td><td>0</td><td>0</td><td>6</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>7</td><td>8</td><td>WHL J090944.8+222607</td><td>137.43669</td><td>22.43538</td><td>GClstr</td><td>88683.0</td><td>0.295813</td><td>PUN</td><td></td><td>--</td><td>8</td><td>0</td><td>0</td><td>5</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>8</td><td>9</td><td>2MASX J09094480+2226078</td><td>137.43671</td><td>22.43535</td><td>G</td><td>85557.0</td><td>0.285388</td><td>SLS</td><td>19.0g</td><td>--</td><td>10</td><td>0</td><td>30</td><td>6</td><td>9</td><td>6</td><td>0</td></tr>
+<tr><td>9</td><td>10</td><td>2MASX J09260805+2405242</td><td>141.53355</td><td>24.09009</td><td>G</td><td>66672.0</td><td>0.222393</td><td>SLS</td><td>17.8g</td><td>--</td><td>17</td><td>0</td><td>32</td><td>8</td><td>14</td><td>6</td><td>0</td></tr>
+<tr><td>10</td><td>11</td><td>WHL J092608.1+240524</td><td>141.53357</td><td>24.09003</td><td>GClstr</td><td>66284.0</td><td>0.2211</td><td>SUN</td><td></td><td>--</td><td>9</td><td>0</td><td>0</td><td>7</td><td>10</td><td>0</td><td>0</td></tr>
 <tr><td>11</td><td>12</td><td>WISEA J093347.77+211436.7</td><td>143.44906</td><td>21.24354</td><td>G</td><td>51620.0</td><td>0.172186</td><td>SLS</td><td>16.9g</td><td>--</td><td>49</td><td>0</td><td>51</td><td>21</td><td>19</td><td>6</td><td>1</td></tr>
 <tr><td>12</td><td>13</td><td>WISEA J093622.14+390628.9</td><td>144.09227</td><td>39.10805</td><td>G</td><td>84821.0</td><td>0.282931</td><td>SLS</td><td>18.5g</td><td>--</td><td>6</td><td>0</td><td>66</td><td>7</td><td>5</td><td>10</td><td>0</td></tr>
 <tr><td>13</td><td>14</td><td>MSPM 05544</td><td>146.2235</td><td>22.8851</td><td>GClstr</td><td>26738.0</td><td>0.08919</td><td>SUN</td><td></td><td>--</td><td>3</td><td>0</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
-<tr><td>14</td><td>15</td><td>CGCG 122-067</td><td>146.22362</td><td>22.88533</td><td>G</td><td>26686.0</td><td>0.089016</td><td>SLS</td><td>15.3g</td><td>--</td><td>34</td><td>0</td><td>49</td><td>13</td><td>16</td><td>8</td><td>0</td></tr>
+<tr><td>14</td><td>15</td><td>CGCG 122-067</td><td>146.22362</td><td>22.88533</td><td>G</td><td>26686.0</td><td>0.089016</td><td>SLS</td><td>15.3g</td><td>--</td><td>34</td><td>0</td><td>49</td><td>14</td><td>16</td><td>8</td><td>0</td></tr>
 <tr><td>15</td><td>16</td><td>WISEA J094700.08+254045.8</td><td>146.75036</td><td>25.6794</td><td>G</td><td>32690.0</td><td>0.109043</td><td>SLS</td><td>15.8g</td><td>--</td><td>22</td><td>0</td><td>46</td><td>8</td><td>10</td><td>6</td><td>0</td></tr>
 <tr><td>16</td><td>17</td><td>SDSS J095727.02+083501.7</td><td>149.36259</td><td>8.58385</td><td>G</td><td>76903.0</td><td>0.256521</td><td>SLS</td><td>18.3g</td><td>--</td><td>8</td><td>0</td><td>39</td><td>5</td><td>5</td><td>8</td><td>0</td></tr>
 <tr><td>17</td><td>18</td><td>WISEA J100356.88+382902.1</td><td>150.98703</td><td>38.48393</td><td>G</td><td>77525.0</td><td>0.258596</td><td>SLS</td><td>17.8g</td><td>--</td><td>8</td><td>0</td><td>57</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
@@ -555,41 +569,41 @@
 <tr><td>21</td><td>22</td><td>WISEA J101007.05+325329.0</td><td>152.52939</td><td>32.89142</td><td>G</td><td>86909.0</td><td>0.289896</td><td>SLS</td><td>18.7g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>22</td><td>23</td><td>2MASS J10160396+3037481</td><td>154.01652</td><td>30.63005</td><td>G</td><td>75520.0</td><td>0.251906</td><td>SLS</td><td>18.7g</td><td>--</td><td>6</td><td>0</td><td>49</td><td>7</td><td>6</td><td>8</td><td>0</td></tr>
 <tr><td>23</td><td>24</td><td>WISEA J102154.85+072415.5</td><td>155.47855</td><td>7.40433</td><td>G</td><td>87123.0</td><td>0.290611</td><td>SLS</td><td>18.4g</td><td>--</td><td>6</td><td>0</td><td>55</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>24</td><td>25</td><td>WISEA J103015.74-010607.0</td><td>157.56562</td><td>-1.10196</td><td>G</td><td>84625.0</td><td>0.282277</td><td>SLS</td><td>18.3g</td><td>--</td><td>11</td><td>0</td><td>62</td><td>9</td><td>8</td><td>10</td><td>0</td></tr>
+<tr><td>24</td><td>25</td><td>WISEA J103015.74-010607.0</td><td>157.56562</td><td>-1.10196</td><td>G</td><td>84625.0</td><td>0.282277</td><td>SLS</td><td>18.3g</td><td>--</td><td>12</td><td>0</td><td>62</td><td>10</td><td>9</td><td>10</td><td>0</td></tr>
 <tr><td>25</td><td>26</td><td>2MASX J10304263+0418219</td><td>157.67755</td><td>4.306</td><td>G</td><td>48244.0</td><td>0.160924</td><td>SLS</td><td>16.8g</td><td>--</td><td>24</td><td>0</td><td>59</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>26</td><td>27</td><td>2MASX J10405643-0103584</td><td>160.23509</td><td>-1.06629</td><td>G</td><td>75021.0</td><td>0.250242</td><td>SLS</td><td>18.2g</td><td>--</td><td>17</td><td>0</td><td>51</td><td>9</td><td>12</td><td>10</td><td>0</td></tr>
-<tr><td>27</td><td>28</td><td>SDSS CE J160.241898-01.069106</td><td>160.23509</td><td>-1.06631</td><td>GClstr</td><td>75548.0</td><td>0.252</td><td>SUN</td><td></td><td>--</td><td>8</td><td>0</td><td>0</td><td>5</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>26</td><td>27</td><td>2MASX J10405643-0103584</td><td>160.23509</td><td>-1.06629</td><td>G</td><td>75021.0</td><td>0.250242</td><td>SLS</td><td>18.2g</td><td>--</td><td>18</td><td>0</td><td>51</td><td>10</td><td>13</td><td>10</td><td>0</td></tr>
+<tr><td>27</td><td>28</td><td>SDSS CE J160.241898-01.069106</td><td>160.23509</td><td>-1.06631</td><td>GClstr</td><td>75548.0</td><td>0.252</td><td>SUN</td><td></td><td>--</td><td>9</td><td>0</td><td>0</td><td>6</td><td>10</td><td>0</td><td>0</td></tr>
 <tr><td>28</td><td>29</td><td>WISEA J104724.97+230917.4</td><td>161.85407</td><td>23.15485</td><td>G</td><td>54729.0</td><td>0.182556</td><td>SLS</td><td>18.46</td><td>--</td><td>19</td><td>0</td><td>46</td><td>8</td><td>8</td><td>6</td><td>0</td></tr>
 <tr><td>29</td><td>30</td><td>WISEA J111917.41+141946.5</td><td>169.82258</td><td>14.3296</td><td>G</td><td>43101.0</td><td>0.143771</td><td>SLS</td><td>16.6g</td><td>--</td><td>20</td><td>0</td><td>66</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
 <tr><td>30</td><td>31</td><td>2MASS J11292875+0255498</td><td>172.36979</td><td>2.93052</td><td>G</td><td>71830.0</td><td>0.239599</td><td>SLS</td><td>17.5g</td><td>--</td><td>9</td><td>0</td><td>49</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
 <tr><td>31</td><td>32</td><td>WISEA J113800.86+521303.8</td><td>174.50359</td><td>52.21773</td><td>G</td><td>88717.0</td><td>0.295927</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>6</td><td>8</td><td>0</td></tr>
 <tr><td>32</td><td>33</td><td>WISEA J114100.04+384807.4</td><td>175.2502</td><td>38.80206</td><td>G</td><td>80255.0</td><td>0.267701</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>8</td><td>8</td><td>10</td><td>0</td></tr>
 <tr><td>33</td><td>34</td><td>WISEA J115052.96+460448.1</td><td>177.72067</td><td>46.08004</td><td>G</td><td>86778.0</td><td>0.289461</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>53</td><td>9</td><td>9</td><td>8</td><td>0</td></tr>
-<tr><td>34</td><td>35</td><td>WISEA J115356.21+492355.4</td><td>178.48421</td><td>49.39875</td><td>G</td><td>49984.0</td><td>0.166728</td><td>SLS</td><td>17.1g</td><td>--</td><td>19</td><td>0</td><td>67</td><td>9</td><td>10</td><td>10</td><td>0</td></tr>
+<tr><td>34</td><td>35</td><td>WISEA J115356.21+492355.4</td><td>178.48421</td><td>49.39875</td><td>G</td><td>49984.0</td><td>0.166728</td><td>SLS</td><td>17.1g</td><td>--</td><td>20</td><td>0</td><td>67</td><td>10</td><td>11</td><td>10</td><td>0</td></tr>
 <tr><td>35</td><td>36</td><td>2MASX J11593546+1257080</td><td>179.8977</td><td>12.95193</td><td>G</td><td>79003.0</td><td>0.263525</td><td>SLS</td><td>18.3g</td><td>--</td><td>7</td><td>0</td><td>54</td><td>6</td><td>6</td><td>10</td><td>0</td></tr>
 <tr><td>36</td><td>37</td><td>WISEA J120053.92+480007.8</td><td>180.22468</td><td>48.00217</td><td>G</td><td>83466.0</td><td>0.278413</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>70</td><td>7</td><td>8</td><td>10</td><td>0</td></tr>
 <tr><td>37</td><td>38</td><td>GMBCG J180.22479+48.00211</td><td>180.22479</td><td>48.00211</td><td>GClstr</td><td>74948.0</td><td>0.25</td><td>PUN</td><td></td><td>--</td><td>6</td><td>0</td><td>0</td><td>3</td><td>5</td><td>0</td><td>0</td></tr>
 <tr><td>38</td><td>39</td><td>WISEA J121644.33+122450.5</td><td>184.18471</td><td>12.41404</td><td>G</td><td>77030.0</td><td>0.256944</td><td>SLS</td><td>18.3g</td><td>--</td><td>5</td><td>0</td><td>55</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
 <tr><td>39</td><td>40</td><td>WISEA J122100.50+482729.1</td><td>185.25209</td><td>48.4581</td><td>G</td><td>89836.0</td><td>0.299659</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>61</td><td>8</td><td>5</td><td>8</td><td>0</td></tr>
 <tr><td>40</td><td>41</td><td>WISEA J123215.19+102119.1</td><td>188.06332</td><td>10.35531</td><td>G</td><td>49729.0</td><td>0.165877</td><td>SLS</td><td>17.2g</td><td>--</td><td>19</td><td>0</td><td>66</td><td>9</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>41</td><td>42</td><td>WISEA J123431.08+515629.7</td><td>188.62952</td><td>51.94159</td><td>G</td><td>88714.0</td><td>0.295917</td><td>SLS</td><td>18.1g</td><td>--</td><td>33</td><td>0</td><td>64</td><td>12</td><td>16</td><td>10</td><td>0</td></tr>
+<tr><td>41</td><td>42</td><td>WISEA J123431.08+515629.7</td><td>188.62952</td><td>51.94159</td><td>G</td><td>88714.0</td><td>0.295917</td><td>SLS</td><td>18.1g</td><td>--</td><td>34</td><td>0</td><td>64</td><td>14</td><td>18</td><td>10</td><td>0</td></tr>
 <tr><td>42</td><td>43</td><td>WISEA J123746.63+481227.5</td><td>189.44429</td><td>48.20764</td><td>G</td><td>81679.0</td><td>0.272452</td><td>SLS</td><td>18.2g</td><td>--</td><td>8</td><td>0</td><td>65</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>43</td><td>44</td><td>WISEA J131039.32+223502.8</td><td>197.66385</td><td>22.58413</td><td>G</td><td>69320.0</td><td>0.231225</td><td>SLS</td><td>18.1g</td><td>--</td><td>12</td><td>0</td><td>48</td><td>8</td><td>7</td><td>6</td><td>1</td></tr>
 <tr><td>44</td><td>45</td><td>WISEA J132757.52+334529.3</td><td>201.98959</td><td>33.75825</td><td>G</td><td>74623.0</td><td>0.248916</td><td>SLS</td><td>17.7g</td><td>--</td><td>16</td><td>0</td><td>88</td><td>12</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>45</td><td>46</td><td>WISEA J134228.33+115734.5</td><td>205.61806</td><td>11.9596</td><td>G</td><td>83561.0</td><td>0.27873</td><td>SLS</td><td>19.0g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
 <tr><td>46</td><td>47</td><td>WISEA J134355.49+244048.1</td><td>205.98122</td><td>24.68004</td><td>G</td><td>41147.0</td><td>0.13725</td><td>SLS</td><td>17.81</td><td>--</td><td>24</td><td>0</td><td>46</td><td>13</td><td>13</td><td>6</td><td>0</td></tr>
 <tr><td>47</td><td>48</td><td>SDSSCGB 16827</td><td>206.99833</td><td>32.44039</td><td>GGroup</td><td>--</td><td>--</td><td></td><td>18.44</td><td>--</td><td>3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>48</td><td>49</td><td>2MASX J13475962+3227100</td><td>206.99837</td><td>32.45284</td><td>G</td><td>66870.0</td><td>0.223055</td><td>SLS</td><td>18.1g</td><td>--</td><td>11</td><td>0</td><td>54</td><td>6</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>49</td><td>50</td><td>WISEA J135546.08+025456.0</td><td>208.94203</td><td>2.91557</td><td>G</td><td>71602.0</td><td>0.238837</td><td>SLS</td><td>18.7g</td><td>--</td><td>11</td><td>0</td><td>51</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
+<tr><td>48</td><td>49</td><td>2MASX J13475962+3227100</td><td>206.99837</td><td>32.45284</td><td>G</td><td>66870.0</td><td>0.223055</td><td>SLS</td><td>18.1g</td><td>--</td><td>12</td><td>0</td><td>54</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>49</td><td>50</td><td>WISEA J135546.08+025456.0</td><td>208.94203</td><td>2.91557</td><td>G</td><td>71602.0</td><td>0.238837</td><td>SLS</td><td>18.7g</td><td>--</td><td>12</td><td>0</td><td>51</td><td>8</td><td>8</td><td>8</td><td>0</td></tr>
 <tr><td>50</td><td>51</td><td>WISEA J140138.37+263527.6</td><td>210.40992</td><td>26.59101</td><td>G</td><td>85128.0</td><td>0.283958</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>30</td><td>5</td><td>6</td><td>4</td><td>0</td></tr>
 <tr><td>51</td><td>52</td><td>2MASS J14175497+2704341</td><td>214.47905</td><td>27.07617</td><td>G</td><td>47226.0</td><td>0.15753</td><td>SLS</td><td>16.9g</td><td>--</td><td>17</td><td>0</td><td>25</td><td>6</td><td>9</td><td>4</td><td>0</td></tr>
 <tr><td>52</td><td>53</td><td>WISEA J143447.88+020228.8</td><td>218.6995</td><td>2.04136</td><td>G</td><td>83828.0</td><td>0.279619</td><td>SLS</td><td>18.6g</td><td>--</td><td>10</td><td>0</td><td>62</td><td>10</td><td>8</td><td>8</td><td>0</td></tr>
-<tr><td>53</td><td>54</td><td>WISEA J144728.35+590831.9</td><td>221.86816</td><td>59.1422</td><td>G</td><td>73602.0</td><td>0.245509</td><td>SLS</td><td>18.3g</td><td>--</td><td>15</td><td>0</td><td>70</td><td>11</td><td>10</td><td>10</td><td>0</td></tr>
+<tr><td>53</td><td>54</td><td>WISEA J144728.35+590831.9</td><td>221.86816</td><td>59.1422</td><td>G</td><td>73602.0</td><td>0.245509</td><td>SLS</td><td>18.3g</td><td>--</td><td>16</td><td>0</td><td>70</td><td>12</td><td>11</td><td>10</td><td>0</td></tr>
 <tr><td>54</td><td>55</td><td>WISEA J153619.01+452247.7</td><td>234.07923</td><td>45.37992</td><td>G</td><td>70804.0</td><td>0.236177</td><td>SLS</td><td>18.1g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>55</td><td>56</td><td>WISEA J154307.78+193751.7</td><td>235.78245</td><td>19.63105</td><td>G</td><td>68774.0</td><td>0.229405</td><td>SLS</td><td>17.0g</td><td>--</td><td>44</td><td>1</td><td>50</td><td>22</td><td>21</td><td>6</td><td>0</td></tr>
+<tr><td>55</td><td>56</td><td>WISEA J154307.78+193751.7</td><td>235.78245</td><td>19.63105</td><td>G</td><td>68774.0</td><td>0.229405</td><td>SLS</td><td>17.0g</td><td>--</td><td>45</td><td>1</td><td>50</td><td>23</td><td>22</td><td>6</td><td>0</td></tr>
 <tr><td>56</td><td>57</td><td>WISEA J154950.90+234444.0</td><td>237.46211</td><td>23.74557</td><td>G</td><td>78570.0</td><td>0.262082</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>31</td><td>5</td><td>6</td><td>4</td><td>0</td></tr>
 <tr><td>57</td><td>58</td><td>GMBCG J240.41924+27.30444</td><td>240.41924</td><td>27.30444</td><td>GClstr</td><td>57860.0</td><td>0.193</td><td>PUN</td><td></td><td>--</td><td>4</td><td>0</td><td>0</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
-<tr><td>58</td><td>59</td><td>2MASX J16014061+2718161</td><td>240.41925</td><td>27.3044</td><td>G</td><td>49285.0</td><td>0.164398</td><td>SLS</td><td>16.7g</td><td>--</td><td>22</td><td>0</td><td>54</td><td>7</td><td>11</td><td>10</td><td>1</td></tr>
+<tr><td>58</td><td>59</td><td>2MASX J16014061+2718161</td><td>240.41925</td><td>27.3044</td><td>G</td><td>49285.0</td><td>0.164398</td><td>SLS</td><td>16.7g</td><td>--</td><td>23</td><td>0</td><td>54</td><td>8</td><td>12</td><td>10</td><td>1</td></tr>
 <tr><td>59</td><td>60</td><td>WISEA J163945.96+460905.8</td><td>249.9415</td><td>46.15163</td><td>G</td><td>74087.0</td><td>0.247128</td><td>SLS</td><td>18.3g</td><td>--</td><td>13</td><td>0</td><td>70</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>60</td><td>61</td><td>WISEA J173406.17+602919.1</td><td>263.52572</td><td>60.48865</td><td>G</td><td>82730.0</td><td>0.275956</td><td>SLS</td><td>18.5g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
 <tr><td>61</td><td>62</td><td>SDSSCGB 59704</td><td>263.53292</td><td>60.48197</td><td>GGroup</td><td>82743.0</td><td>0.276</td><td>SUN</td><td>17.20</td><td>--</td><td>3</td><td>0</td><td>0</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
@@ -616,14 +630,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139654222223472-765189').dataTable()");
+    console.log("$('#table140573954031568-273487').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139654222223472-765189').dataTable({
+    $('#table140573954031568-273487').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -638,7 +652,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <section id="filter-the-ned-results">
 <h2>3. Filter the NED results<a class="headerlink" href="#filter-the-ned-results" title="Link to this heading">#</a></h2>
 <p>The results from NED will include galaxies, but also other kinds of objects (e.g. galaxy clusters, galaxy groups). Print the ‘Type’ column to see the full range of classifications and filter the results so that we only keep the galaxies in the list.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objects_in_paper</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span>
 </pre></div>
@@ -673,7 +687,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <tr><td>GGroup</td></tr>
 </table></div></div>
 </div>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keep only the galaxies from the list</span>
 <span class="n">galaxies</span> <span class="o">=</span> <span class="n">objects_in_paper</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">objects_in_paper</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="p">]</span>
@@ -691,21 +705,21 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=53</i>
-<table id="table139653254054768-136008" class="table-striped table-bordered table-condensed">
+<table id="table140572878157280-418153" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>No.</th><th>Object Name</th><th>RA</th><th>DEC</th><th>Type</th><th>Velocity</th><th>Redshift</th><th>Redshift Flag</th><th>Magnitude and Filter</th><th>Separation</th><th>References</th><th>Notes</th><th>Photometry Points</th><th>Positions</th><th>Redshift Points</th><th>Diameter Points</th><th>Associations</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>degrees</th><th>degrees</th><th></th><th>km / s</th><th></th><th></th><th></th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
-<tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>15</td><td>0</td><td>63</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>1</td><td>2</td><td>WISEA J003807.80-010936.7</td><td>9.53254</td><td>-1.16022</td><td>G</td><td>62442.0</td><td>0.208284</td><td>SLS</td><td>18.0g</td><td>--</td><td>16</td><td>0</td><td>72</td><td>12</td><td>11</td><td>10</td><td>0</td></tr>
-<tr><td>2</td><td>3</td><td>WISEA J040422.92-054134.8</td><td>61.09553</td><td>-5.693</td><td>G</td><td>75113.0</td><td>0.250549</td><td>SLS</td><td>18.6g</td><td>--</td><td>7</td><td>0</td><td>61</td><td>10</td><td>9</td><td>8</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>WISEA J001550.14-100242.3</td><td>3.95892</td><td>-10.04511</td><td>G</td><td>52766.0</td><td>0.17601</td><td>SLS</td><td>17.5g</td><td>--</td><td>16</td><td>0</td><td>63</td><td>9</td><td>9</td><td>10</td><td>0</td></tr>
+<tr><td>1</td><td>2</td><td>WISEA J003807.80-010936.7</td><td>9.53254</td><td>-1.16022</td><td>G</td><td>62442.0</td><td>0.208284</td><td>SLS</td><td>18.0g</td><td>--</td><td>17</td><td>0</td><td>72</td><td>13</td><td>12</td><td>10</td><td>0</td></tr>
+<tr><td>2</td><td>3</td><td>WISEA J040422.92-054134.8</td><td>61.09553</td><td>-5.693</td><td>G</td><td>75113.0</td><td>0.250549</td><td>SLS</td><td>18.6g</td><td>--</td><td>8</td><td>0</td><td>61</td><td>11</td><td>10</td><td>8</td><td>0</td></tr>
 <tr><td>3</td><td>4</td><td>WISEA J073806.16+282359.6</td><td>114.52568</td><td>28.3999</td><td>G</td><td>69225.0</td><td>0.230909</td><td>SLS</td><td>18.0g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>4</td><td>5</td><td>2MASX J07550424+1353261</td><td>118.76779</td><td>13.89069</td><td>G</td><td>66746.0</td><td>0.22264</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>38</td><td>7</td><td>9</td><td>6</td><td>0</td></tr>
 <tr><td>5</td><td>6</td><td>WISEA J082655.11+181147.7</td><td>126.72963</td><td>18.19659</td><td>G</td><td>79580.0</td><td>0.265449</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>46</td><td>7</td><td>8</td><td>6</td><td>0</td></tr>
 <tr><td>6</td><td>7</td><td>2MASX J08542169+0449308</td><td>133.59031</td><td>4.82505</td><td>G</td><td>47005.0</td><td>0.156793</td><td>SLS</td><td>16.7g</td><td>--</td><td>18</td><td>0</td><td>58</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>7</td><td>9</td><td>2MASX J09094480+2226078</td><td>137.43671</td><td>22.43535</td><td>G</td><td>85557.0</td><td>0.285388</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>30</td><td>5</td><td>8</td><td>6</td><td>0</td></tr>
-<tr><td>8</td><td>10</td><td>2MASX J09260805+2405242</td><td>141.53355</td><td>24.09009</td><td>G</td><td>66672.0</td><td>0.222393</td><td>SLS</td><td>17.8g</td><td>--</td><td>16</td><td>0</td><td>32</td><td>7</td><td>13</td><td>6</td><td>0</td></tr>
+<tr><td>7</td><td>9</td><td>2MASX J09094480+2226078</td><td>137.43671</td><td>22.43535</td><td>G</td><td>85557.0</td><td>0.285388</td><td>SLS</td><td>19.0g</td><td>--</td><td>10</td><td>0</td><td>30</td><td>6</td><td>9</td><td>6</td><td>0</td></tr>
+<tr><td>8</td><td>10</td><td>2MASX J09260805+2405242</td><td>141.53355</td><td>24.09009</td><td>G</td><td>66672.0</td><td>0.222393</td><td>SLS</td><td>17.8g</td><td>--</td><td>17</td><td>0</td><td>32</td><td>8</td><td>14</td><td>6</td><td>0</td></tr>
 <tr><td>9</td><td>12</td><td>WISEA J093347.77+211436.7</td><td>143.44906</td><td>21.24354</td><td>G</td><td>51620.0</td><td>0.172186</td><td>SLS</td><td>16.9g</td><td>--</td><td>49</td><td>0</td><td>51</td><td>21</td><td>19</td><td>6</td><td>1</td></tr>
 <tr><td>10</td><td>13</td><td>WISEA J093622.14+390628.9</td><td>144.09227</td><td>39.10805</td><td>G</td><td>84821.0</td><td>0.282931</td><td>SLS</td><td>18.5g</td><td>--</td><td>6</td><td>0</td><td>66</td><td>7</td><td>5</td><td>10</td><td>0</td></tr>
-<tr><td>11</td><td>15</td><td>CGCG 122-067</td><td>146.22362</td><td>22.88533</td><td>G</td><td>26686.0</td><td>0.089016</td><td>SLS</td><td>15.3g</td><td>--</td><td>34</td><td>0</td><td>49</td><td>13</td><td>16</td><td>8</td><td>0</td></tr>
+<tr><td>11</td><td>15</td><td>CGCG 122-067</td><td>146.22362</td><td>22.88533</td><td>G</td><td>26686.0</td><td>0.089016</td><td>SLS</td><td>15.3g</td><td>--</td><td>34</td><td>0</td><td>49</td><td>14</td><td>16</td><td>8</td><td>0</td></tr>
 <tr><td>12</td><td>16</td><td>WISEA J094700.08+254045.8</td><td>146.75036</td><td>25.6794</td><td>G</td><td>32690.0</td><td>0.109043</td><td>SLS</td><td>15.8g</td><td>--</td><td>22</td><td>0</td><td>46</td><td>8</td><td>10</td><td>6</td><td>0</td></tr>
 <tr><td>13</td><td>17</td><td>SDSS J095727.02+083501.7</td><td>149.36259</td><td>8.58385</td><td>G</td><td>76903.0</td><td>0.256521</td><td>SLS</td><td>18.3g</td><td>--</td><td>8</td><td>0</td><td>39</td><td>5</td><td>5</td><td>8</td><td>0</td></tr>
 <tr><td>14</td><td>18</td><td>WISEA J100356.88+382902.1</td><td>150.98703</td><td>38.48393</td><td>G</td><td>77525.0</td><td>0.258596</td><td>SLS</td><td>17.8g</td><td>--</td><td>8</td><td>0</td><td>57</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
@@ -714,37 +728,37 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <tr><td>17</td><td>22</td><td>WISEA J101007.05+325329.0</td><td>152.52939</td><td>32.89142</td><td>G</td><td>86909.0</td><td>0.289896</td><td>SLS</td><td>18.7g</td><td>--</td><td>10</td><td>0</td><td>66</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>18</td><td>23</td><td>2MASS J10160396+3037481</td><td>154.01652</td><td>30.63005</td><td>G</td><td>75520.0</td><td>0.251906</td><td>SLS</td><td>18.7g</td><td>--</td><td>6</td><td>0</td><td>49</td><td>7</td><td>6</td><td>8</td><td>0</td></tr>
 <tr><td>19</td><td>24</td><td>WISEA J102154.85+072415.5</td><td>155.47855</td><td>7.40433</td><td>G</td><td>87123.0</td><td>0.290611</td><td>SLS</td><td>18.4g</td><td>--</td><td>6</td><td>0</td><td>55</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>20</td><td>25</td><td>WISEA J103015.74-010607.0</td><td>157.56562</td><td>-1.10196</td><td>G</td><td>84625.0</td><td>0.282277</td><td>SLS</td><td>18.3g</td><td>--</td><td>11</td><td>0</td><td>62</td><td>9</td><td>8</td><td>10</td><td>0</td></tr>
+<tr><td>20</td><td>25</td><td>WISEA J103015.74-010607.0</td><td>157.56562</td><td>-1.10196</td><td>G</td><td>84625.0</td><td>0.282277</td><td>SLS</td><td>18.3g</td><td>--</td><td>12</td><td>0</td><td>62</td><td>10</td><td>9</td><td>10</td><td>0</td></tr>
 <tr><td>21</td><td>26</td><td>2MASX J10304263+0418219</td><td>157.67755</td><td>4.306</td><td>G</td><td>48244.0</td><td>0.160924</td><td>SLS</td><td>16.8g</td><td>--</td><td>24</td><td>0</td><td>59</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>22</td><td>27</td><td>2MASX J10405643-0103584</td><td>160.23509</td><td>-1.06629</td><td>G</td><td>75021.0</td><td>0.250242</td><td>SLS</td><td>18.2g</td><td>--</td><td>17</td><td>0</td><td>51</td><td>9</td><td>12</td><td>10</td><td>0</td></tr>
+<tr><td>22</td><td>27</td><td>2MASX J10405643-0103584</td><td>160.23509</td><td>-1.06629</td><td>G</td><td>75021.0</td><td>0.250242</td><td>SLS</td><td>18.2g</td><td>--</td><td>18</td><td>0</td><td>51</td><td>10</td><td>13</td><td>10</td><td>0</td></tr>
 <tr><td>23</td><td>29</td><td>WISEA J104724.97+230917.4</td><td>161.85407</td><td>23.15485</td><td>G</td><td>54729.0</td><td>0.182556</td><td>SLS</td><td>18.46</td><td>--</td><td>19</td><td>0</td><td>46</td><td>8</td><td>8</td><td>6</td><td>0</td></tr>
 <tr><td>24</td><td>30</td><td>WISEA J111917.41+141946.5</td><td>169.82258</td><td>14.3296</td><td>G</td><td>43101.0</td><td>0.143771</td><td>SLS</td><td>16.6g</td><td>--</td><td>20</td><td>0</td><td>66</td><td>8</td><td>9</td><td>10</td><td>0</td></tr>
 <tr><td>25</td><td>31</td><td>2MASS J11292875+0255498</td><td>172.36979</td><td>2.93052</td><td>G</td><td>71830.0</td><td>0.239599</td><td>SLS</td><td>17.5g</td><td>--</td><td>9</td><td>0</td><td>49</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
 <tr><td>26</td><td>32</td><td>WISEA J113800.86+521303.8</td><td>174.50359</td><td>52.21773</td><td>G</td><td>88717.0</td><td>0.295927</td><td>SLS</td><td>19.0g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>6</td><td>8</td><td>0</td></tr>
 <tr><td>27</td><td>33</td><td>WISEA J114100.04+384807.4</td><td>175.2502</td><td>38.80206</td><td>G</td><td>80255.0</td><td>0.267701</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>66</td><td>8</td><td>8</td><td>10</td><td>0</td></tr>
 <tr><td>28</td><td>34</td><td>WISEA J115052.96+460448.1</td><td>177.72067</td><td>46.08004</td><td>G</td><td>86778.0</td><td>0.289461</td><td>SLS</td><td>18.5g</td><td>--</td><td>10</td><td>0</td><td>53</td><td>9</td><td>9</td><td>8</td><td>0</td></tr>
-<tr><td>29</td><td>35</td><td>WISEA J115356.21+492355.4</td><td>178.48421</td><td>49.39875</td><td>G</td><td>49984.0</td><td>0.166728</td><td>SLS</td><td>17.1g</td><td>--</td><td>19</td><td>0</td><td>67</td><td>9</td><td>10</td><td>10</td><td>0</td></tr>
+<tr><td>29</td><td>35</td><td>WISEA J115356.21+492355.4</td><td>178.48421</td><td>49.39875</td><td>G</td><td>49984.0</td><td>0.166728</td><td>SLS</td><td>17.1g</td><td>--</td><td>20</td><td>0</td><td>67</td><td>10</td><td>11</td><td>10</td><td>0</td></tr>
 <tr><td>30</td><td>36</td><td>2MASX J11593546+1257080</td><td>179.8977</td><td>12.95193</td><td>G</td><td>79003.0</td><td>0.263525</td><td>SLS</td><td>18.3g</td><td>--</td><td>7</td><td>0</td><td>54</td><td>6</td><td>6</td><td>10</td><td>0</td></tr>
 <tr><td>31</td><td>37</td><td>WISEA J120053.92+480007.8</td><td>180.22468</td><td>48.00217</td><td>G</td><td>83466.0</td><td>0.278413</td><td>SLS</td><td>18.4g</td><td>--</td><td>8</td><td>0</td><td>70</td><td>7</td><td>8</td><td>10</td><td>0</td></tr>
 <tr><td>32</td><td>39</td><td>WISEA J121644.33+122450.5</td><td>184.18471</td><td>12.41404</td><td>G</td><td>77030.0</td><td>0.256944</td><td>SLS</td><td>18.3g</td><td>--</td><td>5</td><td>0</td><td>55</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
 <tr><td>33</td><td>40</td><td>WISEA J122100.50+482729.1</td><td>185.25209</td><td>48.4581</td><td>G</td><td>89836.0</td><td>0.299659</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>61</td><td>8</td><td>5</td><td>8</td><td>0</td></tr>
 <tr><td>34</td><td>41</td><td>WISEA J123215.19+102119.1</td><td>188.06332</td><td>10.35531</td><td>G</td><td>49729.0</td><td>0.165877</td><td>SLS</td><td>17.2g</td><td>--</td><td>19</td><td>0</td><td>66</td><td>9</td><td>9</td><td>10</td><td>0</td></tr>
-<tr><td>35</td><td>42</td><td>WISEA J123431.08+515629.7</td><td>188.62952</td><td>51.94159</td><td>G</td><td>88714.0</td><td>0.295917</td><td>SLS</td><td>18.1g</td><td>--</td><td>33</td><td>0</td><td>64</td><td>12</td><td>16</td><td>10</td><td>0</td></tr>
+<tr><td>35</td><td>42</td><td>WISEA J123431.08+515629.7</td><td>188.62952</td><td>51.94159</td><td>G</td><td>88714.0</td><td>0.295917</td><td>SLS</td><td>18.1g</td><td>--</td><td>34</td><td>0</td><td>64</td><td>14</td><td>18</td><td>10</td><td>0</td></tr>
 <tr><td>36</td><td>43</td><td>WISEA J123746.63+481227.5</td><td>189.44429</td><td>48.20764</td><td>G</td><td>81679.0</td><td>0.272452</td><td>SLS</td><td>18.2g</td><td>--</td><td>8</td><td>0</td><td>65</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>37</td><td>44</td><td>WISEA J131039.32+223502.8</td><td>197.66385</td><td>22.58413</td><td>G</td><td>69320.0</td><td>0.231225</td><td>SLS</td><td>18.1g</td><td>--</td><td>12</td><td>0</td><td>48</td><td>8</td><td>7</td><td>6</td><td>1</td></tr>
 <tr><td>38</td><td>45</td><td>WISEA J132757.52+334529.3</td><td>201.98959</td><td>33.75825</td><td>G</td><td>74623.0</td><td>0.248916</td><td>SLS</td><td>17.7g</td><td>--</td><td>16</td><td>0</td><td>88</td><td>12</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>39</td><td>46</td><td>WISEA J134228.33+115734.5</td><td>205.61806</td><td>11.9596</td><td>G</td><td>83561.0</td><td>0.27873</td><td>SLS</td><td>19.0g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
 <tr><td>40</td><td>47</td><td>WISEA J134355.49+244048.1</td><td>205.98122</td><td>24.68004</td><td>G</td><td>41147.0</td><td>0.13725</td><td>SLS</td><td>17.81</td><td>--</td><td>24</td><td>0</td><td>46</td><td>13</td><td>13</td><td>6</td><td>0</td></tr>
-<tr><td>41</td><td>49</td><td>2MASX J13475962+3227100</td><td>206.99837</td><td>32.45284</td><td>G</td><td>66870.0</td><td>0.223055</td><td>SLS</td><td>18.1g</td><td>--</td><td>11</td><td>0</td><td>54</td><td>6</td><td>6</td><td>10</td><td>0</td></tr>
-<tr><td>42</td><td>50</td><td>WISEA J135546.08+025456.0</td><td>208.94203</td><td>2.91557</td><td>G</td><td>71602.0</td><td>0.238837</td><td>SLS</td><td>18.7g</td><td>--</td><td>11</td><td>0</td><td>51</td><td>7</td><td>7</td><td>8</td><td>0</td></tr>
+<tr><td>41</td><td>49</td><td>2MASX J13475962+3227100</td><td>206.99837</td><td>32.45284</td><td>G</td><td>66870.0</td><td>0.223055</td><td>SLS</td><td>18.1g</td><td>--</td><td>12</td><td>0</td><td>54</td><td>7</td><td>7</td><td>10</td><td>0</td></tr>
+<tr><td>42</td><td>50</td><td>WISEA J135546.08+025456.0</td><td>208.94203</td><td>2.91557</td><td>G</td><td>71602.0</td><td>0.238837</td><td>SLS</td><td>18.7g</td><td>--</td><td>12</td><td>0</td><td>51</td><td>8</td><td>8</td><td>8</td><td>0</td></tr>
 <tr><td>43</td><td>51</td><td>WISEA J140138.37+263527.6</td><td>210.40992</td><td>26.59101</td><td>G</td><td>85128.0</td><td>0.283958</td><td>SLS</td><td>18.7g</td><td>--</td><td>8</td><td>0</td><td>30</td><td>5</td><td>6</td><td>4</td><td>0</td></tr>
 <tr><td>44</td><td>52</td><td>2MASS J14175497+2704341</td><td>214.47905</td><td>27.07617</td><td>G</td><td>47226.0</td><td>0.15753</td><td>SLS</td><td>16.9g</td><td>--</td><td>17</td><td>0</td><td>25</td><td>6</td><td>9</td><td>4</td><td>0</td></tr>
 <tr><td>45</td><td>53</td><td>WISEA J143447.88+020228.8</td><td>218.6995</td><td>2.04136</td><td>G</td><td>83828.0</td><td>0.279619</td><td>SLS</td><td>18.6g</td><td>--</td><td>10</td><td>0</td><td>62</td><td>10</td><td>8</td><td>8</td><td>0</td></tr>
-<tr><td>46</td><td>54</td><td>WISEA J144728.35+590831.9</td><td>221.86816</td><td>59.1422</td><td>G</td><td>73602.0</td><td>0.245509</td><td>SLS</td><td>18.3g</td><td>--</td><td>15</td><td>0</td><td>70</td><td>11</td><td>10</td><td>10</td><td>0</td></tr>
+<tr><td>46</td><td>54</td><td>WISEA J144728.35+590831.9</td><td>221.86816</td><td>59.1422</td><td>G</td><td>73602.0</td><td>0.245509</td><td>SLS</td><td>18.3g</td><td>--</td><td>16</td><td>0</td><td>70</td><td>12</td><td>11</td><td>10</td><td>0</td></tr>
 <tr><td>47</td><td>55</td><td>WISEA J153619.01+452247.7</td><td>234.07923</td><td>45.37992</td><td>G</td><td>70804.0</td><td>0.236177</td><td>SLS</td><td>18.1g</td><td>--</td><td>9</td><td>0</td><td>57</td><td>7</td><td>5</td><td>8</td><td>0</td></tr>
-<tr><td>48</td><td>56</td><td>WISEA J154307.78+193751.7</td><td>235.78245</td><td>19.63105</td><td>G</td><td>68774.0</td><td>0.229405</td><td>SLS</td><td>17.0g</td><td>--</td><td>44</td><td>1</td><td>50</td><td>22</td><td>21</td><td>6</td><td>0</td></tr>
+<tr><td>48</td><td>56</td><td>WISEA J154307.78+193751.7</td><td>235.78245</td><td>19.63105</td><td>G</td><td>68774.0</td><td>0.229405</td><td>SLS</td><td>17.0g</td><td>--</td><td>45</td><td>1</td><td>50</td><td>23</td><td>22</td><td>6</td><td>0</td></tr>
 <tr><td>49</td><td>57</td><td>WISEA J154950.90+234444.0</td><td>237.46211</td><td>23.74557</td><td>G</td><td>78570.0</td><td>0.262082</td><td>SLS</td><td>18.5g</td><td>--</td><td>7</td><td>0</td><td>31</td><td>5</td><td>6</td><td>4</td><td>0</td></tr>
-<tr><td>50</td><td>59</td><td>2MASX J16014061+2718161</td><td>240.41925</td><td>27.3044</td><td>G</td><td>49285.0</td><td>0.164398</td><td>SLS</td><td>16.7g</td><td>--</td><td>22</td><td>0</td><td>54</td><td>7</td><td>11</td><td>10</td><td>1</td></tr>
+<tr><td>50</td><td>59</td><td>2MASX J16014061+2718161</td><td>240.41925</td><td>27.3044</td><td>G</td><td>49285.0</td><td>0.164398</td><td>SLS</td><td>16.7g</td><td>--</td><td>23</td><td>0</td><td>54</td><td>8</td><td>12</td><td>10</td><td>1</td></tr>
 <tr><td>51</td><td>60</td><td>WISEA J163945.96+460905.8</td><td>249.9415</td><td>46.15163</td><td>G</td><td>74087.0</td><td>0.247128</td><td>SLS</td><td>18.3g</td><td>--</td><td>13</td><td>0</td><td>70</td><td>8</td><td>7</td><td>10</td><td>0</td></tr>
 <tr><td>52</td><td>61</td><td>WISEA J173406.17+602919.1</td><td>263.52572</td><td>60.48865</td><td>G</td><td>82730.0</td><td>0.275956</td><td>SLS</td><td>18.5g</td><td>--</td><td>8</td><td>0</td><td>66</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
 </table><style>table.dataTable {clear: both; width: auto !important; margin: 0 !important;}
@@ -770,14 +784,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table139653254054768-136008').dataTable()");
+    console.log("$('#table140572878157280-418153').dataTable()");
     
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table139653254054768-136008').dataTable({
+    $('#table140572878157280-418153').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -792,7 +806,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <section id="search-the-navo-registry-for-image-resources">
 <h2>4. Search the NAVO Registry for image resources<a class="headerlink" href="#search-the-navo-registry-for-image-resources" title="Link to this heading">#</a></h2>
 <p>The paper selected super spirals using WISE, SDSS, and GALEX images. Search the NAVO registry for image resources, using the ‘servicetype’ search parameter. How many image resources are currently available?</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">)</span>
 
@@ -803,11 +817,11 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>321 result(s) found.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>315 result(s) found.
 </pre></div>
 </div>
-<div class="output text_html"><div><i>Table length=321</i>
-<table id="table139653254057984" class="table-striped table-bordered table-condensed">
+<div class="output text_html"><div><i>Table length=315</i>
+<table id="table140572878586400" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://3crsnapshots/sia</td><td>3CRSnap.sia</td><td>3CRSnapshots Simple Image Access Service</td></tr>
@@ -817,10 +831,9 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <tr><td>ivo://archive.stsci.edu/siap/hla</td><td>HLA</td><td>Hubble Legacy Archive</td></tr>
 <tr><td>ivo://arvo/siap</td><td>ArVO SIAP</td><td>Armenian Virtual Observatory SIAP</td></tr>
 <tr><td>ivo://astron.nl/apertif_dr_bootes/q/cutout</td><td>DR Bootes</td><td>Apertif DR Bootes - Mosaic</td></tr>
-<tr><td>ivo://astron.nl/hetdex/lotss-dr1-img/cutout</td><td>LoTSS-DR1 Cutout</td><td>LoTSS-DR1 Image Cutout Service</td></tr>
-<tr><td>ivo://astron.nl/hetdex/lotss-dr1-img/imgs</td><td>LoTSS-DR1 images</td><td>LoTSS-DR1 Image Archive</td></tr>
+<tr><td>ivo://astron.nl/apertif_elais/q/cutout</td><td>Apertif Elais</td><td>Apertif Elais - Mosaic</td></tr>
+<tr><td>ivo://astron.nl/apertif_lockman/q/cutout</td><td>Apertif Lockman</td><td>Apertif Lockman - Mosaic</td></tr>
 <tr><td>...</td><td>...</td><td>...</td></tr>
-<tr><td>ivo://wfau.roe.ac.uk/ukidssdr2-siap</td><td>UKIDSS DR2 SIAP</td><td>UKIDSS DR2 SIAP Service</td></tr>
 <tr><td>ivo://wfau.roe.ac.uk/ukidssdr3-siap</td><td>UKIDSS DR3 SIAP</td><td>UKIDSS DR3 SIAP Service</td></tr>
 <tr><td>ivo://wfau.roe.ac.uk/ukidssdr4-siap</td><td>UKIDSS DR4 SIAP</td><td>UKIDSS DR4 SIAP Service</td></tr>
 <tr><td>ivo://wfau.roe.ac.uk/ukidssdr5-siap</td><td>UKIDSS DR5 SIAP</td><td>UKIDSS DR5 SIAP Service</td></tr>
@@ -828,6 +841,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <tr><td>ivo://wfau.roe.ac.uk/ukidssdr7-siap</td><td>UKIDSS DR7 SIAP</td><td>UKIDSS DR7 SIAP Service</td></tr>
 <tr><td>ivo://wfau.roe.ac.uk/ukidssdr8-siap</td><td>UKIDSS DR8 SIAP</td><td>UKIDSS DR8 SIAP Service</td></tr>
 <tr><td>ivo://wfau.roe.ac.uk/ukidssdr9-siap</td><td>UKIDSS DR9 SIAP</td><td>UKIDSS DR9 SIAP Service</td></tr>
+<tr><td>ivo://wfau.roe.ac.uk/ukidss-siap</td><td>UKIDSS DR1 SIAP</td><td>UKIDSS DR1 SIAP Service</td></tr>
 <tr><td>ivo://wfau.roe.ac.uk/vhsdr1-siap</td><td>VHS DR1 SIAP</td><td>VHS DR1 SIAP Service</td></tr>
 <tr><td>ivo://wfau.roe.ac.uk/vista-siap</td><td>VISTA SIAP</td><td>VISTA SIAP Service</td></tr>
 </table></div></div></div>
@@ -836,7 +850,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <section id="search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images">
 <h2>5. Search the NAVO Registry for image resources that will allow you to search for AllWISE images<a class="headerlink" href="#search-the-navo-registry-for-image-resources-that-will-allow-you-to-search-for-allwise-images" title="Link to this heading">#</a></h2>
 <p>There are hundreds of image resources…too many to quickly read through. Try adding the ‘keywords’ search parameter to your registry search, and find the image resource you would need to search the AllWISE images. Remember from the Known Issues that ‘keywords’ must be a list.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allwise_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;allwise&#39;</span><span class="p">])</span>
 
@@ -851,7 +865,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table139653253081520" class="table-striped table-bordered table-condensed">
+<table id="table140572882289712" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://irsa.ipac/wise/images/allwise/l3a</td><td>AllWISE L3a</td><td>AllWISE Atlas (L3a) Coadd Images</td></tr>
@@ -860,7 +874,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </section>
 <section id="choose-the-allwise-image-service-that-you-are-interested-in">
 <h2>6. Choose the AllWISE image service that you are interested in<a class="headerlink" href="#choose-the-allwise-image-service-that-you-are-interested-in" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allwise_image_service</span> <span class="o">=</span> <span class="n">allwise_image_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">allwise_image_service</span><span class="o">.</span><span class="n">service</span>
@@ -876,7 +890,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </section>
 <section id="choose-one-of-the-galaxies-in-the-ned-list">
 <h2>7. Choose one of the galaxies in the NED list<a class="headerlink" href="#choose-one-of-the-galaxies-in-the-ned-list" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ra</span> <span class="o">=</span> <span class="n">galaxies</span><span class="p">[</span><span class="s1">&#39;RA&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">dec</span> <span class="o">=</span> <span class="n">galaxies</span><span class="p">[</span><span class="s1">&#39;DEC&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -885,7 +899,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ra</span><span class="p">,</span><span class="n">dec</span>
 </pre></div>
@@ -901,7 +915,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 <section id="search-for-a-list-of-allwise-images-that-cover-this-galaxy">
 <h2>8. Search for a list of AllWISE images that cover this galaxy<a class="headerlink" href="#search-for-a-list-of-allwise-images-that-cover-this-galaxy" title="Link to this heading">#</a></h2>
 <p>How many images are returned? Which are you most interested in?</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allwise_image_table</span> <span class="o">=</span> <span class="n">allwise_image_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">allwise_image_table</span>
@@ -925,7 +939,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </section>
 <section id="use-the-to-table-method-to-view-the-results-as-an-astropy-table">
 <h2>9. Use the .to_table() method to view the results as an Astropy table<a class="headerlink" href="#use-the-to-table-method-to-view-the-results-as-an-astropy-table" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allwise_images</span> <span class="o">=</span> <span class="n">allwise_image_table</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
 <span class="n">allwise_images</span>
@@ -934,14 +948,14 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=4</i>
-<table id="table139653253199712" class="table-striped table-bordered table-condensed">
+<table id="table140572875389440" class="table-striped table-bordered table-condensed">
 <thead><tr><th>sia_title</th><th>sia_url</th><th>cloud_access</th><th>sia_naxes</th><th>sia_fmt</th><th>sia_ra</th><th>sia_dec</th><th>sia_naxis</th><th>sia_crpix</th><th>sia_crval</th><th>sia_proj</th><th>sia_scale</th><th>sia_cd</th><th>sia_bp_id</th><th>sia_bp_ref</th><th>sia_bp_hi</th><th>sia_bp_lo</th><th>sia_bp_unit</th><th>magzp</th><th>magzpunc</th><th>unc_url</th><th>cov_url</th><th>coadd_id</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th></th><th>pix</th><th>deg</th><th></th><th>deg / pix</th><th>deg / pix</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
-<thead><tr><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>int32[2]</th><th>float64[2]</th><th>float64[2]</th><th>object</th><th>float64[2]</th><th>float64[4]</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th></tr></thead>
-<tr><td>W2 Coadd 0046m107_ac51</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w2-int-3.fits</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;: &quot;nasa-irsa-wise&quot;, &quot;key&quot;:&quot;wise/allwise/images/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w2-int-3.fits&quot;, &quot;region&quot;: &quot;us-west-2&quot;}}</td><td>2</td><td>image/fits</td><td>4.61538</td><td>-10.601111</td><td>4095 .. 4095</td><td>2048.0 .. 2048.0</td><td>4.61538 .. -10.601111</td><td>SIN</td><td>-0.0003819444391411 .. 0.0003819444391411</td><td>-0.0003819444391411 .. 0.0003819444391411</td><td>W2</td><td>4.6e-06</td><td>5.19e-06</td><td>4.02e-06</td><td>m</td><td>19.5</td><td>0.007</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w2-unc-3.fits.gz</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w2-cov-3.fits.gz</td><td>0046m107_ac51</td></tr>
-<tr><td>W1 Coadd 0046m107_ac51</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w1-int-3.fits</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;: &quot;nasa-irsa-wise&quot;, &quot;key&quot;:&quot;wise/allwise/images/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w1-int-3.fits&quot;, &quot;region&quot;: &quot;us-west-2&quot;}}</td><td>2</td><td>image/fits</td><td>4.61538</td><td>-10.601111</td><td>4095 .. 4095</td><td>2048.0 .. 2048.0</td><td>4.61538 .. -10.601111</td><td>SIN</td><td>-0.0003819444391411 .. 0.0003819444391411</td><td>-0.0003819444391411 .. 0.0003819444391411</td><td>W1</td><td>3.35e-06</td><td>3.78e-06</td><td>3.13e-06</td><td>m</td><td>20.5</td><td>0.006</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w1-unc-3.fits.gz</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w1-cov-3.fits.gz</td><td>0046m107_ac51</td></tr>
-<tr><td>W3 Coadd 0046m107_ac51</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w3-int-3.fits</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;: &quot;nasa-irsa-wise&quot;, &quot;key&quot;:&quot;wise/allwise/images/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w3-int-3.fits&quot;, &quot;region&quot;: &quot;us-west-2&quot;}}</td><td>2</td><td>image/fits</td><td>4.61538</td><td>-10.601111</td><td>4095 .. 4095</td><td>2048.0 .. 2048.0</td><td>4.61538 .. -10.601111</td><td>SIN</td><td>-0.0003819444391411 .. 0.0003819444391411</td><td>-0.0003819444391411 .. 0.0003819444391411</td><td>W3</td><td>1.156e-05</td><td>1.627e-05</td><td>7.6e-06</td><td>m</td><td>18.0</td><td>0.012</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w3-unc-3.fits.gz</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w3-cov-3.fits.gz</td><td>0046m107_ac51</td></tr>
-<tr><td>W4 Coadd 0046m107_ac51</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w4-int-3.fits</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;: &quot;nasa-irsa-wise&quot;, &quot;key&quot;:&quot;wise/allwise/images/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w4-int-3.fits&quot;, &quot;region&quot;: &quot;us-west-2&quot;}}</td><td>2</td><td>image/fits</td><td>4.61538</td><td>-10.601111</td><td>4095 .. 4095</td><td>2048.0 .. 2048.0</td><td>4.61538 .. -10.601111</td><td>SIN</td><td>-0.0003819444391411 .. 0.0003819444391411</td><td>-0.0003819444391411 .. 0.0003819444391411</td><td>W4</td><td>2.209e-05</td><td>2.336e-05</td><td>1.984e-05</td><td>m</td><td>13.0</td><td>0.012</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w4-unc-3.fits.gz</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w4-cov-3.fits.gz</td><td>0046m107_ac51</td></tr>
+<thead><tr><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>str3</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>W2 Coadd 0046m107_ac51</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w2-int-3.fits</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;: &quot;nasa-irsa-wise&quot;, &quot;key&quot;:&quot;wise/allwise/images/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w2-int-3.fits&quot;, &quot;region&quot;: &quot;us-west-2&quot;}}</td><td>2</td><td>image/fits</td><td>4.61538</td><td>-10.601111</td><td>[4095 4095]</td><td>[2048.0 2048.0]</td><td>[4.61538 -10.601111]</td><td>SIN</td><td>[-0.0003819444391411 0.0003819444391411]</td><td>[-0.0003819444391411 -0.0 -0.0 0.0003819444391411]</td><td>W2</td><td>4.6e-06</td><td>5.19e-06</td><td>4.02e-06</td><td>m</td><td>19.5</td><td>0.007</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w2-unc-3.fits.gz</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w2-cov-3.fits.gz</td><td>0046m107_ac51</td></tr>
+<tr><td>W1 Coadd 0046m107_ac51</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w1-int-3.fits</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;: &quot;nasa-irsa-wise&quot;, &quot;key&quot;:&quot;wise/allwise/images/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w1-int-3.fits&quot;, &quot;region&quot;: &quot;us-west-2&quot;}}</td><td>2</td><td>image/fits</td><td>4.61538</td><td>-10.601111</td><td>[4095 4095]</td><td>[2048.0 2048.0]</td><td>[4.61538 -10.601111]</td><td>SIN</td><td>[-0.0003819444391411 0.0003819444391411]</td><td>[-0.0003819444391411 -0.0 -0.0 0.0003819444391411]</td><td>W1</td><td>3.35e-06</td><td>3.78e-06</td><td>3.13e-06</td><td>m</td><td>20.5</td><td>0.006</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w1-unc-3.fits.gz</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w1-cov-3.fits.gz</td><td>0046m107_ac51</td></tr>
+<tr><td>W3 Coadd 0046m107_ac51</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w3-int-3.fits</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;: &quot;nasa-irsa-wise&quot;, &quot;key&quot;:&quot;wise/allwise/images/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w3-int-3.fits&quot;, &quot;region&quot;: &quot;us-west-2&quot;}}</td><td>2</td><td>image/fits</td><td>4.61538</td><td>-10.601111</td><td>[4095 4095]</td><td>[2048.0 2048.0]</td><td>[4.61538 -10.601111]</td><td>SIN</td><td>[-0.0003819444391411 0.0003819444391411]</td><td>[-0.0003819444391411 -0.0 -0.0 0.0003819444391411]</td><td>W3</td><td>1.156e-05</td><td>1.627e-05</td><td>7.6e-06</td><td>m</td><td>18.0</td><td>0.012</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w3-unc-3.fits.gz</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w3-cov-3.fits.gz</td><td>0046m107_ac51</td></tr>
+<tr><td>W4 Coadd 0046m107_ac51</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w4-int-3.fits</td><td>{&quot;aws&quot;: {&quot;bucket_name&quot;: &quot;nasa-irsa-wise&quot;, &quot;key&quot;:&quot;wise/allwise/images/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w4-int-3.fits&quot;, &quot;region&quot;: &quot;us-west-2&quot;}}</td><td>2</td><td>image/fits</td><td>4.61538</td><td>-10.601111</td><td>[4095 4095]</td><td>[2048.0 2048.0]</td><td>[4.61538 -10.601111]</td><td>SIN</td><td>[-0.0003819444391411 0.0003819444391411]</td><td>[-0.0003819444391411 -0.0 -0.0 0.0003819444391411]</td><td>W4</td><td>2.209e-05</td><td>2.336e-05</td><td>1.984e-05</td><td>m</td><td>13.0</td><td>0.012</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w4-unc-3.fits.gz</td><td>https://irsa.ipac.caltech.edu/ibe/data/wise/allwise/p3am_cdd/00/0046/0046m107_ac51/0046m107_ac51-w4-cov-3.fits.gz</td><td>0046m107_ac51</td></tr>
 </table></div></div></div>
 </div>
 </section>
@@ -952,7 +966,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 <li><p>Loop over records and test on the <code class="docutils literal notranslate"><span class="pre">.bandpass_id</span></code> attribute of each record</p></li>
 <li><p>Print the <code class="docutils literal notranslate"><span class="pre">.title</span></code> and <code class="docutils literal notranslate"><span class="pre">.bandpass_id</span></code> of the record you find, to verify it is the right one.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">allwise_image_record</span> <span class="ow">in</span> <span class="n">allwise_image_table</span><span class="p">:</span>
     <span class="k">if</span> <span class="s1">&#39;W1&#39;</span> <span class="ow">in</span> <span class="n">allwise_image_record</span><span class="o">.</span><span class="n">bandpass_id</span><span class="p">:</span>
@@ -970,7 +984,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </section>
 <section id="visualize-this-allwise-image">
 <h2>11. Visualize this AllWISE image<a class="headerlink" href="#visualize-this-allwise-image" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## If you only run this once, you can do it in memory in one line:</span>
 <span class="c1">##  This fetches the FITS as an astropy.io.fits object in memory</span>
@@ -983,7 +997,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 
@@ -995,17 +1009,17 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f038e1fa020&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd9ac108b20&gt;
 </pre></div>
 </div>
-<img alt="../../_images/99c3c57cd0e8b4ac127daf7659df26cb47a7566b0ee83d6e59c1dca8217b280b.png" src="../../_images/99c3c57cd0e8b4ac127daf7659df26cb47a7566b0ee83d6e59c1dca8217b280b.png" />
+<img alt="../../_images/7ed988425c78131ba2431ec91173155633daf93d7bb3f599ec301eb6ee463488.png" src="../../_images/7ed988425c78131ba2431ec91173155633daf93d7bb3f599ec301eb6ee463488.png" />
 </div>
 </div>
 </section>
 <section id="plot-a-cutout-of-the-allwise-image-centered-on-your-position">
 <h2>12. Plot a cutout of the AllWISE image, centered on your position<a class="headerlink" href="#plot-a-cutout-of-the-allwise-image-centered-on-your-position" title="Link to this heading">#</a></h2>
 <p>Try a 60 arcsecond cutout.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">60</span>
 <span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">allwise_w1_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">),</span> <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">)</span>
@@ -1020,17 +1034,17 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f0385fbb130&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd9a3e78cd0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/07fac4eeb5c02470f6d9deef914353d7cfbd875541d034f680f13f6db72d8a7e.png" src="../../_images/07fac4eeb5c02470f6d9deef914353d7cfbd875541d034f680f13f6db72d8a7e.png" />
+<img alt="../../_images/f6bf147186e2b101e638f3f032b8ff7f223e82c6dd31f157aafb5cc99c8a61fe.png" src="../../_images/f6bf147186e2b101e638f3f032b8ff7f223e82c6dd31f157aafb5cc99c8a61fe.png" />
 </div>
 </div>
 </section>
 <section id="try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position">
 <h2>13. Try visualizing a cutout of a GALEX image that covers your position<a class="headerlink" href="#try-visualizing-a-cutout-of-a-galex-image-that-covers-your-position" title="Link to this heading">#</a></h2>
 <p>Repeat steps 4, 5, 6, 8 through 12 for GALEX.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">galex_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;galex&#39;</span><span class="p">],</span> <span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">galex_image_services</span><span class="p">)</span><span class="si">}</span><span class="s1"> result(s) found.&#39;</span><span class="p">)</span>
@@ -1043,7 +1057,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=3</i>
-<table id="table139653091108144" class="table-striped table-bordered table-condensed">
+<table id="table140572734773600" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://archive.stsci.edu/sia/galex</td><td>GALEX</td><td>Galaxy Evolution Explorer (GALEX)</td></tr>
@@ -1051,25 +1065,25 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 <tr><td>ivo://nasa.heasarc/skyview/galex</td><td>GALEX</td><td>Galaxy Explorer All Sky Survey: Near UV</td></tr>
 </table></div></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">galex_image_service</span> <span class="o">=</span> <span class="n">galex_image_services</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">galex_image_table</span> <span class="o">=</span> <span class="n">galex_image_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">intersect</span><span class="o">=</span><span class="s1">&#39;covers&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">galex_image_table</span><span class="p">)):</span>
     <span class="k">if</span> <span class="p">((</span><span class="s1">&#39;image/fits&#39;</span> <span class="ow">in</span> <span class="n">galex_image_table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">)</span> <span class="ow">and</span>
-        <span class="p">(</span><span class="n">galex_image_table</span><span class="p">[</span><span class="s1">&#39;energy_bounds_center&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mf">2.35e-07</span><span class="p">)</span> <span class="ow">and</span>
+        <span class="p">(</span><span class="n">galex_image_table</span><span class="p">[</span><span class="s1">&#39;energy_bounds_center&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mf">2.35e-16</span><span class="p">)</span> <span class="ow">and</span>
         <span class="p">(</span><span class="n">galex_image_table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;productType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SCIENCE&#39;</span><span class="p">)):</span>
         <span class="k">break</span>
 <span class="n">galex_image_record</span> <span class="o">=</span> <span class="n">galex_image_table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -1078,12 +1092,12 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AIS_270_0004_sg14-nd-int.fits.gz NUV
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AIS_270_0001_sg14-nd-int.fits.gz NUV
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## See above regarding two ways to do this:</span>
 <span class="c1">#galex_nuv_image = fits.open(galex_image_record.getdataurl())</span>
@@ -1093,7 +1107,7 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_data</span> <span class="o">=</span> <span class="n">galex_nuv_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Min:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
@@ -1105,14 +1119,14 @@ W4 Coadd 0046m107_ac51 ... 0046m107_ac51
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min: 0.0
-Max: 8.866534
-Mean: 0.0014750387
-Stdev: 0.013614772
+Max: 7.6572003
+Mean: 0.0014543837
+Stdev: 0.013401416
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">WCS</span><span class="p">(</span><span class="n">galex_nuv_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">))</span>
@@ -1122,13 +1136,13 @@ Stdev: 0.013614772
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f0384dc3490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd9a0d297b0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/7113bf8838459efca35dc42634789c65727473b0f77c8069ac322a43b484d19f.png" src="../../_images/7113bf8838459efca35dc42634789c65727473b0f77c8069ac322a43b484d19f.png" />
+<img alt="../../_images/c038f6917b88fac2301a92bcf6cc01dc09e3e848bfb6ee2c4cb0af38dd74a5a9.png" src="../../_images/c038f6917b88fac2301a92bcf6cc01dc09e3e848bfb6ee2c4cb0af38dd74a5a9.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">galex_nuv_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">WCS</span><span class="p">(</span><span class="n">galex_nuv_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">))</span>
 
@@ -1141,10 +1155,10 @@ Stdev: 0.013614772
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f0384df0460&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd9a0cf0ac0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/3c0e2c37bbc263b0058a1bc0769df333d3f253eba1e5879ebbcf0a11726d74a9.png" src="../../_images/3c0e2c37bbc263b0058a1bc0769df333d3f253eba1e5879ebbcf0a11726d74a9.png" />
+<img alt="../../_images/a37819b082e9715dde9707845f6e34bf3916d15670079906e7edcea8358357af.png" src="../../_images/a37819b082e9715dde9707845f6e34bf3916d15670079906e7edcea8358357af.png" />
 </div>
 </div>
 </section>
@@ -1156,7 +1170,7 @@ Stdev: 0.013614772
 <li><p>Find the service with a <code class="docutils literal notranslate"><span class="pre">short_name</span></code> of <code class="docutils literal notranslate"><span class="pre">'SDSS</span> <span class="pre">SIAP'</span></code></p></li>
 <li><p>After obtaining your search results, select r-band images using the <code class="docutils literal notranslate"><span class="pre">.title</span></code> attribute of the records that are returned, since <code class="docutils literal notranslate"><span class="pre">.bandpass_id</span></code> is not populated.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_image_services</span> <span class="o">=</span> <span class="n">vo</span><span class="o">.</span><span class="n">regsearch</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sloan&#39;</span><span class="p">],</span> <span class="n">servicetype</span><span class="o">=</span><span class="s1">&#39;sia&#39;</span><span class="p">)</span>
 <span class="n">sdss_image_services</span><span class="o">.</span><span class="n">to_table</span><span class="p">()[</span><span class="s1">&#39;ivoid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;res_title&#39;</span><span class="p">,</span> <span class="s1">&#39;source_value&#39;</span><span class="p">]</span>
@@ -1164,17 +1178,15 @@ Stdev: 0.013614772
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div><i>Table length=21</i>
-<table id="table139653253081472" class="table-striped table-bordered table-condensed">
+<div class="output text_html"><div><i>Table length=20</i>
+<table id="table140572681925632" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ivoid</th><th>short_name</th><th>res_title</th><th>source_value</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>ivo://mast.stsci/siap/al218</td><td>VLA.AL218</td><td>VLA-A Array AL218 Texas Survey Source Snapshots (AL218)</td><td></td></tr>
 <tr><td>ivo://mast.stsci/siap/vla-first</td><td>VLA-FIRST</td><td>VLA Faint Images of the Radio Sky at Twenty Centimeters (FIRST)</td><td></td></tr>
 <tr><td>ivo://nasa.heasarc/skyview/sdss</td><td>SDSS</td><td>Sloan Digital Sky Survey g-band</td><td></td></tr>
-<tr><td>ivo://nasa.heasarc/skyview/sdssdr7</td><td>SDSSDR7</td><td>Sloan Digital Sky Survey g-band DR7</td><td></td></tr>
 <tr><td>ivo://nasa.heasarc/skyview/stripe82vla</td><td>Stripe82VLA</td><td>VLA Survey of SDSS Stripe 82</td><td></td></tr>
 <tr><td>ivo://org.gavo.dc/bgds/q/sia</td><td>bgds sia</td><td>Bochum Galactic Disk Survey (BGDS) images</td><td>2015AN....336..590H</td></tr>
-<tr><td>ivo://sdss.jhu/services/siap-images</td><td>SDSS SIAP</td><td>Sloan Digital Sky Survey Images (Latest Release)</td><td></td></tr>
 <tr><td>ivo://sdss.jhu/services/siapdr1-images</td><td>SDSSDR1</td><td>Sloan Digital Sky Survey DR1 - Images</td><td></td></tr>
 <tr><td>ivo://sdss.jhu/services/siapdr2-images</td><td>SDSSDR2</td><td>Sloan Digital Sky Survey DR2 - Images</td><td></td></tr>
 <tr><td>ivo://sdss.jhu/services/siapdr3-color</td><td>SDSSDR3-Color</td><td>Sloan Digital Sky Survey DR3</td><td></td></tr>
@@ -1189,9 +1201,10 @@ Stdev: 0.013614772
 <tr><td>ivo://sdss.jhu/services/siapdr7-images</td><td>SDSSDR7</td><td>Sloan Digital Sky Survey DR7 - Images</td><td></td></tr>
 <tr><td>ivo://sdss.jhu/services/siapdr8-images</td><td>SDSSDR8</td><td>Sloan Digital Sky Survey DR8 - Images</td><td></td></tr>
 <tr><td>ivo://sdss.jhu/services/siapdr9-images</td><td>SDSSDR9</td><td>Sloan Digital Sky Survey DR9 - Images</td><td></td></tr>
+<tr><td>ivo://sdss.jhu/services/siap-images</td><td>SDSS SIAP</td><td>Sloan Digital Sky Survey Images (Latest Release)</td><td></td></tr>
 </table></div></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Use list comprehension to check each service&#39;s short_name attribute.</span>
 <span class="c1">#   Given the above, we know the first match is the right one.</span>
@@ -1206,7 +1219,7 @@ Stdev: 0.013614772
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_image_table</span> <span class="o">=</span> <span class="n">sdss_image_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">sdss_image_table</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">])</span>
@@ -1219,7 +1232,7 @@ Stdev: 0.013614772
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">sdss_rband_record</span> <span class="ow">in</span> <span class="n">sdss_image_table</span><span class="p">:</span>
     <span class="k">if</span> <span class="s1">&#39;Sloan Digital Sky Survey - Filter r&#39;</span> <span class="ow">in</span> <span class="n">sdss_rband_record</span><span class="o">.</span><span class="n">title</span><span class="p">:</span>
@@ -1234,7 +1247,7 @@ Stdev: 0.013614772
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##  See above regarding two ways to do this</span>
 <span class="c1"># sdss_rband_image = fits.open(sdss_rband_record.getdataurl())</span>
@@ -1244,7 +1257,7 @@ Stdev: 0.013614772
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 
@@ -1262,13 +1275,13 @@ Stdev: 0.013614772
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f0384c5b7f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd9a0bbba90&gt;
 </pre></div>
 </div>
-<img alt="../../_images/c6437eda497b676362e20637ad992737a2bbe1bfb2b33b7b32b18ecb6dc952c5.png" src="../../_images/c6437eda497b676362e20637ad992737a2bbe1bfb2b33b7b32b18ecb6dc952c5.png" />
+<img alt="../../_images/2f01addcdabff7265605e494f389cf079b61a2c43e2f62070fd1bd45e967ef88.png" src="../../_images/2f01addcdabff7265605e494f389cf079b61a2c43e2f62070fd1bd45e967ef88.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cutout</span> <span class="o">=</span> <span class="n">Cutout2D</span><span class="p">(</span><span class="n">sdss_rband_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">WCS</span><span class="p">(</span><span class="n">sdss_rband_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">))</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1284,17 +1297,17 @@ Stdev: 0.013614772
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 54007.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f0384b54520&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd9a0a7c880&gt;
 </pre></div>
 </div>
-<img alt="../../_images/cace13656c31942febb4172e15d1c1b59fbd5a36a975dfa024ca98c610680293.png" src="../../_images/cace13656c31942febb4172e15d1c1b59fbd5a36a975dfa024ca98c610680293.png" />
+<img alt="../../_images/7c4949cd37a024ac686791fe0dbf31d5ec363e086226f921e47c2619b90caa8e.png" src="../../_images/7c4949cd37a024ac686791fe0dbf31d5ec363e086226f921e47c2619b90caa8e.png" />
 </div>
 </div>
 </section>
 <section id="try-looping-over-all-positions-and-plotting-multiwavelength-cutouts">
 <h2>15. Try looping over all positions and plotting multiwavelength cutouts<a class="headerlink" href="#try-looping-over-all-positions-and-plotting-multiwavelength-cutouts" title="Link to this heading">#</a></h2>
 <p>Warning: this cell takes a long time to run! We limit it to the first three galaxies only.</p>
-<div class="cell docutils container">
+<div class="cell config_scroll_outputs docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pick the first 3 galaxies.</span>
 <span class="n">galaxy_subset</span> <span class="o">=</span> <span class="n">galaxies</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
@@ -1320,7 +1333,7 @@ Stdev: 0.013614772
     <span class="n">galex_image_record</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">galex_image_table</span><span class="p">:</span>
         <span class="k">if</span> <span class="p">((</span><span class="s1">&#39;image/fits&#39;</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">format</span><span class="p">)</span> <span class="ow">and</span>
-            <span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;energy_bounds_center&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">2.35e-07</span><span class="p">)</span> <span class="ow">and</span>
+            <span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;energy_bounds_center&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">2.35e-16</span><span class="p">)</span> <span class="ow">and</span>
             <span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;productType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SCIENCE&#39;</span><span class="p">)):</span>
             <span class="n">galex_image_record</span> <span class="o">=</span> <span class="n">record</span>
             <span class="k">break</span>
@@ -1415,9 +1428,9 @@ Stdev: 0.013614772
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 51465.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
 </pre></div>
 </div>
-<img alt="../../_images/f985e497b906730d3361e774d3ed3e3946061539b90c046c70a8ccad428bbeb5.png" src="../../_images/f985e497b906730d3361e774d3ed3e3946061539b90c046c70a8ccad428bbeb5.png" />
-<img alt="../../_images/55a358809d3927b3a3ddabe2401451cf81e68c6a4764c5568687cb50dfeeb64b.png" src="../../_images/55a358809d3927b3a3ddabe2401451cf81e68c6a4764c5568687cb50dfeeb64b.png" />
-<img alt="../../_images/f910dc923e42639ecd9ad71ad10be9cc07cbab1a8035475f23529852b55517e2.png" src="../../_images/f910dc923e42639ecd9ad71ad10be9cc07cbab1a8035475f23529852b55517e2.png" />
+<img alt="../../_images/510851b81e0614fc729d68b9bcf4d6024e4fcddbd7c96953658cd5fca71c598b.png" src="../../_images/510851b81e0614fc729d68b9bcf4d6024e4fcddbd7c96953658cd5fca71c598b.png" />
+<img alt="../../_images/7940d31da700d2da22cb97252bf8f285148259752192a34771b11dee6dfb552c.png" src="../../_images/7940d31da700d2da22cb97252bf8f285148259752192a34771b11dee6dfb552c.png" />
+<img alt="../../_images/b524b4bdd6e3487e5920ed1668cf228b1781f66603acfcca05e04790269dfdea.png" src="../../_images/b524b4bdd6e3487e5920ed1668cf228b1781f66603acfcca05e04790269dfdea.png" />
 </div>
 </div>
 </section>
@@ -1459,8 +1472,7 @@ Stdev: 0.013614772
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1532,8 +1544,8 @@ By NASA-NAVO developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

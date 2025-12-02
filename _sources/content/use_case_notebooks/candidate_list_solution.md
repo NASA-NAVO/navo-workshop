@@ -5,21 +5,21 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.0
+    jupytext_version: 1.17.3
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 language_info:
+  name: python
+  version: 3.11.13
+  mimetype: text/x-python
   codemirror_mode:
     name: ipython
     version: 3
-  file_extension: .py
-  mimetype: text/x-python
-  name: python
-  nbconvert_exporter: python
   pygments_lexer: ipython3
-  version: 3.11.7
+  nbconvert_exporter: python
+  file_extension: .py
 toc:
   base_numbering: 1
   nav_menu: {}
@@ -81,8 +81,6 @@ The next cell prepares the notebook to display our visualizations.
 Insert a Code Cell below by clicking on the "Insert" Menu and choosing "Insert Cell Below". Then consult QuickReference.md to figure out how to use astroquery to search NED for all objects in a paper, based on the refcode of the paper. Inspect the resulting astropy table.
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 objects_in_paper = Ned.query_refcode('2016ApJ...817..109O')
 objects_in_paper.show_in_notebook()
 ```
@@ -96,8 +94,6 @@ objects_in_paper['Type']
 ```
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # Keep only the galaxies from the list
 galaxies = objects_in_paper[np.array(objects_in_paper['Type']) == 'G']
 
@@ -235,7 +231,7 @@ galex_image_table = galex_image_service.search(pos=pos, size=0.0, intersect='cov
 ```{code-cell} ipython3
 for i in range(len(galex_image_table)):
     if (('image/fits' in galex_image_table[i].format) and
-        (galex_image_table['energy_bounds_center'][i]==2.35e-07) and
+        (galex_image_table['energy_bounds_center'][i]==2.35e-16) and
         (galex_image_table[i]['productType'] == 'SCIENCE')):
         break
 galex_image_record = galex_image_table[i]
@@ -366,7 +362,7 @@ for galaxy in galaxy_subset:
     galex_image_record = None
     for record in galex_image_table:
         if (('image/fits' in record.format) and
-            (record['energy_bounds_center'] == 2.35e-07) and
+            (record['energy_bounds_center'] == 2.35e-16) and
             (record['productType'] == 'SCIENCE')):
             galex_image_record = record
             break

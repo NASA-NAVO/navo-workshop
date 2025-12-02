@@ -163,8 +163,6 @@ Try a 60 arcsecond cutout.
 Repeat steps 5, 6, 8 through 12 for GALEX.
 
 ```{code-cell} ipython3
-:tags: [output_scroll]
-
 # Steps 5 & 6: Search the services found in step 4 for GALEX Sources
 # Hint: Choose the GALEX service on STSCI
 ```
