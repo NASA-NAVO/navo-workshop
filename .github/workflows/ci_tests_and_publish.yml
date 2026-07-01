@@ -46,7 +46,7 @@ jobs:
             toxenv: py312-test-predeps
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -72,9 +72,9 @@ jobs:
         os: ["windows-latest", "ubuntu-latest", "macos-latest"]
 
     steps:
-        - uses: actions/checkout@v6
+        - uses: actions/checkout@v7
         - name: Setup conda environment with notebook dependencies
-          uses: conda-incubator/setup-miniconda@v3
+          uses: conda-incubator/setup-miniconda@v4
           with:
             environment-file: environment.yml
             activate-environment: navo-env
@@ -94,7 +94,7 @@ jobs:
     name: Publish HTML
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -108,7 +108,7 @@ jobs:
         run: tox -e py310-buildhtml
 
       - name: Publish
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e  # v4.0.0
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453  # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/html/
